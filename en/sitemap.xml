@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/articles/my-third-article/</loc>
+    <lastmod>2017-05-26T10:56:14+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/articles/installing-unreal-engine-on-fedora-25/</loc>
+    <lastmod>2017-03-17T21:33:19+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/articles/my-second-article/</loc>
+    <lastmod>2017-03-17T18:34:31+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/articles/es-second/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/articles/my-second-article/"
+                />
+  </url>
+  
+  <url>
+    <loc>/articles/</loc>
+    <lastmod>2017-05-26T10:56:14+02:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/articles/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/articles/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/fedora25/</loc>
+    <lastmod>2017-03-17T21:33:19+02:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/fedora25/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/fedora25/"
+                />
+  </url>
+  
+  <url>
+    <loc>/pinned/notpinned/</loc>
+    <lastmod>2017-05-26T10:56:14+02:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/pinned/notpinned/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/pinned/notpinned/"
+                />
+  </url>
+  
+  <url>
+    <loc>/pinned/</loc>
+    <lastmod>2017-05-26T10:56:14+02:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/pinned/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/pinned/"
+                />
+  </url>
+  
+  <url>
+    <loc>/pinned/pinned/</loc>
+    <lastmod>2017-03-17T21:33:19+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/second/</loc>
+    <lastmod>2017-03-17T18:34:31+02:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/second/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/second/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2017-03-17T21:33:19+02:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/unrealengine/</loc>
+    <lastmod>2017-03-17T21:33:19+02:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/unrealengine/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/unrealengine/"
+                />
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2017-05-26T10:56:14+02:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/"
+                />
+  </url>
+  
+</urlset>
