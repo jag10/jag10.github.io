@@ -11,13 +11,14 @@
     <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
 		
 		<meta name=viewport content="width=device-width, initial-scale=1">
+    
     <link href="/css/global.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
   </head>
  <body>
   <header>
     <nav>
       
-      <div class="menu-wrapper pure-g" id="menu">
+      <div class="menu-wrapper" id="menu">
         <div class="pure-u-1 hidden">
           <div class="pure-menu menu-toogle-container">
             <a class="custom-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
@@ -26,7 +27,6 @@
         <div class="pure-u-1">
           <div class="pure-menu pure-menu-horizontal custom-can-transform">
             <ul class="pure-menu-list float-left">
-              
               
               <li class="pure-menu-item"><a class='pure-menu-link' href=https://gitlab.com/jag7>gitlab</a></li>
               
@@ -38,22 +38,27 @@
               
               <li class="pure-menu-item"><a class='pure-menu-link' href=/>home</a></li>
               
-              
               <li class='pure-menu-item flag'><i class='fa fa-flag-o' aria-hidden='true'></i></li>
-              
-                
-                <li class='pure-menu-item lang_selector selected'>
-                  <a class='pure-menu-link' href="/es/articles/es-second/">spanish </a>
-                </li>
-                 
+               
+              <li class='pure-menu-item lang_selector selected'>
+                <a class='pure-menu-link' href="/es/articles/es-second/">spanish </a>
+              </li>
+               
             </ul>
             <div class="float-right">
               <ul class="pure-menu-list">
-                
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='<?php echo $menu_entry->link_url; ?>' target='_blank'><i class='fa fa-<?php echo $menu_entry->link_text; ?>'></i></a>
+                  <a href='/' target='_blank'><i class='fa fa-facebook'></i></a>
                 </li>
-                
+                <li class="pure-menu-item social_menu_entry">
+                  <a href='/' target='_blank'><i class='fa fa-twitter'></i></a>
+                </li>
+                <li class="pure-menu-item social_menu_entry">
+                  <a href='/' target='_blank'><i class='fa fa-instagram'></i></a>
+                </li>
+                <li class="pure-menu-item social_menu_entry">
+                  <a href='/' target='_blank'><i class='fa fa-linkedin'></i></a>
+                </li>
                 <li class='pure-menu-item nt-search' id='nt-search'>
                   <form action='/search/' id='searchform' method='get'>
                     <div class='nt-search-input-wrap'>
@@ -340,7 +345,7 @@ s.setAttribute('data-timestamp', +new Date());
   </div>
 </footer>
 
-<script src='/js/main.min.js' type='text/javascript'></script>
+<script defer src='/js/main.js' type='text/javascript'></script>
 
 <script type="text/javascript">
   window.cookieconsent_options = {
