@@ -13,7 +13,7 @@ jQuery(document).ready(function($) {
 jQuery(window).load(function() {
   "use strict";
   setTimeout(function(){
-    jQuery('#gr_iframe').attr('src', 'http://goodreads.com/widgets/user_update_widget?num_updates=5&user=18849983');
+    jQuery('#gr_iframe').attr('src', 'https://goodreads.com/widgets/user_update_widget?num_updates=5&user=18849983');
   }, 1000)
   jQuery('#gr_iframe').load(function(){
       jQuery(this).show();
