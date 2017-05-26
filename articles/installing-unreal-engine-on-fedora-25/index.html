@@ -16,7 +16,7 @@
   </head>
  <body>
   <header>
-    <nav>
+    <nav class='top-menu'>
       
       <div class="menu-wrapper" id="menu">
         <div class="pure-u-1 hidden">
@@ -87,8 +87,9 @@
   </div>
   <div class="article_summary">
     <div class="article-date">
-      <i class="fa fa-bookmark"></i>
-      <span class="day">17 March 2017</span>
+      <p class="day"><i class="fa fa-bookmark"></i>17 March 2017</p>
+      <p><i class="fa fa-clock-o"></i>2 min read</p>
+      <p><i class="fa fa-align-left"></i>~ 200 words</p>
     </div>
     <div class="article-tags">
       
@@ -101,7 +102,18 @@
     </a>
     <div class="article_excerpt">
       
-      <p><p>Firstly, you need to signup in github and then link your github account with your epic games account:
+      <p>Table Of Contents:</p>
+      <nav id="TableOfContents">
+<ul>
+<li><a href="#linking-github-with-epicgames">Linking GitHub with EpicGames</a></li>
+<li><a href="#installing-clang">Installing clang</a></li>
+</ul>
+</nav>
+      <p>
+
+<h1 id="linking-github-with-epicgames">Linking GitHub with EpicGames</h1>
+
+<p>Firstly, you need to signup in github and then link your github account with your epic games account:
 <a href="https://www.unrealengine.com/ue4-on-github">https://www.unrealengine.com/ue4-on-github</a>
 Then you should receive an email confirming you joined up to the epic games organization. Once you receive it, you can clone the source code of unreal engine:
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>git clone https://github.com/EpicGames/UnrealEngine.git
@@ -109,8 +121,11 @@ Then you should receive an email confirming you joined up to the epic games orga
 ./Setup.sh
 ./GenerateProjectFiles.sh
 </pre></div>
+</p>
 
-In my case (Fedora 25), this last command failed, had to install clang:
+<h1 id="installing-clang">Installing clang</h1>
+
+<p>In my case (Fedora 25), this last command failed, had to install clang:
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo dnf install clang
 clang --version
 clang version 3.9.1 <span style="color: #f92672">(</span>tags/RELEASE_391/final<span style="color: #f92672">)</span>
