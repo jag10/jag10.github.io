@@ -2,7 +2,6 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-@import "https://fonts.googleapis.com/css?family=Lato:400,900";
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -569,7 +568,6 @@ th {
     NOTE: Firefox (as of 25) does not currently support flex-wrap, so the
     `-moz-` prefix version is omitted.
     */
-  display: -webkit-flex;
   /* IE10 uses display: flexbox */
   display: -ms-flexbox;
   /* Prevents distributing space between rows */
@@ -2414,6 +2412,18 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
   .pure-u-xl-24-24 {
     width: 100%;
   }
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: url("/fonts/Lato-Black.ttf") format("truetype");
 }
 a, a:visited, a:hover {
   text-decoration: none;
