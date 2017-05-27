@@ -34,7 +34,8 @@
       <pubDate>Fri, 17 Mar 2017 18:34:31 +0200</pubDate>
       
       <guid>/articles/my-second-article/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</description>
+      <description>title Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+title Lorem ipsum dolor sit amet, consectetur adipiscing elit.</description>
     </item>
     
   </channel>
