@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Series on jarboleda.me</title>
+    <link>/series/</link>
+    <description>Recent content in Series on jarboleda.me</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 26 May 2017 10:56:14 +0200</lastBuildDate>
+    
+	<atom:link href="/series/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>/series/</link>
+      <pubDate>Fri, 26 May 2017 10:56:14 +0200</pubDate>
+      
+      <guid>/series/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Serie1</title>
+      <link>/series/serie1/</link>
+      <pubDate>Fri, 17 Mar 2017 21:33:19 +0200</pubDate>
+      
+      <guid>/series/serie1/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
