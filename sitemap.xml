@@ -2,14 +2,14 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	
 	<sitemap>
-	   	<loc>/en/sitemap.xml</loc>
+	   	<loc>https://www.jarboleda.me/en/sitemap.xml</loc>
 		
 	   	<lastmod>2017-05-26T10:56:14+02:00</lastmod>
 		
 	</sitemap>
 	
 	<sitemap>
-	   	<loc>/es/sitemap.xml</loc>
+	   	<loc>https://www.jarboleda.me/es/sitemap.xml</loc>
 		
 	   	<lastmod>2017-03-17T18:34:31+02:00</lastmod>
 		

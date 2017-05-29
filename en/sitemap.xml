@@ -3,179 +3,179 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/articles/my-third-article/</loc>
+    <loc>https://www.jarboleda.me/articles/my-third-article/</loc>
     <lastmod>2017-05-26T10:56:14+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/articles/installing-unreal-engine-on-fedora-25/</loc>
+    <loc>https://www.jarboleda.me/articles/installing-unreal-engine-on-fedora-25/</loc>
     <lastmod>2017-03-17T21:33:19+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/articles/my-second-article/</loc>
+    <loc>https://www.jarboleda.me/articles/my-second-article/</loc>
     <lastmod>2017-03-17T18:34:31+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/articles/es-second/"
+                href="https://www.jarboleda.me/es/articles/es-second/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/articles/my-second-article/"
+                href="https://www.jarboleda.me/articles/my-second-article/"
                 />
   </url>
   
   <url>
-    <loc>/series/</loc>
+    <loc>https://www.jarboleda.me/series/</loc>
     <lastmod>2017-05-26T10:56:14+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/articles/</loc>
+    <loc>https://www.jarboleda.me/articles/</loc>
     <lastmod>2017-05-26T10:56:14+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/articles/"
+                href="https://www.jarboleda.me/es/articles/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/articles/"
+                href="https://www.jarboleda.me/articles/"
                 />
   </url>
   
   <url>
-    <loc>/tags/fedora25/</loc>
+    <loc>https://www.jarboleda.me/tags/fedora25/</loc>
     <lastmod>2017-03-17T21:33:19+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/tags/fedora25/"
+                href="https://www.jarboleda.me/es/tags/fedora25/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/fedora25/"
+                href="https://www.jarboleda.me/tags/fedora25/"
                 />
   </url>
   
   <url>
-    <loc>/pinned/notpinned/</loc>
+    <loc>https://www.jarboleda.me/</loc>
     <lastmod>2017-05-26T10:56:14+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/pinned/notpinned/"
+                href="https://www.jarboleda.me/es/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/pinned/notpinned/"
+                href="https://www.jarboleda.me/"
                 />
   </url>
   
   <url>
-    <loc>/pinned/</loc>
+    <loc>https://www.jarboleda.me/pinned/notpinned/</loc>
     <lastmod>2017-05-26T10:56:14+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/pinned/"
+                href="https://www.jarboleda.me/es/pinned/notpinned/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/pinned/"
+                href="https://www.jarboleda.me/pinned/notpinned/"
                 />
   </url>
   
   <url>
-    <loc>/pinned/pinned/</loc>
+    <loc>https://www.jarboleda.me/pinned/</loc>
+    <lastmod>2017-05-26T10:56:14+02:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.jarboleda.me/es/pinned/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jarboleda.me/pinned/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.jarboleda.me/pinned/pinned/</loc>
     <lastmod>2017-03-17T21:33:19+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/second/</loc>
+    <loc>https://www.jarboleda.me/tags/second/</loc>
     <lastmod>2017-03-17T18:34:31+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/tags/second/"
+                href="https://www.jarboleda.me/es/tags/second/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/second/"
+                href="https://www.jarboleda.me/tags/second/"
                 />
   </url>
   
   <url>
-    <loc>/series/serie1/</loc>
+    <loc>https://www.jarboleda.me/series/serie1/</loc>
     <lastmod>2017-03-17T21:33:19+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/series/</loc>
+    <loc>https://www.jarboleda.me/series/</loc>
     <lastmod>2017-05-26T10:56:14+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://www.jarboleda.me/tags/</loc>
     <lastmod>2017-03-17T21:33:19+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/tags/"
+                href="https://www.jarboleda.me/es/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/"
+                href="https://www.jarboleda.me/tags/"
                 />
   </url>
   
   <url>
-    <loc>/tags/unrealengine/</loc>
+    <loc>https://www.jarboleda.me/tags/unrealengine/</loc>
     <lastmod>2017-03-17T21:33:19+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/tags/unrealengine/"
+                href="https://www.jarboleda.me/es/tags/unrealengine/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/unrealengine/"
-                />
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2017-05-26T10:56:14+02:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/"
+                href="https://www.jarboleda.me/tags/unrealengine/"
                 />
   </url>
   
