@@ -2556,6 +2556,7 @@ article ul {
 .authorboxwrap {
   display: inline-block;
   width: 100%;
+  margin-bottom: 40px;
 }
 
 .avatar-container {
