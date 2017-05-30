@@ -34,6 +34,10 @@
   </url>
   
   <url>
+    <loc>https://www.jarboleda.me/extras/cv/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.jarboleda.me/articles/</loc>
     <lastmod>2017-05-26T10:56:14+02:00</lastmod>
     <priority>0</priority>
@@ -47,6 +51,11 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/articles/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://www.jarboleda.me/extras/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
