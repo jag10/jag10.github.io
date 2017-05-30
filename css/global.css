@@ -3351,6 +3351,12 @@ a#Blog1_blog-pager-older-link {
   color: white;
 }
 
+.cc_container .cc_btn,
+.cc_container .cc_btn:visited {
+  background-color: #263238 !important;
+  color: #fff !important;
+}
+
 a {
   color: #1fac61;
   outline: 0;
