@@ -38,6 +38,10 @@
   </url>
   
   <url>
+    <loc>https://www.jarboleda.me/projects/dummy/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.jarboleda.me/articles/</loc>
     <lastmod>2017-05-26T10:56:14+02:00</lastmod>
     <priority>0</priority>
@@ -129,6 +133,16 @@
   </url>
   
   <url>
+    <loc>https://www.jarboleda.me/project/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jarboleda.me/projects/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.jarboleda.me/tags/second/</loc>
     <lastmod>2017-03-17T18:34:31+02:00</lastmod>
     <priority>0</priority>
@@ -170,6 +184,12 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://www.jarboleda.me/project/true/</loc>
+    <lastmod>2017-03-17T21:33:19+02:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
