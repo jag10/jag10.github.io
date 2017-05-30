@@ -3054,6 +3054,10 @@ span.nt.fa-search {
   color: white;
 }
 
+.pure-menu-item .fa {
+  line-height: 32px;
+}
+
 @media (max-width: 47.999em) {
   .custom-menu-3 {
     text-align: left;
