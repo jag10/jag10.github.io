@@ -2444,6 +2444,16 @@ p {
   line-height: 1.5em;
 }
 
+::-moz-selection {
+  background-color: #1fac61;
+  color: #fff;
+}
+
+::selection {
+  background-color: #1fac61;
+  color: #fff;
+}
+
 .float-left {
   float: left;
 }
