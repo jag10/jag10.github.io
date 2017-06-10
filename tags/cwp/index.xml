@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cwp on J Arboleda</title>
+    <link>https://www.jarboleda.me/tags/cwp/</link>
+    <description>Recent content in Cwp on J Arboleda</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 24 Mar 2016 12:34:39 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.jarboleda.me/tags/cwp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installing magento2 on cwp</title>
+      <link>https://www.jarboleda.me/articles/installing-magento2-on-cwp/</link>
+      <pubDate>Thu, 24 Mar 2016 12:34:39 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/installing-magento2-on-cwp/</guid>
+      <description>In this post I&amp;rsquo;ll explain how to install magento2 in CWP, using php7 and mysql 5.6. Firstly, we need to compile php with the correct extensions magento2 needs. If you use this configure command with php7, magento2 will work like a charm: ./configure --prefix=/opt/alt/php7/usr --with-config-file-path=/opt/alt/php7/usr/php --with-config-file-scan-dir=/opt/alt/php7/usr/php/php.d --enable-fpm --enable-mbstring --enable-zip --enable-bcmath --enable-pcntl --enable-ftp --enable-exif --enable-calendar --enable-sysvmsg --enable-sysvsem --enable-sysvshm --enable-wddx --with-curl --with-mcrypt --with-iconv --with-gmp --with-pspell --with-gd --with-jpeg-dir=/usr --with-png-dir=/usr --with-zlib-dir=/usr --with-xpm-dir=/usr --with-freetype-dir=/usr --enable-gd-native-ttf --enable-gd-jis-conv --with-openssl --with-pdo-mysql=/usr --with-gettext=/usr --with-zlib=/usr --with-bz2=/usr --with-recode=/usr --with-mysqli --with-mysql-sock=/var/lib/mysql/mysql.</description>
+    </item>
+    
+    <item>
+      <title>Centos web panel with php7 and mysql5.6</title>
+      <link>https://www.jarboleda.me/articles/installing-centos-web-panel-on-vps/</link>
+      <pubDate>Thu, 24 Mar 2016 12:28:50 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/installing-centos-web-panel-on-vps/</guid>
+      <description>Firstly, we&amp;rsquo;ll install centOS Web Panel, just follow the instructions in the CWP website: http://centos-webpanel.com/installation-instructions After a fresh install, we&amp;rsquo;ll stop CWP to perform the mysqld update: service cwpsrv stop  Then, we&amp;rsquo;ll install mysql server repo: yum install -y wget wget http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm yum localinstall mysql57-community-release-el6-7.noarch.rpm vim /etc/yum.repos.d/mysql-community.repo  Now we&amp;rsquo;ve installed mysql yum repository, we have to enable the version we want to install. In this case we&amp;rsquo;re installing mysql 5.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -5,10 +5,82 @@
     <link>https://www.jarboleda.me/tags/</link>
     <description>Recent content in Tags on J Arboleda</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 17 Mar 2017 21:33:19 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 24 Aug 2015 11:00:53 +0200</lastBuildDate>
     
 	<atom:link href="https://www.jarboleda.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Backup</title>
+      <link>https://www.jarboleda.me/tags/backup/</link>
+      <pubDate>Mon, 24 Aug 2015 11:00:53 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/backup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Backups</title>
+      <link>https://www.jarboleda.me/tags/backups/</link>
+      <pubDate>Sun, 30 Aug 2015 11:03:31 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/backups/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bash</title>
+      <link>https://www.jarboleda.me/tags/bash/</link>
+      <pubDate>Sun, 30 Aug 2015 11:05:36 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Centos6</title>
+      <link>https://www.jarboleda.me/tags/centos6/</link>
+      <pubDate>Mon, 10 Aug 2015 10:56:10 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/centos6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Curl</title>
+      <link>https://www.jarboleda.me/tags/curl/</link>
+      <pubDate>Sun, 17 Jul 2016 13:34:28 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/curl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cwp</title>
+      <link>https://www.jarboleda.me/tags/cwp/</link>
+      <pubDate>Thu, 24 Mar 2016 12:34:39 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/cwp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Facebook</title>
+      <link>https://www.jarboleda.me/tags/facebook/</link>
+      <pubDate>Tue, 11 Aug 2015 10:58:34 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/facebook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fail2ban</title>
+      <link>https://www.jarboleda.me/tags/fail2ban/</link>
+      <pubDate>Mon, 10 Aug 2015 10:56:10 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/fail2ban/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Fedora25</title>
@@ -20,11 +92,182 @@
     </item>
     
     <item>
-      <title>Second</title>
-      <link>https://www.jarboleda.me/tags/second/</link>
-      <pubDate>Fri, 17 Mar 2017 18:34:31 +0200</pubDate>
+      <title>Fopen</title>
+      <link>https://www.jarboleda.me/tags/fopen/</link>
+      <pubDate>Sun, 17 Jul 2016 13:34:28 +0200</pubDate>
       
-      <guid>https://www.jarboleda.me/tags/second/</guid>
+      <guid>https://www.jarboleda.me/tags/fopen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ftp</title>
+      <link>https://www.jarboleda.me/tags/ftp/</link>
+      <pubDate>Sun, 30 Aug 2015 11:03:31 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/ftp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Httpd</title>
+      <link>https://www.jarboleda.me/tags/httpd/</link>
+      <pubDate>Sun, 09 Aug 2015 10:48:45 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/httpd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iptables</title>
+      <link>https://www.jarboleda.me/tags/iptables/</link>
+      <pubDate>Mon, 10 Aug 2015 10:56:10 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/iptables/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ipv6</title>
+      <link>https://www.jarboleda.me/tags/ipv6/</link>
+      <pubDate>Tue, 11 Aug 2015 10:58:34 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/ipv6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Magento</title>
+      <link>https://www.jarboleda.me/tags/magento/</link>
+      <pubDate>Thu, 24 Mar 2016 12:28:50 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/magento/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Magento2</title>
+      <link>https://www.jarboleda.me/tags/magento2/</link>
+      <pubDate>Thu, 24 Mar 2016 12:34:39 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/magento2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mate</title>
+      <link>https://www.jarboleda.me/tags/mate/</link>
+      <pubDate>Mon, 18 Jul 2016 13:37:52 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/mate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mysql</title>
+      <link>https://www.jarboleda.me/tags/mysql/</link>
+      <pubDate>Sun, 09 Aug 2015 10:48:45 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mysqldump</title>
+      <link>https://www.jarboleda.me/tags/mysqldump/</link>
+      <pubDate>Sun, 30 Aug 2015 11:05:36 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/mysqldump/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nodejs</title>
+      <link>https://www.jarboleda.me/tags/nodejs/</link>
+      <pubDate>Wed, 27 Jul 2016 13:50:40 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/nodejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Odroid</title>
+      <link>https://www.jarboleda.me/tags/odroid/</link>
+      <pubDate>Mon, 18 Jul 2016 13:37:52 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/odroid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Performance</title>
+      <link>https://www.jarboleda.me/tags/performance/</link>
+      <pubDate>Sat, 27 Feb 2016 12:21:32 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/performance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Php</title>
+      <link>https://www.jarboleda.me/tags/php/</link>
+      <pubDate>Sun, 17 Jul 2016 13:34:28 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Php7</title>
+      <link>https://www.jarboleda.me/tags/php7/</link>
+      <pubDate>Thu, 24 Mar 2016 12:34:39 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/php7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Piwik</title>
+      <link>https://www.jarboleda.me/tags/piwik/</link>
+      <pubDate>Sun, 01 May 2016 12:37:41 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/piwik/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Plesk</title>
+      <link>https://www.jarboleda.me/tags/plesk/</link>
+      <pubDate>Tue, 11 Aug 2015 10:58:34 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/plesk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Processwire</title>
+      <link>https://www.jarboleda.me/tags/processwire/</link>
+      <pubDate>Sun, 01 May 2016 12:37:41 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/processwire/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sass</title>
+      <link>https://www.jarboleda.me/tags/sass/</link>
+      <pubDate>Wed, 27 Jul 2016 13:50:40 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/sass/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ubuntu</title>
+      <link>https://www.jarboleda.me/tags/ubuntu/</link>
+      <pubDate>Thu, 28 Jul 2016 14:07:04 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/ubuntu/</guid>
       <description></description>
     </item>
     
@@ -34,6 +277,42 @@
       <pubDate>Fri, 17 Mar 2017 21:33:19 +0200</pubDate>
       
       <guid>https://www.jarboleda.me/tags/unrealengine/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vagrant</title>
+      <link>https://www.jarboleda.me/tags/vagrant/</link>
+      <pubDate>Thu, 28 Jul 2016 14:07:04 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/vagrant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vm</title>
+      <link>https://www.jarboleda.me/tags/vm/</link>
+      <pubDate>Thu, 28 Jul 2016 14:07:04 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/vm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vps</title>
+      <link>https://www.jarboleda.me/tags/vps/</link>
+      <pubDate>Sat, 27 Feb 2016 12:21:32 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/vps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zip</title>
+      <link>https://www.jarboleda.me/tags/zip/</link>
+      <pubDate>Mon, 24 Aug 2015 11:00:53 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/zip/</guid>
       <description></description>
     </item>
     

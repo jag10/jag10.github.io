@@ -19,15 +19,5 @@
       <description>Linking GitHub with EpicGames Firstly, you need to signup in github and then link your github account with your epic games account: https://www.unrealengine.com/ue4-on-github Then you should receive an email confirming you joined up to the epic games organization. Once you receive it, you can clone the source code of unreal engine: git clone https://github.com/EpicGames/UnrealEngine.git cd UnrealEngine/ ./Setup.sh ./GenerateProjectFiles.sh  Installing clang In my case (Fedora 25), this last command failed, had to install clang: sudo dnf install clang clang --version clang version 3.</description>
     </item>
     
-    <item>
-      <title>my second article</title>
-      <link>https://www.jarboleda.me/articles/my-second-article/</link>
-      <pubDate>Fri, 17 Mar 2017 18:34:31 +0200</pubDate>
-      
-      <guid>https://www.jarboleda.me/articles/my-second-article/</guid>
-      <description>title Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-title Lorem ipsum dolor sit amet, consectetur adipiscing elit.</description>
-    </item>
-    
   </channel>
 </rss>

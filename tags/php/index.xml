@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Php on J Arboleda</title>
+    <link>https://www.jarboleda.me/tags/php/</link>
+    <description>Recent content in Php on J Arboleda</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 17 Jul 2016 13:34:28 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.jarboleda.me/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to handle remote resources with curl</title>
+      <link>https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/</link>
+      <pubDate>Sun, 17 Jul 2016 13:34:28 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/</guid>
+      <description>When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&amp;rsquo;t as easy as using fopen: &amp;lt;?php $handle = fopen($filename, &amp;quot;r&amp;quot;) or die(&amp;#39;could not open .&amp;#39; $filename);  If this sentence works, we could then use the handle to parse the file with different php functions like fgetcsv(). Usually, a lot of functions use a Resource param to handle files, so it&amp;rsquo;s important to know how to get a handle from a file.</description>
+    </item>
+    
+    <item>
+      <title>Getting an object&#39;s (reflected) methods</title>
+      <link>https://www.jarboleda.me/articles/getting-an-objects-methods/</link>
+      <pubDate>Sun, 01 May 2016 13:28:37 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/getting-an-objects-methods/</guid>
+      <description>Sometimes we don&amp;rsquo;t have access to the platform docs on which we are working, it&amp;rsquo;s incomplete or we just don&amp;rsquo;t feel like looking for it. In those situations, we usually need more than the typical object&amp;rsquo;s var_dump, which only shows us the object properties but not its methods, which usually gives us that function we are working on without having to dive into the object&amp;rsquo;s properties. Here you&amp;rsquo;ll see the function I use for this task.</description>
+    </item>
+    
+    <item>
+      <title>Zipping and unzipping websites with php</title>
+      <link>https://www.jarboleda.me/articles/zipping-and-unzipping-websites-with-php/</link>
+      <pubDate>Mon, 24 Aug 2015 11:00:53 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/zipping-and-unzipping-websites-with-php/</guid>
+      <description>Sometimes you need to work with only FTP access, and it takes a lot of time to backup a website through FTP because usually there are a lot of files and listing them is a long process. I made these php scripts to avoid wasting time when I only have FTP access. For example, when a mate wants to work on a website but he/she want to backup it up first just in case they break something.</description>
+    </item>
+    
+    <item>
+      <title>configuring a LAMP server on CentOS 6</title>
+      <link>https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/</link>
+      <pubDate>Sun, 09 Aug 2015 10:48:45 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/</guid>
+      <description>In this first post I&amp;rsquo;ll explain how I configurated my VPS to run a basic LAMP server with multiple php versions, compiled by myself. You can get your own cheap VPS (~3€) and test a lot of things. Firstly, we&amp;rsquo;ll create our dir structure. I&amp;rsquo;ll use jag.co as a domain for this example, you can choose the dir structure you want, but I recommend following this one: / /var/www/vhosts/jag.co /var/www/vhosts/jag.</description>
+    </item>
+    
+  </channel>
+</rss>

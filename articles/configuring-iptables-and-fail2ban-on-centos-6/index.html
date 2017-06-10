@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>J Arboleda - Configuring IPTABLES and fail2ban on centOS 6</title>
+    <meta name="description" content="site description goes here">
+    <meta name="robots" content="noindex">
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+    	
+	<meta property="og:title" content="Configuring IPTABLES and fail2ban on centOS 6" />
+	<meta property="og:description" content="In this post I&rsquo;ll explain how to configure iptables along with fail2ban and how to start/stop these services without messing up your chains or configuration. Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on /etc/fail2ban/jail.local. Copy the file from /etc/fail2ban/jail.conf if it doesn&rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file: [ssh-iptables] enabled = true  Don&rsquo;t forget to add yourself to the ignored ips, you do not want to lock out yourself from the server." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/" />
+	<meta property="og:image" content="https://www.jarboleda.me/articles/img/configuring-iptables-and-fail2ban-on-centos-6.jpg" />
+	<meta property="og:updated_time" content="2015-08-10 10:56:10 &#43;0200 CEST"/>
+	<meta property="og:locale" content="en-US" /><meta property="og:site_name" content="J Arboleda" />
+	
+	
+	<meta property="article:author" content="https://www.facebook.com/killskynet" />
+	<meta property="article:publisher" content="https://www.facebook.com/nozzleio" />
+	<meta property="article:published_time" content="2015-08-10 10:56:10 &#43;0200 CEST" />
+	<meta property="article:modified_time" content="2015-08-10 10:56:10 &#43;0200 CEST" />
+	<meta property="article:section" content="articles" />
+	<meta property="article:tag" content="iptables" />
+	<meta property="article:tag" content="fail2ban" />
+	<meta property="article:tag" content="centos6" />
+	
+	<meta property="fb:admins" content="17807199" />
+    
+    <meta itemprop="name" content="Configuring IPTABLES and fail2ban on centOS 6">
+    <meta itemprop="description" content="In this post I&rsquo;ll explain how to configure iptables along with fail2ban and how to start/stop these services without messing up your chains or configuration. Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on /etc/fail2ban/jail.local. Copy the file from /etc/fail2ban/jail.conf if it doesn&rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file: [ssh-iptables] enabled = true  Don&rsquo;t forget to add yourself to the ignored ips, you do not want to lock out yourself from the server.">
+    
+    <meta itemprop="image" content="configuring-iptables-and-fail2ban-on-centos-6.jpg">
+    
+    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,backup,backups,bash,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,httpd,iptables,ipv6,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,performance,php,php7,piwik,plesk,processwire,sass,ubuntu,unrealengine,vagrant,vm,vps,zip," />
+    <meta itemprop="wordCount" content="1105">
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image:src" content="https://www.jarboleda.me/articles/img/configuring-iptables-and-fail2ban-on-centos-6.jpg"/>
+	
+	<meta name="twitter:title" content="Configuring IPTABLES and fail2ban on centOS 6"/>
+	<meta name="twitter:description" content="In this post I&rsquo;ll explain how to configure iptables along with fail2ban and how to start/stop these services without messing up your chains or configuration. Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on /etc/fail2ban/jail.local. Copy the file from /etc/fail2ban/jail.conf if it doesn&rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file: [ssh-iptables] enabled = true  Don&rsquo;t forget to add yourself to the ignored ips, you do not want to lock out yourself from the server."/>
+	<meta name="twitter:site" content="@j_a_g_x"/><meta name="twitter:domain" content="nozzle.io"/>
+	
+	<meta name="twitter:creator" content="@killskynet"/>
+
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="/css/global.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  </head>
+ <body>
+  <header>
+    <nav class='top-menu'>
+      
+      <div class="menu-wrapper" id="menu">
+        <div class="pure-u-1 hidden">
+          <div class="pure-menu menu-toogle-container">
+            <a class="custom-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
+          </div>
+        </div>
+        <div class="pure-u-1">
+          <div class="pure-menu pure-menu-horizontal custom-can-transform">
+            <ul class="pure-menu-list float-left">
+              
+              <li class="pure-menu-item"><a class='pure-menu-link' href=/>home</a></li>
+              
+              <li class="pure-menu-item"><a class='pure-menu-link' href=/extras/cv/>about me</a></li>
+              
+              <li class="pure-menu-item"><a class='pure-menu-link' href=/projects/>projects</a></li>
+              
+              <li class="pure-menu-item"><a class='pure-menu-link' href=https://github.com/jag10>github</a></li>
+              
+              <li class="pure-menu-item"><a class='pure-menu-link' href=https://gitlab.com/jag7>gitlab</a></li>
+              
+              <li class='pure-menu-item lang_selector selected'>
+                
+                <a class='pure-menu-link' href="#">English</a>
+                
+              </li>
+              <li class='pure-menu-item flag'><i class='fa fa-language' aria-hidden='true'></i></li>
+              
+            </ul>
+            <div class="float-right">
+              <ul class="pure-menu-list">
+                <li class="pure-menu-item social_menu_entry">
+                  <a href='/' target='_blank'><i class='fa fa-facebook'></i></a>
+                </li>
+                <li class="pure-menu-item social_menu_entry">
+                  <a href='/' target='_blank'><i class='fa fa-twitter'></i></a>
+                </li>
+                <li class="pure-menu-item social_menu_entry">
+                  <a href='/' target='_blank'><i class='fa fa-instagram'></i></a>
+                </li>
+                <li class="pure-menu-item social_menu_entry">
+                  <a href='/' target='_blank'><i class='fa fa-linkedin'></i></a>
+                </li>
+                <li class='pure-menu-item nt-search' id='nt-search'>
+                  <form action='/search/' id='searchform' method='get'>
+                    <div class='nt-search-input-wrap'>
+                      <input class='nt-search-input' id='s' name='q' placeholder='Search is disabled :(' type='text' value='' disabled />
+                    </div>
+                    <input class='nt-search-submit' id='go' type='submit' value='Search' />
+                    <span class='nt fa fa-search'></span>
+                  </form>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </nav>
+    
+    
+  </header>
+
+<body>
+  <div class="main-container">
+    <section id="main" class="pure-u-1 pure-u-md-3-4">
+      <article>
+        <div class="post-container">
+  <div class="post-image-container">
+    
+  </div>
+  <div id='article_summary' class="article_summary">
+    <div class="article-date">
+      <p class="day"><i class="fa fa-calendar"></i>10 Aug 2015</p>
+      <p><i class="fa fa-clock-o"></i>7 min read  ~ 1200 words</p>
+      
+    </div>
+    <div class="article-tags">
+      
+      <a href="search tag" rel="tag">iptables</a> 
+      <a href="search tag" rel="tag">fail2ban</a> 
+      <a href="search tag" rel="tag">centos6</a> 
+    </div>
+    <div class="clearfix"></div>
+    
+    <h1 class="article_title title">Configuring IPTABLES and fail2ban on centOS 6</h1>
+    
+
+    
+    <div class="article_excerpt">
+      
+      <p>
+
+<p>In this post I&rsquo;ll explain how to configure iptables along with fail2ban and how to start/stop these services without messing up your chains or configuration.
+Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on <code>/etc/fail2ban/jail.local</code>. Copy the file from <code>/etc/fail2ban/jail.conf</code> if it doesn&rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file:
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">[</span>ssh-iptables<span style="color: #f92672">]</span>
+<span style="color: #f8f8f2">enabled</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">true</span>
+</pre></div>
+</p>
+
+<p>Don&rsquo;t forget to add yourself to the ignored ips, you do not want to lock out yourself from the server. If this happens to you, go to your vps/server control panel and look for an emergency access, most providers will have one (ovh and 1and1 do). Or you could just simply sit and wait until fail2ban unbans you, just don&rsquo;t keep trying to log in or you&rsquo;ll make the situation worse.
+Ok, now you have iptables installed and fail2ban configured. You may wonder what will happen if you reboot your server or if you just restart iptables. Yep, you&rsquo;ll lose all your fail2ban chains. So let&rsquo;s use a script to start and stop iptables, to ensure we don&rsquo;t lose chains and also to make it easier and safer to modify rules.</p>
+
+<h2 id="starting-iptables-and-fail2ban">Starting iptables and fail2ban</h2>
+
+<p>Let&rsquo;s start with the script which will start iptables and fail2ban. We&rsquo;ll define a blacklist, so we can just add ips to a text file and get them locked out from our server. This will be handy in future. After that, we&rsquo;ll block all traffic by default, except output traffic, that won&rsquo;t harm us. Then, we&rsquo;ll block bad packets to prevent attacks and finally, we&rsquo;ll allow some legit traffic (icmp, dns, etc.). You should carefully look at the script below and modify it to fit your needs. This is a standard configuration and should be ok for most basic web servers, allowing mail, passive ftp, ssh, git, mail, etc.
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">#!/bin/sh</span>
+
+<span style="color: #f8f8f2">IPT</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;/sbin/iptables&quot;</span>
+<span style="color: #f8f8f2">SPAMLIST</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;blockedip&quot;</span>
+<span style="color: #f8f8f2">SPAMDROPMSG</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;BLOCKED IP DROP&quot;</span>
+
+<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;Starting IPv4 Wall...&quot;</span>
+<span style="color: #f8f8f2">$IPT</span> -F
+<span style="color: #f8f8f2">$IPT</span> -X
+<span style="color: #f8f8f2">$IPT</span> -t nat -F
+<span style="color: #f8f8f2">$IPT</span> -t nat -X
+<span style="color: #f8f8f2">$IPT</span> -t mangle -F
+<span style="color: #f8f8f2">$IPT</span> -t mangle -X
+
+<span style="color: #f92672">[</span> -f /script/blocked.ips.txt <span style="color: #f92672">]</span> <span style="color: #f92672">&amp;&amp;</span> <span style="color: #f8f8f2">BADIPS</span><span style="color: #f92672">=</span><span style="color: #66d9ef">$(</span>egrep -v -E <span style="color: #e6db74">&quot;^#|^</span>$<span style="color: #e6db74">&quot;</span> /script/blocked.ips.txt<span style="color: #66d9ef">)</span>
+<span style="color: #f8f8f2">PUB_IF</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;eth0&quot;</span>
+
+<span style="color: #66d9ef">if</span> <span style="color: #f92672">[</span> -f /script/blocked.ips.txt <span style="color: #f92672">]</span><span style="color: #f8f8f2">;</span> <span style="color: #66d9ef">then</span>
+	<span style="color: #75715e"># create a new iptables list</span>
+	<span style="color: #f8f8f2">$IPT</span> -N <span style="color: #f8f8f2">$SPAMLIST</span>
+
+	<span style="color: #66d9ef">for</span> ipblock in <span style="color: #f8f8f2">$BADIPS</span>
+	<span style="color: #66d9ef">do</span>
+		<span style="color: #f8f8f2">$IPT</span> -A <span style="color: #f8f8f2">$SPAMLIST</span> -s <span style="color: #f8f8f2">$ipblock</span> -j LOG --log-prefix <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$SPAMDROPMSG</span><span style="color: #e6db74">&quot;</span>
+		<span style="color: #f8f8f2">$IPT</span> -A <span style="color: #f8f8f2">$SPAMLIST</span> -s <span style="color: #f8f8f2">$ipblock</span> -j DROP
+	<span style="color: #66d9ef">done</span>
+
+	<span style="color: #f8f8f2">$IPT</span> -I INPUT -j <span style="color: #f8f8f2">$SPAMLIST</span>
+	<span style="color: #f8f8f2">$IPT</span> -I OUTPUT -j <span style="color: #f8f8f2">$SPAMLIST</span>
+	<span style="color: #f8f8f2">$IPT</span> -I FORWARD -j <span style="color: #f8f8f2">$SPAMLIST</span>
+<span style="color: #66d9ef">fi</span>
+
+<span style="color: #75715e"># Block everything by default</span>
+<span style="color: #f8f8f2">$IPT</span> -t filter -P INPUT DROP
+<span style="color: #f8f8f2">$IPT</span> -t filter -P FORWARD DROP
+<span style="color: #f8f8f2">$IPT</span> -t filter -P OUTPUT ACCEPT
+
+<span style="color: #75715e"># Authorize already established connexions</span>
+<span style="color: #f8f8f2">$IPT</span> -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+<span style="color: #f8f8f2">$IPT</span> -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+<span style="color: #f8f8f2">$IPT</span> -t filter -A INPUT -i lo -j ACCEPT
+<span style="color: #f8f8f2">$IPT</span> -t filter -A OUTPUT -o lo -j ACCEPT
+
+<span style="color: #75715e">#Bad packets</span>
+<span style="color: #f8f8f2">$IPT</span> -A INPUT -p tcp -m tcp ! --tcp-flags FIN,SYN,RST,ACK SYN -m state --state NEW -j REJECT --reject-with tcp-reset
+<span style="color: #f8f8f2">$IPT</span> -A INPUT -m state --state INVALID -j DROP
+<span style="color: #f8f8f2">$IPT</span> -A OUTPUT -p tcp -m tcp ! --tcp-flags FIN,SYN,RST,ACK SYN -m state --state NEW -j REJECT --reject-with tcp-reset
+<span style="color: #f8f8f2">$IPT</span> -A OUTPUT -m state --state INVALID -j DROP
+<span style="color: #f8f8f2">$IPT</span> -A FORWARD -m state --state INVALID -j DROP
+<span style="color: #f8f8f2">$IPT</span> -A FORWARD -p tcp -m tcp ! --tcp-flags FIN,SYN,RST,ACK SYN -m state --state NEW -j REJECT --reject-with tcp-reset
+
+<span style="color: #f8f8f2">$IPT</span> -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+<span style="color: #75715e"># ICMP (Ping)</span>
+<span style="color: #f8f8f2">$IPT</span> -t filter -A INPUT -p icmp -j ACCEPT
+<span style="color: #75715e">#$IPT -t filter -A OUTPUT -p icmp -j ACCEPT</span>
+
+<span style="color: #75715e"># SSH</span>
+<span style="color: #f8f8f2">$IPT</span> -t filter -A INPUT -p tcp --dport <span style="color: #ae81ff">22</span> -j ACCEPT
+<span style="color: #75715e">#$IPT -t filter -A OUTPUT -p tcp --dport 22 -j ACCEPT</span>
+
+<span style="color: #75715e"># DNS</span>
+<span style="color: #75715e">#$IPT -t filter -A OUTPUT -p tcp --dport 53 -j ACCEPT</span>
+<span style="color: #75715e">#$IPT -t filter -A OUTPUT -p udp --dport 53 -j ACCEPT</span>
+<span style="color: #f8f8f2">$IPT</span> -t filter -A INPUT -p tcp --dport <span style="color: #ae81ff">53</span> -j ACCEPT
+<span style="color: #f8f8f2">$IPT</span> -t filter -A INPUT -p udp --dport <span style="color: #ae81ff">53</span> -j ACCEPT
+
+<span style="color: #75715e"># HTTP</span>
+<span style="color: #75715e">#$IPT -t filter -A OUTPUT -p tcp --dport 80 -j ACCEPT</span>
+<span style="color: #f8f8f2">$IPT</span> -t filter -A INPUT -p tcp --dport <span style="color: #ae81ff">80</span> -j ACCEPT
+
+<span style="color: #75715e">#HTTPS</span>
+<span style="color: #75715e">#$IPT -t filter -A OUTPUT -p tcp --dport 443 -j ACCEPT</span>
+<span style="color: #f8f8f2">$IPT</span> -t filter -A INPUT -p tcp --dport <span style="color: #ae81ff">443</span> -j ACCEPT
+
+<span style="color: #75715e"># FTP</span>
+<span style="color: #75715e">#$IPT -t filter -A OUTPUT -p tcp --dport 20:21 -j ACCEPT</span>
+<span style="color: #f8f8f2">$IPT</span> -t filter -A INPUT -p tcp --dport 20:21 -j ACCEPT
+
+<span style="color: #75715e"># Passive FTP</span>
+<span style="color: #f8f8f2">$IPT</span> -t filter -A INPUT -p tcp -m tcp --dport 30000:30100 -j ACCEPT
+
+<span style="color: #75715e"># Git</span>
+<span style="color: #75715e">#$IPT -t filter -A OUTPUT -p tcp --dport 9418 -j ACCEPT</span>
+<span style="color: #f8f8f2">$IPT</span> -t filter -A INPUT -p tcp --dport <span style="color: #ae81ff">9418</span> -j ACCEPT
+
+<span style="color: #75715e"># Mail SMTP</span>
+iptables -t filter -A INPUT -p tcp --dport <span style="color: #ae81ff">25</span> -j ACCEPT
+iptables -t filter -A OUTPUT -p tcp --dport <span style="color: #ae81ff">25</span> -j ACCEPT
+
+<span style="color: #75715e"># Mail POP3</span>
+iptables -t filter -A INPUT -p tcp --dport <span style="color: #ae81ff">110</span> -j ACCEPT
+iptables -t filter -A OUTPUT -p tcp --dport <span style="color: #ae81ff">110</span> -j ACCEPT
+
+<span style="color: #75715e"># Mail IMAP</span>
+iptables -t filter -A INPUT -p tcp --dport <span style="color: #ae81ff">143</span> -j ACCEPT
+iptables -t filter -A OUTPUT -p tcp --dport <span style="color: #ae81ff">143</span> -j ACCEPT
+
+<span style="color: #75715e"># NTP (server time)</span>
+<span style="color: #75715e">#$IPT -t filter -A OUTPUT -p udp --dport 123 -j ACCEPT</span>
+
+/etc/init.d/fail2ban start
+
+sleep 2
+
+<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;new rules:&quot;</span>
+iptables -L -n -v
+</pre></div>
+</p>
+
+<p>After we enable iptables, we&rsquo;ll start fail2ban, give it 2 seconds to load, and then list all the rules, so we can see everything is ok. There are some lines commented, use them if you prefer to deny all output traffic by default and then allow only certain traffic.</p>
+
+<h2 id="stopping-iptables-and-fail2ban">Stopping iptables and fail2ban</h2>
+
+<p>Now, when we need to stop both iptables and fail2ban, we&rsquo;ll use the following script. It will flush all rules and echo the new rules to make sure there are no active rules.
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">#!/bin/sh</span>
+/etc/init.d/fail2ban stop
+
+<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;deleting rules...&quot;</span>
+
+iptables -F
+iptables -X
+iptables -t nat -F
+iptables -t nat -X
+iptables -t mangle -F
+iptables -t mangle -X
+iptables -P INPUT ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -P FORWARD ACCEPT
+
+<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;new rules:&quot;</span>
+iptables -L -n -v
+</pre></div>
+</p>
+
+<p>If you are going to use these scriptes frequently, I recommend to set an alias for them. For example, if you save these scripts to /home/start.fw, /home/stop.fw, you could add an alias like this:
+Edit ~/.bashrc and add the following lines:
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">alias</span> <span style="color: #f8f8f2">startfw</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;/script/start.fw&#39;</span>
+<span style="color: #f8f8f2">alias</span> <span style="color: #f8f8f2">stopfw</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;/script/stop.fw&#39;</span>
+</pre></div>
+</p>
+
+<p>Now, when you want to reboot your firewall, just use the command below. Beware, it will delete all of your rules and put the ones you set in the startup script. If you want to add/delete rules, just modify start.fw and restart the firewall.
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>stopfw <span style="color: #f92672">&amp;&amp;</span> startfw
+</pre></div>
+</p>
+</p>
+      
+    </div>
+    <div class="clearfix"></div>
+    
+    <div class="article_resources">
+      <span>Resources</span>
+      <ul>
+        
+      </ul>
+    </div>
+    
+    <div class="article-footer">
+      
+      
+
+
+
+
+<div class="soc-sharing">
+  <ul id="share_articles" class="article_share_items">
+    <li>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/&amp;title=Configuring%20IPTABLES%20and%20fail2ban%20on%20centOS%206&amp;summary=In%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20configure%20iptables%20along%20with%20fail2ban%20and%20how%20to%20start/stop%20these%20services%20without%20messing%20up%20your%20chains%20or%20configuration.%20Iptables%20should%20be%20included%20in%20your%20default%20Linux%20OS,%20and%20you%20can%20easily%20get%20fail2ban%20from%20standard%20repos.%20So,%20just%20enable%20the%20chains%20you%20need%20on%20/etc/fail2ban/jail.local.%20Copy%20the%20file%20from%20/etc/fail2ban/jail.conf%20if%20it%20doesn&amp;rsquo;t%20exist.%20For%20example,%20if%20you%20want%20%28you%20should%29%20activate%20ssh%20jail,%20just%20add/uncomment%20this%20lines%20to%20the%20file:%20[ssh-iptables]%20enabled%20=%20true%20%20Don&amp;rsquo;t%20forget%20to%20add%20yourself%20to%20the%20ignored%20ips,%20you%20do%20not%20want%20to%20lock%20out%20yourself%20from%20the%20server.&amp;source=J%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-twitter" href="http://twitter.com/share?text=Configuring%20IPTABLES%20and%20fail2ban%20on%20centOS%206&amp;url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/&amp;media=https://www.jarboleda.meconfiguring-iptables-and-fail2ban-on-centos-6.jpg&amp;description=In%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20configure%20iptables%20along%20with%20fail2ban%20and%20how%20to%20start/stop%20these%20services%20without%20messing%20up%20your%20chains%20or%20configuration.%20Iptables%20should%20be%20included%20in%20your%20default%20Linux%20OS,%20and%20you%20can%20easily%20get%20fail2ban%20from%20standard%20repos.%20So,%20just%20enable%20the%20chains%20you%20need%20on%20/etc/fail2ban/jail.local.%20Copy%20the%20file%20from%20/etc/fail2ban/jail.conf%20if%20it%20doesn&amp;rsquo;t%20exist.%20For%20example,%20if%20you%20want%20%28you%20should%29%20activate%20ssh%20jail,%20just%20add/uncomment%20this%20lines%20to%20the%20file:%20[ssh-iptables]%20enabled%20=%20true%20%20Don&amp;rsquo;t%20forget%20to%20add%20yourself%20to%20the%20ignored%20ips,%20you%20do%20not%20want%20to%20lock%20out%20yourself%20from%20the%20server." onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+  </ul>
+</div>
+
+      
+    </div>
+
+    <div class='post-footer'>
+      
+       
+       <div id="disqus_thread"></div>
+<script>
+
+
+
+
+
+var disqus_shortname = 'jarboleda-me';
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://jarboleda-me.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+     
+    </div>
+  </div>
+</div>
+
+      </article>
+    </section><aside class='sidebar-wrapper pure-u-1 pure-u-md-1-4 sticky'>
+      
+<div class='sidebar'>
+  
+
+<div class='authorboxwrap'>
+<h4>Author</h4>
+  
+    <div class='avatar-container'>
+      <img alt='' class='author_avatar' height='96' src="/img/me2.png" width='96' />
+      <h4 rel='author'>Jeferson Arboleda</h4>
+    </div>
+    <div class='author_description_container'>
+      <p>John Connor is the son of Sarah Connor and Kyle Reese, and the leader of the worldwide human resistance...</p>
+      <div class='authorsocial'>
+        <a class='' href='http://facebook.com/' target='_blank'><i class='fa fa-facebook'></i></a>
+        <a class='' href='http://twitter.com/' target='_blank'><i class='fa fa-twitter'></i></a>
+        <a class='' href='http://dribbble.com/' target='_blank'><i class='fa fa-dribbble'></i></a>
+        <a class='' href='http://instagram.com/' target='_blank'><i class='fa fa-instagram'></i></a>
+        <div class='clr'></div>
+      </div>
+    </div>
+    
+</div>
+
+  
+  <h4>On This Page</h4>
+  <div class='table_of_contents'>
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#starting-iptables-and-fail2ban">Starting iptables and fail2ban</a></li>
+<li><a href="#stopping-iptables-and-fail2ban">Stopping iptables and fail2ban</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+  
+</div>
+
+
+    </aside>
+    <div class='clearfix'></div>
+  </div>
+  <footer>
+  <div class='footer-container'>
+    <div class='pure-u-1 pure-u-md-1-3'>
+      <div class='widget popular-posts'>
+        <div class="widget-title">
+          <h2>Random posts</h2></div>
+        <div class='widget-content popular-posts'>
+          <ul>
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/articles/web-development-environment/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/web-development-environment.jpg" alt="" width='72' />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
+                </div>
+              </div>
+            </li>
+              
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/fixing-corrupted-partition-on-virtual-machine.jpg" alt="" width='72' />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
+                </div>
+              </div>
+            </li>
+              
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/unreal_engine.min.jpg" alt="" width='72' />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
+                </div>
+              </div>
+            </li>
+             
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class='pure-u-1 pure-u-md-1-3'>
+      <div class='widget ContactForm'>
+        <h2 class='title'>Contact me</h2>
+        <a class="email" href="mailto:me@jarboleda.me">me@jarboleda.me</a>
+        <div class='contact-form-widget'>
+          <div class='form'>
+            <form name='contact-form' action="https://formspree.io/me@jarboleda.me" method="POST">
+              <p>Name</p>
+              <input class='contact-form-name' name='name' size='30' type='text' value='' />
+              <p>Email<span>*</span></p>
+              <input class='contact-form-email' name='name="_replyto"' size='30' type='text' value='' />
+              <p>Message<span>*</span></p>
+              <p><textarea class='contact-form-email-message' cols='29' name='email-message' rows='5'></textarea></p>
+              <input class='contact-form-button contact-form-button-submit' type='submit' value='Send' />
+              <div style='text-align: center; max-width: 222px; width: 100%'>
+                <p class='contact-form-error-message'></p>
+                <p class='contact-form-success-message'></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+  
+  <div class='footer-credits'>
+    <div class='footer_social-icons'>
+      <ul>
+        <li>
+          <a class='btn-facebook' href='#' title='Facebook'><i class='fa fa-facebook'></i></a>
+        </li>
+        <li>
+          <a class='btn-twitter' href='#' title='Twitter'><i class='fa fa-twitter'></i></a>
+        </li>
+        <li>
+          <a class='btn-gplus' href='#' title='Google Plus'><i class='fa fa-google-plus'></i></a>
+        </li>
+        <li>
+          <a class='btn-youtube' href='#' title='Youtube'><i class='fa fa-youtube-play'></i></a>
+        </li>
+        <li>
+          <a class='btn-behance' href='#' title='Behance'><i class='fa fa-behance'></i></a>
+        </li>
+        <li>
+          <a class='btn-dribbble' href='#' title='Dribbble'><i class='fa fa-dribbble'></i></a>
+        </li>
+        <li>
+          <a class='btn-pinterest' href='#' title='Pinterest'><i class='fa fa-pinterest'></i></a>
+        </li>
+      </ul>
+    </div>
+    <div class='clr'></div>
+    <p>Copyright &#169; 2017
+      <a href='https://www.jarboleda.me'>https://www.jarboleda.me</a>
+    </p>
+    <p class='attribution'>Powered by</p>
+    <a href='https://gohugo.io/'>
+      <img class='attribution_logo' src="/img/hugo-logo.png" />
+    </a>
+  </div>
+</footer>
+
+<script defer src='/js/main.min.js' type='text/javascript'></script>
+
+<script type="text/javascript">
+  window.cookieconsent_options = {
+    "message": "This website uses cookies to ensure you get the best experience on our website",
+    "dismiss": "Got it!",
+    "learnMore": "More info",
+    "link": null,
+    "theme": "light-bottom"
+  };
+</script>
+<script defer type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>
+
+
+</body>
+<html>

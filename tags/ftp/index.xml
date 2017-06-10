@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ftp on J Arboleda</title>
+    <link>https://www.jarboleda.me/tags/ftp/</link>
+    <description>Recent content in Ftp on J Arboleda</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 30 Aug 2015 11:03:31 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.jarboleda.me/tags/ftp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Transferring files with FTP through bash expect script</title>
+      <link>https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/</link>
+      <pubDate>Sun, 30 Aug 2015 11:03:31 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/</guid>
+      <description>If you use to transfer backups through ftp, it can be very handy to write a bash script to put a file in a remote server in an easy way. With this script, transferring a file will be as easy as this: ./ftpConnect localFile remoteFile  In the script you&amp;rsquo;ll need to define some data: your FTP server&amp;rsquo;s IP and a valid user and password combination. #!/bin/bash #use absolute paths (i.</description>
+    </item>
+    
+  </channel>
+</rss>

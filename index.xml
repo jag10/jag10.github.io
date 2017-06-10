@@ -5,19 +5,10 @@
     <link>https://www.jarboleda.me/</link>
     <description>Recent content on J Arboleda</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 26 May 2017 10:56:14 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 17 Mar 2017 21:33:19 +0200</lastBuildDate>
     
 	<atom:link href="https://www.jarboleda.me/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title></title>
-      <link>https://www.jarboleda.me/articles/my-third-article/</link>
-      <pubDate>Fri, 26 May 2017 10:56:14 +0200</pubDate>
-      
-      <guid>https://www.jarboleda.me/articles/my-third-article/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>installing unreal engine on fedora 25</title>
@@ -29,13 +20,149 @@
     </item>
     
     <item>
-      <title>my second article</title>
-      <link>https://www.jarboleda.me/articles/my-second-article/</link>
-      <pubDate>Fri, 17 Mar 2017 18:34:31 +0200</pubDate>
+      <title>Fixing a corrupted partition on a virtual machine</title>
+      <link>https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/</link>
+      <pubDate>Thu, 28 Jul 2016 14:07:04 +0200</pubDate>
       
-      <guid>https://www.jarboleda.me/articles/my-second-article/</guid>
-      <description>title Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-title Lorem ipsum dolor sit amet, consectetur adipiscing elit.</description>
+      <guid>https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/</guid>
+      <description>If you ever find the following error while using vagrant or simply when booting a virtual machine, we&amp;rsquo;ll later see how to solve it. Couldn&amp;#39;t remount RDWR because of unprocessed orphan inode list.  Download an Ubuntu ISO Boot the virtualmachine from the ISO file: Settings -&amp;gt; Storage -&amp;gt; Add CD/DVD Device -&amp;gt; Choose disk Umount /dev/sda1: sudo umount /dev/sda1  Check damaged partition fsck /dev/sda1  You&amp;rsquo;ll see some questions, you should answer yes to everything.</description>
+    </item>
+    
+    <item>
+      <title>Web development environment</title>
+      <link>https://www.jarboleda.me/articles/web-development-environment/</link>
+      <pubDate>Wed, 27 Jul 2016 13:50:40 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/web-development-environment/</guid>
+      <description>In this post we&amp;rsquo;ll configure an advanced web development environment. For that, we&amp;rsquo;ll have our web hosted on a server (we will NOT use that server for development), and in our station we&amp;rsquo;ll have a virtual machine. For this vm we&amp;rsquo;ll use vagrant with the scotch box, which allows us to host a web without extra work We&amp;rsquo;ll use the following tecnologies for our environment. You should review them before going on:</description>
+    </item>
+    
+    <item>
+      <title>Installing ubuntu 16.04 on odroid xu3 lite</title>
+      <link>https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/</link>
+      <pubDate>Mon, 18 Jul 2016 13:37:52 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/</guid>
+      <description>Ubuntu 16.04 mate has just been released by odroid team, including support for xu3/xu4 boards and their lite versions. In this case we&amp;rsquo;re going to test Ubuntu 16.04 on odroid xu3 lite, which is the board I own. We&amp;rsquo;ll install it on an eMMC module, which is something like an small ssd (not really the same, eMMC isn&amp;rsquo;t as fast as ssd is). This module will give us a boost on performance, although we can also install Ubuntu on a SD card (class 10).</description>
+    </item>
+    
+    <item>
+      <title>How to handle remote resources with curl</title>
+      <link>https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/</link>
+      <pubDate>Sun, 17 Jul 2016 13:34:28 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/</guid>
+      <description>When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&amp;rsquo;t as easy as using fopen: &amp;lt;?php $handle = fopen($filename, &amp;quot;r&amp;quot;) or die(&amp;#39;could not open .&amp;#39; $filename);  If this sentence works, we could then use the handle to parse the file with different php functions like fgetcsv(). Usually, a lot of functions use a Resource param to handle files, so it&amp;rsquo;s important to know how to get a handle from a file.</description>
+    </item>
+    
+    <item>
+      <title>Getting an object&#39;s (reflected) methods</title>
+      <link>https://www.jarboleda.me/articles/getting-an-objects-methods/</link>
+      <pubDate>Sun, 01 May 2016 13:28:37 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/getting-an-objects-methods/</guid>
+      <description>Sometimes we don&amp;rsquo;t have access to the platform docs on which we are working, it&amp;rsquo;s incomplete or we just don&amp;rsquo;t feel like looking for it. In those situations, we usually need more than the typical object&amp;rsquo;s var_dump, which only shows us the object properties but not its methods, which usually gives us that function we are working on without having to dive into the object&amp;rsquo;s properties. Here you&amp;rsquo;ll see the function I use for this task.</description>
+    </item>
+    
+    <item>
+      <title>Using piwik&#39;s API locally with ProcessWire</title>
+      <link>https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/</link>
+      <pubDate>Sun, 01 May 2016 12:37:41 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/</guid>
+      <description>To track jglab.me visits I use Piwik. Why? The main reason is because it allows to keep info private, moreover, Piwik offers a powerful API which can be queried locally, and that is important for performance as we can obtain stats about the website without having to query external server. To make local queries I use the following class: &amp;lt;?php use Piwik\API\Request; use Piwik\FrontController; define(&amp;#39;PIWIK_INCLUDE_PATH&amp;#39;, $_SERVER[&amp;#39;DOCUMENT_ROOT&amp;#39;] . &amp;quot;/piwik/&amp;quot;); define(&amp;#39;PIWIK_USER_PATH&amp;#39;, $_SERVER[&amp;#39;DOCUMENT_ROOT&amp;#39;] .</description>
+    </item>
+    
+    <item>
+      <title>Installing magento2 on cwp</title>
+      <link>https://www.jarboleda.me/articles/installing-magento2-on-cwp/</link>
+      <pubDate>Thu, 24 Mar 2016 12:34:39 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/installing-magento2-on-cwp/</guid>
+      <description>In this post I&amp;rsquo;ll explain how to install magento2 in CWP, using php7 and mysql 5.6. Firstly, we need to compile php with the correct extensions magento2 needs. If you use this configure command with php7, magento2 will work like a charm: ./configure --prefix=/opt/alt/php7/usr --with-config-file-path=/opt/alt/php7/usr/php --with-config-file-scan-dir=/opt/alt/php7/usr/php/php.d --enable-fpm --enable-mbstring --enable-zip --enable-bcmath --enable-pcntl --enable-ftp --enable-exif --enable-calendar --enable-sysvmsg --enable-sysvsem --enable-sysvshm --enable-wddx --with-curl --with-mcrypt --with-iconv --with-gmp --with-pspell --with-gd --with-jpeg-dir=/usr --with-png-dir=/usr --with-zlib-dir=/usr --with-xpm-dir=/usr --with-freetype-dir=/usr --enable-gd-native-ttf --enable-gd-jis-conv --with-openssl --with-pdo-mysql=/usr --with-gettext=/usr --with-zlib=/usr --with-bz2=/usr --with-recode=/usr --with-mysqli --with-mysql-sock=/var/lib/mysql/mysql.</description>
+    </item>
+    
+    <item>
+      <title>Centos web panel with php7 and mysql5.6</title>
+      <link>https://www.jarboleda.me/articles/installing-centos-web-panel-on-vps/</link>
+      <pubDate>Thu, 24 Mar 2016 12:28:50 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/installing-centos-web-panel-on-vps/</guid>
+      <description>Firstly, we&amp;rsquo;ll install centOS Web Panel, just follow the instructions in the CWP website: http://centos-webpanel.com/installation-instructions After a fresh install, we&amp;rsquo;ll stop CWP to perform the mysqld update: service cwpsrv stop  Then, we&amp;rsquo;ll install mysql server repo: yum install -y wget wget http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm yum localinstall mysql57-community-release-el6-7.noarch.rpm vim /etc/yum.repos.d/mysql-community.repo  Now we&amp;rsquo;ve installed mysql yum repository, we have to enable the version we want to install. In this case we&amp;rsquo;re installing mysql 5.</description>
+    </item>
+    
+    <item>
+      <title>Getting 1.5s page load time on a basic vps</title>
+      <link>https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/</link>
+      <pubDate>Sat, 27 Feb 2016 12:21:32 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/</guid>
+      <description>As you can see on the graphics, I had 5s load time for my home page, which is kind of basic. It wasn&amp;rsquo;t that bad if you look at the packages my server runs: gitlab, Roundcube&amp;rsquo;s webmail, sentora (open source control panel) and piwik (stats management). Note: Those 11s peaks you see there were produced while I was doing load tests on my server. My environment&amp;rsquo;s specs are:
+ 1 GB RAM VPS CentOS Linux release 7.</description>
+    </item>
+    
+    <item>
+      <title>Authenticating users with cURL</title>
+      <link>https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/</link>
+      <pubDate>Sat, 16 Jan 2016 11:07:16 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/</guid>
+      <description>In this post I&amp;rsquo;ll explain how to log in a user with cURL. This can be useful if you want to integrate joomla login with an external app. For example, you could have a dual installation of wordpress and joomla and use wordpress joomla to log in joomla users as well.
+Joomla outputs two values for each login form and those values have to be valid. So, in first place we need to get those values with cURL.</description>
+    </item>
+    
+    <item>
+      <title>Backing up all databases using mysqldump</title>
+      <link>https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/</link>
+      <pubDate>Sun, 30 Aug 2015 11:05:36 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/</guid>
+      <description>In this post I&amp;rsquo;ll explain how I backup all databases in servers I work with. When you face trouble with those servers it&amp;rsquo;ll be pretty useful to have daily database dumps. So, I use mysqldump utiliy to backup database and an script I wrote myself to transfer files, which you can find here Backing up all databases with mysqldumpo is pretty easy, just use it in this way in bash: mysqldump -uadmin -p`cat /etc/psa/.</description>
+    </item>
+    
+    <item>
+      <title>Transferring files with FTP through bash expect script</title>
+      <link>https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/</link>
+      <pubDate>Sun, 30 Aug 2015 11:03:31 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/</guid>
+      <description>If you use to transfer backups through ftp, it can be very handy to write a bash script to put a file in a remote server in an easy way. With this script, transferring a file will be as easy as this: ./ftpConnect localFile remoteFile  In the script you&amp;rsquo;ll need to define some data: your FTP server&amp;rsquo;s IP and a valid user and password combination. #!/bin/bash #use absolute paths (i.</description>
+    </item>
+    
+    <item>
+      <title>Zipping and unzipping websites with php</title>
+      <link>https://www.jarboleda.me/articles/zipping-and-unzipping-websites-with-php/</link>
+      <pubDate>Mon, 24 Aug 2015 11:00:53 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/zipping-and-unzipping-websites-with-php/</guid>
+      <description>Sometimes you need to work with only FTP access, and it takes a lot of time to backup a website through FTP because usually there are a lot of files and listing them is a long process. I made these php scripts to avoid wasting time when I only have FTP access. For example, when a mate wants to work on a website but he/she want to backup it up first just in case they break something.</description>
+    </item>
+    
+    <item>
+      <title>Facebook sharer and IPv6 issue</title>
+      <link>https://www.jarboleda.me/articles/facebook-sharer-and-ipv6-issue/</link>
+      <pubDate>Tue, 11 Aug 2015 10:58:34 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/facebook-sharer-and-ipv6-issue/</guid>
+      <description>Last week all facebook buttons on domains on ALL of our servers stopped working. I always got a 404 response when facebook crawler tried to visit our domains. This happened in our 2 dedicated servers from 1and1. At first, my mates were trying to figure out if it was a joomla issue, but they finally couldn&amp;rsquo;t solve it, so they asked me to investigate it. My first thought was: you got a 404?</description>
+    </item>
+    
+    <item>
+      <title>Configuring IPTABLES and fail2ban on centOS 6</title>
+      <link>https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/</link>
+      <pubDate>Mon, 10 Aug 2015 10:56:10 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/</guid>
+      <description>In this post I&amp;rsquo;ll explain how to configure iptables along with fail2ban and how to start/stop these services without messing up your chains or configuration. Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on /etc/fail2ban/jail.local. Copy the file from /etc/fail2ban/jail.conf if it doesn&amp;rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file: [ssh-iptables] enabled = true  Don&amp;rsquo;t forget to add yourself to the ignored ips, you do not want to lock out yourself from the server.</description>
+    </item>
+    
+    <item>
+      <title>configuring a LAMP server on CentOS 6</title>
+      <link>https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/</link>
+      <pubDate>Sun, 09 Aug 2015 10:48:45 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/</guid>
+      <description>In this first post I&amp;rsquo;ll explain how I configurated my VPS to run a basic LAMP server with multiple php versions, compiled by myself. You can get your own cheap VPS (~3€) and test a lot of things. Firstly, we&amp;rsquo;ll create our dir structure. I&amp;rsquo;ll use jag.co as a domain for this example, you can choose the dir structure you want, but I recommend following this one: / /var/www/vhosts/jag.co /var/www/vhosts/jag.</description>
     </item>
     
     <item>

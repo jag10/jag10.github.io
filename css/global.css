@@ -2503,6 +2503,10 @@ article ul {
   overflow: hidden;
 }
 
+.post-container img {
+  max-width: 100%;
+}
+
 .pulse-image {
   transition: opacity 0.54s,-webkit-transform 0.45s,-webkit-filter 0.45s;
   transition: transform 0.45s,filter 0.45s,opacity 0.54s;
@@ -3300,6 +3304,11 @@ span.nt.fa-search {
 .cc_container .cc_btn:visited {
   background-color: #263238 !important;
   color: #fff !important;
+}
+
+code {
+  background-color: #dedede;
+  padding: 0 5px;
 }
 
 a {

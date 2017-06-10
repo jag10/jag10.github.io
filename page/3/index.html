@@ -1,0 +1,656 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.21" />
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>J Arboleda - J Arboleda</title>
+    <meta name="description" content="site description goes here">
+    <meta name="robots" content="noindex">
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+    	
+	<meta property="og:title" content="J Arboleda" />
+	<meta property="og:description" content="" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://www.jarboleda.me/" />
+	
+	<meta property="og:updated_time" content="2016-05-01 12:37:41 &#43;0200 CEST"/>
+	<meta property="og:locale" content="en-US" /><meta property="og:site_name" content="J Arboleda" />
+	
+	
+	<meta property="article:author" content="https://www.facebook.com/killskynet" />
+	<meta property="article:publisher" content="https://www.facebook.com/nozzleio" />
+	
+	<meta property="article:modified_time" content="" />
+	<meta property="article:section" content="" />
+	
+	<meta property="fb:admins" content="17807199" />
+    
+    <meta itemprop="name" content="J Arboleda">
+    <meta itemprop="description" content="">
+    
+    
+    
+    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,backup,backups,bash,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,httpd,iptables,ipv6,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,performance,php,php7,piwik,plesk,processwire,sass,ubuntu,unrealengine,vagrant,vm,vps,zip," />
+    
+	
+	<meta name="twitter:card" content="summary"/>
+	
+	<meta name="twitter:title" content="J Arboleda"/>
+	<meta name="twitter:description" content=""/>
+	<meta name="twitter:site" content="@j_a_g_x"/><meta name="twitter:domain" content="nozzle.io"/>
+	
+	<meta name="twitter:creator" content="@killskynet"/>
+
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="/css/global.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  </head>
+ <body>
+  <header>
+    <nav class='top-menu'>
+      
+      <div class="menu-wrapper" id="menu">
+        <div class="pure-u-1 hidden">
+          <div class="pure-menu menu-toogle-container">
+            <a class="custom-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
+          </div>
+        </div>
+        <div class="pure-u-1">
+          <div class="pure-menu pure-menu-horizontal custom-can-transform">
+            <ul class="pure-menu-list float-left">
+              
+              <li class="pure-menu-item"><a class='pure-menu-link' href=/>home</a></li>
+              
+              <li class="pure-menu-item"><a class='pure-menu-link' href=/extras/cv/>about me</a></li>
+              
+              <li class="pure-menu-item"><a class='pure-menu-link' href=/projects/>projects</a></li>
+              
+              <li class="pure-menu-item"><a class='pure-menu-link' href=https://github.com/jag10>github</a></li>
+              
+              <li class="pure-menu-item"><a class='pure-menu-link' href=https://gitlab.com/jag7>gitlab</a></li>
+              
+              <li class='pure-menu-item lang_selector selected'>
+                
+                <a class='pure-menu-link' href="#">English</a>
+                
+              </li>
+              <li class='pure-menu-item flag'><i class='fa fa-language' aria-hidden='true'></i></li>
+               
+              <li class='pure-menu-item lang_selector'>
+                <a class='pure-menu-link' href="/es/">spanish</a>
+              </li>
+               
+            </ul>
+            <div class="float-right">
+              <ul class="pure-menu-list">
+                <li class="pure-menu-item social_menu_entry">
+                  <a href='/' target='_blank'><i class='fa fa-facebook'></i></a>
+                </li>
+                <li class="pure-menu-item social_menu_entry">
+                  <a href='/' target='_blank'><i class='fa fa-twitter'></i></a>
+                </li>
+                <li class="pure-menu-item social_menu_entry">
+                  <a href='/' target='_blank'><i class='fa fa-instagram'></i></a>
+                </li>
+                <li class="pure-menu-item social_menu_entry">
+                  <a href='/' target='_blank'><i class='fa fa-linkedin'></i></a>
+                </li>
+                <li class='pure-menu-item nt-search' id='nt-search'>
+                  <form action='/search/' id='searchform' method='get'>
+                    <div class='nt-search-input-wrap'>
+                      <input class='nt-search-input' id='s' name='q' placeholder='Search is disabled :(' type='text' value='' disabled />
+                    </div>
+                    <input class='nt-search-submit' id='go' type='submit' value='Search' />
+                    <span class='nt fa fa-search'></span>
+                  </form>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </nav>
+    
+    
+  </header>
+
+
+  <div class="main-container">
+    <section id="main" class="pure-u-1 pure-u-md-3-4">
+    
+      <article>
+        <div class="post-container">
+  <div class="post-image-container">
+    
+    <a href="/articles/using-piwik-api-locally-with-pw/">
+      <img src="/articles/img/using-piwik-api-locally-with-pw.jpg" alt="article image" class="pulse-image" width="100%" height="100%">
+    </a>
+    
+    
+  </div>
+  <div id='article_summary' class="article_summary">
+    <div class="article-date">
+      <p class="day"><i class="fa fa-calendar"></i>1 May 2016</p>
+      <p><i class="fa fa-clock-o"></i>3 min read  ~ 300 words</p>
+      
+    </div>
+    <div class="article-tags">
+      
+      <a href="search tag" rel="tag">processwire</a> 
+      <a href="search tag" rel="tag">piwik</a> 
+    </div>
+    <div class="clearfix"></div>
+    
+    <a href="/articles/using-piwik-api-locally-with-pw/" title="">
+      <h1 class="article_title title">Using piwik&#39;s API locally with ProcessWire</h1>
+    </a>
+    
+
+    
+    <div class="article_excerpt">
+      
+      <p>To track jglab.me visits I use Piwik. Why? The main reason is because it allows to keep info private, moreover, Piwik offers a powerful API which can be queried locally, and that is important for performance as we can obtain stats about the website without having to query external server. To make local queries I use the following class: &lt;?php use Piwik\API\Request; use Piwik\FrontController; define(&#39;PIWIK_INCLUDE_PATH&#39;, $_SERVER[&#39;DOCUMENT_ROOT&#39;] . &quot;/piwik/&quot;); define(&#39;PIWIK_USER_PATH&#39;, $_SERVER[&#39;DOCUMENT_ROOT&#39;] .</p>
+      
+    </div>
+    <div class="clearfix"></div>
+    
+    <div class="article-footer">
+      
+      <a class="read-more-button pure-button" href="/articles/using-piwik-api-locally-with-pw/">Read More</a> 
+      
+
+
+
+
+<div class="soc-sharing">
+  <ul id="share_articles" class="article_share_items">
+    <li>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/&amp;title=Using%20piwik%27s%20API%20locally%20with%20ProcessWire&amp;summary=To%20track%20jglab.me%20visits%20I%20use%20Piwik.%20Why?%20The%20main%20reason%20is%20because%20it%20allows%20to%20keep%20info%20private,%20moreover,%20Piwik%20offers%20a%20powerful%20API%20which%20can%20be%20queried%20locally,%20and%20that%20is%20important%20for%20performance%20as%20we%20can%20obtain%20stats%20about%20the%20website%20without%20having%20to%20query%20external%20server.%20To%20make%20local%20queries%20I%20use%20the%20following%20class:%20&amp;lt;?php%20use%20Piwik%5cAPI%5cRequest;%20use%20Piwik%5cFrontController;%20define%28&amp;#39;PIWIK_INCLUDE_PATH&amp;#39;,%20$_SERVER[&amp;#39;DOCUMENT_ROOT&amp;#39;]%20.%20&amp;quot;/piwik/&amp;quot;%29;%20define%28&amp;#39;PIWIK_USER_PATH&amp;#39;,%20$_SERVER[&amp;#39;DOCUMENT_ROOT&amp;#39;]%20.&amp;source=J%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-twitter" href="http://twitter.com/share?text=Using%20piwik%27s%20API%20locally%20with%20ProcessWire&amp;url=https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/&amp;media=https://www.jarboleda.meusing-piwik-api-locally-with-pw.jpg&amp;description=To%20track%20jglab.me%20visits%20I%20use%20Piwik.%20Why?%20The%20main%20reason%20is%20because%20it%20allows%20to%20keep%20info%20private,%20moreover,%20Piwik%20offers%20a%20powerful%20API%20which%20can%20be%20queried%20locally,%20and%20that%20is%20important%20for%20performance%20as%20we%20can%20obtain%20stats%20about%20the%20website%20without%20having%20to%20query%20external%20server.%20To%20make%20local%20queries%20I%20use%20the%20following%20class:%20&amp;lt;?php%20use%20Piwik%5cAPI%5cRequest;%20use%20Piwik%5cFrontController;%20define%28&amp;#39;PIWIK_INCLUDE_PATH&amp;#39;,%20$_SERVER[&amp;#39;DOCUMENT_ROOT&amp;#39;]%20.%20&amp;quot;/piwik/&amp;quot;%29;%20define%28&amp;#39;PIWIK_USER_PATH&amp;#39;,%20$_SERVER[&amp;#39;DOCUMENT_ROOT&amp;#39;]%20." onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+  </ul>
+</div>
+
+      
+    </div>
+
+    <div class='post-footer'>
+      
+    </div>
+  </div>
+</div>
+
+      </article>
+      
+      <article>
+        <div class="post-container">
+  <div class="post-image-container">
+    
+    <a href="/articles/installing-magento2-on-cwp/">
+      <img src="/articles/img/installing-magento2-on-cwp.jpg" alt="article image" class="pulse-image" width="100%" height="100%">
+    </a>
+    
+    
+  </div>
+  <div id='article_summary' class="article_summary">
+    <div class="article-date">
+      <p class="day"><i class="fa fa-calendar"></i>24 Mar 2016</p>
+      <p><i class="fa fa-clock-o"></i>3 min read  ~ 300 words</p>
+      
+    </div>
+    <div class="article-tags">
+      
+      <a href="search tag" rel="tag">magento2</a> 
+      <a href="search tag" rel="tag">cwp</a> 
+      <a href="search tag" rel="tag">php7</a> 
+    </div>
+    <div class="clearfix"></div>
+    
+    <a href="/articles/installing-magento2-on-cwp/" title="">
+      <h1 class="article_title title">Installing magento2 on cwp</h1>
+    </a>
+    
+
+    
+    <div class="article_excerpt">
+      
+      <p>In this post I&rsquo;ll explain how to install magento2 in CWP, using php7 and mysql 5.6. Firstly, we need to compile php with the correct extensions magento2 needs. If you use this configure command with php7, magento2 will work like a charm: ./configure &ndash;prefix=/opt/alt/php7/usr &ndash;with-config-file-path=/opt/alt/php7/usr/php &ndash;with-config-file-scan-dir=/opt/alt/php7/usr/php/php.d &ndash;enable-fpm &ndash;enable-mbstring &ndash;enable-zip &ndash;enable-bcmath &ndash;enable-pcntl &ndash;enable-ftp &ndash;enable-exif &ndash;enable-calendar &ndash;enable-sysvmsg &ndash;enable-sysvsem &ndash;enable-sysvshm &ndash;enable-wddx &ndash;with-curl &ndash;with-mcrypt &ndash;with-iconv &ndash;with-gmp &ndash;with-pspell &ndash;with-gd &ndash;with-jpeg-dir=/usr &ndash;with-png-dir=/usr &ndash;with-zlib-dir=/usr &ndash;with-xpm-dir=/usr &ndash;with-freetype-dir=/usr &ndash;enable-gd-native-ttf &ndash;enable-gd-jis-conv &ndash;with-openssl &ndash;with-pdo-mysql=/usr &ndash;with-gettext=/usr &ndash;with-zlib=/usr &ndash;with-bz2=/usr &ndash;with-recode=/usr &ndash;with-mysqli &ndash;with-mysql-sock=/var/lib/mysql/mysql.</p>
+      
+    </div>
+    <div class="clearfix"></div>
+    
+    <div class="article-footer">
+      
+      <a class="read-more-button pure-button" href="/articles/installing-magento2-on-cwp/">Read More</a> 
+      
+
+
+
+
+<div class="soc-sharing">
+  <ul id="share_articles" class="article_share_items">
+    <li>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/installing-magento2-on-cwp/&amp;title=Installing%20magento2%20on%20cwp&amp;summary=In%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20install%20magento2%20in%20CWP,%20using%20php7%20and%20mysql%205.6.%20Firstly,%20we%20need%20to%20compile%20php%20with%20the%20correct%20extensions%20magento2%20needs.%20If%20you%20use%20this%20configure%20command%20with%20php7,%20magento2%20will%20work%20like%20a%20charm:%20./configure%20--prefix=/opt/alt/php7/usr%20--with-config-file-path=/opt/alt/php7/usr/php%20--with-config-file-scan-dir=/opt/alt/php7/usr/php/php.d%20--enable-fpm%20--enable-mbstring%20--enable-zip%20--enable-bcmath%20--enable-pcntl%20--enable-ftp%20--enable-exif%20--enable-calendar%20--enable-sysvmsg%20--enable-sysvsem%20--enable-sysvshm%20--enable-wddx%20--with-curl%20--with-mcrypt%20--with-iconv%20--with-gmp%20--with-pspell%20--with-gd%20--with-jpeg-dir=/usr%20--with-png-dir=/usr%20--with-zlib-dir=/usr%20--with-xpm-dir=/usr%20--with-freetype-dir=/usr%20--enable-gd-native-ttf%20--enable-gd-jis-conv%20--with-openssl%20--with-pdo-mysql=/usr%20--with-gettext=/usr%20--with-zlib=/usr%20--with-bz2=/usr%20--with-recode=/usr%20--with-mysqli%20--with-mysql-sock=/var/lib/mysql/mysql.&amp;source=J%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-twitter" href="http://twitter.com/share?text=Installing%20magento2%20on%20cwp&amp;url=https://www.jarboleda.me/articles/installing-magento2-on-cwp/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/installing-magento2-on-cwp/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/installing-magento2-on-cwp/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/installing-magento2-on-cwp/&amp;media=https://www.jarboleda.meinstalling-magento2-on-cwp.jpg&amp;description=In%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20install%20magento2%20in%20CWP,%20using%20php7%20and%20mysql%205.6.%20Firstly,%20we%20need%20to%20compile%20php%20with%20the%20correct%20extensions%20magento2%20needs.%20If%20you%20use%20this%20configure%20command%20with%20php7,%20magento2%20will%20work%20like%20a%20charm:%20./configure%20--prefix=/opt/alt/php7/usr%20--with-config-file-path=/opt/alt/php7/usr/php%20--with-config-file-scan-dir=/opt/alt/php7/usr/php/php.d%20--enable-fpm%20--enable-mbstring%20--enable-zip%20--enable-bcmath%20--enable-pcntl%20--enable-ftp%20--enable-exif%20--enable-calendar%20--enable-sysvmsg%20--enable-sysvsem%20--enable-sysvshm%20--enable-wddx%20--with-curl%20--with-mcrypt%20--with-iconv%20--with-gmp%20--with-pspell%20--with-gd%20--with-jpeg-dir=/usr%20--with-png-dir=/usr%20--with-zlib-dir=/usr%20--with-xpm-dir=/usr%20--with-freetype-dir=/usr%20--enable-gd-native-ttf%20--enable-gd-jis-conv%20--with-openssl%20--with-pdo-mysql=/usr%20--with-gettext=/usr%20--with-zlib=/usr%20--with-bz2=/usr%20--with-recode=/usr%20--with-mysqli%20--with-mysql-sock=/var/lib/mysql/mysql." onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+  </ul>
+</div>
+
+      
+    </div>
+
+    <div class='post-footer'>
+      
+    </div>
+  </div>
+</div>
+
+      </article>
+      
+      <article>
+        <div class="post-container">
+  <div class="post-image-container">
+    
+    <a href="/articles/installing-centos-web-panel-on-vps/">
+      <img src="/articles/img/installing-centos-web-panel-on-vps.jpg" alt="article image" class="pulse-image" width="100%" height="100%">
+    </a>
+    
+    
+  </div>
+  <div id='article_summary' class="article_summary">
+    <div class="article-date">
+      <p class="day"><i class="fa fa-calendar"></i>24 Mar 2016</p>
+      <p><i class="fa fa-clock-o"></i>4 min read  ~ 500 words</p>
+      
+    </div>
+    <div class="article-tags">
+      
+      <a href="search tag" rel="tag">magento</a> 
+      <a href="search tag" rel="tag">cwp</a> 
+      <a href="search tag" rel="tag">php7</a> 
+    </div>
+    <div class="clearfix"></div>
+    
+    <a href="/articles/installing-centos-web-panel-on-vps/" title="">
+      <h1 class="article_title title">Centos web panel with php7 and mysql5.6</h1>
+    </a>
+    
+
+    
+    <div class="article_excerpt">
+      
+      <p>Firstly, we&rsquo;ll install centOS Web Panel, just follow the instructions in the CWP website: <a href="http://centos-webpanel.com/installation-instructions">http://centos-webpanel.com/installation-instructions</a> After a fresh install, we&rsquo;ll stop CWP to perform the mysqld update: service cwpsrv stop  Then, we&rsquo;ll install mysql server repo: yum install -y wget wget <a href="http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm">http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm</a> yum localinstall mysql57-community-release-el6-7.noarch.rpm vim /etc/yum.repos.d/mysql-community.repo  Now we&rsquo;ve installed mysql yum repository, we have to enable the version we want to install. In this case we&rsquo;re installing mysql 5.</p>
+      
+    </div>
+    <div class="clearfix"></div>
+    
+    <div class="article-footer">
+      
+      <a class="read-more-button pure-button" href="/articles/installing-centos-web-panel-on-vps/">Read More</a> 
+      
+
+
+
+
+<div class="soc-sharing">
+  <ul id="share_articles" class="article_share_items">
+    <li>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/installing-centos-web-panel-on-vps/&amp;title=Centos%20web%20panel%20with%20php7%20and%20mysql5.6&amp;summary=Firstly,%20we&amp;rsquo;ll%20install%20centOS%20Web%20Panel,%20just%20follow%20the%20instructions%20in%20the%20CWP%20website:%20http://centos-webpanel.com/installation-instructions%20After%20a%20fresh%20install,%20we&amp;rsquo;ll%20stop%20CWP%20to%20perform%20the%20mysqld%20update:%20service%20cwpsrv%20stop%20%20Then,%20we&amp;rsquo;ll%20install%20mysql%20server%20repo:%20yum%20install%20-y%20wget%20wget%20http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm%20yum%20localinstall%20mysql57-community-release-el6-7.noarch.rpm%20vim%20/etc/yum.repos.d/mysql-community.repo%20%20Now%20we&amp;rsquo;ve%20installed%20mysql%20yum%20repository,%20we%20have%20to%20enable%20the%20version%20we%20want%20to%20install.%20In%20this%20case%20we&amp;rsquo;re%20installing%20mysql%205.&amp;source=J%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-twitter" href="http://twitter.com/share?text=Centos%20web%20panel%20with%20php7%20and%20mysql5.6&amp;url=https://www.jarboleda.me/articles/installing-centos-web-panel-on-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/installing-centos-web-panel-on-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/installing-centos-web-panel-on-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/installing-centos-web-panel-on-vps/&amp;media=https://www.jarboleda.meinstalling-centos-web-panel-on-vps.jpg&amp;description=Firstly,%20we&amp;rsquo;ll%20install%20centOS%20Web%20Panel,%20just%20follow%20the%20instructions%20in%20the%20CWP%20website:%20http://centos-webpanel.com/installation-instructions%20After%20a%20fresh%20install,%20we&amp;rsquo;ll%20stop%20CWP%20to%20perform%20the%20mysqld%20update:%20service%20cwpsrv%20stop%20%20Then,%20we&amp;rsquo;ll%20install%20mysql%20server%20repo:%20yum%20install%20-y%20wget%20wget%20http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm%20yum%20localinstall%20mysql57-community-release-el6-7.noarch.rpm%20vim%20/etc/yum.repos.d/mysql-community.repo%20%20Now%20we&amp;rsquo;ve%20installed%20mysql%20yum%20repository,%20we%20have%20to%20enable%20the%20version%20we%20want%20to%20install.%20In%20this%20case%20we&amp;rsquo;re%20installing%20mysql%205." onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+  </ul>
+</div>
+
+      
+    </div>
+
+    <div class='post-footer'>
+      
+    </div>
+  </div>
+</div>
+
+      </article>
+      
+      
+
+<ul class="pagination">
+    
+    <li>
+        <a href="/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li
+    >
+    <a href="/page/2/" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+     
+        
+        
+    
+    
+    <li
+    ><a href="/">1</a></li>
+    
+    
+    
+    
+    
+     
+        
+        
+    
+    
+    <li
+    ><a href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+     
+        
+        
+    
+    
+    <li
+    class="active"><a href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+     
+        
+        
+    
+    
+    <li
+    ><a href="/page/4/">4</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="disabled"><span aria-hidden="true">&hellip;</span></li>
+    
+    
+    
+    
+    
+     
+        
+        
+    
+    
+    <li
+    ><a href="/page/6/">6</a></li>
+    
+    
+    <li
+    >
+    <a href="/page/4/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li>
+        <a href="/page/6/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+    </section><aside class='sidebar-wrapper pure-u-1 pure-u-md-1-4 sticky'>
+      
+<div class='sidebar'>
+  
+
+<div class='authorboxwrap'>
+<h4>Author</h4>
+  
+    <div class='avatar-container'>
+      <img alt='' class='author_avatar' height='96' src="/img/me2.png" width='96' />
+      <h4 rel='author'>Jeferson Arboleda</h4>
+    </div>
+    <div class='author_description_container'>
+      <p>John Connor is the son of Sarah Connor and Kyle Reese, and the leader of the worldwide human resistance...</p>
+      <div class='authorsocial'>
+        <a class='' href='http://facebook.com/' target='_blank'><i class='fa fa-facebook'></i></a>
+        <a class='' href='http://twitter.com/' target='_blank'><i class='fa fa-twitter'></i></a>
+        <a class='' href='http://dribbble.com/' target='_blank'><i class='fa fa-dribbble'></i></a>
+        <a class='' href='http://instagram.com/' target='_blank'><i class='fa fa-instagram'></i></a>
+        <div class='clr'></div>
+      </div>
+    </div>
+    
+</div>
+
+  
+  <div class='widget currently-reading'>
+  <div class="widget-title">
+    <h2>Currently Reading</h2></div>
+  <div class='widget-content'>
+    <div class="loading-basic">
+      <div class="loading-bar"></div>
+      <div class="loading-bar"></div>
+      <div class="loading-bar"></div>
+      <div class="loading-bar"></div>
+    </div>
+    <div id="gr_updates_widget">
+      <iframe id="gr_iframe" src="" width="100%" height="330" frameborder="0"></iframe>
+      
+      <a href="https://www.goodreads.com/">
+        <img alt="Goodreads: Book reviews, recommendations, and discussion" src="/img/goodreads-logo.png" />
+      </a>
+    </div>
+  </div>
+</div>
+
+  <div class='widget popular-posts'>
+  <div class="widget-title"><h2>Pinned posts</h2></div>
+  <div class='widget-content popular-posts'>
+    <ul>
+    
+        <li>
+          <div class='item-content'>
+            <div class='item-thumbnail'>
+              <a href='/' target=''>
+                <img alt='' border='0' height='72' src="/articles/img/unreal_engine.min.jpg " alt="alt goes here" width='72'/>
+              </a>
+            </div>
+            <div class='item-title'>
+              <a href='url goes here' class="mostVisitedLink">installing unreal engine on fedora 25
+                <span class="detail-span">[0]</span>
+              </a>
+            </div>
+          </div>
+          <div style='clear: both;'></div>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+</div>
+
+
+    </aside>
+    <div class='clearfix'></div>
+  </div>
+  <footer>
+  <div class='footer-container'>
+    <div class='pure-u-1 pure-u-md-1-3'>
+      <div class='widget popular-posts'>
+        <div class="widget-title">
+          <h2>Random posts</h2></div>
+        <div class='widget-content popular-posts'>
+          <ul>
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/articles/web-development-environment/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/web-development-environment.jpg" alt="" width='72' />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
+                </div>
+              </div>
+            </li>
+              
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/unreal_engine.min.jpg" alt="" width='72' />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
+                </div>
+              </div>
+            </li>
+              
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/fixing-corrupted-partition-on-virtual-machine.jpg" alt="" width='72' />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
+                </div>
+              </div>
+            </li>
+             
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class='pure-u-1 pure-u-md-1-3'>
+      <div class='widget ContactForm'>
+        <h2 class='title'>Contact me</h2>
+        <a class="email" href="mailto:me@jarboleda.me">me@jarboleda.me</a>
+        <div class='contact-form-widget'>
+          <div class='form'>
+            <form name='contact-form' action="https://formspree.io/me@jarboleda.me" method="POST">
+              <p>Name</p>
+              <input class='contact-form-name' name='name' size='30' type='text' value='' />
+              <p>Email<span>*</span></p>
+              <input class='contact-form-email' name='name="_replyto"' size='30' type='text' value='' />
+              <p>Message<span>*</span></p>
+              <p><textarea class='contact-form-email-message' cols='29' name='email-message' rows='5'></textarea></p>
+              <input class='contact-form-button contact-form-button-submit' type='submit' value='Send' />
+              <div style='text-align: center; max-width: 222px; width: 100%'>
+                <p class='contact-form-error-message'></p>
+                <p class='contact-form-success-message'></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+  
+  <div class='footer-credits'>
+    <div class='footer_social-icons'>
+      <ul>
+        <li>
+          <a class='btn-facebook' href='#' title='Facebook'><i class='fa fa-facebook'></i></a>
+        </li>
+        <li>
+          <a class='btn-twitter' href='#' title='Twitter'><i class='fa fa-twitter'></i></a>
+        </li>
+        <li>
+          <a class='btn-gplus' href='#' title='Google Plus'><i class='fa fa-google-plus'></i></a>
+        </li>
+        <li>
+          <a class='btn-youtube' href='#' title='Youtube'><i class='fa fa-youtube-play'></i></a>
+        </li>
+        <li>
+          <a class='btn-behance' href='#' title='Behance'><i class='fa fa-behance'></i></a>
+        </li>
+        <li>
+          <a class='btn-dribbble' href='#' title='Dribbble'><i class='fa fa-dribbble'></i></a>
+        </li>
+        <li>
+          <a class='btn-pinterest' href='#' title='Pinterest'><i class='fa fa-pinterest'></i></a>
+        </li>
+      </ul>
+    </div>
+    <div class='clr'></div>
+    <p>Copyright &#169; 2017
+      <a href='https://www.jarboleda.me'>https://www.jarboleda.me</a>
+    </p>
+    <p class='attribution'>Powered by</p>
+    <a href='https://gohugo.io/'>
+      <img class='attribution_logo' src="/img/hugo-logo.png" />
+    </a>
+  </div>
+</footer>
+
+<script defer src='/js/main.min.js' type='text/javascript'></script>
+
+<script type="text/javascript">
+  window.cookieconsent_options = {
+    "message": "This website uses cookies to ensure you get the best experience on our website",
+    "dismiss": "Got it!",
+    "learnMore": "More info",
+    "link": null,
+    "theme": "light-bottom"
+  };
+</script>
+<script defer type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>
+
+
+
+<html>

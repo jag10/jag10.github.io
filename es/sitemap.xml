@@ -5,16 +5,6 @@
   <url>
     <loc>https://www.jarboleda.me/es/articles/es-second/</loc>
     <lastmod>2017-03-17T18:34:31+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.jarboleda.me/articles/my-second-article/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://www.jarboleda.me/es/articles/es-second/"
-                />
   </url>
   
   <url>
@@ -85,16 +75,6 @@
     <loc>https://www.jarboleda.me/es/tags/second/</loc>
     <lastmod>2017-03-17T18:34:31+02:00</lastmod>
     <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.jarboleda.me/tags/second/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://www.jarboleda.me/es/tags/second/"
-                />
   </url>
   
   <url>
