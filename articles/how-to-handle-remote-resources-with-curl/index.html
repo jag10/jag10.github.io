@@ -9,7 +9,7 @@
     <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
     	
 	<meta property="og:title" content="How to handle remote resources with curl" />
-	<meta property="og:description" content="When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&rsquo;t as easy as using fopen: &lt;?php $handle = fopen($filename, &quot;r&quot;) or die(&#39;could not open .&#39; $filename);  If this sentence works, we could then use the handle to parse the file with different php functions like fgetcsv(). Usually, a lot of functions use a Resource param to handle files, so it&rsquo;s important to know how to get a handle from a file." />
+	<meta property="og:description" content="The problem When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&rsquo;t as easy as using fopen: &lt;?php $handle = fopen($filename, &quot;r&quot;) or die(&#39;could not open .&#39; $filename);  If this sentence works, we could then use the handle to parse the file with different php functions like fgetcsv(). Usually, a lot of functions use a Resource param to handle files, so it&rsquo;s important to know how to get a handle from a file." />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/" />
 	<meta property="og:image" content="https://www.jarboleda.me/articles/img/how-to-handle-remote-resources-with-curl.png" />
@@ -29,18 +29,18 @@
 	<meta property="fb:admins" content="17807199" />
     
     <meta itemprop="name" content="How to handle remote resources with curl">
-    <meta itemprop="description" content="When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&rsquo;t as easy as using fopen: &lt;?php $handle = fopen($filename, &quot;r&quot;) or die(&#39;could not open .&#39; $filename);  If this sentence works, we could then use the handle to parse the file with different php functions like fgetcsv(). Usually, a lot of functions use a Resource param to handle files, so it&rsquo;s important to know how to get a handle from a file.">
+    <meta itemprop="description" content="The problem When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&rsquo;t as easy as using fopen: &lt;?php $handle = fopen($filename, &quot;r&quot;) or die(&#39;could not open .&#39; $filename);  If this sentence works, we could then use the handle to parse the file with different php functions like fgetcsv(). Usually, a lot of functions use a Resource param to handle files, so it&rsquo;s important to know how to get a handle from a file.">
     
     <meta itemprop="image" content="how-to-handle-remote-resources-with-curl.png">
     
     <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,backup,backups,bash,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,httpd,iptables,ipv6,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,performance,php,php7,piwik,plesk,processwire,sass,ubuntu,unrealengine,vagrant,vm,vps,zip," />
-    <meta itemprop="wordCount" content="330">
+    <meta itemprop="wordCount" content="334">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
 	<meta name="twitter:image:src" content="https://www.jarboleda.me/articles/img/how-to-handle-remote-resources-with-curl.png"/>
 	
 	<meta name="twitter:title" content="How to handle remote resources with curl"/>
-	<meta name="twitter:description" content="When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&rsquo;t as easy as using fopen: &lt;?php $handle = fopen($filename, &quot;r&quot;) or die(&#39;could not open .&#39; $filename);  If this sentence works, we could then use the handle to parse the file with different php functions like fgetcsv(). Usually, a lot of functions use a Resource param to handle files, so it&rsquo;s important to know how to get a handle from a file."/>
+	<meta name="twitter:description" content="The problem When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&rsquo;t as easy as using fopen: &lt;?php $handle = fopen($filename, &quot;r&quot;) or die(&#39;could not open .&#39; $filename);  If this sentence works, we could then use the handle to parse the file with different php functions like fgetcsv(). Usually, a lot of functions use a Resource param to handle files, so it&rsquo;s important to know how to get a handle from a file."/>
 	<meta name="twitter:site" content="@j_a_g_x"/><meta name="twitter:domain" content="nozzle.io"/>
 	
 	<meta name="twitter:creator" content="@killskynet"/>
@@ -80,7 +80,11 @@
                 
               </li>
               <li class='pure-menu-item flag'><i class='fa fa-language' aria-hidden='true'></i></li>
-              
+               
+              <li class='pure-menu-item lang_selector'>
+                <a class='pure-menu-link' href="/es/articles/how-to-handle-remote-resources-with-curl/">spanish </a>
+              </li>
+               
             </ul>
             <div class="float-right">
               <ul class="pure-menu-list">
@@ -144,16 +148,26 @@
     
     <div class="article_excerpt">
       
-      <p><p>When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&rsquo;t as easy as using fopen:
+      <p>
+
+<h2 id="the-problem">The problem</h2>
+
+<p>When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&rsquo;t as easy as using fopen:
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">&lt;?php</span>
 <span style="color: #f8f8f2">$handle</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">fopen($filename,</span> <span style="color: #e6db74">&quot;r&quot;</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">or</span> <span style="color: #66d9ef">die</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;could not open .&#39;</span> <span style="color: #f8f8f2">$filename);</span>
 </pre></div>
 </p>
 
-<p>If this sentence works, we could then use the handle to parse the file with different php functions like fgetcsv(). Usually, a lot of functions use a Resource param to handle files, so it&rsquo;s important to know how to get a handle from a file. Fopen gives us this functionality, but it can fail in some scenarios:
-If the &ldquo;allow_url_fopen&rdquo; is disabled in php settings, we won&rsquo;t be able to open remote files
-If the url we are using makes any redirection, fopen WILL NOT follow that redirección and we&rsquo;ll get a timeout error.
-In this case, we should use cURL, so we can follow redirections and get over the &ldquo;allow_url_fopen&rdquo; directive. In order to get a resource from a remote url we&rsquo;re going to use php streams. php://temp stream allows us to create a temporal file in memory so we don&rsquo;t need to write in disk, which is slow and forces us to handle the path to the file. So, with the following function we&rsquo;ll be able to get a handle from a remote url and use it as if it was a local file on our disk:</p>
+<p>If this sentence works, we could then use the handle to parse the file with different php functions like fgetcsv(). Usually, a lot of functions use a Resource param to handle files, so it&rsquo;s important to know how to get a handle from a file. Fopen gives us this functionality, but it can fail in some scenarios:</p>
+
+<ul>
+<li>If the &ldquo;allow_url_fopen&rdquo; is disabled in php settings, we won&rsquo;t be able to open remote files</li>
+<li>If the url we are using makes any redirection, fopen WILL NOT follow that redirección and we&rsquo;ll get a timeout error.</li>
+</ul>
+
+<h2 id="the-solution">The solution</h2>
+
+<p>In this case, we should use cURL, so we can follow redirections and get over the &ldquo;allow_url_fopen&rdquo; directive. In order to get a resource from a remote url we&rsquo;re going to use php streams. php://temp stream allows us to create a temporal file in memory so we don&rsquo;t need to write in disk, which is slow and forces us to handle the path to the file. So, with the following function we&rsquo;ll be able to get a handle from a remote url and use it as if it was a local file on our disk:</p>
 
 <p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">&lt;?php</span>
 <span style="color: #66d9ef">function</span> <span style="color: #a6e22e">_curl</span><span style="color: #f8f8f2">($url){</span>
@@ -207,7 +221,7 @@ In this case, we should use cURL, so we can follow redirections and get over the
 <div class="soc-sharing">
   <ul id="share_articles" class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;title=How%20to%20handle%20remote%20resources%20with%20curl&amp;summary=When%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%20&amp;lt;?php%20$handle%20=%20fopen%28$filename,%20&amp;quot;r&amp;quot;%29%20or%20die%28&amp;#39;could%20not%20open%20.&amp;#39;%20$filename%29;%20%20If%20this%20sentence%20works,%20we%20could%20then%20use%20the%20handle%20to%20parse%20the%20file%20with%20different%20php%20functions%20like%20fgetcsv%28%29.%20Usually,%20a%20lot%20of%20functions%20use%20a%20Resource%20param%20to%20handle%20files,%20so%20it&amp;rsquo;s%20important%20to%20know%20how%20to%20get%20a%20handle%20from%20a%20file.&amp;source=J%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;title=How%20to%20handle%20remote%20resources%20with%20curl&amp;summary=The%20problem%20When%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%20&amp;lt;?php%20$handle%20=%20fopen%28$filename,%20&amp;quot;r&amp;quot;%29%20or%20die%28&amp;#39;could%20not%20open%20.&amp;#39;%20$filename%29;%20%20If%20this%20sentence%20works,%20we%20could%20then%20use%20the%20handle%20to%20parse%20the%20file%20with%20different%20php%20functions%20like%20fgetcsv%28%29.%20Usually,%20a%20lot%20of%20functions%20use%20a%20Resource%20param%20to%20handle%20files,%20so%20it&amp;rsquo;s%20important%20to%20know%20how%20to%20get%20a%20handle%20from%20a%20file.&amp;source=J%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fa fa-twitter" href="http://twitter.com/share?text=How%20to%20handle%20remote%20resources%20with%20curl&amp;url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -219,7 +233,7 @@ In this case, we should use cURL, so we can follow redirections and get over the
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;media=https://www.jarboleda.mehow-to-handle-remote-resources-with-curl.png&amp;description=When%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%20&amp;lt;?php%20$handle%20=%20fopen%28$filename,%20&amp;quot;r&amp;quot;%29%20or%20die%28&amp;#39;could%20not%20open%20.&amp;#39;%20$filename%29;%20%20If%20this%20sentence%20works,%20we%20could%20then%20use%20the%20handle%20to%20parse%20the%20file%20with%20different%20php%20functions%20like%20fgetcsv%28%29.%20Usually,%20a%20lot%20of%20functions%20use%20a%20Resource%20param%20to%20handle%20files,%20so%20it&amp;rsquo;s%20important%20to%20know%20how%20to%20get%20a%20handle%20from%20a%20file." onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;media=https://www.jarboleda.mehow-to-handle-remote-resources-with-curl.png&amp;description=The%20problem%20When%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%20&amp;lt;?php%20$handle%20=%20fopen%28$filename,%20&amp;quot;r&amp;quot;%29%20or%20die%28&amp;#39;could%20not%20open%20.&amp;#39;%20$filename%29;%20%20If%20this%20sentence%20works,%20we%20could%20then%20use%20the%20handle%20to%20parse%20the%20file%20with%20different%20php%20functions%20like%20fgetcsv%28%29.%20Usually,%20a%20lot%20of%20functions%20use%20a%20Resource%20param%20to%20handle%20files,%20so%20it&amp;rsquo;s%20important%20to%20know%20how%20to%20get%20a%20handle%20from%20a%20file." onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -281,7 +295,15 @@ s.setAttribute('data-timestamp', +new Date());
   
   <h4>On This Page</h4>
   <div class='table_of_contents'>
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#the-problem">The problem</a></li>
+<li><a href="#the-solution">The solution</a></li>
+</ul></li>
+</ul>
+</nav>
   </div>
   
 </div>
@@ -315,12 +337,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/fixing-corrupted-partition-on-virtual-machine.jpg" alt="" width='72' />
+                  <a href='/articles/web-development-environment/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/web-development-environment.jpg" alt="" width='72' />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
+                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
                 </div>
               </div>
             </li>
@@ -328,12 +350,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/web-development-environment/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/web-development-environment.jpg" alt="" width='72' />
+                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/fixing-corrupted-partition-on-virtual-machine.jpg" alt="" width='72' />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
+                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
                 </div>
               </div>
             </li>

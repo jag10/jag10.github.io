@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fopen on J Arboleda</title>
+    <link>https://www.jarboleda.me/es/tags/fopen/</link>
+    <description>Recent content in Fopen on J Arboleda</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 17 Jul 2016 13:34:28 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.jarboleda.me/es/tags/fopen/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cómo manejar recursos remotos con curl</title>
+      <link>https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/</link>
+      <pubDate>Sun, 17 Jul 2016 13:34:28 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/</guid>
+      <description>El problema Cuando necesitas obtener ficheros remotos para manejar su contenido (ejemplo: ficheros csv) es posible que su acceso no sea tan sencillo como utilizar fopen: &amp;lt;?php $handle = fopen($filename, &amp;quot;r&amp;quot;) or die(&amp;#39;could not open .&amp;#39; $filename);  Si esta sentencia funciona de forma correcta, luego podremos utilizar el handle para procesar el fichero con distintas utilidades, como fgetcsv(). Es importante poder abrir ficheros con fopen porque muchas funciones utilizan un parámetro del tipo Resource en php, que es lo que nos devuelve fopen.</description>
+    </item>
+    
+  </channel>
+</rss>

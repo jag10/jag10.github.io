@@ -16,7 +16,7 @@
       <pubDate>Sun, 17 Jul 2016 13:34:28 +0200</pubDate>
       
       <guid>https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/</guid>
-      <description>When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&amp;rsquo;t as easy as using fopen: &amp;lt;?php $handle = fopen($filename, &amp;quot;r&amp;quot;) or die(&amp;#39;could not open .&amp;#39; $filename);  If this sentence works, we could then use the handle to parse the file with different php functions like fgetcsv(). Usually, a lot of functions use a Resource param to handle files, so it&amp;rsquo;s important to know how to get a handle from a file.</description>
+      <description>The problem When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&amp;rsquo;t as easy as using fopen: &amp;lt;?php $handle = fopen($filename, &amp;quot;r&amp;quot;) or die(&amp;#39;could not open .&amp;#39; $filename);  If this sentence works, we could then use the handle to parse the file with different php functions like fgetcsv(). Usually, a lot of functions use a Resource param to handle files, so it&amp;rsquo;s important to know how to get a handle from a file.</description>
     </item>
     
   </channel>

@@ -9,7 +9,7 @@
     <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
     	
 	<meta property="og:title" content="Installing magento2 on cwp" />
-	<meta property="og:description" content="In this post I&rsquo;ll explain how to install magento2 in CWP, using php7 and mysql 5.6. Firstly, we need to compile php with the correct extensions magento2 needs. If you use this configure command with php7, magento2 will work like a charm: ./configure --prefix=/opt/alt/php7/usr --with-config-file-path=/opt/alt/php7/usr/php --with-config-file-scan-dir=/opt/alt/php7/usr/php/php.d --enable-fpm --enable-mbstring --enable-zip --enable-bcmath --enable-pcntl --enable-ftp --enable-exif --enable-calendar --enable-sysvmsg --enable-sysvsem --enable-sysvshm --enable-wddx --with-curl --with-mcrypt --with-iconv --with-gmp --with-pspell --with-gd --with-jpeg-dir=/usr --with-png-dir=/usr --with-zlib-dir=/usr --with-xpm-dir=/usr --with-freetype-dir=/usr --enable-gd-native-ttf --enable-gd-jis-conv --with-openssl --with-pdo-mysql=/usr --with-gettext=/usr --with-zlib=/usr --with-bz2=/usr --with-recode=/usr --with-mysqli --with-mysql-sock=/var/lib/mysql/mysql." />
+	<meta property="og:description" content="Getting started In this post I&rsquo;ll explain how to install magento2 in CWP, using php7 and mysql 5.6. Firstly, we need to compile php with the correct extensions magento2 needs. If you use this configure command with php7, magento2 will work like a charm: ./configure --prefix=/opt/alt/php7/usr --with-config-file-path=/opt/alt/php7/usr/php --with-config-file-scan-dir=/opt/alt/php7/usr/php/php.d --enable-fpm --enable-mbstring --enable-zip --enable-bcmath --enable-pcntl --enable-ftp --enable-exif --enable-calendar --enable-sysvmsg --enable-sysvsem --enable-sysvshm --enable-wddx --with-curl --with-mcrypt --with-iconv --with-gmp --with-pspell --with-gd --with-jpeg-dir=/usr --with-png-dir=/usr --with-zlib-dir=/usr --with-xpm-dir=/usr --with-freetype-dir=/usr --enable-gd-native-ttf --enable-gd-jis-conv --with-openssl --with-pdo-mysql=/usr --with-gettext=/usr --with-zlib=/usr --with-bz2=/usr --with-recode=/usr --with-mysqli --with-mysql-sock=/var/lib/mysql/mysql." />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/articles/installing-magento2-on-cwp/" />
 	<meta property="og:image" content="https://www.jarboleda.me/articles/img/installing-magento2-on-cwp.jpg" />
@@ -29,18 +29,18 @@
 	<meta property="fb:admins" content="17807199" />
     
     <meta itemprop="name" content="Installing magento2 on cwp">
-    <meta itemprop="description" content="In this post I&rsquo;ll explain how to install magento2 in CWP, using php7 and mysql 5.6. Firstly, we need to compile php with the correct extensions magento2 needs. If you use this configure command with php7, magento2 will work like a charm: ./configure --prefix=/opt/alt/php7/usr --with-config-file-path=/opt/alt/php7/usr/php --with-config-file-scan-dir=/opt/alt/php7/usr/php/php.d --enable-fpm --enable-mbstring --enable-zip --enable-bcmath --enable-pcntl --enable-ftp --enable-exif --enable-calendar --enable-sysvmsg --enable-sysvsem --enable-sysvshm --enable-wddx --with-curl --with-mcrypt --with-iconv --with-gmp --with-pspell --with-gd --with-jpeg-dir=/usr --with-png-dir=/usr --with-zlib-dir=/usr --with-xpm-dir=/usr --with-freetype-dir=/usr --enable-gd-native-ttf --enable-gd-jis-conv --with-openssl --with-pdo-mysql=/usr --with-gettext=/usr --with-zlib=/usr --with-bz2=/usr --with-recode=/usr --with-mysqli --with-mysql-sock=/var/lib/mysql/mysql.">
+    <meta itemprop="description" content="Getting started In this post I&rsquo;ll explain how to install magento2 in CWP, using php7 and mysql 5.6. Firstly, we need to compile php with the correct extensions magento2 needs. If you use this configure command with php7, magento2 will work like a charm: ./configure --prefix=/opt/alt/php7/usr --with-config-file-path=/opt/alt/php7/usr/php --with-config-file-scan-dir=/opt/alt/php7/usr/php/php.d --enable-fpm --enable-mbstring --enable-zip --enable-bcmath --enable-pcntl --enable-ftp --enable-exif --enable-calendar --enable-sysvmsg --enable-sysvsem --enable-sysvshm --enable-wddx --with-curl --with-mcrypt --with-iconv --with-gmp --with-pspell --with-gd --with-jpeg-dir=/usr --with-png-dir=/usr --with-zlib-dir=/usr --with-xpm-dir=/usr --with-freetype-dir=/usr --enable-gd-native-ttf --enable-gd-jis-conv --with-openssl --with-pdo-mysql=/usr --with-gettext=/usr --with-zlib=/usr --with-bz2=/usr --with-recode=/usr --with-mysqli --with-mysql-sock=/var/lib/mysql/mysql.">
     
     <meta itemprop="image" content="installing-magento2-on-cwp.jpg">
     
     <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,backup,backups,bash,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,httpd,iptables,ipv6,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,performance,php,php7,piwik,plesk,processwire,sass,ubuntu,unrealengine,vagrant,vm,vps,zip," />
-    <meta itemprop="wordCount" content="234">
+    <meta itemprop="wordCount" content="238">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
 	<meta name="twitter:image:src" content="https://www.jarboleda.me/articles/img/installing-magento2-on-cwp.jpg"/>
 	
 	<meta name="twitter:title" content="Installing magento2 on cwp"/>
-	<meta name="twitter:description" content="In this post I&rsquo;ll explain how to install magento2 in CWP, using php7 and mysql 5.6. Firstly, we need to compile php with the correct extensions magento2 needs. If you use this configure command with php7, magento2 will work like a charm: ./configure --prefix=/opt/alt/php7/usr --with-config-file-path=/opt/alt/php7/usr/php --with-config-file-scan-dir=/opt/alt/php7/usr/php/php.d --enable-fpm --enable-mbstring --enable-zip --enable-bcmath --enable-pcntl --enable-ftp --enable-exif --enable-calendar --enable-sysvmsg --enable-sysvsem --enable-sysvshm --enable-wddx --with-curl --with-mcrypt --with-iconv --with-gmp --with-pspell --with-gd --with-jpeg-dir=/usr --with-png-dir=/usr --with-zlib-dir=/usr --with-xpm-dir=/usr --with-freetype-dir=/usr --enable-gd-native-ttf --enable-gd-jis-conv --with-openssl --with-pdo-mysql=/usr --with-gettext=/usr --with-zlib=/usr --with-bz2=/usr --with-recode=/usr --with-mysqli --with-mysql-sock=/var/lib/mysql/mysql."/>
+	<meta name="twitter:description" content="Getting started In this post I&rsquo;ll explain how to install magento2 in CWP, using php7 and mysql 5.6. Firstly, we need to compile php with the correct extensions magento2 needs. If you use this configure command with php7, magento2 will work like a charm: ./configure --prefix=/opt/alt/php7/usr --with-config-file-path=/opt/alt/php7/usr/php --with-config-file-scan-dir=/opt/alt/php7/usr/php/php.d --enable-fpm --enable-mbstring --enable-zip --enable-bcmath --enable-pcntl --enable-ftp --enable-exif --enable-calendar --enable-sysvmsg --enable-sysvsem --enable-sysvshm --enable-wddx --with-curl --with-mcrypt --with-iconv --with-gmp --with-pspell --with-gd --with-jpeg-dir=/usr --with-png-dir=/usr --with-zlib-dir=/usr --with-xpm-dir=/usr --with-freetype-dir=/usr --enable-gd-native-ttf --enable-gd-jis-conv --with-openssl --with-pdo-mysql=/usr --with-gettext=/usr --with-zlib=/usr --with-bz2=/usr --with-recode=/usr --with-mysqli --with-mysql-sock=/var/lib/mysql/mysql."/>
 	<meta name="twitter:site" content="@j_a_g_x"/><meta name="twitter:domain" content="nozzle.io"/>
 	
 	<meta name="twitter:creator" content="@killskynet"/>
@@ -80,7 +80,11 @@
                 
               </li>
               <li class='pure-menu-item flag'><i class='fa fa-language' aria-hidden='true'></i></li>
-              
+               
+              <li class='pure-menu-item lang_selector'>
+                <a class='pure-menu-link' href="/es/articles/installing-magento2-on-cwp/">spanish </a>
+              </li>
+               
             </ul>
             <div class="float-right">
               <ul class="pure-menu-list">
@@ -144,7 +148,11 @@
     
     <div class="article_excerpt">
       
-      <p><p>In this post I&rsquo;ll explain how to install magento2 in CWP, using php7 and mysql 5.6. Firstly, we need to compile php with the correct extensions magento2 needs. If you use this configure command with php7, magento2 will work like a charm:
+      <p>
+
+<h2 id="getting-started">Getting started</h2>
+
+<p>In this post I&rsquo;ll explain how to install magento2 in CWP, using php7 and mysql 5.6. Firstly, we need to compile php with the correct extensions magento2 needs. If you use this configure command with php7, magento2 will work like a charm:
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>./configure
 --prefix<span style="color: #f92672">=</span>/opt/alt/php7/usr
 --with-config-file-path<span style="color: #f92672">=</span>/opt/alt/php7/usr/php
@@ -186,10 +194,15 @@
 --with-xsl
 </pre></div>
 
-Of course you can change paths, but you need at least these extensions.
-Then, you can proceed to download and install magento2, it&rsquo;s pretty straight forward if your server meets the requirements:
-<a href="https://www.magentocommerce.com/download">https://www.magentocommerce.com/download</a>
-After you install magento2, it will complain about permissions. Magento2 ask permissions on directories to be set as 0700, but this won&rsquo;t work with many hosting plans (those using plesk, cPanel, etc). So we have to change all folder and files permissions with this command:
+Of course you can change paths, but you need at least these extensions.</p>
+
+<h2 id="instalando-magento2">Instalando magento2</h2>
+
+<p>Then, you can proceed to download and install magento2, it&rsquo;s pretty straight forward if your server meets the requirements:</p>
+
+<p><a href="https://www.magentocommerce.com/download">https://www.magentocommerce.com/download</a></p>
+
+<p>After you install magento2, it will complain about permissions. Magento2 ask permissions on directories to be set as 0700, but this won&rsquo;t work with many hosting plans (those using plesk, cPanel, etc). So we have to change all folder and files permissions with this command:
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>find /path/to/magento -type f -exec chmod <span style="color: #ae81ff">644</span> <span style="color: #f92672">{}</span> <span style="color: #ae81ff">\;</span>
 find path/to/magento -type d -exec chmod <span style="color: #ae81ff">755</span> <span style="color: #f92672">{}</span> <span style="color: #ae81ff">\;</span>
 </pre></div>
@@ -204,7 +217,7 @@ find path/to/magento -type d -exec chmod <span style="color: #ae81ff">755</span>
 </pre></div>
 </p>
 
-<p>And the&rsquo;re you have it, a magento2 install running in a 3€ VPS. For me, it loads in about 3-4 seconds after caché is working, which is good for just 3€/month.</p>
+<p>And there you have it, a magento2 install running in a 3€ VPS. For me, it loads in about 3-4 seconds after caché is working, which is good for just 3€/month.</p>
 </p>
       
     </div>
@@ -227,7 +240,7 @@ find path/to/magento -type d -exec chmod <span style="color: #ae81ff">755</span>
 <div class="soc-sharing">
   <ul id="share_articles" class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/installing-magento2-on-cwp/&amp;title=Installing%20magento2%20on%20cwp&amp;summary=In%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20install%20magento2%20in%20CWP,%20using%20php7%20and%20mysql%205.6.%20Firstly,%20we%20need%20to%20compile%20php%20with%20the%20correct%20extensions%20magento2%20needs.%20If%20you%20use%20this%20configure%20command%20with%20php7,%20magento2%20will%20work%20like%20a%20charm:%20./configure%20--prefix=/opt/alt/php7/usr%20--with-config-file-path=/opt/alt/php7/usr/php%20--with-config-file-scan-dir=/opt/alt/php7/usr/php/php.d%20--enable-fpm%20--enable-mbstring%20--enable-zip%20--enable-bcmath%20--enable-pcntl%20--enable-ftp%20--enable-exif%20--enable-calendar%20--enable-sysvmsg%20--enable-sysvsem%20--enable-sysvshm%20--enable-wddx%20--with-curl%20--with-mcrypt%20--with-iconv%20--with-gmp%20--with-pspell%20--with-gd%20--with-jpeg-dir=/usr%20--with-png-dir=/usr%20--with-zlib-dir=/usr%20--with-xpm-dir=/usr%20--with-freetype-dir=/usr%20--enable-gd-native-ttf%20--enable-gd-jis-conv%20--with-openssl%20--with-pdo-mysql=/usr%20--with-gettext=/usr%20--with-zlib=/usr%20--with-bz2=/usr%20--with-recode=/usr%20--with-mysqli%20--with-mysql-sock=/var/lib/mysql/mysql.&amp;source=J%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/installing-magento2-on-cwp/&amp;title=Installing%20magento2%20on%20cwp&amp;summary=Getting%20started%20In%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20install%20magento2%20in%20CWP,%20using%20php7%20and%20mysql%205.6.%20Firstly,%20we%20need%20to%20compile%20php%20with%20the%20correct%20extensions%20magento2%20needs.%20If%20you%20use%20this%20configure%20command%20with%20php7,%20magento2%20will%20work%20like%20a%20charm:%20./configure%20--prefix=/opt/alt/php7/usr%20--with-config-file-path=/opt/alt/php7/usr/php%20--with-config-file-scan-dir=/opt/alt/php7/usr/php/php.d%20--enable-fpm%20--enable-mbstring%20--enable-zip%20--enable-bcmath%20--enable-pcntl%20--enable-ftp%20--enable-exif%20--enable-calendar%20--enable-sysvmsg%20--enable-sysvsem%20--enable-sysvshm%20--enable-wddx%20--with-curl%20--with-mcrypt%20--with-iconv%20--with-gmp%20--with-pspell%20--with-gd%20--with-jpeg-dir=/usr%20--with-png-dir=/usr%20--with-zlib-dir=/usr%20--with-xpm-dir=/usr%20--with-freetype-dir=/usr%20--enable-gd-native-ttf%20--enable-gd-jis-conv%20--with-openssl%20--with-pdo-mysql=/usr%20--with-gettext=/usr%20--with-zlib=/usr%20--with-bz2=/usr%20--with-recode=/usr%20--with-mysqli%20--with-mysql-sock=/var/lib/mysql/mysql.&amp;source=J%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fa fa-twitter" href="http://twitter.com/share?text=Installing%20magento2%20on%20cwp&amp;url=https://www.jarboleda.me/articles/installing-magento2-on-cwp/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -239,7 +252,7 @@ find path/to/magento -type d -exec chmod <span style="color: #ae81ff">755</span>
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/installing-magento2-on-cwp/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/installing-magento2-on-cwp/&amp;media=https://www.jarboleda.meinstalling-magento2-on-cwp.jpg&amp;description=In%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20install%20magento2%20in%20CWP,%20using%20php7%20and%20mysql%205.6.%20Firstly,%20we%20need%20to%20compile%20php%20with%20the%20correct%20extensions%20magento2%20needs.%20If%20you%20use%20this%20configure%20command%20with%20php7,%20magento2%20will%20work%20like%20a%20charm:%20./configure%20--prefix=/opt/alt/php7/usr%20--with-config-file-path=/opt/alt/php7/usr/php%20--with-config-file-scan-dir=/opt/alt/php7/usr/php/php.d%20--enable-fpm%20--enable-mbstring%20--enable-zip%20--enable-bcmath%20--enable-pcntl%20--enable-ftp%20--enable-exif%20--enable-calendar%20--enable-sysvmsg%20--enable-sysvsem%20--enable-sysvshm%20--enable-wddx%20--with-curl%20--with-mcrypt%20--with-iconv%20--with-gmp%20--with-pspell%20--with-gd%20--with-jpeg-dir=/usr%20--with-png-dir=/usr%20--with-zlib-dir=/usr%20--with-xpm-dir=/usr%20--with-freetype-dir=/usr%20--enable-gd-native-ttf%20--enable-gd-jis-conv%20--with-openssl%20--with-pdo-mysql=/usr%20--with-gettext=/usr%20--with-zlib=/usr%20--with-bz2=/usr%20--with-recode=/usr%20--with-mysqli%20--with-mysql-sock=/var/lib/mysql/mysql." onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/installing-magento2-on-cwp/&amp;media=https://www.jarboleda.meinstalling-magento2-on-cwp.jpg&amp;description=Getting%20started%20In%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20install%20magento2%20in%20CWP,%20using%20php7%20and%20mysql%205.6.%20Firstly,%20we%20need%20to%20compile%20php%20with%20the%20correct%20extensions%20magento2%20needs.%20If%20you%20use%20this%20configure%20command%20with%20php7,%20magento2%20will%20work%20like%20a%20charm:%20./configure%20--prefix=/opt/alt/php7/usr%20--with-config-file-path=/opt/alt/php7/usr/php%20--with-config-file-scan-dir=/opt/alt/php7/usr/php/php.d%20--enable-fpm%20--enable-mbstring%20--enable-zip%20--enable-bcmath%20--enable-pcntl%20--enable-ftp%20--enable-exif%20--enable-calendar%20--enable-sysvmsg%20--enable-sysvsem%20--enable-sysvshm%20--enable-wddx%20--with-curl%20--with-mcrypt%20--with-iconv%20--with-gmp%20--with-pspell%20--with-gd%20--with-jpeg-dir=/usr%20--with-png-dir=/usr%20--with-zlib-dir=/usr%20--with-xpm-dir=/usr%20--with-freetype-dir=/usr%20--enable-gd-native-ttf%20--enable-gd-jis-conv%20--with-openssl%20--with-pdo-mysql=/usr%20--with-gettext=/usr%20--with-zlib=/usr%20--with-bz2=/usr%20--with-recode=/usr%20--with-mysqli%20--with-mysql-sock=/var/lib/mysql/mysql." onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -301,7 +314,15 @@ s.setAttribute('data-timestamp', +new Date());
   
   <h4>On This Page</h4>
   <div class='table_of_contents'>
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#instalando-magento2">Instalando magento2</a></li>
+</ul></li>
+</ul>
+</nav>
   </div>
   
 </div>
@@ -335,12 +356,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/fixing-corrupted-partition-on-virtual-machine.jpg" alt="" width='72' />
+                  <a href='/articles/web-development-environment/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/web-development-environment.jpg" alt="" width='72' />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
+                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
                 </div>
               </div>
             </li>
@@ -348,12 +369,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/web-development-environment/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/web-development-environment.jpg" alt="" width='72' />
+                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/fixing-corrupted-partition-on-virtual-machine.jpg" alt="" width='72' />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
+                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
                 </div>
               </div>
             </li>

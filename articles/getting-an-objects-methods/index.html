@@ -9,7 +9,7 @@
     <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
     	
 	<meta property="og:title" content="Getting an object&#39;s (reflected) methods" />
-	<meta property="og:description" content="Sometimes we don&rsquo;t have access to the platform docs on which we are working, it&rsquo;s incomplete or we just don&rsquo;t feel like looking for it. In those situations, we usually need more than the typical object&rsquo;s var_dump, which only shows us the object properties but not its methods, which usually gives us that function we are working on without having to dive into the object&rsquo;s properties. Here you&rsquo;ll see the function I use for this task." />
+	<meta property="og:description" content="The problem Sometimes we don&rsquo;t have access to the platform docs on which we are working, it&rsquo;s incomplete or we just don&rsquo;t feel like looking for it. In those situations, we usually need more than the typical object&rsquo;s var_dump, which only shows us the object properties but not its methods, which usually gives us that function we are working on without having to dive into the object&rsquo;s properties. Here you&rsquo;ll see the function I use for this task." />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/articles/getting-an-objects-methods/" />
 	<meta property="og:image" content="https://www.jarboleda.me/articles/img/getting-an-objects-methods.jpg" />
@@ -27,18 +27,18 @@
 	<meta property="fb:admins" content="17807199" />
     
     <meta itemprop="name" content="Getting an object&#39;s (reflected) methods">
-    <meta itemprop="description" content="Sometimes we don&rsquo;t have access to the platform docs on which we are working, it&rsquo;s incomplete or we just don&rsquo;t feel like looking for it. In those situations, we usually need more than the typical object&rsquo;s var_dump, which only shows us the object properties but not its methods, which usually gives us that function we are working on without having to dive into the object&rsquo;s properties. Here you&rsquo;ll see the function I use for this task.">
+    <meta itemprop="description" content="The problem Sometimes we don&rsquo;t have access to the platform docs on which we are working, it&rsquo;s incomplete or we just don&rsquo;t feel like looking for it. In those situations, we usually need more than the typical object&rsquo;s var_dump, which only shows us the object properties but not its methods, which usually gives us that function we are working on without having to dive into the object&rsquo;s properties. Here you&rsquo;ll see the function I use for this task.">
     
     <meta itemprop="image" content="getting-an-objects-methods.jpg">
     
     <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,backup,backups,bash,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,httpd,iptables,ipv6,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,performance,php,php7,piwik,plesk,processwire,sass,ubuntu,unrealengine,vagrant,vm,vps,zip," />
-    <meta itemprop="wordCount" content="433">
+    <meta itemprop="wordCount" content="436">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
 	<meta name="twitter:image:src" content="https://www.jarboleda.me/articles/img/getting-an-objects-methods.jpg"/>
 	
 	<meta name="twitter:title" content="Getting an object&#39;s (reflected) methods"/>
-	<meta name="twitter:description" content="Sometimes we don&rsquo;t have access to the platform docs on which we are working, it&rsquo;s incomplete or we just don&rsquo;t feel like looking for it. In those situations, we usually need more than the typical object&rsquo;s var_dump, which only shows us the object properties but not its methods, which usually gives us that function we are working on without having to dive into the object&rsquo;s properties. Here you&rsquo;ll see the function I use for this task."/>
+	<meta name="twitter:description" content="The problem Sometimes we don&rsquo;t have access to the platform docs on which we are working, it&rsquo;s incomplete or we just don&rsquo;t feel like looking for it. In those situations, we usually need more than the typical object&rsquo;s var_dump, which only shows us the object properties but not its methods, which usually gives us that function we are working on without having to dive into the object&rsquo;s properties. Here you&rsquo;ll see the function I use for this task."/>
 	<meta name="twitter:site" content="@j_a_g_x"/><meta name="twitter:domain" content="nozzle.io"/>
 	
 	<meta name="twitter:creator" content="@killskynet"/>
@@ -78,7 +78,11 @@
                 
               </li>
               <li class='pure-menu-item flag'><i class='fa fa-language' aria-hidden='true'></i></li>
-              
+               
+              <li class='pure-menu-item lang_selector'>
+                <a class='pure-menu-link' href="/es/articles/getting-an-objects-methods/">spanish </a>
+              </li>
+               
             </ul>
             <div class="float-right">
               <ul class="pure-menu-list">
@@ -140,7 +144,11 @@
     
     <div class="article_excerpt">
       
-      <p><p>Sometimes we don&rsquo;t have access to the platform docs on which we are working, it&rsquo;s incomplete or we just don&rsquo;t feel like looking for it. In those situations, we usually need more than the typical object&rsquo;s var_dump, which only shows us the object properties but not its methods, which usually gives us that function we are working on without having to dive into the object&rsquo;s properties. Here you&rsquo;ll see the function I use for this task. This function uses the ReflectionMethod class, which gives us info about a method. It needs the classname and method&rsquo;s name as params for its constructor.
+      <p>
+
+<h2 id="the-problem">The problem</h2>
+
+<p>Sometimes we don&rsquo;t have access to the platform docs on which we are working, it&rsquo;s incomplete or we just don&rsquo;t feel like looking for it. In those situations, we usually need more than the typical object&rsquo;s var_dump, which only shows us the object properties but not its methods, which usually gives us that function we are working on without having to dive into the object&rsquo;s properties. Here you&rsquo;ll see the function I use for this task. This function uses the ReflectionMethod class, which gives us info about a method. It needs the classname and method&rsquo;s name as params for its constructor.
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">&lt;?php</span>
 <span style="color: #66d9ef">function</span> <span style="color: #a6e22e">get_object_info</span><span style="color: #f8f8f2">($object){</span>
    <span style="color: #66d9ef">foreach</span><span style="color: #f8f8f2">(get_class_methods(get_class($object))</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">$method){</span>
@@ -172,6 +180,8 @@
 <span style="color: #f8f8f2">$params</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">$method</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">getParameters</span><span style="color: #f8f8f2">();</span>
 </pre></div>
 </p>
+
+<h2 id="example">Example</h2>
 
 <p>Let&rsquo;s see an example on ProcessWire platform. We want to get data about the current user, but the properties that docs shows are not enough:</p>
 
@@ -222,7 +232,7 @@
 <div class="soc-sharing">
   <ul id="share_articles" class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/getting-an-objects-methods/&amp;title=Getting%20an%20object%27s%20%28reflected%29%20methods&amp;summary=Sometimes%20we%20don&amp;rsquo;t%20have%20access%20to%20the%20platform%20docs%20on%20which%20we%20are%20working,%20it&amp;rsquo;s%20incomplete%20or%20we%20just%20don&amp;rsquo;t%20feel%20like%20looking%20for%20it.%20In%20those%20situations,%20we%20usually%20need%20more%20than%20the%20typical%20object&amp;rsquo;s%20var_dump,%20which%20only%20shows%20us%20the%20object%20properties%20but%20not%20its%20methods,%20which%20usually%20gives%20us%20that%20function%20we%20are%20working%20on%20without%20having%20to%20dive%20into%20the%20object&amp;rsquo;s%20properties.%20Here%20you&amp;rsquo;ll%20see%20the%20function%20I%20use%20for%20this%20task.&amp;source=J%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/getting-an-objects-methods/&amp;title=Getting%20an%20object%27s%20%28reflected%29%20methods&amp;summary=The%20problem%20Sometimes%20we%20don&amp;rsquo;t%20have%20access%20to%20the%20platform%20docs%20on%20which%20we%20are%20working,%20it&amp;rsquo;s%20incomplete%20or%20we%20just%20don&amp;rsquo;t%20feel%20like%20looking%20for%20it.%20In%20those%20situations,%20we%20usually%20need%20more%20than%20the%20typical%20object&amp;rsquo;s%20var_dump,%20which%20only%20shows%20us%20the%20object%20properties%20but%20not%20its%20methods,%20which%20usually%20gives%20us%20that%20function%20we%20are%20working%20on%20without%20having%20to%20dive%20into%20the%20object&amp;rsquo;s%20properties.%20Here%20you&amp;rsquo;ll%20see%20the%20function%20I%20use%20for%20this%20task.&amp;source=J%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fa fa-twitter" href="http://twitter.com/share?text=Getting%20an%20object%27s%20%28reflected%29%20methods&amp;url=https://www.jarboleda.me/articles/getting-an-objects-methods/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -234,7 +244,7 @@
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/getting-an-objects-methods/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/getting-an-objects-methods/&amp;media=https://www.jarboleda.megetting-an-objects-methods.jpg&amp;description=Sometimes%20we%20don&amp;rsquo;t%20have%20access%20to%20the%20platform%20docs%20on%20which%20we%20are%20working,%20it&amp;rsquo;s%20incomplete%20or%20we%20just%20don&amp;rsquo;t%20feel%20like%20looking%20for%20it.%20In%20those%20situations,%20we%20usually%20need%20more%20than%20the%20typical%20object&amp;rsquo;s%20var_dump,%20which%20only%20shows%20us%20the%20object%20properties%20but%20not%20its%20methods,%20which%20usually%20gives%20us%20that%20function%20we%20are%20working%20on%20without%20having%20to%20dive%20into%20the%20object&amp;rsquo;s%20properties.%20Here%20you&amp;rsquo;ll%20see%20the%20function%20I%20use%20for%20this%20task." onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/getting-an-objects-methods/&amp;media=https://www.jarboleda.megetting-an-objects-methods.jpg&amp;description=The%20problem%20Sometimes%20we%20don&amp;rsquo;t%20have%20access%20to%20the%20platform%20docs%20on%20which%20we%20are%20working,%20it&amp;rsquo;s%20incomplete%20or%20we%20just%20don&amp;rsquo;t%20feel%20like%20looking%20for%20it.%20In%20those%20situations,%20we%20usually%20need%20more%20than%20the%20typical%20object&amp;rsquo;s%20var_dump,%20which%20only%20shows%20us%20the%20object%20properties%20but%20not%20its%20methods,%20which%20usually%20gives%20us%20that%20function%20we%20are%20working%20on%20without%20having%20to%20dive%20into%20the%20object&amp;rsquo;s%20properties.%20Here%20you&amp;rsquo;ll%20see%20the%20function%20I%20use%20for%20this%20task." onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -296,7 +306,15 @@ s.setAttribute('data-timestamp', +new Date());
   
   <h4>On This Page</h4>
   <div class='table_of_contents'>
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#the-problem">The problem</a></li>
+<li><a href="#example">Example</a></li>
+</ul></li>
+</ul>
+</nav>
   </div>
   
 </div>
@@ -314,19 +332,6 @@ s.setAttribute('data-timestamp', +new Date());
         <div class='widget-content popular-posts'>
           <ul>
              
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/unreal_engine.min.jpg" alt="" width='72' />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
-                </div>
-              </div>
-            </li>
-              
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
@@ -349,6 +354,19 @@ s.setAttribute('data-timestamp', +new Date());
                 </div>
                 <div class='item-title'>
                   <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
+                </div>
+              </div>
+            </li>
+              
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/unreal_engine.min.jpg" alt="" width='72' />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
                 </div>
               </div>
             </li>

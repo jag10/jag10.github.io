@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>J Arboleda - Instalando unreal engine en fedora 25</title>
+    <meta name="description" content="site description goes here">
+    <meta name="robots" content="noindex">
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+    	
+	<meta property="og:title" content="Instalando unreal engine en fedora 25" />
+	<meta property="og:description" content="here goes description" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/" />
+	<meta property="og:image" content="https://www.jarboleda.me/articles/img/unreal_engine.min.jpg" />
+	<meta property="og:updated_time" content="2017-03-17 21:33:19 &#43;0200 &#43;0200"/>
+	<meta property="og:locale" content="es-ES" /><meta property="og:site_name" content="J Arboleda" />
+	
+	
+	<meta property="article:author" content="https://www.facebook.com/killskynet" />
+	<meta property="article:publisher" content="https://www.facebook.com/nozzleio" />
+	<meta property="article:published_time" content="2017-03-17 21:33:19 &#43;0200 &#43;0200" />
+	<meta property="article:modified_time" content="2017-03-17 21:33:19 &#43;0200 &#43;0200" />
+	<meta property="article:section" content="articles" />
+	<meta property="article:tag" content="unrealengine" />
+	<meta property="article:tag" content="fedora25" />
+	
+	<meta property="fb:admins" content="17807199" />
+    
+    <meta itemprop="name" content="Instalando unreal engine en fedora 25">
+    <meta itemprop="description" content="here goes description">
+    
+    <meta itemprop="image" content="unreal_engine.min.jpg">
+    
+    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,curl,cwp,fedora25,fopen,magento2,mate,nodejs,odroid,php,php7,piwik,processwire,sass,ubuntu,unrealengine,vagrant,vm," />
+    <meta itemprop="wordCount" content="108">
+	
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image:src" content="https://www.jarboleda.me/articles/img/unreal_engine.min.jpg"/>
+	
+	<meta name="twitter:title" content="Instalando unreal engine en fedora 25"/>
+	<meta name="twitter:description" content="here goes description"/>
+	<meta name="twitter:site" content="@j_a_g_x"/><meta name="twitter:domain" content="nozzle.io"/>
+	
+	<meta name="twitter:creator" content="@killskynet"/>
+
+
+	<meta name="news_keywords" content="unrealengine,fedora25" />
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="/css/global.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  </head>
+ <body>
+  <header>
+    <nav class='top-menu'>
+      
+      <div class="menu-wrapper" id="menu">
+        <div class="pure-u-1 hidden">
+          <div class="pure-menu menu-toogle-container">
+            <a class="custom-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
+          </div>
+        </div>
+        <div class="pure-u-1">
+          <div class="pure-menu pure-menu-horizontal custom-can-transform">
+            <ul class="pure-menu-list float-left">
+              
+              <li class="pure-menu-item"><a class='pure-menu-link' href=/>home</a></li>
+              
+              <li class="pure-menu-item"><a class='pure-menu-link' href=/extras/cv/>sobre mi</a></li>
+              
+              <li class="pure-menu-item"><a class='pure-menu-link' href=/projects/>proyectos</a></li>
+              
+              <li class="pure-menu-item"><a class='pure-menu-link' href=https://github.com/jag10>github</a></li>
+              
+              <li class="pure-menu-item"><a class='pure-menu-link' href=https://gitlab.com/jag7>gitlab</a></li>
+              
+              <li class='pure-menu-item lang_selector selected'>
+                
+                <a class='pure-menu-link' href="#">Spanish</a>
+                
+              </li>
+              <li class='pure-menu-item flag'><i class='fa fa-language' aria-hidden='true'></i></li>
+               
+              <li class='pure-menu-item lang_selector'>
+                <a class='pure-menu-link' href="/articles/installing-unreal-engine-on-fedora-25/">english </a>
+              </li>
+               
+            </ul>
+            <div class="float-right">
+              <ul class="pure-menu-list">
+                <li class="pure-menu-item social_menu_entry">
+                  <a href='/' target='_blank'><i class='fa fa-facebook'></i></a>
+                </li>
+                <li class="pure-menu-item social_menu_entry">
+                  <a href='/' target='_blank'><i class='fa fa-twitter'></i></a>
+                </li>
+                <li class="pure-menu-item social_menu_entry">
+                  <a href='/' target='_blank'><i class='fa fa-instagram'></i></a>
+                </li>
+                <li class="pure-menu-item social_menu_entry">
+                  <a href='/' target='_blank'><i class='fa fa-linkedin'></i></a>
+                </li>
+                <li class='pure-menu-item nt-search' id='nt-search'>
+                  <form action='/search/' id='searchform' method='get'>
+                    <div class='nt-search-input-wrap'>
+                      <input class='nt-search-input' id='s' name='q' placeholder='Search is disabled :(' type='text' value='' disabled />
+                    </div>
+                    <input class='nt-search-submit' id='go' type='submit' value='Search' />
+                    <span class='nt fa fa-search'></span>
+                  </form>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </nav>
+    
+    
+  </header>
+
+<body>
+  <div class="main-container">
+    <section id="main" class="pure-u-1 pure-u-md-3-4">
+      <article>
+        <div class="post-container">
+  <div class="post-image-container">
+    
+  </div>
+  <div id='article_summary' class="article_summary">
+    <div class="article-date">
+      <p class="day"><i class="fa fa-calendar"></i>17 Mar 2017</p>
+      <p><i class="fa fa-clock-o"></i>2 min read  ~ 200 words</p>
+      
+    </div>
+    <div class="article-tags">
+      
+      <a href="search tag" rel="tag">unrealengine</a> 
+      <a href="search tag" rel="tag">fedora25</a> 
+    </div>
+    <div class="clearfix"></div>
+    
+    <h1 class="article_title title">Instalando unreal engine en fedora 25</h1>
+    
+
+    
+    <div class="article_excerpt">
+      
+      <p>
+
+<h2 id="enlazando-github-con-epicgames">Enlazando GitHub con EpicGames</h2>
+
+<p>Primero, hay que registrarse en gihhub y luego asociar la cuenta de github con la de epic games:
+<a href="https://www.unrealengine.com/ue4-on-github">https://www.unrealengine.com/ue4-on-github</a>
+Entonces deberías recibir un email confirmando que te has unido a la organización Epic Games. Una vez lo recibas, podrás clonar el código fuente del Unreal Engine.
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>git clone https://github.com/EpicGames/UnrealEngine.git
+<span style="color: #f8f8f2">cd</span> UnrealEngine/
+./Setup.sh
+./GenerateProjectFiles.sh
+</pre></div>
+</p>
+
+<h2 id="instalando-clang">Instalando clang</h2>
+
+<p>En mi caso (Fedora 25), este último comando falló. Para arreglarlo tuve que instalar clang:
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo dnf install clang
+clang --version
+clang version 3.9.1 <span style="color: #f92672">(</span>tags/RELEASE_391/final<span style="color: #f92672">)</span>
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+./GenerateProjectFiles.sh
+make
+</pre></div>
+
+Después de esto, deberías poder ejecutar el editor de Unreal Engine:
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>$ ./UE4Editor <span style="color: #e6db74">&quot;/home/user/Documents/Unreal\ Projects/MyProject/MyProject.uproject&quot;</span>
+</pre></div>
+</p>
+</p>
+      
+    </div>
+    <div class="clearfix"></div>
+    
+    <div class="article_resources">
+      <span>Resources</span>
+      <ul>
+        
+        <li>
+          
+          <a href="https://wiki.unrealengine.com/Building_On_Linux">Building on linux</a> 
+        </li>
+        
+        <li>
+          
+          <a href="https://wiki.unrealengine.com/Running_On_Linux">Running on linux</a> 
+        </li>
+        
+      </ul>
+    </div>
+    
+    <div class="article-footer">
+      
+      
+
+
+
+
+<div class="soc-sharing">
+  <ul id="share_articles" class="article_share_items">
+    <li>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/&amp;title=Instalando%20unreal%20engine%20en%20fedora%2025&amp;summary=Enlazando%20GitHub%20con%20EpicGames%20Primero,%20hay%20que%20registrarse%20en%20gihhub%20y%20luego%20asociar%20la%20cuenta%20de%20github%20con%20la%20de%20epic%20games:%20https://www.unrealengine.com/ue4-on-github%20Entonces%20deber%c3%adas%20recibir%20un%20email%20confirmando%20que%20te%20has%20unido%20a%20la%20organizaci%c3%b3n%20Epic%20Games.%20Una%20vez%20lo%20recibas,%20podr%c3%a1s%20clonar%20el%20c%c3%b3digo%20fuente%20del%20Unreal%20Engine.%20git%20clone%20https://github.com/EpicGames/UnrealEngine.git%20cd%20UnrealEngine/%20./Setup.sh%20./GenerateProjectFiles.sh%20%20Instalando%20clang%20En%20mi%20caso%20%28Fedora%2025%29,%20este%20%c3%baltimo%20comando%20fall%c3%b3.%20Para%20arreglarlo%20tuve%20que%20instalar%20clang:%20sudo%20dnf%20install%20clang%20clang%20--version%20clang%20version%203.&amp;source=J%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-twitter" href="http://twitter.com/share?text=Instalando%20unreal%20engine%20en%20fedora%2025&amp;url=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/&amp;media=https://www.jarboleda.meunreal_engine.min.jpg&amp;description=Enlazando%20GitHub%20con%20EpicGames%20Primero,%20hay%20que%20registrarse%20en%20gihhub%20y%20luego%20asociar%20la%20cuenta%20de%20github%20con%20la%20de%20epic%20games:%20https://www.unrealengine.com/ue4-on-github%20Entonces%20deber%c3%adas%20recibir%20un%20email%20confirmando%20que%20te%20has%20unido%20a%20la%20organizaci%c3%b3n%20Epic%20Games.%20Una%20vez%20lo%20recibas,%20podr%c3%a1s%20clonar%20el%20c%c3%b3digo%20fuente%20del%20Unreal%20Engine.%20git%20clone%20https://github.com/EpicGames/UnrealEngine.git%20cd%20UnrealEngine/%20./Setup.sh%20./GenerateProjectFiles.sh%20%20Instalando%20clang%20En%20mi%20caso%20%28Fedora%2025%29,%20este%20%c3%baltimo%20comando%20fall%c3%b3.%20Para%20arreglarlo%20tuve%20que%20instalar%20clang:%20sudo%20dnf%20install%20clang%20clang%20--version%20clang%20version%203." onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+  </ul>
+</div>
+
+      
+    </div>
+
+    <div class='post-footer'>
+      
+       
+       <div id="disqus_thread"></div>
+<script>
+
+
+
+
+
+var disqus_shortname = 'jarboleda-me';
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://jarboleda-me.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+     
+    </div>
+  </div>
+</div>
+
+      </article>
+    </section><aside class='sidebar-wrapper pure-u-1 pure-u-md-1-4 sticky'>
+      
+<div class='sidebar'>
+  
+
+<div class='authorboxwrap'>
+<h4>Author</h4>
+  
+    <div class='avatar-container'>
+      <img alt='' class='author_avatar' height='96' src="/img/me2.min.png" width='96' />
+      <h4 rel='author'>Jeferson Arboleda</h4>
+    </div>
+    <div class='author_description_container'>
+      <p>John Connor is the son of Sarah Connor and Kyle Reese, and the leader of the worldwide human resistance...</p>
+      <div class='authorsocial'>
+        <a class='' href='http://facebook.com/' target='_blank'><i class='fa fa-facebook'></i></a>
+        <a class='' href='http://twitter.com/' target='_blank'><i class='fa fa-twitter'></i></a>
+        <a class='' href='http://dribbble.com/' target='_blank'><i class='fa fa-dribbble'></i></a>
+        <a class='' href='http://instagram.com/' target='_blank'><i class='fa fa-instagram'></i></a>
+        <div class='clr'></div>
+      </div>
+    </div>
+    
+</div>
+
+  
+  <h4>On This Page</h4>
+  <div class='table_of_contents'>
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#enlazando-github-con-epicgames">Enlazando GitHub con EpicGames</a></li>
+<li><a href="#instalando-clang">Instalando clang</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+  
+</div>
+
+
+    </aside>
+    <div class='clearfix'></div>
+  </div>
+  <footer>
+  <div class='footer-container'>
+    <div class='pure-u-1 pure-u-md-1-3'>
+      <div class='widget popular-posts'>
+        <div class="widget-title">
+          <h2>Random posts</h2></div>
+        <div class='widget-content popular-posts'>
+          <ul>
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/es/articles/web-development-environment/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/web-development-environment.jpg" alt="" width='72' />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/es/articles/web-development-environment/' class="mostVisitedLink">Entorno para desarrollo web</a>
+                </div>
+              </div>
+            </li>
+              
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/unreal_engine.min.jpg" alt="" width='72' />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">Instalando unreal engine en fedora 25</a>
+                </div>
+              </div>
+            </li>
+              
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/fixing-corrupted-partition-on-virtual-machine.jpg" alt="" width='72' />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Arreglando una partición corrupta de una máquina virtual</a>
+                </div>
+              </div>
+            </li>
+             
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class='pure-u-1 pure-u-md-1-3'>
+      <div class='widget ContactForm'>
+        <h2 class='title'>Contact me</h2>
+        <a class="email" href="mailto:me@jarboleda.me">me@jarboleda.me</a>
+        <div class='contact-form-widget'>
+          <div class='form'>
+            <form name='contact-form' action="https://formspree.io/me@jarboleda.me" method="POST">
+              <p>Name</p>
+              <input class='contact-form-name' name='name' size='30' type='text' value='' />
+              <p>Email<span>*</span></p>
+              <input class='contact-form-email' name='name="_replyto"' size='30' type='text' value='' />
+              <p>Message<span>*</span></p>
+              <p><textarea class='contact-form-email-message' cols='29' name='email-message' rows='5'></textarea></p>
+              <input class='contact-form-button contact-form-button-submit' type='submit' value='Send' />
+              <div style='text-align: center; max-width: 222px; width: 100%'>
+                <p class='contact-form-error-message'></p>
+                <p class='contact-form-success-message'></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+  
+  <div class='footer-credits'>
+    <div class='footer_social-icons'>
+      <ul>
+        <li>
+          <a class='btn-facebook' href='#' title='Facebook'><i class='fa fa-facebook'></i></a>
+        </li>
+        <li>
+          <a class='btn-twitter' href='#' title='Twitter'><i class='fa fa-twitter'></i></a>
+        </li>
+        <li>
+          <a class='btn-gplus' href='#' title='Google Plus'><i class='fa fa-google-plus'></i></a>
+        </li>
+        <li>
+          <a class='btn-youtube' href='#' title='Youtube'><i class='fa fa-youtube-play'></i></a>
+        </li>
+        <li>
+          <a class='btn-behance' href='#' title='Behance'><i class='fa fa-behance'></i></a>
+        </li>
+        <li>
+          <a class='btn-dribbble' href='#' title='Dribbble'><i class='fa fa-dribbble'></i></a>
+        </li>
+        <li>
+          <a class='btn-pinterest' href='#' title='Pinterest'><i class='fa fa-pinterest'></i></a>
+        </li>
+      </ul>
+    </div>
+    <div class='clr'></div>
+    <p>Copyright &#169; 2017
+      <a href='https://www.jarboleda.me'>https://www.jarboleda.me</a>
+    </p>
+    <p class='attribution'>Powered by</p>
+    <a href='https://gohugo.io/'>
+      <img class='attribution_logo' src="/img/hugo-logo.png" />
+    </a>
+  </div>
+</footer>
+
+<script defer src='/js/main.min.js' type='text/javascript'></script>
+
+<script type="text/javascript">
+  window.cookieconsent_options = {
+    "message": "This website uses cookies to ensure you get the best experience on our website",
+    "dismiss": "Got it!",
+    "learnMore": "More info",
+    "link": null,
+    "theme": "light-bottom"
+  };
+</script>
+<script defer type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>
+
+
+</body>
+<html>

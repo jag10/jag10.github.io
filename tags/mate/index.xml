@@ -16,7 +16,7 @@
       <pubDate>Mon, 18 Jul 2016 13:37:52 +0200</pubDate>
       
       <guid>https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/</guid>
-      <description>Ubuntu 16.04 mate has just been released by odroid team, including support for xu3/xu4 boards and their lite versions. In this case we&amp;rsquo;re going to test Ubuntu 16.04 on odroid xu3 lite, which is the board I own. We&amp;rsquo;ll install it on an eMMC module, which is something like an small ssd (not really the same, eMMC isn&amp;rsquo;t as fast as ssd is). This module will give us a boost on performance, although we can also install Ubuntu on a SD card (class 10).</description>
+      <description>Choosing an image Ubuntu 16.04 mate has just been released by odroid team, including support for xu3/xu4 boards and their lite versions. In this case we&amp;rsquo;re going to test Ubuntu 16.04 on odroid xu3 lite, which is the board I own. We&amp;rsquo;ll install it on an eMMC module, which is something like an small ssd (not really the same, eMMC isn&amp;rsquo;t as fast as ssd is). This module will give us a boost on performance, although we can also install Ubuntu on a SD card (class 10).</description>
     </item>
     
   </channel>

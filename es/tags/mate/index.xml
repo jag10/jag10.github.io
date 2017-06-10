@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mate on J Arboleda</title>
+    <link>https://www.jarboleda.me/es/tags/mate/</link>
+    <description>Recent content in Mate on J Arboleda</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 18 Jul 2016 13:37:52 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.jarboleda.me/es/tags/mate/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Instalando ubuntu 16.04 en odroid xu3 lite</title>
+      <link>https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/</link>
+      <pubDate>Mon, 18 Jul 2016 13:37:52 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/</guid>
+      <description>Eligiendo una imagen La versión 16.04 de ubuntu acaba de ser liberada por parte del equipo de odroid para las placas xu3 y xu4 y sus variantes lite. En este caso vamos a probar ubuntu 16.04 en la placa odroid xu3 lite que es la que poseo con un módulo eMMC, que para entendernos viene a ser un disco ssd pequeñito (en realidad no es lo mismo, eMMC es más lento), lo cual nos da mayor rendimiento, aunque también se puede instalar en una memoria sd (recomendable clase 10).</description>
+    </item>
+    
+  </channel>
+</rss>

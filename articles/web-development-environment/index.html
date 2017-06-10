@@ -9,7 +9,8 @@
     <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
     	
 	<meta property="og:title" content="Web development environment" />
-	<meta property="og:description" content="In this post we&rsquo;ll configure an advanced web development environment. For that, we&rsquo;ll have our web hosted on a server (we will NOT use that server for development), and in our station we&rsquo;ll have a virtual machine. For this vm we&rsquo;ll use vagrant with the scotch box, which allows us to host a web without extra work We&rsquo;ll use the following tecnologies for our environment. You should review them before going on:" />
+	<meta property="og:description" content="In this post we&rsquo;ll configure an advanced web development environment. For that, we&rsquo;ll have our web hosted on a server (we will NOT use that server for development), and in our station we&rsquo;ll have a virtual machine. For this vm we&rsquo;ll use vagrant with the scotch box, which allows us to host a web without extra work
+Prerequisites We&rsquo;ll use the following tecnologies for our environment. You should review them before going on:" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/articles/web-development-environment/" />
 	<meta property="og:image" content="https://www.jarboleda.me/articles/img/web-development-environment.jpg" />
@@ -29,18 +30,20 @@
 	<meta property="fb:admins" content="17807199" />
     
     <meta itemprop="name" content="Web development environment">
-    <meta itemprop="description" content="In this post we&rsquo;ll configure an advanced web development environment. For that, we&rsquo;ll have our web hosted on a server (we will NOT use that server for development), and in our station we&rsquo;ll have a virtual machine. For this vm we&rsquo;ll use vagrant with the scotch box, which allows us to host a web without extra work We&rsquo;ll use the following tecnologies for our environment. You should review them before going on:">
+    <meta itemprop="description" content="In this post we&rsquo;ll configure an advanced web development environment. For that, we&rsquo;ll have our web hosted on a server (we will NOT use that server for development), and in our station we&rsquo;ll have a virtual machine. For this vm we&rsquo;ll use vagrant with the scotch box, which allows us to host a web without extra work
+Prerequisites We&rsquo;ll use the following tecnologies for our environment. You should review them before going on:">
     
     <meta itemprop="image" content="web-development-environment.jpg">
     
     <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,backup,backups,bash,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,httpd,iptables,ipv6,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,performance,php,php7,piwik,plesk,processwire,sass,ubuntu,unrealengine,vagrant,vm,vps,zip," />
-    <meta itemprop="wordCount" content="1225">
+    <meta itemprop="wordCount" content="1231">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
 	<meta name="twitter:image:src" content="https://www.jarboleda.me/articles/img/web-development-environment.jpg"/>
 	
 	<meta name="twitter:title" content="Web development environment"/>
-	<meta name="twitter:description" content="In this post we&rsquo;ll configure an advanced web development environment. For that, we&rsquo;ll have our web hosted on a server (we will NOT use that server for development), and in our station we&rsquo;ll have a virtual machine. For this vm we&rsquo;ll use vagrant with the scotch box, which allows us to host a web without extra work We&rsquo;ll use the following tecnologies for our environment. You should review them before going on:"/>
+	<meta name="twitter:description" content="In this post we&rsquo;ll configure an advanced web development environment. For that, we&rsquo;ll have our web hosted on a server (we will NOT use that server for development), and in our station we&rsquo;ll have a virtual machine. For this vm we&rsquo;ll use vagrant with the scotch box, which allows us to host a web without extra work
+Prerequisites We&rsquo;ll use the following tecnologies for our environment. You should review them before going on:"/>
 	<meta name="twitter:site" content="@j_a_g_x"/><meta name="twitter:domain" content="nozzle.io"/>
 	
 	<meta name="twitter:creator" content="@killskynet"/>
@@ -80,7 +83,11 @@
                 
               </li>
               <li class='pure-menu-item flag'><i class='fa fa-language' aria-hidden='true'></i></li>
-              
+               
+              <li class='pure-menu-item lang_selector'>
+                <a class='pure-menu-link' href="/es/articles/web-development-environment/">spanish </a>
+              </li>
+               
             </ul>
             <div class="float-right">
               <ul class="pure-menu-list">
@@ -144,8 +151,13 @@
     
     <div class="article_excerpt">
       
-      <p><p>In this post we&rsquo;ll configure an advanced web development environment. For that, we&rsquo;ll have our web hosted on a server (we will NOT use that server for development), and in our station we&rsquo;ll have a virtual machine. For this vm we&rsquo;ll use vagrant with the  scotch box, which allows us to host a web without extra work
-We&rsquo;ll use the following tecnologies for our environment. You should review them before going on:</p>
+      <p>
+
+<p>In this post we&rsquo;ll configure an advanced web development environment. For that, we&rsquo;ll have our web hosted on a server (we will NOT use that server for development), and in our station we&rsquo;ll have a virtual machine. For this vm we&rsquo;ll use vagrant with the  scotch box, which allows us to host a web without extra work</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>We&rsquo;ll use the following tecnologies for our environment. You should review them before going on:</p>
 
 <ul>
 <li>Vagrant. Vagrant makes creating dev environments easy and fast</li>
@@ -159,6 +171,8 @@ We&rsquo;ll use the following tecnologies for our environment. You should review
 <li>livereload. With livereload we&rsquo;ll be able to reload automatically the browser when we make changes on sass, js or .php files</li>
 <li>git</li>
 </ul>
+
+<h2 id="installing-vagrant">Installing vagrant</h2>
 
 <p>Well, the first thing we need to do is install vagrant with virtualbox. Here I&rsquo;ll show you how to do it on Fedora, but it&rsquo;s almost the same on other distros. In first place, we have to install dropbox repo:
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">cd</span> /etc/yum.repos.d/
@@ -199,8 +213,11 @@ If the database dump is larger than 2M, we need to edit the file /etc/php5/apach
 * Database Password root
 * Database Host localhost</p>
 
-<p>We can also log in adminer and create a new database
-The dir structure I use for development is the following:
+<p>We can also log in adminer and create a new database.</p>
+
+<h2 id="dir-structure">Dir structure</h2>
+
+<p>The dir structure I use for development is the following:
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #a6e22e">/templates/</span>
 <span style="color: #a6e22e">|--</span><span style="color: #f8f8f2"> css &lt; Here we&#39;ll save the global.min.css used in production </span><span style="color: #f92672">(</span><span style="color: #a6e22e">and</span><span style="color: #f8f8f2"> any other, if needed</span><span style="color: #f92672">)</span>
 <span style="color: #a6e22e">|--</span><span style="color: #f8f8f2"> fonts &lt; well, fonts</span>
@@ -218,6 +235,8 @@ The dir structure I use for development is the following:
 <span style="color: #a6e22e">.php</span><span style="color: #f8f8f2"> &lt; templates </span><span style="color: #f92672">(</span><span style="color: #a6e22e">header.php,</span><span style="color: #f8f8f2"> footer.php. etc.</span><span style="color: #f92672">)</span>
 </pre></div>
 </p>
+
+<h2 id="automating-tasks">Automating tasks</h2>
 
 <p>Now we have the dev environment prepared, the next step is to use gulp and compass in order to automatize some tasks like compile sass or minify js files. For that, we need to install ruby in the virtual machine:
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>vagrant ssh
@@ -335,7 +354,7 @@ Now, with git, you can work in the best way you feel comfortable. Personally, I 
 This repo doesn&rsquo;t contain the whole website, only the directory I use for the theme/plugin I&rsquo;m working on</li>
 </ul>
 
-<p>Some notes:</p>
+<h2 id="notes">Notes:</h2>
 
 <ul>
 <li>nodejs, npm, gulp, livereload&hellip; all these packages should be installed on the virtual machine, although you can install them in the real machine too, except the livereload extension, which has to be on the server (virtual machine)</li>
@@ -362,7 +381,7 @@ This repo doesn&rsquo;t contain the whole website, only the directory I use for 
 <div class="soc-sharing">
   <ul id="share_articles" class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/web-development-environment/&amp;title=Web%20development%20environment&amp;summary=In%20this%20post%20we&amp;rsquo;ll%20configure%20an%20advanced%20web%20development%20environment.%20For%20that,%20we&amp;rsquo;ll%20have%20our%20web%20hosted%20on%20a%20server%20%28we%20will%20NOT%20use%20that%20server%20for%20development%29,%20and%20in%20our%20station%20we&amp;rsquo;ll%20have%20a%20virtual%20machine.%20For%20this%20vm%20we&amp;rsquo;ll%20use%20vagrant%20with%20the%20scotch%20box,%20which%20allows%20us%20to%20host%20a%20web%20without%20extra%20work%20We&amp;rsquo;ll%20use%20the%20following%20tecnologies%20for%20our%20environment.%20You%20should%20review%20them%20before%20going%20on:&amp;source=J%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/web-development-environment/&amp;title=Web%20development%20environment&amp;summary=In%20this%20post%20we&amp;rsquo;ll%20configure%20an%20advanced%20web%20development%20environment.%20For%20that,%20we&amp;rsquo;ll%20have%20our%20web%20hosted%20on%20a%20server%20%28we%20will%20NOT%20use%20that%20server%20for%20development%29,%20and%20in%20our%20station%20we&amp;rsquo;ll%20have%20a%20virtual%20machine.%20For%20this%20vm%20we&amp;rsquo;ll%20use%20vagrant%20with%20the%20scotch%20box,%20which%20allows%20us%20to%20host%20a%20web%20without%20extra%20work%0aPrerequisites%20We&amp;rsquo;ll%20use%20the%20following%20tecnologies%20for%20our%20environment.%20You%20should%20review%20them%20before%20going%20on:&amp;source=J%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fa fa-twitter" href="http://twitter.com/share?text=Web%20development%20environment&amp;url=https://www.jarboleda.me/articles/web-development-environment/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -374,7 +393,7 @@ This repo doesn&rsquo;t contain the whole website, only the directory I use for 
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/web-development-environment/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/web-development-environment/&amp;media=https://www.jarboleda.meweb-development-environment.jpg&amp;description=In%20this%20post%20we&amp;rsquo;ll%20configure%20an%20advanced%20web%20development%20environment.%20For%20that,%20we&amp;rsquo;ll%20have%20our%20web%20hosted%20on%20a%20server%20%28we%20will%20NOT%20use%20that%20server%20for%20development%29,%20and%20in%20our%20station%20we&amp;rsquo;ll%20have%20a%20virtual%20machine.%20For%20this%20vm%20we&amp;rsquo;ll%20use%20vagrant%20with%20the%20scotch%20box,%20which%20allows%20us%20to%20host%20a%20web%20without%20extra%20work%20We&amp;rsquo;ll%20use%20the%20following%20tecnologies%20for%20our%20environment.%20You%20should%20review%20them%20before%20going%20on:" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/web-development-environment/&amp;media=https://www.jarboleda.meweb-development-environment.jpg&amp;description=In%20this%20post%20we&amp;rsquo;ll%20configure%20an%20advanced%20web%20development%20environment.%20For%20that,%20we&amp;rsquo;ll%20have%20our%20web%20hosted%20on%20a%20server%20%28we%20will%20NOT%20use%20that%20server%20for%20development%29,%20and%20in%20our%20station%20we&amp;rsquo;ll%20have%20a%20virtual%20machine.%20For%20this%20vm%20we&amp;rsquo;ll%20use%20vagrant%20with%20the%20scotch%20box,%20which%20allows%20us%20to%20host%20a%20web%20without%20extra%20work%0aPrerequisites%20We&amp;rsquo;ll%20use%20the%20following%20tecnologies%20for%20our%20environment.%20You%20should%20review%20them%20before%20going%20on:" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -436,7 +455,18 @@ s.setAttribute('data-timestamp', +new Date());
   
   <h4>On This Page</h4>
   <div class='table_of_contents'>
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#installing-vagrant">Installing vagrant</a></li>
+<li><a href="#dir-structure">Dir structure</a></li>
+<li><a href="#automating-tasks">Automating tasks</a></li>
+<li><a href="#notes">Notes:</a></li>
+</ul></li>
+</ul>
+</nav>
   </div>
   
 </div>
@@ -454,6 +484,19 @@ s.setAttribute('data-timestamp', +new Date());
         <div class='widget-content popular-posts'>
           <ul>
              
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/articles/web-development-environment/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/web-development-environment.jpg" alt="" width='72' />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
+                </div>
+              </div>
+            </li>
+              
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
@@ -476,19 +519,6 @@ s.setAttribute('data-timestamp', +new Date());
                 </div>
                 <div class='item-title'>
                   <a href='/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
-                </div>
-              </div>
-            </li>
-              
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/articles/web-development-environment/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/web-development-environment.jpg" alt="" width='72' />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
                 </div>
               </div>
             </li>

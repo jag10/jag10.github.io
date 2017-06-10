@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pinned on J Arboleda</title>
+    <link>https://www.jarboleda.me/es/pinned/pinned/</link>
+    <description>Recent content in Pinned on J Arboleda</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 17 Mar 2017 21:33:19 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.jarboleda.me/es/pinned/pinned/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Instalando unreal engine en fedora 25</title>
+      <link>https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/</link>
+      <pubDate>Fri, 17 Mar 2017 21:33:19 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/</guid>
+      <description>Enlazando GitHub con EpicGames Primero, hay que registrarse en gihhub y luego asociar la cuenta de github con la de epic games: https://www.unrealengine.com/ue4-on-github Entonces deberías recibir un email confirmando que te has unido a la organización Epic Games. Una vez lo recibas, podrás clonar el código fuente del Unreal Engine. git clone https://github.com/EpicGames/UnrealEngine.git cd UnrealEngine/ ./Setup.sh ./GenerateProjectFiles.sh  Instalando clang En mi caso (Fedora 25), este último comando falló. Para arreglarlo tuve que instalar clang: sudo dnf install clang clang --version clang version 3.</description>
+    </item>
+    
+  </channel>
+</rss>

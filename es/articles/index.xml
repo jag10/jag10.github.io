@@ -1,22 +1,86 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Articles on jarboleda.me</title>
+    <title>Articles on J Arboleda</title>
     <link>https://www.jarboleda.me/es/articles/</link>
-    <description>Recent content in Articles on jarboleda.me</description>
+    <description>Recent content in Articles on J Arboleda</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 17 Mar 2017 18:34:31 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 17 Mar 2017 21:33:19 +0200</lastBuildDate>
     
 	<atom:link href="https://www.jarboleda.me/es/articles/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>my second article</title>
-      <link>https://www.jarboleda.me/es/articles/es-second/</link>
-      <pubDate>Fri, 17 Mar 2017 18:34:31 +0200</pubDate>
+      <title>Instalando unreal engine en fedora 25</title>
+      <link>https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/</link>
+      <pubDate>Fri, 17 Mar 2017 21:33:19 +0200</pubDate>
       
-      <guid>https://www.jarboleda.me/es/articles/es-second/</guid>
-      <description>segundo articulo bro</description>
+      <guid>https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/</guid>
+      <description>Enlazando GitHub con EpicGames Primero, hay que registrarse en gihhub y luego asociar la cuenta de github con la de epic games: https://www.unrealengine.com/ue4-on-github Entonces deberías recibir un email confirmando que te has unido a la organización Epic Games. Una vez lo recibas, podrás clonar el código fuente del Unreal Engine. git clone https://github.com/EpicGames/UnrealEngine.git cd UnrealEngine/ ./Setup.sh ./GenerateProjectFiles.sh  Instalando clang En mi caso (Fedora 25), este último comando falló. Para arreglarlo tuve que instalar clang: sudo dnf install clang clang --version clang version 3.</description>
+    </item>
+    
+    <item>
+      <title>Arreglando una partición corrupta de una máquina virtual</title>
+      <link>https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/</link>
+      <pubDate>Thu, 28 Jul 2016 14:07:04 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/</guid>
+      <description>Detección del error Si alguna vez encuentras el siguiente error al utilizar vagrant o simplemente al arrancar una máquina virtual, más abajo veremos cómo solucionarlo: Couldn&amp;#39;t remount RDWR because of unprocessed orphan inode list.  Solución Descargar ISO de ubuntu
+Arrancar la máquina virtual con la ISO: Settings -&amp;gt; Storage -&amp;gt; Add CD/DVD Device -&amp;gt; Choose disk Desmontar /dev/sda1: sudo umount /dev/sda1  Comprobar la partición dañada: fsck /dev/sda1  Saldrán algunas preguntas, contestar si a todo.</description>
+    </item>
+    
+    <item>
+      <title>Entorno para desarrollo web</title>
+      <link>https://www.jarboleda.me/es/articles/web-development-environment/</link>
+      <pubDate>Wed, 27 Jul 2016 13:50:40 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/es/articles/web-development-environment/</guid>
+      <description>En este post vamos a ver un entorno avanzado de desarrollo web. Tendremos nuestra web alojada en un servidor (que NO utilizaremos para nada durante el desarrollo), y en nuestra máquina local tendremos una máquina virtual para el sitio web en el que estemos trabajando. Para la máquina virtual utilizaremos vagrant con el stack de scotch, que nos viene preparado para montar directamente el sitio web sin trabajo extra.</description>
+    </item>
+    
+    <item>
+      <title>Instalando ubuntu 16.04 en odroid xu3 lite</title>
+      <link>https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/</link>
+      <pubDate>Mon, 18 Jul 2016 13:37:52 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/</guid>
+      <description>Eligiendo una imagen La versión 16.04 de ubuntu acaba de ser liberada por parte del equipo de odroid para las placas xu3 y xu4 y sus variantes lite. En este caso vamos a probar ubuntu 16.04 en la placa odroid xu3 lite que es la que poseo con un módulo eMMC, que para entendernos viene a ser un disco ssd pequeñito (en realidad no es lo mismo, eMMC es más lento), lo cual nos da mayor rendimiento, aunque también se puede instalar en una memoria sd (recomendable clase 10).</description>
+    </item>
+    
+    <item>
+      <title>Cómo manejar recursos remotos con curl</title>
+      <link>https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/</link>
+      <pubDate>Sun, 17 Jul 2016 13:34:28 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/</guid>
+      <description>El problema Cuando necesitas obtener ficheros remotos para manejar su contenido (ejemplo: ficheros csv) es posible que su acceso no sea tan sencillo como utilizar fopen: &amp;lt;?php $handle = fopen($filename, &amp;quot;r&amp;quot;) or die(&amp;#39;could not open .&amp;#39; $filename);  Si esta sentencia funciona de forma correcta, luego podremos utilizar el handle para procesar el fichero con distintas utilidades, como fgetcsv(). Es importante poder abrir ficheros con fopen porque muchas funciones utilizan un parámetro del tipo Resource en php, que es lo que nos devuelve fopen.</description>
+    </item>
+    
+    <item>
+      <title>Obteniendo los métodos (reflejados) de un objeto</title>
+      <link>https://www.jarboleda.me/es/articles/getting-an-objects-methods/</link>
+      <pubDate>Sun, 01 May 2016 13:28:37 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/es/articles/getting-an-objects-methods/</guid>
+      <description>El problema Algunas veces no tenemos acceso a la documentación de una plataforma, es incompleta o simplemente no nos apetece buscarla. En esos casos, es conveniente tener algo más que el típico var_dump de un objeto, que sólo nos muestra las propiedades del objeto pero no sus métodos, que en muchos casos nos dan la funcionalidad que buscamos sin tener que navegar entre miles de propiedades. A continuación expongo la función que uso, utiliza la clase ReflectionMethod, la cual nos muestra información acerca de un método, y necesita como parámetros del constructor el nombre de la clase y el método.</description>
+    </item>
+    
+    <item>
+      <title>Utilizando la API de piwik en local con PW</title>
+      <link>https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/</link>
+      <pubDate>Sun, 01 May 2016 12:37:41 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/</guid>
+      <description>Para hacer el tracking de visitas de jglab.me utilizo Piwik. ¿Por qué? El principal motivo es que permite mantener la información de manera privada, sin que terceros lleguen a saberla, pero además, piwik ofrece una API muy potente que puede ser utilizada de manera local, lo que es muy importante para el rendimiento, pues me permite obtener estadísticas de la web sin realizar ninguna petición. Para las peticiones locales utilizo la siguiente clase:</description>
+    </item>
+    
+    <item>
+      <title>Instalando magento2 en cwp</title>
+      <link>https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/</link>
+      <pubDate>Thu, 24 Mar 2016 12:34:39 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/</guid>
+      <description>Empezando En este post explicaré cómo instalar magento2 sobre Centos Web Panel, utilizando php7 y mysql 5.6. Para empezar, tenemos que compilar php con las extensiones que magento2 necesita. Con el siguiente comando podremos configurar php7 para luego compilarlo y conseguir que funcione con magento2:./configure ./configure --prefix=/opt/alt/php7/usr --with-config-file-path=/opt/alt/php7/usr/php --with-config-file-scan-dir=/opt/alt/php7/usr/php/php.d --enable-fpm --enable-mbstring --enable-zip --enable-bcmath --enable-pcntl --enable-ftp --enable-exif --enable-calendar --enable-sysvmsg --enable-sysvsem --enable-sysvshm --enable-wddx --with-curl --with-mcrypt --with-iconv --with-gmp --with-pspell --with-gd --with-jpeg-dir=/usr --with-png-dir=/usr --with-zlib-dir=/usr --with-xpm-dir=/usr --with-freetype-dir=/usr --enable-gd-native-ttf --enable-gd-jis-conv --with-openssl --with-pdo-mysql=/usr --with-gettext=/usr --with-zlib=/usr --with-bz2=/usr --with-recode=/usr --with-mysqli --with-mysql-sock=/var/lib/mysql/mysql.</description>
     </item>
     
   </channel>
