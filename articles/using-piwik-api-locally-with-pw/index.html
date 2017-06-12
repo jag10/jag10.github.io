@@ -15,26 +15,26 @@ Show me the code &lt;?php use Piwik\API\Request; use Piwik\FrontController; defi
 	<meta property="og:url" content="https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/" />
 	<meta property="og:image" content="https://www.jarboleda.me/articles/img/using-piwik-api-locally-with-pw.jpg" />
 	<meta property="og:updated_time" content="2016-05-01 12:37:41 &#43;0200 CEST"/>
-	<meta property="og:locale" content="en-US" /><meta property="og:site_name" content="Arboleda" />
+	<meta property="og:locale" content="en-US" />
+	<meta property="og:site_name" content="Arboleda" />
 	
 	
-	<meta property="article:author" content="https://www.facebook.com/killskynet" />
-	<meta property="article:publisher" content="https://www.facebook.com/nozzleio" />
 	<meta property="article:published_time" content="2016-05-01 12:37:41 &#43;0200 CEST" />
 	<meta property="article:modified_time" content="2016-05-01 12:37:41 &#43;0200 CEST" />
 	<meta property="article:section" content="articles" />
 	<meta property="article:tag" content="processwire" />
 	<meta property="article:tag" content="piwik" />
 	
-	<meta property="fb:admins" content="17807199" />
+	
     
     <meta itemprop="name" content="Using piwik&#39;s API locally with ProcessWire">
     <meta itemprop="description" content="To track jglab.me visits I use Piwik. Why? The main reason is because it allows to keep info private, moreover, Piwik offers a powerful API which can be queried locally, and that is important for performance as we can obtain stats about the website without having to query external server. To make local queries I use the following class:
 Show me the code &lt;?php use Piwik\API\Request; use Piwik\FrontController; define(&#39;PIWIK_INCLUDE_PATH&#39;, $_SERVER[&#39;DOCUMENT_ROOT&#39;] .">
+    <meta name="author" content="Jeferson Arboleda">
     
     <meta itemprop="image" content="using-piwik-api-locally-with-pw.jpg">
     
-    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,backup,backups,bash,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,httpd,iptables,ipv6,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,performance,php,php7,piwik,plesk,processwire,sass,ubuntu,unrealengine,vagrant,vm,vps,zip," />
+    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,backup,backups,bash,centos6,curl,cwp,fedora25,fopen,ftp,httpd,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,performance,php,php7,piwik,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm,vps,zip," />
     <meta itemprop="wordCount" content="257">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
@@ -43,11 +43,12 @@ Show me the code &lt;?php use Piwik\API\Request; use Piwik\FrontController; defi
 	<meta name="twitter:title" content="Using piwik&#39;s API locally with ProcessWire"/>
 	<meta name="twitter:description" content="To track jglab.me visits I use Piwik. Why? The main reason is because it allows to keep info private, moreover, Piwik offers a powerful API which can be queried locally, and that is important for performance as we can obtain stats about the website without having to query external server. To make local queries I use the following class:
 Show me the code &lt;?php use Piwik\API\Request; use Piwik\FrontController; define(&#39;PIWIK_INCLUDE_PATH&#39;, $_SERVER[&#39;DOCUMENT_ROOT&#39;] ."/>
-	<meta name="twitter:site" content="@j_a_g_x"/><meta name="twitter:domain" content="nozzle.io"/>
+	<meta name="twitter:site" content="@j_a_g_x"/>
 	
-	<meta name="twitter:creator" content="@killskynet"/>
+	<meta name="twitter:creator" content="@j_a_g_x"/>
 
 
+	<meta name="news_keywords" content="processwire,piwik" />
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="/css/global.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -358,12 +359,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/unreal_engine.min.jpg" alt="" width='72' />
+                  <a href='/articles/web-development-environment/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/web-development-environment.jpg" alt="" width='72' />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
+                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
                 </div>
               </div>
             </li>
@@ -371,12 +372,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/web-development-environment/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/web-development-environment.jpg" alt="" width='72' />
+                  <a href='/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/unreal_engine.min.jpg" alt="" width='72' />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
+                  <a href='/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
                 </div>
               </div>
             </li>
