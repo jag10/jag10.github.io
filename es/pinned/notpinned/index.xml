@@ -5,10 +5,19 @@
     <link>https://www.jarboleda.me/es/pinned/notpinned/</link>
     <description>Recent content in Notpinned on Arboleda</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 28 Jul 2016 14:07:04 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 17 Mar 2017 21:33:19 +0200</lastBuildDate>
     
 	<atom:link href="https://www.jarboleda.me/es/pinned/notpinned/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Instalando unreal engine en fedora 25</title>
+      <link>https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/</link>
+      <pubDate>Fri, 17 Mar 2017 21:33:19 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/</guid>
+      <description>Enlazando GitHub con EpicGames Primero, hay que registrarse en gihhub y luego asociar la cuenta de github con la de epic games: https://www.unrealengine.com/ue4-on-github Entonces deberías recibir un email confirmando que te has unido a la organización Epic Games. Una vez lo recibas, podrás clonar el código fuente del Unreal Engine. git clone https://github.com/EpicGames/UnrealEngine.git cd UnrealEngine/ ./Setup.sh ./GenerateProjectFiles.sh  Instalando clang En mi caso (Fedora 25), este último comando falló. Para arreglarlo tuve que instalar clang: sudo dnf install clang clang --version clang version 3.</description>
+    </item>
     
     <item>
       <title>Arreglando una partición corrupta de una máquina virtual</title>
@@ -18,15 +27,6 @@
       <guid>https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/</guid>
       <description>Detección del error Si alguna vez encuentras el siguiente error al utilizar vagrant o simplemente al arrancar una máquina virtual, más abajo veremos cómo solucionarlo: Couldn&amp;#39;t remount RDWR because of unprocessed orphan inode list.  Solución Descargar ISO de ubuntu
 Arrancar la máquina virtual con la ISO: Settings -&amp;gt; Storage -&amp;gt; Add CD/DVD Device -&amp;gt; Choose disk Desmontar /dev/sda1: sudo umount /dev/sda1  Comprobar la partición dañada: fsck /dev/sda1  Saldrán algunas preguntas, contestar si a todo.</description>
-    </item>
-    
-    <item>
-      <title>Entorno para desarrollo web</title>
-      <link>https://www.jarboleda.me/es/articles/web-development-environment/</link>
-      <pubDate>Wed, 27 Jul 2016 13:50:40 +0200</pubDate>
-      
-      <guid>https://www.jarboleda.me/es/articles/web-development-environment/</guid>
-      <description>En este post vamos a ver un entorno avanzado de desarrollo web. Tendremos nuestra web alojada en un servidor (que NO utilizaremos para nada durante el desarrollo), y en nuestra máquina local tendremos una máquina virtual para el sitio web en el que estemos trabajando. Para la máquina virtual utilizaremos vagrant con el stack de scotch, que nos viene preparado para montar directamente el sitio web sin trabajo extra.</description>
     </item>
     
     <item>
