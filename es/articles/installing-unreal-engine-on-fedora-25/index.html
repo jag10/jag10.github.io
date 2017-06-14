@@ -6,7 +6,13 @@
     <title>Arboleda - Instalando unreal engine en fedora 25</title>
     <meta name="description" content="site description goes here">
     <meta name="robots" content="noindex">
-    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
     	
 	<meta property="og:title" content="Instalando unreal engine en fedora 25" />
 	<meta property="og:description" content="Enlazando GitHub con EpicGames Primero, hay que registrarse en gihhub y luego asociar la cuenta de github con la de epic games: https://www.unrealengine.com/ue4-on-github Entonces deberías recibir un email confirmando que te has unido a la organización Epic Games. Una vez lo recibas, podrás clonar el código fuente del Unreal Engine. git clone https://github.com/EpicGames/UnrealEngine.git cd UnrealEngine/ ./Setup.sh ./GenerateProjectFiles.sh  Instalando clang En mi caso (Fedora 25), este último comando falló. Para arreglarlo tuve que instalar clang: sudo dnf install clang clang --version clang version 3." />
@@ -320,46 +326,7 @@ s.setAttribute('data-timestamp', +new Date());
           <h2>Other posts</h2></div>
         <div class='widget-content popular-posts'>
           <ul>
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/thumbs/unreal_engine.min.jpg" alt="" width='72' />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">Instalando unreal engine en fedora 25</a>
-                </div>
-              </div>
-            </li>
-              
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" alt="" width='72' />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Arreglando una partición corrupta de una máquina virtual</a>
-                </div>
-              </div>
-            </li>
-              
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/es/articles/web-development-environment/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/thumbs/web-development-environment.jpg" alt="" width='72' />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/es/articles/web-development-environment/' class="mostVisitedLink">Entorno para desarrollo web</a>
-                </div>
-              </div>
-            </li>
-             
+            
           </ul>
         </div>
       </div>
