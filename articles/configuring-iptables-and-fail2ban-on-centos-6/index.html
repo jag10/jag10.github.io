@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -139,7 +140,7 @@
   <div class="post-image-container">
     
   </div>
-  <div id='article_summary' class="article_summary">
+  <div class="article_summary">
     <div class="article-date">
       <p class="day"><i class="fa fa-calendar"></i>10 Aug 2015</p>
       <p><i class="fa fa-clock-o"></i>7 min read  ~ 1200 words</p>
@@ -147,9 +148,9 @@
     
     <div class="article-tags">
       
-      <a href="search tag" rel="tag">iptables</a> 
-      <a href="search tag" rel="tag">fail2ban</a> 
-      <a href="search tag" rel="tag">centos6</a> 
+      <a href="#" rel="tag">iptables</a> 
+      <a href="#" rel="tag">fail2ban</a> 
+      <a href="#" rel="tag">centos6</a> 
     </div>
     
     <div class="clearfix"></div>
@@ -344,7 +345,7 @@ Edit ~/.bashrc and add the following lines:
 
 
 <div class="soc-sharing">
-  <ul id="share_articles" class="article_share_items">
+  <ul class="article_share_items">
     <li>
       <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/&amp;title=Configuring%20IPTABLES%20and%20fail2ban%20on%20centOS%206&amp;summary=In%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20configure%20iptables%20along%20with%20fail2ban%20and%20how%20to%20start/stop%20these%20services%20without%20messing%20up%20your%20chains%20or%20configuration.%20Iptables%20should%20be%20included%20in%20your%20default%20Linux%20OS,%20and%20you%20can%20easily%20get%20fail2ban%20from%20standard%20repos.%20So,%20just%20enable%20the%20chains%20you%20need%20on%20/etc/fail2ban/jail.local.%20Copy%20the%20file%20from%20/etc/fail2ban/jail.conf%20if%20it%20doesn&amp;rsquo;t%20exist.%20For%20example,%20if%20you%20want%20%28you%20should%29%20activate%20ssh%20jail,%20just%20add/uncomment%20this%20lines%20to%20the%20file:%20[ssh-iptables]%20enabled%20=%20true%20%20Don&amp;rsquo;t%20forget%20to%20add%20yourself%20to%20the%20ignored%20ips,%20you%20do%20not%20want%20to%20lock%20out%20yourself%20from%20the%20server.&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
@@ -453,6 +454,19 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
+                  <a href='/articles/getting-an-objects-methods/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/thumbs/getting-an-objects-methods.jpg" alt="" width='72' />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/getting-an-objects-methods/' class="mostVisitedLink">Getting an object&#39;s (reflected) methods</a>
+                </div>
+              </div>
+            </li>
+            
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
                   <a href='/articles/installing-magento2-on-cwp/' target='_blank'>
                     <img alt='' border='0' height='72' src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" alt="" width='72' />
                   </a>
@@ -466,25 +480,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/transferring-files-with-ftp-through-bash-expect-script/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/thumbs/transferring-files-with-ftp-through-bash-expect-script.png" alt="" width='72' />
+                  <a href='/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" alt="" width='72' />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/transferring-files-with-ftp-through-bash-expect-script/' class="mostVisitedLink">Transferring files with FTP through bash expect script</a>
-                </div>
-              </div>
-            </li>
-            
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" alt="" width='72' />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Authenticating users with cURL</a>
+                  <a href='/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">How to handle remote resources with curl</a>
                 </div>
               </div>
             </li>
@@ -551,7 +552,7 @@ s.setAttribute('data-timestamp', +new Date());
     </p>
     <p class='attribution'>Powered by</p>
     <a href='https://gohugo.io/'>
-      <img class='attribution_logo' src="/img/hugo-logo.png" />
+      <img alt="hugo" class='attribution_logo' src="/img/hugo-logo.png" />
     </a>
   </div>
 </footer>
@@ -569,6 +570,8 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 <script defer type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>
 
+</body>
+</html>
 
 </body>
 <html>
