@@ -14,25 +14,25 @@
 	<meta property="og:url" content="https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/" />
 	<meta property="og:image" content="https://www.jarboleda.me/articles/img/backing-up-all-databases-using-mysqldump.png" />
 	<meta property="og:updated_time" content="2015-08-30 11:05:36 &#43;0200 CEST"/>
-	<meta property="og:locale" content="en-US" /><meta property="og:site_name" content="Arboleda" />
+	<meta property="og:locale" content="en-US" />
+	<meta property="og:site_name" content="Arboleda" />
 	
 	
-	<meta property="article:author" content="https://www.facebook.com/killskynet" />
-	<meta property="article:publisher" content="https://www.facebook.com/nozzleio" />
 	<meta property="article:published_time" content="2015-08-30 11:05:36 &#43;0200 CEST" />
 	<meta property="article:modified_time" content="2015-08-30 11:05:36 &#43;0200 CEST" />
 	<meta property="article:section" content="articles" />
 	<meta property="article:tag" content="mysqldump" />
 	<meta property="article:tag" content="bash" />
 	
-	<meta property="fb:admins" content="17807199" />
+	
     
     <meta itemprop="name" content="Backing up all databases using mysqldump">
     <meta itemprop="description" content="In this post I&rsquo;ll explain how I backup all databases in servers I work with. When you face trouble with those servers it&rsquo;ll be pretty useful to have daily database dumps. So, I use mysqldump utiliy to backup database and an script I wrote myself to transfer files, which you can find here Backing up all databases with mysqldumpo is pretty easy, just use it in this way in bash: mysqldump -uadmin -p`cat /etc/psa/.">
+    <meta name="author" content="Jeferson Arboleda">
     
     <meta itemprop="image" content="backing-up-all-databases-using-mysqldump.png">
     
-    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,backup,backups,bash,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,httpd,iptables,ipv6,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,performance,php,php7,piwik,plesk,processwire,sass,ubuntu,unrealengine,vagrant,vm,vps,zip," />
+    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,backup,backups,bash,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,httpd,iptables,ipv6,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm,vps,zip," />
     <meta itemprop="wordCount" content="424">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
@@ -40,11 +40,12 @@
 	
 	<meta name="twitter:title" content="Backing up all databases using mysqldump"/>
 	<meta name="twitter:description" content="In this post I&rsquo;ll explain how I backup all databases in servers I work with. When you face trouble with those servers it&rsquo;ll be pretty useful to have daily database dumps. So, I use mysqldump utiliy to backup database and an script I wrote myself to transfer files, which you can find here Backing up all databases with mysqldumpo is pretty easy, just use it in this way in bash: mysqldump -uadmin -p`cat /etc/psa/."/>
-	<meta name="twitter:site" content="@j_a_g_x"/><meta name="twitter:domain" content="nozzle.io"/>
+	<meta name="twitter:site" content="@j_a_g_x"/>
 	
-	<meta name="twitter:creator" content="@killskynet"/>
+	<meta name="twitter:creator" content="@j_a_g_x"/>
 
 
+	<meta name="news_keywords" content="mysqldump,bash" />
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="/css/global.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -127,18 +128,17 @@
     <div class="article-date">
       <p class="day"><i class="fa fa-calendar"></i>30 Aug 2015</p>
       <p><i class="fa fa-clock-o"></i>3 min read  ~ 500 words</p>
-      
     </div>
+    
     <div class="article-tags">
       
       <a href="search tag" rel="tag">mysqldump</a> 
       <a href="search tag" rel="tag">bash</a> 
     </div>
+    
     <div class="clearfix"></div>
     
     <h1 class="article_title title">Backing up all databases using mysqldump</h1>
-    
-
     
     <div class="article_excerpt">
       
@@ -198,8 +198,13 @@ csplit --digits<span style="color: #f92672">=</span><span style="color: #ae81ff"
     <div class="clearfix"></div>
     
     <div class="article_resources">
-      <span>Resources</span>
+      <h2>Resources</h2>
       <ul>
+        
+        <li>
+          
+          <a href="https://dev.mysql.com/doc/refman/5.7/en/mysqldump.html">mysqldump on dev.mysql.com</a> 
+        </li>
         
       </ul>
     </div>
@@ -231,12 +236,10 @@ csplit --digits<span style="color: #f92672">=</span><span style="color: #ae81ff"
   </ul>
 </div>
 
-      
     </div>
 
     <div class='post-footer'>
       
-       
        <div id="disqus_thread"></div>
 <script>
 
@@ -267,13 +270,12 @@ s.setAttribute('data-timestamp', +new Date());
 
 <div class='authorboxwrap'>
 <h4>Author</h4>
-  
     <div class='avatar-container'>
       <img alt='' class='author_avatar' height='96' src="/img/me2.min.png" width='96' />
       <h4 rel='author'>Jeferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p>John Connor is the son of Sarah Connor and Kyle Reese, and the leader of the worldwide human resistance...</p>
+      <p>Looking for a challenge :) | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a>, and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
       <div class='authorsocial'>
         <a class='' href='http://facebook.com/' target='_blank'><i class='fa fa-facebook'></i></a>
         <a class='' href='http://twitter.com/' target='_blank'><i class='fa fa-twitter'></i></a>
@@ -282,7 +284,6 @@ s.setAttribute('data-timestamp', +new Date());
         <div class='clr'></div>
       </div>
     </div>
-    
 </div>
 
   
@@ -322,12 +323,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/web-development-environment/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/web-development-environment.jpg" alt="" width='72' />
+                  <a href='/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/unreal_engine.min.jpg" alt="" width='72' />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
+                  <a href='/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
                 </div>
               </div>
             </li>
@@ -335,12 +336,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/unreal_engine.min.jpg" alt="" width='72' />
+                  <a href='/articles/web-development-environment/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/web-development-environment.jpg" alt="" width='72' />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
+                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
                 </div>
               </div>
             </li>

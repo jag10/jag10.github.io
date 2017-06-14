@@ -580,6 +580,22 @@
   </url>
   
   <url>
+    <loc>https://www.jarboleda.me/tags/reflectionmethod/</loc>
+    <lastmod>2016-05-01T13:28:37+02:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.jarboleda.me/es/tags/reflectionmethod/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jarboleda.me/tags/reflectionmethod/"
+                />
+  </url>
+  
+  <url>
     <loc>https://www.jarboleda.me/tags/sass/</loc>
     <lastmod>2016-07-27T13:50:40+02:00</lastmod>
     <priority>0</priority>

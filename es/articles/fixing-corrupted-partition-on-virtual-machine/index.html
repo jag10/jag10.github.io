@@ -15,11 +15,10 @@ Arrancar la máquina virtual con la ISO: Settings -&gt; Storage -&gt; Add CD/DVD
 	<meta property="og:url" content="https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/" />
 	<meta property="og:image" content="https://www.jarboleda.me/articles/img/fixing-corrupted-partition-on-virtual-machine.jpg" />
 	<meta property="og:updated_time" content="2016-07-28 14:07:04 &#43;0200 CEST"/>
-	<meta property="og:locale" content="es-ES" /><meta property="og:site_name" content="Arboleda" />
+	<meta property="og:locale" content="es-ES" />
+	<meta property="og:site_name" content="Arboleda" />
 	
 	
-	<meta property="article:author" content="https://www.facebook.com/killskynet" />
-	<meta property="article:publisher" content="https://www.facebook.com/nozzleio" />
 	<meta property="article:published_time" content="2016-07-28 14:07:04 &#43;0200 CEST" />
 	<meta property="article:modified_time" content="2016-07-28 14:07:04 &#43;0200 CEST" />
 	<meta property="article:section" content="articles" />
@@ -27,15 +26,16 @@ Arrancar la máquina virtual con la ISO: Settings -&gt; Storage -&gt; Add CD/DVD
 	<meta property="article:tag" content="vm" />
 	<meta property="article:tag" content="ubuntu" />
 	
-	<meta property="fb:admins" content="17807199" />
+	
     
     <meta itemprop="name" content="Arreglando una partición corrupta de una máquina virtual">
     <meta itemprop="description" content="Detección del error Si alguna vez encuentras el siguiente error al utilizar vagrant o simplemente al arrancar una máquina virtual, más abajo veremos cómo solucionarlo: Couldn&#39;t remount RDWR because of unprocessed orphan inode list.  Solución Descargar ISO de ubuntu
 Arrancar la máquina virtual con la ISO: Settings -&gt; Storage -&gt; Add CD/DVD Device -&gt; Choose disk Desmontar /dev/sda1: sudo umount /dev/sda1  Comprobar la partición dañada: fsck /dev/sda1  Saldrán algunas preguntas, contestar si a todo.">
+    <meta name="author" content="Jeferson Arboleda">
     
     <meta itemprop="image" content="fixing-corrupted-partition-on-virtual-machine.jpg">
     
-    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,curl,cwp,fedora25,fopen,magento2,mate,nodejs,odroid,php,php7,piwik,processwire,sass,ubuntu,unrealengine,vagrant,vm," />
+    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,curl,cwp,fedora25,fopen,magento2,mate,nodejs,odroid,php,php7,piwik,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm," />
     <meta itemprop="wordCount" content="123">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
@@ -44,11 +44,12 @@ Arrancar la máquina virtual con la ISO: Settings -&gt; Storage -&gt; Add CD/DVD
 	<meta name="twitter:title" content="Arreglando una partición corrupta de una máquina virtual"/>
 	<meta name="twitter:description" content="Detección del error Si alguna vez encuentras el siguiente error al utilizar vagrant o simplemente al arrancar una máquina virtual, más abajo veremos cómo solucionarlo: Couldn&#39;t remount RDWR because of unprocessed orphan inode list.  Solución Descargar ISO de ubuntu
 Arrancar la máquina virtual con la ISO: Settings -&gt; Storage -&gt; Add CD/DVD Device -&gt; Choose disk Desmontar /dev/sda1: sudo umount /dev/sda1  Comprobar la partición dañada: fsck /dev/sda1  Saldrán algunas preguntas, contestar si a todo."/>
-	<meta name="twitter:site" content="@j_a_g_x"/><meta name="twitter:domain" content="nozzle.io"/>
+	<meta name="twitter:site" content="@j_a_g_x"/>
 	
-	<meta name="twitter:creator" content="@killskynet"/>
+	<meta name="twitter:creator" content="@j_a_g_x"/>
 
 
+	<meta name="news_keywords" content="vagrant,vm,ubuntu" />
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="/css/global.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -67,7 +68,7 @@ Arrancar la máquina virtual con la ISO: Settings -&gt; Storage -&gt; Add CD/DVD
           <div class="pure-menu pure-menu-horizontal custom-can-transform">
             <ul class="pure-menu-list float-left">
               
-              <li class="pure-menu-item"><a class='pure-menu-link' href=/>home</a></li>
+              <li class="pure-menu-item"><a class='pure-menu-link' href=/es>home</a></li>
               
               <li class="pure-menu-item"><a class='pure-menu-link' href=/extras/cv/>sobre mi</a></li>
               
@@ -135,19 +136,18 @@ Arrancar la máquina virtual con la ISO: Settings -&gt; Storage -&gt; Add CD/DVD
     <div class="article-date">
       <p class="day"><i class="fa fa-calendar"></i>28 Jul 2016</p>
       <p><i class="fa fa-clock-o"></i>2 min read  ~ 200 words</p>
-      
     </div>
+    
     <div class="article-tags">
       
       <a href="search tag" rel="tag">vagrant</a> 
       <a href="search tag" rel="tag">vm</a> 
       <a href="search tag" rel="tag">ubuntu</a> 
     </div>
+    
     <div class="clearfix"></div>
     
     <h1 class="article_title title">Arreglando una partición corrupta de una máquina virtual</h1>
-    
-
     
     <div class="article_excerpt">
       
@@ -180,8 +180,18 @@ Saldrán algunas preguntas, contestar si a todo. Cuando acabe, reiniciamos la m�
     <div class="clearfix"></div>
     
     <div class="article_resources">
-      <span>Resources</span>
+      <h2>Resources</h2>
       <ul>
+        
+        <li>
+          
+          <a href="https://www.ubuntu.com/download/desktop">Ubuntu ISOs</a> 
+        </li>
+        
+        <li>
+          
+          <a href="https://linux.die.net/man/8/fsck">fsck en linux.die.net</a> 
+        </li>
         
       </ul>
     </div>
@@ -213,12 +223,10 @@ Saldrán algunas preguntas, contestar si a todo. Cuando acabe, reiniciamos la m�
   </ul>
 </div>
 
-      
     </div>
 
     <div class='post-footer'>
       
-       
        <div id="disqus_thread"></div>
 <script>
 
@@ -249,13 +257,12 @@ s.setAttribute('data-timestamp', +new Date());
 
 <div class='authorboxwrap'>
 <h4>Author</h4>
-  
     <div class='avatar-container'>
       <img alt='' class='author_avatar' height='96' src="/img/me2.min.png" width='96' />
       <h4 rel='author'>Jeferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p>John Connor is the son of Sarah Connor and Kyle Reese, and the leader of the worldwide human resistance...</p>
+      <p>John Connor is the son of Sarah Connor and Kyle Reese, and the leader of the worldwide human resistance&hellip;</p>
       <div class='authorsocial'>
         <a class='' href='http://facebook.com/' target='_blank'><i class='fa fa-facebook'></i></a>
         <a class='' href='http://twitter.com/' target='_blank'><i class='fa fa-twitter'></i></a>
@@ -264,7 +271,6 @@ s.setAttribute('data-timestamp', +new Date());
         <div class='clr'></div>
       </div>
     </div>
-    
 </div>
 
   

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reflectionmethod on Arboleda</title>
+    <link>https://www.jarboleda.me/es/tags/reflectionmethod/</link>
+    <description>Recent content in Reflectionmethod on Arboleda</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 01 May 2016 13:28:37 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.jarboleda.me/es/tags/reflectionmethod/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Obteniendo los métodos (reflejados) de un objeto</title>
+      <link>https://www.jarboleda.me/es/articles/getting-an-objects-methods/</link>
+      <pubDate>Sun, 01 May 2016 13:28:37 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/es/articles/getting-an-objects-methods/</guid>
+      <description>El problema Algunas veces no tenemos acceso a la documentación de una plataforma, es incompleta o simplemente no nos apetece buscarla. En esos casos, es conveniente tener algo más que el típico var_dump de un objeto, que sólo nos muestra las propiedades del objeto pero no sus métodos, que en muchos casos nos dan la funcionalidad que buscamos sin tener que navegar entre miles de propiedades. A continuación expongo la función que uso, utiliza la clase ReflectionMethod, la cual nos muestra información acerca de un método, y necesita como parámetros del constructor el nombre de la clase y el método.</description>
+    </item>
+    
+  </channel>
+</rss>

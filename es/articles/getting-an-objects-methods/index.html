@@ -14,24 +14,25 @@
 	<meta property="og:url" content="https://www.jarboleda.me/es/articles/getting-an-objects-methods/" />
 	<meta property="og:image" content="https://www.jarboleda.me/articles/img/getting-an-objects-methods.jpg" />
 	<meta property="og:updated_time" content="2016-05-01 13:28:37 &#43;0200 CEST"/>
-	<meta property="og:locale" content="es-ES" /><meta property="og:site_name" content="Arboleda" />
+	<meta property="og:locale" content="es-ES" />
+	<meta property="og:site_name" content="Arboleda" />
 	
 	
-	<meta property="article:author" content="https://www.facebook.com/killskynet" />
-	<meta property="article:publisher" content="https://www.facebook.com/nozzleio" />
 	<meta property="article:published_time" content="2016-05-01 13:28:37 &#43;0200 CEST" />
 	<meta property="article:modified_time" content="2016-05-01 13:28:37 &#43;0200 CEST" />
 	<meta property="article:section" content="articles" />
 	<meta property="article:tag" content="php" />
+	<meta property="article:tag" content="ReflectionMethod" />
 	
-	<meta property="fb:admins" content="17807199" />
+	
     
     <meta itemprop="name" content="Obteniendo los métodos (reflejados) de un objeto">
     <meta itemprop="description" content="El problema Algunas veces no tenemos acceso a la documentación de una plataforma, es incompleta o simplemente no nos apetece buscarla. En esos casos, es conveniente tener algo más que el típico var_dump de un objeto, que sólo nos muestra las propiedades del objeto pero no sus métodos, que en muchos casos nos dan la funcionalidad que buscamos sin tener que navegar entre miles de propiedades. A continuación expongo la función que uso, utiliza la clase ReflectionMethod, la cual nos muestra información acerca de un método, y necesita como parámetros del constructor el nombre de la clase y el método.">
+    <meta name="author" content="Jeferson Arboleda">
     
     <meta itemprop="image" content="getting-an-objects-methods.jpg">
     
-    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,curl,cwp,fedora25,fopen,magento2,mate,nodejs,odroid,php,php7,piwik,processwire,sass,ubuntu,unrealengine,vagrant,vm," />
+    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,curl,cwp,fedora25,fopen,magento2,mate,nodejs,odroid,php,php7,piwik,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm," />
     <meta itemprop="wordCount" content="435">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
@@ -39,11 +40,12 @@
 	
 	<meta name="twitter:title" content="Obteniendo los métodos (reflejados) de un objeto"/>
 	<meta name="twitter:description" content="El problema Algunas veces no tenemos acceso a la documentación de una plataforma, es incompleta o simplemente no nos apetece buscarla. En esos casos, es conveniente tener algo más que el típico var_dump de un objeto, que sólo nos muestra las propiedades del objeto pero no sus métodos, que en muchos casos nos dan la funcionalidad que buscamos sin tener que navegar entre miles de propiedades. A continuación expongo la función que uso, utiliza la clase ReflectionMethod, la cual nos muestra información acerca de un método, y necesita como parámetros del constructor el nombre de la clase y el método."/>
-	<meta name="twitter:site" content="@j_a_g_x"/><meta name="twitter:domain" content="nozzle.io"/>
+	<meta name="twitter:site" content="@j_a_g_x"/>
 	
-	<meta name="twitter:creator" content="@killskynet"/>
+	<meta name="twitter:creator" content="@j_a_g_x"/>
 
 
+	<meta name="news_keywords" content="php,ReflectionMethod" />
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="/css/global.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -62,7 +64,7 @@
           <div class="pure-menu pure-menu-horizontal custom-can-transform">
             <ul class="pure-menu-list float-left">
               
-              <li class="pure-menu-item"><a class='pure-menu-link' href=/>home</a></li>
+              <li class="pure-menu-item"><a class='pure-menu-link' href=/es>home</a></li>
               
               <li class="pure-menu-item"><a class='pure-menu-link' href=/extras/cv/>sobre mi</a></li>
               
@@ -130,17 +132,17 @@
     <div class="article-date">
       <p class="day"><i class="fa fa-calendar"></i>1 May 2016</p>
       <p><i class="fa fa-clock-o"></i>4 min read  ~ 500 words</p>
-      
     </div>
+    
     <div class="article-tags">
       
       <a href="search tag" rel="tag">php</a> 
+      <a href="search tag" rel="tag">ReflectionMethod</a> 
     </div>
+    
     <div class="clearfix"></div>
     
     <h1 class="article_title title">Obteniendo los métodos (reflejados) de un objeto</h1>
-    
-
     
     <div class="article_excerpt">
       
@@ -216,8 +218,23 @@
     <div class="clearfix"></div>
     
     <div class="article_resources">
-      <span>Resources</span>
+      <h2>Resources</h2>
       <ul>
+        
+        <li>
+          
+          <a href="http://php.net/manual/es/function.get-class-methods.php">get_class_methods en php.net</a> 
+        </li>
+        
+        <li>
+          
+          <a href="http://php.net/manual/es/function.get-class.php">get_class en php.net</a> 
+        </li>
+        
+        <li>
+          
+          <a href="http://php.net/manual/es/class.reflectionmethod.php">The ReflectionMethod class en php.net</a> 
+        </li>
         
       </ul>
     </div>
@@ -249,12 +266,10 @@
   </ul>
 </div>
 
-      
     </div>
 
     <div class='post-footer'>
       
-       
        <div id="disqus_thread"></div>
 <script>
 
@@ -285,13 +300,12 @@ s.setAttribute('data-timestamp', +new Date());
 
 <div class='authorboxwrap'>
 <h4>Author</h4>
-  
     <div class='avatar-container'>
       <img alt='' class='author_avatar' height='96' src="/img/me2.min.png" width='96' />
       <h4 rel='author'>Jeferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p>John Connor is the son of Sarah Connor and Kyle Reese, and the leader of the worldwide human resistance...</p>
+      <p>John Connor is the son of Sarah Connor and Kyle Reese, and the leader of the worldwide human resistance&hellip;</p>
       <div class='authorsocial'>
         <a class='' href='http://facebook.com/' target='_blank'><i class='fa fa-facebook'></i></a>
         <a class='' href='http://twitter.com/' target='_blank'><i class='fa fa-twitter'></i></a>
@@ -300,7 +314,6 @@ s.setAttribute('data-timestamp', +new Date());
         <div class='clr'></div>
       </div>
     </div>
-    
 </div>
 
   

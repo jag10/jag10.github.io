@@ -14,11 +14,10 @@
 	<meta property="og:url" content="https://www.jarboleda.me/es/articles/web-development-environment/" />
 	<meta property="og:image" content="https://www.jarboleda.me/articles/img/web-development-environment.jpg" />
 	<meta property="og:updated_time" content="2016-07-27 13:50:40 &#43;0200 CEST"/>
-	<meta property="og:locale" content="es-ES" /><meta property="og:site_name" content="Arboleda" />
+	<meta property="og:locale" content="es-ES" />
+	<meta property="og:site_name" content="Arboleda" />
 	
 	
-	<meta property="article:author" content="https://www.facebook.com/killskynet" />
-	<meta property="article:publisher" content="https://www.facebook.com/nozzleio" />
 	<meta property="article:published_time" content="2016-07-27 13:50:40 &#43;0200 CEST" />
 	<meta property="article:modified_time" content="2016-07-27 13:50:40 &#43;0200 CEST" />
 	<meta property="article:section" content="articles" />
@@ -26,14 +25,15 @@
 	<meta property="article:tag" content="vagrant" />
 	<meta property="article:tag" content="nodejs" />
 	
-	<meta property="fb:admins" content="17807199" />
+	
     
     <meta itemprop="name" content="Entorno para desarrollo web">
     <meta itemprop="description" content="En este post vamos a ver un entorno avanzado de desarrollo web. Tendremos nuestra web alojada en un servidor (que NO utilizaremos para nada durante el desarrollo), y en nuestra máquina local tendremos una máquina virtual para el sitio web en el que estemos trabajando. Para la máquina virtual utilizaremos vagrant con el stack de scotch, que nos viene preparado para montar directamente el sitio web sin trabajo extra.">
+    <meta name="author" content="Jeferson Arboleda">
     
     <meta itemprop="image" content="web-development-environment.jpg">
     
-    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,curl,cwp,fedora25,fopen,magento2,mate,nodejs,odroid,php,php7,piwik,processwire,sass,ubuntu,unrealengine,vagrant,vm," />
+    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,curl,cwp,fedora25,fopen,magento2,mate,nodejs,odroid,php,php7,piwik,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm," />
     <meta itemprop="wordCount" content="1376">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
@@ -41,11 +41,12 @@
 	
 	<meta name="twitter:title" content="Entorno para desarrollo web"/>
 	<meta name="twitter:description" content="En este post vamos a ver un entorno avanzado de desarrollo web. Tendremos nuestra web alojada en un servidor (que NO utilizaremos para nada durante el desarrollo), y en nuestra máquina local tendremos una máquina virtual para el sitio web en el que estemos trabajando. Para la máquina virtual utilizaremos vagrant con el stack de scotch, que nos viene preparado para montar directamente el sitio web sin trabajo extra."/>
-	<meta name="twitter:site" content="@j_a_g_x"/><meta name="twitter:domain" content="nozzle.io"/>
+	<meta name="twitter:site" content="@j_a_g_x"/>
 	
-	<meta name="twitter:creator" content="@killskynet"/>
+	<meta name="twitter:creator" content="@j_a_g_x"/>
 
 
+	<meta name="news_keywords" content="sass,vagrant,nodejs" />
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="/css/global.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -64,7 +65,7 @@
           <div class="pure-menu pure-menu-horizontal custom-can-transform">
             <ul class="pure-menu-list float-left">
               
-              <li class="pure-menu-item"><a class='pure-menu-link' href=/>home</a></li>
+              <li class="pure-menu-item"><a class='pure-menu-link' href=/es>home</a></li>
               
               <li class="pure-menu-item"><a class='pure-menu-link' href=/extras/cv/>sobre mi</a></li>
               
@@ -132,19 +133,18 @@
     <div class="article-date">
       <p class="day"><i class="fa fa-calendar"></i>27 Jul 2016</p>
       <p><i class="fa fa-clock-o"></i>8 min read  ~ 1400 words</p>
-      
     </div>
+    
     <div class="article-tags">
       
       <a href="search tag" rel="tag">sass</a> 
       <a href="search tag" rel="tag">vagrant</a> 
       <a href="search tag" rel="tag">nodejs</a> 
     </div>
+    
     <div class="clearfix"></div>
     
     <h1 class="article_title title">Entorno para desarrollo web</h1>
-    
-
     
     <div class="article_excerpt">
       
@@ -351,7 +351,7 @@ En cuanto a la metodología a utilizar en git, queda a elección del desarrollad
 
 <p>Este repositorio no contiene toda la web, sólo el directorio que contiene el tema/plugin que se esté desarrollando.</p>
 
-<h2 id="aclaraciones">Aclaraciones:</h2>
+<h2 id="aclaraciones">Aclaraciones</h2>
 
 <p>nodejs, npm, gulp, livereload&hellip; todos estos paquetes deben instalarse en la máquina virtual, aunque por comodidad también pueden instalarse en la máquina real, excepto livereload, que tiene que estar en el servidor (máquina virtual)</p>
 </p>
@@ -360,8 +360,23 @@ En cuanto a la metodología a utilizar en git, queda a elección del desarrollad
     <div class="clearfix"></div>
     
     <div class="article_resources">
-      <span>Resources</span>
+      <h2>Resources</h2>
       <ul>
+        
+        <li>
+          
+          <a href="https://www.if-not-true-then-false.com/2010/install-virtualbox-with-yum-on-fedora-centos-red-hat-rhel/">VirtualBox 5.1 en Fedora 25/24, CentOS/RHEL 7.3/6.9/5.11</a> 
+        </li>
+        
+        <li>
+          
+          <a href="https://box.scotch.io/">Scotch box</a> 
+        </li>
+        
+        <li>
+          
+          <a href="https://www.adminer.org/static/download/4.2.5/adminer-4.2.5.php">adminer en adminer.org</a> 
+        </li>
         
       </ul>
     </div>
@@ -393,12 +408,10 @@ En cuanto a la metodología a utilizar en git, queda a elección del desarrollad
   </ul>
 </div>
 
-      
     </div>
 
     <div class='post-footer'>
       
-       
        <div id="disqus_thread"></div>
 <script>
 
@@ -429,13 +442,12 @@ s.setAttribute('data-timestamp', +new Date());
 
 <div class='authorboxwrap'>
 <h4>Author</h4>
-  
     <div class='avatar-container'>
       <img alt='' class='author_avatar' height='96' src="/img/me2.min.png" width='96' />
       <h4 rel='author'>Jeferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p>John Connor is the son of Sarah Connor and Kyle Reese, and the leader of the worldwide human resistance...</p>
+      <p>John Connor is the son of Sarah Connor and Kyle Reese, and the leader of the worldwide human resistance&hellip;</p>
       <div class='authorsocial'>
         <a class='' href='http://facebook.com/' target='_blank'><i class='fa fa-facebook'></i></a>
         <a class='' href='http://twitter.com/' target='_blank'><i class='fa fa-twitter'></i></a>
@@ -444,7 +456,6 @@ s.setAttribute('data-timestamp', +new Date());
         <div class='clr'></div>
       </div>
     </div>
-    
 </div>
 
   
@@ -458,7 +469,7 @@ s.setAttribute('data-timestamp', +new Date());
 <li><a href="#instalando-vagrant">Instalando vagrant</a></li>
 <li><a href="#estructura-de-directorios">Estructura de directorios</a></li>
 <li><a href="#automatizando-tareas">Automatizando tareas</a></li>
-<li><a href="#aclaraciones">Aclaraciones:</a></li>
+<li><a href="#aclaraciones">Aclaraciones</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -482,19 +493,6 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/unreal_engine.min.jpg" alt="" width='72' />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">Instalando unreal engine en fedora 25</a>
-                </div>
-              </div>
-            </li>
-              
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
                   <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
                     <img alt='' border='0' height='72' src="/articles/img/fixing-corrupted-partition-on-virtual-machine.jpg" alt="" width='72' />
                   </a>
@@ -514,6 +512,19 @@ s.setAttribute('data-timestamp', +new Date());
                 </div>
                 <div class='item-title'>
                   <a href='/es/articles/web-development-environment/' class="mostVisitedLink">Entorno para desarrollo web</a>
+                </div>
+              </div>
+            </li>
+              
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/unreal_engine.min.jpg" alt="" width='72' />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">Instalando unreal engine en fedora 25</a>
                 </div>
               </div>
             </li>

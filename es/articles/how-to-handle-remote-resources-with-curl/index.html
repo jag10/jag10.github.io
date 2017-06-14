@@ -14,11 +14,10 @@
 	<meta property="og:url" content="https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/" />
 	<meta property="og:image" content="https://www.jarboleda.me/articles/img/how-to-handle-remote-resources-with-curl.png" />
 	<meta property="og:updated_time" content="2016-07-17 13:34:28 &#43;0200 CEST"/>
-	<meta property="og:locale" content="es-ES" /><meta property="og:site_name" content="Arboleda" />
+	<meta property="og:locale" content="es-ES" />
+	<meta property="og:site_name" content="Arboleda" />
 	
 	
-	<meta property="article:author" content="https://www.facebook.com/killskynet" />
-	<meta property="article:publisher" content="https://www.facebook.com/nozzleio" />
 	<meta property="article:published_time" content="2016-07-17 13:34:28 &#43;0200 CEST" />
 	<meta property="article:modified_time" content="2016-07-17 13:34:28 &#43;0200 CEST" />
 	<meta property="article:section" content="articles" />
@@ -26,14 +25,15 @@
 	<meta property="article:tag" content="php" />
 	<meta property="article:tag" content="fopen" />
 	
-	<meta property="fb:admins" content="17807199" />
+	
     
     <meta itemprop="name" content="Cómo manejar recursos remotos con curl">
     <meta itemprop="description" content="El problema Cuando necesitas obtener ficheros remotos para manejar su contenido (ejemplo: ficheros csv) es posible que su acceso no sea tan sencillo como utilizar fopen: &lt;?php $handle = fopen($filename, &quot;r&quot;) or die(&#39;could not open .&#39; $filename);  Si esta sentencia funciona de forma correcta, luego podremos utilizar el handle para procesar el fichero con distintas utilidades, como fgetcsv(). Es importante poder abrir ficheros con fopen porque muchas funciones utilizan un parámetro del tipo Resource en php, que es lo que nos devuelve fopen.">
+    <meta name="author" content="Jeferson Arboleda">
     
     <meta itemprop="image" content="how-to-handle-remote-resources-with-curl.png">
     
-    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,curl,cwp,fedora25,fopen,magento2,mate,nodejs,odroid,php,php7,piwik,processwire,sass,ubuntu,unrealengine,vagrant,vm," />
+    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,curl,cwp,fedora25,fopen,magento2,mate,nodejs,odroid,php,php7,piwik,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm," />
     <meta itemprop="wordCount" content="320">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
@@ -41,11 +41,12 @@
 	
 	<meta name="twitter:title" content="Cómo manejar recursos remotos con curl"/>
 	<meta name="twitter:description" content="El problema Cuando necesitas obtener ficheros remotos para manejar su contenido (ejemplo: ficheros csv) es posible que su acceso no sea tan sencillo como utilizar fopen: &lt;?php $handle = fopen($filename, &quot;r&quot;) or die(&#39;could not open .&#39; $filename);  Si esta sentencia funciona de forma correcta, luego podremos utilizar el handle para procesar el fichero con distintas utilidades, como fgetcsv(). Es importante poder abrir ficheros con fopen porque muchas funciones utilizan un parámetro del tipo Resource en php, que es lo que nos devuelve fopen."/>
-	<meta name="twitter:site" content="@j_a_g_x"/><meta name="twitter:domain" content="nozzle.io"/>
+	<meta name="twitter:site" content="@j_a_g_x"/>
 	
-	<meta name="twitter:creator" content="@killskynet"/>
+	<meta name="twitter:creator" content="@j_a_g_x"/>
 
 
+	<meta name="news_keywords" content="curl,php,fopen" />
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="/css/global.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -64,7 +65,7 @@
           <div class="pure-menu pure-menu-horizontal custom-can-transform">
             <ul class="pure-menu-list float-left">
               
-              <li class="pure-menu-item"><a class='pure-menu-link' href=/>home</a></li>
+              <li class="pure-menu-item"><a class='pure-menu-link' href=/es>home</a></li>
               
               <li class="pure-menu-item"><a class='pure-menu-link' href=/extras/cv/>sobre mi</a></li>
               
@@ -132,19 +133,18 @@
     <div class="article-date">
       <p class="day"><i class="fa fa-calendar"></i>17 Jul 2016</p>
       <p><i class="fa fa-clock-o"></i>3 min read  ~ 400 words</p>
-      
     </div>
+    
     <div class="article-tags">
       
       <a href="search tag" rel="tag">curl</a> 
       <a href="search tag" rel="tag">php</a> 
       <a href="search tag" rel="tag">fopen</a> 
     </div>
+    
     <div class="clearfix"></div>
     
     <h1 class="article_title title">Cómo manejar recursos remotos con curl</h1>
-    
-
     
     <div class="article_excerpt">
       
@@ -205,8 +205,13 @@ Sin embargo, fopen puede fallar:</p>
     <div class="clearfix"></div>
     
     <div class="article_resources">
-      <span>Resources</span>
+      <h2>Resources</h2>
       <ul>
+        
+        <li>
+          
+          <a href="http://php.net/manual/en/curl.examples-basic.php">Ejemplo básico de cURL</a> 
+        </li>
         
       </ul>
     </div>
@@ -238,12 +243,10 @@ Sin embargo, fopen puede fallar:</p>
   </ul>
 </div>
 
-      
     </div>
 
     <div class='post-footer'>
       
-       
        <div id="disqus_thread"></div>
 <script>
 
@@ -274,13 +277,12 @@ s.setAttribute('data-timestamp', +new Date());
 
 <div class='authorboxwrap'>
 <h4>Author</h4>
-  
     <div class='avatar-container'>
       <img alt='' class='author_avatar' height='96' src="/img/me2.min.png" width='96' />
       <h4 rel='author'>Jeferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p>John Connor is the son of Sarah Connor and Kyle Reese, and the leader of the worldwide human resistance...</p>
+      <p>John Connor is the son of Sarah Connor and Kyle Reese, and the leader of the worldwide human resistance&hellip;</p>
       <div class='authorsocial'>
         <a class='' href='http://facebook.com/' target='_blank'><i class='fa fa-facebook'></i></a>
         <a class='' href='http://twitter.com/' target='_blank'><i class='fa fa-twitter'></i></a>
@@ -289,7 +291,6 @@ s.setAttribute('data-timestamp', +new Date());
         <div class='clr'></div>
       </div>
     </div>
-    
 </div>
 
   
@@ -324,12 +325,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/unreal_engine.min.jpg" alt="" width='72' />
+                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/fixing-corrupted-partition-on-virtual-machine.jpg" alt="" width='72' />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">Instalando unreal engine en fedora 25</a>
+                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Arreglando una partición corrupta de una máquina virtual</a>
                 </div>
               </div>
             </li>
@@ -350,12 +351,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/fixing-corrupted-partition-on-virtual-machine.jpg" alt="" width='72' />
+                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/unreal_engine.min.jpg" alt="" width='72' />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Arreglando una partición corrupta de una máquina virtual</a>
+                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">Instalando unreal engine en fedora 25</a>
                 </div>
               </div>
             </li>

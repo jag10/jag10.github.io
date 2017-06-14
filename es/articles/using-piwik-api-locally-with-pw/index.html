@@ -14,25 +14,25 @@
 	<meta property="og:url" content="https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/" />
 	<meta property="og:image" content="https://www.jarboleda.me/articles/img/using-piwik-api-locally-with-pw.jpg" />
 	<meta property="og:updated_time" content="2016-05-01 12:37:41 &#43;0200 CEST"/>
-	<meta property="og:locale" content="es-ES" /><meta property="og:site_name" content="Arboleda" />
+	<meta property="og:locale" content="es-ES" />
+	<meta property="og:site_name" content="Arboleda" />
 	
 	
-	<meta property="article:author" content="https://www.facebook.com/killskynet" />
-	<meta property="article:publisher" content="https://www.facebook.com/nozzleio" />
 	<meta property="article:published_time" content="2016-05-01 12:37:41 &#43;0200 CEST" />
 	<meta property="article:modified_time" content="2016-05-01 12:37:41 &#43;0200 CEST" />
 	<meta property="article:section" content="articles" />
 	<meta property="article:tag" content="processwire" />
 	<meta property="article:tag" content="piwik" />
 	
-	<meta property="fb:admins" content="17807199" />
+	
     
     <meta itemprop="name" content="Utilizando la API de piwik en local con PW">
     <meta itemprop="description" content="Para hacer el tracking de visitas de jglab.me utilizo Piwik. ¿Por qué? El principal motivo es que permite mantener la información de manera privada, sin que terceros lleguen a saberla, pero además, piwik ofrece una API muy potente que puede ser utilizada de manera local, lo que es muy importante para el rendimiento, pues me permite obtener estadísticas de la web sin realizar ninguna petición. Para las peticiones locales utilizo la siguiente clase:">
+    <meta name="author" content="Jeferson Arboleda">
     
     <meta itemprop="image" content="using-piwik-api-locally-with-pw.jpg">
     
-    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,curl,cwp,fedora25,fopen,magento2,mate,nodejs,odroid,php,php7,piwik,processwire,sass,ubuntu,unrealengine,vagrant,vm," />
+    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,curl,cwp,fedora25,fopen,magento2,mate,nodejs,odroid,php,php7,piwik,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm," />
     <meta itemprop="wordCount" content="269">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
@@ -40,11 +40,12 @@
 	
 	<meta name="twitter:title" content="Utilizando la API de piwik en local con PW"/>
 	<meta name="twitter:description" content="Para hacer el tracking de visitas de jglab.me utilizo Piwik. ¿Por qué? El principal motivo es que permite mantener la información de manera privada, sin que terceros lleguen a saberla, pero además, piwik ofrece una API muy potente que puede ser utilizada de manera local, lo que es muy importante para el rendimiento, pues me permite obtener estadísticas de la web sin realizar ninguna petición. Para las peticiones locales utilizo la siguiente clase:"/>
-	<meta name="twitter:site" content="@j_a_g_x"/><meta name="twitter:domain" content="nozzle.io"/>
+	<meta name="twitter:site" content="@j_a_g_x"/>
 	
-	<meta name="twitter:creator" content="@killskynet"/>
+	<meta name="twitter:creator" content="@j_a_g_x"/>
 
 
+	<meta name="news_keywords" content="processwire,piwik" />
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="/css/global.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -63,7 +64,7 @@
           <div class="pure-menu pure-menu-horizontal custom-can-transform">
             <ul class="pure-menu-list float-left">
               
-              <li class="pure-menu-item"><a class='pure-menu-link' href=/>home</a></li>
+              <li class="pure-menu-item"><a class='pure-menu-link' href=/es>home</a></li>
               
               <li class="pure-menu-item"><a class='pure-menu-link' href=/extras/cv/>sobre mi</a></li>
               
@@ -131,18 +132,17 @@
     <div class="article-date">
       <p class="day"><i class="fa fa-calendar"></i>1 May 2016</p>
       <p><i class="fa fa-clock-o"></i>3 min read  ~ 300 words</p>
-      
     </div>
+    
     <div class="article-tags">
       
       <a href="search tag" rel="tag">processwire</a> 
       <a href="search tag" rel="tag">piwik</a> 
     </div>
+    
     <div class="clearfix"></div>
     
     <h1 class="article_title title">Utilizando la API de piwik en local con PW</h1>
-    
-
     
     <div class="article_excerpt">
       
@@ -236,8 +236,18 @@
     <div class="clearfix"></div>
     
     <div class="article_resources">
-      <span>Resources</span>
+      <h2>Resources</h2>
       <ul>
+        
+        <li>
+          
+          <a href="https://developer.piwik.org/guides/querying-the-reporting-api#call-the-piwik-api-in-php">Call the Piwik API in PHP</a> 
+        </li>
+        
+        <li>
+          
+          <a href="http://php.net/manual/en/function.asort.php">asort en php.net</a> 
+        </li>
         
       </ul>
     </div>
@@ -269,12 +279,10 @@
   </ul>
 </div>
 
-      
     </div>
 
     <div class='post-footer'>
       
-       
        <div id="disqus_thread"></div>
 <script>
 
@@ -305,13 +313,12 @@ s.setAttribute('data-timestamp', +new Date());
 
 <div class='authorboxwrap'>
 <h4>Author</h4>
-  
     <div class='avatar-container'>
       <img alt='' class='author_avatar' height='96' src="/img/me2.min.png" width='96' />
       <h4 rel='author'>Jeferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p>John Connor is the son of Sarah Connor and Kyle Reese, and the leader of the worldwide human resistance...</p>
+      <p>John Connor is the son of Sarah Connor and Kyle Reese, and the leader of the worldwide human resistance&hellip;</p>
       <div class='authorsocial'>
         <a class='' href='http://facebook.com/' target='_blank'><i class='fa fa-facebook'></i></a>
         <a class='' href='http://twitter.com/' target='_blank'><i class='fa fa-twitter'></i></a>
@@ -320,7 +327,6 @@ s.setAttribute('data-timestamp', +new Date());
         <div class='clr'></div>
       </div>
     </div>
-    
 </div>
 
   
@@ -355,12 +361,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/fixing-corrupted-partition-on-virtual-machine.jpg" alt="" width='72' />
+                  <a href='/es/articles/web-development-environment/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/web-development-environment.jpg" alt="" width='72' />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Arreglando una partición corrupta de una máquina virtual</a>
+                  <a href='/es/articles/web-development-environment/' class="mostVisitedLink">Entorno para desarrollo web</a>
                 </div>
               </div>
             </li>
@@ -381,12 +387,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/web-development-environment/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/web-development-environment.jpg" alt="" width='72' />
+                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/fixing-corrupted-partition-on-virtual-machine.jpg" alt="" width='72' />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/web-development-environment/' class="mostVisitedLink">Entorno para desarrollo web</a>
+                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Arreglando una partición corrupta de una máquina virtual</a>
                 </div>
               </div>
             </li>

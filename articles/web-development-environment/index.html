@@ -35,7 +35,7 @@ Prerequisites We&rsquo;ll use the following tecnologies for our environment. You
     
     <meta itemprop="image" content="web-development-environment.jpg">
     
-    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,backup,backups,bash,centos6,curl,cwp,fedora25,fopen,ftp,httpd,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,performance,php,php7,piwik,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm,vps,zip," />
+    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,backup,backups,bash,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,httpd,iptables,ipv6,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm,vps,zip," />
     <meta itemprop="wordCount" content="1231">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
@@ -136,19 +136,18 @@ Prerequisites We&rsquo;ll use the following tecnologies for our environment. You
     <div class="article-date">
       <p class="day"><i class="fa fa-calendar"></i>27 Jul 2016</p>
       <p><i class="fa fa-clock-o"></i>7 min read  ~ 1300 words</p>
-      
     </div>
+    
     <div class="article-tags">
       
       <a href="search tag" rel="tag">sass</a> 
       <a href="search tag" rel="tag">vagrant</a> 
       <a href="search tag" rel="tag">nodejs</a> 
     </div>
+    
     <div class="clearfix"></div>
     
     <h1 class="article_title title">Web development environment</h1>
-    
-
     
     <div class="article_excerpt">
       
@@ -355,7 +354,7 @@ Now, with git, you can work in the best way you feel comfortable. Personally, I 
 This repo doesn&rsquo;t contain the whole website, only the directory I use for the theme/plugin I&rsquo;m working on</li>
 </ul>
 
-<h2 id="notes">Notes:</h2>
+<h2 id="notes">Notes</h2>
 
 <ul>
 <li>nodejs, npm, gulp, livereload&hellip; all these packages should be installed on the virtual machine, although you can install them in the real machine too, except the livereload extension, which has to be on the server (virtual machine)</li>
@@ -366,8 +365,23 @@ This repo doesn&rsquo;t contain the whole website, only the directory I use for 
     <div class="clearfix"></div>
     
     <div class="article_resources">
-      <span>Resources</span>
+      <h2>Resources</h2>
       <ul>
+        
+        <li>
+          
+          <a href="https://www.if-not-true-then-false.com/2010/install-virtualbox-with-yum-on-fedora-centos-red-hat-rhel/">VirtualBox 5.1 on Fedora 25/24, CentOS/RHEL 7.3/6.9/5.11</a> 
+        </li>
+        
+        <li>
+          
+          <a href="https://box.scotch.io/">Scotch box</a> 
+        </li>
+        
+        <li>
+          
+          <a href="https://www.adminer.org/static/download/4.2.5/adminer-4.2.5.php">adminer on adminer.org</a> 
+        </li>
         
       </ul>
     </div>
@@ -399,12 +413,10 @@ This repo doesn&rsquo;t contain the whole website, only the directory I use for 
   </ul>
 </div>
 
-      
     </div>
 
     <div class='post-footer'>
       
-       
        <div id="disqus_thread"></div>
 <script>
 
@@ -435,13 +447,12 @@ s.setAttribute('data-timestamp', +new Date());
 
 <div class='authorboxwrap'>
 <h4>Author</h4>
-  
     <div class='avatar-container'>
       <img alt='' class='author_avatar' height='96' src="/img/me2.min.png" width='96' />
       <h4 rel='author'>Jeferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p>John Connor is the son of Sarah Connor and Kyle Reese, and the leader of the worldwide human resistance...</p>
+      <p>Looking for a challenge :) | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a>, and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
       <div class='authorsocial'>
         <a class='' href='http://facebook.com/' target='_blank'><i class='fa fa-facebook'></i></a>
         <a class='' href='http://twitter.com/' target='_blank'><i class='fa fa-twitter'></i></a>
@@ -450,7 +461,6 @@ s.setAttribute('data-timestamp', +new Date());
         <div class='clr'></div>
       </div>
     </div>
-    
 </div>
 
   
@@ -464,7 +474,7 @@ s.setAttribute('data-timestamp', +new Date());
 <li><a href="#installing-vagrant">Installing vagrant</a></li>
 <li><a href="#dir-structure">Dir structure</a></li>
 <li><a href="#automating-tasks">Automating tasks</a></li>
-<li><a href="#notes">Notes:</a></li>
+<li><a href="#notes">Notes</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -488,19 +498,6 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img alt='' border='0' height='72' src="/articles/img/unreal_engine.min.jpg" alt="" width='72' />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
-                </div>
-              </div>
-            </li>
-              
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
                   <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
                     <img alt='' border='0' height='72' src="/articles/img/fixing-corrupted-partition-on-virtual-machine.jpg" alt="" width='72' />
                   </a>
@@ -520,6 +517,19 @@ s.setAttribute('data-timestamp', +new Date());
                 </div>
                 <div class='item-title'>
                   <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
+                </div>
+              </div>
+            </li>
+              
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
+                    <img alt='' border='0' height='72' src="/articles/img/unreal_engine.min.jpg" alt="" width='72' />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
                 </div>
               </div>
             </li>
