@@ -16,7 +16,10 @@
     <meta name="theme-color" content="#ffffff">
     	
 	<meta property="og:title" content="Configuring IPTABLES and fail2ban on centOS 6" />
-	<meta property="og:description" content="In this post I&rsquo;ll explain how to configure iptables along with fail2ban and how to start/stop these services without messing up your chains or configuration. Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on /etc/fail2ban/jail.local. Copy the file from /etc/fail2ban/jail.conf if it doesn&rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file: [ssh-iptables] enabled = true  Don&rsquo;t forget to add yourself to the ignored ips, you do not want to lock out yourself from the server." />
+	<meta property="og:description" content="In this post I&rsquo;ll explain how to configure iptables along with fail2ban and how to start/stop these services without messing up your chains or configuration.
+
+Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on /etc/fail2ban/jail.local. Copy the file from /etc/fail2ban/jail.conf if it doesn&rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file:
+" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/" />
 	<meta property="og:image" content="https://www.jarboleda.me/articles/img/configuring-iptables-and-fail2ban-on-centos-6.jpg" />
@@ -35,7 +38,10 @@
 	
     
     <meta itemprop="name" content="Configuring IPTABLES and fail2ban on centOS 6">
-    <meta itemprop="description" content="In this post I&rsquo;ll explain how to configure iptables along with fail2ban and how to start/stop these services without messing up your chains or configuration. Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on /etc/fail2ban/jail.local. Copy the file from /etc/fail2ban/jail.conf if it doesn&rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file: [ssh-iptables] enabled = true  Don&rsquo;t forget to add yourself to the ignored ips, you do not want to lock out yourself from the server.">
+    <meta itemprop="description" content="In this post I&rsquo;ll explain how to configure iptables along with fail2ban and how to start/stop these services without messing up your chains or configuration.
+
+Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on /etc/fail2ban/jail.local. Copy the file from /etc/fail2ban/jail.conf if it doesn&rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file:
+">
     <meta name="author" content="Jeferson Arboleda">
     
     <meta itemprop="image" content="configuring-iptables-and-fail2ban-on-centos-6.jpg">
@@ -47,7 +53,10 @@
 	<meta name="twitter:image:src" content="https://www.jarboleda.me/articles/img/configuring-iptables-and-fail2ban-on-centos-6.jpg"/>
 	
 	<meta name="twitter:title" content="Configuring IPTABLES and fail2ban on centOS 6"/>
-	<meta name="twitter:description" content="In this post I&rsquo;ll explain how to configure iptables along with fail2ban and how to start/stop these services without messing up your chains or configuration. Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on /etc/fail2ban/jail.local. Copy the file from /etc/fail2ban/jail.conf if it doesn&rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file: [ssh-iptables] enabled = true  Don&rsquo;t forget to add yourself to the ignored ips, you do not want to lock out yourself from the server."/>
+	<meta name="twitter:description" content="In this post I&rsquo;ll explain how to configure iptables along with fail2ban and how to start/stop these services without messing up your chains or configuration.
+
+Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on /etc/fail2ban/jail.local. Copy the file from /etc/fail2ban/jail.conf if it doesn&rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file:
+"/>
 	<meta name="twitter:site" content="@j_a_g_x"/>
 	
 	<meta name="twitter:creator" content="@j_a_g_x"/>
@@ -135,9 +144,7 @@
     <section id="main" class="pure-u-1 pure-u-md-3-4">
       <article>
         <div class="post-container">
-  <div class="post-image-container">
-    
-  </div>
+  
   <div class="article_summary">
     <div class="article-date">
       <p class="day"><i class="fa fa-calendar"></i>10 Aug 2015</p>
@@ -157,14 +164,15 @@
     
     <div class="article_excerpt">
       
-      <p>
+      <p><p>In this post I&rsquo;ll explain how to configure iptables along with fail2ban and how to start/stop these services without messing up your chains or configuration.</p>
 
-<p>In this post I&rsquo;ll explain how to configure iptables along with fail2ban and how to start/stop these services without messing up your chains or configuration.
-Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on <code>/etc/fail2ban/jail.local</code>. Copy the file from <code>/etc/fail2ban/jail.conf</code> if it doesn&rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file:
+<p>Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on <code>/etc/fail2ban/jail.local</code>. Copy the file from <code>/etc/fail2ban/jail.conf</code> if it doesn&rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file:
+</p>
+
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">[</span>ssh-iptables<span style="color: #f92672">]</span>
 <span style="color: #f8f8f2">enabled</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">true</span>
 </pre></div>
-</p>
+
 
 <p>Don&rsquo;t forget to add yourself to the ignored ips, you do not want to lock out yourself from the server. If this happens to you, go to your vps/server control panel and look for an emergency access, most providers will have one (ovh and 1and1 do). Or you could just simply sit and wait until fail2ban unbans you, just don&rsquo;t keep trying to log in or you&rsquo;ll make the situation worse.
 Ok, now you have iptables installed and fail2ban configured. You may wonder what will happen if you reboot your server or if you just restart iptables. Yep, you&rsquo;ll lose all your fail2ban chains. So let&rsquo;s use a script to start and stop iptables, to ensure we don&rsquo;t lose chains and also to make it easier and safer to modify rules.</p>
@@ -317,8 +325,7 @@ Edit ~/.bashrc and add the following lines:
 <p>Now, when you want to reboot your firewall, just use the command below. Beware, it will delete all of your rules and put the ones you set in the startup script. If you want to add/delete rules, just modify start.fw and restart the firewall.
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>stopfw <span style="color: #f92672">&amp;&amp;</span> startfw
 </pre></div>
-</p>
-</p>
+</p></p>
       
     </div>
     <div class="clearfix"></div>
@@ -345,7 +352,7 @@ Edit ~/.bashrc and add the following lines:
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/&amp;title=Configuring%20IPTABLES%20and%20fail2ban%20on%20centOS%206&amp;summary=In%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20configure%20iptables%20along%20with%20fail2ban%20and%20how%20to%20start/stop%20these%20services%20without%20messing%20up%20your%20chains%20or%20configuration.%20Iptables%20should%20be%20included%20in%20your%20default%20Linux%20OS,%20and%20you%20can%20easily%20get%20fail2ban%20from%20standard%20repos.%20So,%20just%20enable%20the%20chains%20you%20need%20on%20/etc/fail2ban/jail.local.%20Copy%20the%20file%20from%20/etc/fail2ban/jail.conf%20if%20it%20doesn&amp;rsquo;t%20exist.%20For%20example,%20if%20you%20want%20%28you%20should%29%20activate%20ssh%20jail,%20just%20add/uncomment%20this%20lines%20to%20the%20file:%20[ssh-iptables]%20enabled%20=%20true%20%20Don&amp;rsquo;t%20forget%20to%20add%20yourself%20to%20the%20ignored%20ips,%20you%20do%20not%20want%20to%20lock%20out%20yourself%20from%20the%20server.&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/&amp;title=Configuring%20IPTABLES%20and%20fail2ban%20on%20centOS%206&amp;summary=%3cp%3eIn%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20configure%20iptables%20along%20with%20fail2ban%20and%20how%20to%20start/stop%20these%20services%20without%20messing%20up%20your%20chains%20or%20configuration.%3c/p%3e%0a%0a%3cp%3eIptables%20should%20be%20included%20in%20your%20default%20Linux%20OS,%20and%20you%20can%20easily%20get%20fail2ban%20from%20standard%20repos.%20So,%20just%20enable%20the%20chains%20you%20need%20on%20%3ccode%3e/etc/fail2ban/jail.local%3c/code%3e.%20Copy%20the%20file%20from%20%3ccode%3e/etc/fail2ban/jail.conf%3c/code%3e%20if%20it%20doesn&amp;rsquo;t%20exist.%20For%20example,%20if%20you%20want%20%28you%20should%29%20activate%20ssh%20jail,%20just%20add/uncomment%20this%20lines%20to%20the%20file:%0a%3c/p%3e&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fa fa-twitter" href="http://twitter.com/share?text=Configuring%20IPTABLES%20and%20fail2ban%20on%20centOS%206&amp;url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -357,7 +364,7 @@ Edit ~/.bashrc and add the following lines:
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/&amp;media=https://www.jarboleda.meconfiguring-iptables-and-fail2ban-on-centos-6.jpg&amp;description=In%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20configure%20iptables%20along%20with%20fail2ban%20and%20how%20to%20start/stop%20these%20services%20without%20messing%20up%20your%20chains%20or%20configuration.%20Iptables%20should%20be%20included%20in%20your%20default%20Linux%20OS,%20and%20you%20can%20easily%20get%20fail2ban%20from%20standard%20repos.%20So,%20just%20enable%20the%20chains%20you%20need%20on%20/etc/fail2ban/jail.local.%20Copy%20the%20file%20from%20/etc/fail2ban/jail.conf%20if%20it%20doesn&amp;rsquo;t%20exist.%20For%20example,%20if%20you%20want%20%28you%20should%29%20activate%20ssh%20jail,%20just%20add/uncomment%20this%20lines%20to%20the%20file:%20[ssh-iptables]%20enabled%20=%20true%20%20Don&amp;rsquo;t%20forget%20to%20add%20yourself%20to%20the%20ignored%20ips,%20you%20do%20not%20want%20to%20lock%20out%20yourself%20from%20the%20server." onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/&amp;media=https://www.jarboleda.meconfiguring-iptables-and-fail2ban-on-centos-6.jpg&amp;description=%3cp%3eIn%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20configure%20iptables%20along%20with%20fail2ban%20and%20how%20to%20start/stop%20these%20services%20without%20messing%20up%20your%20chains%20or%20configuration.%3c/p%3e%0a%0a%3cp%3eIptables%20should%20be%20included%20in%20your%20default%20Linux%20OS,%20and%20you%20can%20easily%20get%20fail2ban%20from%20standard%20repos.%20So,%20just%20enable%20the%20chains%20you%20need%20on%20%3ccode%3e/etc/fail2ban/jail.local%3c/code%3e.%20Copy%20the%20file%20from%20%3ccode%3e/etc/fail2ban/jail.conf%3c/code%3e%20if%20it%20doesn&amp;rsquo;t%20exist.%20For%20example,%20if%20you%20want%20%28you%20should%29%20activate%20ssh%20jail,%20just%20add/uncomment%20this%20lines%20to%20the%20file:%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -453,42 +460,29 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
-                    <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
+                  <a href='/articles/zipping-and-unzipping-websites-with-php/' target='_blank'>
+                    <img alt='Zipping and unzipping websites with php' width='72' height='72' src="/articles/img/thumbs/zipping-and-unzipping-websites-with-php.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
+                  <a href='/articles/zipping-and-unzipping-websites-with-php/' class="mostVisitedLink">Zipping and unzipping websites with php</a>
                 </div>
               </div>
             </li>
+            
+            
             
             
              
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
-                    <img alt='Fixing a corrupted partition on a virtual machine' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
+                  <a href='/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
+                    <img alt='Installing ubuntu 16.04 on odroid xu3 lite' width='72' height='72' src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' target='_blank'>
-                    <img alt='Getting 1.5s page load time on a basic vps' width='72' height='72' src="/articles/img/thumbs/getting-1.5s-page-load-time-on-a-basic-vps.png" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' class="mostVisitedLink">Getting 1.5s page load time on a basic vps</a>
+                  <a href='/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Installing ubuntu 16.04 on odroid xu3 lite</a>
                 </div>
               </div>
             </li>
@@ -553,7 +547,7 @@ s.setAttribute('data-timestamp', +new Date());
       <a href='https://www.jarboleda.me'>https://www.jarboleda.me</a>
     </p>
     <p class='attribution'>Powered by</p>
-    <a href='https://gohugo.io/'>
+    <a href='https://gohugo.io/' target="_blank" >
       <img alt="hugo logo" class='attribution_logo' src="/img/hugo-logo.png" />
     </a>
   </div>

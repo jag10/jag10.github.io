@@ -16,7 +16,15 @@
       <pubDate>Sun, 17 Jul 2016 13:34:28 +0200</pubDate>
       
       <guid>https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/</guid>
-      <description>El problema Cuando necesitas obtener ficheros remotos para manejar su contenido (ejemplo: ficheros csv) es posible que su acceso no sea tan sencillo como utilizar fopen: &amp;lt;?php $handle = fopen($filename, &amp;quot;r&amp;quot;) or die(&amp;#39;could not open .&amp;#39; $filename);  Si esta sentencia funciona de forma correcta, luego podremos utilizar el handle para procesar el fichero con distintas utilidades, como fgetcsv(). Es importante poder abrir ficheros con fopen porque muchas funciones utilizan un parámetro del tipo Resource en php, que es lo que nos devuelve fopen.</description>
+      <description>&lt;h2 id=&#34;el-problema&#34;&gt;El problema&lt;/h2&gt;
+
+&lt;p&gt;Cuando necesitas obtener ficheros remotos para manejar su contenido (ejemplo: ficheros csv) es posible que su acceso no sea tan sencillo como utilizar fopen:
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;$handle&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;fopen($filename,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;r&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;die&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;could not open .&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;$filename);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -25,7 +33,11 @@
       <pubDate>Sun, 01 May 2016 13:28:37 +0200</pubDate>
       
       <guid>https://www.jarboleda.me/es/articles/getting-an-objects-methods/</guid>
-      <description>El problema Algunas veces no tenemos acceso a la documentación de una plataforma, es incompleta o simplemente no nos apetece buscarla. En esos casos, es conveniente tener algo más que el típico var_dump de un objeto, que sólo nos muestra las propiedades del objeto pero no sus métodos, que en muchos casos nos dan la funcionalidad que buscamos sin tener que navegar entre miles de propiedades. A continuación expongo la función que uso, utiliza la clase ReflectionMethod, la cual nos muestra información acerca de un método, y necesita como parámetros del constructor el nombre de la clase y el método.</description>
+      <description>&lt;h2 id=&#34;el-problema&#34;&gt;El problema&lt;/h2&gt;
+
+&lt;p&gt;Algunas veces no tenemos acceso a la documentación de una plataforma, es incompleta o simplemente no nos apetece buscarla. En esos casos, es conveniente tener algo más que el típico &lt;code&gt;var_dump&lt;/code&gt; de un objeto, que sólo nos muestra las propiedades del objeto pero no sus métodos, que en muchos casos nos dan la funcionalidad que buscamos sin tener que navegar entre miles de propiedades. A continuación expongo la función que uso, utiliza la clase ReflectionMethod, la cual nos muestra información acerca de un método, y necesita como parámetros del constructor el nombre de la clase y el método.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

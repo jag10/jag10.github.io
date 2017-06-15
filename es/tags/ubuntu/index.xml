@@ -16,8 +16,20 @@
       <pubDate>Thu, 28 Jul 2016 14:07:04 +0200</pubDate>
       
       <guid>https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/</guid>
-      <description>Detección del error Si alguna vez encuentras el siguiente error al utilizar vagrant o simplemente al arrancar una máquina virtual, más abajo veremos cómo solucionarlo: Couldn&amp;#39;t remount RDWR because of unprocessed orphan inode list.  Solución Descargar ISO de ubuntu
-Arrancar la máquina virtual con la ISO: Settings -&amp;gt; Storage -&amp;gt; Add CD/DVD Device -&amp;gt; Choose disk Desmontar /dev/sda1: sudo umount /dev/sda1  Comprobar la partición dañada: fsck /dev/sda1  Saldrán algunas preguntas, contestar si a todo.</description>
+      <description>&lt;h2 id=&#34;detección-del-error&#34;&gt;Detección del error&lt;/h2&gt;
+
+&lt;p&gt;Si alguna vez encuentras el siguiente error al utilizar vagrant o simplemente al arrancar una máquina virtual, más abajo veremos cómo solucionarlo:
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;Couldn&lt;span style=&#34;color: #960050; background-color: #1e0010&#34;&gt;&amp;#39;&lt;/span&gt;t remount RDWR because of unprocessed orphan inode list.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;solución&#34;&gt;Solución&lt;/h2&gt;
+
+&lt;p&gt;Descargar ISO de ubuntu&lt;/p&gt;
+
+&lt;p&gt;Arrancar la máquina virtual con la ISO: Settings -&amp;gt; Storage -&amp;gt; Add CD/DVD Device -&amp;gt; Choose disk&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -26,7 +38,17 @@ Arrancar la máquina virtual con la ISO: Settings -&amp;gt; Storage -&amp;gt; Ad
       <pubDate>Mon, 18 Jul 2016 13:37:52 +0200</pubDate>
       
       <guid>https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/</guid>
-      <description>Eligiendo una imagen La versión 16.04 de ubuntu acaba de ser liberada por parte del equipo de odroid para las placas xu3 y xu4 y sus variantes lite. En este caso vamos a probar ubuntu 16.04 en la placa odroid xu3 lite que es la que poseo con un módulo eMMC, que para entendernos viene a ser un disco ssd pequeñito (en realidad no es lo mismo, eMMC es más lento), lo cual nos da mayor rendimiento, aunque también se puede instalar en una memoria sd (recomendable clase 10).</description>
+      <description>&lt;h2 id=&#34;eligiendo-una-imagen&#34;&gt;Eligiendo una imagen&lt;/h2&gt;
+
+&lt;p&gt;La versión 16.04 de ubuntu acaba de ser liberada por parte del equipo de odroid para las placas xu3 y xu4 y sus variantes lite. En este caso vamos a probar ubuntu 16.04 en la placa odroid xu3 lite que es la que poseo con un módulo eMMC, que para entendernos viene a ser un disco ssd pequeñito (en realidad no es lo mismo, eMMC es más lento), lo cual nos da mayor rendimiento, aunque también se puede instalar en una memoria sd (recomendable clase 10). Lo primero será descargarnos la imagen que necesitemos:
+&lt;a href=&#34;http://de.eu.odroid.in/ubuntu_16.04lts/&#34;&gt;http://de.eu.odroid.in/ubuntu_16.04lts/&lt;/a&gt;
+De aquí he tomado el fichero que me interesa, correspondiente a la versión completa de ubuntu y a la placa xu3:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz&#34;&gt;ubuntu-16.04-mate-odroid-xu3-20160708.img.xz&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -16,8 +16,20 @@
       <pubDate>Thu, 28 Jul 2016 14:07:04 +0200</pubDate>
       
       <guid>https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/</guid>
-      <description>Detección del error Si alguna vez encuentras el siguiente error al utilizar vagrant o simplemente al arrancar una máquina virtual, más abajo veremos cómo solucionarlo: Couldn&amp;#39;t remount RDWR because of unprocessed orphan inode list.  Solución Descargar ISO de ubuntu
-Arrancar la máquina virtual con la ISO: Settings -&amp;gt; Storage -&amp;gt; Add CD/DVD Device -&amp;gt; Choose disk Desmontar /dev/sda1: sudo umount /dev/sda1  Comprobar la partición dañada: fsck /dev/sda1  Saldrán algunas preguntas, contestar si a todo.</description>
+      <description>&lt;h2 id=&#34;detección-del-error&#34;&gt;Detección del error&lt;/h2&gt;
+
+&lt;p&gt;Si alguna vez encuentras el siguiente error al utilizar vagrant o simplemente al arrancar una máquina virtual, más abajo veremos cómo solucionarlo:
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;Couldn&lt;span style=&#34;color: #960050; background-color: #1e0010&#34;&gt;&amp;#39;&lt;/span&gt;t remount RDWR because of unprocessed orphan inode list.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;solución&#34;&gt;Solución&lt;/h2&gt;
+
+&lt;p&gt;Descargar ISO de ubuntu&lt;/p&gt;
+
+&lt;p&gt;Arrancar la máquina virtual con la ISO: Settings -&amp;gt; Storage -&amp;gt; Add CD/DVD Device -&amp;gt; Choose disk&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -26,7 +38,13 @@ Arrancar la máquina virtual con la ISO: Settings -&amp;gt; Storage -&amp;gt; Ad
       <pubDate>Wed, 27 Jul 2016 13:50:40 +0200</pubDate>
       
       <guid>https://www.jarboleda.me/es/articles/web-development-environment/</guid>
-      <description>En este post vamos a ver un entorno avanzado de desarrollo web. Tendremos nuestra web alojada en un servidor (que NO utilizaremos para nada durante el desarrollo), y en nuestra máquina local tendremos una máquina virtual para el sitio web en el que estemos trabajando. Para la máquina virtual utilizaremos vagrant con el stack de scotch, que nos viene preparado para montar directamente el sitio web sin trabajo extra.</description>
+      <description>&lt;p&gt;En este post vamos a ver un entorno avanzado de desarrollo web. Tendremos nuestra web alojada en un servidor (que NO utilizaremos para nada durante el desarrollo), y en nuestra máquina local tendremos una máquina virtual para el sitio web en el que estemos trabajando. Para la máquina virtual utilizaremos vagrant con el stack de &lt;a href=&#34;https://box.scotch.io/&#34;&gt;scotch&lt;/a&gt;, que nos viene preparado para montar directamente el sitio web sin trabajo extra.&lt;/p&gt;
+
+&lt;h2 id=&#34;requisitos-previos&#34;&gt;Requisitos previos&lt;/h2&gt;
+
+&lt;p&gt;Usaremos las siguientes tecnologías. Deberías revisarlas antes de seguir con el artículo.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

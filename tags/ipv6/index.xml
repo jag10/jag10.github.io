@@ -16,7 +16,8 @@
       <pubDate>Tue, 11 Aug 2015 10:58:34 +0200</pubDate>
       
       <guid>https://www.jarboleda.me/articles/facebook-sharer-and-ipv6-issue/</guid>
-      <description>Last week all facebook buttons on domains on ALL of our servers stopped working. I always got a 404 response when facebook crawler tried to visit our domains. This happened in our 2 dedicated servers from 1and1. At first, my mates were trying to figure out if it was a joomla issue, but they finally couldn&amp;rsquo;t solve it, so they asked me to investigate it. My first thought was: you got a 404?</description>
+      <description>&lt;p&gt;Last week all facebook buttons on domains on ALL of our servers stopped working. I always got a 404 response when facebook crawler tried to visit our domains. This happened in our 2 dedicated servers from 1and1. At first, my mates were trying to figure out if it was a joomla issue, but they finally couldn&amp;rsquo;t solve it, so they asked me to investigate it. My first thought was: you got a 404? let&amp;rsquo;s check logs for those domains and we&amp;rsquo;ll see what happens for sure. I checked those files and I couldn&amp;rsquo;t see any 404 error, the visit wasn&amp;rsquo;t even logged. Shit happens.
+&lt;/p&gt;</description>
     </item>
     
   </channel>

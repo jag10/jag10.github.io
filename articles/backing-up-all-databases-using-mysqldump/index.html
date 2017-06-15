@@ -16,7 +16,10 @@
     <meta name="theme-color" content="#ffffff">
     	
 	<meta property="og:title" content="Backing up all databases using mysqldump" />
-	<meta property="og:description" content="In this post I&rsquo;ll explain how I backup all databases in servers I work with. When you face trouble with those servers it&rsquo;ll be pretty useful to have daily database dumps. So, I use mysqldump utiliy to backup database and an script I wrote myself to transfer files, which you can find here Backing up all databases with mysqldumpo is pretty easy, just use it in this way in bash: mysqldump -uadmin -p`cat /etc/psa/." />
+	<meta property="og:description" content="In this post I&rsquo;ll explain how I backup all databases in servers I work with. When you face trouble with those servers it&rsquo;ll be pretty useful to have daily database dumps.
+
+So, I use mysqldump utiliy to backup database and an script I wrote myself to transfer files, which you can find here.
+" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/" />
 	<meta property="og:image" content="https://www.jarboleda.me/articles/img/backing-up-all-databases-using-mysqldump.png" />
@@ -34,7 +37,10 @@
 	
     
     <meta itemprop="name" content="Backing up all databases using mysqldump">
-    <meta itemprop="description" content="In this post I&rsquo;ll explain how I backup all databases in servers I work with. When you face trouble with those servers it&rsquo;ll be pretty useful to have daily database dumps. So, I use mysqldump utiliy to backup database and an script I wrote myself to transfer files, which you can find here Backing up all databases with mysqldumpo is pretty easy, just use it in this way in bash: mysqldump -uadmin -p`cat /etc/psa/.">
+    <meta itemprop="description" content="In this post I&rsquo;ll explain how I backup all databases in servers I work with. When you face trouble with those servers it&rsquo;ll be pretty useful to have daily database dumps.
+
+So, I use mysqldump utiliy to backup database and an script I wrote myself to transfer files, which you can find here.
+">
     <meta name="author" content="Jeferson Arboleda">
     
     <meta itemprop="image" content="backing-up-all-databases-using-mysqldump.png">
@@ -46,7 +52,10 @@
 	<meta name="twitter:image:src" content="https://www.jarboleda.me/articles/img/backing-up-all-databases-using-mysqldump.png"/>
 	
 	<meta name="twitter:title" content="Backing up all databases using mysqldump"/>
-	<meta name="twitter:description" content="In this post I&rsquo;ll explain how I backup all databases in servers I work with. When you face trouble with those servers it&rsquo;ll be pretty useful to have daily database dumps. So, I use mysqldump utiliy to backup database and an script I wrote myself to transfer files, which you can find here Backing up all databases with mysqldumpo is pretty easy, just use it in this way in bash: mysqldump -uadmin -p`cat /etc/psa/."/>
+	<meta name="twitter:description" content="In this post I&rsquo;ll explain how I backup all databases in servers I work with. When you face trouble with those servers it&rsquo;ll be pretty useful to have daily database dumps.
+
+So, I use mysqldump utiliy to backup database and an script I wrote myself to transfer files, which you can find here.
+"/>
 	<meta name="twitter:site" content="@j_a_g_x"/>
 	
 	<meta name="twitter:creator" content="@j_a_g_x"/>
@@ -134,9 +143,7 @@
     <section id="main" class="pure-u-1 pure-u-md-3-4">
       <article>
         <div class="post-container">
-  <div class="post-image-container">
-    
-  </div>
+  
   <div class="article_summary">
     <div class="article-date">
       <p class="day"><i class="fa fa-calendar"></i>30 Aug 2015</p>
@@ -155,9 +162,12 @@
     
     <div class="article_excerpt">
       
-      <p><p>In this post I&rsquo;ll explain how I backup all databases in servers I work with. When you face trouble with those servers it&rsquo;ll be pretty useful to have daily database dumps.
-So, I use mysqldump utiliy to backup database and an script I wrote myself to transfer files, which you can find here
-Backing up all databases with mysqldumpo is pretty easy, just use it in this way in bash:
+      <p><p>In this post I&rsquo;ll explain how I backup all databases in servers I work with. When you face trouble with those servers it&rsquo;ll be pretty useful to have daily database dumps.</p>
+
+<p>So, I use mysqldump utiliy to backup database and an script I wrote myself to transfer files, which you can find here.
+</p>
+
+<p>Backing up all databases with mysqldumpo is pretty easy, just use it in this way in bash:
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>mysqldump -uadmin -p<span style="color: #e6db74">`</span>cat /etc/psa/.psa.shadow<span style="color: #e6db74">`</span> --all-databases <span style="color: #f8f8f2">|</span> zip &gt; <span style="color: #f8f8f2">$1</span>/all.sql.zip
 </pre></div>
 </p>
@@ -204,8 +214,7 @@ csplit --digits<span style="color: #f92672">=</span><span style="color: #ae81ff"
 
 <p>Sometimes I find trouble when using this script, because (I don&rsquo;t really know why) mysqldump writes twice the Current Database part for the same db, so you can find that mv command overwrites a database.</p>
 
-<p>Also, you need to review the outfile000 since it&rsquo;ll containg some headers which should be included in each database before importing them. You can do this with bash too, I just haven&rsquo;t done it yet.</p>
-</p>
+<p>Also, you need to review the outfile000 since it&rsquo;ll containg some headers which should be included in each database before importing them. You can do this with bash too, I just haven&rsquo;t done it yet.</p></p>
       
     </div>
     <div class="clearfix"></div>
@@ -232,7 +241,7 @@ csplit --digits<span style="color: #f92672">=</span><span style="color: #ae81ff"
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/&amp;title=Backing%20up%20all%20databases%20using%20mysqldump&amp;summary=In%20this%20post%20I&amp;rsquo;ll%20explain%20how%20I%20backup%20all%20databases%20in%20servers%20I%20work%20with.%20When%20you%20face%20trouble%20with%20those%20servers%20it&amp;rsquo;ll%20be%20pretty%20useful%20to%20have%20daily%20database%20dumps.%20So,%20I%20use%20mysqldump%20utiliy%20to%20backup%20database%20and%20an%20script%20I%20wrote%20myself%20to%20transfer%20files,%20which%20you%20can%20find%20here%20Backing%20up%20all%20databases%20with%20mysqldumpo%20is%20pretty%20easy,%20just%20use%20it%20in%20this%20way%20in%20bash:%20mysqldump%20-uadmin%20-p%60cat%20/etc/psa/.&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/&amp;title=Backing%20up%20all%20databases%20using%20mysqldump&amp;summary=%3cp%3eIn%20this%20post%20I&amp;rsquo;ll%20explain%20how%20I%20backup%20all%20databases%20in%20servers%20I%20work%20with.%20When%20you%20face%20trouble%20with%20those%20servers%20it&amp;rsquo;ll%20be%20pretty%20useful%20to%20have%20daily%20database%20dumps.%3c/p%3e%0a%0a%3cp%3eSo,%20I%20use%20mysqldump%20utiliy%20to%20backup%20database%20and%20an%20script%20I%20wrote%20myself%20to%20transfer%20files,%20which%20you%20can%20find%20here.%0a%3c/p%3e&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fa fa-twitter" href="http://twitter.com/share?text=Backing%20up%20all%20databases%20using%20mysqldump&amp;url=https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -244,7 +253,7 @@ csplit --digits<span style="color: #f92672">=</span><span style="color: #ae81ff"
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/&amp;media=https://www.jarboleda.mebacking-up-all-databases-using-mysqldump.png&amp;description=In%20this%20post%20I&amp;rsquo;ll%20explain%20how%20I%20backup%20all%20databases%20in%20servers%20I%20work%20with.%20When%20you%20face%20trouble%20with%20those%20servers%20it&amp;rsquo;ll%20be%20pretty%20useful%20to%20have%20daily%20database%20dumps.%20So,%20I%20use%20mysqldump%20utiliy%20to%20backup%20database%20and%20an%20script%20I%20wrote%20myself%20to%20transfer%20files,%20which%20you%20can%20find%20here%20Backing%20up%20all%20databases%20with%20mysqldumpo%20is%20pretty%20easy,%20just%20use%20it%20in%20this%20way%20in%20bash:%20mysqldump%20-uadmin%20-p%60cat%20/etc/psa/." onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/&amp;media=https://www.jarboleda.mebacking-up-all-databases-using-mysqldump.png&amp;description=%3cp%3eIn%20this%20post%20I&amp;rsquo;ll%20explain%20how%20I%20backup%20all%20databases%20in%20servers%20I%20work%20with.%20When%20you%20face%20trouble%20with%20those%20servers%20it&amp;rsquo;ll%20be%20pretty%20useful%20to%20have%20daily%20database%20dumps.%3c/p%3e%0a%0a%3cp%3eSo,%20I%20use%20mysqldump%20utiliy%20to%20backup%20database%20and%20an%20script%20I%20wrote%20myself%20to%20transfer%20files,%20which%20you%20can%20find%20here.%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -332,21 +341,6 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
-                    <img alt='Fixing a corrupted partition on a virtual machine' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
                   <a href='/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
                     <img alt='Backing up all databases using mysqldump' width='72' height='72' src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
                   </a>
@@ -358,6 +352,34 @@ s.setAttribute('data-timestamp', +new Date());
             </li>
             
             
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
+                    <img alt='How to handle remote resources with curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">How to handle remote resources with curl</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' target='_blank'>
+                    <img alt='Getting 1.5s page load time on a basic vps' width='72' height='72' src="/articles/img/thumbs/getting-1.5s-page-load-time-on-a-basic-vps.png" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' class="mostVisitedLink">Getting 1.5s page load time on a basic vps</a>
+                </div>
+              </div>
+            </li>
             
             
           </ul>
@@ -419,7 +441,7 @@ s.setAttribute('data-timestamp', +new Date());
       <a href='https://www.jarboleda.me'>https://www.jarboleda.me</a>
     </p>
     <p class='attribution'>Powered by</p>
-    <a href='https://gohugo.io/'>
+    <a href='https://gohugo.io/' target="_blank" >
       <img alt="hugo logo" class='attribution_logo' src="/img/hugo-logo.png" />
     </a>
   </div>

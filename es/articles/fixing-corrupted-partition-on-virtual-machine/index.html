@@ -16,8 +16,20 @@
     <meta name="theme-color" content="#ffffff">
     	
 	<meta property="og:title" content="Arreglando una partición corrupta de una máquina virtual" />
-	<meta property="og:description" content="Detección del error Si alguna vez encuentras el siguiente error al utilizar vagrant o simplemente al arrancar una máquina virtual, más abajo veremos cómo solucionarlo: Couldn&#39;t remount RDWR because of unprocessed orphan inode list.  Solución Descargar ISO de ubuntu
-Arrancar la máquina virtual con la ISO: Settings -&gt; Storage -&gt; Add CD/DVD Device -&gt; Choose disk Desmontar /dev/sda1: sudo umount /dev/sda1  Comprobar la partición dañada: fsck /dev/sda1  Saldrán algunas preguntas, contestar si a todo." />
+	<meta property="og:description" content="Detección del error
+
+Si alguna vez encuentras el siguiente error al utilizar vagrant o simplemente al arrancar una máquina virtual, más abajo veremos cómo solucionarlo:
+Couldn&#39;t remount RDWR because of unprocessed orphan inode list.
+
+
+
+Solución
+
+Descargar ISO de ubuntu
+
+Arrancar la máquina virtual con la ISO: Settings -&gt; Storage -&gt; Add CD/DVD Device -&gt; Choose disk
+
+" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/" />
 	<meta property="og:image" content="https://www.jarboleda.me/articles/img/fixing-corrupted-partition-on-virtual-machine.jpg" />
@@ -36,8 +48,20 @@ Arrancar la máquina virtual con la ISO: Settings -&gt; Storage -&gt; Add CD/DVD
 	
     
     <meta itemprop="name" content="Arreglando una partición corrupta de una máquina virtual">
-    <meta itemprop="description" content="Detección del error Si alguna vez encuentras el siguiente error al utilizar vagrant o simplemente al arrancar una máquina virtual, más abajo veremos cómo solucionarlo: Couldn&#39;t remount RDWR because of unprocessed orphan inode list.  Solución Descargar ISO de ubuntu
-Arrancar la máquina virtual con la ISO: Settings -&gt; Storage -&gt; Add CD/DVD Device -&gt; Choose disk Desmontar /dev/sda1: sudo umount /dev/sda1  Comprobar la partición dañada: fsck /dev/sda1  Saldrán algunas preguntas, contestar si a todo.">
+    <meta itemprop="description" content="Detección del error
+
+Si alguna vez encuentras el siguiente error al utilizar vagrant o simplemente al arrancar una máquina virtual, más abajo veremos cómo solucionarlo:
+Couldn&#39;t remount RDWR because of unprocessed orphan inode list.
+
+
+
+Solución
+
+Descargar ISO de ubuntu
+
+Arrancar la máquina virtual con la ISO: Settings -&gt; Storage -&gt; Add CD/DVD Device -&gt; Choose disk
+
+">
     <meta name="author" content="Jeferson Arboleda">
     
     <meta itemprop="image" content="fixing-corrupted-partition-on-virtual-machine.jpg">
@@ -49,8 +73,20 @@ Arrancar la máquina virtual con la ISO: Settings -&gt; Storage -&gt; Add CD/DVD
 	<meta name="twitter:image:src" content="https://www.jarboleda.me/articles/img/fixing-corrupted-partition-on-virtual-machine.jpg"/>
 	
 	<meta name="twitter:title" content="Arreglando una partición corrupta de una máquina virtual"/>
-	<meta name="twitter:description" content="Detección del error Si alguna vez encuentras el siguiente error al utilizar vagrant o simplemente al arrancar una máquina virtual, más abajo veremos cómo solucionarlo: Couldn&#39;t remount RDWR because of unprocessed orphan inode list.  Solución Descargar ISO de ubuntu
-Arrancar la máquina virtual con la ISO: Settings -&gt; Storage -&gt; Add CD/DVD Device -&gt; Choose disk Desmontar /dev/sda1: sudo umount /dev/sda1  Comprobar la partición dañada: fsck /dev/sda1  Saldrán algunas preguntas, contestar si a todo."/>
+	<meta name="twitter:description" content="Detección del error
+
+Si alguna vez encuentras el siguiente error al utilizar vagrant o simplemente al arrancar una máquina virtual, más abajo veremos cómo solucionarlo:
+Couldn&#39;t remount RDWR because of unprocessed orphan inode list.
+
+
+
+Solución
+
+Descargar ISO de ubuntu
+
+Arrancar la máquina virtual con la ISO: Settings -&gt; Storage -&gt; Add CD/DVD Device -&gt; Choose disk
+
+"/>
 	<meta name="twitter:site" content="@j_a_g_x"/>
 	
 	<meta name="twitter:creator" content="@j_a_g_x"/>
@@ -142,9 +178,7 @@ Arrancar la máquina virtual con la ISO: Settings -&gt; Storage -&gt; Add CD/DVD
     <section id="main" class="pure-u-1 pure-u-md-3-4">
       <article>
         <div class="post-container">
-  <div class="post-image-container">
-    
-  </div>
+  
   <div class="article_summary">
     <div class="article-date">
       <p class="day"><i class="fa fa-calendar"></i>28 Jul 2016</p>
@@ -164,9 +198,7 @@ Arrancar la máquina virtual con la ISO: Settings -&gt; Storage -&gt; Add CD/DVD
     
     <div class="article_excerpt">
       
-      <p>
-
-<h2 id="detección-del-error">Detección del error</h2>
+      <p><h2 id="detección-del-error">Detección del error</h2>
 
 <p>Si alguna vez encuentras el siguiente error al utilizar vagrant o simplemente al arrancar una máquina virtual, más abajo veremos cómo solucionarlo:
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>Couldn<span style="color: #960050; background-color: #1e0010">&#39;</span>t remount RDWR because of unprocessed orphan inode list.
@@ -177,8 +209,11 @@ Arrancar la máquina virtual con la ISO: Settings -&gt; Storage -&gt; Add CD/DVD
 
 <p>Descargar ISO de ubuntu</p>
 
-<p>Arrancar la máquina virtual con la ISO: Settings -&gt; Storage -&gt; Add CD/DVD Device -&gt; Choose disk
-Desmontar /dev/sda1:
+<p>Arrancar la máquina virtual con la ISO: Settings -&gt; Storage -&gt; Add CD/DVD Device -&gt; Choose disk</p>
+
+<p></p>
+
+<p>Desmontar /dev/sda1:
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo umount /dev/sda1
 </pre></div>
 
@@ -186,8 +221,7 @@ Comprobar la partición dañada:
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>fsck /dev/sda1
 </pre></div>
 
-Saldrán algunas preguntas, contestar si a todo. Cuando acabe, reiniciamos la máquina arrancando desde el hdd. Es posible que se nos pida el login, para poder ponerlo necesitaremos lanzar la máquina virtual directamente desde virtualbox. Una vez nos logueemos, guardamos el estado de la máquina y la próxima vez se podrá utilizar desde vagrant sin problema</p>
-</p>
+Saldrán algunas preguntas, contestar si a todo. Cuando acabe, reiniciamos la máquina arrancando desde el hdd. Es posible que se nos pida el login, para poder ponerlo necesitaremos lanzar la máquina virtual directamente desde virtualbox. Una vez nos logueemos, guardamos el estado de la máquina y la próxima vez se podrá utilizar desde vagrant sin problema</p></p>
       
     </div>
     <div class="clearfix"></div>
@@ -219,7 +253,7 @@ Saldrán algunas preguntas, contestar si a todo. Cuando acabe, reiniciamos la m�
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/&amp;title=Arreglando%20una%20partici%c3%b3n%20corrupta%20de%20una%20m%c3%a1quina%20virtual&amp;summary=Detecci%c3%b3n%20del%20error%20Si%20alguna%20vez%20encuentras%20el%20siguiente%20error%20al%20utilizar%20vagrant%20o%20simplemente%20al%20arrancar%20una%20m%c3%a1quina%20virtual,%20m%c3%a1s%20abajo%20veremos%20c%c3%b3mo%20solucionarlo:%20Couldn&amp;#39;t%20remount%20RDWR%20because%20of%20unprocessed%20orphan%20inode%20list.%20%20Soluci%c3%b3n%20Descargar%20ISO%20de%20ubuntu%0aArrancar%20la%20m%c3%a1quina%20virtual%20con%20la%20ISO:%20Settings%20-&amp;gt;%20Storage%20-&amp;gt;%20Add%20CD/DVD%20Device%20-&amp;gt;%20Choose%20disk%20Desmontar%20/dev/sda1:%20sudo%20umount%20/dev/sda1%20%20Comprobar%20la%20partici%c3%b3n%20da%c3%b1ada:%20fsck%20/dev/sda1%20%20Saldr%c3%a1n%20algunas%20preguntas,%20contestar%20si%20a%20todo.&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/&amp;title=Arreglando%20una%20partici%c3%b3n%20corrupta%20de%20una%20m%c3%a1quina%20virtual&amp;summary=%3ch2%20id=%22detecci%c3%b3n-del-error%22%3eDetecci%c3%b3n%20del%20error%3c/h2%3e%0a%0a%3cp%3eSi%20alguna%20vez%20encuentras%20el%20siguiente%20error%20al%20utilizar%20vagrant%20o%20simplemente%20al%20arrancar%20una%20m%c3%a1quina%20virtual,%20m%c3%a1s%20abajo%20veremos%20c%c3%b3mo%20solucionarlo:%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3eCouldn%3cspan%20style=%22color:%20#960050;%20background-color:%20#1e0010%22%3e&amp;#39;%3c/span%3et%20remount%20RDWR%20because%20of%20unprocessed%20orphan%20inode%20list.%0a%3c/pre%3e%3c/div%3e%0a%3c/p%3e%0a%0a%3ch2%20id=%22soluci%c3%b3n%22%3eSoluci%c3%b3n%3c/h2%3e%0a%0a%3cp%3eDescargar%20ISO%20de%20ubuntu%3c/p%3e%0a%0a%3cp%3eArrancar%20la%20m%c3%a1quina%20virtual%20con%20la%20ISO:%20Settings%20-&amp;gt;%20Storage%20-&amp;gt;%20Add%20CD/DVD%20Device%20-&amp;gt;%20Choose%20disk%3c/p%3e%0a%0a%3cp%3e%3c/p%3e&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fa fa-twitter" href="http://twitter.com/share?text=Arreglando%20una%20partici%c3%b3n%20corrupta%20de%20una%20m%c3%a1quina%20virtual&amp;url=https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -231,7 +265,7 @@ Saldrán algunas preguntas, contestar si a todo. Cuando acabe, reiniciamos la m�
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/&amp;media=https://www.jarboleda.mefixing-corrupted-partition-on-virtual-machine.jpg&amp;description=Detecci%c3%b3n%20del%20error%20Si%20alguna%20vez%20encuentras%20el%20siguiente%20error%20al%20utilizar%20vagrant%20o%20simplemente%20al%20arrancar%20una%20m%c3%a1quina%20virtual,%20m%c3%a1s%20abajo%20veremos%20c%c3%b3mo%20solucionarlo:%20Couldn&amp;#39;t%20remount%20RDWR%20because%20of%20unprocessed%20orphan%20inode%20list.%20%20Soluci%c3%b3n%20Descargar%20ISO%20de%20ubuntu%0aArrancar%20la%20m%c3%a1quina%20virtual%20con%20la%20ISO:%20Settings%20-&amp;gt;%20Storage%20-&amp;gt;%20Add%20CD/DVD%20Device%20-&amp;gt;%20Choose%20disk%20Desmontar%20/dev/sda1:%20sudo%20umount%20/dev/sda1%20%20Comprobar%20la%20partici%c3%b3n%20da%c3%b1ada:%20fsck%20/dev/sda1%20%20Saldr%c3%a1n%20algunas%20preguntas,%20contestar%20si%20a%20todo." onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/&amp;media=https://www.jarboleda.mefixing-corrupted-partition-on-virtual-machine.jpg&amp;description=%3ch2%20id=%22detecci%c3%b3n-del-error%22%3eDetecci%c3%b3n%20del%20error%3c/h2%3e%0a%0a%3cp%3eSi%20alguna%20vez%20encuentras%20el%20siguiente%20error%20al%20utilizar%20vagrant%20o%20simplemente%20al%20arrancar%20una%20m%c3%a1quina%20virtual,%20m%c3%a1s%20abajo%20veremos%20c%c3%b3mo%20solucionarlo:%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3eCouldn%3cspan%20style=%22color:%20#960050;%20background-color:%20#1e0010%22%3e&amp;#39;%3c/span%3et%20remount%20RDWR%20because%20of%20unprocessed%20orphan%20inode%20list.%0a%3c/pre%3e%3c/div%3e%0a%3c/p%3e%0a%0a%3ch2%20id=%22soluci%c3%b3n%22%3eSoluci%c3%b3n%3c/h2%3e%0a%0a%3cp%3eDescargar%20ISO%20de%20ubuntu%3c/p%3e%0a%0a%3cp%3eArrancar%20la%20m%c3%a1quina%20virtual%20con%20la%20ISO:%20Settings%20-&amp;gt;%20Storage%20-&amp;gt;%20Add%20CD/DVD%20Device%20-&amp;gt;%20Choose%20disk%3c/p%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -327,12 +361,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/using-piwik-api-locally-with-pw/' target='_blank'>
-                    <img alt='Utilizando la API de piwik en local con PW' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
+                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img alt='Arreglando una partición corrupta de una máquina virtual' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Utilizando la API de piwik en local con PW</a>
+                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Arreglando una partición corrupta de una máquina virtual</a>
                 </div>
               </div>
             </li>
@@ -342,12 +376,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
-                    <img alt='Arreglando una partición corrupta de una máquina virtual' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
+                  <a href='/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
+                    <img alt='Instalando ubuntu 16.04 en odroid xu3 lite' width='72' height='72' src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Arreglando una partición corrupta de una máquina virtual</a>
+                  <a href='/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Instalando ubuntu 16.04 en odroid xu3 lite</a>
                 </div>
               </div>
             </li>
@@ -427,7 +461,7 @@ s.setAttribute('data-timestamp', +new Date());
       <a href='https://www.jarboleda.me'>https://www.jarboleda.me</a>
     </p>
     <p class='attribution'>Powered by</p>
-    <a href='https://gohugo.io/'>
+    <a href='https://gohugo.io/' target="_blank" >
       <img alt="hugo logo" class='attribution_logo' src="/img/hugo-logo.png" />
     </a>
   </div>

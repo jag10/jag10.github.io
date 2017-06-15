@@ -16,7 +16,11 @@
     <meta name="theme-color" content="#ffffff">
     	
 	<meta property="og:title" content="Getting an object&#39;s (reflected) methods" />
-	<meta property="og:description" content="The problem Sometimes we don&rsquo;t have access to the platform docs on which we are working, it&rsquo;s incomplete or we just don&rsquo;t feel like looking for it. In those situations, we usually need more than the typical object&rsquo;s var_dump, which only shows us the object properties but not its methods, which usually gives us that function we are working on without having to dive into the object&rsquo;s properties. Here you&rsquo;ll see the function I use for this task." />
+	<meta property="og:description" content="The problem
+
+Sometimes we don&rsquo;t have access to the platform docs on which we are working, it&rsquo;s incomplete or we just don&rsquo;t feel like looking for it. In those situations, we usually need more than the typical object&rsquo;s var_dump, which only shows us the object properties but not its methods, which usually gives us that function we are working on without having to dive into the object&rsquo;s properties. Here you&rsquo;ll see the function I use for this task. This function uses the ReflectionMethod class, which gives us info about a method. It needs the classname and method&rsquo;s name as params for its constructor.
+
+" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/articles/getting-an-objects-methods/" />
 	<meta property="og:image" content="https://www.jarboleda.me/articles/img/getting-an-objects-methods.jpg" />
@@ -34,7 +38,11 @@
 	
     
     <meta itemprop="name" content="Getting an object&#39;s (reflected) methods">
-    <meta itemprop="description" content="The problem Sometimes we don&rsquo;t have access to the platform docs on which we are working, it&rsquo;s incomplete or we just don&rsquo;t feel like looking for it. In those situations, we usually need more than the typical object&rsquo;s var_dump, which only shows us the object properties but not its methods, which usually gives us that function we are working on without having to dive into the object&rsquo;s properties. Here you&rsquo;ll see the function I use for this task.">
+    <meta itemprop="description" content="The problem
+
+Sometimes we don&rsquo;t have access to the platform docs on which we are working, it&rsquo;s incomplete or we just don&rsquo;t feel like looking for it. In those situations, we usually need more than the typical object&rsquo;s var_dump, which only shows us the object properties but not its methods, which usually gives us that function we are working on without having to dive into the object&rsquo;s properties. Here you&rsquo;ll see the function I use for this task. This function uses the ReflectionMethod class, which gives us info about a method. It needs the classname and method&rsquo;s name as params for its constructor.
+
+">
     <meta name="author" content="Jeferson Arboleda">
     
     <meta itemprop="image" content="getting-an-objects-methods.jpg">
@@ -46,7 +54,11 @@
 	<meta name="twitter:image:src" content="https://www.jarboleda.me/articles/img/getting-an-objects-methods.jpg"/>
 	
 	<meta name="twitter:title" content="Getting an object&#39;s (reflected) methods"/>
-	<meta name="twitter:description" content="The problem Sometimes we don&rsquo;t have access to the platform docs on which we are working, it&rsquo;s incomplete or we just don&rsquo;t feel like looking for it. In those situations, we usually need more than the typical object&rsquo;s var_dump, which only shows us the object properties but not its methods, which usually gives us that function we are working on without having to dive into the object&rsquo;s properties. Here you&rsquo;ll see the function I use for this task."/>
+	<meta name="twitter:description" content="The problem
+
+Sometimes we don&rsquo;t have access to the platform docs on which we are working, it&rsquo;s incomplete or we just don&rsquo;t feel like looking for it. In those situations, we usually need more than the typical object&rsquo;s var_dump, which only shows us the object properties but not its methods, which usually gives us that function we are working on without having to dive into the object&rsquo;s properties. Here you&rsquo;ll see the function I use for this task. This function uses the ReflectionMethod class, which gives us info about a method. It needs the classname and method&rsquo;s name as params for its constructor.
+
+"/>
 	<meta name="twitter:site" content="@j_a_g_x"/>
 	
 	<meta name="twitter:creator" content="@j_a_g_x"/>
@@ -138,9 +150,7 @@
     <section id="main" class="pure-u-1 pure-u-md-3-4">
       <article>
         <div class="post-container">
-  <div class="post-image-container">
-    
-  </div>
+  
   <div class="article_summary">
     <div class="article-date">
       <p class="day"><i class="fa fa-calendar"></i>1 May 2016</p>
@@ -159,11 +169,12 @@
     
     <div class="article_excerpt">
       
-      <p>
+      <p><h2 id="the-problem">The problem</h2>
 
-<h2 id="the-problem">The problem</h2>
+<p>Sometimes we don&rsquo;t have access to the platform docs on which we are working, it&rsquo;s incomplete or we just don&rsquo;t feel like looking for it. In those situations, we usually need more than the typical object&rsquo;s <code>var_dump</code>, which only shows us the object properties but not its methods, which usually gives us that function we are working on without having to dive into the object&rsquo;s properties. Here you&rsquo;ll see the function I use for this task. This function uses the ReflectionMethod class, which gives us info about a method. It needs the classname and method&rsquo;s name as params for its constructor.</p>
 
-<p>Sometimes we don&rsquo;t have access to the platform docs on which we are working, it&rsquo;s incomplete or we just don&rsquo;t feel like looking for it. In those situations, we usually need more than the typical object&rsquo;s var_dump, which only shows us the object properties but not its methods, which usually gives us that function we are working on without having to dive into the object&rsquo;s properties. Here you&rsquo;ll see the function I use for this task. This function uses the ReflectionMethod class, which gives us info about a method. It needs the classname and method&rsquo;s name as params for its constructor.
+<p></p>
+
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">&lt;?php</span>
 <span style="color: #66d9ef">function</span> <span style="color: #a6e22e">get_object_info</span><span style="color: #f8f8f2">($object){</span>
    <span style="color: #66d9ef">foreach</span><span style="color: #f8f8f2">(get_class_methods(get_class($object))</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">$method){</span>
@@ -175,7 +186,7 @@
     <span style="color: #f8f8f2">}</span>
 <span style="color: #f8f8f2">}</span>
 </pre></div>
-</p>
+
 
 <p>In order to keep this function short, php5.4+ is needed because we&rsquo;re acceding a class member while we instantiate it. To achieve this, we have to use an extra parenthesis:
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">&lt;?php</span>
@@ -224,8 +235,7 @@
 </pre></div>
 </p>
 
-<p>Some methods give us the same data as the properties, but we can see new methods that could be really useful. The main advantage of obtaining these methods is that we don&rsquo;t depend on docs and we also see the full list of methods for the object.</p>
-</p>
+<p>Some methods give us the same data as the properties, but we can see new methods that could be really useful. The main advantage of obtaining these methods is that we don&rsquo;t depend on docs and we also see the full list of methods for the object.</p></p>
       
     </div>
     <div class="clearfix"></div>
@@ -262,7 +272,7 @@
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/getting-an-objects-methods/&amp;title=Getting%20an%20object%27s%20%28reflected%29%20methods&amp;summary=The%20problem%20Sometimes%20we%20don&amp;rsquo;t%20have%20access%20to%20the%20platform%20docs%20on%20which%20we%20are%20working,%20it&amp;rsquo;s%20incomplete%20or%20we%20just%20don&amp;rsquo;t%20feel%20like%20looking%20for%20it.%20In%20those%20situations,%20we%20usually%20need%20more%20than%20the%20typical%20object&amp;rsquo;s%20var_dump,%20which%20only%20shows%20us%20the%20object%20properties%20but%20not%20its%20methods,%20which%20usually%20gives%20us%20that%20function%20we%20are%20working%20on%20without%20having%20to%20dive%20into%20the%20object&amp;rsquo;s%20properties.%20Here%20you&amp;rsquo;ll%20see%20the%20function%20I%20use%20for%20this%20task.&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/getting-an-objects-methods/&amp;title=Getting%20an%20object%27s%20%28reflected%29%20methods&amp;summary=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%0a%3cp%3eSometimes%20we%20don&amp;rsquo;t%20have%20access%20to%20the%20platform%20docs%20on%20which%20we%20are%20working,%20it&amp;rsquo;s%20incomplete%20or%20we%20just%20don&amp;rsquo;t%20feel%20like%20looking%20for%20it.%20In%20those%20situations,%20we%20usually%20need%20more%20than%20the%20typical%20object&amp;rsquo;s%20%3ccode%3evar_dump%3c/code%3e,%20which%20only%20shows%20us%20the%20object%20properties%20but%20not%20its%20methods,%20which%20usually%20gives%20us%20that%20function%20we%20are%20working%20on%20without%20having%20to%20dive%20into%20the%20object&amp;rsquo;s%20properties.%20Here%20you&amp;rsquo;ll%20see%20the%20function%20I%20use%20for%20this%20task.%20This%20function%20uses%20the%20ReflectionMethod%20class,%20which%20gives%20us%20info%20about%20a%20method.%20It%20needs%20the%20classname%20and%20method&amp;rsquo;s%20name%20as%20params%20for%20its%20constructor.%3c/p%3e%0a%0a%3cp%3e%3c/p%3e&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fa fa-twitter" href="http://twitter.com/share?text=Getting%20an%20object%27s%20%28reflected%29%20methods&amp;url=https://www.jarboleda.me/articles/getting-an-objects-methods/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -274,7 +284,7 @@
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/getting-an-objects-methods/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/getting-an-objects-methods/&amp;media=https://www.jarboleda.megetting-an-objects-methods.jpg&amp;description=The%20problem%20Sometimes%20we%20don&amp;rsquo;t%20have%20access%20to%20the%20platform%20docs%20on%20which%20we%20are%20working,%20it&amp;rsquo;s%20incomplete%20or%20we%20just%20don&amp;rsquo;t%20feel%20like%20looking%20for%20it.%20In%20those%20situations,%20we%20usually%20need%20more%20than%20the%20typical%20object&amp;rsquo;s%20var_dump,%20which%20only%20shows%20us%20the%20object%20properties%20but%20not%20its%20methods,%20which%20usually%20gives%20us%20that%20function%20we%20are%20working%20on%20without%20having%20to%20dive%20into%20the%20object&amp;rsquo;s%20properties.%20Here%20you&amp;rsquo;ll%20see%20the%20function%20I%20use%20for%20this%20task." onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/getting-an-objects-methods/&amp;media=https://www.jarboleda.megetting-an-objects-methods.jpg&amp;description=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%0a%3cp%3eSometimes%20we%20don&amp;rsquo;t%20have%20access%20to%20the%20platform%20docs%20on%20which%20we%20are%20working,%20it&amp;rsquo;s%20incomplete%20or%20we%20just%20don&amp;rsquo;t%20feel%20like%20looking%20for%20it.%20In%20those%20situations,%20we%20usually%20need%20more%20than%20the%20typical%20object&amp;rsquo;s%20%3ccode%3evar_dump%3c/code%3e,%20which%20only%20shows%20us%20the%20object%20properties%20but%20not%20its%20methods,%20which%20usually%20gives%20us%20that%20function%20we%20are%20working%20on%20without%20having%20to%20dive%20into%20the%20object&amp;rsquo;s%20properties.%20Here%20you&amp;rsquo;ll%20see%20the%20function%20I%20use%20for%20this%20task.%20This%20function%20uses%20the%20ReflectionMethod%20class,%20which%20gives%20us%20info%20about%20a%20method.%20It%20needs%20the%20classname%20and%20method&amp;rsquo;s%20name%20as%20params%20for%20its%20constructor.%3c/p%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -370,12 +380,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
-                    <img alt='How to handle remote resources with curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
+                  <a href='/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
+                    <img alt='installing unreal engine on fedora 25' width='72' height='72' src="/articles/img/thumbs/unreal_engine.min.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">How to handle remote resources with curl</a>
+                  <a href='/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
                 </div>
               </div>
             </li>
@@ -400,12 +410,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
-                    <img alt='Fixing a corrupted partition on a virtual machine' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' target='_blank'>
+                    <img alt='Getting 1.5s page load time on a basic vps' width='72' height='72' src="/articles/img/thumbs/getting-1.5s-page-load-time-on-a-basic-vps.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' class="mostVisitedLink">Getting 1.5s page load time on a basic vps</a>
                 </div>
               </div>
             </li>
@@ -470,7 +480,7 @@ s.setAttribute('data-timestamp', +new Date());
       <a href='https://www.jarboleda.me'>https://www.jarboleda.me</a>
     </p>
     <p class='attribution'>Powered by</p>
-    <a href='https://gohugo.io/'>
+    <a href='https://gohugo.io/' target="_blank" >
       <img alt="hugo logo" class='attribution_logo' src="/img/hugo-logo.png" />
     </a>
   </div>

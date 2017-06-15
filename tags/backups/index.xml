@@ -16,7 +16,11 @@
       <pubDate>Sun, 30 Aug 2015 11:03:31 +0200</pubDate>
       
       <guid>https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/</guid>
-      <description>If you use to transfer backups through ftp, it can be very handy to write a bash script to put a file in a remote server in an easy way. With this script, transferring a file will be as easy as this: ./ftpConnect localFile remoteFile  In the script you&amp;rsquo;ll need to define some data: your FTP server&amp;rsquo;s IP and a valid user and password combination. #!/bin/bash #use absolute paths (i.</description>
+      <description>&lt;p&gt;If you use to transfer backups through ftp, it can be very handy to write a bash script to put a file in a remote server in an easy way. With this script, transferring a file will be as easy as this:
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;./ftpConnect localFile remoteFile
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/p&gt;</description>
     </item>
     
   </channel>

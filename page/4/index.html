@@ -22,7 +22,7 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/" />
 	
-	<meta property="og:updated_time" content="2016-02-27 12:21:32 &#43;0200 &#43;0200"/>
+	<meta property="og:updated_time" content="2015-08-10 10:56:10 &#43;0200 CEST"/>
 	<meta property="og:locale" content="en-US" />
 	<meta property="og:site_name" content="Arboleda" />
 	
@@ -137,43 +137,39 @@
     
       <article>
         <div class="post-container">
-  <div class="post-image-container">
-    
-    <a href="/articles/getting-1.5s-page-load-time-on-a-basic-vps/">
-      <img src="/articles/img/getting-1.5s-page-load-time-on-a-basic-vps.png" alt="Getting 1.5s page load time on a basic vps" class="pulse-image">
-    </a>
-    
-  </div>
+  
   <div class="article_summary">
     <div class="article-date">
-      <p class="day"><i class="fa fa-calendar"></i>27 Feb 2016</p>
-      <p><i class="fa fa-clock-o"></i>4 min read  ~ 500 words</p>
+      <p class="day"><i class="fa fa-calendar"></i>10 Aug 2015</p>
+      <p><i class="fa fa-clock-o"></i>7 min read  ~ 1200 words</p>
     </div>
     
     <div class="article-tags">
       
-      <a href="#" rel="tag">performance</a> 
-      <a href="#" rel="tag">vps</a> 
-      <a href="#" rel="tag">processwire</a> 
+      <a href="#" rel="tag">iptables</a> 
+      <a href="#" rel="tag">fail2ban</a> 
+      <a href="#" rel="tag">centos6</a> 
     </div>
     
     <div class="clearfix"></div>
     
-    <a href="/articles/getting-1.5s-page-load-time-on-a-basic-vps/" title="">
-      <h1 class="article_title title">Getting 1.5s page load time on a basic vps</h1>
+    <a href="/articles/configuring-iptables-and-fail2ban-on-centos-6/" title="">
+      <h1 class="article_title title">Configuring IPTABLES and fail2ban on centOS 6</h1>
     </a>
     
     <div class="article_excerpt">
       
-      <p>As you can see on the graphics, I had 5s load time for my home page, which is kind of basic. It wasn&rsquo;t that bad if you look at the packages my server runs: gitlab, Roundcube&rsquo;s webmail, sentora (open source control panel) and piwik (stats management). Note: Those 11s peaks you see there were produced while I was doing load tests on my server. My environment&rsquo;s specs are:
- 1 GB RAM VPS CentOS Linux release 7.</p>
+      <p>In this post I&rsquo;ll explain how to configure iptables along with fail2ban and how to start/stop these services without messing up your chains or configuration.</p>
+
+<p>Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on <code>/etc/fail2ban/jail.local</code>. Copy the file from <code>/etc/fail2ban/jail.conf</code> if it doesn&rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file:
+</p>
       
     </div>
     <div class="clearfix"></div>
     
     <div class="article-footer">
       
-      <a class="read-more-button pure-button" href="/articles/getting-1.5s-page-load-time-on-a-basic-vps/">Read More</a> 
+      <a class="read-more-button pure-button" href="/articles/configuring-iptables-and-fail2ban-on-centos-6/">Read the full article</a> 
       
 
 
@@ -182,19 +178,19 @@
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/&amp;title=Getting%201.5s%20page%20load%20time%20on%20a%20basic%20vps&amp;summary=As%20you%20can%20see%20on%20the%20graphics,%20I%20had%205s%20load%20time%20for%20my%20home%20page,%20which%20is%20kind%20of%20basic.%20It%20wasn&amp;rsquo;t%20that%20bad%20if%20you%20look%20at%20the%20packages%20my%20server%20runs:%20gitlab,%20Roundcube&amp;rsquo;s%20webmail,%20sentora%20%28open%20source%20control%20panel%29%20and%20piwik%20%28stats%20management%29.%20Note:%20Those%2011s%20peaks%20you%20see%20there%20were%20produced%20while%20I%20was%20doing%20load%20tests%20on%20my%20server.%20My%20environment&amp;rsquo;s%20specs%20are:%0a%201%20GB%20RAM%20VPS%20CentOS%20Linux%20release%207.&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/&amp;title=Configuring%20IPTABLES%20and%20fail2ban%20on%20centOS%206&amp;summary=%3cp%3eIn%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20configure%20iptables%20along%20with%20fail2ban%20and%20how%20to%20start/stop%20these%20services%20without%20messing%20up%20your%20chains%20or%20configuration.%3c/p%3e%0a%0a%3cp%3eIptables%20should%20be%20included%20in%20your%20default%20Linux%20OS,%20and%20you%20can%20easily%20get%20fail2ban%20from%20standard%20repos.%20So,%20just%20enable%20the%20chains%20you%20need%20on%20%3ccode%3e/etc/fail2ban/jail.local%3c/code%3e.%20Copy%20the%20file%20from%20%3ccode%3e/etc/fail2ban/jail.conf%3c/code%3e%20if%20it%20doesn&amp;rsquo;t%20exist.%20For%20example,%20if%20you%20want%20%28you%20should%29%20activate%20ssh%20jail,%20just%20add/uncomment%20this%20lines%20to%20the%20file:%0a%3c/p%3e&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-twitter" href="http://twitter.com/share?text=Getting%201.5s%20page%20load%20time%20on%20a%20basic%20vps&amp;url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-twitter" href="http://twitter.com/share?text=Configuring%20IPTABLES%20and%20fail2ban%20on%20centOS%206&amp;url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/&amp;media=https://www.jarboleda.megetting-1.5s-page-load-time-on-a-basic-vps.png&amp;description=As%20you%20can%20see%20on%20the%20graphics,%20I%20had%205s%20load%20time%20for%20my%20home%20page,%20which%20is%20kind%20of%20basic.%20It%20wasn&amp;rsquo;t%20that%20bad%20if%20you%20look%20at%20the%20packages%20my%20server%20runs:%20gitlab,%20Roundcube&amp;rsquo;s%20webmail,%20sentora%20%28open%20source%20control%20panel%29%20and%20piwik%20%28stats%20management%29.%20Note:%20Those%2011s%20peaks%20you%20see%20there%20were%20produced%20while%20I%20was%20doing%20load%20tests%20on%20my%20server.%20My%20environment&amp;rsquo;s%20specs%20are:%0a%201%20GB%20RAM%20VPS%20CentOS%20Linux%20release%207." onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/&amp;media=https://www.jarboleda.meconfiguring-iptables-and-fail2ban-on-centos-6.jpg&amp;description=%3cp%3eIn%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20configure%20iptables%20along%20with%20fail2ban%20and%20how%20to%20start/stop%20these%20services%20without%20messing%20up%20your%20chains%20or%20configuration.%3c/p%3e%0a%0a%3cp%3eIptables%20should%20be%20included%20in%20your%20default%20Linux%20OS,%20and%20you%20can%20easily%20get%20fail2ban%20from%20standard%20repos.%20So,%20just%20enable%20the%20chains%20you%20need%20on%20%3ccode%3e/etc/fail2ban/jail.local%3c/code%3e.%20Copy%20the%20file%20from%20%3ccode%3e/etc/fail2ban/jail.conf%3c/code%3e%20if%20it%20doesn&amp;rsquo;t%20exist.%20For%20example,%20if%20you%20want%20%28you%20should%29%20activate%20ssh%20jail,%20just%20add/uncomment%20this%20lines%20to%20the%20file:%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -211,41 +207,40 @@
       
       <article>
         <div class="post-container">
-  <div class="post-image-container">
-    
-    <a href="/articles/authenticating-users-in-joomla-with-curl/">
-      <img src="/articles/img/authenticating-users-in-joomla-with-curl.jpg" alt="Authenticating users with cURL" class="pulse-image">
-    </a>
-    
-  </div>
+  
   <div class="article_summary">
     <div class="article-date">
-      <p class="day"><i class="fa fa-calendar"></i>16 Jan 2016</p>
-      <p><i class="fa fa-clock-o"></i>3 min read  ~ 500 words</p>
+      <p class="day"><i class="fa fa-calendar"></i>9 Aug 2015</p>
+      <p><i class="fa fa-clock-o"></i>8 min read  ~ 1300 words</p>
     </div>
     
     <div class="article-tags">
       
-      <a href="#" rel="tag">curl</a> 
+      <a href="#" rel="tag">httpd</a> 
+      <a href="#" rel="tag">mysql</a> 
+      <a href="#" rel="tag">php</a> 
+      <a href="#" rel="tag">centos6</a> 
     </div>
     
     <div class="clearfix"></div>
     
-    <a href="/articles/authenticating-users-in-joomla-with-curl/" title="">
-      <h1 class="article_title title">Authenticating users with cURL</h1>
+    <a href="/articles/configuring-a-lamp-server-on-centos-6/" title="">
+      <h1 class="article_title title">configuring a LAMP server on CentOS 6</h1>
     </a>
     
     <div class="article_excerpt">
       
-      <p>In this post I&rsquo;ll explain how to log in a user with cURL. This can be useful if you want to integrate joomla login with an external app. For example, you could have a dual installation of wordpress and joomla and use wordpress joomla to log in joomla users as well.
-Joomla outputs two values for each login form and those values have to be valid. So, in first place we need to get those values with cURL.</p>
+      <p>In this first post I&rsquo;ll explain how I configurated my VPS to run a basic LAMP server with multiple php versions, compiled by myself. You can get your own cheap VPS (~3€) and test a lot of things.</p>
+
+<p>Firstly, we&rsquo;ll create our dir structure. I&rsquo;ll use jag.co as a domain for this example, you can choose the dir structure you want, but I recommend following this one:
+</p>
       
     </div>
     <div class="clearfix"></div>
     
     <div class="article-footer">
       
-      <a class="read-more-button pure-button" href="/articles/authenticating-users-in-joomla-with-curl/">Read More</a> 
+      <a class="read-more-button pure-button" href="/articles/configuring-a-lamp-server-on-centos-6/">Read the full article</a> 
       
 
 
@@ -254,91 +249,19 @@ Joomla outputs two values for each login form and those values have to be valid.
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/&amp;title=Authenticating%20users%20with%20cURL&amp;summary=In%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20log%20in%20a%20user%20with%20cURL.%20This%20can%20be%20useful%20if%20you%20want%20to%20integrate%20joomla%20login%20with%20an%20external%20app.%20For%20example,%20you%20could%20have%20a%20dual%20installation%20of%20wordpress%20and%20joomla%20and%20use%20wordpress%20joomla%20to%20log%20in%20joomla%20users%20as%20well.%0aJoomla%20outputs%20two%20values%20for%20each%20login%20form%20and%20those%20values%20have%20to%20be%20valid.%20So,%20in%20first%20place%20we%20need%20to%20get%20those%20values%20with%20cURL.&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/&amp;title=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;summary=%3cp%3eIn%20this%20first%20post%20I&amp;rsquo;ll%20explain%20how%20I%20configurated%20my%20VPS%20to%20run%20a%20basic%20LAMP%20server%20with%20multiple%20php%20versions,%20compiled%20by%20myself.%20You%20can%20get%20your%20own%20cheap%20VPS%20%28~3%e2%82%ac%29%20and%20test%20a%20lot%20of%20things.%3c/p%3e%0a%0a%3cp%3eFirstly,%20we&amp;rsquo;ll%20create%20our%20dir%20structure.%20I&amp;rsquo;ll%20use%20jag.co%20as%20a%20domain%20for%20this%20example,%20you%20can%20choose%20the%20dir%20structure%20you%20want,%20but%20I%20recommend%20following%20this%20one:%0a%3c/p%3e&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-twitter" href="http://twitter.com/share?text=Authenticating%20users%20with%20cURL&amp;url=https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-twitter" href="http://twitter.com/share?text=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/&amp;media=https://www.jarboleda.meauthenticating-users-in-joomla-with-curl.jpg&amp;description=In%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20log%20in%20a%20user%20with%20cURL.%20This%20can%20be%20useful%20if%20you%20want%20to%20integrate%20joomla%20login%20with%20an%20external%20app.%20For%20example,%20you%20could%20have%20a%20dual%20installation%20of%20wordpress%20and%20joomla%20and%20use%20wordpress%20joomla%20to%20log%20in%20joomla%20users%20as%20well.%0aJoomla%20outputs%20two%20values%20for%20each%20login%20form%20and%20those%20values%20have%20to%20be%20valid.%20So,%20in%20first%20place%20we%20need%20to%20get%20those%20values%20with%20cURL." onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
-    </li>
-  </ul>
-</div>
-
-    </div>
-
-    <div class='post-footer'>
-      
-    </div>
-  </div>
-</div>
-
-      </article>
-      
-      <article>
-        <div class="post-container">
-  <div class="post-image-container">
-    
-    <a href="/articles/backing-up-all-databases-using-mysqldump/">
-      <img src="/articles/img/backing-up-all-databases-using-mysqldump.png" alt="Backing up all databases using mysqldump" class="pulse-image">
-    </a>
-    
-  </div>
-  <div class="article_summary">
-    <div class="article-date">
-      <p class="day"><i class="fa fa-calendar"></i>30 Aug 2015</p>
-      <p><i class="fa fa-clock-o"></i>3 min read  ~ 500 words</p>
-    </div>
-    
-    <div class="article-tags">
-      
-      <a href="#" rel="tag">mysqldump</a> 
-      <a href="#" rel="tag">bash</a> 
-    </div>
-    
-    <div class="clearfix"></div>
-    
-    <a href="/articles/backing-up-all-databases-using-mysqldump/" title="">
-      <h1 class="article_title title">Backing up all databases using mysqldump</h1>
-    </a>
-    
-    <div class="article_excerpt">
-      
-      <p>In this post I&rsquo;ll explain how I backup all databases in servers I work with. When you face trouble with those servers it&rsquo;ll be pretty useful to have daily database dumps. So, I use mysqldump utiliy to backup database and an script I wrote myself to transfer files, which you can find here Backing up all databases with mysqldumpo is pretty easy, just use it in this way in bash: mysqldump -uadmin -p`cat /etc/psa/.</p>
-      
-    </div>
-    <div class="clearfix"></div>
-    
-    <div class="article-footer">
-      
-      <a class="read-more-button pure-button" href="/articles/backing-up-all-databases-using-mysqldump/">Read More</a> 
-      
-
-
-
-
-<div class="soc-sharing">
-  <ul class="article_share_items">
-    <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/&amp;title=Backing%20up%20all%20databases%20using%20mysqldump&amp;summary=In%20this%20post%20I&amp;rsquo;ll%20explain%20how%20I%20backup%20all%20databases%20in%20servers%20I%20work%20with.%20When%20you%20face%20trouble%20with%20those%20servers%20it&amp;rsquo;ll%20be%20pretty%20useful%20to%20have%20daily%20database%20dumps.%20So,%20I%20use%20mysqldump%20utiliy%20to%20backup%20database%20and%20an%20script%20I%20wrote%20myself%20to%20transfer%20files,%20which%20you%20can%20find%20here%20Backing%20up%20all%20databases%20with%20mysqldumpo%20is%20pretty%20easy,%20just%20use%20it%20in%20this%20way%20in%20bash:%20mysqldump%20-uadmin%20-p%60cat%20/etc/psa/.&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
-    </li>
-    <li>
-      <a class="fa fa-twitter" href="http://twitter.com/share?text=Backing%20up%20all%20databases%20using%20mysqldump&amp;url=https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
-    </li>
-    <li>
-      <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
-    </li>
-    <li>
-      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
-    </li>
-    <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/&amp;media=https://www.jarboleda.mebacking-up-all-databases-using-mysqldump.png&amp;description=In%20this%20post%20I&amp;rsquo;ll%20explain%20how%20I%20backup%20all%20databases%20in%20servers%20I%20work%20with.%20When%20you%20face%20trouble%20with%20those%20servers%20it&amp;rsquo;ll%20be%20pretty%20useful%20to%20have%20daily%20database%20dumps.%20So,%20I%20use%20mysqldump%20utiliy%20to%20backup%20database%20and%20an%20script%20I%20wrote%20myself%20to%20transfer%20files,%20which%20you%20can%20find%20here%20Backing%20up%20all%20databases%20with%20mysqldumpo%20is%20pretty%20easy,%20just%20use%20it%20in%20this%20way%20in%20bash:%20mysqldump%20-uadmin%20-p%60cat%20/etc/psa/." onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/&amp;media=https://www.jarboleda.meconfiguring-a-lamp-server-on-centos-6.jpg&amp;description=%3cp%3eIn%20this%20first%20post%20I&amp;rsquo;ll%20explain%20how%20I%20configurated%20my%20VPS%20to%20run%20a%20basic%20LAMP%20server%20with%20multiple%20php%20versions,%20compiled%20by%20myself.%20You%20can%20get%20your%20own%20cheap%20VPS%20%28~3%e2%82%ac%29%20and%20test%20a%20lot%20of%20things.%3c/p%3e%0a%0a%3cp%3eFirstly,%20we&amp;rsquo;ll%20create%20our%20dir%20structure.%20I&amp;rsquo;ll%20use%20jag.co%20as%20a%20domain%20for%20this%20example,%20you%20can%20choose%20the%20dir%20structure%20you%20want,%20but%20I%20recommend%20following%20this%20one:%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -415,37 +338,13 @@ Joomla outputs two values for each login form and those values have to be valid.
     class="active"><a href="/page/4/">4</a></li>
     
     
-    
-    
-    
-     
-        
-        
-    
-    
     <li
-    ><a href="/page/5/">5</a></li>
-    
-    
-    
-    
-    
-     
-        
-        
-    
-    
-    <li
-    ><a href="/page/6/">6</a></li>
-    
-    
-    <li
-    >
-    <a href="/page/5/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    class="disabled">
+    <a href="" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
     </li>
     
     <li>
-        <a href="/page/6/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/4/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>
@@ -545,12 +444,12 @@ Joomla outputs two values for each login form and those values have to be valid.
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/web-development-environment/' target='_blank'>
-                    <img alt='Web development environment' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
+                  <a href='/articles/centos-web-panel-on-vps/' target='_blank'>
+                    <img alt='Centos web panel with php7 and mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
+                  <a href='/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel with php7 and mysql5.6</a>
                 </div>
               </div>
             </li>
@@ -560,30 +459,17 @@ Joomla outputs two values for each login form and those values have to be valid.
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
-                    <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
+                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img alt='Fixing a corrupted partition on a virtual machine' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
+                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
                 </div>
               </div>
             </li>
             
             
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/articles/using-piwik-api-locally-with-pw/' target='_blank'>
-                    <img alt='Using piwik&#39;s API locally with ProcessWire' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Using piwik&#39;s API locally with ProcessWire</a>
-                </div>
-              </div>
-            </li>
             
             
           </ul>
@@ -645,7 +531,7 @@ Joomla outputs two values for each login form and those values have to be valid.
       <a href='https://www.jarboleda.me'>https://www.jarboleda.me</a>
     </p>
     <p class='attribution'>Powered by</p>
-    <a href='https://gohugo.io/'>
+    <a href='https://gohugo.io/' target="_blank" >
       <img alt="hugo logo" class='attribution_logo' src="/img/hugo-logo.png" />
     </a>
   </div>
