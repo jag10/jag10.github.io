@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.21" />
+	<meta name="generator" content="Hugo 0.23" />
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     <meta name=viewport content="width=device-width, initial-scale=1">
     <title>Arboleda - Arboleda</title>
@@ -232,6 +232,8 @@
       
       <p>In this first post I&rsquo;ll explain how I configurated my VPS to run a basic LAMP server with multiple php versions, compiled by myself. You can get your own cheap VPS (~3€) and test a lot of things.</p>
 
+<h2 id="dir-structure">Dir structure</h2>
+
 <p>Firstly, we&rsquo;ll create our dir structure. I&rsquo;ll use jag.co as a domain for this example, you can choose the dir structure you want, but I recommend following this one:
 </p>
       
@@ -249,7 +251,7 @@
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/&amp;title=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;summary=%3cp%3eIn%20this%20first%20post%20I&amp;rsquo;ll%20explain%20how%20I%20configurated%20my%20VPS%20to%20run%20a%20basic%20LAMP%20server%20with%20multiple%20php%20versions,%20compiled%20by%20myself.%20You%20can%20get%20your%20own%20cheap%20VPS%20%28~3%e2%82%ac%29%20and%20test%20a%20lot%20of%20things.%3c/p%3e%0a%0a%3cp%3eFirstly,%20we&amp;rsquo;ll%20create%20our%20dir%20structure.%20I&amp;rsquo;ll%20use%20jag.co%20as%20a%20domain%20for%20this%20example,%20you%20can%20choose%20the%20dir%20structure%20you%20want,%20but%20I%20recommend%20following%20this%20one:%0a%3c/p%3e&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/&amp;title=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;summary=%3cp%3eIn%20this%20first%20post%20I&amp;rsquo;ll%20explain%20how%20I%20configurated%20my%20VPS%20to%20run%20a%20basic%20LAMP%20server%20with%20multiple%20php%20versions,%20compiled%20by%20myself.%20You%20can%20get%20your%20own%20cheap%20VPS%20%28~3%e2%82%ac%29%20and%20test%20a%20lot%20of%20things.%3c/p%3e%0a%0a%3ch2%20id=%22dir-structure%22%3eDir%20structure%3c/h2%3e%0a%0a%3cp%3eFirstly,%20we&amp;rsquo;ll%20create%20our%20dir%20structure.%20I&amp;rsquo;ll%20use%20jag.co%20as%20a%20domain%20for%20this%20example,%20you%20can%20choose%20the%20dir%20structure%20you%20want,%20but%20I%20recommend%20following%20this%20one:%0a%3c/p%3e&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fa fa-twitter" href="http://twitter.com/share?text=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -261,7 +263,7 @@
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/&amp;media=https://www.jarboleda.meconfiguring-a-lamp-server-on-centos-6.jpg&amp;description=%3cp%3eIn%20this%20first%20post%20I&amp;rsquo;ll%20explain%20how%20I%20configurated%20my%20VPS%20to%20run%20a%20basic%20LAMP%20server%20with%20multiple%20php%20versions,%20compiled%20by%20myself.%20You%20can%20get%20your%20own%20cheap%20VPS%20%28~3%e2%82%ac%29%20and%20test%20a%20lot%20of%20things.%3c/p%3e%0a%0a%3cp%3eFirstly,%20we&amp;rsquo;ll%20create%20our%20dir%20structure.%20I&amp;rsquo;ll%20use%20jag.co%20as%20a%20domain%20for%20this%20example,%20you%20can%20choose%20the%20dir%20structure%20you%20want,%20but%20I%20recommend%20following%20this%20one:%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/&amp;media=https://www.jarboleda.meconfiguring-a-lamp-server-on-centos-6.jpg&amp;description=%3cp%3eIn%20this%20first%20post%20I&amp;rsquo;ll%20explain%20how%20I%20configurated%20my%20VPS%20to%20run%20a%20basic%20LAMP%20server%20with%20multiple%20php%20versions,%20compiled%20by%20myself.%20You%20can%20get%20your%20own%20cheap%20VPS%20%28~3%e2%82%ac%29%20and%20test%20a%20lot%20of%20things.%3c/p%3e%0a%0a%3ch2%20id=%22dir-structure%22%3eDir%20structure%3c/h2%3e%0a%0a%3cp%3eFirstly,%20we&amp;rsquo;ll%20create%20our%20dir%20structure.%20I&amp;rsquo;ll%20use%20jag.co%20as%20a%20domain%20for%20this%20example,%20you%20can%20choose%20the%20dir%20structure%20you%20want,%20but%20I%20recommend%20following%20this%20one:%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -444,12 +446,12 @@
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/centos-web-panel-on-vps/' target='_blank'>
-                    <img alt='Centos web panel with php7 and mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' target='_blank'>
+                    <img alt='Getting 1.5s page load time on a basic vps' width='72' height='72' src="/articles/img/thumbs/getting-1.5s-page-load-time-on-a-basic-vps.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel with php7 and mysql5.6</a>
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' class="mostVisitedLink">Getting 1.5s page load time on a basic vps</a>
                 </div>
               </div>
             </li>
@@ -459,17 +461,30 @@
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
-                    <img alt='Fixing a corrupted partition on a virtual machine' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
+                  <a href='/articles/web-development-environment/' target='_blank'>
+                    <img alt='Web development environment' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
+                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
                 </div>
               </div>
             </li>
             
             
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/articles/using-piwik-api-locally-with-pw/' target='_blank'>
+                    <img alt='Using piwik&#39;s API locally with ProcessWire' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Using piwik&#39;s API locally with ProcessWire</a>
+                </div>
+              </div>
+            </li>
             
             
           </ul>

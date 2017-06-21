@@ -16,7 +16,12 @@
     <meta name="theme-color" content="#ffffff">
     	
 	<meta property="og:title" content="Centos web panel with php7 and mysql5.6" />
-	<meta property="og:description" content="Firstly, we&rsquo;ll install centOS Web Panel, just follow the instructions in the CWP website: http://centos-webpanel.com/installation-instructions
+	<meta property="og:description" content="Installing CWP
+
+Firstly, we&rsquo;ll install centOS Web Panel, just follow the instructions in the CWP website: http://centos-webpanel.com/installation-instructions
+
+Instaling mysql 5.6
+
 After a fresh install, we&rsquo;ll stop CWP to perform the mysqld update.
 service cwpsrv stop
 
@@ -42,7 +47,12 @@ Then, we&rsquo;ll install mysql server repo.
 	
     
     <meta itemprop="name" content="Centos web panel with php7 and mysql5.6">
-    <meta itemprop="description" content="Firstly, we&rsquo;ll install centOS Web Panel, just follow the instructions in the CWP website: http://centos-webpanel.com/installation-instructions
+    <meta itemprop="description" content="Installing CWP
+
+Firstly, we&rsquo;ll install centOS Web Panel, just follow the instructions in the CWP website: http://centos-webpanel.com/installation-instructions
+
+Instaling mysql 5.6
+
 After a fresh install, we&rsquo;ll stop CWP to perform the mysqld update.
 service cwpsrv stop
 
@@ -55,13 +65,18 @@ Then, we&rsquo;ll install mysql server repo.
     <meta itemprop="image" content="installing-centos-web-panel-on-vps.jpg">
     
     <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,backup,backups,bash,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,httpd,iptables,ipv6,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm,vps,zip," />
-    <meta itemprop="wordCount" content="494">
+    <meta itemprop="wordCount" content="501">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
 	<meta name="twitter:image:src" content="https://www.jarboleda.me/articles/img/installing-centos-web-panel-on-vps.jpg"/>
 	
 	<meta name="twitter:title" content="Centos web panel with php7 and mysql5.6"/>
-	<meta name="twitter:description" content="Firstly, we&rsquo;ll install centOS Web Panel, just follow the instructions in the CWP website: http://centos-webpanel.com/installation-instructions
+	<meta name="twitter:description" content="Installing CWP
+
+Firstly, we&rsquo;ll install centOS Web Panel, just follow the instructions in the CWP website: http://centos-webpanel.com/installation-instructions
+
+Instaling mysql 5.6
+
 After a fresh install, we&rsquo;ll stop CWP to perform the mysqld update.
 service cwpsrv stop
 
@@ -109,7 +124,11 @@ Then, we&rsquo;ll install mysql server repo.
                 
               </li>
               <li class='pure-menu-item flag'><i class='fa fa-language' aria-hidden='true'></i></li>
-              
+               
+              <li class='pure-menu-item lang_selector'>
+                <a class='pure-menu-link' href="/es/articles/centos-web-panel-on-vps/">spanish </a>
+              </li>
+               
             </ul>
             <div class="float-right">
               <ul class="pure-menu-list">
@@ -160,7 +179,7 @@ Then, we&rsquo;ll install mysql server repo.
   <div class="article_summary">
     <div class="article-date">
       <p class="day"><i class="fa fa-calendar"></i>24 Mar 2016</p>
-      <p><i class="fa fa-clock-o"></i>4 min read  ~ 500 words</p>
+      <p><i class="fa fa-clock-o"></i>4 min read  ~ 600 words</p>
     </div>
     
     <div class="article-tags">
@@ -176,8 +195,13 @@ Then, we&rsquo;ll install mysql server repo.
     
     <div class="article_excerpt">
       
-      <p><p>Firstly, we&rsquo;ll install centOS Web Panel, just follow the instructions in the CWP website: <a href="http://centos-webpanel.com/installation-instructions">http://centos-webpanel.com/installation-instructions</a>
-After a fresh install, we&rsquo;ll stop CWP to perform the mysqld update.
+      <p><h2 id="installing-cwp">Installing CWP</h2>
+
+<p>Firstly, we&rsquo;ll install centOS Web Panel, just follow the instructions in the CWP website: <a href="http://centos-webpanel.com/installation-instructions">http://centos-webpanel.com/installation-instructions</a></p>
+
+<h2 id="instaling-mysql-5-6">Instaling mysql 5.6</h2>
+
+<p>After a fresh install, we&rsquo;ll stop CWP to perform the mysqld update.
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>service cwpsrv stop
 </pre></div>
 </p>
@@ -266,6 +290,8 @@ The quickfix for this is to add the following line in the /etc/my.cnf, in the [m
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>service cwpsrv start
 </pre></div>
 </p>
+
+<h2 id="configuring-php7">Configuring php7</h2>
 
 <p>Now your server should be accesible at: <a href="http://your.ip:2030">http://your.ip:2030</a>
 Login into the panel with your root credentials and go to PHP Settings -&gt; PHP selector. Firstly, we need to define the flags for the php version we&rsquo;re going to compile. You should add the following extension for php7 because it&rsquo;s needed in some platforms like magento:
@@ -358,7 +384,7 @@ Login into the panel with your root credentials and go to PHP Settings -&gt; PHP
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/centos-web-panel-on-vps/&amp;title=Centos%20web%20panel%20with%20php7%20and%20mysql5.6&amp;summary=%3cp%3eFirstly,%20we&amp;rsquo;ll%20install%20centOS%20Web%20Panel,%20just%20follow%20the%20instructions%20in%20the%20CWP%20website:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%0aAfter%20a%20fresh%20install,%20we&amp;rsquo;ll%20stop%20CWP%20to%20perform%20the%20mysqld%20update.%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3eservice%20cwpsrv%20stop%0a%3c/pre%3e%3c/div%3e%0a%3c/p%3e%0a%0a%3cp%3eThen,%20we&amp;rsquo;ll%20install%20mysql%20server%20repo.%0a%3c/p%3e&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/centos-web-panel-on-vps/&amp;title=Centos%20web%20panel%20with%20php7%20and%20mysql5.6&amp;summary=%3ch2%20id=%22installing-cwp%22%3eInstalling%20CWP%3c/h2%3e%0a%0a%3cp%3eFirstly,%20we&amp;rsquo;ll%20install%20centOS%20Web%20Panel,%20just%20follow%20the%20instructions%20in%20the%20CWP%20website:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%0a%3ch2%20id=%22instaling-mysql-5-6%22%3eInstaling%20mysql%205.6%3c/h2%3e%0a%0a%3cp%3eAfter%20a%20fresh%20install,%20we&amp;rsquo;ll%20stop%20CWP%20to%20perform%20the%20mysqld%20update.%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3eservice%20cwpsrv%20stop%0a%3c/pre%3e%3c/div%3e%0a%3c/p%3e%0a%0a%3cp%3eThen,%20we&amp;rsquo;ll%20install%20mysql%20server%20repo.%0a%3c/p%3e&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fa fa-twitter" href="http://twitter.com/share?text=Centos%20web%20panel%20with%20php7%20and%20mysql5.6&amp;url=https://www.jarboleda.me/articles/centos-web-panel-on-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -370,7 +396,7 @@ Login into the panel with your root credentials and go to PHP Settings -&gt; PHP
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/centos-web-panel-on-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/centos-web-panel-on-vps/&amp;media=https://www.jarboleda.meinstalling-centos-web-panel-on-vps.jpg&amp;description=%3cp%3eFirstly,%20we&amp;rsquo;ll%20install%20centOS%20Web%20Panel,%20just%20follow%20the%20instructions%20in%20the%20CWP%20website:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%0aAfter%20a%20fresh%20install,%20we&amp;rsquo;ll%20stop%20CWP%20to%20perform%20the%20mysqld%20update.%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3eservice%20cwpsrv%20stop%0a%3c/pre%3e%3c/div%3e%0a%3c/p%3e%0a%0a%3cp%3eThen,%20we&amp;rsquo;ll%20install%20mysql%20server%20repo.%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/centos-web-panel-on-vps/&amp;media=https://www.jarboleda.meinstalling-centos-web-panel-on-vps.jpg&amp;description=%3ch2%20id=%22installing-cwp%22%3eInstalling%20CWP%3c/h2%3e%0a%0a%3cp%3eFirstly,%20we&amp;rsquo;ll%20install%20centOS%20Web%20Panel,%20just%20follow%20the%20instructions%20in%20the%20CWP%20website:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%0a%3ch2%20id=%22instaling-mysql-5-6%22%3eInstaling%20mysql%205.6%3c/h2%3e%0a%0a%3cp%3eAfter%20a%20fresh%20install,%20we&amp;rsquo;ll%20stop%20CWP%20to%20perform%20the%20mysqld%20update.%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3eservice%20cwpsrv%20stop%0a%3c/pre%3e%3c/div%3e%0a%3c/p%3e%0a%0a%3cp%3eThen,%20we&amp;rsquo;ll%20install%20mysql%20server%20repo.%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -436,7 +462,16 @@ s.setAttribute('data-timestamp', +new Date());
   
   <h4>On This Page</h4>
   <div class='table_of_contents'>
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#installing-cwp">Installing CWP</a></li>
+<li><a href="#instaling-mysql-5-6">Instaling mysql 5.6</a></li>
+<li><a href="#configuring-php7">Configuring php7</a></li>
+</ul></li>
+</ul>
+</nav>
   </div>
   
 </div>
@@ -458,29 +493,42 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
-                    <img alt='How to handle remote resources with curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' target='_blank'>
+                    <img alt='Getting 1.5s page load time on a basic vps' width='72' height='72' src="/articles/img/thumbs/getting-1.5s-page-load-time-on-a-basic-vps.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">How to handle remote resources with curl</a>
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' class="mostVisitedLink">Getting 1.5s page load time on a basic vps</a>
                 </div>
               </div>
             </li>
-            
-            
             
             
              
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/using-piwik-api-locally-with-pw/' target='_blank'>
-                    <img alt='Using piwik&#39;s API locally with ProcessWire' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
+                  <a href='/articles/web-development-environment/' target='_blank'>
+                    <img alt='Web development environment' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Using piwik&#39;s API locally with ProcessWire</a>
+                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/articles/transferring-files-with-ftp-through-bash-expect-script/' target='_blank'>
+                    <img alt='Transferring files with FTP through bash expect script' width='72' height='72' src="/articles/img/thumbs/transferring-files-with-ftp-through-bash-expect-script.png" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/transferring-files-with-ftp-through-bash-expect-script/' class="mostVisitedLink">Transferring files with FTP through bash expect script</a>
                 </div>
               </div>
             </li>

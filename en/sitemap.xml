@@ -125,6 +125,16 @@
   <url>
     <loc>https://www.jarboleda.me/articles/centos-web-panel-on-vps/</loc>
     <lastmod>2016-03-24T12:28:50+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jarboleda.me/articles/centos-web-panel-on-vps/"
+                />
   </url>
   
   <url>
@@ -135,11 +145,31 @@
   <url>
     <loc>https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/</loc>
     <lastmod>2016-01-16T11:07:16+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/"
+                />
   </url>
   
   <url>
     <loc>https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/</loc>
     <lastmod>2015-08-30T11:05:36+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/"
+                />
   </url>
   
   <url>
@@ -165,6 +195,16 @@
   <url>
     <loc>https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/</loc>
     <lastmod>2015-08-09T10:48:45+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/"
+                />
   </url>
   
   <url>
@@ -239,12 +279,32 @@
     <loc>https://www.jarboleda.me/tags/bash/</loc>
     <lastmod>2015-08-30T11:05:36+02:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.jarboleda.me/es/tags/bash/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jarboleda.me/tags/bash/"
+                />
   </url>
   
   <url>
     <loc>https://www.jarboleda.me/tags/centos6/</loc>
     <lastmod>2015-08-10T10:56:10+02:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.jarboleda.me/es/tags/centos6/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jarboleda.me/tags/centos6/"
+                />
   </url>
   
   <url>
@@ -338,6 +398,16 @@
     <loc>https://www.jarboleda.me/tags/httpd/</loc>
     <lastmod>2015-08-09T10:48:45+02:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.jarboleda.me/es/tags/httpd/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jarboleda.me/tags/httpd/"
+                />
   </url>
   
   <url>
@@ -356,6 +426,16 @@
     <loc>https://www.jarboleda.me/tags/magento/</loc>
     <lastmod>2016-03-24T12:28:50+02:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.jarboleda.me/es/tags/magento/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jarboleda.me/tags/magento/"
+                />
   </url>
   
   <url>
@@ -394,12 +474,32 @@
     <loc>https://www.jarboleda.me/tags/mysql/</loc>
     <lastmod>2015-08-09T10:48:45+02:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.jarboleda.me/es/tags/mysql/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jarboleda.me/tags/mysql/"
+                />
   </url>
   
   <url>
     <loc>https://www.jarboleda.me/tags/mysqldump/</loc>
     <lastmod>2015-08-30T11:05:36+02:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.jarboleda.me/es/tags/mysqldump/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jarboleda.me/tags/mysqldump/"
+                />
   </url>
   
   <url>

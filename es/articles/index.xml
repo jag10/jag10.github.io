@@ -141,5 +141,62 @@ De aquí he tomado el fichero que me interesa, correspondiente a la versión com
 &lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Centos web panel con php7 y mysql5.6</title>
+      <link>https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/</link>
+      <pubDate>Thu, 24 Mar 2016 12:28:50 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/</guid>
+      <description>&lt;h2 id=&#34;instalando-cwp&#34;&gt;Instalando CWP&lt;/h2&gt;
+
+&lt;p&gt;En primer lugar, vamos a instalar CWP, simplemente hay que seguir las instrucciones del sitio web de CWP: &lt;a href=&#34;http://centos-webpanel.com/installation-instructions&#34;&gt;http://centos-webpanel.com/installation-instructions&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;instalando-mysql-5-6&#34;&gt;Instalando mysql 5.6&lt;/h2&gt;
+
+&lt;p&gt;Después de una instalación limpia, vamos a detener CWP para actualizar mysql.
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;service cwpsrv stop
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Ahora vamos a instalar el repositorio de mysql
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Autenticando usuarios con cURL</title>
+      <link>https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/</link>
+      <pubDate>Sat, 16 Jan 2016 11:07:16 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/</guid>
+      <description>&lt;p&gt;En est post vamos a ver como autenticar un usuario utilizando cURL. Esto puede ser útil si se quiere integrar un login con una aplicación externa y no se dispone de una API. Por ejemplo, se podrían tener dos plataformas que gestionen los usuarios de manera diferente pero en las que el login sea único.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Haciendo un backup de todas las BD usando mysqldump</title>
+      <link>https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/</link>
+      <pubDate>Sun, 30 Aug 2015 11:05:36 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/</guid>
+      <description>&lt;p&gt;En este post vamos a ver como hacer un backup de todas las bases de datos, tomando como ejemplo uno de los servidores con los que actualmente trabajo. Así, si surge algún problema con el servidor podremos disponer de un backup reciente.&lt;/p&gt;
+
+&lt;p&gt;Para ello, utilizo la utilidad mysqldump y un script para transferir los ficheros a un servidor ftp.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>configuring a LAMP server on CentOS 6</title>
+      <link>https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/</link>
+      <pubDate>Sun, 09 Aug 2015 10:48:45 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/</guid>
+      <description>&lt;p&gt;En este post voy a explicar cómo configurar un servidor VPS para tener un servidor LAMP básico con múltiples versiones PHP, compiladas previamente. De esta manera, podemos tener un servidor VPS muy barato (~3€) en el que hacer probaturas.&lt;/p&gt;
+
+&lt;h2 id=&#34;estructura-de-directorios&#34;&gt;Estructura de directorios&lt;/h2&gt;
+
+&lt;p&gt;En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co como dominio para este ejemplo. Puedes utilizar la estructura de directoriosque quieras, esta es la mía:
+&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

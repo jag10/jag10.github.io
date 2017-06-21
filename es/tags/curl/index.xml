@@ -27,5 +27,15 @@
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Autenticando usuarios con cURL</title>
+      <link>https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/</link>
+      <pubDate>Sat, 16 Jan 2016 11:07:16 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/</guid>
+      <description>&lt;p&gt;En est post vamos a ver como autenticar un usuario utilizando cURL. Esto puede ser útil si se quiere integrar un login con una aplicación externa y no se dispone de una API. Por ejemplo, se podrían tener dos plataformas que gestionen los usuarios de manera diferente pero en las que el login sea único.
+&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-	<meta name="generator" content="Hugo 0.21" />
+	<meta name="generator" content="Hugo 0.23" />
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     <meta name=viewport content="width=device-width, initial-scale=1">
     <title>Arboleda - Arboleda</title>
-    <meta name="description" content="site description goes here">
+    <meta name="description" content="El blog de Jeferson Arboleda, ingeniero informático. El blog está enfocado en la mejora de mis habilidades y en la superación de los retos que encuentro en mi día a día">
     <meta name="robots" content="noindex">
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -22,7 +22,7 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/es/" />
 	
-	<meta property="og:updated_time" content="2016-05-01 12:37:41 &#43;0200 CEST"/>
+	<meta property="og:updated_time" content="2015-08-30 11:05:36 &#43;0200 CEST"/>
 	<meta property="og:locale" content="es-ES" />
 	<meta property="og:site_name" content="Arboleda" />
 	
@@ -39,7 +39,7 @@
     
     
     
-    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,curl,cwp,fedora25,fopen,magento2,mate,nodejs,odroid,php,php7,piwik,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm," />
+    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,bash,centos6,curl,cwp,fedora25,fopen,httpd,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,php,php7,piwik,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm," />
     
 	
 	<meta name="twitter:card" content="summary"/>
@@ -137,41 +137,38 @@
     
       <article>
         <div class="post-container">
-  <div class="post-image-container">
-    
-    <a href="/es/articles/using-piwik-api-locally-with-pw/">
-      <img src="/articles/img/using-piwik-api-locally-with-pw.jpg" alt="Utilizando la API de piwik en local con PW" class="pulse-image">
-    </a>
-    
-  </div>
+  
   <div class="article_summary">
     <div class="article-date">
-      <p class="day"><i class="fa fa-calendar"></i>1 May 2016</p>
-      <p><i class="fa fa-clock-o"></i>3 min read  ~ 300 words</p>
+      <p class="day"><i class="fa fa-calendar"></i>30 Aug 2015</p>
+      <p><i class="fa fa-clock-o"></i>3 min read  ~ 400 words</p>
     </div>
     
     <div class="article-tags">
       
-      <a href="#" rel="tag">processwire</a> 
-      <a href="#" rel="tag">piwik</a> 
+      <a href="#" rel="tag">mysqldump</a> 
+      <a href="#" rel="tag">bash</a> 
     </div>
     
     <div class="clearfix"></div>
     
-    <a href="/es/articles/using-piwik-api-locally-with-pw/" title="">
-      <h1 class="article_title title">Utilizando la API de piwik en local con PW</h1>
+    <a href="/es/articles/backing-up-all-databases-using-mysqldump/" title="">
+      <h1 class="article_title title">Haciendo un backup de todas las BD usando mysqldump</h1>
     </a>
     
     <div class="article_excerpt">
       
-      <p>Para hacer el tracking de visitas de jglab.me utilizo Piwik. ¿Por qué? El principal motivo es que permite mantener la información de manera privada, sin que terceros lleguen a saberla, pero además, piwik ofrece una API muy potente que puede ser utilizada de manera local, lo que es muy importante para el rendimiento, pues me permite obtener estadísticas de la web sin realizar ninguna petición. Para las peticiones locales utilizo la siguiente clase:</p>
+      <p>En este post vamos a ver como hacer un backup de todas las bases de datos, tomando como ejemplo uno de los servidores con los que actualmente trabajo. Así, si surge algún problema con el servidor podremos disponer de un backup reciente.</p>
+
+<p>Para ello, utilizo la utilidad mysqldump y un script para transferir los ficheros a un servidor ftp.
+</p>
       
     </div>
     <div class="clearfix"></div>
     
     <div class="article-footer">
       
-      <a class="read-more-button pure-button" href="/es/articles/using-piwik-api-locally-with-pw/">Read More</a> 
+      <a class="read-more-button pure-button" href="/es/articles/backing-up-all-databases-using-mysqldump/">Read the full article</a> 
       
 
 
@@ -180,19 +177,19 @@
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/&amp;title=Utilizando%20la%20API%20de%20piwik%20en%20local%20con%20PW&amp;summary=Para%20hacer%20el%20tracking%20de%20visitas%20de%20jglab.me%20utilizo%20Piwik.%20%c2%bfPor%20qu%c3%a9?%20El%20principal%20motivo%20es%20que%20permite%20mantener%20la%20informaci%c3%b3n%20de%20manera%20privada,%20sin%20que%20terceros%20lleguen%20a%20saberla,%20pero%20adem%c3%a1s,%20piwik%20ofrece%20una%20API%20muy%20potente%20que%20puede%20ser%20utilizada%20de%20manera%20local,%20lo%20que%20es%20muy%20importante%20para%20el%20rendimiento,%20pues%20me%20permite%20obtener%20estad%c3%adsticas%20de%20la%20web%20sin%20realizar%20ninguna%20petici%c3%b3n.%20Para%20las%20peticiones%20locales%20utilizo%20la%20siguiente%20clase:&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/&amp;title=Haciendo%20un%20backup%20de%20todas%20las%20BD%20usando%20mysqldump&amp;summary=%3cp%3eEn%20este%20post%20vamos%20a%20ver%20como%20hacer%20un%20backup%20de%20todas%20las%20bases%20de%20datos,%20tomando%20como%20ejemplo%20uno%20de%20los%20servidores%20con%20los%20que%20actualmente%20trabajo.%20As%c3%ad,%20si%20surge%20alg%c3%ban%20problema%20con%20el%20servidor%20podremos%20disponer%20de%20un%20backup%20reciente.%3c/p%3e%0a%0a%3cp%3ePara%20ello,%20utilizo%20la%20utilidad%20mysqldump%20y%20un%20script%20para%20transferir%20los%20ficheros%20a%20un%20servidor%20ftp.%0a%3c/p%3e&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-twitter" href="http://twitter.com/share?text=Utilizando%20la%20API%20de%20piwik%20en%20local%20con%20PW&amp;url=https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-twitter" href="http://twitter.com/share?text=Haciendo%20un%20backup%20de%20todas%20las%20BD%20usando%20mysqldump&amp;url=https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/&amp;media=https://www.jarboleda.meusing-piwik-api-locally-with-pw.jpg&amp;description=Para%20hacer%20el%20tracking%20de%20visitas%20de%20jglab.me%20utilizo%20Piwik.%20%c2%bfPor%20qu%c3%a9?%20El%20principal%20motivo%20es%20que%20permite%20mantener%20la%20informaci%c3%b3n%20de%20manera%20privada,%20sin%20que%20terceros%20lleguen%20a%20saberla,%20pero%20adem%c3%a1s,%20piwik%20ofrece%20una%20API%20muy%20potente%20que%20puede%20ser%20utilizada%20de%20manera%20local,%20lo%20que%20es%20muy%20importante%20para%20el%20rendimiento,%20pues%20me%20permite%20obtener%20estad%c3%adsticas%20de%20la%20web%20sin%20realizar%20ninguna%20petici%c3%b3n.%20Para%20las%20peticiones%20locales%20utilizo%20la%20siguiente%20clase:" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/&amp;media=https://www.jarboleda.mebacking-up-all-databases-using-mysqldump.png&amp;description=%3cp%3eEn%20este%20post%20vamos%20a%20ver%20como%20hacer%20un%20backup%20de%20todas%20las%20bases%20de%20datos,%20tomando%20como%20ejemplo%20uno%20de%20los%20servidores%20con%20los%20que%20actualmente%20trabajo.%20As%c3%ad,%20si%20surge%20alg%c3%ban%20problema%20con%20el%20servidor%20podremos%20disponer%20de%20un%20backup%20reciente.%3c/p%3e%0a%0a%3cp%3ePara%20ello,%20utilizo%20la%20utilidad%20mysqldump%20y%20un%20script%20para%20transferir%20los%20ficheros%20a%20un%20servidor%20ftp.%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -209,42 +206,42 @@
       
       <article>
         <div class="post-container">
-  <div class="post-image-container">
-    
-    <a href="/es/articles/installing-magento2-on-cwp/">
-      <img src="/articles/img/installing-magento2-on-cwp.jpg" alt="Instalando magento2 en cwp" class="pulse-image">
-    </a>
-    
-  </div>
+  
   <div class="article_summary">
     <div class="article-date">
-      <p class="day"><i class="fa fa-calendar"></i>24 Mar 2016</p>
-      <p><i class="fa fa-clock-o"></i>3 min read  ~ 400 words</p>
+      <p class="day"><i class="fa fa-calendar"></i>9 Aug 2015</p>
+      <p><i class="fa fa-clock-o"></i>6 min read  ~ 1000 words</p>
     </div>
     
     <div class="article-tags">
       
-      <a href="#" rel="tag">magento2</a> 
-      <a href="#" rel="tag">cwp</a> 
-      <a href="#" rel="tag">php7</a> 
+      <a href="#" rel="tag">httpd</a> 
+      <a href="#" rel="tag">mysql</a> 
+      <a href="#" rel="tag">php</a> 
+      <a href="#" rel="tag">centos6</a> 
     </div>
     
     <div class="clearfix"></div>
     
-    <a href="/es/articles/installing-magento2-on-cwp/" title="">
-      <h1 class="article_title title">Instalando magento2 en cwp</h1>
+    <a href="/es/articles/configuring-a-lamp-server-on-centos-6/" title="">
+      <h1 class="article_title title">configuring a LAMP server on CentOS 6</h1>
     </a>
     
     <div class="article_excerpt">
       
-      <p>Empezando En este post explicaré cómo instalar magento2 sobre Centos Web Panel, utilizando php7 y mysql 5.6. Para empezar, tenemos que compilar php con las extensiones que magento2 necesita. Con el siguiente comando podremos configurar php7 para luego compilarlo y conseguir que funcione con magento2:./configure ./configure &ndash;prefix=/opt/alt/php7/usr &ndash;with-config-file-path=/opt/alt/php7/usr/php &ndash;with-config-file-scan-dir=/opt/alt/php7/usr/php/php.d &ndash;enable-fpm &ndash;enable-mbstring &ndash;enable-zip &ndash;enable-bcmath &ndash;enable-pcntl &ndash;enable-ftp &ndash;enable-exif &ndash;enable-calendar &ndash;enable-sysvmsg &ndash;enable-sysvsem &ndash;enable-sysvshm &ndash;enable-wddx &ndash;with-curl &ndash;with-mcrypt &ndash;with-iconv &ndash;with-gmp &ndash;with-pspell &ndash;with-gd &ndash;with-jpeg-dir=/usr &ndash;with-png-dir=/usr &ndash;with-zlib-dir=/usr &ndash;with-xpm-dir=/usr &ndash;with-freetype-dir=/usr &ndash;enable-gd-native-ttf &ndash;enable-gd-jis-conv &ndash;with-openssl &ndash;with-pdo-mysql=/usr &ndash;with-gettext=/usr &ndash;with-zlib=/usr &ndash;with-bz2=/usr &ndash;with-recode=/usr &ndash;with-mysqli &ndash;with-mysql-sock=/var/lib/mysql/mysql.</p>
+      <p>En este post voy a explicar cómo configurar un servidor VPS para tener un servidor LAMP básico con múltiples versiones PHP, compiladas previamente. De esta manera, podemos tener un servidor VPS muy barato (~3€) en el que hacer probaturas.</p>
+
+<h2 id="estructura-de-directorios">Estructura de directorios</h2>
+
+<p>En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co como dominio para este ejemplo. Puedes utilizar la estructura de directoriosque quieras, esta es la mía:
+</p>
       
     </div>
     <div class="clearfix"></div>
     
     <div class="article-footer">
       
-      <a class="read-more-button pure-button" href="/es/articles/installing-magento2-on-cwp/">Read More</a> 
+      <a class="read-more-button pure-button" href="/es/articles/configuring-a-lamp-server-on-centos-6/">Read the full article</a> 
       
 
 
@@ -253,19 +250,19 @@
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/&amp;title=Instalando%20magento2%20en%20cwp&amp;summary=Empezando%20En%20este%20post%20explicar%c3%a9%20c%c3%b3mo%20instalar%20magento2%20sobre%20Centos%20Web%20Panel,%20utilizando%20php7%20y%20mysql%205.6.%20Para%20empezar,%20tenemos%20que%20compilar%20php%20con%20las%20extensiones%20que%20magento2%20necesita.%20Con%20el%20siguiente%20comando%20podremos%20configurar%20php7%20para%20luego%20compilarlo%20y%20conseguir%20que%20funcione%20con%20magento2:./configure%20./configure%20--prefix=/opt/alt/php7/usr%20--with-config-file-path=/opt/alt/php7/usr/php%20--with-config-file-scan-dir=/opt/alt/php7/usr/php/php.d%20--enable-fpm%20--enable-mbstring%20--enable-zip%20--enable-bcmath%20--enable-pcntl%20--enable-ftp%20--enable-exif%20--enable-calendar%20--enable-sysvmsg%20--enable-sysvsem%20--enable-sysvshm%20--enable-wddx%20--with-curl%20--with-mcrypt%20--with-iconv%20--with-gmp%20--with-pspell%20--with-gd%20--with-jpeg-dir=/usr%20--with-png-dir=/usr%20--with-zlib-dir=/usr%20--with-xpm-dir=/usr%20--with-freetype-dir=/usr%20--enable-gd-native-ttf%20--enable-gd-jis-conv%20--with-openssl%20--with-pdo-mysql=/usr%20--with-gettext=/usr%20--with-zlib=/usr%20--with-bz2=/usr%20--with-recode=/usr%20--with-mysqli%20--with-mysql-sock=/var/lib/mysql/mysql.&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/&amp;title=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;summary=%3cp%3eEn%20este%20post%20voy%20a%20explicar%20c%c3%b3mo%20configurar%20un%20servidor%20VPS%20para%20tener%20un%20servidor%20LAMP%20b%c3%a1sico%20con%20m%c3%baltiples%20versiones%20PHP,%20compiladas%20previamente.%20De%20esta%20manera,%20podemos%20tener%20un%20servidor%20VPS%20muy%20barato%20%28~3%e2%82%ac%29%20en%20el%20que%20hacer%20probaturas.%3c/p%3e%0a%0a%3ch2%20id=%22estructura-de-directorios%22%3eEstructura%20de%20directorios%3c/h2%3e%0a%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20crear%20la%20estructura%20de%20directorios.%20Utilizar%c3%a9%20jag.co%20como%20dominio%20para%20este%20ejemplo.%20Puedes%20utilizar%20la%20estructura%20de%20directoriosque%20quieras,%20esta%20es%20la%20m%c3%ada:%0a%3c/p%3e&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-twitter" href="http://twitter.com/share?text=Instalando%20magento2%20en%20cwp&amp;url=https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-twitter" href="http://twitter.com/share?text=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/&amp;media=https://www.jarboleda.meinstalling-magento2-on-cwp.jpg&amp;description=Empezando%20En%20este%20post%20explicar%c3%a9%20c%c3%b3mo%20instalar%20magento2%20sobre%20Centos%20Web%20Panel,%20utilizando%20php7%20y%20mysql%205.6.%20Para%20empezar,%20tenemos%20que%20compilar%20php%20con%20las%20extensiones%20que%20magento2%20necesita.%20Con%20el%20siguiente%20comando%20podremos%20configurar%20php7%20para%20luego%20compilarlo%20y%20conseguir%20que%20funcione%20con%20magento2:./configure%20./configure%20--prefix=/opt/alt/php7/usr%20--with-config-file-path=/opt/alt/php7/usr/php%20--with-config-file-scan-dir=/opt/alt/php7/usr/php/php.d%20--enable-fpm%20--enable-mbstring%20--enable-zip%20--enable-bcmath%20--enable-pcntl%20--enable-ftp%20--enable-exif%20--enable-calendar%20--enable-sysvmsg%20--enable-sysvsem%20--enable-sysvshm%20--enable-wddx%20--with-curl%20--with-mcrypt%20--with-iconv%20--with-gmp%20--with-pspell%20--with-gd%20--with-jpeg-dir=/usr%20--with-png-dir=/usr%20--with-zlib-dir=/usr%20--with-xpm-dir=/usr%20--with-freetype-dir=/usr%20--enable-gd-native-ttf%20--enable-gd-jis-conv%20--with-openssl%20--with-pdo-mysql=/usr%20--with-gettext=/usr%20--with-zlib=/usr%20--with-bz2=/usr%20--with-recode=/usr%20--with-mysqli%20--with-mysql-sock=/var/lib/mysql/mysql." onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/&amp;media=https://www.jarboleda.meconfiguring-a-lamp-server-on-centos-6.jpg&amp;description=%3cp%3eEn%20este%20post%20voy%20a%20explicar%20c%c3%b3mo%20configurar%20un%20servidor%20VPS%20para%20tener%20un%20servidor%20LAMP%20b%c3%a1sico%20con%20m%c3%baltiples%20versiones%20PHP,%20compiladas%20previamente.%20De%20esta%20manera,%20podemos%20tener%20un%20servidor%20VPS%20muy%20barato%20%28~3%e2%82%ac%29%20en%20el%20que%20hacer%20probaturas.%3c/p%3e%0a%0a%3ch2%20id=%22estructura-de-directorios%22%3eEstructura%20de%20directorios%3c/h2%3e%0a%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20crear%20la%20estructura%20de%20directorios.%20Utilizar%c3%a9%20jag.co%20como%20dominio%20para%20este%20ejemplo.%20Puedes%20utilizar%20la%20estructura%20de%20directoriosque%20quieras,%20esta%20es%20la%20m%c3%ada:%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -353,7 +350,7 @@
       <h4 rel='author'>Jeferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p>John Connor is the son of Sarah Connor and Kyle Reese, and the leader of the worldwide human resistance&hellip;</p>
+      <p>Buscando un desafío :) | Actualmente estoy interesdo en <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a>, e <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
       <div class='authorsocial'>
         
           <a href='https://www.linkedin.com/in/167429134' target='_blank'><i class='fa fa-linkedin'></i></a>
@@ -432,18 +429,16 @@
         <div class='widget-content popular-posts'>
           <ul>
             
-            
-            
              
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
-                    <img alt='Cómo manejar recursos remotos con curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
+                  <a href='/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
+                    <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">Cómo manejar recursos remotos con curl</a>
+                  <a href='/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
                 </div>
               </div>
             </li>
@@ -453,12 +448,27 @@
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img alt='Instalando unreal engine en fedora 25' width='72' height='72' src="/articles/img/thumbs/unreal_engine.min.jpg" />
+                  <a href='/es/articles/using-piwik-api-locally-with-pw/' target='_blank'>
+                    <img alt='Utilizando la API de piwik en local con PW' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">Instalando unreal engine en fedora 25</a>
+                  <a href='/es/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Utilizando la API de piwik en local con PW</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/es/articles/getting-an-objects-methods/' target='_blank'>
+                    <img alt='Obteniendo los métodos (reflejados) de un objeto' width='72' height='72' src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/es/articles/getting-an-objects-methods/' class="mostVisitedLink">Obteniendo los métodos (reflejados) de un objeto</a>
                 </div>
               </div>
             </li>
@@ -523,7 +533,7 @@
       <a href='https://www.jarboleda.me'>https://www.jarboleda.me</a>
     </p>
     <p class='attribution'>Powered by</p>
-    <a href='https://gohugo.io/'>
+    <a href='https://gohugo.io/' target="_blank" >
       <img alt="hugo logo" class='attribution_logo' src="/img/hugo-logo.png" />
     </a>
   </div>

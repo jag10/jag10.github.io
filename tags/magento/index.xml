@@ -16,8 +16,13 @@
       <pubDate>Thu, 24 Mar 2016 12:28:50 +0200</pubDate>
       
       <guid>https://www.jarboleda.me/articles/centos-web-panel-on-vps/</guid>
-      <description>&lt;p&gt;Firstly, we&amp;rsquo;ll install centOS Web Panel, just follow the instructions in the CWP website: &lt;a href=&#34;http://centos-webpanel.com/installation-instructions&#34;&gt;http://centos-webpanel.com/installation-instructions&lt;/a&gt;
-After a fresh install, we&amp;rsquo;ll stop CWP to perform the mysqld update.
+      <description>&lt;h2 id=&#34;installing-cwp&#34;&gt;Installing CWP&lt;/h2&gt;
+
+&lt;p&gt;Firstly, we&amp;rsquo;ll install centOS Web Panel, just follow the instructions in the CWP website: &lt;a href=&#34;http://centos-webpanel.com/installation-instructions&#34;&gt;http://centos-webpanel.com/installation-instructions&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;instaling-mysql-5-6&#34;&gt;Instaling mysql 5.6&lt;/h2&gt;
+
+&lt;p&gt;After a fresh install, we&amp;rsquo;ll stop CWP to perform the mysqld update.
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;service cwpsrv stop
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
