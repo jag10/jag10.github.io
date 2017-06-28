@@ -5,10 +5,35 @@
     <link>https://www.jarboleda.me/pinned/pinned/</link>
     <description>Recent content in Pinned on Arboleda</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 27 Jul 2016 13:50:40 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 25 Jun 2017 19:31:56 +0200</lastBuildDate>
     
 	<atom:link href="https://www.jarboleda.me/pinned/pinned/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Arduino UNO R3 lego case</title>
+      <link>https://www.jarboleda.me/articles/arduino-uno-lego-case/</link>
+      <pubDate>Sun, 25 Jun 2017 19:31:56 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/arduino-uno-lego-case/</guid>
+      <description>&lt;p&gt;In the following photo you can see the result of the case I built for this project.
+&lt;br/&gt;&lt;br/&gt;
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://www.jarboleda.me/articles/img/arduino-uno-lego-case.jpg&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;arduino uno lego case&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Web development environment</title>

@@ -204,7 +204,9 @@ De aquí he tomado el fichero que me interesa, correspondiente a la versión com
 <h2 id="escribiendo-la-imagen-en-la-placa-odroid">Escribiendo la imagen en la placa odroid</h2>
 
 <p>El siguiente paso será descomprimir la imagen, muy importante antes de proceder a escribirla en el módulo eMMC, para ello:
-[jag@2ndChance distros]$ unxz ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ unxz ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
+</pre></div>
+
 La manera más comoda de instalar la distro en la placa es utilizando el comando dd de linux:
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ sudo dd <span style="color: #66d9ef">if</span><span style="color: #f92672">=</span>ubuntu-16.04-mate-odroid-xu3-20160708.img <span style="color: #f8f8f2">of</span><span style="color: #f92672">=</span>/dev/sdc <span style="color: #f8f8f2">bs</span><span style="color: #f92672">=</span>1M <span style="color: #f8f8f2">conv</span><span style="color: #f92672">=</span>fsync
 <span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ sync
@@ -387,27 +389,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img alt='Instalando unreal engine en fedora 25' width='72' height='72' src="/articles/img/thumbs/unreal_engine.min.jpg" />
+                  <a href='/es/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
+                    <img alt='Autenticando usuarios con cURL' width='72' height='72' src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">Instalando unreal engine en fedora 25</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/es/articles/using-piwik-api-locally-with-pw/' target='_blank'>
-                    <img alt='Utilizando la API de piwik en local con PW' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/es/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Utilizando la API de piwik en local con PW</a>
+                  <a href='/es/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Autenticando usuarios con cURL</a>
                 </div>
               </div>
             </li>
@@ -423,6 +410,21 @@ s.setAttribute('data-timestamp', +new Date());
                 </div>
                 <div class='item-title'>
                   <a href='/es/articles/getting-an-objects-methods/' class="mostVisitedLink">Obteniendo los métodos (reflejados) de un objeto</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/es/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
+                    <img alt='Haciendo un backup de todas las BD usando mysqldump' width='72' height='72' src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/es/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Haciendo un backup de todas las BD usando mysqldump</a>
                 </div>
               </div>
             </li>

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.23" />
+	<meta name="generator" content="Hugo 0.24.1" />
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     <meta name=viewport content="width=device-width, initial-scale=1">
     <title>Arboleda - Arboleda</title>
@@ -22,7 +22,7 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/" />
 	
-	<meta property="og:updated_time" content="2016-05-01 13:28:37 &#43;0200 CEST"/>
+	<meta property="og:updated_time" content="2016-07-17 13:34:28 &#43;0200 CEST"/>
 	<meta property="og:locale" content="en-US" />
 	<meta property="og:site_name" content="Arboleda" />
 	
@@ -39,7 +39,7 @@
     
     
     
-    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,backup,backups,bash,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,httpd,iptables,ipv6,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm,vps,zip," />
+    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,arduino,backup,backups,bash,case,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,httpd,iptables,ipv6,lego,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm,vps,zip," />
     
 	
 	<meta name="twitter:card" content="summary"/>
@@ -135,6 +135,81 @@
   <div class="main-container home">
     <section id="main" class="pure-u-1 pure-u-md-3-4">
     
+      <article>
+        <div class="post-container">
+  
+  <div class="article_summary">
+    <div class="article-date">
+      <p class="day"><i class="fa fa-calendar"></i>17 Jul 2016</p>
+      <p><i class="fa fa-clock-o"></i>3 min read  ~ 400 words</p>
+    </div>
+    
+    <div class="article-tags">
+      
+      <a href="#" rel="tag">curl</a> 
+      <a href="#" rel="tag">php</a> 
+      <a href="#" rel="tag">fopen</a> 
+    </div>
+    
+    <div class="clearfix"></div>
+    
+    <a href="/articles/how-to-handle-remote-resources-with-curl/" title="">
+      <h1 class="article_title title">How to handle remote resources with curl</h1>
+    </a>
+    
+    <div class="article_excerpt">
+      
+      <p><h2 id="the-problem">The problem</h2>
+
+<p>When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&rsquo;t as easy as using fopen:
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">&lt;?php</span>
+<span style="color: #f8f8f2">$handle</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">fopen($filename,</span> <span style="color: #e6db74">&quot;r&quot;</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">or</span> <span style="color: #66d9ef">die</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;could not open .&#39;</span> <span style="color: #f8f8f2">$filename);</span>
+</pre></div>
+</p>
+
+<p></p>
+      
+    </div>
+    <div class="clearfix"></div>
+    
+    <div class="article-footer">
+      
+      <a class="read-more-button pure-button" href="/articles/how-to-handle-remote-resources-with-curl/">Read the full article</a> 
+      
+
+
+
+
+<div class="soc-sharing">
+  <ul class="article_share_items">
+    <li>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;title=How%20to%20handle%20remote%20resources%20with%20curl&amp;summary=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%0a%3cp%3eWhen%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3e%3cspan%20style=%22color:%20#75715e%22%3e&amp;lt;?php%3c/span%3e%0a%3cspan%20style=%22color:%20#f8f8f2%22%3e$handle%3c/span%3e%20%3cspan%20style=%22color:%20#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:%20#f8f8f2%22%3efopen%28$filename,%3c/span%3e%20%3cspan%20style=%22color:%20#e6db74%22%3e&amp;quot;r&amp;quot;%3c/span%3e%3cspan%20style=%22color:%20#f8f8f2%22%3e%29%3c/span%3e%20%3cspan%20style=%22color:%20#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:%20#66d9ef%22%3edie%3c/span%3e%3cspan%20style=%22color:%20#f8f8f2%22%3e%28%3c/span%3e%3cspan%20style=%22color:%20#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20%3cspan%20style=%22color:%20#f8f8f2%22%3e$filename%29;%3c/span%3e%0a%3c/pre%3e%3c/div%3e%0a%3c/p%3e%0a%0a%3cp%3e%3c/p%3e&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-twitter" href="http://twitter.com/share?text=How%20to%20handle%20remote%20resources%20with%20curl&amp;url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;media=https://www.jarboleda.mehow-to-handle-remote-resources-with-curl.png&amp;description=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%0a%3cp%3eWhen%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3e%3cspan%20style=%22color:%20#75715e%22%3e&amp;lt;?php%3c/span%3e%0a%3cspan%20style=%22color:%20#f8f8f2%22%3e$handle%3c/span%3e%20%3cspan%20style=%22color:%20#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:%20#f8f8f2%22%3efopen%28$filename,%3c/span%3e%20%3cspan%20style=%22color:%20#e6db74%22%3e&amp;quot;r&amp;quot;%3c/span%3e%3cspan%20style=%22color:%20#f8f8f2%22%3e%29%3c/span%3e%20%3cspan%20style=%22color:%20#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:%20#66d9ef%22%3edie%3c/span%3e%3cspan%20style=%22color:%20#f8f8f2%22%3e%28%3c/span%3e%3cspan%20style=%22color:%20#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20%3cspan%20style=%22color:%20#f8f8f2%22%3e$filename%29;%3c/span%3e%0a%3c/pre%3e%3c/div%3e%0a%3c/p%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+
+    <div class='post-footer'>
+      
+    </div>
+  </div>
+</div>
+
+      </article>
+      
       <article>
         <div class="post-container">
   
@@ -424,80 +499,6 @@
 
       </article>
       
-      <article>
-        <div class="post-container">
-  
-  <div class="article_summary">
-    <div class="article-date">
-      <p class="day"><i class="fa fa-calendar"></i>27 Feb 2016</p>
-      <p><i class="fa fa-clock-o"></i>4 min read  ~ 500 words</p>
-    </div>
-    
-    <div class="article-tags">
-      
-      <a href="#" rel="tag">performance</a> 
-      <a href="#" rel="tag">vps</a> 
-      <a href="#" rel="tag">processwire</a> 
-    </div>
-    
-    <div class="clearfix"></div>
-    
-    <a href="/articles/getting-1.5s-page-load-time-on-a-basic-vps/" title="">
-      <h1 class="article_title title">Getting 1.5s page load time on a basic vps</h1>
-    </a>
-    
-    <div class="article_excerpt">
-      
-      <p><h2 id="the-problem">The problem</h2>
-
-<p>As you can see on the graphics, I had 5s load time for my home page, which is kind of basic. It wasn&rsquo;t that bad if you look at the packages my server runs: gitlab, Roundcube&rsquo;s webmail, sentora (open source control panel) and piwik (stats management).</p>
-
-<p><strong>Note:</strong> Those 11s peaks you see there were produced while I was doing load tests on my server.</p>
-
-<p>My environment&rsquo;s specs are:
-</p>
-      
-    </div>
-    <div class="clearfix"></div>
-    
-    <div class="article-footer">
-      
-      <a class="read-more-button pure-button" href="/articles/getting-1.5s-page-load-time-on-a-basic-vps/">Read the full article</a> 
-      
-
-
-
-
-<div class="soc-sharing">
-  <ul class="article_share_items">
-    <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/&amp;title=Getting%201.5s%20page%20load%20time%20on%20a%20basic%20vps&amp;summary=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%0a%3cp%3eAs%20you%20can%20see%20on%20the%20graphics,%20I%20had%205s%20load%20time%20for%20my%20home%20page,%20which%20is%20kind%20of%20basic.%20It%20wasn&amp;rsquo;t%20that%20bad%20if%20you%20look%20at%20the%20packages%20my%20server%20runs:%20gitlab,%20Roundcube&amp;rsquo;s%20webmail,%20sentora%20%28open%20source%20control%20panel%29%20and%20piwik%20%28stats%20management%29.%3c/p%3e%0a%0a%3cp%3e%3cstrong%3eNote:%3c/strong%3e%20Those%2011s%20peaks%20you%20see%20there%20were%20produced%20while%20I%20was%20doing%20load%20tests%20on%20my%20server.%3c/p%3e%0a%0a%3cp%3eMy%20environment&amp;rsquo;s%20specs%20are:%0a%3c/p%3e&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
-    </li>
-    <li>
-      <a class="fa fa-twitter" href="http://twitter.com/share?text=Getting%201.5s%20page%20load%20time%20on%20a%20basic%20vps&amp;url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
-    </li>
-    <li>
-      <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
-    </li>
-    <li>
-      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
-    </li>
-    <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/&amp;media=https://www.jarboleda.megetting-1.5s-page-load-time-on-a-basic-vps.png&amp;description=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%0a%3cp%3eAs%20you%20can%20see%20on%20the%20graphics,%20I%20had%205s%20load%20time%20for%20my%20home%20page,%20which%20is%20kind%20of%20basic.%20It%20wasn&amp;rsquo;t%20that%20bad%20if%20you%20look%20at%20the%20packages%20my%20server%20runs:%20gitlab,%20Roundcube&amp;rsquo;s%20webmail,%20sentora%20%28open%20source%20control%20panel%29%20and%20piwik%20%28stats%20management%29.%3c/p%3e%0a%0a%3cp%3e%3cstrong%3eNote:%3c/strong%3e%20Those%2011s%20peaks%20you%20see%20there%20were%20produced%20while%20I%20was%20doing%20load%20tests%20on%20my%20server.%3c/p%3e%0a%0a%3cp%3eMy%20environment&amp;rsquo;s%20specs%20are:%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
-    </li>
-  </ul>
-</div>
-
-    </div>
-
-    <div class='post-footer'>
-      
-    </div>
-  </div>
-</div>
-
-      </article>
-      
       
 
 <ul class="pagination">
@@ -579,7 +580,7 @@
 <div class='authorboxwrap'>
 <h4>Author</h4>
     <div class='avatar-container'>
-      <img alt="author's photo" class='author_avatar' height='96' src="/img/me2.min.png" width='96' />
+      <img alt="author's photo" class='author_avatar' height='96' src="/img/mee.png" width='96' />
       <h4 rel='author'>Jeferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
@@ -630,6 +631,22 @@
         <li>
           <div class='item-content'>
             <div class='item-thumbnail'>
+              <a href='/articles/arduino-uno-lego-case/' target='_blank'>
+                <img alt='Arduino UNO R3 lego case' width='72' height='72' src="/articles/img/thumbs/arduino-uno-lego-case.jpg" />
+              </a>
+            </div>
+            <div class='item-title'>
+              <a href='/articles/arduino-uno-lego-case/' class="mostVisitedLink">Arduino UNO R3 lego case
+                <span class="detail-span">[0]</span>
+              </a>
+            </div>
+          </div>
+          <div style='clear: both;'></div>
+        </li>
+      
+        <li>
+          <div class='item-content'>
+            <div class='item-thumbnail'>
               <a href='/articles/web-development-environment/' target='_blank'>
                 <img alt='Web development environment' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
               </a>
@@ -666,12 +683,12 @@
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/configuring-iptables-and-fail2ban-on-centos-6/' target='_blank'>
-                    <img alt='Configuring IPTABLES and fail2ban on centOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-iptables-and-fail2ban-on-centos-6.jpg" />
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' target='_blank'>
+                    <img alt='Getting 1.5s page load time on a basic vps' width='72' height='72' src="/articles/img/thumbs/getting-1.5s-page-load-time-on-a-basic-vps.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/configuring-iptables-and-fail2ban-on-centos-6/' class="mostVisitedLink">Configuring IPTABLES and fail2ban on centOS 6</a>
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' class="mostVisitedLink">Getting 1.5s page load time on a basic vps</a>
                 </div>
               </div>
             </li>
@@ -696,12 +713,12 @@
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
-                    <img alt='How to handle remote resources with curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
+                  <a href='/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
+                    <img alt='Authenticating users with cURL' width='72' height='72' src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">How to handle remote resources with curl</a>
+                  <a href='/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Authenticating users with cURL</a>
                 </div>
               </div>
             </li>

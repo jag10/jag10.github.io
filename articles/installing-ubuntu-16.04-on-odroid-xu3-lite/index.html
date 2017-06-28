@@ -62,7 +62,7 @@ ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
     
     <meta itemprop="image" content="installing-ubuntu-16.04-on-odroid-xu3-lite.jpg">
     
-    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,backup,backups,bash,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,httpd,iptables,ipv6,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm,vps,zip," />
+    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,arduino,backup,backups,bash,case,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,httpd,iptables,ipv6,lego,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm,vps,zip," />
     <meta itemprop="wordCount" content="574">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
@@ -208,7 +208,9 @@ From the list above I took the image I was looking for, which is the complete ve
 <h2 id="writing-the-image-on-odroid-board">Writing the image on odroid board</h2>
 
 <p>The next step will be to uncompress the image. This is very important because if we try to write a compressed image into the eMMC module, it won&rsquo;t work at all. So, to uncompress it, use the following command:
- [jag@2ndChance distros]$ unxz ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ unxz ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
+</pre></div>
+
 Ok, now we are ready to install the linux image. The easiest way to do it is using the dd command:
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ sudo dd <span style="color: #66d9ef">if</span><span style="color: #f92672">=</span>ubuntu-16.04-mate-odroid-xu3-20160708.img <span style="color: #f8f8f2">of</span><span style="color: #f92672">=</span>/dev/sdc <span style="color: #f8f8f2">bs</span><span style="color: #f92672">=</span>1M <span style="color: #f8f8f2">conv</span><span style="color: #f92672">=</span>fsync
 <span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ sync
@@ -338,7 +340,7 @@ s.setAttribute('data-timestamp', +new Date());
 <div class='authorboxwrap'>
 <h4>Author</h4>
     <div class='avatar-container'>
-      <img alt="author's photo" class='author_avatar' height='96' src="/img/me2.min.png" width='96' />
+      <img alt="author's photo" class='author_avatar' height='96' src="/img/mee.png" width='96' />
       <h4 rel='author'>Jeferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
@@ -395,42 +397,42 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
+                  <a href='/articles/centos-web-panel-on-vps/' target='_blank'>
+                    <img alt='Centos web panel with php7 and mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel with php7 and mysql5.6</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/articles/installing-magento2-on-cwp/' target='_blank'>
+                    <img alt='Installing magento2 on cwp' width='72' height='72' src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Installing magento2 on cwp</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
                   <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
                     <img alt='Fixing a corrupted partition on a virtual machine' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
                   <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
-                    <img alt='Installing ubuntu 16.04 on odroid xu3 lite' width='72' height='72' src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Installing ubuntu 16.04 on odroid xu3 lite</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/articles/using-piwik-api-locally-with-pw/' target='_blank'>
-                    <img alt='Using piwik&#39;s API locally with ProcessWire' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Using piwik&#39;s API locally with ProcessWire</a>
                 </div>
               </div>
             </li>

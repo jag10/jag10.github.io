@@ -5,10 +5,19 @@
     <link>https://www.jarboleda.me/tags/</link>
     <description>Recent content in Tags on Arboleda</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 24 Aug 2015 11:00:53 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 25 Jun 2017 19:31:56 +0200</lastBuildDate>
     
 	<atom:link href="https://www.jarboleda.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Arduino</title>
+      <link>https://www.jarboleda.me/tags/arduino/</link>
+      <pubDate>Sun, 25 Jun 2017 19:31:56 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/arduino/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Backup</title>
@@ -34,6 +43,15 @@
       <pubDate>Sun, 30 Aug 2015 11:05:36 +0200</pubDate>
       
       <guid>https://www.jarboleda.me/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Case</title>
+      <link>https://www.jarboleda.me/tags/case/</link>
+      <pubDate>Sun, 25 Jun 2017 19:31:56 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/case/</guid>
       <description></description>
     </item>
     
@@ -133,6 +151,15 @@
       <pubDate>Tue, 11 Aug 2015 10:58:34 +0200</pubDate>
       
       <guid>https://www.jarboleda.me/tags/ipv6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lego</title>
+      <link>https://www.jarboleda.me/tags/lego/</link>
+      <pubDate>Sun, 25 Jun 2017 19:31:56 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/tags/lego/</guid>
       <description></description>
     </item>
     

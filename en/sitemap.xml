@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.jarboleda.me/articles/arduino-uno-lego-case/</loc>
+    <lastmod>2017-06-25T19:31:56+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.jarboleda.me/articles/installing-unreal-engine-on-fedora-25/</loc>
     <lastmod>2017-03-17T21:33:19+02:00</lastmod>
     <xhtml:link
@@ -233,7 +238,7 @@
   
   <url>
     <loc>https://www.jarboleda.me/</loc>
-    <lastmod>2017-03-17T21:33:19+02:00</lastmod>
+    <lastmod>2017-06-25T19:31:56+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -248,8 +253,14 @@
   </url>
   
   <url>
+    <loc>https://www.jarboleda.me/tags/arduino/</loc>
+    <lastmod>2017-06-25T19:31:56+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.jarboleda.me/articles/</loc>
-    <lastmod>2017-03-17T21:33:19+02:00</lastmod>
+    <lastmod>2017-06-25T19:31:56+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -289,6 +300,12 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/bash/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://www.jarboleda.me/tags/case/</loc>
+    <lastmod>2017-06-25T19:31:56+02:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -419,6 +436,12 @@
   <url>
     <loc>https://www.jarboleda.me/tags/ipv6/</loc>
     <lastmod>2015-08-11T10:58:34+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jarboleda.me/tags/lego/</loc>
+    <lastmod>2017-06-25T19:31:56+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -606,7 +629,7 @@
   
   <url>
     <loc>https://www.jarboleda.me/pinned/pinned/</loc>
-    <lastmod>2016-07-27T13:50:40+02:00</lastmod>
+    <lastmod>2017-06-25T19:31:56+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -745,7 +768,7 @@
   
   <url>
     <loc>https://www.jarboleda.me/tags/</loc>
-    <lastmod>2015-08-24T11:00:53+02:00</lastmod>
+    <lastmod>2017-06-25T19:31:56+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -761,7 +784,7 @@
   
   <url>
     <loc>https://www.jarboleda.me/project/true/</loc>
-    <lastmod>2017-03-17T21:33:19+02:00</lastmod>
+    <lastmod>2017-06-25T19:31:56+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
