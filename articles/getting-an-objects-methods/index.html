@@ -4,7 +4,7 @@
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     <meta name=viewport content="width=device-width, initial-scale=1">
-    <title>Arboleda - Getting an object&#39;s (reflected) methods</title>
+    <title>J. Arboleda - Getting an object&#39;s (reflected) methods</title>
     <meta name="description" content="The blog of Jeferson Arboleda, software engineer. It&#39;s focused on self improvement and overcoming challenges I find everyday">
     
     
@@ -26,7 +26,7 @@ Sometimes we don&rsquo;t have access to the platform docs on which we are workin
 	<meta property="og:image" content="https://www.jarboleda.me/articles/img/getting-an-objects-methods.jpg" />
 	<meta property="og:updated_time" content="2016-05-01 13:28:37 &#43;0200 CEST"/>
 	<meta property="og:locale" content="en-US" />
-	<meta property="og:site_name" content="Arboleda" />
+	<meta property="og:site_name" content="J. Arboleda" />
 	
 	
 	<meta property="article:published_time" content="2016-05-01 13:28:37 &#43;0200 CEST" />
@@ -272,7 +272,7 @@ Sometimes we don&rsquo;t have access to the platform docs on which we are workin
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/getting-an-objects-methods/&amp;title=Getting%20an%20object%27s%20%28reflected%29%20methods&amp;summary=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%0a%3cp%3eSometimes%20we%20don&amp;rsquo;t%20have%20access%20to%20the%20platform%20docs%20on%20which%20we%20are%20working,%20it&amp;rsquo;s%20incomplete%20or%20we%20just%20don&amp;rsquo;t%20feel%20like%20looking%20for%20it.%20In%20those%20situations,%20we%20usually%20need%20more%20than%20the%20typical%20object&amp;rsquo;s%20%3ccode%3evar_dump%3c/code%3e,%20which%20only%20shows%20us%20the%20object%20properties%20but%20not%20its%20methods,%20which%20usually%20gives%20us%20that%20function%20we%20are%20working%20on%20without%20having%20to%20dive%20into%20the%20object&amp;rsquo;s%20properties.%20Here%20you&amp;rsquo;ll%20see%20the%20function%20I%20use%20for%20this%20task.%20This%20function%20uses%20the%20ReflectionMethod%20class,%20which%20gives%20us%20info%20about%20a%20method.%20It%20needs%20the%20classname%20and%20method&amp;rsquo;s%20name%20as%20params%20for%20its%20constructor.%3c/p%3e%0a%0a%3cp%3e%3c/p%3e&amp;source=Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/getting-an-objects-methods/&amp;title=Getting%20an%20object%27s%20%28reflected%29%20methods&amp;summary=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%0a%3cp%3eSometimes%20we%20don&amp;rsquo;t%20have%20access%20to%20the%20platform%20docs%20on%20which%20we%20are%20working,%20it&amp;rsquo;s%20incomplete%20or%20we%20just%20don&amp;rsquo;t%20feel%20like%20looking%20for%20it.%20In%20those%20situations,%20we%20usually%20need%20more%20than%20the%20typical%20object&amp;rsquo;s%20%3ccode%3evar_dump%3c/code%3e,%20which%20only%20shows%20us%20the%20object%20properties%20but%20not%20its%20methods,%20which%20usually%20gives%20us%20that%20function%20we%20are%20working%20on%20without%20having%20to%20dive%20into%20the%20object&amp;rsquo;s%20properties.%20Here%20you&amp;rsquo;ll%20see%20the%20function%20I%20use%20for%20this%20task.%20This%20function%20uses%20the%20ReflectionMethod%20class,%20which%20gives%20us%20info%20about%20a%20method.%20It%20needs%20the%20classname%20and%20method&amp;rsquo;s%20name%20as%20params%20for%20its%20constructor.%3c/p%3e%0a%0a%3cp%3e%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fa fa-twitter" href="http://twitter.com/share?text=Getting%20an%20object%27s%20%28reflected%29%20methods&amp;url=https://www.jarboleda.me/articles/getting-an-objects-methods/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -380,12 +380,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img alt='installing unreal engine on fedora 25' width='72' height='72' src="/articles/img/thumbs/unreal_engine.min.jpg" />
+                  <a href='/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
+                    <img alt='Installing ubuntu 16.04 on odroid xu3 lite' width='72' height='72' src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
+                  <a href='/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Installing ubuntu 16.04 on odroid xu3 lite</a>
                 </div>
               </div>
             </li>
@@ -395,12 +395,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/centos-web-panel-on-vps/' target='_blank'>
-                    <img alt='Centos web panel with php7 and mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
+                  <a href='/articles/using-piwik-api-locally-with-pw/' target='_blank'>
+                    <img alt='Using piwik&#39;s API locally with ProcessWire' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel with php7 and mysql5.6</a>
+                  <a href='/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Using piwik&#39;s API locally with ProcessWire</a>
                 </div>
               </div>
             </li>
@@ -410,12 +410,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
-                    <img alt='How to handle remote resources with curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
+                  <a href='/articles/web-development-environment/' target='_blank'>
+                    <img alt='Web development environment' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">How to handle remote resources with curl</a>
+                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
                 </div>
               </div>
             </li>

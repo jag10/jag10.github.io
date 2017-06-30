@@ -199,22 +199,6 @@
   </url>
   
   <url>
-    <loc>https://www.jarboleda.me/es/</loc>
-    <lastmod>2017-03-17T21:33:19+02:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.jarboleda.me/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://www.jarboleda.me/es/"
-                />
-  </url>
-  
-  <url>
     <loc>https://www.jarboleda.me/es/articles/</loc>
     <lastmod>2017-03-17T21:33:19+02:00</lastmod>
     <priority>0</priority>
@@ -339,6 +323,22 @@
                 rel="alternate"
                 hreflang="es"
                 href="https://www.jarboleda.me/es/tags/httpd/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.jarboleda.me/es/</loc>
+    <lastmod>2017-03-17T21:33:19+02:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jarboleda.me/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.jarboleda.me/es/"
                 />
   </url>
   

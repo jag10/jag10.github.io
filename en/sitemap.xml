@@ -241,22 +241,6 @@
   </url>
   
   <url>
-    <loc>https://www.jarboleda.me/</loc>
-    <lastmod>2017-06-25T19:31:56+02:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://www.jarboleda.me/es/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.jarboleda.me/"
-                />
-  </url>
-  
-  <url>
     <loc>https://www.jarboleda.me/tags/arduino/</loc>
     <lastmod>2017-06-25T19:31:56+02:00</lastmod>
     <priority>0</priority>
@@ -441,6 +425,22 @@
     <loc>https://www.jarboleda.me/tags/ipv6/</loc>
     <lastmod>2015-08-11T10:58:34+02:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jarboleda.me/</loc>
+    <lastmod>2017-06-25T19:31:56+02:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.jarboleda.me/es/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.jarboleda.me/"
+                />
   </url>
   
   <url>
