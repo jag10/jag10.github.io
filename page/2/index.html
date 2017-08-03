@@ -22,7 +22,7 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/" />
 	
-	<meta property="og:updated_time" content="2016-07-17 13:34:28 &#43;0200 CEST"/>
+	<meta property="og:updated_time" content="2016-07-18 13:37:52 &#43;0200 CEST"/>
 	<meta property="og:locale" content="en-US" />
 	<meta property="og:site_name" content="J. Arboleda" />
 	
@@ -39,7 +39,7 @@
     
     
     
-    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,arduino,backup,backups,bash,case,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,httpd,iptables,ipv6,lego,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm,vps,zip," />
+    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,arduino,backup,backups,bash,case,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,github,httpd,hugo,iptables,ipv6,lego,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,pages,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,static,ubuntu,unrealengine,vagrant,vm,vps,zip," />
     
 	
 	<meta name="twitter:card" content="summary"/>
@@ -135,6 +135,84 @@
   <div class="main-container home">
     <section id="main" class="pure-u-1 pure-u-md-3-4">
     
+      <article>
+        <div class="post-container">
+  
+  <div class="article_summary">
+    <div class="article-date">
+      <p class="day"><i class="fa fa-calendar"></i>18 Jul 2016</p>
+      <p><i class="fa fa-clock-o"></i>4 min read  ~ 600 words</p>
+    </div>
+    
+    <div class="article-tags">
+      
+      <a href="#" rel="tag">ubuntu</a> 
+      <a href="#" rel="tag">odroid</a> 
+      <a href="#" rel="tag">mate</a> 
+    </div>
+    
+    <div class="clearfix"></div>
+    
+    <a href="/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/" title="">
+      <h1 class="article_title title">Installing ubuntu 16.04 on odroid xu3 lite</h1>
+    </a>
+    
+    <div class="article_excerpt">
+      
+      <p><h2 id="choosing-an-image">Choosing an image</h2>
+
+<p>Ubuntu 16.04 mate has just been released by odroid team, including support for xu3/xu4 boards and their lite versions. In this case we&rsquo;re going to test Ubuntu 16.04 on odroid xu3 lite, which is the board I own. We&rsquo;ll install it on an eMMC module, which is something like an small ssd (not really the same, eMMC isn&rsquo;t as fast as ssd is). This module will give us a boost on performance, although we can also install Ubuntu on a SD card (class 10).
+Firslty, we need to download the image we want to install:
+<a href="http://de.eu.odroid.in/ubuntu_16.04lts/">http://de.eu.odroid.in/ubuntu_16.04lts/</a>
+From the list above I took the image I was looking for, which is the complete version for odroid xu3:</p>
+
+<ul>
+<li><a href="http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz">ubuntu-16.04-mate-odroid-xu3-20160708.img.xz</a></li>
+</ul>
+
+<p></p>
+      
+    </div>
+    <div class="clearfix"></div>
+    
+    <div class="article-footer">
+      
+      <a class="read-more-button pure-button" href="/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/">Read the full article</a> 
+      
+
+
+
+
+<div class="soc-sharing">
+  <ul class="article_share_items">
+    <li>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/&amp;title=Installing%20ubuntu%2016.04%20on%20odroid%20xu3%20lite&amp;summary=%3ch2%20id=%22choosing-an-image%22%3eChoosing%20an%20image%3c/h2%3e%0a%0a%3cp%3eUbuntu%2016.04%20mate%20has%20just%20been%20released%20by%20odroid%20team,%20including%20support%20for%20xu3/xu4%20boards%20and%20their%20lite%20versions.%20In%20this%20case%20we&amp;rsquo;re%20going%20to%20test%20Ubuntu%2016.04%20on%20odroid%20xu3%20lite,%20which%20is%20the%20board%20I%20own.%20We&amp;rsquo;ll%20install%20it%20on%20an%20eMMC%20module,%20which%20is%20something%20like%20an%20small%20ssd%20%28not%20really%20the%20same,%20eMMC%20isn&amp;rsquo;t%20as%20fast%20as%20ssd%20is%29.%20This%20module%20will%20give%20us%20a%20boost%20on%20performance,%20although%20we%20can%20also%20install%20Ubuntu%20on%20a%20SD%20card%20%28class%2010%29.%0aFirslty,%20we%20need%20to%20download%20the%20image%20we%20want%20to%20install:%0a%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/%22%3ehttp://de.eu.odroid.in/ubuntu_16.04lts/%3c/a%3e%0aFrom%20the%20list%20above%20I%20took%20the%20image%20I%20was%20looking%20for,%20which%20is%20the%20complete%20version%20for%20odroid%20xu3:%3c/p%3e%0a%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz%22%3eubuntu-16.04-mate-odroid-xu3-20160708.img.xz%3c/a%3e%3c/li%3e%0a%3c/ul%3e%0a%0a%3cp%3e%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-twitter" href="http://twitter.com/share?text=Installing%20ubuntu%2016.04%20on%20odroid%20xu3%20lite&amp;url=https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/&amp;media=https://www.jarboleda.meinstalling-ubuntu-16.04-on-odroid-xu3-lite.jpg&amp;description=%3ch2%20id=%22choosing-an-image%22%3eChoosing%20an%20image%3c/h2%3e%0a%0a%3cp%3eUbuntu%2016.04%20mate%20has%20just%20been%20released%20by%20odroid%20team,%20including%20support%20for%20xu3/xu4%20boards%20and%20their%20lite%20versions.%20In%20this%20case%20we&amp;rsquo;re%20going%20to%20test%20Ubuntu%2016.04%20on%20odroid%20xu3%20lite,%20which%20is%20the%20board%20I%20own.%20We&amp;rsquo;ll%20install%20it%20on%20an%20eMMC%20module,%20which%20is%20something%20like%20an%20small%20ssd%20%28not%20really%20the%20same,%20eMMC%20isn&amp;rsquo;t%20as%20fast%20as%20ssd%20is%29.%20This%20module%20will%20give%20us%20a%20boost%20on%20performance,%20although%20we%20can%20also%20install%20Ubuntu%20on%20a%20SD%20card%20%28class%2010%29.%0aFirslty,%20we%20need%20to%20download%20the%20image%20we%20want%20to%20install:%0a%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/%22%3ehttp://de.eu.odroid.in/ubuntu_16.04lts/%3c/a%3e%0aFrom%20the%20list%20above%20I%20took%20the%20image%20I%20was%20looking%20for,%20which%20is%20the%20complete%20version%20for%20odroid%20xu3:%3c/p%3e%0a%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz%22%3eubuntu-16.04-mate-odroid-xu3-20160708.img.xz%3c/a%3e%3c/li%3e%0a%3c/ul%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+
+    <div class='post-footer'>
+      
+    </div>
+  </div>
+</div>
+
+      </article>
+      
       <article>
         <div class="post-container">
   
@@ -420,85 +498,6 @@
 
       </article>
       
-      <article>
-        <div class="post-container">
-  
-  <div class="article_summary">
-    <div class="article-date">
-      <p class="day"><i class="fa fa-calendar"></i>24 Mar 2016</p>
-      <p><i class="fa fa-clock-o"></i>4 min read  ~ 600 words</p>
-    </div>
-    
-    <div class="article-tags">
-      
-      <a href="#" rel="tag">magento</a> 
-      <a href="#" rel="tag">cwp</a> 
-      <a href="#" rel="tag">php7</a> 
-    </div>
-    
-    <div class="clearfix"></div>
-    
-    <a href="/articles/centos-web-panel-on-vps/" title="">
-      <h1 class="article_title title">Centos web panel with php7 and mysql5.6</h1>
-    </a>
-    
-    <div class="article_excerpt">
-      
-      <p><h2 id="installing-cwp">Installing CWP</h2>
-
-<p>Firstly, we&rsquo;ll install centOS Web Panel, just follow the instructions in the CWP website: <a href="http://centos-webpanel.com/installation-instructions">http://centos-webpanel.com/installation-instructions</a></p>
-
-<h2 id="instaling-mysql-5-6">Instaling mysql 5.6</h2>
-
-<p>After a fresh install, we&rsquo;ll stop CWP to perform the mysqld update.
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>service cwpsrv stop
-</pre></div>
-</p>
-
-<p>Then, we&rsquo;ll install mysql server repo.
-</p>
-      
-    </div>
-    <div class="clearfix"></div>
-    
-    <div class="article-footer">
-      
-      <a class="read-more-button pure-button" href="/articles/centos-web-panel-on-vps/">Read the full article</a> 
-      
-
-
-
-
-<div class="soc-sharing">
-  <ul class="article_share_items">
-    <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/centos-web-panel-on-vps/&amp;title=Centos%20web%20panel%20with%20php7%20and%20mysql5.6&amp;summary=%3ch2%20id=%22installing-cwp%22%3eInstalling%20CWP%3c/h2%3e%0a%0a%3cp%3eFirstly,%20we&amp;rsquo;ll%20install%20centOS%20Web%20Panel,%20just%20follow%20the%20instructions%20in%20the%20CWP%20website:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%0a%3ch2%20id=%22instaling-mysql-5-6%22%3eInstaling%20mysql%205.6%3c/h2%3e%0a%0a%3cp%3eAfter%20a%20fresh%20install,%20we&amp;rsquo;ll%20stop%20CWP%20to%20perform%20the%20mysqld%20update.%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3eservice%20cwpsrv%20stop%0a%3c/pre%3e%3c/div%3e%0a%3c/p%3e%0a%0a%3cp%3eThen,%20we&amp;rsquo;ll%20install%20mysql%20server%20repo.%0a%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
-    </li>
-    <li>
-      <a class="fa fa-twitter" href="http://twitter.com/share?text=Centos%20web%20panel%20with%20php7%20and%20mysql5.6&amp;url=https://www.jarboleda.me/articles/centos-web-panel-on-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
-    </li>
-    <li>
-      <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/centos-web-panel-on-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
-    </li>
-    <li>
-      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/centos-web-panel-on-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
-    </li>
-    <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/centos-web-panel-on-vps/&amp;media=https://www.jarboleda.meinstalling-centos-web-panel-on-vps.jpg&amp;description=%3ch2%20id=%22installing-cwp%22%3eInstalling%20CWP%3c/h2%3e%0a%0a%3cp%3eFirstly,%20we&amp;rsquo;ll%20install%20centOS%20Web%20Panel,%20just%20follow%20the%20instructions%20in%20the%20CWP%20website:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%0a%3ch2%20id=%22instaling-mysql-5-6%22%3eInstaling%20mysql%205.6%3c/h2%3e%0a%0a%3cp%3eAfter%20a%20fresh%20install,%20we&amp;rsquo;ll%20stop%20CWP%20to%20perform%20the%20mysqld%20update.%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3eservice%20cwpsrv%20stop%0a%3c/pre%3e%3c/div%3e%0a%3c/p%3e%0a%0a%3cp%3eThen,%20we&amp;rsquo;ll%20install%20mysql%20server%20repo.%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
-    </li>
-  </ul>
-</div>
-
-    </div>
-
-    <div class='post-footer'>
-      
-    </div>
-  </div>
-</div>
-
-      </article>
-      
       
 
 <ul class="pagination">
@@ -683,12 +682,12 @@
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/using-piwik-api-locally-with-pw/' target='_blank'>
-                    <img alt='Using piwik&#39;s API locally with ProcessWire' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
+                  <a href='/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
+                    <img alt='Backing up all databases using mysqldump' width='72' height='72' src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Using piwik&#39;s API locally with ProcessWire</a>
+                  <a href='/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Backing up all databases using mysqldump</a>
                 </div>
               </div>
             </li>
@@ -698,12 +697,12 @@
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/installing-magento2-on-cwp/' target='_blank'>
-                    <img alt='Installing magento2 on cwp' width='72' height='72' src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
+                  <a href='/articles/web-development-environment/' target='_blank'>
+                    <img alt='Web development environment' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Installing magento2 on cwp</a>
+                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
                 </div>
               </div>
             </li>
@@ -713,12 +712,12 @@
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
-                    <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
+                  <a href='/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
+                    <img alt='How to handle remote resources with curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
+                  <a href='/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">How to handle remote resources with curl</a>
                 </div>
               </div>
             </li>
