@@ -20,9 +20,7 @@
 
 Cuando necesitas obtener ficheros remotos para manejar su contenido (ejemplo: ficheros csv) es posible que su acceso no sea tan sencillo como utilizar fopen:
 &lt;?php
-$handle = fopen($filename, &quot;r&quot;) or die(&#39;could not open .&#39; $filename);
-
-
+$handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);
 
 " />
 	<meta property="og:type" content="website" />
@@ -47,9 +45,7 @@ $handle = fopen($filename, &quot;r&quot;) or die(&#39;could not open .&#39; $fil
 
 Cuando necesitas obtener ficheros remotos para manejar su contenido (ejemplo: ficheros csv) es posible que su acceso no sea tan sencillo como utilizar fopen:
 &lt;?php
-$handle = fopen($filename, &quot;r&quot;) or die(&#39;could not open .&#39; $filename);
-
-
+$handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);
 
 ">
     <meta name="author" content="Jeferson Arboleda">
@@ -67,9 +63,7 @@ $handle = fopen($filename, &quot;r&quot;) or die(&#39;could not open .&#39; $fil
 
 Cuando necesitas obtener ficheros remotos para manejar su contenido (ejemplo: ficheros csv) es posible que su acceso no sea tan sencillo como utilizar fopen:
 &lt;?php
-$handle = fopen($filename, &quot;r&quot;) or die(&#39;could not open .&#39; $filename);
-
-
+$handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);
 
 "/>
 	<meta name="twitter:site" content="@j_a_g_x"/>
@@ -186,10 +180,8 @@ $handle = fopen($filename, &quot;r&quot;) or die(&#39;could not open .&#39; $fil
       <p><h2 id="el-problema">El problema</h2>
 
 <p>Cuando necesitas obtener ficheros remotos para manejar su contenido (ejemplo: ficheros csv) es posible que su acceso no sea tan sencillo como utilizar fopen:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">&lt;?php</span>
-<span style="color: #f8f8f2">$handle</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">fopen($filename,</span> <span style="color: #e6db74">&quot;r&quot;</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">or</span> <span style="color: #66d9ef">die</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;could not open .&#39;</span> <span style="color: #f8f8f2">$filename);</span>
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>($filename, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">die</span>(<span style="color:#e6db74">&#39;could not open .&#39;</span> $filename);</code></pre></div></p>
 
 <p></p>
 
@@ -204,34 +196,32 @@ Sin embargo, fopen puede fallar:</p>
 <h2 id="la-solución">La solución</h2>
 
 <p>En este caso, lo recomendable es utilizar cURL, donde se puede indicar a la petición que siga redirecciones y además será posible saltarse las restricciones de allow_url_fopen. Para convertir el fichero remoto en un resource local vamos a utilizar flujos de E/S de php mediante php://temp. Este flujo permite crear un fichero temporal en memoria sin tener que escribirlo en disco y lidiar con los posible problemas en cuanto a la ruta al fichero. Así, con la siguiente función podremos obtener un fichero remoto y manejarlo como si fuera un fichero local:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">&lt;?php</span>
-<span style="color: #66d9ef">function</span> <span style="color: #a6e22e">_curl</span><span style="color: #f8f8f2">($url){</span>
- <span style="color: #66d9ef">try</span> <span style="color: #f8f8f2">{</span>
-  <span style="color: #f8f8f2">$file_handler</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">fopen(</span><span style="color: #e6db74">&#39;php://temp&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;w+&#39;</span><span style="color: #f8f8f2">);</span>
-  <span style="color: #f8f8f2">$ch</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">curl_init();</span>
-  <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">FALSE</span> <span style="color: #f92672">===</span> <span style="color: #f8f8f2">$ch)</span>
-   <span style="color: #66d9ef">throw</span> <span style="color: #66d9ef">new</span> <span style="color: #a6e22e">Exception</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;failed to initialize&#39;</span><span style="color: #f8f8f2">);</span>
-  <span style="color: #f8f8f2">curl_setopt($ch,</span> <span style="color: #a6e22e">CURLOPT_URL</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">$url);</span>
-  <span style="color: #f8f8f2">curl_setopt($ch,</span> <span style="color: #a6e22e">CURLOPT_RETURNTRANSFER</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">);</span>
-  <span style="color: #f8f8f2">curl_setopt($ch,</span> <span style="color: #a6e22e">CURLOPT_FOLLOWLOCATION</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">);</span>
-  <span style="color: #f8f8f2">curl_setopt($ch,</span> <span style="color: #a6e22e">CURLOPT_FILE</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">$file_handler);</span>
-  <span style="color: #75715e">//curl_setopt ($ch, CURLOPT_PORT , 8080);</span>
-  <span style="color: #f8f8f2">curl_setopt($ch,</span> <span style="color: #a6e22e">CURLOPT_TIMEOUT</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">10</span><span style="color: #f8f8f2">);</span> <span style="color: #75715e">//timeout in seconds</span>
-  <span style="color: #f8f8f2">$content</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">curl_exec($ch);</span>
-  <span style="color: #f8f8f2">curl_close($ch);</span>
-  <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">FALSE</span> <span style="color: #f92672">===</span> <span style="color: #f8f8f2">$content)</span>
-   <span style="color: #66d9ef">throw</span> <span style="color: #66d9ef">new</span> <span style="color: #a6e22e">Exception</span><span style="color: #f8f8f2">(curl_error($ch),</span> <span style="color: #f8f8f2">curl_errno($ch));</span>
-  <span style="color: #f8f8f2">rewind($file_handler);</span>
-  <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">$file_handler;</span>
- <span style="color: #f8f8f2">}</span> <span style="color: #66d9ef">catch</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">Exception</span> <span style="color: #f8f8f2">$e)</span> <span style="color: #f8f8f2">{</span>
-  <span style="color: #f8f8f2">trigger_error(sprintf(</span>
-   <span style="color: #e6db74">&#39;Curl failed with error #%d: %s&#39;</span><span style="color: #f8f8f2">,</span>
-  <span style="color: #f8f8f2">$e</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">getCode</span><span style="color: #f8f8f2">(),</span> <span style="color: #f8f8f2">$e</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">getMessage</span><span style="color: #f8f8f2">()),</span>
-   <span style="color: #a6e22e">E_USER_ERROR</span><span style="color: #f8f8f2">);</span>
- <span style="color: #f8f8f2">}</span>
-<span style="color: #f8f8f2">}</span>
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">function</span> <span style="color:#f92672"></span><span style="color:#a6e22e">_curl</span>($url){
+ <span style="color:#66d9ef">try</span> {
+  $file_handler <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>(<span style="color:#e6db74">&#39;php://temp&#39;</span>, <span style="color:#e6db74">&#39;w+&#39;</span>);
+  $ch <span style="color:#f92672">=</span> <span style="color:#a6e22e">curl_init</span>();
+  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">FALSE</span> <span style="color:#f92672">===</span> $ch)
+   <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Exception</span>(<span style="color:#e6db74">&#39;failed to initialize&#39;</span>);
+  <span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_URL</span>, $url);
+  <span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_RETURNTRANSFER</span>, <span style="color:#ae81ff">1</span>);
+  <span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_FOLLOWLOCATION</span>, <span style="color:#ae81ff">1</span>);
+  <span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_FILE</span>, $file_handler);
+  <span style="color:#75715e">//curl_setopt ($ch, CURLOPT_PORT , 8080);
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_TIMEOUT</span>, <span style="color:#ae81ff">10</span>); <span style="color:#75715e">//timeout in seconds
+</span><span style="color:#75715e"></span>  $content <span style="color:#f92672">=</span> <span style="color:#a6e22e">curl_exec</span>($ch);
+  <span style="color:#a6e22e">curl_close</span>($ch);
+  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">FALSE</span> <span style="color:#f92672">===</span> $content)
+   <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Exception</span>(<span style="color:#a6e22e">curl_error</span>($ch), <span style="color:#a6e22e">curl_errno</span>($ch));
+  <span style="color:#a6e22e">rewind</span>($file_handler);
+  <span style="color:#66d9ef">return</span> $file_handler;
+ } <span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">Exception</span> $e) {
+  <span style="color:#a6e22e">trigger_error</span>(<span style="color:#a6e22e">sprintf</span>(
+   <span style="color:#e6db74">&#39;Curl failed with error #%d: %s&#39;</span>,
+  $e<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getCode</span>(), $e<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getMessage</span>()),
+   <span style="color:#a6e22e">E_USER_ERROR</span>);
+ }
+}</code></pre></div></p>
 
 <p>Esta función toma como parámetro una url y nos devuelve un handle de un recurso local que podemos utilizar para manejar el fichero como queramos.</p></p>
       
@@ -260,7 +250,7 @@ Sin embargo, fopen puede fallar:</p>
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/&amp;title=C%c3%b3mo%20manejar%20recursos%20remotos%20con%20curl&amp;summary=%3ch2%20id=%22el-problema%22%3eEl%20problema%3c/h2%3e%0a%0a%3cp%3eCuando%20necesitas%20obtener%20ficheros%20remotos%20para%20manejar%20su%20contenido%20%28ejemplo:%20ficheros%20csv%29%20es%20posible%20que%20su%20acceso%20no%20sea%20tan%20sencillo%20como%20utilizar%20fopen:%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3e%3cspan%20style=%22color:%20#75715e%22%3e&amp;lt;?php%3c/span%3e%0a%3cspan%20style=%22color:%20#f8f8f2%22%3e$handle%3c/span%3e%20%3cspan%20style=%22color:%20#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:%20#f8f8f2%22%3efopen%28$filename,%3c/span%3e%20%3cspan%20style=%22color:%20#e6db74%22%3e&amp;quot;r&amp;quot;%3c/span%3e%3cspan%20style=%22color:%20#f8f8f2%22%3e%29%3c/span%3e%20%3cspan%20style=%22color:%20#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:%20#66d9ef%22%3edie%3c/span%3e%3cspan%20style=%22color:%20#f8f8f2%22%3e%28%3c/span%3e%3cspan%20style=%22color:%20#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20%3cspan%20style=%22color:%20#f8f8f2%22%3e$filename%29;%3c/span%3e%0a%3c/pre%3e%3c/div%3e%0a%3c/p%3e%0a%0a%3cp%3e%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/&amp;title=C%c3%b3mo%20manejar%20recursos%20remotos%20con%20curl&amp;summary=%3ch2%20id=%22el-problema%22%3eEl%20problema%3c/h2%3e%0a%0a%3cp%3eCuando%20necesitas%20obtener%20ficheros%20remotos%20para%20manejar%20su%20contenido%20%28ejemplo:%20ficheros%20csv%29%20es%20posible%20que%20su%20acceso%20no%20sea%20tan%20sencillo%20como%20utilizar%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#75715e%22%3e&amp;lt;?php%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%0a%3cp%3e%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fa fa-twitter" href="http://twitter.com/share?text=C%c3%b3mo%20manejar%20recursos%20remotos%20con%20curl&amp;url=https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -272,7 +262,7 @@ Sin embargo, fopen puede fallar:</p>
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/&amp;media=https://www.jarboleda.mehow-to-handle-remote-resources-with-curl.png&amp;description=%3ch2%20id=%22el-problema%22%3eEl%20problema%3c/h2%3e%0a%0a%3cp%3eCuando%20necesitas%20obtener%20ficheros%20remotos%20para%20manejar%20su%20contenido%20%28ejemplo:%20ficheros%20csv%29%20es%20posible%20que%20su%20acceso%20no%20sea%20tan%20sencillo%20como%20utilizar%20fopen:%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3e%3cspan%20style=%22color:%20#75715e%22%3e&amp;lt;?php%3c/span%3e%0a%3cspan%20style=%22color:%20#f8f8f2%22%3e$handle%3c/span%3e%20%3cspan%20style=%22color:%20#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:%20#f8f8f2%22%3efopen%28$filename,%3c/span%3e%20%3cspan%20style=%22color:%20#e6db74%22%3e&amp;quot;r&amp;quot;%3c/span%3e%3cspan%20style=%22color:%20#f8f8f2%22%3e%29%3c/span%3e%20%3cspan%20style=%22color:%20#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:%20#66d9ef%22%3edie%3c/span%3e%3cspan%20style=%22color:%20#f8f8f2%22%3e%28%3c/span%3e%3cspan%20style=%22color:%20#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20%3cspan%20style=%22color:%20#f8f8f2%22%3e$filename%29;%3c/span%3e%0a%3c/pre%3e%3c/div%3e%0a%3c/p%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/&amp;media=https://www.jarboleda.mehow-to-handle-remote-resources-with-curl.png&amp;description=%3ch2%20id=%22el-problema%22%3eEl%20problema%3c/h2%3e%0a%0a%3cp%3eCuando%20necesitas%20obtener%20ficheros%20remotos%20para%20manejar%20su%20contenido%20%28ejemplo:%20ficheros%20csv%29%20es%20posible%20que%20su%20acceso%20no%20sea%20tan%20sencillo%20como%20utilizar%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#75715e%22%3e&amp;lt;?php%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -368,42 +358,29 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
-                    <img alt='Autenticando usuarios con cURL' width='72' height='72' src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
+                  <a href='/es/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
+                    <img alt='Cómo manejar recursos remotos con curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Autenticando usuarios con cURL</a>
+                  <a href='/es/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">Cómo manejar recursos remotos con curl</a>
                 </div>
               </div>
             </li>
+            
+            
             
             
              
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img alt='Instalando unreal engine en fedora 25' width='72' height='72' src="/articles/img/thumbs/unreal_engine.min.jpg" />
+                  <a href='/es/articles/getting-an-objects-methods/' target='_blank'>
+                    <img alt='Obteniendo los métodos (reflejados) de un objeto' width='72' height='72' src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">Instalando unreal engine en fedora 25</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/es/articles/centos-web-panel-on-vps/' target='_blank'>
-                    <img alt='Centos web panel con php7 y mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/es/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel con php7 y mysql5.6</a>
+                  <a href='/es/articles/getting-an-objects-methods/' class="mostVisitedLink">Obteniendo los métodos (reflejados) de un objeto</a>
                 </div>
               </div>
             </li>

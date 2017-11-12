@@ -175,37 +175,29 @@ Sometimes we don&rsquo;t have access to the platform docs on which we are workin
 
 <p></p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">&lt;?php</span>
-<span style="color: #66d9ef">function</span> <span style="color: #a6e22e">get_object_info</span><span style="color: #f8f8f2">($object){</span>
-   <span style="color: #66d9ef">foreach</span><span style="color: #f8f8f2">(get_class_methods(get_class($object))</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">$method){</span>
-      <span style="color: #66d9ef">echo</span> <span style="color: #e6db74">&#39;&lt;p&gt;&#39;</span> <span style="color: #f92672">.</span> <span style="color: #f8f8f2">$method</span> <span style="color: #f92672">.</span> <span style="color: #e6db74">&#39;(&#39;</span><span style="color: #f8f8f2">;</span>
-      <span style="color: #66d9ef">foreach</span><span style="color: #f8f8f2">((</span><span style="color: #66d9ef">new</span> <span style="color: #a6e22e">ReflectionMethod</span><span style="color: #f8f8f2">(get_class($object),</span> <span style="color: #f8f8f2">$method))</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">getParameters</span><span style="color: #f8f8f2">()</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">$param){</span>
-         <span style="color: #66d9ef">echo</span> <span style="color: #f8f8f2">$param</span> <span style="color: #f92672">.</span> <span style="color: #e6db74">&#39;, &#39;</span><span style="color: #f8f8f2">;</span>
-      <span style="color: #f8f8f2">}</span>
-      <span style="color: #66d9ef">echo</span> <span style="color: #e6db74">&#39;)&lt;/p&gt;&#39;</span><span style="color: #f8f8f2">;</span>
-    <span style="color: #f8f8f2">}</span>
-<span style="color: #f8f8f2">}</span>
-</pre></div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">function</span> <span style="color:#f92672"></span><span style="color:#a6e22e">get_object_info</span>($object){
+   <span style="color:#66d9ef">foreach</span>(<span style="color:#a6e22e">get_class_methods</span>(<span style="color:#a6e22e">get_class</span>($object)) <span style="color:#66d9ef">as</span> $method){
+      <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;&lt;p&gt;&#39;</span> <span style="color:#f92672">.</span> $method <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;(&#39;</span>;
+      <span style="color:#66d9ef">foreach</span>((<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ReflectionMethod</span>(<span style="color:#a6e22e">get_class</span>($object), $method))<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getParameters</span>() <span style="color:#66d9ef">as</span> $param){
+         <span style="color:#66d9ef">echo</span> $param <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;, &#39;</span>;
+      }
+      <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;)&lt;/p&gt;&#39;</span>;
+    }
+}</code></pre></div>
 
 <p>In order to keep this function short, php5.4+ is needed because we&rsquo;re acceding a class member while we instantiate it. To achieve this, we have to use an extra parenthesis:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">&lt;?php</span>
-<span style="color: #f8f8f2">(</span><span style="color: #66d9ef">new</span> <span style="color: #a6e22e">ReflectionMethod</span><span style="color: #f8f8f2">($class,</span> <span style="color: #f8f8f2">$method))</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">getParameters</span><span style="color: #f8f8f2">())</span>
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ReflectionMethod</span>($class, $method))<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getParameters</span>())</code></pre></div></p>
 
 <p>Is correct in php 5.4
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">&lt;?php</span>
-<span style="color: #66d9ef">new</span> <span style="color: #a6e22e">ReflectionMethod</span><span style="color: #f8f8f2">($class,</span> <span style="color: #f8f8f2">$method))</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">getParameters</span><span style="color: #f8f8f2">()</span>
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ReflectionMethod</span>($class, $method))<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getParameters</span>()</code></pre></div></p>
 
 <p>Is not correct in any PHP versión, so if we use php &lt; 5.4, we have to separate this line:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">&lt;?php</span>
-<span style="color: #f8f8f2">$method</span>  <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #a6e22e">ReflectionMethod</span><span style="color: #f8f8f2">($class,</span> <span style="color: #f8f8f2">$method);</span>
-<span style="color: #f8f8f2">$params</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">$method</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">getParameters</span><span style="color: #f8f8f2">();</span>
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$method  <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ReflectionMethod</span>($class, $method);
+$params <span style="color:#f92672">=</span> $method<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getParameters</span>();</code></pre></div></p>
 
 <h2 id="example">Example</h2>
 
@@ -214,26 +206,24 @@ Sometimes we don&rsquo;t have access to the platform docs on which we are workin
 <p><img src="/articles/img/getting-an-objects-methods-1.png" alt="pw cheatsheet" /></p>
 
 <p>So, if we want to see the methods for the $user object, we&rsquo;ll see something like this:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">&lt;?php</span>
-<span style="color: #a6e22e">hasRole</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">Parameter</span> <span style="color: #75715e">#0 [ $role ], )</span>
-<span style="color: #a6e22e">addRole</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">Parameter</span> <span style="color: #75715e">#0 [ $role ], )</span>
-<span style="color: #a6e22e">removeRole</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">Parameter</span> <span style="color: #75715e">#0 [ $role ], )</span>
-<span style="color: #a6e22e">hasPermission</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">Parameter</span> <span style="color: #75715e">#0 [ $name ], Parameter #1 [ $context = NULL ], )</span>
-<span style="color: #a6e22e">getPermissions</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">Parameter</span> <span style="color: #75715e">#0 [ Page or NULL $page = NULL ], )</span>
-<span style="color: #a6e22e">isSuperuser</span><span style="color: #f8f8f2">()</span>
-<span style="color: #a6e22e">isGuest</span><span style="color: #f8f8f2">()</span>
-<span style="color: #a6e22e">isLoggedin</span><span style="color: #f8f8f2">()</span><span style="color: #a6e22e">editUrl</span><span style="color: #f8f8f2">()</span>
-<span style="color: #a6e22e">find</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">Parameter</span> <span style="color: #75715e">#0 [ $selector = &#39;&#39; ], Parameter #1 [ $options = Array ], )</span>
-<span style="color: #a6e22e">children</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">Parameter</span> <span style="color: #75715e">#0 [ $selector = &#39;&#39; ], Parameter #1 [ $options = Array ], )</span>
-<span style="color: #a6e22e">numChildren</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">Parameter</span> <span style="color: #75715e">#0 [ $selector = NULL ], )</span>
-<span style="color: #a6e22e">hasChildren</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">Parameter</span> <span style="color: #75715e">#0 [ $selector = true ], )</span>
-<span style="color: #a6e22e">child</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">Parameter</span> <span style="color: #75715e">#0 [ $selector = &#39;&#39; ], Parameter #1 [ $options = Array ], )</span>
-<span style="color: #66d9ef">parent</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">Parameter</span> <span style="color: #75715e">#0 [ $selector = &#39;&#39; ], )</span>
-<span style="color: #a6e22e">parents</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">Parameter</span> <span style="color: #75715e">#0 [ $selector = &#39;&#39; ], )</span>
-<span style="color: #a6e22e">parentsUntil</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">Parameter</span> <span style="color: #75715e">#0 [ $selector = &#39;&#39; ], Parameter #1 [ $filter = &#39;&#39; ], )</span>
-<span style="color: #a6e22e">closest</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">Parameter</span> <span style="color: #75715e">#0 [ $selector ], )</span>
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#a6e22e">hasRole</span>(<span style="color:#a6e22e">Parameter</span> <span style="color:#75715e">#0 [ $role ], )
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">addRole</span>(<span style="color:#a6e22e">Parameter</span> <span style="color:#75715e">#0 [ $role ], )
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">removeRole</span>(<span style="color:#a6e22e">Parameter</span> <span style="color:#75715e">#0 [ $role ], )
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">hasPermission</span>(<span style="color:#a6e22e">Parameter</span> <span style="color:#75715e">#0 [ $name ], Parameter #1 [ $context = NULL ], )
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">getPermissions</span>(<span style="color:#a6e22e">Parameter</span> <span style="color:#75715e">#0 [ Page or NULL $page = NULL ], )
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">isSuperuser</span>()
+<span style="color:#a6e22e">isGuest</span>()
+<span style="color:#a6e22e">isLoggedin</span>()<span style="color:#a6e22e">editUrl</span>()
+<span style="color:#a6e22e">find</span>(<span style="color:#a6e22e">Parameter</span> <span style="color:#75715e">#0 [ $selector = &#39;&#39; ], Parameter #1 [ $options = Array ], )
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">children</span>(<span style="color:#a6e22e">Parameter</span> <span style="color:#75715e">#0 [ $selector = &#39;&#39; ], Parameter #1 [ $options = Array ], )
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">numChildren</span>(<span style="color:#a6e22e">Parameter</span> <span style="color:#75715e">#0 [ $selector = NULL ], )
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">hasChildren</span>(<span style="color:#a6e22e">Parameter</span> <span style="color:#75715e">#0 [ $selector = true ], )
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">child</span>(<span style="color:#a6e22e">Parameter</span> <span style="color:#75715e">#0 [ $selector = &#39;&#39; ], Parameter #1 [ $options = Array ], )
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">parent</span>(<span style="color:#a6e22e">Parameter</span> <span style="color:#75715e">#0 [ $selector = &#39;&#39; ], )
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">parents</span>(<span style="color:#a6e22e">Parameter</span> <span style="color:#75715e">#0 [ $selector = &#39;&#39; ], )
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">parentsUntil</span>(<span style="color:#a6e22e">Parameter</span> <span style="color:#75715e">#0 [ $selector = &#39;&#39; ], Parameter #1 [ $filter = &#39;&#39; ], )
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">closest</span>(<span style="color:#a6e22e">Parameter</span> <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#ae81ff">0</span> [ $selector ], )</code></pre></div></p>
 
 <p>Some methods give us the same data as the properties, but we can see new methods that could be really useful. The main advantage of obtaining these methods is that we don&rsquo;t depend on docs and we also see the full list of methods for the object.</p></p>
       
@@ -329,7 +319,7 @@ s.setAttribute('data-timestamp', +new Date());
       <h4 rel='author'>Jeferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p>Looking for a challenge :) | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a>, and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
+      <p>Amadeus Consultant located in Nice | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a> and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
       <div class='authorsocial'>
         
           <a href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fa fa-linkedin'></i></a>
@@ -380,12 +370,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
-                    <img alt='How to handle remote resources with curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
+                  <a href='/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
+                    <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">How to handle remote resources with curl</a>
+                  <a href='/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
                 </div>
               </div>
             </li>
@@ -395,12 +385,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/deploy-hugo-site-to-github-pages/' target='_blank'>
-                    <img alt='Deploying a hugo site to github pages' width='72' height='72' src="/articles/img/thumbs/deploy-hugo-site-to-github-pages.jpg" />
+                  <a href='/articles/configuring-iptables-and-fail2ban-on-centos-6/' target='_blank'>
+                    <img alt='Configuring IPTABLES and fail2ban on centOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-iptables-and-fail2ban-on-centos-6.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/deploy-hugo-site-to-github-pages/' class="mostVisitedLink">Deploying a hugo site to github pages</a>
+                  <a href='/articles/configuring-iptables-and-fail2ban-on-centos-6/' class="mostVisitedLink">Configuring IPTABLES and fail2ban on centOS 6</a>
                 </div>
               </div>
             </li>
@@ -410,12 +400,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/web-development-environment/' target='_blank'>
-                    <img alt='Web development environment' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
+                  <a href='/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
+                    <img alt='Authenticating users with cURL' width='72' height='72' src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
+                  <a href='/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Authenticating users with cURL</a>
                 </div>
               </div>
             </li>

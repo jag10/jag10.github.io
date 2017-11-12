@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-	<meta name="generator" content="Hugo 0.24.1" />
+	<meta name="generator" content="Hugo 0.30.2" />
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     <meta name=viewport content="width=device-width, initial-scale=1">
     <title>J. Arboleda - J. Arboleda</title>
@@ -163,6 +163,7 @@
 <p>Algunas veces no tenemos acceso a la documentación de una plataforma, es incompleta o simplemente no nos apetece buscarla. En esos casos, es conveniente tener algo más que el típico <code>var_dump</code> de un objeto, que sólo nos muestra las propiedades del objeto pero no sus métodos, que en muchos casos nos dan la funcionalidad que buscamos sin tener que navegar entre miles de propiedades. A continuación expongo la función que uso, utiliza la clase ReflectionMethod, la cual nos muestra información acerca de un método, y necesita como parámetros del constructor el nombre de la clase y el método.</p>
 
 <p></p>
+</p>
       
     </div>
     <div class="clearfix"></div>
@@ -228,11 +229,12 @@
     
     <div class="article_excerpt">
       
-      <p>Para hacer el tracking de visitas de jglab.me utilizo Piwik. ¿Por qué? El principal motivo es que permite mantener la información de manera privada, sin que terceros lleguen a saberla, pero además, piwik ofrece una API muy potente que puede ser utilizada de manera <strong>local</strong>, lo que es muy importante para el rendimiento, pues me permite obtener estadísticas de la web sin realizar ninguna petición. Para las peticiones locales utilizo la siguiente clase:</p>
+      <p><p>Para hacer el tracking de visitas de jglab.me utilizo Piwik. ¿Por qué? El principal motivo es que permite mantener la información de manera privada, sin que terceros lleguen a saberla, pero además, piwik ofrece una API muy potente que puede ser utilizada de manera <strong>local</strong>, lo que es muy importante para el rendimiento, pues me permite obtener estadísticas de la web sin realizar ninguna petición. Para las peticiones locales utilizo la siguiente clase:</p>
 
 <h2 id="show-me-the-code">Show me the code</h2>
 
 <p></p>
+</p>
       
     </div>
     <div class="clearfix"></div>
@@ -376,11 +378,10 @@
 <h2 id="instalando-mysql-5-6">Instalando mysql 5.6</h2>
 
 <p>Después de una instalación limpia, vamos a detener CWP para actualizar mysql.
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>service cwpsrv stop
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">service cwpsrv stop</code></pre></div></p>
 
 <p>Ahora vamos a instalar el repositorio de mysql
+</p>
 </p>
       
     </div>
@@ -397,7 +398,7 @@
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/&amp;title=Centos%20web%20panel%20con%20php7%20y%20mysql5.6&amp;summary=%3ch2%20id=%22instalando-cwp%22%3eInstalando%20CWP%3c/h2%3e%0a%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20instalar%20CWP,%20simplemente%20hay%20que%20seguir%20las%20instrucciones%20del%20sitio%20web%20de%20CWP:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%0a%3ch2%20id=%22instalando-mysql-5-6%22%3eInstalando%20mysql%205.6%3c/h2%3e%0a%0a%3cp%3eDespu%c3%a9s%20de%20una%20instalaci%c3%b3n%20limpia,%20vamos%20a%20detener%20CWP%20para%20actualizar%20mysql.%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3eservice%20cwpsrv%20stop%0a%3c/pre%3e%3c/div%3e%0a%3c/p%3e%0a%0a%3cp%3eAhora%20vamos%20a%20instalar%20el%20repositorio%20de%20mysql%0a%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/&amp;title=Centos%20web%20panel%20con%20php7%20y%20mysql5.6&amp;summary=%3ch2%20id=%22instalando-cwp%22%3eInstalando%20CWP%3c/h2%3e%0a%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20instalar%20CWP,%20simplemente%20hay%20que%20seguir%20las%20instrucciones%20del%20sitio%20web%20de%20CWP:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%0a%3ch2%20id=%22instalando-mysql-5-6%22%3eInstalando%20mysql%205.6%3c/h2%3e%0a%0a%3cp%3eDespu%c3%a9s%20de%20una%20instalaci%c3%b3n%20limpia,%20vamos%20a%20detener%20CWP%20para%20actualizar%20mysql.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3eservice%20cwpsrv%20stop%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%0a%3cp%3eAhora%20vamos%20a%20instalar%20el%20repositorio%20de%20mysql%0a%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fa fa-twitter" href="http://twitter.com/share?text=Centos%20web%20panel%20con%20php7%20y%20mysql5.6&amp;url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -409,7 +410,7 @@
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/&amp;media=https://www.jarboleda.meinstalling-centos-web-panel-on-vps.jpg&amp;description=%3ch2%20id=%22instalando-cwp%22%3eInstalando%20CWP%3c/h2%3e%0a%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20instalar%20CWP,%20simplemente%20hay%20que%20seguir%20las%20instrucciones%20del%20sitio%20web%20de%20CWP:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%0a%3ch2%20id=%22instalando-mysql-5-6%22%3eInstalando%20mysql%205.6%3c/h2%3e%0a%0a%3cp%3eDespu%c3%a9s%20de%20una%20instalaci%c3%b3n%20limpia,%20vamos%20a%20detener%20CWP%20para%20actualizar%20mysql.%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3eservice%20cwpsrv%20stop%0a%3c/pre%3e%3c/div%3e%0a%3c/p%3e%0a%0a%3cp%3eAhora%20vamos%20a%20instalar%20el%20repositorio%20de%20mysql%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/&amp;media=https://www.jarboleda.meinstalling-centos-web-panel-on-vps.jpg&amp;description=%3ch2%20id=%22instalando-cwp%22%3eInstalando%20CWP%3c/h2%3e%0a%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20instalar%20CWP,%20simplemente%20hay%20que%20seguir%20las%20instrucciones%20del%20sitio%20web%20de%20CWP:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%0a%3ch2%20id=%22instalando-mysql-5-6%22%3eInstalando%20mysql%205.6%3c/h2%3e%0a%0a%3cp%3eDespu%c3%a9s%20de%20una%20instalaci%c3%b3n%20limpia,%20vamos%20a%20detener%20CWP%20para%20actualizar%20mysql.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3eservice%20cwpsrv%20stop%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%0a%3cp%3eAhora%20vamos%20a%20instalar%20el%20repositorio%20de%20mysql%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -507,7 +508,7 @@
     
     
     
-     
+    
         
         
     
@@ -519,7 +520,7 @@
     
     
     
-     
+    
         
         
     
@@ -531,7 +532,7 @@
     
     
     
-     
+    
         
         
     
@@ -642,16 +643,18 @@
         <div class='widget-content popular-posts'>
           <ul>
             
+            
+            
              
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
-                    <img alt='Cómo manejar recursos remotos con curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
+                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img alt='Arreglando una partición corrupta de una máquina virtual' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">Cómo manejar recursos remotos con curl</a>
+                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Arreglando una partición corrupta de una máquina virtual</a>
                 </div>
               </div>
             </li>
@@ -661,17 +664,15 @@
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
-                    <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
+                  <a href='/es/articles/installing-magento2-on-cwp/' target='_blank'>
+                    <img alt='Instalando magento2 en cwp' width='72' height='72' src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
+                  <a href='/es/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Instalando magento2 en cwp</a>
                 </div>
               </div>
             </li>
-            
-            
             
             
           </ul>

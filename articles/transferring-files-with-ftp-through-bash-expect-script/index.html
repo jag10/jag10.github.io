@@ -18,8 +18,6 @@
 	<meta property="og:title" content="Transferring files with FTP through bash expect script" />
 	<meta property="og:description" content="If you use to transfer backups through ftp, it can be very handy to write a bash script to put a file in a remote server in an easy way. With this script, transferring a file will be as easy as this:
 ./ftpConnect localFile remoteFile
-
-
 " />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/" />
@@ -41,8 +39,6 @@
     <meta itemprop="name" content="Transferring files with FTP through bash expect script">
     <meta itemprop="description" content="If you use to transfer backups through ftp, it can be very handy to write a bash script to put a file in a remote server in an easy way. With this script, transferring a file will be as easy as this:
 ./ftpConnect localFile remoteFile
-
-
 ">
     <meta name="author" content="Jeferson Arboleda">
     
@@ -57,8 +53,6 @@
 	<meta name="twitter:title" content="Transferring files with FTP through bash expect script"/>
 	<meta name="twitter:description" content="If you use to transfer backups through ftp, it can be very handy to write a bash script to put a file in a remote server in an easy way. With this script, transferring a file will be as easy as this:
 ./ftpConnect localFile remoteFile
-
-
 "/>
 	<meta name="twitter:site" content="@j_a_g_x"/>
 	
@@ -168,50 +162,46 @@
     <div class="article_excerpt">
       
       <p><p>If you use to transfer backups through ftp, it can be very handy to write a bash script to put a file in a remote server in an easy way. With this script, transferring a file will be as easy as this:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>./ftpConnect localFile remoteFile
-</pre></div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./ftpConnect localFile remoteFile</code></pre></div>
 </p>
 
 <p>In the script you&rsquo;ll need to define some data: your FTP server&rsquo;s IP and a valid user and password combination.
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">#!/bin/bash</span>
-<span style="color: #75715e">#use absolute paths (i.e. /var/www/vhosts/) for params:</span>
-<span style="color: #f8f8f2">localFile</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">$1</span>
-<span style="color: #f8f8f2">remoteFile</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">$2</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e">#use absolute paths (i.e. /var/www/vhosts/) for params:
+</span><span style="color:#75715e"></span>localFile<span style="color:#f92672">=</span>$1
+remoteFile<span style="color:#f92672">=</span>$2
 
-<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;Bash script about to invoke ftp with expect&quot;</span>
+echo <span style="color:#e6db74">&#34;Bash script about to invoke ftp with expect&#34;</span>
 
-/bin/cat <span style="color: #e6db74">&lt;&lt; EOF | /usr/bin/expect</span>
-<span style="color: #e6db74">spawn /usr/bin/ftp</span>
+/bin/cat <span style="color:#e6db74">&lt;&lt; EOF | /usr/bin/expect
+</span><span style="color:#e6db74">spawn /usr/bin/ftp
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">set timeout -1
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">expect &#34;ftp&gt; &#34;
+</span><span style="color:#e6db74">send &#34;open\r&#34;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">expect &#34;(to) &#34;
+</span><span style="color:#e6db74">send &#34;aaa.bbb.ccc.ddd\r&#34;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">send &#34;user\r&#34;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">expect &#34;Password:&#34;
+</span><span style="color:#e6db74">send &#34;password\r&#34;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">expect &#34;ftp&gt; &#34;
+</span><span style="color:#e6db74">send &#34;binary\r&#34;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">expect &#34;ftp&gt; &#34;
+</span><span style="color:#e6db74">send &#34;put $localFile $remoteFile\r&#34;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">expect &#34;ftp&gt; &#34;
+</span><span style="color:#e6db74">send &#34;bye\r&#34;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">interact
+</span><span style="color:#e6db74">EOF</span>
 
-<span style="color: #e6db74">set timeout -1</span>
-
-<span style="color: #e6db74">expect &quot;ftp&gt; &quot;</span>
-<span style="color: #e6db74">send &quot;open\r&quot;</span>
-
-<span style="color: #e6db74">expect &quot;(to) &quot;</span>
-<span style="color: #e6db74">send &quot;aaa.bbb.ccc.ddd\r&quot;</span>
-
-<span style="color: #e6db74">send &quot;user\r&quot;</span>
-
-<span style="color: #e6db74">expect &quot;Password:&quot;</span>
-<span style="color: #e6db74">send &quot;password\r&quot;</span>
-
-<span style="color: #e6db74">expect &quot;ftp&gt; &quot;</span>
-<span style="color: #e6db74">send &quot;binary\r&quot;</span>
-
-<span style="color: #e6db74">expect &quot;ftp&gt; &quot;</span>
-<span style="color: #e6db74">send &quot;put $localFile $remoteFile\r&quot;</span>
-
-<span style="color: #e6db74">expect &quot;ftp&gt; &quot;</span>
-<span style="color: #e6db74">send &quot;bye\r&quot;</span>
-
-<span style="color: #e6db74">interact</span>
-<span style="color: #e6db74">EOF</span>
-
-<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;Bash script call to ftp through expect complete. Continuing with additional processing&quot;</span>
-</pre></div>
-</p>
+echo <span style="color:#e6db74">&#34;Bash script call to ftp through expect complete. Continuing with additional processing&#34;</span></code></pre></div></p>
 
 <p>You have to set timeout -1 so expect doesn&rsquo;t close while you transfer files. Also, I had trouble when transferring files to a FTP Windows server until I used binary mode. You should check the integrity of your files once you have successfully transferred them, you may find out they are corrupt. As I said, I solved this issue using binary mode.</p>
 
@@ -245,7 +235,7 @@ I use this to backup database dumps, but you can transfer whatever you want.</p>
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/&amp;title=Transferring%20files%20with%20FTP%20through%20bash%20expect%20script&amp;summary=%3cp%3eIf%20you%20use%20to%20transfer%20backups%20through%20ftp,%20it%20can%20be%20very%20handy%20to%20write%20a%20bash%20script%20to%20put%20a%20file%20in%20a%20remote%20server%20in%20an%20easy%20way.%20With%20this%20script,%20transferring%20a%20file%20will%20be%20as%20easy%20as%20this:%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3e./ftpConnect%20localFile%20remoteFile%0a%3c/pre%3e%3c/div%3e%0a%0a%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/&amp;title=Transferring%20files%20with%20FTP%20through%20bash%20expect%20script&amp;summary=%3cp%3eIf%20you%20use%20to%20transfer%20backups%20through%20ftp,%20it%20can%20be%20very%20handy%20to%20write%20a%20bash%20script%20to%20put%20a%20file%20in%20a%20remote%20server%20in%20an%20easy%20way.%20With%20this%20script,%20transferring%20a%20file%20will%20be%20as%20easy%20as%20this:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3e./ftpConnect%20localFile%20remoteFile%3c/code%3e%3c/pre%3e%3c/div%3e%0a%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fa fa-twitter" href="http://twitter.com/share?text=Transferring%20files%20with%20FTP%20through%20bash%20expect%20script&amp;url=https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -257,7 +247,7 @@ I use this to backup database dumps, but you can transfer whatever you want.</p>
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/&amp;media=https://www.jarboleda.metransferring-files-with-ftp-through-bash-expect-script.png&amp;description=%3cp%3eIf%20you%20use%20to%20transfer%20backups%20through%20ftp,%20it%20can%20be%20very%20handy%20to%20write%20a%20bash%20script%20to%20put%20a%20file%20in%20a%20remote%20server%20in%20an%20easy%20way.%20With%20this%20script,%20transferring%20a%20file%20will%20be%20as%20easy%20as%20this:%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3e./ftpConnect%20localFile%20remoteFile%0a%3c/pre%3e%3c/div%3e%0a%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/&amp;media=https://www.jarboleda.metransferring-files-with-ftp-through-bash-expect-script.png&amp;description=%3cp%3eIf%20you%20use%20to%20transfer%20backups%20through%20ftp,%20it%20can%20be%20very%20handy%20to%20write%20a%20bash%20script%20to%20put%20a%20file%20in%20a%20remote%20server%20in%20an%20easy%20way.%20With%20this%20script,%20transferring%20a%20file%20will%20be%20as%20easy%20as%20this:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3e./ftpConnect%20localFile%20remoteFile%3c/code%3e%3c/pre%3e%3c/div%3e%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -302,7 +292,7 @@ s.setAttribute('data-timestamp', +new Date());
       <h4 rel='author'>Jeferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p>Looking for a challenge :) | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a>, and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
+      <p>Amadeus Consultant located in Nice | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a> and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
       <div class='authorsocial'>
         
           <a href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fa fa-linkedin'></i></a>
@@ -345,12 +335,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/using-piwik-api-locally-with-pw/' target='_blank'>
-                    <img alt='Using piwik&#39;s API locally with ProcessWire' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
+                  <a href='/articles/centos-web-panel-on-vps/' target='_blank'>
+                    <img alt='Centos web panel with php7 and mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Using piwik&#39;s API locally with ProcessWire</a>
+                  <a href='/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel with php7 and mysql5.6</a>
                 </div>
               </div>
             </li>
@@ -360,12 +350,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/facebook-sharer-and-ipv6-issue/' target='_blank'>
-                    <img alt='Facebook sharer and IPv6 issue' width='72' height='72' src="/articles/img/thumbs/facebook-sharer-and-ipv6-issue.png" />
+                  <a href='/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
+                    <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/facebook-sharer-and-ipv6-issue/' class="mostVisitedLink">Facebook sharer and IPv6 issue</a>
+                  <a href='/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
                 </div>
               </div>
             </li>
@@ -375,12 +365,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/arduino-uno-lego-case/' target='_blank'>
-                    <img alt='Arduino UNO R3 lego case' width='72' height='72' src="/articles/img/thumbs/arduino-uno-lego-case.jpg" />
+                  <a href='/articles/deploy-hugo-site-to-github-pages/' target='_blank'>
+                    <img alt='Deploying a hugo site to github pages' width='72' height='72' src="/articles/img/thumbs/deploy-hugo-site-to-github-pages.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/arduino-uno-lego-case/' class="mostVisitedLink">Arduino UNO R3 lego case</a>
+                  <a href='/articles/deploy-hugo-site-to-github-pages/' class="mostVisitedLink">Deploying a hugo site to github pages</a>
                 </div>
               </div>
             </li>

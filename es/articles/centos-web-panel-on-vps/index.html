@@ -25,8 +25,6 @@ Instalando mysql 5.6
 Después de una instalación limpia, vamos a detener CWP para actualizar mysql.
 service cwpsrv stop
 
-
-
 Ahora vamos a instalar el repositorio de mysql
 " />
 	<meta property="og:type" content="website" />
@@ -56,8 +54,6 @@ Instalando mysql 5.6
 Después de una instalación limpia, vamos a detener CWP para actualizar mysql.
 service cwpsrv stop
 
-
-
 Ahora vamos a instalar el repositorio de mysql
 ">
     <meta name="author" content="Jeferson Arboleda">
@@ -79,8 +75,6 @@ Instalando mysql 5.6
 
 Después de una instalación limpia, vamos a detener CWP para actualizar mysql.
 service cwpsrv stop
-
-
 
 Ahora vamos a instalar el repositorio de mysql
 "/>
@@ -202,103 +196,83 @@ Ahora vamos a instalar el repositorio de mysql
 <h2 id="instalando-mysql-5-6">Instalando mysql 5.6</h2>
 
 <p>Después de una instalación limpia, vamos a detener CWP para actualizar mysql.
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>service cwpsrv stop
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">service cwpsrv stop</code></pre></div></p>
 
 <p>Ahora vamos a instalar el repositorio de mysql
 </p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>yum install -y wget
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum install -y wget
 wget http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm
 yum localinstall mysql57-community-release-el6-7.noarch.rpm
-vim /etc/yum.repos.d/mysql-community.repo
-</pre></div>
-
+vim /etc/yum.repos.d/mysql-community.repo</code></pre></div>
 
 <p>Ahora que tenemos el repositorio, vamos a elegir qué versión queremos instalar. En este caso, vamos a instalar mysql 5.6, por lo que el fichero debe quedar así:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>yum
-<span style="color: #f92672">[</span>mysql-connectors-community<span style="color: #f92672">]</span>
-<span style="color: #f8f8f2">name</span><span style="color: #f92672">=</span>MySQL Connectors Community
-<span style="color: #f8f8f2">baseurl</span><span style="color: #f92672">=</span>http://repo.mysql.com/yum/mysql-connectors-community/el/6/<span style="color: #f8f8f2">$basearch</span>/
-<span style="color: #f8f8f2">enabled</span><span style="color: #f92672">=</span>1
-<span style="color: #f8f8f2">gpgcheck</span><span style="color: #f92672">=</span>1
-<span style="color: #f8f8f2">gpgkey</span><span style="color: #f92672">=</span>file:/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
-<span style="color: #f92672">[</span>mysql-tools-community<span style="color: #f92672">]</span>
-<span style="color: #f8f8f2">name</span><span style="color: #f92672">=</span>MySQL Tools Community
-<span style="color: #f8f8f2">baseurl</span><span style="color: #f92672">=</span>http://repo.mysql.com/yum/mysql-tools-community/el/6/<span style="color: #f8f8f2">$basearch</span>/
-<span style="color: #f8f8f2">enabled</span><span style="color: #f92672">=</span>1
-<span style="color: #f8f8f2">gpgcheck</span><span style="color: #f92672">=</span>1
-<span style="color: #f8f8f2">gpgkey</span><span style="color: #f92672">=</span>file:/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
-<span style="color: #75715e"># Enable to use MySQL 5.5</span>
-<span style="color: #f92672">[</span>mysql55-community<span style="color: #f92672">]</span>
-<span style="color: #f8f8f2">name</span><span style="color: #f92672">=</span>MySQL 5.5 Community Server
-<span style="color: #f8f8f2">baseurl</span><span style="color: #f92672">=</span>http://repo.mysql.com/yum/mysql-5.5-community/el/6/<span style="color: #f8f8f2">$basearch</span>/
-<span style="color: #f8f8f2">enabled</span><span style="color: #f92672">=</span>0
-<span style="color: #f8f8f2">gpgcheck</span><span style="color: #f92672">=</span>1
-<span style="color: #f8f8f2">gpgkey</span><span style="color: #f92672">=</span>file:/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
-<span style="color: #75715e"># Enable to use MySQL 5.6</span>
-<span style="color: #f92672">[</span>mysql56-community<span style="color: #f92672">]</span>
-<span style="color: #f8f8f2">name</span><span style="color: #f92672">=</span>MySQL 5.6 Community Server
-<span style="color: #f8f8f2">baseurl</span><span style="color: #f92672">=</span>http://repo.mysql.com/yum/mysql-5.6-community/el/6/<span style="color: #f8f8f2">$basearch</span>/
-<span style="color: #f8f8f2">enabled</span><span style="color: #f92672">=</span>1
-<span style="color: #f8f8f2">gpgcheck</span><span style="color: #f92672">=</span>1
-<span style="color: #f8f8f2">gpgkey</span><span style="color: #f92672">=</span>file:/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
-<span style="color: #75715e"># Note: MySQL 5.7 is currently in development. For use at your own risk.</span>
-<span style="color: #75715e"># Please read with sub pages: https://dev.mysql.com/doc/relnotes/mysql/5.7/en/</span>
-<span style="color: #f92672">[</span>mysql57-community-dmr<span style="color: #f92672">]</span>
-<span style="color: #f8f8f2">name</span><span style="color: #f92672">=</span>MySQL 5.7 Community Server Development Milestone Release
-<span style="color: #f8f8f2">baseurl</span><span style="color: #f92672">=</span>http://repo.mysql.com/yum/mysql-5.7-community/el/6/<span style="color: #f8f8f2">$basearch</span>/
-<span style="color: #f8f8f2">enabled</span><span style="color: #f92672">=</span>0
-<span style="color: #f8f8f2">gpgcheck</span><span style="color: #f92672">=</span>1
-<span style="color: #f8f8f2">gpgkey</span><span style="color: #f92672">=</span>file:/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
-</pre></div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum
+<span style="color:#f92672">[</span>mysql-connectors-community<span style="color:#f92672">]</span>
+name<span style="color:#f92672">=</span>MySQL Connectors Community
+baseurl<span style="color:#f92672">=</span>http://repo.mysql.com/yum/mysql-connectors-community/el/6/$basearch/
+enabled<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+gpgcheck<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+gpgkey<span style="color:#f92672">=</span>file:/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
+<span style="color:#f92672">[</span>mysql-tools-community<span style="color:#f92672">]</span>
+name<span style="color:#f92672">=</span>MySQL Tools Community
+baseurl<span style="color:#f92672">=</span>http://repo.mysql.com/yum/mysql-tools-community/el/6/$basearch/
+enabled<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+gpgcheck<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+gpgkey<span style="color:#f92672">=</span>file:/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
+<span style="color:#75715e"># Enable to use MySQL 5.5
+</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>mysql55-community<span style="color:#f92672">]</span>
+name<span style="color:#f92672">=</span>MySQL <span style="color:#ae81ff">5</span>.5 Community Server
+baseurl<span style="color:#f92672">=</span>http://repo.mysql.com/yum/mysql-5.5-community/el/6/$basearch/
+enabled<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+gpgcheck<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+gpgkey<span style="color:#f92672">=</span>file:/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
+<span style="color:#75715e"># Enable to use MySQL 5.6
+</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>mysql56-community<span style="color:#f92672">]</span>
+name<span style="color:#f92672">=</span>MySQL <span style="color:#ae81ff">5</span>.6 Community Server
+baseurl<span style="color:#f92672">=</span>http://repo.mysql.com/yum/mysql-5.6-community/el/6/$basearch/
+enabled<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+gpgcheck<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+gpgkey<span style="color:#f92672">=</span>file:/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
+<span style="color:#75715e"># Note: MySQL 5.7 is currently in development. For use at your own risk.
+</span><span style="color:#75715e"># Please read with sub pages: https://dev.mysql.com/doc/relnotes/mysql/5.7/en/
+</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>mysql57-community-dmr<span style="color:#f92672">]</span>
+name<span style="color:#f92672">=</span>MySQL <span style="color:#ae81ff">5</span>.7 Community Server Development Milestone Release
+baseurl<span style="color:#f92672">=</span>http://repo.mysql.com/yum/mysql-5.7-community/el/6/$basearch/
+enabled<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+gpgcheck<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+gpgkey<span style="color:#f92672">=</span>file:/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql</code></pre></div>
 Ahora, para comprobar que hemos activado el repositorio correcto, utilizaremos el siguiente comando:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>yum repolist enabled <span style="color: #f8f8f2">|</span> grep mysql
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum repolist enabled | grep mysql
 
 mysql-connectors-community MySQL Connectors Community
 mysql-tools-community MySQL Tools Community
-mysql56-community MySQL 5.6 Community Server
-</pre></div>
-</p>
+mysql56-community MySQL <span style="color:#ae81ff">5</span>.6 Community Server</code></pre></div></p>
 
 <p>Ahora podemos proceder con la actualización.
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>yum install mysql-community-server
-</pre></div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum install mysql-community-server</code></pre></div>
 En my caso, mysqld dejó de funcionar después de hacer esto. Analizando el log encontré este error:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>ERROR<span style="color: #f92672">]</span> InnoDB: auto-extending data file ./ibdata1 is of a different size <span style="color: #ae81ff">640</span> pages <span style="color: #f92672">(</span>rounded down to MB<span style="color: #f92672">)</span> than specified in the .cnf file: initial <span style="color: #ae81ff">768</span> pages, max <span style="color: #ae81ff">0</span> <span style="color: #f92672">(</span>relevant <span style="color: #66d9ef">if</span> non-zero<span style="color: #f92672">)</span> pages!
-</pre></div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ERROR<span style="color:#f92672">]</span> InnoDB: auto-extending data file ./ibdata1 is of a different size <span style="color:#ae81ff">640</span> pages <span style="color:#f92672">(</span>rounded down to MB<span style="color:#f92672">)</span> than specified in the .cnf file: initial <span style="color:#ae81ff">768</span> pages, max <span style="color:#ae81ff">0</span> <span style="color:#f92672">(</span>relevant <span style="color:#66d9ef">if</span> non-zero<span style="color:#f92672">)</span> pages!</code></pre></div>
 El quickfix para esto es añadir la siguiente línea en el fichero <code>/etc/my.cnf</code>, en el bloque [mysqld]:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">innodb_data_file_path</span> <span style="color: #f92672">=</span> ibdata1:10M:autoextend
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">innodb_data_file_path <span style="color:#f92672">=</span> ibdata1:10M:autoextend</code></pre></div></p>
 
 <p>Ahora se puede iniciar mysqld.
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>service mysqld start
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">service mysqld start</code></pre></div></p>
 
 <p>Para terminar con la actualización:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>mysql_upgrade
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mysql_upgrade</code></pre></div></p>
 
 <p>Ya hemos acabado con mysql, ahora podemos volver a iniciar CWP:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>service cwpsrv start
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">service cwpsrv start</code></pre></div></p>
 
 <h2 id="configurando-php7">Configurando php7</h2>
 
 <p>Ahora tu servidor debería ser accesible en <a href="http://your.ip:2030">http://your.ip:2030</a>
 Identifícate en el panel con tus credenciales y ve a PHP Settings -&gt; PHP selector. En primer lugar, hay que definir las flags para la versión php que vamos a compilar.
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>./configure
---prefix<span style="color: #f92672">=</span>/opt/alt/php7/usr
---with-config-file-path<span style="color: #f92672">=</span>/opt/alt/php7/usr/php
---with-config-file-scan-dir<span style="color: #f92672">=</span>/opt/alt/php7/usr/php/php.d
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./configure
+--prefix<span style="color:#f92672">=</span>/opt/alt/php7/usr
+--with-config-file-path<span style="color:#f92672">=</span>/opt/alt/php7/usr/php
+--with-config-file-scan-dir<span style="color:#f92672">=</span>/opt/alt/php7/usr/php/php.d
 --enable-fpm
 --enable-mbstring
 --enable-zip
@@ -317,35 +291,29 @@ Identifícate en el panel con tus credenciales y ve a PHP Settings -&gt; PHP sel
 --with-gmp
 --with-pspell
 --with-gd
---with-jpeg-dir<span style="color: #f92672">=</span>/usr
---with-png-dir<span style="color: #f92672">=</span>/usr
---with-zlib-dir<span style="color: #f92672">=</span>/usr
---with-xpm-dir<span style="color: #f92672">=</span>/usr
---with-freetype-dir<span style="color: #f92672">=</span>/usr
+--with-jpeg-dir<span style="color:#f92672">=</span>/usr
+--with-png-dir<span style="color:#f92672">=</span>/usr
+--with-zlib-dir<span style="color:#f92672">=</span>/usr
+--with-xpm-dir<span style="color:#f92672">=</span>/usr
+--with-freetype-dir<span style="color:#f92672">=</span>/usr
 --enable-gd-native-ttf
 --enable-gd-jis-conv
 --with-openssl
---with-pdo-mysql<span style="color: #f92672">=</span>/usr
---with-gettext<span style="color: #f92672">=</span>/usr
---with-zlib<span style="color: #f92672">=</span>/usr
---with-bz2<span style="color: #f92672">=</span>/usr
---with-recode<span style="color: #f92672">=</span>/usr
+--with-pdo-mysql<span style="color:#f92672">=</span>/usr
+--with-gettext<span style="color:#f92672">=</span>/usr
+--with-zlib<span style="color:#f92672">=</span>/usr
+--with-bz2<span style="color:#f92672">=</span>/usr
+--with-recode<span style="color:#f92672">=</span>/usr
 --with-mysqli
---with-mysql-sock<span style="color: #f92672">=</span>/var/lib/mysql/mysql.sock
+--with-mysql-sock<span style="color:#f92672">=</span>/var/lib/mysql/mysql.sock
 --enable-intl
---with-xsl
-</pre></div>
-</p>
+--with-xsl</code></pre></div></p>
 
 <p>En caso de que quieras usar php 5.6, hay que añadir la siguiente flag:
- <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>--enable-intl
-</pre></div>
-</p>
+ <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">--enable-intl</code></pre></div></p>
 
 <p>Ahora puedes hacer click en &lsquo;Install dependencies&rsquo; para instalar las dependencias necesarias. Después de esto, se puede seleccionar php7 y compilarlo. Cuando el proceso termine, puedes usar php7 en tu sitio web añadiendo la siguiente línea en el .htaccess
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>AddHandler application/x-httpd-php7 .php
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">AddHandler application/x-httpd-php7 .php</code></pre></div></p>
 
 <p>Y ya hemos terminado, ahora dispones de un servidor con php7 y msql5.6, lo que te dará un buen empujón en cuanto a rendimiento.</p></p>
       
@@ -384,7 +352,7 @@ Identifícate en el panel con tus credenciales y ve a PHP Settings -&gt; PHP sel
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/&amp;title=Centos%20web%20panel%20con%20php7%20y%20mysql5.6&amp;summary=%3ch2%20id=%22instalando-cwp%22%3eInstalando%20CWP%3c/h2%3e%0a%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20instalar%20CWP,%20simplemente%20hay%20que%20seguir%20las%20instrucciones%20del%20sitio%20web%20de%20CWP:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%0a%3ch2%20id=%22instalando-mysql-5-6%22%3eInstalando%20mysql%205.6%3c/h2%3e%0a%0a%3cp%3eDespu%c3%a9s%20de%20una%20instalaci%c3%b3n%20limpia,%20vamos%20a%20detener%20CWP%20para%20actualizar%20mysql.%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3eservice%20cwpsrv%20stop%0a%3c/pre%3e%3c/div%3e%0a%3c/p%3e%0a%0a%3cp%3eAhora%20vamos%20a%20instalar%20el%20repositorio%20de%20mysql%0a%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/&amp;title=Centos%20web%20panel%20con%20php7%20y%20mysql5.6&amp;summary=%3ch2%20id=%22instalando-cwp%22%3eInstalando%20CWP%3c/h2%3e%0a%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20instalar%20CWP,%20simplemente%20hay%20que%20seguir%20las%20instrucciones%20del%20sitio%20web%20de%20CWP:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%0a%3ch2%20id=%22instalando-mysql-5-6%22%3eInstalando%20mysql%205.6%3c/h2%3e%0a%0a%3cp%3eDespu%c3%a9s%20de%20una%20instalaci%c3%b3n%20limpia,%20vamos%20a%20detener%20CWP%20para%20actualizar%20mysql.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3eservice%20cwpsrv%20stop%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%0a%3cp%3eAhora%20vamos%20a%20instalar%20el%20repositorio%20de%20mysql%0a%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fa fa-twitter" href="http://twitter.com/share?text=Centos%20web%20panel%20con%20php7%20y%20mysql5.6&amp;url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -396,7 +364,7 @@ Identifícate en el panel con tus credenciales y ve a PHP Settings -&gt; PHP sel
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/&amp;media=https://www.jarboleda.meinstalling-centos-web-panel-on-vps.jpg&amp;description=%3ch2%20id=%22instalando-cwp%22%3eInstalando%20CWP%3c/h2%3e%0a%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20instalar%20CWP,%20simplemente%20hay%20que%20seguir%20las%20instrucciones%20del%20sitio%20web%20de%20CWP:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%0a%3ch2%20id=%22instalando-mysql-5-6%22%3eInstalando%20mysql%205.6%3c/h2%3e%0a%0a%3cp%3eDespu%c3%a9s%20de%20una%20instalaci%c3%b3n%20limpia,%20vamos%20a%20detener%20CWP%20para%20actualizar%20mysql.%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3eservice%20cwpsrv%20stop%0a%3c/pre%3e%3c/div%3e%0a%3c/p%3e%0a%0a%3cp%3eAhora%20vamos%20a%20instalar%20el%20repositorio%20de%20mysql%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/&amp;media=https://www.jarboleda.meinstalling-centos-web-panel-on-vps.jpg&amp;description=%3ch2%20id=%22instalando-cwp%22%3eInstalando%20CWP%3c/h2%3e%0a%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20instalar%20CWP,%20simplemente%20hay%20que%20seguir%20las%20instrucciones%20del%20sitio%20web%20de%20CWP:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%0a%3ch2%20id=%22instalando-mysql-5-6%22%3eInstalando%20mysql%205.6%3c/h2%3e%0a%0a%3cp%3eDespu%c3%a9s%20de%20una%20instalaci%c3%b3n%20limpia,%20vamos%20a%20detener%20CWP%20para%20actualizar%20mysql.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3eservice%20cwpsrv%20stop%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%0a%3cp%3eAhora%20vamos%20a%20instalar%20el%20repositorio%20de%20mysql%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -493,42 +461,42 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
-                    <img alt='Arreglando una partición corrupta de una máquina virtual' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Arreglando una partición corrupta de una máquina virtual</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/es/articles/using-piwik-api-locally-with-pw/' target='_blank'>
-                    <img alt='Utilizando la API de piwik en local con PW' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/es/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Utilizando la API de piwik en local con PW</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
                   <a href='/es/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
                     <img alt='Cómo manejar recursos remotos con curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
                   </a>
                 </div>
                 <div class='item-title'>
                   <a href='/es/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">Cómo manejar recursos remotos con curl</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/es/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
+                    <img alt='Haciendo un backup de todas las BD usando mysqldump' width='72' height='72' src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/es/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Haciendo un backup de todas las BD usando mysqldump</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
+                    <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
                 </div>
               </div>
             </li>

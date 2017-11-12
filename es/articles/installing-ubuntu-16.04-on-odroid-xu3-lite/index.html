@@ -204,36 +204,30 @@ De aquí he tomado el fichero que me interesa, correspondiente a la versión com
 <h2 id="escribiendo-la-imagen-en-la-placa-odroid">Escribiendo la imagen en la placa odroid</h2>
 
 <p>El siguiente paso será descomprimir la imagen, muy importante antes de proceder a escribirla en el módulo eMMC, para ello:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ unxz ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
-</pre></div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ unxz ubuntu-16.04-mate-odroid-xu3-20160708.img.xz</code></pre></div>
 La manera más comoda de instalar la distro en la placa es utilizando el comando dd de linux:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ sudo dd <span style="color: #66d9ef">if</span><span style="color: #f92672">=</span>ubuntu-16.04-mate-odroid-xu3-20160708.img <span style="color: #f8f8f2">of</span><span style="color: #f92672">=</span>/dev/sdc <span style="color: #f8f8f2">bs</span><span style="color: #f92672">=</span>1M <span style="color: #f8f8f2">conv</span><span style="color: #f92672">=</span>fsync
-<span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ sync
-<span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ sync
-<span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ sync
-<span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ sync
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>ubuntu-16.04-mate-odroid-xu3-20160708.img of<span style="color:#f92672">=</span>/dev/sdc bs<span style="color:#f92672">=</span>1M conv<span style="color:#f92672">=</span>fsync
+<span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sync
+<span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sync
+<span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sync
+<span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sync</code></pre></div></p>
 
 <h2 id="verificando-el-resultado">Verificando el resultado</h2>
 
 <p>Es importante utilizar el comando sync varias veces para asegurarse de que no se queda nada en caché y que toda la imagen se escribe en el módulo eMMC.
 Para verificar que la imagen se ha escrito correctamente utilizaremos dd de nuevo:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ sudo dd <span style="color: #66d9ef">if</span><span style="color: #f92672">=</span>/dev/sdc <span style="color: #f8f8f2">bs</span><span style="color: #f92672">=</span><span style="color: #ae81ff">512</span> <span style="color: #f8f8f2">count</span><span style="color: #f92672">=</span><span style="color: #66d9ef">$((</span><span style="color: #e6db74">`</span>stat -c%s ubuntu-16.04-mate-odroid-xu3-20160708.img<span style="color: #e6db74">`</span><span style="color: #f92672">/</span><span style="color: #ae81ff">512</span><span style="color: #66d9ef">))</span> <span style="color: #f8f8f2">|</span> md5sum
-<span style="color: #f92672">[</span>sudo<span style="color: #f92672">]</span> password <span style="color: #66d9ef">for</span> jag:
-8968192+0 registros leídos
-8968192+0 registros escritos
-<span style="color: #ae81ff">4591714304</span> bytes <span style="color: #f92672">(</span>4,6 GB<span style="color: #f92672">)</span> copiados, 106,332 s, 43,2 MB/s
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/sdc bs<span style="color:#f92672">=</span><span style="color:#ae81ff">512</span> count<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span><span style="color:#e6db74">`</span>stat -c%s ubuntu-16.04-mate-odroid-xu3-20160708.img<span style="color:#e6db74">`</span><span style="color:#f92672">/</span><span style="color:#ae81ff">512</span><span style="color:#66d9ef">))</span> | md5sum
+<span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> jag:
+<span style="color:#ae81ff">8968192</span>+0 registros leídos
+<span style="color:#ae81ff">8968192</span>+0 registros escritos
+<span style="color:#ae81ff">4591714304</span> bytes <span style="color:#f92672">(</span><span style="color:#ae81ff">4</span>,6 GB<span style="color:#f92672">)</span> copiados, <span style="color:#ae81ff">106</span>,332 s, <span style="color:#ae81ff">43</span>,2 MB/s
 ff988a4039d9bcd6978910447930f5d5 -
-<span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ dd <span style="color: #66d9ef">if</span><span style="color: #f92672">=</span>ubuntu-16.04-mate-odroid-xu3-20160708.img <span style="color: #f8f8f2">bs</span><span style="color: #f92672">=</span><span style="color: #ae81ff">512</span> <span style="color: #f8f8f2">count</span><span style="color: #f92672">=</span><span style="color: #66d9ef">$((</span><span style="color: #e6db74">`</span>stat -c%s ubuntu-16.04-mate-odroid-xu3-20160708.img<span style="color: #e6db74">`</span><span style="color: #f92672">/</span><span style="color: #ae81ff">512</span><span style="color: #66d9ef">))</span> <span style="color: #f8f8f2">|</span> md5sum
-8968192+0 registros leídos
-8968192+0 registros escritos
-<span style="color: #ae81ff">4591714304</span> bytes <span style="color: #f92672">(</span>4,6 GB<span style="color: #f92672">)</span> copiadosff988a4039d9bcd6978910447930f5d5 -
-, 26,0306 s, <span style="color: #ae81ff">176</span> MB/s
-<span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$
-</pre></div>
-
+<span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>ubuntu-16.04-mate-odroid-xu3-20160708.img bs<span style="color:#f92672">=</span><span style="color:#ae81ff">512</span> count<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span><span style="color:#e6db74">`</span>stat -c%s ubuntu-16.04-mate-odroid-xu3-20160708.img<span style="color:#e6db74">`</span><span style="color:#f92672">/</span><span style="color:#ae81ff">512</span><span style="color:#66d9ef">))</span> | md5sum
+<span style="color:#ae81ff">8968192</span>+0 registros leídos
+<span style="color:#ae81ff">8968192</span>+0 registros escritos
+<span style="color:#ae81ff">4591714304</span> bytes <span style="color:#f92672">(</span><span style="color:#ae81ff">4</span>,6 GB<span style="color:#f92672">)</span> copiadosff988a4039d9bcd6978910447930f5d5 -
+, <span style="color:#ae81ff">26</span>,0306 s, <span style="color:#ae81ff">176</span> MB/s
+<span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$</code></pre></div>
 Lo que hemos hecho con el primer comando es escribir un volcado del módulo eMMC (/dev/sdc) a stdout para obtener su md5 con una tubería. Con el segundo comando, lo que hacemos es escribir la imagen a stdout y volver a obtener su md5. Comparando ambos valores sabremos si la imagen que hemos descargado se corresponde con lo que se ha escrito en el módulo eMMC
 Como veis los md5 coinciden por lo que todo ha funcionado bien. He probado la distro y la primera mejora que he notado ha sido el hdmi. En la anterior versión era un dolor de cabeza hacer que la placa se conectara a mi televisión por hdmi, pero esta vez todo ha ido perfectamente sin tener que tocar ninguna configuración. Sólo una pega y es la conexión por cable Ethernet, no va todo lo bien que debería, muchas veces no se conecta a la primera.
 Si todo ha ido bien, podremos conectarnos a nuestra placa por ssh. En mi caso tengo una dirección estática asignada en el router, pero si no conoces la IP que tiene asignada tendrás que entrar al router y ver la lista de clientes dhcp. Una vez conozcamos la IP de la placa, los datos para el login son los siguientes:</p>
@@ -385,23 +379,6 @@ s.setAttribute('data-timestamp', +new Date());
         <div class='widget-content popular-posts'>
           <ul>
             
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
-                    <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
-                </div>
-              </div>
-            </li>
-            
-            
              
             <li>
               <div class='item-content'>
@@ -412,6 +389,23 @@ s.setAttribute('data-timestamp', +new Date());
                 </div>
                 <div class='item-title'>
                   <a href='/es/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">Cómo manejar recursos remotos con curl</a>
+                </div>
+              </div>
+            </li>
+            
+            
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/es/articles/installing-magento2-on-cwp/' target='_blank'>
+                    <img alt='Instalando magento2 en cwp' width='72' height='72' src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/es/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Instalando magento2 en cwp</a>
                 </div>
               </div>
             </li>

@@ -172,47 +172,41 @@ Para ello, utilizo la utilidad mysqldump y un script para transferir los fichero
 </p>
 
 <p>Hacer el backup de las bases de datos con mysqldump es muy fácil:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>mysqldump -uadmin -p<span style="color: #e6db74">`</span>cat /etc/psa/.psa.shadow<span style="color: #e6db74">`</span> --all-databases <span style="color: #f8f8f2">|</span> zip &gt; <span style="color: #f8f8f2">$1</span>/all.sql.zip
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mysqldump -uadmin -p<span style="color:#e6db74">`</span>cat /etc/psa/.psa.shadow<span style="color:#e6db74">`</span> --all-databases | zip &gt; $1/all.sql.zip</code></pre></div></p>
 
 <p>El parámetro -p indica la password para el usuario admin. Yo utilizo ese fichero porque plesk almacena su contraseña ahí, pero se puede cambiar. La última parte es muy importante, siempre debe comprimirse el fichero .sql porque puede ahorrarse hasta un 90% de espacio. Por ejemplo, algunos backups ocupan 250mb comprimidos, pero cuando lo extraes el fichero .sql puede ser de alrededor de 2.5Gb
 Con el siguiente script se puede hacer un backup de las bases de datos y transferirlo a un servidor ftp, almacenandolo en el directorio /aaa.bbb.ccc.ddd/, o donde quieras
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">#!/bin/sh</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span>
+tempDir<span style="color:#f92672">=</span>$1
 
-<span style="color: #f8f8f2">tempDir</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">$1</span>
+date<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date +%y%m%d-%H%M<span style="color:#66d9ef">)</span>
+mysqldump -uadmin -p<span style="color:#e6db74">`</span>cat /etc/psa/.psa.shadow<span style="color:#e6db74">`</span> --all-databases | zip &gt; $tempDir/all.sql.zip
 
-<span style="color: #f8f8f2">date</span><span style="color: #f92672">=</span><span style="color: #66d9ef">$(</span>date +%y%m%d-%H%M<span style="color: #66d9ef">)</span>
-mysqldump -uadmin -p<span style="color: #e6db74">`</span>cat /etc/psa/.psa.shadow<span style="color: #e6db74">`</span> --all-databases <span style="color: #f8f8f2">|</span> zip &gt; <span style="color: #f8f8f2">$tempDir</span>/all.sql.zip
-
-/script/ftpConnect.sh <span style="color: #f8f8f2">$tempDir</span>/all.sql.zip /aaa.bbb.ccc.ddd/_bbdd/<span style="color: #f8f8f2">$date</span>.sql.zip
-</pre></div>
-
+/script/ftpConnect.sh $tempDir/all.sql.zip /aaa.bbb.ccc.ddd/_bbdd/$date.sql.zip</code></pre></div>
 Para descomprimir los ficheros se puede usar el siguiente script.
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">#!/bin/sh</span>
-<span style="color: #f8f8f2">file</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">$1</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span>file<span style="color:#f92672">=</span>$1
 
-unzip -p <span style="color: #f8f8f2">$file</span> <span style="color: #f8f8f2">|</span> cat &gt; ALL_DATABASES.sql
+unzip -p $file | cat &gt; ALL_DATABASES.sql
 
-csplit --digits<span style="color: #f92672">=</span><span style="color: #ae81ff">3</span> --quiet --prefix<span style="color: #f92672">=</span>outfile ALL_DATABASES.sql <span style="color: #e6db74">&#39;/Current Database/&#39;</span> <span style="color: #e6db74">&#39;{*}&#39;</span>
+csplit --digits<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> --quiet --prefix<span style="color:#f92672">=</span>outfile ALL_DATABASES.sql <span style="color:#e6db74">&#39;/Current Database/&#39;</span> <span style="color:#e6db74">&#39;{*}&#39;</span>
 
-<span style="color: #f8f8f2">files</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;outfile.*&#39;</span>
-<span style="color: #f8f8f2">regex</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;Current Database: `(.*)`&#39;</span>
+files<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;outfile.*&#39;</span>
+regex<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Current Database: `(.*)`&#39;</span>
 
-<span style="color: #66d9ef">for</span> i in <span style="color: #66d9ef">$(</span>ls <span style="color: #f8f8f2">|</span> grep <span style="color: #e6db74">&#39;outfile&#39;</span><span style="color: #66d9ef">)</span>
-<span style="color: #66d9ef">do</span>
-	<span style="color: #f8f8f2">name</span><span style="color: #f92672">=</span><span style="color: #66d9ef">$(</span>head <span style="color: #f8f8f2">$i</span> <span style="color: #f8f8f2">|</span> egrep -o <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$regex</span><span style="color: #e6db74">&quot;</span> <span style="color: #f8f8f2">|</span> awk -F <span style="color: #e6db74">&#39;`&#39;</span> <span style="color: #e6db74">&#39;{print $2}&#39;</span><span style="color: #66d9ef">)</span>
-	<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$i</span><span style="color: #e6db74">: </span><span style="color: #f8f8f2">$name</span><span style="color: #e6db74">&quot;</span>
-    <span style="color: #66d9ef">if</span> <span style="color: #f92672">[</span> ! -f <span style="color: #f8f8f2">$name</span> <span style="color: #f92672">]</span><span style="color: #f8f8f2">;</span> <span style="color: #66d9ef">then</span>
-	    mv <span style="color: #f8f8f2">$i</span> <span style="color: #f8f8f2">$name</span>
-    <span style="color: #66d9ef">else</span>
-        <span style="color: #f8f8f2">number</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">$RANDOM</span>
-        <span style="color: #f8f8f2">let</span> <span style="color: #e6db74">&quot;number %= 10&quot;</span>
-        mv <span style="color: #f8f8f2">$i</span> <span style="color: #f8f8f2">$name$number</span>
-    <span style="color: #66d9ef">fi</span>
-<span style="color: #66d9ef">done</span>
-</pre></div>
-</p>
+<span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>ls | grep <span style="color:#e6db74">&#39;outfile&#39;</span><span style="color:#66d9ef">)</span>
+<span style="color:#66d9ef">do</span>
+	name<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>head $i | egrep -o <span style="color:#e6db74">&#34;</span>$regex<span style="color:#e6db74">&#34;</span> | awk -F <span style="color:#e6db74">&#39;`&#39;</span> <span style="color:#e6db74">&#39;{print $2}&#39;</span><span style="color:#66d9ef">)</span>
+	echo <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">: </span>$name<span style="color:#e6db74">&#34;</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -f $name <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+	    mv $i $name
+    <span style="color:#66d9ef">else</span>
+        number<span style="color:#f92672">=</span>$RANDOM
+        let <span style="color:#e6db74">&#34;number %= 10&#34;</span>
+        mv $i $name$number
+    <span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">done</span></code></pre></div></p>
 
 <p>Ok, con este script se descomprimen las bases de datos y se separan en diferentes ficheros, utilizando el separador `<code>Current Database</code>, el {*} le indica a csplit que divida el fichero en tantas partes como sea necesario, dado que por defecto lo divide en solo dos partes, La siguiente parte renombra los ficheros para que sea sencillo identificarlos</p>
 
@@ -358,6 +352,21 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
+                  <a href='/es/articles/centos-web-panel-on-vps/' target='_blank'>
+                    <img alt='Centos web panel con php7 y mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/es/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel con php7 y mysql5.6</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
                   <a href='/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
                     <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
                   </a>
@@ -367,8 +376,6 @@ s.setAttribute('data-timestamp', +new Date());
                 </div>
               </div>
             </li>
-            
-            
             
             
           </ul>

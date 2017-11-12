@@ -43,7 +43,7 @@
     <meta itemprop="image" content="zipping-and-unzipping-websites-with-php.png">
     
     <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,arduino,backup,backups,bash,case,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,github,httpd,hugo,iptables,ipv6,lego,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,pages,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,static,ubuntu,unrealengine,vagrant,vm,vps,zip," />
-    <meta itemprop="wordCount" content="475">
+    <meta itemprop="wordCount" content="474">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
 	<meta name="twitter:image:src" content="https://www.jarboleda.me/articles/img/zipping-and-unzipping-websites-with-php.png"/>
@@ -163,46 +163,42 @@
 
 <h2 id="zipping-files">Zipping files</h2>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">&lt;?php</span>
-<span style="color: #f8f8f2">$zip</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #a6e22e">ZipArchive</span><span style="color: #f8f8f2">();</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$zip <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ZipArchive</span>();
 
-<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(</span><span style="color: #f92672">!</span><span style="color: #f8f8f2">$zip</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">open</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;data1.zip&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #a6e22e">ZIPARCHIVE</span><span style="color: #f92672">::</span><span style="color: #a6e22e">CREATE</span><span style="color: #f8f8f2">))</span> <span style="color: #f8f8f2">{</span>
-	<span style="color: #66d9ef">die</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;&lt;p class=&#39;error&#39;&gt;Couldn&#39;t create the file&lt;/p&gt;&quot;</span><span style="color: #f8f8f2">);</span>
-<span style="color: #f8f8f2">}</span>
+<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>$zip<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#34;data1.zip&#34;</span>, <span style="color:#a6e22e">ZIPARCHIVE</span><span style="color:#f92672">::</span><span style="color:#a6e22e">CREATE</span>)) {
+	<span style="color:#66d9ef">die</span> (<span style="color:#e6db74">&#34;&lt;p class=&#39;error&#39;&gt;Couldn&#39;t create the file&lt;/p&gt;&#34;</span>);
+}
 
-<span style="color: #f8f8f2">$iterator</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #a6e22e">RecursiveIteratorIterator</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">new</span> <span style="color: #a6e22e">RecursiveDirectoryIterator</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;.&quot;</span><span style="color: #f8f8f2">));</span>
+$iterator <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">RecursiveIteratorIterator</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">RecursiveDirectoryIterator</span>(<span style="color:#e6db74">&#34;.&#34;</span>));
 
-<span style="color: #f8f8f2">$path_parts</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">pathinfo(</span><span style="color: #66d9ef">__FILE__</span><span style="color: #f8f8f2">);</span>
-<span style="color: #f8f8f2">$script_path</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">$path_parts[</span><span style="color: #e6db74">&#39;dirname&#39;</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">.</span> <span style="color: #e6db74">&#39;/&#39;</span><span style="color: #f92672">.</span> <span style="color: #f8f8f2">$path_parts[</span><span style="color: #e6db74">&#39;basename&#39;</span><span style="color: #f8f8f2">];</span>
-<span style="color: #66d9ef">foreach</span> <span style="color: #f8f8f2">($iterator</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">$key</span><span style="color: #f92672">=&gt;</span><span style="color: #f8f8f2">$value)</span> <span style="color: #f8f8f2">{</span>
-	<span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(is_file($key)</span> <span style="color: #f92672">&amp;&amp;</span> <span style="color: #f8f8f2">realpath($key)</span> <span style="color: #f92672">!=</span> <span style="color: #f8f8f2">$script_path){</span> <span style="color: #75715e">// don&#39;t include this file</span>
-		<span style="color: #f8f8f2">$zip</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">addFile</span><span style="color: #f8f8f2">($key,</span> <span style="color: #f8f8f2">$key)</span> <span style="color: #66d9ef">or</span> <span style="color: #66d9ef">die</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;&lt;p class=&#39;error&#39;&gt;ERROR: Couldn&#39;t add file: $key&lt;/p&gt;&quot;</span><span style="color: #f8f8f2">);</span>
-		<span style="color: #66d9ef">echo</span> <span style="color: #f8f8f2">$key</span> <span style="color: #f92672">.</span> <span style="color: #e6db74">&#39;&lt;br&gt;&#39;</span><span style="color: #f8f8f2">;</span>
-	<span style="color: #f8f8f2">}</span>
-<span style="color: #f8f8f2">}</span>
+$path_parts <span style="color:#f92672">=</span> <span style="color:#a6e22e">pathinfo</span>(<span style="color:#66d9ef">__FILE__</span>);
+$script_path <span style="color:#f92672">=</span> $path_parts[<span style="color:#e6db74">&#39;dirname&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/&#39;</span><span style="color:#f92672">.</span> $path_parts[<span style="color:#e6db74">&#39;basename&#39;</span>];
+<span style="color:#66d9ef">foreach</span> ($iterator <span style="color:#66d9ef">as</span> $key<span style="color:#f92672">=&gt;</span>$value) {
+	<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">is_file</span>($key) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">realpath</span>($key) <span style="color:#f92672">!=</span> $script_path){ <span style="color:#75715e">// don&#39;t include this file
+</span><span style="color:#75715e"></span>		$zip<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addFile</span>($key, $key) <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">die</span> (<span style="color:#e6db74">&#34;&lt;p class=&#39;error&#39;&gt;ERROR: Couldn&#39;t add file: </span><span style="color:#e6db74">$key</span><span style="color:#e6db74">&lt;/p&gt;&#34;</span>);
+		<span style="color:#66d9ef">echo</span> $key <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
+	}
+}
 
-<span style="color: #f8f8f2">$zip</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">close</span><span style="color: #f8f8f2">()</span> <span style="color: #66d9ef">or</span> <span style="color: #66d9ef">die</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;&lt;p class=&#39;error&#39;&gt;ERROR: Couldn&#39;t save the file&lt;/p&gt;&quot;</span><span style="color: #f8f8f2">);</span>
+$zip<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">close</span>() <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">die</span> (<span style="color:#e6db74">&#34;&lt;p class=&#39;error&#39;&gt;ERROR: Couldn&#39;t save the file&lt;/p&gt;&#34;</span>);
 
-<span style="color: #66d9ef">echo</span> <span style="color: #e6db74">&quot;&lt;h1&gt;OK.&lt;/h1&gt;&quot;</span><span style="color: #f8f8f2">;</span>
-<span style="color: #75715e">?&gt;</span>
-</pre></div>
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&lt;h1&gt;OK.&lt;/h1&gt;&#34;</span>;
+<span style="color:#75715e">?&gt;</span></code></pre></div>
 
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span>&gt;
+	<span style="color:#f92672">h1</span>{
+		<span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
+		<span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span>;
+		<span style="color:#66d9ef">right</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+		<span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+		<span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#148BA5</span>;
+	}
 
-<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">&lt;</span><span style="color: #f92672">style</span><span style="color: #f8f8f2">&gt;</span>
-	<span style="color: #f92672">h1</span><span style="color: #f8f8f2">{</span>
-		<span style="color: #f8f8f2">position</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">absolute;</span>
-		<span style="color: #f8f8f2">top</span><span style="color: #f92672">:</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
-		<span style="color: #f8f8f2">right</span><span style="color: #f92672">:</span> <span style="color: #ae81ff">100px</span><span style="color: #f8f8f2">;</span>
-		<span style="color: #f8f8f2">font-size</span><span style="color: #f92672">:</span> <span style="color: #ae81ff">100px</span><span style="color: #f8f8f2">;</span>
-		<span style="color: #f8f8f2">color</span><span style="color: #f92672">:</span> <span style="color: #ae81ff">#148BA5</span><span style="color: #f8f8f2">;</span>
-	<span style="color: #f8f8f2">}</span>
-
-	<span style="color: #a6e22e">.error</span><span style="color: #f8f8f2">{</span>
-		<span style="color: #f8f8f2">color</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">red;</span>
-	<span style="color: #f8f8f2">}</span>
-<span style="color: #f8f8f2">&lt;/</span><span style="color: #f92672">style</span><span style="color: #f8f8f2">&gt;</span>
-</pre></div>
-</p>
+	.<span style="color:#a6e22e">error</span>{
+		<span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">red</span>;
+	}
+&lt;/<span style="color:#f92672">style</span>&gt;</code></pre></div></p>
 
 <p>This script will take all the content in the current directory, iterate directories recursively and create a file named &ldquo;data1.zip&rdquo;. There you have it.</p>
 
@@ -210,42 +206,38 @@
 
 <p>It&rsquo;s is important to make sure all files are included, you don&rsquo;t want to trust in your backups just to find later that they aren&rsquo;t 100% correct. Let&rsquo;s check it. How could we do that? We&rsquo;re going to use our beloved terminal for this task. We&rsquo;ll compare the number of files in both zip.file and the directory we zipped.
 Look at this:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">$zipinfo</span> /var/www/vhosts/jglab.me/httpdocs/data1.zip <span style="color: #f8f8f2">|</span> grep files
-<span style="color: #ae81ff">10132</span> files, <span style="color: #ae81ff">129117030</span> bytes uncompressed, <span style="color: #ae81ff">50698507</span> bytes compressed:  60.7%
-<span style="color: #f8f8f2">$find</span> /var/www/vhosts/jglab.me/httpdocs/ -type f <span style="color: #f8f8f2">|</span> wc -l
-10134
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$zipinfo /var/www/vhosts/jglab.me/httpdocs/data1.zip | grep files
+<span style="color:#ae81ff">10132</span> files, <span style="color:#ae81ff">129117030</span> bytes uncompressed, <span style="color:#ae81ff">50698507</span> bytes compressed:  <span style="color:#ae81ff">60</span>.7%
+$find /var/www/vhosts/jglab.me/httpdocs/ -type f | wc -l
+<span style="color:#ae81ff">10134</span></code></pre></div></p>
 
 <p>Our zip contains 10132 files, and find command says there are 10124 in our directory, which makes sense: there were 10132 files before we started, then we added the script zip.php (which doesn&rsquo;t zip itself) and it output data1.zip file, adding up to 10134 files.</p>
 
 <h2 id="unzipping-files">Unzipping files</h2>
 
 <p>Sometimes we also need to unzip files with FTP access. The next script will take care of that:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">&lt;?php</span>
-<span style="color: #f8f8f2">$file</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&#39;data.zip&#39;</span><span style="color: #f8f8f2">;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;data.zip&#39;</span>;
 
-<span style="color: #f8f8f2">$path</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">pathinfo(realpath($file),</span> <span style="color: #a6e22e">PATHINFO_DIRNAME</span><span style="color: #f8f8f2">);</span>
+$path <span style="color:#f92672">=</span> <span style="color:#a6e22e">pathinfo</span>(<span style="color:#a6e22e">realpath</span>($file), <span style="color:#a6e22e">PATHINFO_DIRNAME</span>);
 
-<span style="color: #75715e">//$path .= &#39;/subdir&#39;;</span>
+<span style="color:#75715e">//$path .= &#39;/subdir&#39;;
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">file_exists</span>($path)){
+	<span style="color:#a6e22e">mkdir</span>($path, <span style="color:#ae81ff">0755</span>, <span style="color:#66d9ef">true</span>);
+}
 
-<span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(</span><span style="color: #f92672">!</span><span style="color: #f8f8f2">file_exists($path)){</span>
-	<span style="color: #f8f8f2">mkdir($path,</span> <span style="color: #ae81ff">0755</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">);</span>
-<span style="color: #f8f8f2">}</span>
-
-<span style="color: #f8f8f2">$zip</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #a6e22e">ZipArchive</span><span style="color: #f8f8f2">;</span>
-<span style="color: #f8f8f2">$res</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">$zip</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">open</span><span style="color: #f8f8f2">($file);</span>
-<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">($res</span> <span style="color: #f92672">===</span> <span style="color: #66d9ef">TRUE</span><span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">{</span>
-  <span style="color: #75715e">// extract it to the path we determined above</span>
-  <span style="color: #f8f8f2">$zip</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">extractTo</span><span style="color: #f8f8f2">($path);</span>
-  <span style="color: #f8f8f2">$zip</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">close</span><span style="color: #f8f8f2">();</span>
-  <span style="color: #66d9ef">echo</span> <span style="color: #e6db74">&quot;$file extracted to $path&quot;</span><span style="color: #f8f8f2">;</span>
-<span style="color: #f8f8f2">}</span> <span style="color: #66d9ef">else</span> <span style="color: #f8f8f2">{</span>
-  <span style="color: #66d9ef">echo</span> <span style="color: #e6db74">&quot;Couldn&#39;t open $file&quot;</span><span style="color: #f8f8f2">;</span>
-<span style="color: #f8f8f2">}</span>
-<span style="color: #75715e">?&gt;</span>
-</pre></div>
-</p>
+$zip <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ZipArchive</span>;
+$res <span style="color:#f92672">=</span> $zip<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">open</span>($file);
+<span style="color:#66d9ef">if</span> ($res <span style="color:#f92672">===</span> <span style="color:#66d9ef">TRUE</span>) {
+  <span style="color:#75715e">// extract it to the path we determined above
+</span><span style="color:#75715e"></span>  $zip<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">extractTo</span>($path);
+  $zip<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">close</span>();
+  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">$file</span><span style="color:#e6db74"> extracted to </span><span style="color:#e6db74">$path</span><span style="color:#e6db74">&#34;</span>;
+} <span style="color:#66d9ef">else</span> {
+  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Couldn&#39;t open </span><span style="color:#e6db74">$file</span><span style="color:#e6db74">&#34;</span>;
+}
+<span style="color:#75715e">?&gt;</span></code></pre></div></p>
 
 <p>The script takes the file &ldquo;data.zip&rdquo; in the current dir and extract its contents to the current dir. You can specify a subdir uncommenting the line $path .= &lsquo;/subdir&rsquo;;
 You should delete these scripts as soon as you use them, they could break your website if someone discovers them.</p>
@@ -341,7 +333,7 @@ s.setAttribute('data-timestamp', +new Date());
       <h4 rel='author'>Jeferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p>Looking for a challenge :) | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a>, and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
+      <p>Amadeus Consultant located in Nice | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a> and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
       <div class='authorsocial'>
         
           <a href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fa fa-linkedin'></i></a>
@@ -394,12 +386,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
-                    <img alt='Authenticating users with cURL' width='72' height='72' src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
+                  <a href='/articles/web-development-environment/' target='_blank'>
+                    <img alt='Web development environment' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Authenticating users with cURL</a>
+                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
                 </div>
               </div>
             </li>
@@ -409,12 +401,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
-                    <img alt='Fixing a corrupted partition on a virtual machine' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
+                  <a href='/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
+                    <img alt='Installing ubuntu 16.04 on odroid xu3 lite' width='72' height='72' src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
+                  <a href='/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Installing ubuntu 16.04 on odroid xu3 lite</a>
                 </div>
               </div>
             </li>
@@ -424,12 +416,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
-                    <img alt='Backing up all databases using mysqldump' width='72' height='72' src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
+                  <a href='/articles/using-piwik-api-locally-with-pw/' target='_blank'>
+                    <img alt='Using piwik&#39;s API locally with ProcessWire' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Backing up all databases using mysqldump</a>
+                  <a href='/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Using piwik&#39;s API locally with ProcessWire</a>
                 </div>
               </div>
             </li>

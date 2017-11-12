@@ -25,8 +25,6 @@ git clone https://github.com/EpicGames/UnrealEngine.git
 cd UnrealEngine/
 ./Setup.sh
 ./GenerateProjectFiles.sh
-
-
 " />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/" />
@@ -54,8 +52,6 @@ git clone https://github.com/EpicGames/UnrealEngine.git
 cd UnrealEngine/
 ./Setup.sh
 ./GenerateProjectFiles.sh
-
-
 ">
     <meta name="author" content="Jeferson Arboleda">
     
@@ -77,8 +73,6 @@ git clone https://github.com/EpicGames/UnrealEngine.git
 cd UnrealEngine/
 ./Setup.sh
 ./GenerateProjectFiles.sh
-
-
 "/>
 	<meta name="twitter:site" content="@j_a_g_x"/>
 	
@@ -195,31 +189,25 @@ cd UnrealEngine/
 <p>Primero, hay que registrarse en gihhub y luego asociar la cuenta de github con la de epic games:
 <a href="https://www.unrealengine.com/ue4-on-github">https://www.unrealengine.com/ue4-on-github</a>
 Entonces deberías recibir un email confirmando que te has unido a la organización Epic Games. Una vez lo recibas, podrás clonar el código fuente del Unreal Engine.
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>git clone https://github.com/EpicGames/UnrealEngine.git
-<span style="color: #f8f8f2">cd</span> UnrealEngine/
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://github.com/EpicGames/UnrealEngine.git
+cd UnrealEngine/
 ./Setup.sh
-./GenerateProjectFiles.sh
-</pre></div>
-
+./GenerateProjectFiles.sh</code></pre></div>
 </p>
 
 <h2 id="instalando-clang">Instalando clang</h2>
 
 <p>En mi caso (Fedora 25), este último comando falló. Para arreglarlo tuve que instalar clang:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo dnf install clang
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo dnf install clang
 clang --version
-clang version 3.9.1 <span style="color: #f92672">(</span>tags/RELEASE_391/final<span style="color: #f92672">)</span>
+clang version <span style="color:#ae81ff">3</span>.9.1 <span style="color:#f92672">(</span>tags/RELEASE_391/final<span style="color:#f92672">)</span>
 Target: x86_64-unknown-linux-gnu
 Thread model: posix
 InstalledDir: /usr/bin
 ./GenerateProjectFiles.sh
-make
-</pre></div>
-
+make</code></pre></div>
 Después de esto, deberías poder ejecutar el editor de Unreal Engine:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>$ ./UE4Editor <span style="color: #e6db74">&quot;/home/user/Documents/Unreal\ Projects/MyProject/MyProject.uproject&quot;</span>
-</pre></div>
-</p></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ ./UE4Editor <span style="color:#e6db74">&#34;/home/user/Documents/Unreal\ Projects/MyProject/MyProject.uproject&#34;</span></code></pre></div></p></p>
       
     </div>
     <div class="clearfix"></div>
@@ -251,7 +239,7 @@ Después de esto, deberías poder ejecutar el editor de Unreal Engine:
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/&amp;title=Instalando%20unreal%20engine%20en%20fedora%2025&amp;summary=%3ch2%20id=%22enlazando-github-con-epicgames%22%3eEnlazando%20GitHub%20con%20EpicGames%3c/h2%3e%0a%0a%3cp%3ePrimero,%20hay%20que%20registrarse%20en%20gihhub%20y%20luego%20asociar%20la%20cuenta%20de%20github%20con%20la%20de%20epic%20games:%0a%3ca%20href=%22https://www.unrealengine.com/ue4-on-github%22%3ehttps://www.unrealengine.com/ue4-on-github%3c/a%3e%0aEntonces%20deber%c3%adas%20recibir%20un%20email%20confirmando%20que%20te%20has%20unido%20a%20la%20organizaci%c3%b3n%20Epic%20Games.%20Una%20vez%20lo%20recibas,%20podr%c3%a1s%20clonar%20el%20c%c3%b3digo%20fuente%20del%20Unreal%20Engine.%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3egit%20clone%20https://github.com/EpicGames/UnrealEngine.git%0a%3cspan%20style=%22color:%20#f8f8f2%22%3ecd%3c/span%3e%20UnrealEngine/%0a./Setup.sh%0a./GenerateProjectFiles.sh%0a%3c/pre%3e%3c/div%3e%0a%0a%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/&amp;title=Instalando%20unreal%20engine%20en%20fedora%2025&amp;summary=%3ch2%20id=%22enlazando-github-con-epicgames%22%3eEnlazando%20GitHub%20con%20EpicGames%3c/h2%3e%0a%0a%3cp%3ePrimero,%20hay%20que%20registrarse%20en%20gihhub%20y%20luego%20asociar%20la%20cuenta%20de%20github%20con%20la%20de%20epic%20games:%0a%3ca%20href=%22https://www.unrealengine.com/ue4-on-github%22%3ehttps://www.unrealengine.com/ue4-on-github%3c/a%3e%0aEntonces%20deber%c3%adas%20recibir%20un%20email%20confirmando%20que%20te%20has%20unido%20a%20la%20organizaci%c3%b3n%20Epic%20Games.%20Una%20vez%20lo%20recibas,%20podr%c3%a1s%20clonar%20el%20c%c3%b3digo%20fuente%20del%20Unreal%20Engine.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3egit%20clone%20https://github.com/EpicGames/UnrealEngine.git%0acd%20UnrealEngine/%0a./Setup.sh%0a./GenerateProjectFiles.sh%3c/code%3e%3c/pre%3e%3c/div%3e%0a%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fa fa-twitter" href="http://twitter.com/share?text=Instalando%20unreal%20engine%20en%20fedora%2025&amp;url=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -263,7 +251,7 @@ Después de esto, deberías poder ejecutar el editor de Unreal Engine:
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/&amp;media=https://www.jarboleda.meunreal_engine.min.jpg&amp;description=%3ch2%20id=%22enlazando-github-con-epicgames%22%3eEnlazando%20GitHub%20con%20EpicGames%3c/h2%3e%0a%0a%3cp%3ePrimero,%20hay%20que%20registrarse%20en%20gihhub%20y%20luego%20asociar%20la%20cuenta%20de%20github%20con%20la%20de%20epic%20games:%0a%3ca%20href=%22https://www.unrealengine.com/ue4-on-github%22%3ehttps://www.unrealengine.com/ue4-on-github%3c/a%3e%0aEntonces%20deber%c3%adas%20recibir%20un%20email%20confirmando%20que%20te%20has%20unido%20a%20la%20organizaci%c3%b3n%20Epic%20Games.%20Una%20vez%20lo%20recibas,%20podr%c3%a1s%20clonar%20el%20c%c3%b3digo%20fuente%20del%20Unreal%20Engine.%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3egit%20clone%20https://github.com/EpicGames/UnrealEngine.git%0a%3cspan%20style=%22color:%20#f8f8f2%22%3ecd%3c/span%3e%20UnrealEngine/%0a./Setup.sh%0a./GenerateProjectFiles.sh%0a%3c/pre%3e%3c/div%3e%0a%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/&amp;media=https://www.jarboleda.meunreal_engine.min.jpg&amp;description=%3ch2%20id=%22enlazando-github-con-epicgames%22%3eEnlazando%20GitHub%20con%20EpicGames%3c/h2%3e%0a%0a%3cp%3ePrimero,%20hay%20que%20registrarse%20en%20gihhub%20y%20luego%20asociar%20la%20cuenta%20de%20github%20con%20la%20de%20epic%20games:%0a%3ca%20href=%22https://www.unrealengine.com/ue4-on-github%22%3ehttps://www.unrealengine.com/ue4-on-github%3c/a%3e%0aEntonces%20deber%c3%adas%20recibir%20un%20email%20confirmando%20que%20te%20has%20unido%20a%20la%20organizaci%c3%b3n%20Epic%20Games.%20Una%20vez%20lo%20recibas,%20podr%c3%a1s%20clonar%20el%20c%c3%b3digo%20fuente%20del%20Unreal%20Engine.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3egit%20clone%20https://github.com/EpicGames/UnrealEngine.git%0acd%20UnrealEngine/%0a./Setup.sh%0a./GenerateProjectFiles.sh%3c/code%3e%3c/pre%3e%3c/div%3e%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -359,12 +347,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/web-development-environment/' target='_blank'>
-                    <img alt='Entorno para desarrollo web' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
+                  <a href='/es/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
+                    <img alt='Haciendo un backup de todas las BD usando mysqldump' width='72' height='72' src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/web-development-environment/' class="mostVisitedLink">Entorno para desarrollo web</a>
+                  <a href='/es/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Haciendo un backup de todas las BD usando mysqldump</a>
                 </div>
               </div>
             </li>
@@ -374,12 +362,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/centos-web-panel-on-vps/' target='_blank'>
-                    <img alt='Centos web panel con php7 y mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
+                  <a href='/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
+                    <img alt='Instalando ubuntu 16.04 en odroid xu3 lite' width='72' height='72' src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel con php7 y mysql5.6</a>
+                  <a href='/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Instalando ubuntu 16.04 en odroid xu3 lite</a>
                 </div>
               </div>
             </li>
@@ -389,12 +377,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img alt='Instalando unreal engine en fedora 25' width='72' height='72' src="/articles/img/thumbs/unreal_engine.min.jpg" />
+                  <a href='/es/articles/getting-an-objects-methods/' target='_blank'>
+                    <img alt='Obteniendo los métodos (reflejados) de un objeto' width='72' height='72' src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">Instalando unreal engine en fedora 25</a>
+                  <a href='/es/articles/getting-an-objects-methods/' class="mostVisitedLink">Obteniendo los métodos (reflejados) de un objeto</a>
                 </div>
               </div>
             </li>

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.24.1" />
+	<meta name="generator" content="Hugo 0.30.2" />
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     <meta name=viewport content="width=device-width, initial-scale=1">
     <title>J. Arboleda - J. Arboleda</title>
@@ -171,6 +171,7 @@ From the list above I took the image I was looking for, which is the complete ve
 </ul>
 
 <p></p>
+</p>
       
     </div>
     <div class="clearfix"></div>
@@ -240,12 +241,11 @@ From the list above I took the image I was looking for, which is the complete ve
       <p><h2 id="the-problem">The problem</h2>
 
 <p>When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&rsquo;t as easy as using fopen:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">&lt;?php</span>
-<span style="color: #f8f8f2">$handle</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">fopen($filename,</span> <span style="color: #e6db74">&quot;r&quot;</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">or</span> <span style="color: #66d9ef">die</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;could not open .&#39;</span> <span style="color: #f8f8f2">$filename);</span>
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>($filename, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">die</span>(<span style="color:#e6db74">&#39;could not open .&#39;</span> $filename);</code></pre></div></p>
 
 <p></p>
+</p>
       
     </div>
     <div class="clearfix"></div>
@@ -261,7 +261,7 @@ From the list above I took the image I was looking for, which is the complete ve
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;title=How%20to%20handle%20remote%20resources%20with%20curl&amp;summary=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%0a%3cp%3eWhen%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3e%3cspan%20style=%22color:%20#75715e%22%3e&amp;lt;?php%3c/span%3e%0a%3cspan%20style=%22color:%20#f8f8f2%22%3e$handle%3c/span%3e%20%3cspan%20style=%22color:%20#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:%20#f8f8f2%22%3efopen%28$filename,%3c/span%3e%20%3cspan%20style=%22color:%20#e6db74%22%3e&amp;quot;r&amp;quot;%3c/span%3e%3cspan%20style=%22color:%20#f8f8f2%22%3e%29%3c/span%3e%20%3cspan%20style=%22color:%20#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:%20#66d9ef%22%3edie%3c/span%3e%3cspan%20style=%22color:%20#f8f8f2%22%3e%28%3c/span%3e%3cspan%20style=%22color:%20#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20%3cspan%20style=%22color:%20#f8f8f2%22%3e$filename%29;%3c/span%3e%0a%3c/pre%3e%3c/div%3e%0a%3c/p%3e%0a%0a%3cp%3e%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;title=How%20to%20handle%20remote%20resources%20with%20curl&amp;summary=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%0a%3cp%3eWhen%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#75715e%22%3e&amp;lt;?php%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%0a%3cp%3e%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fa fa-twitter" href="http://twitter.com/share?text=How%20to%20handle%20remote%20resources%20with%20curl&amp;url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -273,7 +273,7 @@ From the list above I took the image I was looking for, which is the complete ve
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;media=https://www.jarboleda.mehow-to-handle-remote-resources-with-curl.png&amp;description=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%0a%3cp%3eWhen%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%0a%3cdiv%20class=%22highlight%22%20style=%22background:%20#272822%22%3e%3cpre%20style=%22line-height:%20125%25%22%3e%3cspan%3e%3c/span%3e%3cspan%20style=%22color:%20#75715e%22%3e&amp;lt;?php%3c/span%3e%0a%3cspan%20style=%22color:%20#f8f8f2%22%3e$handle%3c/span%3e%20%3cspan%20style=%22color:%20#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:%20#f8f8f2%22%3efopen%28$filename,%3c/span%3e%20%3cspan%20style=%22color:%20#e6db74%22%3e&amp;quot;r&amp;quot;%3c/span%3e%3cspan%20style=%22color:%20#f8f8f2%22%3e%29%3c/span%3e%20%3cspan%20style=%22color:%20#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:%20#66d9ef%22%3edie%3c/span%3e%3cspan%20style=%22color:%20#f8f8f2%22%3e%28%3c/span%3e%3cspan%20style=%22color:%20#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20%3cspan%20style=%22color:%20#f8f8f2%22%3e$filename%29;%3c/span%3e%0a%3c/pre%3e%3c/div%3e%0a%3c/p%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;media=https://www.jarboleda.mehow-to-handle-remote-resources-with-curl.png&amp;description=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%0a%3cp%3eWhen%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#75715e%22%3e&amp;lt;?php%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -316,6 +316,7 @@ From the list above I took the image I was looking for, which is the complete ve
 <p>Sometimes we don&rsquo;t have access to the platform docs on which we are working, it&rsquo;s incomplete or we just don&rsquo;t feel like looking for it. In those situations, we usually need more than the typical object&rsquo;s <code>var_dump</code>, which only shows us the object properties but not its methods, which usually gives us that function we are working on without having to dive into the object&rsquo;s properties. Here you&rsquo;ll see the function I use for this task. This function uses the ReflectionMethod class, which gives us info about a method. It needs the classname and method&rsquo;s name as params for its constructor.</p>
 
 <p></p>
+</p>
       
     </div>
     <div class="clearfix"></div>
@@ -381,11 +382,12 @@ From the list above I took the image I was looking for, which is the complete ve
     
     <div class="article_excerpt">
       
-      <p>To track jglab.me visits I use Piwik. Why? The main reason is because it allows to keep info private, moreover, Piwik offers a powerful API which can be queried locally, and that is important for performance as we can obtain stats about the website without having to query external server. To make local queries I use the following class:</p>
+      <p><p>To track jglab.me visits I use Piwik. Why? The main reason is because it allows to keep info private, moreover, Piwik offers a powerful API which can be queried locally, and that is important for performance as we can obtain stats about the website without having to query external server. To make local queries I use the following class:</p>
 
 <h2 id="show-me-the-code">Show me the code</h2>
 
 <p></p>
+</p>
       
     </div>
     <div class="clearfix"></div>
@@ -515,7 +517,7 @@ From the list above I took the image I was looking for, which is the complete ve
     
     
     
-     
+    
         
         
     
@@ -527,7 +529,7 @@ From the list above I took the image I was looking for, which is the complete ve
     
     
     
-     
+    
         
         
     
@@ -539,7 +541,7 @@ From the list above I took the image I was looking for, which is the complete ve
     
     
     
-     
+    
         
         
     
@@ -551,7 +553,7 @@ From the list above I took the image I was looking for, which is the complete ve
     
     
     
-     
+    
         
         
     
@@ -583,7 +585,7 @@ From the list above I took the image I was looking for, which is the complete ve
       <h4 rel='author'>Jeferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p>Looking for a challenge :) | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a>, and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
+      <p>Amadeus Consultant located in Nice | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a> and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
       <div class='authorsocial'>
         
           <a href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fa fa-linkedin'></i></a>
@@ -682,12 +684,12 @@ From the list above I took the image I was looking for, which is the complete ve
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
-                    <img alt='Fixing a corrupted partition on a virtual machine' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
+                  <a href='/articles/deploy-hugo-site-to-github-pages/' target='_blank'>
+                    <img alt='Deploying a hugo site to github pages' width='72' height='72' src="/articles/img/thumbs/deploy-hugo-site-to-github-pages.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
+                  <a href='/articles/deploy-hugo-site-to-github-pages/' class="mostVisitedLink">Deploying a hugo site to github pages</a>
                 </div>
               </div>
             </li>
@@ -712,12 +714,12 @@ From the list above I took the image I was looking for, which is the complete ve
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/centos-web-panel-on-vps/' target='_blank'>
-                    <img alt='Centos web panel with php7 and mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
+                  <a href='/articles/web-development-environment/' target='_blank'>
+                    <img alt='Web development environment' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel with php7 and mysql5.6</a>
+                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
                 </div>
               </div>
             </li>

@@ -173,10 +173,10 @@ In this post I&rsquo;ll explain how to install magento2 in CWP, using php7 and m
 <p>In this post I&rsquo;ll explain how to install magento2 in CWP, using php7 and mysql 5.6. Firstly, we need to compile php with the correct extensions magento2 needs. If you use this configure command with php7, magento2 will work like a charm.
 </p>
 
-<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>./configure
---prefix<span style="color: #f92672">=</span>/opt/alt/php7/usr
---with-config-file-path<span style="color: #f92672">=</span>/opt/alt/php7/usr/php
---with-config-file-scan-dir<span style="color: #f92672">=</span>/opt/alt/php7/usr/php/php.d
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./configure
+--prefix<span style="color:#f92672">=</span>/opt/alt/php7/usr
+--with-config-file-path<span style="color:#f92672">=</span>/opt/alt/php7/usr/php
+--with-config-file-scan-dir<span style="color:#f92672">=</span>/opt/alt/php7/usr/php/php.d
 --enable-fpm
 --enable-mbstring
 --enable-zip
@@ -195,25 +195,23 @@ In this post I&rsquo;ll explain how to install magento2 in CWP, using php7 and m
 --with-gmp
 --with-pspell
 --with-gd
---with-jpeg-dir<span style="color: #f92672">=</span>/usr
---with-png-dir<span style="color: #f92672">=</span>/usr
---with-zlib-dir<span style="color: #f92672">=</span>/usr
---with-xpm-dir<span style="color: #f92672">=</span>/usr
---with-freetype-dir<span style="color: #f92672">=</span>/usr
+--with-jpeg-dir<span style="color:#f92672">=</span>/usr
+--with-png-dir<span style="color:#f92672">=</span>/usr
+--with-zlib-dir<span style="color:#f92672">=</span>/usr
+--with-xpm-dir<span style="color:#f92672">=</span>/usr
+--with-freetype-dir<span style="color:#f92672">=</span>/usr
 --enable-gd-native-ttf
 --enable-gd-jis-conv
 --with-openssl
---with-pdo-mysql<span style="color: #f92672">=</span>/usr
---with-gettext<span style="color: #f92672">=</span>/usr
---with-zlib<span style="color: #f92672">=</span>/usr
---with-bz2<span style="color: #f92672">=</span>/usr
---with-recode<span style="color: #f92672">=</span>/usr
+--with-pdo-mysql<span style="color:#f92672">=</span>/usr
+--with-gettext<span style="color:#f92672">=</span>/usr
+--with-zlib<span style="color:#f92672">=</span>/usr
+--with-bz2<span style="color:#f92672">=</span>/usr
+--with-recode<span style="color:#f92672">=</span>/usr
 --with-mysqli
---with-mysql-sock<span style="color: #f92672">=</span>/var/lib/mysql/mysql.sock
+--with-mysql-sock<span style="color:#f92672">=</span>/var/lib/mysql/mysql.sock
 --enable-intl
---with-xsl
-</pre></div>
-
+--with-xsl</code></pre></div>
 Of course you can change paths, but you need at least these extensions.</p>
 
 <h2 id="instalando-magento2">Instalando magento2</h2>
@@ -223,19 +221,15 @@ Of course you can change paths, but you need at least these extensions.</p>
 <p><a href="https://www.magentocommerce.com/download">https://www.magentocommerce.com/download</a></p>
 
 <p>After you install magento2, it will complain about permissions. Magento2 ask permissions on directories to be set as 0700, but this won&rsquo;t work with many hosting plans (those using plesk, cPanel, etc). So we have to change all folder and files permissions with this command:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>find /path/to/magento -type f -exec chmod <span style="color: #ae81ff">644</span> <span style="color: #f92672">{}</span> <span style="color: #ae81ff">\;</span>
-find path/to/magento -type d -exec chmod <span style="color: #ae81ff">755</span> <span style="color: #f92672">{}</span> <span style="color: #ae81ff">\;</span>
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">find /path/to/magento -type f -exec chmod <span style="color:#ae81ff">644</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+find path/to/magento -type d -exec chmod <span style="color:#ae81ff">755</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></code></pre></div></p>
 
 <p>Then, we&rsquo;ll tell magento2 to create files with these permissions. We can do that in the following file:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>/vendor/magento/framework/Filesystem/DriverInterface.php
-<span style="color: #f92672">(</span>WRITEABLE_DIRECTORY_MODE and WRITEABLE_FILE_MODE<span style="color: #f92672">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">/vendor/magento/framework/Filesystem/DriverInterface.php
+<span style="color:#f92672">(</span>WRITEABLE_DIRECTORY_MODE and WRITEABLE_FILE_MODE<span style="color:#f92672">)</span>
 
 /lib/internal/Cm/Cache/Backend/File.php
-<span style="color: #f92672">(</span>directory_mode and file_mode<span style="color: #f92672">)</span>
-</pre></div>
-</p>
+<span style="color:#f92672">(</span>directory_mode and file_mode<span style="color:#f92672">)</span></code></pre></div></p>
 
 <p>And there you have it, a magento2 install running in a 3€ VPS. For me, it loads in about 3-4 seconds after caché is working, which is good for just 3€/month.</p></p>
       
@@ -331,7 +325,7 @@ s.setAttribute('data-timestamp', +new Date());
       <h4 rel='author'>Jeferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p>Looking for a challenge :) | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a>, and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
+      <p>Amadeus Consultant located in Nice | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a> and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
       <div class='authorsocial'>
         
           <a href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fa fa-linkedin'></i></a>
@@ -382,12 +376,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
-                    <img alt='Backing up all databases using mysqldump' width='72' height='72' src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
+                  <a href='/articles/arduino-uno-lego-case/' target='_blank'>
+                    <img alt='Arduino UNO R3 lego case' width='72' height='72' src="/articles/img/thumbs/arduino-uno-lego-case.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Backing up all databases using mysqldump</a>
+                  <a href='/articles/arduino-uno-lego-case/' class="mostVisitedLink">Arduino UNO R3 lego case</a>
                 </div>
               </div>
             </li>
@@ -397,12 +391,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/using-piwik-api-locally-with-pw/' target='_blank'>
-                    <img alt='Using piwik&#39;s API locally with ProcessWire' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
+                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img alt='Fixing a corrupted partition on a virtual machine' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Using piwik&#39;s API locally with ProcessWire</a>
+                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
                 </div>
               </div>
             </li>
@@ -412,12 +406,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/centos-web-panel-on-vps/' target='_blank'>
-                    <img alt='Centos web panel with php7 and mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' target='_blank'>
+                    <img alt='Getting 1.5s page load time on a basic vps' width='72' height='72' src="/articles/img/thumbs/getting-1.5s-page-load-time-on-a-basic-vps.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel with php7 and mysql5.6</a>
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' class="mostVisitedLink">Getting 1.5s page load time on a basic vps</a>
                 </div>
               </div>
             </li>

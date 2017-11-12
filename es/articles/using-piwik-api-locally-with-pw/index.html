@@ -48,7 +48,7 @@ Show me the code
     <meta itemprop="image" content="using-piwik-api-locally-with-pw.jpg">
     
     <meta itemprop="keywords" content="notpinned,pinned,,serie1,bash,centos6,curl,cwp,fedora25,fopen,httpd,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,php,php7,piwik,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm," />
-    <meta itemprop="wordCount" content="269">
+    <meta itemprop="wordCount" content="268">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
 	<meta name="twitter:image:src" content="https://www.jarboleda.me/articles/img/using-piwik-api-locally-with-pw.jpg"/>
@@ -175,84 +175,78 @@ Show me the code
 
 <p></p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">&lt;?php</span>
-<span style="color: #66d9ef">use</span> <span style="color: #a6e22e">Piwik\API\Request</span><span style="color: #f8f8f2">;</span>
-<span style="color: #66d9ef">use</span> <span style="color: #a6e22e">Piwik\FrontController</span><span style="color: #f8f8f2">;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Piwik\API\Request</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Piwik\FrontController</span>;
 
-<span style="color: #f8f8f2">define(</span><span style="color: #e6db74">&#39;PIWIK_INCLUDE_PATH&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">$_SERVER[</span><span style="color: #e6db74">&#39;DOCUMENT_ROOT&#39;</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">.</span> <span style="color: #e6db74">&quot;/piwik/&quot;</span><span style="color: #f8f8f2">);</span>
-<span style="color: #f8f8f2">define(</span><span style="color: #e6db74">&#39;PIWIK_USER_PATH&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">$_SERVER[</span><span style="color: #e6db74">&#39;DOCUMENT_ROOT&#39;</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">.</span> <span style="color: #e6db74">&quot;/piwik/&quot;</span><span style="color: #f8f8f2">);</span>
-<span style="color: #f8f8f2">define(</span><span style="color: #e6db74">&#39;PIWIK_ENABLE_DISPATCH&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">);</span>
-<span style="color: #f8f8f2">define(</span><span style="color: #e6db74">&#39;PIWIK_ENABLE_ERROR_HANDLER&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">);</span>
-<span style="color: #f8f8f2">define(</span><span style="color: #e6db74">&#39;PIWIK_ENABLE_SESSION_START&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">false</span><span style="color: #f8f8f2">);</span>
+<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;PIWIK_INCLUDE_PATH&#39;</span>, $_SERVER[<span style="color:#e6db74">&#39;DOCUMENT_ROOT&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;/piwik/&#34;</span>);
+<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;PIWIK_USER_PATH&#39;</span>, $_SERVER[<span style="color:#e6db74">&#39;DOCUMENT_ROOT&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;/piwik/&#34;</span>);
+<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;PIWIK_ENABLE_DISPATCH&#39;</span>, <span style="color:#66d9ef">false</span>);
+<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;PIWIK_ENABLE_ERROR_HANDLER&#39;</span>, <span style="color:#66d9ef">true</span>);
+<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;PIWIK_ENABLE_SESSION_START&#39;</span>, <span style="color:#66d9ef">false</span>);
 
-<span style="color: #75715e">// if you prefer not to include &#39;index.php&#39;, you must also define here PIWIK_DOCUMENT_ROOT</span>
-<span style="color: #75715e">// and include &quot;libs/upgradephp/upgrade.php&quot; and &quot;core/Loader.php&quot;</span>
-<span style="color: #66d9ef">require_once</span> <span style="color: #a6e22e">PIWIK_INCLUDE_PATH</span> <span style="color: #f92672">.</span> <span style="color: #e6db74">&quot;/index.php&quot;</span><span style="color: #f8f8f2">;</span>
-<span style="color: #66d9ef">require_once</span> <span style="color: #a6e22e">PIWIK_INCLUDE_PATH</span> <span style="color: #f92672">.</span> <span style="color: #e6db74">&quot;/core/API/Request.php&quot;</span><span style="color: #f8f8f2">;</span>
-<span style="color: #f8f8f2">$environment</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #a6e22e">\Piwik\Application\Environment</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">null</span><span style="color: #f8f8f2">);</span>
-<span style="color: #f8f8f2">$environment</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">init</span><span style="color: #f8f8f2">();</span>
-<span style="color: #a6e22e">FrontController</span><span style="color: #f92672">::</span><span style="color: #a6e22e">getInstance</span><span style="color: #f8f8f2">()</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">init</span><span style="color: #f8f8f2">();</span>
-<span style="color: #66d9ef">class</span> <span style="color: #a6e22e">localPiwik</span><span style="color: #f8f8f2">{</span>
-   <span style="color: #66d9ef">private</span> <span style="color: #66d9ef">function</span> <span style="color: #a6e22e">getPageUrl</span><span style="color: #f8f8f2">($url){</span>
-     <span style="color: #75715e">// This inits the API Request with the specified parameters</span>
-    <span style="color: #f8f8f2">$request</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #a6e22e">Request</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;</span>
-<span style="color: #e6db74">                module=API</span>
-<span style="color: #e6db74">              	&amp;method=Actions.getPageUrl</span>
-<span style="color: #e6db74">              	&amp;idSite=1</span>
-<span style="color: #e6db74">              	&amp;date=today</span>
-<span style="color: #e6db74">              	&amp;pageUrl=$url</span>
-<span style="color: #e6db74">              	&amp;period=year</span>
-<span style="color: #e6db74">              	&amp;format=original</span>
-<span style="color: #e6db74">              	&amp;token_auth=your.api.key</span>
-<span style="color: #e6db74">                &quot;</span><span style="color: #f8f8f2">);</span>
-    <span style="color: #75715e">// Calls the API and fetch data back</span>
-    <span style="color: #f8f8f2">$result</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">$request</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">process</span><span style="color: #f8f8f2">();</span>
-    <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">$result;</span>
-  <span style="color: #f8f8f2">}</span>
+<span style="color:#75715e">// if you prefer not to include &#39;index.php&#39;, you must also define here PIWIK_DOCUMENT_ROOT
+</span><span style="color:#75715e">// and include &#34;libs/upgradephp/upgrade.php&#34; and &#34;core/Loader.php&#34;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">require_once</span> <span style="color:#a6e22e">PIWIK_INCLUDE_PATH</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;/index.php&#34;</span>;
+<span style="color:#66d9ef">require_once</span> <span style="color:#a6e22e">PIWIK_INCLUDE_PATH</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;/core/API/Request.php&#34;</span>;
+$environment <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\Piwik\Application\Environment</span>(<span style="color:#66d9ef">null</span>);
+$environment<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">init</span>();
+<span style="color:#a6e22e">FrontController</span><span style="color:#f92672">::</span><span style="color:#a6e22e">getInstance</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">init</span>();
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">localPiwik</span>{
+   <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">function</span> <span style="color:#f92672"></span><span style="color:#a6e22e">getPageUrl</span>($url){
+     <span style="color:#75715e">// This inits the API Request with the specified parameters
+</span><span style="color:#75715e"></span>    $request <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Request</span>(<span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">                module=API
+</span><span style="color:#e6db74">              	&amp;method=Actions.getPageUrl
+</span><span style="color:#e6db74">              	&amp;idSite=1
+</span><span style="color:#e6db74">              	&amp;date=today
+</span><span style="color:#e6db74">              	&amp;pageUrl=</span><span style="color:#e6db74">$url</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">              	&amp;period=year
+</span><span style="color:#e6db74">              	&amp;format=original
+</span><span style="color:#e6db74">              	&amp;token_auth=your.api.key
+</span><span style="color:#e6db74">                &#34;</span>);
+    <span style="color:#75715e">// Calls the API and fetch data back
+</span><span style="color:#75715e"></span>    $result <span style="color:#f92672">=</span> $request<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">process</span>();
+    <span style="color:#66d9ef">return</span> $result;
+  }
 
-  <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">function</span> <span style="color: #a6e22e">getUniqueVisits</span><span style="color: #f8f8f2">($url){</span>
-    <span style="color: #f8f8f2">$result</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">$this</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">getPageUrl</span><span style="color: #f8f8f2">($url);</span>
-    <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">($result</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">getRowFromLabel</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;/index&#39;</span><span style="color: #f8f8f2">))</span>
-     <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">$result</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">getRowFromLabel</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;/index&#39;</span><span style="color: #f8f8f2">)</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">getColumn</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;sum_daily_nb_uniq_visitors&#39;</span><span style="color: #f8f8f2">);</span>
-    <span style="color: #66d9ef">else</span> <span style="color: #66d9ef">return</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
-  <span style="color: #f8f8f2">}</span>
-<span style="color: #f8f8f2">}</span>
-<span style="color: #75715e">?&gt;</span>
-</pre></div>
-
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#f92672"></span><span style="color:#a6e22e">getUniqueVisits</span>($url){
+    $result <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getPageUrl</span>($url);
+    <span style="color:#66d9ef">if</span>($result<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getRowFromLabel</span>(<span style="color:#e6db74">&#39;/index&#39;</span>))
+     <span style="color:#66d9ef">return</span> $result<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getRowFromLabel</span>(<span style="color:#e6db74">&#39;/index&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getColumn</span>(<span style="color:#e6db74">&#39;sum_daily_nb_uniq_visitors&#39;</span>);
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+  }
+}
+<span style="color:#75715e">?&gt;</span></code></pre></div>
 
 <p>Con esa clase definida, podemos utilizarla de la siguiente manera:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">&lt;?php</span>
-<span style="color: #66d9ef">include_once</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;localPiwik.php&#39;</span><span style="color: #f8f8f2">);</span>
-<span style="color: #f8f8f2">$piwik</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #a6e22e">localPiwik</span><span style="color: #f8f8f2">();</span>
-<span style="color: #f8f8f2">$visits</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">$piwik</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">getUniqueVisits</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;http://example.org&#39;</span><span style="color: #f8f8f2">);</span>
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">include_once</span>(<span style="color:#e6db74">&#39;localPiwik.php&#39;</span>);
+$piwik <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">localPiwik</span>();
+$visits <span style="color:#f92672">=</span> $piwik<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getUniqueVisits</span>(<span style="color:#e6db74">&#39;http://example.org&#39;</span>);</code></pre></div></p>
 
 <h2 id="el-ejemplo">El ejemplo</h2>
 
 <p>Para acabar, dejo un ejemplo algo más completo de cómo conseguir una lista ordenada de los posts más visitados en ProcessWire
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">&lt;?php</span>
-<span style="color: #66d9ef">function</span> <span style="color: #a6e22e">top_posts</span><span style="color: #f8f8f2">($posts_PW){</span>
-    <span style="color: #66d9ef">include_once</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;localPiwik.php&#39;</span><span style="color: #f8f8f2">);</span>
-    <span style="color: #f8f8f2">$piwik</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #a6e22e">localPiwik</span><span style="color: #f8f8f2">();</span>
-    <span style="color: #f8f8f2">$posts</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">array</span><span style="color: #f8f8f2">();</span>
-    <span style="color: #66d9ef">foreach</span> <span style="color: #f8f8f2">($posts_PW</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">$post){</span>
-      <span style="color: #f8f8f2">$visits</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">$piwik</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">getUniqueVisits</span><span style="color: #f8f8f2">($post</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">httpUrl</span><span style="color: #f8f8f2">);</span>
-      <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(</span><span style="color: #f92672">!</span><span style="color: #f8f8f2">is_null($visits)){</span>
-        <span style="color: #f8f8f2">$posts[$post</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">url</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">$visits;</span>
-      <span style="color: #f8f8f2">}</span>
-      <span style="color: #66d9ef">else</span><span style="color: #f8f8f2">{</span>
-        <span style="color: #f8f8f2">$posts[$post</span><span style="color: #f92672">-&gt;</span><span style="color: #a6e22e">url</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
-      <span style="color: #f8f8f2">}</span>
-    <span style="color: #f8f8f2">}</span>
-    <span style="color: #f8f8f2">asort($posts);</span>
-    <span style="color: #f8f8f2">$posts</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">array_reverse($posts);</span>
-    <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">array_slice($posts,</span> <span style="color: #ae81ff">0</span> <span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">5</span><span style="color: #f8f8f2">);</span>
-  <span style="color: #f8f8f2">}</span>
-<span style="color: #75715e">?&gt;</span>
-</pre></div>
-</p></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">function</span> <span style="color:#f92672"></span><span style="color:#a6e22e">top_posts</span>($posts_PW){
+    <span style="color:#66d9ef">include_once</span>(<span style="color:#e6db74">&#39;localPiwik.php&#39;</span>);
+    $piwik <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">localPiwik</span>();
+    $posts <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>();
+    <span style="color:#66d9ef">foreach</span> ($posts_PW <span style="color:#66d9ef">as</span> $post){
+      $visits <span style="color:#f92672">=</span> $piwik<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getUniqueVisits</span>($post<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">httpUrl</span>);
+      <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is_null</span>($visits)){
+        $posts[$post<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">url</span>] <span style="color:#f92672">=</span> $visits;
+      }
+      <span style="color:#66d9ef">else</span>{
+        $posts[$post<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">url</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+      }
+    }
+    <span style="color:#a6e22e">asort</span>($posts);
+    $posts <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_reverse</span>($posts);
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">array_slice</span>($posts, <span style="color:#ae81ff">0</span> , <span style="color:#ae81ff">5</span>);
+  }
+<span style="color:#75715e">?&gt;</span></code></pre></div></p></p>
       
     </div>
     <div class="clearfix"></div>
@@ -388,16 +382,18 @@ s.setAttribute('data-timestamp', +new Date());
         <div class='widget-content popular-posts'>
           <ul>
             
+            
+            
              
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
-                    <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
+                  <a href='/es/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
+                    <img alt='Haciendo un backup de todas las BD usando mysqldump' width='72' height='72' src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
+                  <a href='/es/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Haciendo un backup de todas las BD usando mysqldump</a>
                 </div>
               </div>
             </li>
@@ -407,27 +403,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/getting-an-objects-methods/' target='_blank'>
-                    <img alt='Obteniendo los métodos (reflejados) de un objeto' width='72' height='72' src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
+                  <a href='/es/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
+                    <img alt='Cómo manejar recursos remotos con curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/getting-an-objects-methods/' class="mostVisitedLink">Obteniendo los métodos (reflejados) de un objeto</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/es/articles/using-piwik-api-locally-with-pw/' target='_blank'>
-                    <img alt='Utilizando la API de piwik en local con PW' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/es/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Utilizando la API de piwik en local con PW</a>
+                  <a href='/es/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">Cómo manejar recursos remotos con curl</a>
                 </div>
               </div>
             </li>

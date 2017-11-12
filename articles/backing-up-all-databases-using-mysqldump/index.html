@@ -172,47 +172,41 @@ So, I use mysqldump utiliy to backup database and an script I wrote myself to tr
 </p>
 
 <p>Backing up all databases with mysqldumpo is pretty easy, just use it in this way in bash:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>mysqldump -uadmin -p<span style="color: #e6db74">`</span>cat /etc/psa/.psa.shadow<span style="color: #e6db74">`</span> --all-databases <span style="color: #f8f8f2">|</span> zip &gt; <span style="color: #f8f8f2">$1</span>/all.sql.zip
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mysqldump -uadmin -p<span style="color:#e6db74">`</span>cat /etc/psa/.psa.shadow<span style="color:#e6db74">`</span> --all-databases | zip &gt; $1/all.sql.zip</code></pre></div></p>
 
 <p>You can change the -p parameter to use another password. I use that file as plesk stores its password there, but you can change it. The last part is also very important, you should always zip the .sql file as you can save up to 90% disk space. For example, some databases backups are 250Mb when zipped, but when you extract the .sql file you will face a ~2.5 Gb text file.
 With the following script you can backup your database and transfer it to your FTP server, storing it into /aaa.bbb.ccc.ddd/ directory, or wherever you want.
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">#!/bin/sh</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span>
+tempDir<span style="color:#f92672">=</span>$1
 
-<span style="color: #f8f8f2">tempDir</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">$1</span>
+date<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date +%y%m%d-%H%M<span style="color:#66d9ef">)</span>
+mysqldump -uadmin -p<span style="color:#e6db74">`</span>cat /etc/psa/.psa.shadow<span style="color:#e6db74">`</span> --all-databases | zip &gt; $tempDir/all.sql.zip
 
-<span style="color: #f8f8f2">date</span><span style="color: #f92672">=</span><span style="color: #66d9ef">$(</span>date +%y%m%d-%H%M<span style="color: #66d9ef">)</span>
-mysqldump -uadmin -p<span style="color: #e6db74">`</span>cat /etc/psa/.psa.shadow<span style="color: #e6db74">`</span> --all-databases <span style="color: #f8f8f2">|</span> zip &gt; <span style="color: #f8f8f2">$tempDir</span>/all.sql.zip
-
-/script/ftpConnect.sh <span style="color: #f8f8f2">$tempDir</span>/all.sql.zip /aaa.bbb.ccc.ddd/_bbdd/<span style="color: #f8f8f2">$date</span>.sql.zip
-</pre></div>
-
+/script/ftpConnect.sh $tempDir/all.sql.zip /aaa.bbb.ccc.ddd/_bbdd/$date.sql.zip</code></pre></div>
 As I said, your .sql files will be huge, so you&rsquo;ll need a way to split it into different .sql, each one containing an individual database. We&rsquo;ll use a bash script for this task too:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">#!/bin/sh</span>
-<span style="color: #f8f8f2">file</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">$1</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span>file<span style="color:#f92672">=</span>$1
 
-unzip -p <span style="color: #f8f8f2">$file</span> <span style="color: #f8f8f2">|</span> cat &gt; ALL_DATABASES.sql
+unzip -p $file | cat &gt; ALL_DATABASES.sql
 
-csplit --digits<span style="color: #f92672">=</span><span style="color: #ae81ff">3</span> --quiet --prefix<span style="color: #f92672">=</span>outfile ALL_DATABASES.sql <span style="color: #e6db74">&#39;/Current Database/&#39;</span> <span style="color: #e6db74">&#39;{*}&#39;</span>
+csplit --digits<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> --quiet --prefix<span style="color:#f92672">=</span>outfile ALL_DATABASES.sql <span style="color:#e6db74">&#39;/Current Database/&#39;</span> <span style="color:#e6db74">&#39;{*}&#39;</span>
 
-<span style="color: #f8f8f2">files</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;outfile.*&#39;</span>
-<span style="color: #f8f8f2">regex</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;Current Database: `(.*)`&#39;</span>
+files<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;outfile.*&#39;</span>
+regex<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Current Database: `(.*)`&#39;</span>
 
-<span style="color: #66d9ef">for</span> i in <span style="color: #66d9ef">$(</span>ls <span style="color: #f8f8f2">|</span> grep <span style="color: #e6db74">&#39;outfile&#39;</span><span style="color: #66d9ef">)</span>
-<span style="color: #66d9ef">do</span>
-	<span style="color: #f8f8f2">name</span><span style="color: #f92672">=</span><span style="color: #66d9ef">$(</span>head <span style="color: #f8f8f2">$i</span> <span style="color: #f8f8f2">|</span> egrep -o <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$regex</span><span style="color: #e6db74">&quot;</span> <span style="color: #f8f8f2">|</span> awk -F <span style="color: #e6db74">&#39;`&#39;</span> <span style="color: #e6db74">&#39;{print $2}&#39;</span><span style="color: #66d9ef">)</span>
-	<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$i</span><span style="color: #e6db74">: </span><span style="color: #f8f8f2">$name</span><span style="color: #e6db74">&quot;</span>
-    <span style="color: #66d9ef">if</span> <span style="color: #f92672">[</span> ! -f <span style="color: #f8f8f2">$name</span> <span style="color: #f92672">]</span><span style="color: #f8f8f2">;</span> <span style="color: #66d9ef">then</span>
-	    mv <span style="color: #f8f8f2">$i</span> <span style="color: #f8f8f2">$name</span>
-    <span style="color: #66d9ef">else</span>
-        <span style="color: #f8f8f2">number</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">$RANDOM</span>
-        <span style="color: #f8f8f2">let</span> <span style="color: #e6db74">&quot;number %= 10&quot;</span>
-        mv <span style="color: #f8f8f2">$i</span> <span style="color: #f8f8f2">$name$number</span>
-    <span style="color: #66d9ef">fi</span>
-<span style="color: #66d9ef">done</span>
-</pre></div>
-</p>
+<span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>ls | grep <span style="color:#e6db74">&#39;outfile&#39;</span><span style="color:#66d9ef">)</span>
+<span style="color:#66d9ef">do</span>
+	name<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>head $i | egrep -o <span style="color:#e6db74">&#34;</span>$regex<span style="color:#e6db74">&#34;</span> | awk -F <span style="color:#e6db74">&#39;`&#39;</span> <span style="color:#e6db74">&#39;{print $2}&#39;</span><span style="color:#66d9ef">)</span>
+	echo <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">: </span>$name<span style="color:#e6db74">&#34;</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -f $name <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+	    mv $i $name
+    <span style="color:#66d9ef">else</span>
+        number<span style="color:#f92672">=</span>$RANDOM
+        let <span style="color:#e6db74">&#34;number %= 10&#34;</span>
+        mv $i $name$number
+    <span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">done</span></code></pre></div></p>
 
 <p>Ok, with this script we&rsquo;re unzipping the mysqldump file and splitting it into different files using the separator <code>Current Database</code>, the {*} part is just telling csplit to split the file in as many parts as needed because by default it&rsquo;ll split it in two files. The next part renames the output files to make it easy to find an individual database.</p>
 
@@ -302,7 +296,7 @@ s.setAttribute('data-timestamp', +new Date());
       <h4 rel='author'>Jeferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p>Looking for a challenge :) | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a>, and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
+      <p>Amadeus Consultant located in Nice | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a> and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
       <div class='authorsocial'>
         
           <a href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fa fa-linkedin'></i></a>
@@ -345,12 +339,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/installing-magento2-on-cwp/' target='_blank'>
-                    <img alt='Installing magento2 on cwp' width='72' height='72' src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
+                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img alt='Fixing a corrupted partition on a virtual machine' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Installing magento2 on cwp</a>
+                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
                 </div>
               </div>
             </li>
@@ -360,12 +354,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/configuring-iptables-and-fail2ban-on-centos-6/' target='_blank'>
-                    <img alt='Configuring IPTABLES and fail2ban on centOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-iptables-and-fail2ban-on-centos-6.jpg" />
+                  <a href='/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
+                    <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/configuring-iptables-and-fail2ban-on-centos-6/' class="mostVisitedLink">Configuring IPTABLES and fail2ban on centOS 6</a>
+                  <a href='/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
                 </div>
               </div>
             </li>
@@ -375,12 +369,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' target='_blank'>
-                    <img alt='Getting 1.5s page load time on a basic vps' width='72' height='72' src="/articles/img/thumbs/getting-1.5s-page-load-time-on-a-basic-vps.png" />
+                  <a href='/articles/deploy-hugo-site-to-github-pages/' target='_blank'>
+                    <img alt='Deploying a hugo site to github pages' width='72' height='72' src="/articles/img/thumbs/deploy-hugo-site-to-github-pages.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' class="mostVisitedLink">Getting 1.5s page load time on a basic vps</a>
+                  <a href='/articles/deploy-hugo-site-to-github-pages/' class="mostVisitedLink">Deploying a hugo site to github pages</a>
                 </div>
               </div>
             </li>

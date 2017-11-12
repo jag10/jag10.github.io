@@ -208,36 +208,30 @@ From the list above I took the image I was looking for, which is the complete ve
 <h2 id="writing-the-image-on-odroid-board">Writing the image on odroid board</h2>
 
 <p>The next step will be to uncompress the image. This is very important because if we try to write a compressed image into the eMMC module, it won&rsquo;t work at all. So, to uncompress it, use the following command:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ unxz ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
-</pre></div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ unxz ubuntu-16.04-mate-odroid-xu3-20160708.img.xz</code></pre></div>
 Ok, now we are ready to install the linux image. The easiest way to do it is using the dd command:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ sudo dd <span style="color: #66d9ef">if</span><span style="color: #f92672">=</span>ubuntu-16.04-mate-odroid-xu3-20160708.img <span style="color: #f8f8f2">of</span><span style="color: #f92672">=</span>/dev/sdc <span style="color: #f8f8f2">bs</span><span style="color: #f92672">=</span>1M <span style="color: #f8f8f2">conv</span><span style="color: #f92672">=</span>fsync
-<span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ sync
-<span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ sync
-<span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ sync
-<span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ sync
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>ubuntu-16.04-mate-odroid-xu3-20160708.img of<span style="color:#f92672">=</span>/dev/sdc bs<span style="color:#f92672">=</span>1M conv<span style="color:#f92672">=</span>fsync
+<span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sync
+<span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sync
+<span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sync
+<span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sync</code></pre></div></p>
 
 <h2 id="checking-the-result">Checking the result</h2>
 
 <p>It is very important to use the sync command multiple times after dd so we make sure we flush all the cache content and write the complete image into the eMMC module.
 Now we need to verify the image was correctly written into the eMMC module, we&rsquo;ll use the dd command again:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ sudo dd <span style="color: #66d9ef">if</span><span style="color: #f92672">=</span>/dev/sdc <span style="color: #f8f8f2">bs</span><span style="color: #f92672">=</span><span style="color: #ae81ff">512</span> <span style="color: #f8f8f2">count</span><span style="color: #f92672">=</span><span style="color: #66d9ef">$((</span><span style="color: #e6db74">`</span>stat -c%s ubuntu-16.04-mate-odroid-xu3-20160708.img<span style="color: #e6db74">`</span><span style="color: #f92672">/</span><span style="color: #ae81ff">512</span><span style="color: #66d9ef">))</span> <span style="color: #f8f8f2">|</span> md5sum
-<span style="color: #f92672">[</span>sudo<span style="color: #f92672">]</span> password <span style="color: #66d9ef">for</span> jag:
-8968192+0 registros leídos
-8968192+0 registros escritos
-<span style="color: #ae81ff">4591714304</span> bytes <span style="color: #f92672">(</span>4,6 GB<span style="color: #f92672">)</span> copiados, 106,332 s, 43,2 MB/s
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/sdc bs<span style="color:#f92672">=</span><span style="color:#ae81ff">512</span> count<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span><span style="color:#e6db74">`</span>stat -c%s ubuntu-16.04-mate-odroid-xu3-20160708.img<span style="color:#e6db74">`</span><span style="color:#f92672">/</span><span style="color:#ae81ff">512</span><span style="color:#66d9ef">))</span> | md5sum
+<span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> jag:
+<span style="color:#ae81ff">8968192</span>+0 registros leídos
+<span style="color:#ae81ff">8968192</span>+0 registros escritos
+<span style="color:#ae81ff">4591714304</span> bytes <span style="color:#f92672">(</span><span style="color:#ae81ff">4</span>,6 GB<span style="color:#f92672">)</span> copiados, <span style="color:#ae81ff">106</span>,332 s, <span style="color:#ae81ff">43</span>,2 MB/s
 ff988a4039d9bcd6978910447930f5d5 -
-<span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$ dd <span style="color: #66d9ef">if</span><span style="color: #f92672">=</span>ubuntu-16.04-mate-odroid-xu3-20160708.img <span style="color: #f8f8f2">bs</span><span style="color: #f92672">=</span><span style="color: #ae81ff">512</span> <span style="color: #f8f8f2">count</span><span style="color: #f92672">=</span><span style="color: #66d9ef">$((</span><span style="color: #e6db74">`</span>stat -c%s ubuntu-16.04-mate-odroid-xu3-20160708.img<span style="color: #e6db74">`</span><span style="color: #f92672">/</span><span style="color: #ae81ff">512</span><span style="color: #66d9ef">))</span> <span style="color: #f8f8f2">|</span> md5sum
-8968192+0 registros leídos
-8968192+0 registros escritos
-<span style="color: #ae81ff">4591714304</span> bytes <span style="color: #f92672">(</span>4,6 GB<span style="color: #f92672">)</span> copiadosff988a4039d9bcd6978910447930f5d5 -
-, 26,0306 s, <span style="color: #ae81ff">176</span> MB/s
-<span style="color: #f92672">[</span>jag@2ndChance distros<span style="color: #f92672">]</span>$
-</pre></div>
-</p>
+<span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>ubuntu-16.04-mate-odroid-xu3-20160708.img bs<span style="color:#f92672">=</span><span style="color:#ae81ff">512</span> count<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span><span style="color:#e6db74">`</span>stat -c%s ubuntu-16.04-mate-odroid-xu3-20160708.img<span style="color:#e6db74">`</span><span style="color:#f92672">/</span><span style="color:#ae81ff">512</span><span style="color:#66d9ef">))</span> | md5sum
+<span style="color:#ae81ff">8968192</span>+0 registros leídos
+<span style="color:#ae81ff">8968192</span>+0 registros escritos
+<span style="color:#ae81ff">4591714304</span> bytes <span style="color:#f92672">(</span><span style="color:#ae81ff">4</span>,6 GB<span style="color:#f92672">)</span> copiadosff988a4039d9bcd6978910447930f5d5 -
+, <span style="color:#ae81ff">26</span>,0306 s, <span style="color:#ae81ff">176</span> MB/s
+<span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$</code></pre></div></p>
 
 <p>We we did with the first command is writing the content of the eMMC module (/dev/sdc) into stdout, piping that output into md5sum command, which gives us the md5 for the content of the eMMC module. With the second command, we read the image from local disk and write it into stdout to pipe it into md5sum, this gives us the md5 for the image we downloaded. Now we can compare both md5 values to check if they are the same,
 As you can see, md5 hashes are the same, so everything is ok.
@@ -344,7 +338,7 @@ s.setAttribute('data-timestamp', +new Date());
       <h4 rel='author'>Jeferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p>Looking for a challenge :) | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a>, and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
+      <p>Amadeus Consultant located in Nice | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a> and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
       <div class='authorsocial'>
         
           <a href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fa fa-linkedin'></i></a>
@@ -397,12 +391,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/getting-an-objects-methods/' target='_blank'>
-                    <img alt='Getting an object&#39;s (reflected) methods' width='72' height='72' src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
+                  <a href='/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
+                    <img alt='Authenticating users with cURL' width='72' height='72' src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/getting-an-objects-methods/' class="mostVisitedLink">Getting an object&#39;s (reflected) methods</a>
+                  <a href='/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Authenticating users with cURL</a>
                 </div>
               </div>
             </li>
@@ -412,12 +406,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
-                    <img alt='Fixing a corrupted partition on a virtual machine' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
+                  <a href='/articles/transferring-files-with-ftp-through-bash-expect-script/' target='_blank'>
+                    <img alt='Transferring files with FTP through bash expect script' width='72' height='72' src="/articles/img/thumbs/transferring-files-with-ftp-through-bash-expect-script.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
+                  <a href='/articles/transferring-files-with-ftp-through-bash-expect-script/' class="mostVisitedLink">Transferring files with FTP through bash expect script</a>
                 </div>
               </div>
             </li>
@@ -427,12 +421,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
-                    <img alt='Backing up all databases using mysqldump' width='72' height='72' src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
+                  <a href='/articles/deploy-hugo-site-to-github-pages/' target='_blank'>
+                    <img alt='Deploying a hugo site to github pages' width='72' height='72' src="/articles/img/thumbs/deploy-hugo-site-to-github-pages.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Backing up all databases using mysqldump</a>
+                  <a href='/articles/deploy-hugo-site-to-github-pages/' class="mostVisitedLink">Deploying a hugo site to github pages</a>
                 </div>
               </div>
             </li>

@@ -169,10 +169,8 @@ Iptables should be included in your default Linux OS, and you can easily get fai
 <p>Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on <code>/etc/fail2ban/jail.local</code>. Copy the file from <code>/etc/fail2ban/jail.conf</code> if it doesn&rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file:
 </p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">[</span>ssh-iptables<span style="color: #f92672">]</span>
-<span style="color: #f8f8f2">enabled</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">true</span>
-</pre></div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>ssh-iptables<span style="color:#f92672">]</span>
+enabled <span style="color:#f92672">=</span> true</code></pre></div>
 
 <p>Don&rsquo;t forget to add yourself to the ignored ips, you do not want to lock out yourself from the server. If this happens to you, go to your vps/server control panel and look for an emergency access, most providers will have one (ovh and 1and1 do). Or you could just simply sit and wait until fail2ban unbans you, just don&rsquo;t keep trying to log in or you&rsquo;ll make the situation worse.
 Ok, now you have iptables installed and fail2ban configured. You may wonder what will happen if you reboot your server or if you just restart iptables. Yep, you&rsquo;ll lose all your fail2ban chains. So let&rsquo;s use a script to start and stop iptables, to ensure we don&rsquo;t lose chains and also to make it easier and safer to modify rules.</p>
@@ -180,125 +178,123 @@ Ok, now you have iptables installed and fail2ban configured. You may wonder what
 <h2 id="starting-iptables-and-fail2ban">Starting iptables and fail2ban</h2>
 
 <p>Let&rsquo;s start with the script which will start iptables and fail2ban. We&rsquo;ll define a blacklist, so we can just add ips to a text file and get them locked out from our server. This will be handy in future. After that, we&rsquo;ll block all traffic by default, except output traffic, that won&rsquo;t harm us. Then, we&rsquo;ll block bad packets to prevent attacks and finally, we&rsquo;ll allow some legit traffic (icmp, dns, etc.). You should carefully look at the script below and modify it to fit your needs. This is a standard configuration and should be ok for most basic web servers, allowing mail, passive ftp, ssh, git, mail, etc.
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">#!/bin/sh</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span>
+IPT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sbin/iptables&#34;</span>
+SPAMLIST<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;blockedip&#34;</span>
+SPAMDROPMSG<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;BLOCKED IP DROP&#34;</span>
 
-<span style="color: #f8f8f2">IPT</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;/sbin/iptables&quot;</span>
-<span style="color: #f8f8f2">SPAMLIST</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;blockedip&quot;</span>
-<span style="color: #f8f8f2">SPAMDROPMSG</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;BLOCKED IP DROP&quot;</span>
+echo <span style="color:#e6db74">&#34;Starting IPv4 Wall...&#34;</span>
+$IPT -F
+$IPT -X
+$IPT -t nat -F
+$IPT -t nat -X
+$IPT -t mangle -F
+$IPT -t mangle -X
 
-<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;Starting IPv4 Wall...&quot;</span>
-<span style="color: #f8f8f2">$IPT</span> -F
-<span style="color: #f8f8f2">$IPT</span> -X
-<span style="color: #f8f8f2">$IPT</span> -t nat -F
-<span style="color: #f8f8f2">$IPT</span> -t nat -X
-<span style="color: #f8f8f2">$IPT</span> -t mangle -F
-<span style="color: #f8f8f2">$IPT</span> -t mangle -X
+<span style="color:#f92672">[</span> -f /script/blocked.ips.txt <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> BADIPS<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>egrep -v -E <span style="color:#e6db74">&#34;^#|^</span>$<span style="color:#e6db74">&#34;</span> /script/blocked.ips.txt<span style="color:#66d9ef">)</span>
+PUB_IF<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;eth0&#34;</span>
 
-<span style="color: #f92672">[</span> -f /script/blocked.ips.txt <span style="color: #f92672">]</span> <span style="color: #f92672">&amp;&amp;</span> <span style="color: #f8f8f2">BADIPS</span><span style="color: #f92672">=</span><span style="color: #66d9ef">$(</span>egrep -v -E <span style="color: #e6db74">&quot;^#|^</span>$<span style="color: #e6db74">&quot;</span> /script/blocked.ips.txt<span style="color: #66d9ef">)</span>
-<span style="color: #f8f8f2">PUB_IF</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;eth0&quot;</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f /script/blocked.ips.txt <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+	<span style="color:#75715e"># create a new iptables list
+</span><span style="color:#75715e"></span>	$IPT -N $SPAMLIST
 
-<span style="color: #66d9ef">if</span> <span style="color: #f92672">[</span> -f /script/blocked.ips.txt <span style="color: #f92672">]</span><span style="color: #f8f8f2">;</span> <span style="color: #66d9ef">then</span>
-	<span style="color: #75715e"># create a new iptables list</span>
-	<span style="color: #f8f8f2">$IPT</span> -N <span style="color: #f8f8f2">$SPAMLIST</span>
+	<span style="color:#66d9ef">for</span> ipblock in $BADIPS
+	<span style="color:#66d9ef">do</span>
+		$IPT -A $SPAMLIST -s $ipblock -j LOG --log-prefix <span style="color:#e6db74">&#34;</span>$SPAMDROPMSG<span style="color:#e6db74">&#34;</span>
+		$IPT -A $SPAMLIST -s $ipblock -j DROP
+	<span style="color:#66d9ef">done</span>
 
-	<span style="color: #66d9ef">for</span> ipblock in <span style="color: #f8f8f2">$BADIPS</span>
-	<span style="color: #66d9ef">do</span>
-		<span style="color: #f8f8f2">$IPT</span> -A <span style="color: #f8f8f2">$SPAMLIST</span> -s <span style="color: #f8f8f2">$ipblock</span> -j LOG --log-prefix <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$SPAMDROPMSG</span><span style="color: #e6db74">&quot;</span>
-		<span style="color: #f8f8f2">$IPT</span> -A <span style="color: #f8f8f2">$SPAMLIST</span> -s <span style="color: #f8f8f2">$ipblock</span> -j DROP
-	<span style="color: #66d9ef">done</span>
+	$IPT -I INPUT -j $SPAMLIST
+	$IPT -I OUTPUT -j $SPAMLIST
+	$IPT -I FORWARD -j $SPAMLIST
+<span style="color:#66d9ef">fi</span>
 
-	<span style="color: #f8f8f2">$IPT</span> -I INPUT -j <span style="color: #f8f8f2">$SPAMLIST</span>
-	<span style="color: #f8f8f2">$IPT</span> -I OUTPUT -j <span style="color: #f8f8f2">$SPAMLIST</span>
-	<span style="color: #f8f8f2">$IPT</span> -I FORWARD -j <span style="color: #f8f8f2">$SPAMLIST</span>
-<span style="color: #66d9ef">fi</span>
+<span style="color:#75715e"># Block everything by default
+</span><span style="color:#75715e"></span>$IPT -t filter -P INPUT DROP
+$IPT -t filter -P FORWARD DROP
+$IPT -t filter -P OUTPUT ACCEPT
 
-<span style="color: #75715e"># Block everything by default</span>
-<span style="color: #f8f8f2">$IPT</span> -t filter -P INPUT DROP
-<span style="color: #f8f8f2">$IPT</span> -t filter -P FORWARD DROP
-<span style="color: #f8f8f2">$IPT</span> -t filter -P OUTPUT ACCEPT
+<span style="color:#75715e"># Authorize already established connexions
+</span><span style="color:#75715e"></span>$IPT -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+$IPT -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+$IPT -t filter -A INPUT -i lo -j ACCEPT
+$IPT -t filter -A OUTPUT -o lo -j ACCEPT
 
-<span style="color: #75715e"># Authorize already established connexions</span>
-<span style="color: #f8f8f2">$IPT</span> -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
-<span style="color: #f8f8f2">$IPT</span> -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
-<span style="color: #f8f8f2">$IPT</span> -t filter -A INPUT -i lo -j ACCEPT
-<span style="color: #f8f8f2">$IPT</span> -t filter -A OUTPUT -o lo -j ACCEPT
+<span style="color:#75715e">#Bad packets
+</span><span style="color:#75715e"></span>$IPT -A INPUT -p tcp -m tcp ! --tcp-flags FIN,SYN,RST,ACK SYN -m state --state NEW -j REJECT --reject-with tcp-reset
+$IPT -A INPUT -m state --state INVALID -j DROP
+$IPT -A OUTPUT -p tcp -m tcp ! --tcp-flags FIN,SYN,RST,ACK SYN -m state --state NEW -j REJECT --reject-with tcp-reset
+$IPT -A OUTPUT -m state --state INVALID -j DROP
+$IPT -A FORWARD -m state --state INVALID -j DROP
+$IPT -A FORWARD -p tcp -m tcp ! --tcp-flags FIN,SYN,RST,ACK SYN -m state --state NEW -j REJECT --reject-with tcp-reset
 
-<span style="color: #75715e">#Bad packets</span>
-<span style="color: #f8f8f2">$IPT</span> -A INPUT -p tcp -m tcp ! --tcp-flags FIN,SYN,RST,ACK SYN -m state --state NEW -j REJECT --reject-with tcp-reset
-<span style="color: #f8f8f2">$IPT</span> -A INPUT -m state --state INVALID -j DROP
-<span style="color: #f8f8f2">$IPT</span> -A OUTPUT -p tcp -m tcp ! --tcp-flags FIN,SYN,RST,ACK SYN -m state --state NEW -j REJECT --reject-with tcp-reset
-<span style="color: #f8f8f2">$IPT</span> -A OUTPUT -m state --state INVALID -j DROP
-<span style="color: #f8f8f2">$IPT</span> -A FORWARD -m state --state INVALID -j DROP
-<span style="color: #f8f8f2">$IPT</span> -A FORWARD -p tcp -m tcp ! --tcp-flags FIN,SYN,RST,ACK SYN -m state --state NEW -j REJECT --reject-with tcp-reset
+$IPT -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
 
-<span style="color: #f8f8f2">$IPT</span> -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
+<span style="color:#75715e"># ICMP (Ping)
+</span><span style="color:#75715e"></span>$IPT -t filter -A INPUT -p icmp -j ACCEPT
+<span style="color:#75715e">#$IPT -t filter -A OUTPUT -p icmp -j ACCEPT
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># SSH
+</span><span style="color:#75715e"></span>$IPT -t filter -A INPUT -p tcp --dport <span style="color:#ae81ff">22</span> -j ACCEPT
+<span style="color:#75715e">#$IPT -t filter -A OUTPUT -p tcp --dport 22 -j ACCEPT
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># DNS
+</span><span style="color:#75715e">#$IPT -t filter -A OUTPUT -p tcp --dport 53 -j ACCEPT
+</span><span style="color:#75715e">#$IPT -t filter -A OUTPUT -p udp --dport 53 -j ACCEPT
+</span><span style="color:#75715e"></span>$IPT -t filter -A INPUT -p tcp --dport <span style="color:#ae81ff">53</span> -j ACCEPT
+$IPT -t filter -A INPUT -p udp --dport <span style="color:#ae81ff">53</span> -j ACCEPT
 
-<span style="color: #75715e"># ICMP (Ping)</span>
-<span style="color: #f8f8f2">$IPT</span> -t filter -A INPUT -p icmp -j ACCEPT
-<span style="color: #75715e">#$IPT -t filter -A OUTPUT -p icmp -j ACCEPT</span>
+<span style="color:#75715e"># HTTP
+</span><span style="color:#75715e">#$IPT -t filter -A OUTPUT -p tcp --dport 80 -j ACCEPT
+</span><span style="color:#75715e"></span>$IPT -t filter -A INPUT -p tcp --dport <span style="color:#ae81ff">80</span> -j ACCEPT
 
-<span style="color: #75715e"># SSH</span>
-<span style="color: #f8f8f2">$IPT</span> -t filter -A INPUT -p tcp --dport <span style="color: #ae81ff">22</span> -j ACCEPT
-<span style="color: #75715e">#$IPT -t filter -A OUTPUT -p tcp --dport 22 -j ACCEPT</span>
+<span style="color:#75715e">#HTTPS
+</span><span style="color:#75715e">#$IPT -t filter -A OUTPUT -p tcp --dport 443 -j ACCEPT
+</span><span style="color:#75715e"></span>$IPT -t filter -A INPUT -p tcp --dport <span style="color:#ae81ff">443</span> -j ACCEPT
 
-<span style="color: #75715e"># DNS</span>
-<span style="color: #75715e">#$IPT -t filter -A OUTPUT -p tcp --dport 53 -j ACCEPT</span>
-<span style="color: #75715e">#$IPT -t filter -A OUTPUT -p udp --dport 53 -j ACCEPT</span>
-<span style="color: #f8f8f2">$IPT</span> -t filter -A INPUT -p tcp --dport <span style="color: #ae81ff">53</span> -j ACCEPT
-<span style="color: #f8f8f2">$IPT</span> -t filter -A INPUT -p udp --dport <span style="color: #ae81ff">53</span> -j ACCEPT
+<span style="color:#75715e"># FTP
+</span><span style="color:#75715e">#$IPT -t filter -A OUTPUT -p tcp --dport 20:21 -j ACCEPT
+</span><span style="color:#75715e"></span>$IPT -t filter -A INPUT -p tcp --dport <span style="color:#ae81ff">20</span>:21 -j ACCEPT
 
-<span style="color: #75715e"># HTTP</span>
-<span style="color: #75715e">#$IPT -t filter -A OUTPUT -p tcp --dport 80 -j ACCEPT</span>
-<span style="color: #f8f8f2">$IPT</span> -t filter -A INPUT -p tcp --dport <span style="color: #ae81ff">80</span> -j ACCEPT
+<span style="color:#75715e"># Passive FTP
+</span><span style="color:#75715e"></span>$IPT -t filter -A INPUT -p tcp -m tcp --dport <span style="color:#ae81ff">30000</span>:30100 -j ACCEPT
 
-<span style="color: #75715e">#HTTPS</span>
-<span style="color: #75715e">#$IPT -t filter -A OUTPUT -p tcp --dport 443 -j ACCEPT</span>
-<span style="color: #f8f8f2">$IPT</span> -t filter -A INPUT -p tcp --dport <span style="color: #ae81ff">443</span> -j ACCEPT
+<span style="color:#75715e"># Git
+</span><span style="color:#75715e">#$IPT -t filter -A OUTPUT -p tcp --dport 9418 -j ACCEPT
+</span><span style="color:#75715e"></span>$IPT -t filter -A INPUT -p tcp --dport <span style="color:#ae81ff">9418</span> -j ACCEPT
 
-<span style="color: #75715e"># FTP</span>
-<span style="color: #75715e">#$IPT -t filter -A OUTPUT -p tcp --dport 20:21 -j ACCEPT</span>
-<span style="color: #f8f8f2">$IPT</span> -t filter -A INPUT -p tcp --dport 20:21 -j ACCEPT
+<span style="color:#75715e"># Mail SMTP
+</span><span style="color:#75715e"></span>iptables -t filter -A INPUT -p tcp --dport <span style="color:#ae81ff">25</span> -j ACCEPT
+iptables -t filter -A OUTPUT -p tcp --dport <span style="color:#ae81ff">25</span> -j ACCEPT
 
-<span style="color: #75715e"># Passive FTP</span>
-<span style="color: #f8f8f2">$IPT</span> -t filter -A INPUT -p tcp -m tcp --dport 30000:30100 -j ACCEPT
+<span style="color:#75715e"># Mail POP3
+</span><span style="color:#75715e"></span>iptables -t filter -A INPUT -p tcp --dport <span style="color:#ae81ff">110</span> -j ACCEPT
+iptables -t filter -A OUTPUT -p tcp --dport <span style="color:#ae81ff">110</span> -j ACCEPT
 
-<span style="color: #75715e"># Git</span>
-<span style="color: #75715e">#$IPT -t filter -A OUTPUT -p tcp --dport 9418 -j ACCEPT</span>
-<span style="color: #f8f8f2">$IPT</span> -t filter -A INPUT -p tcp --dport <span style="color: #ae81ff">9418</span> -j ACCEPT
+<span style="color:#75715e"># Mail IMAP
+</span><span style="color:#75715e"></span>iptables -t filter -A INPUT -p tcp --dport <span style="color:#ae81ff">143</span> -j ACCEPT
+iptables -t filter -A OUTPUT -p tcp --dport <span style="color:#ae81ff">143</span> -j ACCEPT
 
-<span style="color: #75715e"># Mail SMTP</span>
-iptables -t filter -A INPUT -p tcp --dport <span style="color: #ae81ff">25</span> -j ACCEPT
-iptables -t filter -A OUTPUT -p tcp --dport <span style="color: #ae81ff">25</span> -j ACCEPT
-
-<span style="color: #75715e"># Mail POP3</span>
-iptables -t filter -A INPUT -p tcp --dport <span style="color: #ae81ff">110</span> -j ACCEPT
-iptables -t filter -A OUTPUT -p tcp --dport <span style="color: #ae81ff">110</span> -j ACCEPT
-
-<span style="color: #75715e"># Mail IMAP</span>
-iptables -t filter -A INPUT -p tcp --dport <span style="color: #ae81ff">143</span> -j ACCEPT
-iptables -t filter -A OUTPUT -p tcp --dport <span style="color: #ae81ff">143</span> -j ACCEPT
-
-<span style="color: #75715e"># NTP (server time)</span>
-<span style="color: #75715e">#$IPT -t filter -A OUTPUT -p udp --dport 123 -j ACCEPT</span>
-
+<span style="color:#75715e"># NTP (server time)
+</span><span style="color:#75715e">#$IPT -t filter -A OUTPUT -p udp --dport 123 -j ACCEPT
+</span><span style="color:#75715e"></span>
 /etc/init.d/fail2ban start
 
-sleep 2
+sleep <span style="color:#ae81ff">2</span>
 
-<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;new rules:&quot;</span>
-iptables -L -n -v
-</pre></div>
-</p>
+echo <span style="color:#e6db74">&#34;new rules:&#34;</span>
+iptables -L -n -v</code></pre></div></p>
 
 <p>After we enable iptables, we&rsquo;ll start fail2ban, give it 2 seconds to load, and then list all the rules, so we can see everything is ok. There are some lines commented, use them if you prefer to deny all output traffic by default and then allow only certain traffic.</p>
 
 <h2 id="stopping-iptables-and-fail2ban">Stopping iptables and fail2ban</h2>
 
 <p>Now, when we need to stop both iptables and fail2ban, we&rsquo;ll use the following script. It will flush all rules and echo the new rules to make sure there are no active rules.
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">#!/bin/sh</span>
-/etc/init.d/fail2ban stop
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span>/etc/init.d/fail2ban stop
 
-<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;deleting rules...&quot;</span>
+echo <span style="color:#e6db74">&#34;deleting rules...&#34;</span>
 
 iptables -F
 iptables -X
@@ -310,22 +306,16 @@ iptables -P INPUT ACCEPT
 iptables -P OUTPUT ACCEPT
 iptables -P FORWARD ACCEPT
 
-<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;new rules:&quot;</span>
-iptables -L -n -v
-</pre></div>
-</p>
+echo <span style="color:#e6db74">&#34;new rules:&#34;</span>
+iptables -L -n -v</code></pre></div></p>
 
 <p>If you are going to use these scriptes frequently, I recommend to set an alias for them. For example, if you save these scripts to /home/start.fw, /home/stop.fw, you could add an alias like this:
 Edit ~/.bashrc and add the following lines:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">alias</span> <span style="color: #f8f8f2">startfw</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;/script/start.fw&#39;</span>
-<span style="color: #f8f8f2">alias</span> <span style="color: #f8f8f2">stopfw</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;/script/stop.fw&#39;</span>
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">alias startfw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/script/start.fw&#39;</span>
+alias stopfw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/script/stop.fw&#39;</span></code></pre></div></p>
 
 <p>Now, when you want to reboot your firewall, just use the command below. Beware, it will delete all of your rules and put the ones you set in the startup script. If you want to add/delete rules, just modify start.fw and restart the firewall.
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>stopfw <span style="color: #f92672">&amp;&amp;</span> startfw
-</pre></div>
-</p></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">stopfw <span style="color:#f92672">&amp;&amp;</span> startfw</code></pre></div></p></p>
       
     </div>
     <div class="clearfix"></div>
@@ -409,7 +399,7 @@ s.setAttribute('data-timestamp', +new Date());
       <h4 rel='author'>Jeferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p>Looking for a challenge :) | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a>, and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
+      <p>Amadeus Consultant located in Nice | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a> and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
       <div class='authorsocial'>
         
           <a href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fa fa-linkedin'></i></a>
@@ -460,12 +450,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/deploy-hugo-site-to-github-pages/' target='_blank'>
-                    <img alt='Deploying a hugo site to github pages' width='72' height='72' src="/articles/img/thumbs/deploy-hugo-site-to-github-pages.jpg" />
+                  <a href='/articles/installing-magento2-on-cwp/' target='_blank'>
+                    <img alt='Installing magento2 on cwp' width='72' height='72' src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/deploy-hugo-site-to-github-pages/' class="mostVisitedLink">Deploying a hugo site to github pages</a>
+                  <a href='/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Installing magento2 on cwp</a>
                 </div>
               </div>
             </li>
@@ -475,12 +465,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/web-development-environment/' target='_blank'>
-                    <img alt='Web development environment' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' target='_blank'>
+                    <img alt='Getting 1.5s page load time on a basic vps' width='72' height='72' src="/articles/img/thumbs/getting-1.5s-page-load-time-on-a-basic-vps.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' class="mostVisitedLink">Getting 1.5s page load time on a basic vps</a>
                 </div>
               </div>
             </li>
@@ -490,12 +480,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/zipping-and-unzipping-websites-with-php/' target='_blank'>
-                    <img alt='Zipping and unzipping websites with php' width='72' height='72' src="/articles/img/thumbs/zipping-and-unzipping-websites-with-php.png" />
+                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img alt='Fixing a corrupted partition on a virtual machine' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/zipping-and-unzipping-websites-with-php/' class="mostVisitedLink">Zipping and unzipping websites with php</a>
+                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
                 </div>
               </div>
             </li>

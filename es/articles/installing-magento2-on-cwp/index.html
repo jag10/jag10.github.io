@@ -173,10 +173,10 @@ En este post explicaré cómo instalar magento2 sobre Centos Web Panel, utilizan
 <p>En este post explicaré cómo instalar magento2 sobre Centos Web Panel, utilizando php7 y mysql 5.6. Para empezar, tenemos que compilar php con las extensiones que magento2 necesita. Con el siguiente comando podremos configurar php7 para luego compilarlo y conseguir que funcione con magento2.
 </p>
 
-<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>./configure
---prefix<span style="color: #f92672">=</span>/opt/alt/php7/usr
---with-config-file-path<span style="color: #f92672">=</span>/opt/alt/php7/usr/php
---with-config-file-scan-dir<span style="color: #f92672">=</span>/opt/alt/php7/usr/php/php.d
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./configure
+--prefix<span style="color:#f92672">=</span>/opt/alt/php7/usr
+--with-config-file-path<span style="color:#f92672">=</span>/opt/alt/php7/usr/php
+--with-config-file-scan-dir<span style="color:#f92672">=</span>/opt/alt/php7/usr/php/php.d
 --enable-fpm
 --enable-mbstring
 --enable-zip
@@ -195,25 +195,23 @@ En este post explicaré cómo instalar magento2 sobre Centos Web Panel, utilizan
 --with-gmp
 --with-pspell
 --with-gd
---with-jpeg-dir<span style="color: #f92672">=</span>/usr
---with-png-dir<span style="color: #f92672">=</span>/usr
---with-zlib-dir<span style="color: #f92672">=</span>/usr
---with-xpm-dir<span style="color: #f92672">=</span>/usr
---with-freetype-dir<span style="color: #f92672">=</span>/usr
+--with-jpeg-dir<span style="color:#f92672">=</span>/usr
+--with-png-dir<span style="color:#f92672">=</span>/usr
+--with-zlib-dir<span style="color:#f92672">=</span>/usr
+--with-xpm-dir<span style="color:#f92672">=</span>/usr
+--with-freetype-dir<span style="color:#f92672">=</span>/usr
 --enable-gd-native-ttf
 --enable-gd-jis-conv
 --with-openssl
---with-pdo-mysql<span style="color: #f92672">=</span>/usr
---with-gettext<span style="color: #f92672">=</span>/usr
---with-zlib<span style="color: #f92672">=</span>/usr
---with-bz2<span style="color: #f92672">=</span>/usr
---with-recode<span style="color: #f92672">=</span>/usr
+--with-pdo-mysql<span style="color:#f92672">=</span>/usr
+--with-gettext<span style="color:#f92672">=</span>/usr
+--with-zlib<span style="color:#f92672">=</span>/usr
+--with-bz2<span style="color:#f92672">=</span>/usr
+--with-recode<span style="color:#f92672">=</span>/usr
 --with-mysqli
---with-mysql-sock<span style="color: #f92672">=</span>/var/lib/mysql/mysql.sock
+--with-mysql-sock<span style="color:#f92672">=</span>/var/lib/mysql/mysql.sock
 --enable-intl
---with-xsl
-</pre></div>
-
+--with-xsl</code></pre></div>
 Es posible cambiar las rutas, pero es aconsejable que instales al menos estas extensiones, pues son necesarias para magento2 y muchos otros CMS</p>
 
 <h2 id="instalando-magento2">Instalando magento2</h2>
@@ -222,20 +220,16 @@ Es posible cambiar las rutas, pero es aconsejable que instales al menos estas ex
 <a href="https://www.magentocommerce.com/download">https://www.magentocommerce.com/download</a></p>
 
 <p>Cuando instalamos magento2, éste empezará a quejarse de los permisos. Magento2, por defecto, necesita que los directorios tengan permisos 0700, el problema es que esto no funcionará en la mayoría de hostings (si usan plesk, cPanel, etc.) Así que tenemos que cambiar todos los permisos de las carpetas y ficheros con el siguiente comando:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>find /path/to/magento -type f -exec chmod <span style="color: #ae81ff">644</span> <span style="color: #f92672">{}</span> <span style="color: #ae81ff">\;</span>
-find path/to/magento -type d -exec chmod <span style="color: #ae81ff">755</span> <span style="color: #f92672">{}</span> <span style="color: #ae81ff">\;</span>
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">find /path/to/magento -type f -exec chmod <span style="color:#ae81ff">644</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+find path/to/magento -type d -exec chmod <span style="color:#ae81ff">755</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></code></pre></div></p>
 
 <p>Luego, hay que indicarle a magento2 que cree los nuevos ficheros y directorios con estos permisos. Podemos hacerlo en el siguiente fichero:
 <code>/vendor/magento/framework/Filesystem/DriverInterface.php</code>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>/vendor/magento/framework/Filesystem/DriverInterface.php
-<span style="color: #f92672">(</span>WRITEABLE_DIRECTORY_MODE and WRITEABLE_FILE_MODE<span style="color: #f92672">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">/vendor/magento/framework/Filesystem/DriverInterface.php
+<span style="color:#f92672">(</span>WRITEABLE_DIRECTORY_MODE and WRITEABLE_FILE_MODE<span style="color:#f92672">)</span>
 
 /lib/internal/Cm/Cache/Backend/File.php
-<span style="color: #f92672">(</span>directory_mode and file_mode<span style="color: #f92672">)</span>
-</pre></div>
-</p>
+<span style="color:#f92672">(</span>directory_mode and file_mode<span style="color:#f92672">)</span></code></pre></div></p>
 
 <p>Y ya lo tienes, magento2 con php7 y mysql 5.6, tendrás un rendimiento bastante notable si trabajas en una máquina con varios núcleos, pues mysql5.6 hará un muy buen uso de ellos, algo que no ocurría en mysql 5.1. En mi servidor básico de OVH, la web tiene tiempos de carga (según gtmetrix) de alrededor de 3 segundos, lo que no está nada mal.</p></p>
       
@@ -378,16 +372,18 @@ s.setAttribute('data-timestamp', +new Date());
         <div class='widget-content popular-posts'>
           <ul>
             
+            
+            
              
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/web-development-environment/' target='_blank'>
-                    <img alt='Entorno para desarrollo web' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
+                  <a href='/es/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
+                    <img alt='Cómo manejar recursos remotos con curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/web-development-environment/' class="mostVisitedLink">Entorno para desarrollo web</a>
+                  <a href='/es/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">Cómo manejar recursos remotos con curl</a>
                 </div>
               </div>
             </li>
@@ -397,27 +393,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
-                    <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
+                  <a href='/es/articles/using-piwik-api-locally-with-pw/' target='_blank'>
+                    <img alt='Utilizando la API de piwik en local con PW' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
-                    <img alt='Instalando ubuntu 16.04 en odroid xu3 lite' width='72' height='72' src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Instalando ubuntu 16.04 en odroid xu3 lite</a>
+                  <a href='/es/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Utilizando la API de piwik en local con PW</a>
                 </div>
               </div>
             </li>

@@ -183,141 +183,115 @@ Firstly, we&rsquo;ll create our dir structure. I&rsquo;ll use jag.co as a domain
 <p>Firstly, we&rsquo;ll create our dir structure. I&rsquo;ll use jag.co as a domain for this example, you can choose the dir structure you want, but I recommend following this one:
 </p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #a6e22e">/</span>
-<span style="color: #a6e22e">/var/www/vhosts/jag.co</span>
-<span style="color: #a6e22e">/var/www/vhosts/jag.co/logs</span>
-<span style="color: #a6e22e">/var/www/vhosts/jag.co/httpdocs</span>
-</pre></div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cirru" data-lang="cirru">/
+/var/www/vhosts/jag.co
+/var/www/vhosts/jag.co/logs
+/var/www/vhosts/jag.co/httpdocs</code></pre></div>
 
 <p>We&rsquo;ll also create a system user who will be running php, although at first we&rsquo;ll run php under apache, just to test our configuration. You can create this dir structure and the system user with the following commands:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>mkdir -p /var/www/vhosts/jag.co
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mkdir -p /var/www/vhosts/jag.co
 useradd -d /var/www/vhosts/jag.co/ jag
 usermod -g apache jag
-chmod <span style="color: #ae81ff">710</span> /var/www/vhosts/jag.co
-</pre></div>
-</p>
+chmod <span style="color:#ae81ff">710</span> /var/www/vhosts/jag.co</code></pre></div></p>
 
 <p>Now we&rsquo;ll add an important repository to our system. We&rsquo;ll need it here and you&rsquo;ll need it later, for sure. After that, we are good to perform a basic httpd install, along with php.
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>yum install epel-release
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum install epel-release
 yum install httpd
 yum install mod_fcgid
-yum install php
-</pre></div>
-</p>
+yum install php</code></pre></div></p>
 
 <p>You should be able to test the default page of apache, visiting your vps ip through your preferred browser. But that&rsquo;s too uncomfortable, so we&rsquo;ll improve it. We are going to configure a virtual host, named jag.co. First, we need to activate virtual hosts. To do that, we&rsquo;re going to edit the main httpd configuration file (/etc/httpd/conf/httpd.conf) and add/uncomment the following line:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>NameVirtualHost *:80
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">NameVirtualHost *:80</code></pre></div></p>
 
 <p>Secondly, we&rsquo;re going to create and edit the file /etc/httpd/conf.d/jag.co.conf and include the following content:</p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">LoadModule</span> suexec_module    lib/apache/mod_suexec.so
-<span style="color: #f92672">&lt;VirtualHost</span> <span style="color: #e6db74">*:80</span><span style="color: #f92672">&gt;</span>
-    <span style="color: #f8f8f2">ServerName</span> jag.co
-    <span style="color: #f8f8f2">DocumentRoot</span> <span style="color: #e6db74">/var/www/vhosts/jag.co/httpdocs</span>
-    <span style="color: #f8f8f2">ServerAdmin</span> hostmaster@jag.co
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache">LoadModule suexec_module    lib/apache/mod_suexec.so
+<span style="color:#f92672">&lt;VirtualHost</span> <span style="color:#e6db74">*:80</span><span style="color:#f92672">&gt;</span>
+    ServerName jag.co
+    DocumentRoot <span style="color:#e6db74">/var/www/vhosts/jag.co/httpdocs</span>
+    ServerAdmin hostmaster@jag.co
 
-    <span style="color: #f8f8f2">ErrorLog</span> <span style="color: #e6db74">/var/www/vhosts/jag.co/logs/error.log</span>
-    <span style="color: #f8f8f2">CustomLog</span> <span style="color: #e6db74">/var/www/vhosts/jag.co/logs/access.log</span> combined
+    ErrorLog <span style="color:#e6db74">/var/www/vhosts/jag.co/logs/error.log</span>
+    CustomLog <span style="color:#e6db74">/var/www/vhosts/jag.co/logs/access.log</span> combined
 
-    <span style="color: #f8f8f2">SuexecUserGroup</span> jag jag
-    <span style="color: #f8f8f2">ScriptAlias</span> <span style="color: #e6db74">/cgi-bin/</span> <span style="color: #e6db74">&quot;/var/www/vhosts/jag.co/.cgi-bin/&quot;</span>
+    SuexecUserGroup jag jag
+    ScriptAlias <span style="color:#e6db74">/cgi-bin/</span> <span style="color:#e6db74">&#34;/var/www/vhosts/jag.co/.cgi-bin/&#34;</span>
 
-    <span style="color: #f92672">&lt;Directory</span> <span style="color: #e6db74">&quot;/var/www/vhosts/jag.co/.cgi-bin/&quot;</span><span style="color: #f92672">&gt;</span>
-        <span style="color: #f8f8f2">AllowOverride</span> <span style="color: #66d9ef">None</span>
-        <span style="color: #f8f8f2">Order</span> allow,deny
-        <span style="color: #f8f8f2">Allow</span> from <span style="color: #66d9ef">all</span>
-    <span style="color: #f92672">&lt;/Directory&gt;</span>
+    <span style="color:#f92672">&lt;Directory</span> <span style="color:#e6db74">&#34;/var/www/vhosts/jag.co/.cgi-bin/&#34;</span><span style="color:#f92672">&gt;</span>
+        AllowOverride <span style="color:#66d9ef">None</span>
+        Order allow,deny
+        Allow from <span style="color:#66d9ef">all</span>
+    <span style="color:#f92672">&lt;/Directory</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
 
-    <span style="color: #f92672">&lt;Directory</span> <span style="color: #e6db74">&quot;/var/www/vhosts/jag.co/httpdocs&quot;</span><span style="color: #f92672">&gt;</span>
-        <span style="color: #f8f8f2">Options</span> Indexes Includes FollowSymLinks
-        <span style="color: #f8f8f2">AllowOverride</span> <span style="color: #66d9ef">All</span>
-        <span style="color: #75715e">#mod_php executes all php by default, so we need to use the Filesmatch directive to tell apache we want to execute php with our own cgi-bin.</span>
-        <span style="color: #f92672">&lt;FilesMatch</span> <span style="color: #e6db74">&quot;.+\.ph(p[345]?|t|tml)$&quot;</span><span style="color: #f92672">&gt;</span>
-            <span style="color: #f8f8f2">SetHandler</span> php5-fastcgi
-            <span style="color: #f8f8f2">Action</span> php5-fastcgi <span style="color: #e6db74">/cgi-bin/php.fcgi</span>
-        <span style="color: #f92672">&lt;/FilesMatch&gt;</span>
-        <span style="color: #f8f8f2">Order</span> allow,deny
-        <span style="color: #f8f8f2">Allow</span> from <span style="color: #66d9ef">all</span>
-    <span style="color: #f92672">&lt;/Directory&gt;</span>
-	<span style="color: #75715e">#allow 20M request, just to manage files</span>
-    <span style="color: #f8f8f2">FcgidMaxRequestLen</span> <span style="color: #ae81ff">20000000</span>
+    <span style="color:#f92672">&lt;Directory</span> <span style="color:#e6db74">&#34;/var/www/vhosts/jag.co/httpdocs&#34;</span><span style="color:#f92672">&gt;</span>
+        Options Indexes Includes FollowSymLinks
+        AllowOverride <span style="color:#66d9ef">All</span>
+        <span style="color:#75715e">#mod_php executes all php by default, so we need to use the Filesmatch directive to tell apache we want to execute php with our own cgi-bin.</span>
+        <span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;.+\.ph(p[345]?|t|tml)$&#34;</span><span style="color:#f92672">&gt;</span>
+            SetHandler php5-fastcgi
+            Action php5-fastcgi <span style="color:#e6db74">/cgi-bin/php.fcgi</span>
+        <span style="color:#f92672">&lt;/FilesMatch</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
+        Order allow,deny
+        Allow from <span style="color:#66d9ef">all</span>
+    <span style="color:#f92672">&lt;/Directory</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
+	<span style="color:#75715e">#allow 20M request, just to manage files</span>
+    FcgidMaxRequestLen <span style="color:#ae81ff">20000000</span>
 
-<span style="color: #f92672">&lt;/VirtualHost&gt;</span>
-</pre></div>
-
+<span style="color:#f92672">&lt;/VirtualHost</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span></code></pre></div>
 
 <p>Here we&rsquo;re telling apache some basic directives to use with our virtualhost, like error logs (remember to create these files and set their permissions correctly) or how to execute php files. To execute php we&rsquo;ll be using suexec_mod, which allow us to execute php under different users, thus improving security between virtual hosts. By default, mod_php will take all our php files and execute them under apache user. So if we don&rsquo;t want that to happen under our virtualhost, we&rsquo;ll use the directive SetHandler to change that. This way, we&rsquo;re telling apache to execute .php files with an script we&rsquo;ll create later.
 Now, we need to create log files:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">mkdir</span> -p <span style="color: #e6db74">/var/www/vhosts/jag.co/logs/</span>
-<span style="color: #f8f8f2">touch</span> <span style="color: #e6db74">/var/www/vhosts/jag.co/logs/error.log</span>
-<span style="color: #f8f8f2">touch</span> <span style="color: #e6db74">/var/www/vhosts/jag.co/logs/access.log</span>
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache">mkdir -p <span style="color:#e6db74">/var/www/vhosts/jag.co/logs/</span>
+touch <span style="color:#e6db74">/var/www/vhosts/jag.co/logs/error.log</span>
+touch <span style="color:#e6db74">/var/www/vhosts/jag.co/logs/access.log</span></code></pre></div></p>
 
 <p>In next step we&rsquo;ll create an script which will take care of php files, setting some environment variables and executing php. Create and edit the following file: /var/www/vhosts/jag.co/.cgi-bin/php.fcgi
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">#!/bin/bash</span>
-<span style="color: #75715e">#</span>
-<span style="color: #75715e"># php5.fcgi</span>
-<span style="color: #75715e"># Shell Script to run PHP5 using mod_fastcgi under Apache 2.x</span>
-<span style="color: #f8f8f2">USER</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;jag&quot;</span>
-<span style="color: #f8f8f2">PHPRC</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;/var/www/vhosts/jag.co/.cgi-bin/php.ini&quot;</span>
-<span style="color: #f8f8f2">PHP_FCGI_CHILDREN</span><span style="color: #f92672">=</span>5
-<span style="color: #f8f8f2">export</span> PHP_FCGI_CHILDREN
-<span style="color: #f8f8f2">exec</span> /usr/bin/php-cgi
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e">#
+</span><span style="color:#75715e"># php5.fcgi
+</span><span style="color:#75715e"># Shell Script to run PHP5 using mod_fastcgi under Apache 2.x
+</span><span style="color:#75715e"></span>USER<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jag&#34;</span>
+PHPRC<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/var/www/vhosts/jag.co/.cgi-bin/php.ini&#34;</span>
+PHP_FCGI_CHILDREN<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>
+export PHP_FCGI_CHILDREN
+exec /usr/bin/php-cgi</code></pre></div></p>
 
 <p>In this script we&rsquo;re executing exactly the same php version mod_php would use, but later we&rsquo;ll change that. Now you can set a customized php.ini for this virtual host. Also, remember to set permissions and ownership.</p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>cp -fv /etc/php/cgi/php.ini /var/www/vhosts/jag.co/.cgi-bin/
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cp -fv /etc/php/cgi/php.ini /var/www/vhosts/jag.co/.cgi-bin/
 chown -R jag:apache /var/www/vhosts/jag.co/
-chown -R jag:jag .cgi-bin
-</pre></div>
-
+chown -R jag:jag .cgi-bin</code></pre></div>
 
 <p>You should add the open_basedir directive to your php.ini, so users can&rsquo;t touch others users&rsquo; files. Also, add the /tmp dir to this directive, you&rsquo;ll need it if you want to upload files to your website ith your browser.
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">open_basedir</span> <span style="color: #f92672">=</span> /var/www/vhosts/jag.co/httpdocs/:/tmp
-</pre></div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">open_basedir <span style="color:#f92672">=</span> /var/www/vhosts/jag.co/httpdocs/:/tmp</code></pre></div>
 Ok, you should be good to go. You can upload some php file and try to get it through your browser and see what happens. I recommend putting some phpinfo() function inside to get details about your php installation. You&rsquo;ll notice it&rsquo;s running under your user and not under apache.</p>
 
 <h2 id="installing-additional-php-versions">Installing additional PHP versions</h2>
 
 <p>Ok, sooner or later you&rsquo;ll find a client of yours or maybe yourself need an older/newer php version, so let&rsquo;s take care of that before it happens. Firstly, we need to choose an additional php version and download it. I&rsquo;ll choose 5.6.10 and will work from /script directory. You can choose any directory, this won&rsquo;t affect at all.
 After downloading it, we&rsquo;ll install some tools we&rsquo;ll need to compile php.
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>mkdir /script
-<span style="color: #f8f8f2">cd</span> /script
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mkdir /script
+cd /script
 wget http://us1.php.net/get/php-5.6.10.tar.gz/from/this/mirror
 tar -zxvf mirror
 yum install libxml2-devel libXpm-devel gmp-devel libicu-devel t1lib-devel aspell-devel openssl-devel bzip2-devel libcurl-devel libjpeg-devel libvpx-devel libpng-devel freetype-devel readline-devel libtidy-devel libxslt-devel libmcrypt-devel pcre-devel curl-devel mysql-devel ncurses-devel gettext-devel net-snmp-devel libevent-devel libtool-ltdl-devel libc-client-devel postgresql-devel
-yum groupinstall <span style="color: #e6db74">&#39;Development Tools&#39;</span>
-</pre></div>
-</p>
+yum groupinstall <span style="color:#e6db74">&#39;Development Tools&#39;</span></code></pre></div></p>
 
 <p>Ok, time to configure our php install. You should think about what needs you have and find out which libraries you&rsquo;ll need in your php instalation. I&rsquo;ve used this one, you should be able to go with it. Also, it&rsquo;s pretty straight forward to change this in future, so don&rsquo;t worry a lot about it. After configuring it, we&rsquo;ll install it. This will be an slow process, so sit and wait patiently.
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>./configure --prefix<span style="color: #f92672">=</span>/usr/bin/php56 --with-config-file-path<span style="color: #f92672">=</span>/etc/php56 --with-config-file-scan-dir<span style="color: #f92672">=</span>/etc/php56/php.d --with-libdir<span style="color: #f92672">=</span>lib64 --with-mysql --with-mysqli --enable-mbstring --disable-debug --disable-rpath --with-bz2 --with-curl --with-gettext --with-iconv --with-openssl --with-gd --with-mcrypt --with-pcre-regex --with-zlib --enable-cgi --enable-pdo<span style="color: #f92672">=</span>shared --with-pdo-mysql<span style="color: #f92672">=</span>shared --with-pdo-sqlite<span style="color: #f92672">=</span>shared --enable-zip --with-jpeg-dir<span style="color: #f92672">=</span>/usr/lib64 --with-freetype-dir<span style="color: #f92672">=</span>/usr/ --enable-gd-native-ttf
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./configure --prefix<span style="color:#f92672">=</span>/usr/bin/php56 --with-config-file-path<span style="color:#f92672">=</span>/etc/php56 --with-config-file-scan-dir<span style="color:#f92672">=</span>/etc/php56/php.d --with-libdir<span style="color:#f92672">=</span>lib64 --with-mysql --with-mysqli --enable-mbstring --disable-debug --disable-rpath --with-bz2 --with-curl --with-gettext --with-iconv --with-openssl --with-gd --with-mcrypt --with-pcre-regex --with-zlib --enable-cgi --enable-pdo<span style="color:#f92672">=</span>shared --with-pdo-mysql<span style="color:#f92672">=</span>shared --with-pdo-sqlite<span style="color:#f92672">=</span>shared --enable-zip --with-jpeg-dir<span style="color:#f92672">=</span>/usr/lib64 --with-freetype-dir<span style="color:#f92672">=</span>/usr/ --enable-gd-native-ttf
 
 make
-make <span style="color: #f8f8f2">test</span>
-make install
-</pre></div>
-</p>
+make test
+make install</code></pre></div></p>
 
 <p>Ok, now you can copy your new php.ini
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>cp php.ini-production /etc/php56/php.ini
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cp php.ini-production /etc/php56/php.ini
 vim /etc/php56/php.ini
-<span style="color: #75715e">#add this</span>
-cgi.fix_pathinfo <span style="color: #f92672">=</span> 1
-</pre></div>
-</p>
+<span style="color:#75715e">#add this
+</span><span style="color:#75715e"></span>cgi.fix_pathinfo <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span></code></pre></div></p>
 
 <p>Remember the script we wrote to execute php files? Ok, now it&rsquo;s the time to tell that script to execute php files with our new php install. We&rsquo;ll need to change the exec line, like this:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">exec</span> /usr/bin/php56/bin/php-cgi
-</pre></div>
-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">exec /usr/bin/php56/bin/php-cgi</code></pre></div></p>
 
 <p>Now you can repeat this operation as many times as you want, and you&rsquo;ll have different php versions, choosing which one you want to use with each virtual host. Also, you can configure and install php again with other params, overwriting the old configuration with no problems.</p>
 
@@ -328,100 +302,94 @@ cgi.fix_pathinfo <span style="color: #f92672">=</span> 1
 <h2 id="installing-mysql-and-phpmyadmin">Installing mysql and phpmyadmin</h2>
 
 <p>Installing mysql and phpmyadmin is easy, just type in the following commands and follow the instructions on screen:
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>yum install mysql-server
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum install mysql-server
 service mysqld start
-mysql_secure_installation
-</pre></div>
-</p>
+mysql_secure_installation</code></pre></div></p>
 
 <p>You should limit the access to phpmyadmin, so I recommend adding this to /etc/httpd/conf.d/phpMyAdmin.conf. Just change x.x.x.x for your ip. This way, only you can connect to phpmyadmin
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e"># phpMyAdmin - Web based MySQL browser written in php</span>
-<span style="color: #75715e">#</span>
-<span style="color: #75715e"># Allows only localhost by default</span>
-<span style="color: #75715e">#</span>
-<span style="color: #75715e"># But allowing phpMyAdmin to anyone other than localhost should be considered</span>
-<span style="color: #75715e"># dangerous unless properly secured by SSL</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache"><span style="color:#75715e"># phpMyAdmin - Web based MySQL browser written in php</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># Allows only localhost by default</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># But allowing phpMyAdmin to anyone other than localhost should be considered</span>
+<span style="color:#75715e"># dangerous unless properly secured by SSL</span>
 
-<span style="color: #f8f8f2">Alias</span> <span style="color: #e6db74">/phpMyAdmin</span> <span style="color: #e6db74">/usr/share/phpMyAdmin</span>
-<span style="color: #f8f8f2">Alias</span> <span style="color: #e6db74">/phpmyadmin</span> <span style="color: #e6db74">/usr/share/phpMyAdmin</span>
+Alias <span style="color:#e6db74">/phpMyAdmin</span> <span style="color:#e6db74">/usr/share/phpMyAdmin</span>
+Alias <span style="color:#e6db74">/phpmyadmin</span> <span style="color:#e6db74">/usr/share/phpMyAdmin</span>
 
-<span style="color: #f92672">&lt;Directory</span> <span style="color: #e6db74">/usr/share/phpMyAdmin/</span><span style="color: #f92672">&gt;</span>
-   <span style="color: #f8f8f2">AddDefaultCharset</span> UTF-8
+<span style="color:#f92672">&lt;Directory</span> <span style="color:#e6db74">/usr/share/phpMyAdmin/</span><span style="color:#f92672">&gt;</span>
+   AddDefaultCharset UTF-8
 
-   <span style="color: #f92672">&lt;IfModule</span> <span style="color: #e6db74">mod_authz_core.c</span><span style="color: #f92672">&gt;</span>
-     <span style="color: #75715e"># Apache 2.4</span>
-     <span style="color: #f92672">&lt;RequireAny&gt;</span>
-       <span style="color: #f8f8f2">Require</span> ip <span style="color: #ae81ff">127.0.0.1</span>
-       <span style="color: #f8f8f2">Require</span> ip ::1
-       <span style="color: #f8f8f2">Require</span> x.x.x.x
-     <span style="color: #f92672">&lt;/RequireAny&gt;</span>
-   <span style="color: #f92672">&lt;/IfModule&gt;</span>
-   <span style="color: #f92672">&lt;IfModule</span> <span style="color: #e6db74">!mod_authz_core.c</span><span style="color: #f92672">&gt;</span>
-     <span style="color: #75715e"># Apache 2.2</span>
-     <span style="color: #f8f8f2">Order</span> Deny,Allow
-     <span style="color: #f8f8f2">Deny</span> from <span style="color: #66d9ef">All</span>
-     <span style="color: #f8f8f2">Allow</span> from <span style="color: #ae81ff">127.0.0.1</span>
-     <span style="color: #f8f8f2">Allow</span> from ::1
-     <span style="color: #f8f8f2">Allow</span> from x.x.x.x
-   <span style="color: #f92672">&lt;/IfModule&gt;</span>
-<span style="color: #f92672">&lt;/Directory&gt;</span>
+   <span style="color:#f92672">&lt;IfModule</span> <span style="color:#e6db74">mod_authz_core.c</span><span style="color:#f92672">&gt;</span>
+     <span style="color:#75715e"># Apache 2.4</span>
+     <span style="color:#f92672">&lt;RequireAny</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
+       Require ip <span style="color:#ae81ff">127.0.0.1</span>
+       Require ip ::1
+       Require x.x.x.x
+     <span style="color:#f92672">&lt;/RequireAny</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
+   <span style="color:#f92672">&lt;/IfModule</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
+   <span style="color:#f92672">&lt;IfModule</span> <span style="color:#e6db74">!mod_authz_core.c</span><span style="color:#f92672">&gt;</span>
+     <span style="color:#75715e"># Apache 2.2</span>
+     Order Deny,Allow
+     Deny from <span style="color:#66d9ef">All</span>
+     Allow from <span style="color:#ae81ff">127.0.0.1</span>
+     Allow from ::1
+     Allow from x.x.x.x
+   <span style="color:#f92672">&lt;/IfModule</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;/Directory</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
 
-<span style="color: #f92672">&lt;Directory</span> <span style="color: #e6db74">/usr/share/phpMyAdmin/setup/</span><span style="color: #f92672">&gt;</span>
-   <span style="color: #f92672">&lt;IfModule</span> <span style="color: #e6db74">mod_authz_core.c</span><span style="color: #f92672">&gt;</span>
-     <span style="color: #75715e"># Apache 2.4</span>
-     <span style="color: #f92672">&lt;RequireAny&gt;</span>
-       <span style="color: #f8f8f2">Require</span> ip <span style="color: #ae81ff">127.0.0.1</span>
-       <span style="color: #f8f8f2">Require</span> ip ::1
-       <span style="color: #f8f8f2">Require</span> x.x.x.x
-     <span style="color: #f92672">&lt;/RequireAny&gt;</span>
-   <span style="color: #f92672">&lt;/IfModule&gt;</span>
-   <span style="color: #f92672">&lt;IfModule</span> <span style="color: #e6db74">!mod_authz_core.c</span><span style="color: #f92672">&gt;</span>
-     <span style="color: #75715e"># Apache 2.2</span>
-     <span style="color: #f8f8f2">Order</span> Deny,Allow
-     <span style="color: #f8f8f2">Deny</span> from <span style="color: #66d9ef">All</span>
-     <span style="color: #f8f8f2">Allow</span> from <span style="color: #ae81ff">127.0.0.1</span>
-     <span style="color: #f8f8f2">Allow</span> from ::1
-     <span style="color: #f8f8f2">Allow</span> from x.x.x.x
-   <span style="color: #f92672">&lt;/IfModule&gt;</span>
-<span style="color: #f92672">&lt;/Directory&gt;</span>
+<span style="color:#f92672">&lt;Directory</span> <span style="color:#e6db74">/usr/share/phpMyAdmin/setup/</span><span style="color:#f92672">&gt;</span>
+   <span style="color:#f92672">&lt;IfModule</span> <span style="color:#e6db74">mod_authz_core.c</span><span style="color:#f92672">&gt;</span>
+     <span style="color:#75715e"># Apache 2.4</span>
+     <span style="color:#f92672">&lt;RequireAny</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
+       Require ip <span style="color:#ae81ff">127.0.0.1</span>
+       Require ip ::1
+       Require x.x.x.x
+     <span style="color:#f92672">&lt;/RequireAny</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
+   <span style="color:#f92672">&lt;/IfModule</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
+   <span style="color:#f92672">&lt;IfModule</span> <span style="color:#e6db74">!mod_authz_core.c</span><span style="color:#f92672">&gt;</span>
+     <span style="color:#75715e"># Apache 2.2</span>
+     Order Deny,Allow
+     Deny from <span style="color:#66d9ef">All</span>
+     Allow from <span style="color:#ae81ff">127.0.0.1</span>
+     Allow from ::1
+     Allow from x.x.x.x
+   <span style="color:#f92672">&lt;/IfModule</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;/Directory</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
 
-<span style="color: #75715e"># These directories do not require access over HTTP - taken from the original</span>
-<span style="color: #75715e"># phpMyAdmin upstream tarball</span>
-<span style="color: #75715e">#</span>
-<span style="color: #f92672">&lt;Directory</span> <span style="color: #e6db74">/usr/share/phpMyAdmin/libraries/</span><span style="color: #f92672">&gt;</span>
-    <span style="color: #f8f8f2">Order</span> Deny,Allow
-    <span style="color: #f8f8f2">Deny</span> from <span style="color: #66d9ef">All</span>
-    <span style="color: #f8f8f2">Allow</span> from <span style="color: #66d9ef">None</span>
-<span style="color: #f92672">&lt;/Directory&gt;</span>
+<span style="color:#75715e"># These directories do not require access over HTTP - taken from the original</span>
+<span style="color:#75715e"># phpMyAdmin upstream tarball</span>
+<span style="color:#75715e">#</span>
+<span style="color:#f92672">&lt;Directory</span> <span style="color:#e6db74">/usr/share/phpMyAdmin/libraries/</span><span style="color:#f92672">&gt;</span>
+    Order Deny,Allow
+    Deny from <span style="color:#66d9ef">All</span>
+    Allow from <span style="color:#66d9ef">None</span>
+<span style="color:#f92672">&lt;/Directory</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
 
-<span style="color: #f92672">&lt;Directory</span> <span style="color: #e6db74">/usr/share/phpMyAdmin/setup/lib/</span><span style="color: #f92672">&gt;</span>
-    <span style="color: #f8f8f2">Order</span> Deny,Allow
-    <span style="color: #f8f8f2">Deny</span> from <span style="color: #66d9ef">All</span>
-    <span style="color: #f8f8f2">Allow</span> from <span style="color: #66d9ef">None</span>
-<span style="color: #f92672">&lt;/Directory&gt;</span>
+<span style="color:#f92672">&lt;Directory</span> <span style="color:#e6db74">/usr/share/phpMyAdmin/setup/lib/</span><span style="color:#f92672">&gt;</span>
+    Order Deny,Allow
+    Deny from <span style="color:#66d9ef">All</span>
+    Allow from <span style="color:#66d9ef">None</span>
+<span style="color:#f92672">&lt;/Directory</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
 
-<span style="color: #f92672">&lt;Directory</span> <span style="color: #e6db74">/usr/share/phpMyAdmin/setup/frames/</span><span style="color: #f92672">&gt;</span>
-    <span style="color: #f8f8f2">Order</span> Deny,Allow
-    <span style="color: #f8f8f2">Deny</span> from <span style="color: #66d9ef">All</span>
-    <span style="color: #f8f8f2">Allow</span> from <span style="color: #66d9ef">None</span>
-<span style="color: #f92672">&lt;/Directory&gt;</span>
+<span style="color:#f92672">&lt;Directory</span> <span style="color:#e6db74">/usr/share/phpMyAdmin/setup/frames/</span><span style="color:#f92672">&gt;</span>
+    Order Deny,Allow
+    Deny from <span style="color:#66d9ef">All</span>
+    Allow from <span style="color:#66d9ef">None</span>
+<span style="color:#f92672">&lt;/Directory</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
 
-<span style="color: #75715e"># This configuration prevents mod_security at phpMyAdmin directories from</span>
-<span style="color: #75715e"># filtering SQL etc.  This may break your mod_security implementation.</span>
-<span style="color: #75715e">#</span>
-<span style="color: #75715e">#&lt;IfModule mod_security.c&gt;</span>
-<span style="color: #75715e">#    &lt;Directory /usr/share/phpMyAdmin/&gt;</span>
-<span style="color: #75715e">#        SecRuleInheritance Off</span>
-<span style="color: #75715e">#    &lt;/Directory&gt;</span>
-<span style="color: #75715e">#&lt;/IfModule&gt;</span>
-</pre></div>
-</p>
+<span style="color:#75715e"># This configuration prevents mod_security at phpMyAdmin directories from</span>
+<span style="color:#75715e"># filtering SQL etc.  This may break your mod_security implementation.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#&lt;IfModule mod_security.c&gt;</span>
+<span style="color:#75715e">#    &lt;Directory /usr/share/phpMyAdmin/&gt;</span>
+<span style="color:#75715e">#        SecRuleInheritance Off</span>
+<span style="color:#75715e">#    &lt;/Directory&gt;</span>
+<span style="color:#75715e">#&lt;/IfModule&gt;</span></code></pre></div></p>
 
 <p>Finally, you should auto start apache and mysql, just in case you need to reboot your server. Use the following commands to achieve this
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>chkconfig httpd on
-chkconfig mysqld on
-</pre></div>
-</p></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chkconfig httpd on
+chkconfig mysqld on</code></pre></div></p></p>
       
     </div>
     <div class="clearfix"></div>
@@ -505,7 +473,7 @@ s.setAttribute('data-timestamp', +new Date());
       <h4 rel='author'>Jeferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p>Looking for a challenge :) | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a>, and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
+      <p>Amadeus Consultant located in Nice | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a> and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
       <div class='authorsocial'>
         
           <a href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fa fa-linkedin'></i></a>
@@ -558,12 +526,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
-                    <img alt='Installing ubuntu 16.04 on odroid xu3 lite' width='72' height='72' src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
+                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img alt='Fixing a corrupted partition on a virtual machine' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Installing ubuntu 16.04 on odroid xu3 lite</a>
+                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
                 </div>
               </div>
             </li>
@@ -573,12 +541,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img alt='installing unreal engine on fedora 25' width='72' height='72' src="/articles/img/thumbs/unreal_engine.min.jpg" />
+                  <a href='/articles/arduino-uno-lego-case/' target='_blank'>
+                    <img alt='Arduino UNO R3 lego case' width='72' height='72' src="/articles/img/thumbs/arduino-uno-lego-case.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
+                  <a href='/articles/arduino-uno-lego-case/' class="mostVisitedLink">Arduino UNO R3 lego case</a>
                 </div>
               </div>
             </li>
@@ -588,12 +556,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
-                    <img alt='Authenticating users with cURL' width='72' height='72' src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' target='_blank'>
+                    <img alt='Getting 1.5s page load time on a basic vps' width='72' height='72' src="/articles/img/thumbs/getting-1.5s-page-load-time-on-a-basic-vps.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Authenticating users with cURL</a>
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' class="mostVisitedLink">Getting 1.5s page load time on a basic vps</a>
                 </div>
               </div>
             </li>

@@ -201,35 +201,33 @@ For this task, we&rsquo;ll use a couple of bash scripts that will:</p>
 You have to tweak a llitle this script in order to fit your needs (dir names mostly).
 These scripts need to be placed in the root of your hugo site.</p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">article_images_dir</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;content/articles/img&quot;</span>
-<span style="color: #f8f8f2">thumbnails_dir</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;content/articles/img/thumbs/&quot;</span>
-<span style="color: #f8f8f2">thumbnail_size</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;140&quot;</span>
-<span style="color: #f8f8f2">force</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">false</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">article_images_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content/articles/img&#34;</span>
+thumbnails_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content/articles/img/thumbs/&#34;</span>
+thumbnail_size<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;140&#34;</span>
+force<span style="color:#f92672">=</span>false
 
-<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;generating thumbnails&quot;</span><span style="color: #f8f8f2">;</span>
-<span style="color: #66d9ef">for</span> i in <span style="color: #66d9ef">$(</span>find <span style="color: #f8f8f2">$article_images_dir</span> -maxdepth <span style="color: #ae81ff">1</span> -type f <span style="color: #ae81ff">\(</span> -name <span style="color: #e6db74">&quot;*.jpg&quot;</span> -or -name <span style="color: #e6db74">&quot;*.png&quot;</span> <span style="color: #ae81ff">\)</span> <span style="color: #66d9ef">)</span><span style="color: #f8f8f2">;</span> <span style="color: #66d9ef">do</span>
-  <span style="color: #f8f8f2">filename</span><span style="color: #f92672">=</span><span style="color: #66d9ef">$(</span>basename <span style="color: #f8f8f2">$i</span><span style="color: #66d9ef">)</span>
-  <span style="color: #66d9ef">if</span> <span style="color: #f92672">[</span> <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$i</span><span style="color: #e6db74">&quot;</span> -nt <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$thumbnails_dir$filename</span><span style="color: #e6db74">&quot;</span> <span style="color: #f92672">]</span> <span style="color: #f92672">||</span> <span style="color: #f92672">[</span> ! -f <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$thumbnails_dir$filename</span><span style="color: #e6db74">&quot;</span> <span style="color: #f92672">]</span> <span style="color: #f92672">||</span> <span style="color: #f92672">[</span> <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$force</span><span style="color: #e6db74">&quot;</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">true</span> <span style="color: #f92672">]</span><span style="color: #f8f8f2">;</span> <span style="color: #66d9ef">then</span>
-    <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;converting </span><span style="color: #f8f8f2">$i</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">;</span>
-    convert <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$i</span><span style="color: #e6db74">&quot;</span> -thumbnail <span style="color: #f8f8f2">$thumbnail_size</span> -quality <span style="color: #ae81ff">100</span> <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$thumbnails_dir</span><span style="color: #66d9ef">$(</span>basename <span style="color: #f8f8f2">$i</span><span style="color: #66d9ef">)</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">;</span>
-  <span style="color: #66d9ef">fi</span>
-<span style="color: #66d9ef">done</span><span style="color: #f8f8f2">;</span>
+echo <span style="color:#e6db74">&#34;generating thumbnails&#34;</span>;
+<span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>find $article_images_dir -maxdepth <span style="color:#ae81ff">1</span> -type f <span style="color:#ae81ff">\(</span> -name <span style="color:#e6db74">&#34;*.jpg&#34;</span> -or -name <span style="color:#e6db74">&#34;*.png&#34;</span> <span style="color:#ae81ff">\)</span> <span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span>
+  filename<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>basename $i<span style="color:#66d9ef">)</span>
+  <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> -nt <span style="color:#e6db74">&#34;</span>$thumbnails_dir$filename<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">[</span> ! -f <span style="color:#e6db74">&#34;</span>$thumbnails_dir$filename<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$force<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> true <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+    echo <span style="color:#e6db74">&#34;converting </span>$i<span style="color:#e6db74">&#34;</span>;
+    convert <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> -thumbnail $thumbnail_size -quality <span style="color:#ae81ff">100</span> <span style="color:#e6db74">&#34;</span>$thumbnails_dir<span style="color:#66d9ef">$(</span>basename $i<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>;
+  <span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">done</span>;
 
-<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;generating low quality images&quot;</span>
-<span style="color: #66d9ef">for</span> i in <span style="color: #66d9ef">$(</span>find <span style="color: #f8f8f2">$article_images_dir</span> -maxdepth <span style="color: #ae81ff">2</span> -mindepth <span style="color: #ae81ff">2</span> -type f <span style="color: #ae81ff">\(</span> -name <span style="color: #e6db74">&quot;*.jpg&quot;</span> -or -name <span style="color: #e6db74">&quot;*.png&quot;</span> <span style="color: #ae81ff">\)</span> <span style="color: #66d9ef">)</span><span style="color: #f8f8f2">;</span> <span style="color: #66d9ef">do</span>
-  <span style="color: #f8f8f2">filename</span><span style="color: #f92672">=</span><span style="color: #66d9ef">$(</span>basename <span style="color: #f8f8f2">$i</span><span style="color: #66d9ef">)</span>
-  <span style="color: #f8f8f2">dirname</span><span style="color: #f92672">=</span><span style="color: #66d9ef">$(</span>dirname <span style="color: #f8f8f2">$i</span><span style="color: #66d9ef">)</span>
-  <span style="color: #66d9ef">if</span> <span style="color: #f92672">[</span> <span style="color: #f8f8f2">$dirname</span><span style="color: #e6db74">&quot;/&quot;</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">$thumbnails_dir</span> <span style="color: #f92672">]</span><span style="color: #f8f8f2">;</span> <span style="color: #66d9ef">then</span>
-    <span style="color: #66d9ef">continue</span>
-  <span style="color: #66d9ef">fi</span>
-  <span style="color: #f8f8f2">thumbs_dir</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">$dirname</span><span style="color: #e6db74">&quot;/min/&quot;</span>
-  <span style="color: #66d9ef">if</span> <span style="color: #f92672">[</span> <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$i</span><span style="color: #e6db74">&quot;</span> -nt <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$thumbs_dir$filename</span><span style="color: #e6db74">&quot;</span> <span style="color: #f92672">]</span> <span style="color: #f92672">||</span> <span style="color: #f92672">[</span> ! -f <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$thumbs_dir$filename</span><span style="color: #e6db74">&quot;</span> <span style="color: #f92672">]</span> <span style="color: #f92672">||</span> <span style="color: #f92672">[</span> <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$force</span><span style="color: #e6db74">&quot;</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">true</span> <span style="color: #f92672">]</span><span style="color: #f8f8f2">;</span> <span style="color: #66d9ef">then</span>
-    <span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;converting </span><span style="color: #f8f8f2">$i</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">;</span>
-    convert <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$i</span><span style="color: #e6db74">&quot;</span> -scale <span style="color: #ae81ff">800</span> -quality <span style="color: #ae81ff">100</span> <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$thumbs_dir$filename</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">;</span>
-  <span style="color: #66d9ef">fi</span>
-<span style="color: #66d9ef">done</span><span style="color: #f8f8f2">;</span>
-</pre></div>
-
+echo <span style="color:#e6db74">&#34;generating low quality images&#34;</span>
+<span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>find $article_images_dir -maxdepth <span style="color:#ae81ff">2</span> -mindepth <span style="color:#ae81ff">2</span> -type f <span style="color:#ae81ff">\(</span> -name <span style="color:#e6db74">&#34;*.jpg&#34;</span> -or -name <span style="color:#e6db74">&#34;*.png&#34;</span> <span style="color:#ae81ff">\)</span> <span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span>
+  filename<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>basename $i<span style="color:#66d9ef">)</span>
+  dirname<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>dirname $i<span style="color:#66d9ef">)</span>
+  <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $dirname<span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">=</span> $thumbnails_dir <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+    <span style="color:#66d9ef">continue</span>
+  <span style="color:#66d9ef">fi</span>
+  thumbs_dir<span style="color:#f92672">=</span>$dirname<span style="color:#e6db74">&#34;/min/&#34;</span>
+  <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> -nt <span style="color:#e6db74">&#34;</span>$thumbs_dir$filename<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">[</span> ! -f <span style="color:#e6db74">&#34;</span>$thumbs_dir$filename<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$force<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> true <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+    echo <span style="color:#e6db74">&#34;converting </span>$i<span style="color:#e6db74">&#34;</span>;
+    convert <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> -scale <span style="color:#ae81ff">800</span> -quality <span style="color:#ae81ff">100</span> <span style="color:#e6db74">&#34;</span>$thumbs_dir$filename<span style="color:#e6db74">&#34;</span>;
+  <span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">done</span>;</code></pre></div>
 
 <p>This script will look into <code>article_images_dir</code> with a depth of 1 (these are
  main images for posts) and generate a thumbnail for each image it finds there.
@@ -325,7 +323,7 @@ s.setAttribute('data-timestamp', +new Date());
       <h4 rel='author'>Jeferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p>Looking for a challenge :) | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a>, and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
+      <p>Amadeus Consultant located in Nice | Currently interested in <a href="https://docker.com">Docker</a>, <a href="https://kubernetes.io/">kubernetes</a> and <a href="https://www.ibm.com/cloud-computing/bluemix/">IBM bluemix</a></p>
       <div class='authorsocial'>
         
           <a href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fa fa-linkedin'></i></a>
@@ -376,42 +374,29 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/getting-an-objects-methods/' target='_blank'>
-                    <img alt='Getting an object&#39;s (reflected) methods' width='72' height='72' src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
+                  <a href='/articles/facebook-sharer-and-ipv6-issue/' target='_blank'>
+                    <img alt='Facebook sharer and IPv6 issue' width='72' height='72' src="/articles/img/thumbs/facebook-sharer-and-ipv6-issue.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/getting-an-objects-methods/' class="mostVisitedLink">Getting an object&#39;s (reflected) methods</a>
+                  <a href='/articles/facebook-sharer-and-ipv6-issue/' class="mostVisitedLink">Facebook sharer and IPv6 issue</a>
                 </div>
               </div>
             </li>
+            
+            
             
             
              
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/using-piwik-api-locally-with-pw/' target='_blank'>
-                    <img alt='Using piwik&#39;s API locally with ProcessWire' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
+                  <a href='/articles/arduino-uno-lego-case/' target='_blank'>
+                    <img alt='Arduino UNO R3 lego case' width='72' height='72' src="/articles/img/thumbs/arduino-uno-lego-case.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Using piwik&#39;s API locally with ProcessWire</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' target='_blank'>
-                    <img alt='Getting 1.5s page load time on a basic vps' width='72' height='72' src="/articles/img/thumbs/getting-1.5s-page-load-time-on-a-basic-vps.png" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' class="mostVisitedLink">Getting 1.5s page load time on a basic vps</a>
+                  <a href='/articles/arduino-uno-lego-case/' class="mostVisitedLink">Arduino UNO R3 lego case</a>
                 </div>
               </div>
             </li>
