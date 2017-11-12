@@ -53,7 +53,7 @@ Usaremos las siguientes tecnologías. Deberías revisarlas antes de seguir con e
     <meta itemprop="image" content="web-development-environment.jpg">
     
     <meta itemprop="keywords" content="notpinned,pinned,,serie1,bash,centos6,curl,cwp,fedora25,fopen,httpd,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,php,php7,piwik,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm," />
-    <meta itemprop="wordCount" content="1440">
+    <meta itemprop="wordCount" content="1408">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
 	<meta name="twitter:image:src" content="https://www.jarboleda.me/articles/img/web-development-environment.jpg"/>
@@ -201,37 +201,25 @@ Usaremos las siguientes tecnologías. Deberías revisarlas antes de seguir con e
 <h2 id="instalando-vagrant">Instalando vagrant</h2>
 
 <p>Bien, el primer paso es instalar vagrant con virtualbox. Vamos a ver los pasos necesarios en <strong>Fedora</strong>, pero para el resto de distribuciones es muy parecido. En primer lugar, hay que instalar el repositorio de virtualbox. Para ello:
-{{ &lt; highlight sh &gt; }}
-cd /etc/yum.repos.d/
-wget <a href="http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo">http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo</a>
-#Instalamos las dependencias
-dnf install binutils gcc make patch libgomp glibc-headers glibc-devel kernel-headers kernel-devel dkms
-{{</highlight>}}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd /etc/yum.repos.d/
+wget http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
+<span style="color:#75715e">#Instalamos las dependencias
+</span><span style="color:#75715e"></span>dnf install binutils gcc make patch libgomp glibc-headers glibc-devel kernel-headers kernel-devel dkms</code></pre></div>
 Finalmente, instalaremos virtualbox. Yo he tenido que instalar la versión 5.0 porque actualmente vagrant no es compatible con la versión 5.1:
-{{<highlight sh>}}
-dnf install VirtualBox-5.0
-{{</highlight>}}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">dnf install VirtualBox-5.0</code></pre></div>
 Ahora instalaremos vagrant, tan fácil como:
-{{<highlight sh>}}
-dnf install vagrant
-{{</highlight>}}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">dnf install vagrant</code></pre></div>
 El siguiente paso consiste en ir a la <a href="https://box.scotch.io/">web de scotch</a> e instalar su máquina virtual:
-{{<highlight sh>}}
-mdir -p ~/vagrant/dev
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mdir -p ~/vagrant/dev
 cd ~/vagrant/dev/
-git clone <a href="https://github.com/scotch-io/scotch-box.git">https://github.com/scotch-io/scotch-box.git</a> my-project
-vagrant up &ndash;provider=virtualbox
-{{</highlight>}}
+git clone https://github.com/scotch-io/scotch-box.git my-project
+vagrant up --provider<span style="color:#f92672">=</span>virtualbox</code></pre></div>
 La primera vez vagrant tendrá que descargarse la imagen y tardará un tiempo. Una vez la máquina esté instalada, podremos verla en <a href="http://192.168.33.10/">http://192.168.33.10/</a>
 Bien, ya tenemos el entorno virtual montado, el siguiente paso es montar la web sobre la que queremos desarrollar en nuestro entorno de pruebas. Para ello migraremos los ficheros (comprimiéndolos en zip) y la base de datos la exportaremos como un fichero .sql ya sea con phpmyadmin o por terminal:
-{{<highlight sh>}}
-mysqldump -u db_username -p db_name &gt; db_name.sql
-{{</highlight>}}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mysqldump -u db_username -p db_name &gt; db_name.sql</code></pre></div>
 Por defecto, la máquina de scotch hace que el directorio donde instalamos la máquina (~/vagrant/dev) sea compartido con la máquina virtual en /var/www/, por lo que podremos descomprimir ahí la web. Tendremos que importar también la base de datos. Lo más sencillo es utilizar <a href="https://www.adminer.org/">adminer</a>, basta con descargarlo y dejarlo en la raíz de la web:
-{{<highlight sh>}}
-cd ~/vagrant/dev/public/
-wget <a href="https://www.adminer.org/static/download/4.2.5/adminer-4.2.5.php">https://www.adminer.org/static/download/4.2.5/adminer-4.2.5.php</a>
-{{</highlight>}}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd ~/vagrant/dev/public/
+wget https://www.adminer.org/static/download/4.2.5/adminer-4.2.5.php</code></pre></div>
 Si nuestro backup ocupa más de 2M, editaremos el fichero /etc/php5/apache2/php.ini y modificaremos la directiva upload_max_filesize y pondremos un tamaño acorde a nuestras necesidades (256M, por ejemplo). Una vez la web esté importada, es recomendable verificar el fichero .htaccess de nuestra web por si tenemos que hacer modificaciones para adaptarlo al nuevo entorno, como por ejemplo desactivar ssl. Además, deberemos modificar la conexión a la base de datos de nuestra web con los siguientes datos:
 * Key             Value
 * Database Name scotchbox
@@ -244,46 +232,38 @@ Si nuestro backup ocupa más de 2M, editaremos el fichero /etc/php5/apache2/php.
 <h2 id="estructura-de-directorios">Estructura de directorios</h2>
 
 <p>La estructura de ficheros para el desarrollo que utilizo es la siguiente:
-{{<highlight cirru>}}
-/templates/
-|&ndash; css &lt; Aquí se incluye el fichero global.min.css utilizado en producción (y cualquier otro, si hubiera más)
-|&ndash; fonts &lt; fuentes
-|&ndash; img &lt; imágenes utilizadas en el tema
-|&ndash; js &lt; ficheros .min.js de producción
-|&ndash; lib &lt; librerías necesarias en el tema
-|&ndash; node_modules &lt; módulos utilizados en desarrollo
-|&ndash; partials &lt; ficheros que contienen partes del tema (widgets, comentarios, etc)
-|&ndash; src &lt; código fuente de desarrollo
-|&mdash;-sass &lt; ficheros sass de desarrollo
-|&mdash;&mdash;modules &lt; utilidades sass, no producen código .css (ej: definir variables, placeholders, mixins)
-|&mdash;&mdash;partials &lt; ficheros sass para dar estilo a ciertas partes de la web (ej: menu.sass, article.sass, etc.)
-|&mdash;&mdash;vendor &lt; librerías de terceros (bootstrap, purecss, foundation, etc.)
-|&mdash;-js &lt; ficheros js de desarrollo
-.php &lt; templates (header.php, footer.php. etc.)
-{{</highlight>}}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cirru" data-lang="cirru">/templates/
+|-- css &lt; Aquí se incluye el fichero global.min.css utilizado en producción (y cualquier otro, si hubiera más)
+|-- fonts &lt; fuentes
+|-- img &lt; imágenes utilizadas en el tema
+|-- js &lt; ficheros .min.js de producción
+|-- lib &lt; librerías necesarias en el tema
+|-- node_modules &lt; módulos utilizados en desarrollo
+|-- partials &lt; ficheros que contienen partes del tema (widgets, comentarios, etc)
+|-- src &lt; código fuente de desarrollo
+|----sass &lt; ficheros sass de desarrollo
+|------modules &lt; utilidades sass, no producen código .css (ej: definir variables, placeholders, mixins)
+|------partials &lt; ficheros sass para dar estilo a ciertas partes de la web (ej: menu.sass, article.sass, etc.)
+|------vendor &lt; librerías de terceros (bootstrap, purecss, foundation, etc.)
+|----js &lt; ficheros js de desarrollo
+.php &lt; templates (header.php, footer.php. etc.)</code></pre></div></p>
 
 <h2 id="automatizando-tareas">Automatizando tareas</h2>
 
 <p>Ya tenemos el entorno montado, el siguiente paso será utilizar gulp y compass para automatizar algunas tareas como compilar sass o comprimir los ficheros js. Para ello, empezaremos por instalar ruby en la <strong>máquina virtual</strong>:
-{{<highlight sh>}}
-vagrant ssh
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vagrant ssh
 su root
 apt-get install ruby
-gem update &ndash;system
-gem install compass
-{{</highlight>}}
+gem update --system
+gem install compass</code></pre></div>
 Luego procederemos a instalar nodejs y npm (disponibles en los repositorios oficiales, sin líos):
-{{<highlight sh>}}
-apt-get install nodejs npm
-{{</highlight>}}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">apt-get install nodejs npm</code></pre></div>
 Ahora podremos instalar y configurar gulp para automatizar tareas:
-{{<highlight sh>}}
-cd ~/vagrant/dev/
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd ~/vagrant/dev/
 npm init
-npm install &ndash;global gulp-cli
-npm install &ndash;save-dev gulp
-compass create <project_name>
-{{</highlight>}}
+npm install --global gulp-cli
+npm install --save-dev gulp
+compass create &lt;project_name&gt;</code></pre></div>
 Ya tenemos gulp y compass disponible, ahora tendremos que indicarle qué tareas queremos automatizar. Aquí voy a poner el gulpfile.js que utilizo yo, puedes modificarlo para ajustarlo a tus necesidades. Este fichero hace:</p>
 
 <ul>
@@ -296,81 +276,73 @@ Ya tenemos gulp y compass disponible, ahora tendremos que indicarle qué tareas 
 
 <p>Aquí os dejo el fichero gulpfile.js. Antes de utilizarlo hay que instalar las dependencias necesarias:</p>
 
-<p>{{<highlight sh>}}
-npm install &ndash;save-dev gulp gulp-compass gulp-autoprefixer gulp-rename gulp-clean-css gulp-uglify gulp-concat gulp-livereload gulp-plumber gulp-path
-{{</highlight>}}
-{{<highlight js>}}
-var gulp = require(&lsquo;gulp&rsquo;),
-    compass = require(&lsquo;gulp-compass&rsquo;),
-    autoprefixer = require(&lsquo;gulp-autoprefixer&rsquo;),
-    rename = require(&lsquo;gulp-rename&rsquo;),
-    // minifycss = require(&lsquo;gulp-minify-css&rsquo;),
-    cleanCSS = require(&lsquo;gulp-clean-css&rsquo;);
-    uglify = require(&lsquo;gulp-uglify&rsquo;),
-    concat = require(&lsquo;gulp-concat&rsquo;)
-    livereload = require(&lsquo;gulp-livereload&rsquo;)
-    plumber = require(&lsquo;gulp-plumber&rsquo;),
-    path = require(&lsquo;path&rsquo;);</p>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm install --save-dev gulp gulp-compass gulp-autoprefixer gulp-rename gulp-clean-css gulp-uglify gulp-concat gulp-livereload gulp-plumber gulp-path</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">gulp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp&#39;</span>),
+    <span style="color:#a6e22e">compass</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-compass&#39;</span>),
+    <span style="color:#a6e22e">autoprefixer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-autoprefixer&#39;</span>),
+    <span style="color:#a6e22e">rename</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-rename&#39;</span>),
+    <span style="color:#75715e">// minifycss = require(&#39;gulp-minify-css&#39;),
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">cleanCSS</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-clean-css&#39;</span>);
+    <span style="color:#a6e22e">uglify</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-uglify&#39;</span>),
+    <span style="color:#a6e22e">concat</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-concat&#39;</span>)
+    <span style="color:#a6e22e">livereload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-livereload&#39;</span>)
+    <span style="color:#a6e22e">plumber</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-plumber&#39;</span>),
+    <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;path&#39;</span>);
 
-<p>var sass_dir = &lsquo;./src/sass/<strong>/*.scss&rsquo;,
-    js_dir   = &lsquo;./src/js/</strong>/*.js&rsquo;;</p>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">sass_dir</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;./src/sass/**/*.scss&#39;</span>,
+    <span style="color:#a6e22e">js_dir</span>   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;./src/js/**/*.js&#39;</span>;
 
-<p>gulp.task(&lsquo;default&rsquo;, function() {
-  // place code for your default task here
-});</p>
+<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;default&#39;</span>, <span style="color:#66d9ef">function</span>() {
+  <span style="color:#75715e">// place code for your default task here
+</span><span style="color:#75715e"></span>});
 
-<p>gulp.task(&lsquo;live&rsquo;, function(){
-  livereload.listen();
-  gulp.watch(sass_dir, [&lsquo;css&rsquo;]);
-  gulp.watch(js_dir, [&lsquo;js&rsquo;]);</p>
+<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;live&#39;</span>, <span style="color:#66d9ef">function</span>(){
+  <span style="color:#a6e22e">livereload</span>.<span style="color:#a6e22e">listen</span>();
+  <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">watch</span>(<span style="color:#a6e22e">sass_dir</span>, [<span style="color:#e6db74">&#39;css&#39;</span>]);
+  <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">watch</span>(<span style="color:#a6e22e">js_dir</span>, [<span style="color:#e6db74">&#39;js&#39;</span>]);
 
-<p>//reload when a template file, the minified css, or the minified js file changes
-  gulp.watch([&lsquo;partials/<em>.php&rsquo;, &lsquo;</em>.php&rsquo;, &lsquo;css/<em>.css&rsquo;, &lsquo;js/</em>.js&rsquo;], function(event) {
-    gulp.src(event.path)
-      .pipe(plumber())
-      .pipe(livereload())
+  <span style="color:#75715e">//reload when a template file, the minified css, or the minified js file changes
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">watch</span>([<span style="color:#e6db74">&#39;partials/*.php&#39;</span>, <span style="color:#e6db74">&#39;*.php&#39;</span>, <span style="color:#e6db74">&#39;css/*.css&#39;</span>, <span style="color:#e6db74">&#39;js/*.js&#39;</span>], <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
+    <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">src</span>(<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">path</span>)
+      .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">plumber</span>())
+      .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">livereload</span>())
   });
-});</p>
-
-<p>// sass
-gulp.task(&lsquo;css&rsquo;, function() {
-  gulp.src(sass_dir)
-  .pipe(plumber())
-  .pipe(compass({
-    config_file: &lsquo;./config.rb&rsquo;,
-    css: &lsquo;css&rsquo;,
-    sass: &lsquo;src/sass&rsquo;
-  }))
-  .pipe(autoprefixer({
-    // browsers: [&lsquo;last 5 versions&rsquo;],
-    browsers: [&lsquo;&gt; 1%&rsquo;],
-    remove: true,
-  }))
-  .pipe(gulp.dest(&lsquo;./css&rsquo;))
-  .pipe(rename({ suffix: &lsquo;.min&rsquo; }))
-  .pipe(cleanCSS())
-  .pipe(gulp.dest(&lsquo;./css&rsquo;));
-});</p>
-
-<p>//js
-gulp.task(&lsquo;js&rsquo;, function() {
-  return gulp.src(js_dir)
-    .pipe(concat(&lsquo;main.js&rsquo;))
-    .pipe(gulp.dest(&lsquo;js/&rsquo;))
-    .pipe(rename({ suffix: &lsquo;.min&rsquo; }))
-    .pipe(uglify())
-    .pipe(gulp.dest(&lsquo;js/&rsquo;));
 });
-{{</highlight>}}</p>
+
+<span style="color:#75715e">// sass
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;css&#39;</span>, <span style="color:#66d9ef">function</span>() {
+  <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">src</span>(<span style="color:#a6e22e">sass_dir</span>)
+  .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">plumber</span>())
+  .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">compass</span>({
+    <span style="color:#a6e22e">config_file</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./config.rb&#39;</span>,
+    <span style="color:#a6e22e">css</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;css&#39;</span>,
+    <span style="color:#a6e22e">sass</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;src/sass&#39;</span>
+  }))
+  .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">autoprefixer</span>({
+    <span style="color:#75715e">// browsers: [&#39;last 5 versions&#39;],
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">browsers</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;&gt; 1%&#39;</span>],
+    <span style="color:#a6e22e">remove</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+  }))
+  .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">dest</span>(<span style="color:#e6db74">&#39;./css&#39;</span>))
+  .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">rename</span>({ <span style="color:#a6e22e">suffix</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;.min&#39;</span> }))
+  .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">cleanCSS</span>())
+  .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">dest</span>(<span style="color:#e6db74">&#39;./css&#39;</span>));
+});
+
+<span style="color:#75715e">//js
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;js&#39;</span>, <span style="color:#66d9ef">function</span>() {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">src</span>(<span style="color:#a6e22e">js_dir</span>)
+  	.<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">concat</span>(<span style="color:#e6db74">&#39;main.js&#39;</span>))
+  	.<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">dest</span>(<span style="color:#e6db74">&#39;js/&#39;</span>))
+  	.<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">rename</span>({ <span style="color:#a6e22e">suffix</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;.min&#39;</span> }))
+  	.<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">uglify</span>())
+  	.<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">dest</span>(<span style="color:#e6db74">&#39;js/&#39;</span>));
+});</code></pre></div></p>
 
 <p>Como estamos trabajando en una máquina virtual, la extensión livereload no verá el servidor livereload porque lo va a buscar en localhost:35729. Para solucionarlo, tendremos que redigir el puerto 35729 de nuestra máquina local al puerto 35729 de la máquina virtual. Para ello:
-{{<highlight js>}}
-ssh -L 35729:192.168.33.10:35729 vagrant@192.168.33.10
-{{</highlight>}}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">ssh</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">L</span> <span style="color:#ae81ff">35729</span><span style="color:#f92672">:</span><span style="color:#ae81ff">192.168.33.10</span><span style="color:#f92672">:</span><span style="color:#ae81ff">35729</span> <span style="color:#a6e22e">vagrant</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#ae81ff">192.168.33.10</span></code></pre></div>
 Ya está todo listo, ahora podremos utilizar gulp para automatizar tareas. Desde el directorio del proyecto:
-{{<highlight js>}}
-gulp live
-{{</highlight>}}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">gulp</span> <span style="color:#a6e22e">live</span></code></pre></div>
 Ya tenemos todo listo, si hemos seguido los pasos podremos modificar código en ~/vagrant/dev y ver los cambios de manera instantánea en Chrome, lo que nos da un entorno de trabajo muy ágil y en el que podremos hacer las pruebas que queramos sin afectar al entorno real.
 En cuanto a la metodología a utilizar en git, queda a elección del desarrollador. Personalmente, siempre tengo 3 branches &ldquo;infinitos&rdquo;, que son:</p>
 
@@ -532,12 +504,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
-                    <img alt='Autenticando usuarios con cURL' width='72' height='72' src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
+                  <a href='/es/articles/centos-web-panel-on-vps/' target='_blank'>
+                    <img alt='Centos web panel con php7 y mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Autenticando usuarios con cURL</a>
+                  <a href='/es/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel con php7 y mysql5.6</a>
                 </div>
               </div>
             </li>
@@ -547,12 +519,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
-                    <img alt='Cómo manejar recursos remotos con curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
+                  <a href='/es/articles/getting-an-objects-methods/' target='_blank'>
+                    <img alt='Obteniendo los métodos (reflejados) de un objeto' width='72' height='72' src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">Cómo manejar recursos remotos con curl</a>
+                  <a href='/es/articles/getting-an-objects-methods/' class="mostVisitedLink">Obteniendo los métodos (reflejados) de un objeto</a>
                 </div>
               </div>
             </li>
@@ -562,12 +534,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
-                    <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
+                  <a href='/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
+                    <img alt='Instalando ubuntu 16.04 en odroid xu3 lite' width='72' height='72' src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
+                  <a href='/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Instalando ubuntu 16.04 en odroid xu3 lite</a>
                 </div>
               </div>
             </li>
