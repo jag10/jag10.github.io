@@ -24,7 +24,7 @@ Firstly, we&rsquo;ll create our dir structure. I&rsquo;ll use jag.co as a domain
 " />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/" />
-	<meta property="og:image" content="https://www.jarboleda.me/articles/img/configuring-a-lamp-server-on-centos-6.jpg" />
+	<meta property="og:image" content="/articles/img/configuring-a-lamp-server-on-centos-6.jpg" />
 	<meta property="og:updated_time" content="2015-08-09 10:48:45 &#43;0200 CEST"/>
 	<meta property="og:locale" content="en-US" />
 	<meta property="og:site_name" content="J. Arboleda" />
@@ -51,11 +51,11 @@ Firstly, we&rsquo;ll create our dir structure. I&rsquo;ll use jag.co as a domain
     
     <meta itemprop="image" content="configuring-a-lamp-server-on-centos-6.jpg">
     
-    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,arduino,backup,backups,bash,case,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,github,httpd,hugo,iptables,ipv6,lego,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,pages,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,static,ubuntu,unrealengine,vagrant,vm,vps,zip," />
+    <meta itemprop="keywords" content="notpinned,pinned,,false,true,serie1,arduino,backup,backups,bash,case,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,github,httpd,hugo,iptables,ipv6,job,lego,linkedin,magento,magento2,mate,move,mysql,mysqldump,nodejs,odroid,pages,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,static,ubuntu,unrealengine,vagrant,vm,vps,zip," />
     <meta itemprop="wordCount" content="1291">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
-	<meta name="twitter:image:src" content="https://www.jarboleda.me/articles/img/configuring-a-lamp-server-on-centos-6.jpg"/>
+	<meta name="twitter:image:src" content="/articles/img/configuring-a-lamp-server-on-centos-6.jpg"/>
 	
 	<meta name="twitter:title" content="configuring a LAMP server on CentOS 6"/>
 	<meta name="twitter:description" content="In this first post I&rsquo;ll explain how I configurated my VPS to run a basic LAMP server with multiple php versions, compiled by myself. You can get your own cheap VPS (~3€) and test a lot of things.
@@ -206,7 +206,7 @@ yum install php</code></pre></div></p>
 <p>Secondly, we&rsquo;re going to create and edit the file /etc/httpd/conf.d/jag.co.conf and include the following content:</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache">LoadModule suexec_module    lib/apache/mod_suexec.so
-<span style="color:#f92672">&lt;VirtualHost</span> <span style="color:#e6db74">*:80</span><span style="color:#f92672">&gt;</span>
+<span style="color:#960050;background-color:#1e0010">&amp;lt;</span>VirtualHost *:80&amp;gt;
     ServerName jag.co
     DocumentRoot <span style="color:#e6db74">/var/www/vhosts/jag.co/httpdocs</span>
     ServerAdmin hostmaster@jag.co
@@ -217,27 +217,27 @@ yum install php</code></pre></div></p>
     SuexecUserGroup jag jag
     ScriptAlias <span style="color:#e6db74">/cgi-bin/</span> <span style="color:#e6db74">&#34;/var/www/vhosts/jag.co/.cgi-bin/&#34;</span>
 
-    <span style="color:#f92672">&lt;Directory</span> <span style="color:#e6db74">&#34;/var/www/vhosts/jag.co/.cgi-bin/&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#960050;background-color:#1e0010">&amp;lt;</span>Directory <span style="color:#e6db74">&#34;/var/www/vhosts/jag.co/.cgi-bin/&#34;</span>&amp;gt;
         AllowOverride <span style="color:#66d9ef">None</span>
         Order allow,deny
         Allow from <span style="color:#66d9ef">all</span>
-    <span style="color:#f92672">&lt;/Directory</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
+    <span style="color:#960050;background-color:#1e0010">&amp;lt;/Directory&amp;gt;</span>
 
-    <span style="color:#f92672">&lt;Directory</span> <span style="color:#e6db74">&#34;/var/www/vhosts/jag.co/httpdocs&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#960050;background-color:#1e0010">&amp;lt;</span>Directory <span style="color:#e6db74">&#34;/var/www/vhosts/jag.co/httpdocs&#34;</span>&amp;gt;
         Options Indexes Includes FollowSymLinks
         AllowOverride <span style="color:#66d9ef">All</span>
         <span style="color:#75715e">#mod_php executes all php by default, so we need to use the Filesmatch directive to tell apache we want to execute php with our own cgi-bin.</span>
-        <span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;.+\.ph(p[345]?|t|tml)$&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#960050;background-color:#1e0010">&amp;lt;</span>FilesMatch <span style="color:#e6db74">&#34;.+\.ph(p[345]?|t|tml)$&#34;</span>&amp;gt;
             SetHandler php5-fastcgi
             Action php5-fastcgi <span style="color:#e6db74">/cgi-bin/php.fcgi</span>
-        <span style="color:#f92672">&lt;/FilesMatch</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
+        <span style="color:#960050;background-color:#1e0010">&amp;lt;/FilesMatch&amp;gt;</span>
         Order allow,deny
         Allow from <span style="color:#66d9ef">all</span>
-    <span style="color:#f92672">&lt;/Directory</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
+    <span style="color:#960050;background-color:#1e0010">&amp;lt;/Directory&amp;gt;</span>
 	<span style="color:#75715e">#allow 20M request, just to manage files</span>
     FcgidMaxRequestLen <span style="color:#ae81ff">20000000</span>
 
-<span style="color:#f92672">&lt;/VirtualHost</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span></code></pre></div>
+<span style="color:#960050;background-color:#1e0010">&amp;lt;/VirtualHost&amp;gt;</span></code></pre></div>
 
 <p>Here we&rsquo;re telling apache some basic directives to use with our virtualhost, like error logs (remember to create these files and set their permissions correctly) or how to execute php files. To execute php we&rsquo;ll be using suexec_mod, which allow us to execute php under different users, thus improving security between virtual hosts. By default, mod_php will take all our php files and execute them under apache user. So if we don&rsquo;t want that to happen under our virtualhost, we&rsquo;ll use the directive SetHandler to change that. This way, we&rsquo;re telling apache to execute .php files with an script we&rsquo;ll create later.
 Now, we need to create log files:
@@ -317,75 +317,75 @@ mysql_secure_installation</code></pre></div></p>
 Alias <span style="color:#e6db74">/phpMyAdmin</span> <span style="color:#e6db74">/usr/share/phpMyAdmin</span>
 Alias <span style="color:#e6db74">/phpmyadmin</span> <span style="color:#e6db74">/usr/share/phpMyAdmin</span>
 
-<span style="color:#f92672">&lt;Directory</span> <span style="color:#e6db74">/usr/share/phpMyAdmin/</span><span style="color:#f92672">&gt;</span>
+<span style="color:#960050;background-color:#1e0010">&amp;lt;</span>Directory <span style="color:#e6db74">/usr/share/phpMyAdmin/</span>&amp;gt;
    AddDefaultCharset UTF-8
 
-   <span style="color:#f92672">&lt;IfModule</span> <span style="color:#e6db74">mod_authz_core.c</span><span style="color:#f92672">&gt;</span>
+   <span style="color:#960050;background-color:#1e0010">&amp;lt;</span>IfModule mod_authz_core.c&amp;gt;
      <span style="color:#75715e"># Apache 2.4</span>
-     <span style="color:#f92672">&lt;RequireAny</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
+     <span style="color:#960050;background-color:#1e0010">&amp;lt;RequireAny&amp;gt;</span>
        Require ip <span style="color:#ae81ff">127.0.0.1</span>
        Require ip ::1
        Require x.x.x.x
-     <span style="color:#f92672">&lt;/RequireAny</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
-   <span style="color:#f92672">&lt;/IfModule</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
-   <span style="color:#f92672">&lt;IfModule</span> <span style="color:#e6db74">!mod_authz_core.c</span><span style="color:#f92672">&gt;</span>
+     <span style="color:#960050;background-color:#1e0010">&amp;lt;/RequireAny&amp;gt;</span>
+   <span style="color:#960050;background-color:#1e0010">&amp;lt;/IfModule&amp;gt;</span>
+   <span style="color:#960050;background-color:#1e0010">&amp;lt;</span>IfModule !mod_authz_core.c&amp;gt;
      <span style="color:#75715e"># Apache 2.2</span>
      Order Deny,Allow
      Deny from <span style="color:#66d9ef">All</span>
      Allow from <span style="color:#ae81ff">127.0.0.1</span>
      Allow from ::1
      Allow from x.x.x.x
-   <span style="color:#f92672">&lt;/IfModule</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">&lt;/Directory</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
+   <span style="color:#960050;background-color:#1e0010">&amp;lt;/IfModule&amp;gt;</span>
+<span style="color:#960050;background-color:#1e0010">&amp;lt;/Directory&amp;gt;</span>
 
-<span style="color:#f92672">&lt;Directory</span> <span style="color:#e6db74">/usr/share/phpMyAdmin/setup/</span><span style="color:#f92672">&gt;</span>
-   <span style="color:#f92672">&lt;IfModule</span> <span style="color:#e6db74">mod_authz_core.c</span><span style="color:#f92672">&gt;</span>
+<span style="color:#960050;background-color:#1e0010">&amp;lt;</span>Directory <span style="color:#e6db74">/usr/share/phpMyAdmin/setup/</span>&amp;gt;
+   <span style="color:#960050;background-color:#1e0010">&amp;lt;</span>IfModule mod_authz_core.c&amp;gt;
      <span style="color:#75715e"># Apache 2.4</span>
-     <span style="color:#f92672">&lt;RequireAny</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
+     <span style="color:#960050;background-color:#1e0010">&amp;lt;RequireAny&amp;gt;</span>
        Require ip <span style="color:#ae81ff">127.0.0.1</span>
        Require ip ::1
        Require x.x.x.x
-     <span style="color:#f92672">&lt;/RequireAny</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
-   <span style="color:#f92672">&lt;/IfModule</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
-   <span style="color:#f92672">&lt;IfModule</span> <span style="color:#e6db74">!mod_authz_core.c</span><span style="color:#f92672">&gt;</span>
+     <span style="color:#960050;background-color:#1e0010">&amp;lt;/RequireAny&amp;gt;</span>
+   <span style="color:#960050;background-color:#1e0010">&amp;lt;/IfModule&amp;gt;</span>
+   <span style="color:#960050;background-color:#1e0010">&amp;lt;</span>IfModule !mod_authz_core.c&amp;gt;
      <span style="color:#75715e"># Apache 2.2</span>
      Order Deny,Allow
      Deny from <span style="color:#66d9ef">All</span>
      Allow from <span style="color:#ae81ff">127.0.0.1</span>
      Allow from ::1
      Allow from x.x.x.x
-   <span style="color:#f92672">&lt;/IfModule</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">&lt;/Directory</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
+   <span style="color:#960050;background-color:#1e0010">&amp;lt;/IfModule&amp;gt;</span>
+<span style="color:#960050;background-color:#1e0010">&amp;lt;/Directory&amp;gt;</span>
 
 <span style="color:#75715e"># These directories do not require access over HTTP - taken from the original</span>
 <span style="color:#75715e"># phpMyAdmin upstream tarball</span>
 <span style="color:#75715e">#</span>
-<span style="color:#f92672">&lt;Directory</span> <span style="color:#e6db74">/usr/share/phpMyAdmin/libraries/</span><span style="color:#f92672">&gt;</span>
+<span style="color:#960050;background-color:#1e0010">&amp;lt;</span>Directory <span style="color:#e6db74">/usr/share/phpMyAdmin/libraries/</span>&amp;gt;
     Order Deny,Allow
     Deny from <span style="color:#66d9ef">All</span>
     Allow from <span style="color:#66d9ef">None</span>
-<span style="color:#f92672">&lt;/Directory</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
+<span style="color:#960050;background-color:#1e0010">&amp;lt;/Directory&amp;gt;</span>
 
-<span style="color:#f92672">&lt;Directory</span> <span style="color:#e6db74">/usr/share/phpMyAdmin/setup/lib/</span><span style="color:#f92672">&gt;</span>
+<span style="color:#960050;background-color:#1e0010">&amp;lt;</span>Directory <span style="color:#e6db74">/usr/share/phpMyAdmin/setup/lib/</span>&amp;gt;
     Order Deny,Allow
     Deny from <span style="color:#66d9ef">All</span>
     Allow from <span style="color:#66d9ef">None</span>
-<span style="color:#f92672">&lt;/Directory</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
+<span style="color:#960050;background-color:#1e0010">&amp;lt;/Directory&amp;gt;</span>
 
-<span style="color:#f92672">&lt;Directory</span> <span style="color:#e6db74">/usr/share/phpMyAdmin/setup/frames/</span><span style="color:#f92672">&gt;</span>
+<span style="color:#960050;background-color:#1e0010">&amp;lt;</span>Directory <span style="color:#e6db74">/usr/share/phpMyAdmin/setup/frames/</span>&amp;gt;
     Order Deny,Allow
     Deny from <span style="color:#66d9ef">All</span>
     Allow from <span style="color:#66d9ef">None</span>
-<span style="color:#f92672">&lt;/Directory</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span>
+<span style="color:#960050;background-color:#1e0010">&amp;lt;/Directory&amp;gt;</span>
 
 <span style="color:#75715e"># This configuration prevents mod_security at phpMyAdmin directories from</span>
 <span style="color:#75715e"># filtering SQL etc.  This may break your mod_security implementation.</span>
 <span style="color:#75715e">#</span>
-<span style="color:#75715e">#&lt;IfModule mod_security.c&gt;</span>
-<span style="color:#75715e">#    &lt;Directory /usr/share/phpMyAdmin/&gt;</span>
+<span style="color:#75715e">#&amp;lt;IfModule mod_security.c&amp;gt;</span>
+<span style="color:#75715e">#    &amp;lt;Directory /usr/share/phpMyAdmin/&amp;gt;</span>
 <span style="color:#75715e">#        SecRuleInheritance Off</span>
-<span style="color:#75715e">#    &lt;/Directory&gt;</span>
-<span style="color:#75715e">#&lt;/IfModule&gt;</span></code></pre></div></p>
+<span style="color:#75715e">#    &amp;lt;/Directory&amp;gt;</span>
+<span style="color:#75715e">#&amp;lt;/IfModule&amp;gt;</span></code></pre></div></p>
 
 <p>Finally, you should auto start apache and mysql, just in case you need to reboot your server. Use the following commands to achieve this
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chkconfig httpd on
@@ -428,7 +428,7 @@ chkconfig mysqld on</code></pre></div></p></p>
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/&amp;media=https://www.jarboleda.meconfiguring-a-lamp-server-on-centos-6.jpg&amp;description=%3cp%3eIn%20this%20first%20post%20I&amp;rsquo;ll%20explain%20how%20I%20configurated%20my%20VPS%20to%20run%20a%20basic%20LAMP%20server%20with%20multiple%20php%20versions,%20compiled%20by%20myself.%20You%20can%20get%20your%20own%20cheap%20VPS%20%28~3%e2%82%ac%29%20and%20test%20a%20lot%20of%20things.%3c/p%3e%0a%0a%3ch2%20id=%22dir-structure%22%3eDir%20structure%3c/h2%3e%0a%0a%3cp%3eFirstly,%20we&amp;rsquo;ll%20create%20our%20dir%20structure.%20I&amp;rsquo;ll%20use%20jag.co%20as%20a%20domain%20for%20this%20example,%20you%20can%20choose%20the%20dir%20structure%20you%20want,%20but%20I%20recommend%20following%20this%20one:%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/&amp;media=%3cnil%3econfiguring-a-lamp-server-on-centos-6.jpg&amp;description=%3cp%3eIn%20this%20first%20post%20I&amp;rsquo;ll%20explain%20how%20I%20configurated%20my%20VPS%20to%20run%20a%20basic%20LAMP%20server%20with%20multiple%20php%20versions,%20compiled%20by%20myself.%20You%20can%20get%20your%20own%20cheap%20VPS%20%28~3%e2%82%ac%29%20and%20test%20a%20lot%20of%20things.%3c/p%3e%0a%0a%3ch2%20id=%22dir-structure%22%3eDir%20structure%3c/h2%3e%0a%0a%3cp%3eFirstly,%20we&amp;rsquo;ll%20create%20our%20dir%20structure.%20I&amp;rsquo;ll%20use%20jag.co%20as%20a%20domain%20for%20this%20example,%20you%20can%20choose%20the%20dir%20structure%20you%20want,%20but%20I%20recommend%20following%20this%20one:%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -526,12 +526,27 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/facebook-sharer-and-ipv6-issue/' target='_blank'>
-                    <img alt='Facebook sharer and IPv6 issue' width='72' height='72' src="/articles/img/thumbs/facebook-sharer-and-ipv6-issue.png" />
+                  <a href='/articles/deploy-hugo-site-to-github-pages/' target='_blank'>
+                    <img alt='Deploying a hugo site to github pages' width='72' height='72' src="/articles/img/thumbs/deploy-hugo-site-to-github-pages.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/facebook-sharer-and-ipv6-issue/' class="mostVisitedLink">Facebook sharer and IPv6 issue</a>
+                  <a href='/articles/deploy-hugo-site-to-github-pages/' class="mostVisitedLink">Deploying a hugo site to github pages</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/articles/getting-an-objects-methods/' target='_blank'>
+                    <img alt='Getting an object&#39;s (reflected) methods' width='72' height='72' src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/getting-an-objects-methods/' class="mostVisitedLink">Getting an object&#39;s (reflected) methods</a>
                 </div>
               </div>
             </li>
@@ -547,21 +562,6 @@ s.setAttribute('data-timestamp', +new Date());
                 </div>
                 <div class='item-title'>
                   <a href='/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
-                    <img alt='Backing up all databases using mysqldump' width='72' height='72' src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Backing up all databases using mysqldump</a>
                 </div>
               </div>
             </li>
@@ -622,8 +622,8 @@ s.setAttribute('data-timestamp', +new Date());
       </ul>
     </div>
     <div class='clr'></div>
-    <p>Copyright &#169; 2017
-      <a href='https://www.jarboleda.me'>https://www.jarboleda.me</a>
+    <p>Copyright &#169; 2018
+      <a href=''></a>
     </p>
     <p class='attribution'>Powered by</p>
     <a href='https://gohugo.io/' target="_blank" >

@@ -5,10 +5,35 @@
     <link>https://www.jarboleda.me/articles/</link>
     <description>Recent content in Articles on J. Arboleda</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 13 Aug 2017 11:07:16 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 10 Feb 2018 13:39:56 +0200</lastBuildDate>
     
 	<atom:link href="https://www.jarboleda.me/articles/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Moving to France for work</title>
+      <link>https://www.jarboleda.me/articles/moving-to-france-for-work/</link>
+      <pubDate>Sat, 10 Feb 2018 13:39:56 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/moving-to-france-for-work/</guid>
+      <description>&lt;p&gt;Few months ago I moved to france for work reasons and I&amp;rsquo;d like to share how&amp;rsquo;s been the experience so far in this post.
+&lt;br/&gt;&lt;br/&gt;
+
+&lt;figure&gt;
+    
+        &lt;img src=&#34;https://www.jarboleda.me/articles/img/moving-to-france-for-work.jpg&#34; alt=&#34;Côte d&amp;#39;Azur&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Côte d&amp;#39;Azur&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Deploying a hugo site to github pages</title>
@@ -36,7 +61,7 @@ For this task, we&amp;rsquo;ll use a couple of bash scripts that will:&lt;/p&gt;
       <description>&lt;p&gt;In the following photo you can see the result of the case I built for this project.
 &lt;br/&gt;&lt;br/&gt;
 
-&lt;figure &gt;
+&lt;figure&gt;
     
         &lt;img src=&#34;https://www.jarboleda.me/articles/img/arduino-uno-lego-case.jpg&#34; alt=&#34;arduino uno lego case&#34; /&gt;
     
@@ -129,7 +154,8 @@ From the list above I took the image I was looking for, which is the complete ve
 
 &lt;p&gt;When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&amp;rsquo;t as easy as using fopen:
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
-$handle &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fopen&lt;/span&gt;($filename, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;die&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;could not open .&amp;#39;&lt;/span&gt; $filename);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+$handle &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fopen&lt;/span&gt;($filename, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;die&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;could not open .&amp;#39;&lt;/span&gt; $filename);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.jarboleda.me/articles/moving-to-france-for-work/</loc>
+    <lastmod>2018-02-10T13:39:56+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.jarboleda.me/articles/deploy-hugo-site-to-github-pages/</loc>
     <lastmod>2017-08-13T11:07:16+02:00</lastmod>
   </url>
@@ -253,7 +258,7 @@
   
   <url>
     <loc>https://www.jarboleda.me/articles/</loc>
-    <lastmod>2017-08-13T11:07:16+02:00</lastmod>
+    <lastmod>2018-02-10T13:39:56+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -367,6 +372,12 @@
   </url>
   
   <url>
+    <loc>https://www.jarboleda.me/project/false/</loc>
+    <lastmod>2018-02-10T13:39:56+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.jarboleda.me/tags/fedora25/</loc>
     <lastmod>2017-03-17T21:33:19+02:00</lastmod>
     <priority>0</priority>
@@ -446,7 +457,7 @@
   
   <url>
     <loc>https://www.jarboleda.me/</loc>
-    <lastmod>2017-08-13T11:07:16+02:00</lastmod>
+    <lastmod>2018-02-10T13:39:56+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -461,8 +472,20 @@
   </url>
   
   <url>
+    <loc>https://www.jarboleda.me/tags/job/</loc>
+    <lastmod>2018-02-10T13:39:56+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.jarboleda.me/tags/lego/</loc>
     <lastmod>2017-06-25T19:31:56+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jarboleda.me/tags/linkedin/</loc>
+    <lastmod>2018-02-10T13:39:56+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -512,6 +535,12 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/mate/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://www.jarboleda.me/tags/move/</loc>
+    <lastmod>2018-02-10T13:39:56+02:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -656,7 +685,7 @@
   
   <url>
     <loc>https://www.jarboleda.me/pinned/pinned/</loc>
-    <lastmod>2017-06-25T19:31:56+02:00</lastmod>
+    <lastmod>2018-02-10T13:39:56+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"

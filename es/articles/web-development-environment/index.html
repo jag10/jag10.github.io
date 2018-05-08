@@ -25,7 +25,7 @@ Usaremos las siguientes tecnologías. Deberías revisarlas antes de seguir con e
 " />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/es/articles/web-development-environment/" />
-	<meta property="og:image" content="https://www.jarboleda.me/articles/img/web-development-environment.jpg" />
+	<meta property="og:image" content="/articles/img/web-development-environment.jpg" />
 	<meta property="og:updated_time" content="2016-07-27 13:50:40 &#43;0200 CEST"/>
 	<meta property="og:locale" content="es-ES" />
 	<meta property="og:site_name" content="J. Arboleda" />
@@ -56,7 +56,7 @@ Usaremos las siguientes tecnologías. Deberías revisarlas antes de seguir con e
     <meta itemprop="wordCount" content="1408">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
-	<meta name="twitter:image:src" content="https://www.jarboleda.me/articles/img/web-development-environment.jpg"/>
+	<meta name="twitter:image:src" content="/articles/img/web-development-environment.jpg"/>
 	
 	<meta name="twitter:title" content="Entorno para desarrollo web"/>
 	<meta name="twitter:description" content="En este post vamos a ver un entorno avanzado de desarrollo web. Tendremos nuestra web alojada en un servidor (que NO utilizaremos para nada durante el desarrollo), y en nuestra máquina local tendremos una máquina virtual para el sitio web en el que estemos trabajando. Para la máquina virtual utilizaremos vagrant con el stack de scotch, que nos viene preparado para montar directamente el sitio web sin trabajo extra.
@@ -337,12 +337,15 @@ Ya tenemos gulp y compass disponible, ahora tendremos que indicarle qué tareas 
   	.<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">rename</span>({ <span style="color:#a6e22e">suffix</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;.min&#39;</span> }))
   	.<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">uglify</span>())
   	.<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">dest</span>(<span style="color:#e6db74">&#39;js/&#39;</span>));
-});</code></pre></div></p>
+});
+</code></pre></div></p>
 
 <p>Como estamos trabajando en una máquina virtual, la extensión livereload no verá el servidor livereload porque lo va a buscar en localhost:35729. Para solucionarlo, tendremos que redigir el puerto 35729 de nuestra máquina local al puerto 35729 de la máquina virtual. Para ello:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">ssh</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">L</span> <span style="color:#ae81ff">35729</span><span style="color:#f92672">:</span><span style="color:#ae81ff">192.168.33.10</span><span style="color:#f92672">:</span><span style="color:#ae81ff">35729</span> <span style="color:#a6e22e">vagrant</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#ae81ff">192.168.33.10</span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">ssh</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">L</span> <span style="color:#ae81ff">35729</span><span style="color:#f92672">:</span><span style="color:#ae81ff">192.168.33.10</span><span style="color:#f92672">:</span><span style="color:#ae81ff">35729</span> <span style="color:#a6e22e">vagrant</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#ae81ff">192.168.33.10</span>
+</code></pre></div>
 Ya está todo listo, ahora podremos utilizar gulp para automatizar tareas. Desde el directorio del proyecto:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">gulp</span> <span style="color:#a6e22e">live</span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">gulp</span> <span style="color:#a6e22e">live</span>
+</code></pre></div>
 Ya tenemos todo listo, si hemos seguido los pasos podremos modificar código en ~/vagrant/dev y ver los cambios de manera instantánea en Chrome, lo que nos da un entorno de trabajo muy ágil y en el que podremos hacer las pruebas que queramos sin afectar al entorno real.
 En cuanto a la metodología a utilizar en git, queda a elección del desarrollador. Personalmente, siempre tengo 3 branches &ldquo;infinitos&rdquo;, que son:</p>
 
@@ -405,7 +408,7 @@ En cuanto a la metodología a utilizar en git, queda a elección del desarrollad
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/web-development-environment/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/web-development-environment/&amp;media=https://www.jarboleda.meweb-development-environment.jpg&amp;description=%3cp%3eEn%20este%20post%20vamos%20a%20ver%20un%20entorno%20avanzado%20de%20desarrollo%20web.%20Tendremos%20nuestra%20web%20alojada%20en%20un%20servidor%20%28que%20NO%20utilizaremos%20para%20nada%20durante%20el%20desarrollo%29,%20y%20en%20nuestra%20m%c3%a1quina%20local%20tendremos%20una%20m%c3%a1quina%20virtual%20para%20el%20sitio%20web%20en%20el%20que%20estemos%20trabajando.%20Para%20la%20m%c3%a1quina%20virtual%20utilizaremos%20vagrant%20con%20el%20stack%20de%20%3ca%20href=%22https://box.scotch.io/%22%3escotch%3c/a%3e,%20que%20nos%20viene%20preparado%20para%20montar%20directamente%20el%20sitio%20web%20sin%20trabajo%20extra.%3c/p%3e%0a%0a%3ch2%20id=%22requisitos-previos%22%3eRequisitos%20previos%3c/h2%3e%0a%0a%3cp%3eUsaremos%20las%20siguientes%20tecnolog%c3%adas.%20Deber%c3%adas%20revisarlas%20antes%20de%20seguir%20con%20el%20art%c3%adculo.%3c/p%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/web-development-environment/&amp;media=%3cnil%3eweb-development-environment.jpg&amp;description=%3cp%3eEn%20este%20post%20vamos%20a%20ver%20un%20entorno%20avanzado%20de%20desarrollo%20web.%20Tendremos%20nuestra%20web%20alojada%20en%20un%20servidor%20%28que%20NO%20utilizaremos%20para%20nada%20durante%20el%20desarrollo%29,%20y%20en%20nuestra%20m%c3%a1quina%20local%20tendremos%20una%20m%c3%a1quina%20virtual%20para%20el%20sitio%20web%20en%20el%20que%20estemos%20trabajando.%20Para%20la%20m%c3%a1quina%20virtual%20utilizaremos%20vagrant%20con%20el%20stack%20de%20%3ca%20href=%22https://box.scotch.io/%22%3escotch%3c/a%3e,%20que%20nos%20viene%20preparado%20para%20montar%20directamente%20el%20sitio%20web%20sin%20trabajo%20extra.%3c/p%3e%0a%0a%3ch2%20id=%22requisitos-previos%22%3eRequisitos%20previos%3c/h2%3e%0a%0a%3cp%3eUsaremos%20las%20siguientes%20tecnolog%c3%adas.%20Deber%c3%adas%20revisarlas%20antes%20de%20seguir%20con%20el%20art%c3%adculo.%3c/p%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -504,21 +507,6 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/centos-web-panel-on-vps/' target='_blank'>
-                    <img alt='Centos web panel con php7 y mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/es/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel con php7 y mysql5.6</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
                   <a href='/es/articles/getting-an-objects-methods/' target='_blank'>
                     <img alt='Obteniendo los métodos (reflejados) de un objeto' width='72' height='72' src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
                   </a>
@@ -534,12 +522,27 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
-                    <img alt='Instalando ubuntu 16.04 en odroid xu3 lite' width='72' height='72' src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
+                  <a href='/es/articles/centos-web-panel-on-vps/' target='_blank'>
+                    <img alt='Centos web panel con php7 y mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Instalando ubuntu 16.04 en odroid xu3 lite</a>
+                  <a href='/es/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel con php7 y mysql5.6</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/es/articles/web-development-environment/' target='_blank'>
+                    <img alt='Entorno para desarrollo web' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/es/articles/web-development-environment/' class="mostVisitedLink">Entorno para desarrollo web</a>
                 </div>
               </div>
             </li>
@@ -600,8 +603,8 @@ s.setAttribute('data-timestamp', +new Date());
       </ul>
     </div>
     <div class='clr'></div>
-    <p>Copyright &#169; 2017
-      <a href='https://www.jarboleda.me'>https://www.jarboleda.me</a>
+    <p>Copyright &#169; 2018
+      <a href=''></a>
     </p>
     <p class='attribution'>Powered by</p>
     <a href='https://gohugo.io/' target="_blank" >

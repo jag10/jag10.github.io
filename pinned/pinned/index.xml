@@ -5,10 +5,35 @@
     <link>https://www.jarboleda.me/pinned/pinned/</link>
     <description>Recent content in Pinned on J. Arboleda</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 25 Jun 2017 19:31:56 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 10 Feb 2018 13:39:56 +0200</lastBuildDate>
     
 	<atom:link href="https://www.jarboleda.me/pinned/pinned/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Moving to France for work</title>
+      <link>https://www.jarboleda.me/articles/moving-to-france-for-work/</link>
+      <pubDate>Sat, 10 Feb 2018 13:39:56 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/articles/moving-to-france-for-work/</guid>
+      <description>&lt;p&gt;Few months ago I moved to france for work reasons and I&amp;rsquo;d like to share how&amp;rsquo;s been the experience so far in this post.
+&lt;br/&gt;&lt;br/&gt;
+
+&lt;figure&gt;
+    
+        &lt;img src=&#34;https://www.jarboleda.me/articles/img/moving-to-france-for-work.jpg&#34; alt=&#34;Côte d&amp;#39;Azur&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Côte d&amp;#39;Azur&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Arduino UNO R3 lego case</title>
@@ -19,7 +44,7 @@
       <description>&lt;p&gt;In the following photo you can see the result of the case I built for this project.
 &lt;br/&gt;&lt;br/&gt;
 
-&lt;figure &gt;
+&lt;figure&gt;
     
         &lt;img src=&#34;https://www.jarboleda.me/articles/img/arduino-uno-lego-case.jpg&#34; alt=&#34;arduino uno lego case&#34; /&gt;
     

@@ -23,7 +23,7 @@ Show me the code
 " />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/" />
-	<meta property="og:image" content="https://www.jarboleda.me/articles/img/using-piwik-api-locally-with-pw.jpg" />
+	<meta property="og:image" content="/articles/img/using-piwik-api-locally-with-pw.jpg" />
 	<meta property="og:updated_time" content="2016-05-01 12:37:41 &#43;0200 CEST"/>
 	<meta property="og:locale" content="es-ES" />
 	<meta property="og:site_name" content="J. Arboleda" />
@@ -51,7 +51,7 @@ Show me the code
     <meta itemprop="wordCount" content="268">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
-	<meta name="twitter:image:src" content="https://www.jarboleda.me/articles/img/using-piwik-api-locally-with-pw.jpg"/>
+	<meta name="twitter:image:src" content="/articles/img/using-piwik-api-locally-with-pw.jpg"/>
 	
 	<meta name="twitter:title" content="Utilizando la API de piwik en local con PW"/>
 	<meta name="twitter:description" content="Para hacer el tracking de visitas de jglab.me utilizo Piwik. ¿Por qué? El principal motivo es que permite mantener la información de manera privada, sin que terceros lleguen a saberla, pero además, piwik ofrece una API muy potente que puede ser utilizada de manera local, lo que es muy importante para el rendimiento, pues me permite obtener estadísticas de la web sin realizar ninguna petición. Para las peticiones locales utilizo la siguiente clase:
@@ -193,7 +193,7 @@ $environment <span style="color:#f92672">=</span> <span style="color:#66d9ef">ne
 $environment<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">init</span>();
 <span style="color:#a6e22e">FrontController</span><span style="color:#f92672">::</span><span style="color:#a6e22e">getInstance</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">init</span>();
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">localPiwik</span>{
-   <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">function</span> <span style="color:#f92672"></span><span style="color:#a6e22e">getPageUrl</span>($url){
+   <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getPageUrl</span>($url){
      <span style="color:#75715e">// This inits the API Request with the specified parameters
 </span><span style="color:#75715e"></span>    $request <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Request</span>(<span style="color:#e6db74">&#34;
 </span><span style="color:#e6db74">                module=API
@@ -210,26 +210,28 @@ $environment<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">
     <span style="color:#66d9ef">return</span> $result;
   }
 
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#f92672"></span><span style="color:#a6e22e">getUniqueVisits</span>($url){
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getUniqueVisits</span>($url){
     $result <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getPageUrl</span>($url);
     <span style="color:#66d9ef">if</span>($result<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getRowFromLabel</span>(<span style="color:#e6db74">&#39;/index&#39;</span>))
      <span style="color:#66d9ef">return</span> $result<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getRowFromLabel</span>(<span style="color:#e6db74">&#39;/index&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getColumn</span>(<span style="color:#e6db74">&#39;sum_daily_nb_uniq_visitors&#39;</span>);
     <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
   }
 }
-<span style="color:#75715e">?&gt;</span></code></pre></div>
+<span style="color:#75715e">?&gt;</span>
+</code></pre></div>
 
 <p>Con esa clase definida, podemos utilizarla de la siguiente manera:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 <span style="color:#66d9ef">include_once</span>(<span style="color:#e6db74">&#39;localPiwik.php&#39;</span>);
 $piwik <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">localPiwik</span>();
-$visits <span style="color:#f92672">=</span> $piwik<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getUniqueVisits</span>(<span style="color:#e6db74">&#39;http://example.org&#39;</span>);</code></pre></div></p>
+$visits <span style="color:#f92672">=</span> $piwik<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getUniqueVisits</span>(<span style="color:#e6db74">&#39;http://example.org&#39;</span>);
+</code></pre></div></p>
 
 <h2 id="el-ejemplo">El ejemplo</h2>
 
 <p>Para acabar, dejo un ejemplo algo más completo de cómo conseguir una lista ordenada de los posts más visitados en ProcessWire
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-<span style="color:#66d9ef">function</span> <span style="color:#f92672"></span><span style="color:#a6e22e">top_posts</span>($posts_PW){
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">top_posts</span>($posts_PW){
     <span style="color:#66d9ef">include_once</span>(<span style="color:#e6db74">&#39;localPiwik.php&#39;</span>);
     $piwik <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">localPiwik</span>();
     $posts <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>();
@@ -246,7 +248,8 @@ $visits <span style="color:#f92672">=</span> $piwik<span style="color:#f92672">-
     $posts <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_reverse</span>($posts);
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">array_slice</span>($posts, <span style="color:#ae81ff">0</span> , <span style="color:#ae81ff">5</span>);
   }
-<span style="color:#75715e">?&gt;</span></code></pre></div></p></p>
+<span style="color:#75715e">?&gt;</span>
+</code></pre></div></p></p>
       
     </div>
     <div class="clearfix"></div>
@@ -290,7 +293,7 @@ $visits <span style="color:#f92672">=</span> $piwik<span style="color:#f92672">-
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/&amp;media=https://www.jarboleda.meusing-piwik-api-locally-with-pw.jpg&amp;description=%3cp%3ePara%20hacer%20el%20tracking%20de%20visitas%20de%20jglab.me%20utilizo%20Piwik.%20%c2%bfPor%20qu%c3%a9?%20El%20principal%20motivo%20es%20que%20permite%20mantener%20la%20informaci%c3%b3n%20de%20manera%20privada,%20sin%20que%20terceros%20lleguen%20a%20saberla,%20pero%20adem%c3%a1s,%20piwik%20ofrece%20una%20API%20muy%20potente%20que%20puede%20ser%20utilizada%20de%20manera%20%3cstrong%3elocal%3c/strong%3e,%20lo%20que%20es%20muy%20importante%20para%20el%20rendimiento,%20pues%20me%20permite%20obtener%20estad%c3%adsticas%20de%20la%20web%20sin%20realizar%20ninguna%20petici%c3%b3n.%20Para%20las%20peticiones%20locales%20utilizo%20la%20siguiente%20clase:%3c/p%3e%0a%0a%3ch2%20id=%22show-me-the-code%22%3eShow%20me%20the%20code%3c/h2%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/&amp;media=%3cnil%3eusing-piwik-api-locally-with-pw.jpg&amp;description=%3cp%3ePara%20hacer%20el%20tracking%20de%20visitas%20de%20jglab.me%20utilizo%20Piwik.%20%c2%bfPor%20qu%c3%a9?%20El%20principal%20motivo%20es%20que%20permite%20mantener%20la%20informaci%c3%b3n%20de%20manera%20privada,%20sin%20que%20terceros%20lleguen%20a%20saberla,%20pero%20adem%c3%a1s,%20piwik%20ofrece%20una%20API%20muy%20potente%20que%20puede%20ser%20utilizada%20de%20manera%20%3cstrong%3elocal%3c/strong%3e,%20lo%20que%20es%20muy%20importante%20para%20el%20rendimiento,%20pues%20me%20permite%20obtener%20estad%c3%adsticas%20de%20la%20web%20sin%20realizar%20ninguna%20petici%c3%b3n.%20Para%20las%20peticiones%20locales%20utilizo%20la%20siguiente%20clase:%3c/p%3e%0a%0a%3ch2%20id=%22show-me-the-code%22%3eShow%20me%20the%20code%3c/h2%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -386,42 +389,42 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
+                  <a href='/es/articles/installing-magento2-on-cwp/' target='_blank'>
+                    <img alt='Instalando magento2 en cwp' width='72' height='72' src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/es/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Instalando magento2 en cwp</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/es/articles/centos-web-panel-on-vps/' target='_blank'>
+                    <img alt='Centos web panel con php7 y mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/es/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel con php7 y mysql5.6</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
                   <a href='/es/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
                     <img alt='Instalando unreal engine en fedora 25' width='72' height='72' src="/articles/img/thumbs/unreal_engine.min.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
                   <a href='/es/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">Instalando unreal engine en fedora 25</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/es/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
-                    <img alt='Haciendo un backup de todas las BD usando mysqldump' width='72' height='72' src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/es/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Haciendo un backup de todas las BD usando mysqldump</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/es/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
-                    <img alt='Autenticando usuarios con cURL' width='72' height='72' src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/es/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Autenticando usuarios con cURL</a>
                 </div>
               </div>
             </li>
@@ -482,8 +485,8 @@ s.setAttribute('data-timestamp', +new Date());
       </ul>
     </div>
     <div class='clr'></div>
-    <p>Copyright &#169; 2017
-      <a href='https://www.jarboleda.me'>https://www.jarboleda.me</a>
+    <p>Copyright &#169; 2018
+      <a href=''></a>
     </p>
     <p class='attribution'>Powered by</p>
     <a href='https://gohugo.io/' target="_blank" >

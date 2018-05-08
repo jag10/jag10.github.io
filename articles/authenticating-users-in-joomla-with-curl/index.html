@@ -20,7 +20,7 @@
 " />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/" />
-	<meta property="og:image" content="https://www.jarboleda.me/articles/img/authenticating-users-in-joomla-with-curl.jpg" />
+	<meta property="og:image" content="/articles/img/authenticating-users-in-joomla-with-curl.jpg" />
 	<meta property="og:updated_time" content="2016-01-16 11:07:16 &#43;0200 &#43;0200"/>
 	<meta property="og:locale" content="en-US" />
 	<meta property="og:site_name" content="J. Arboleda" />
@@ -40,11 +40,11 @@
     
     <meta itemprop="image" content="authenticating-users-in-joomla-with-curl.jpg">
     
-    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,arduino,backup,backups,bash,case,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,github,httpd,hugo,iptables,ipv6,lego,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,pages,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,static,ubuntu,unrealengine,vagrant,vm,vps,zip," />
+    <meta itemprop="keywords" content="notpinned,pinned,,false,true,serie1,arduino,backup,backups,bash,case,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,github,httpd,hugo,iptables,ipv6,job,lego,linkedin,magento,magento2,mate,move,mysql,mysqldump,nodejs,odroid,pages,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,static,ubuntu,unrealengine,vagrant,vm,vps,zip," />
     <meta itemprop="wordCount" content="425">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
-	<meta name="twitter:image:src" content="https://www.jarboleda.me/articles/img/authenticating-users-in-joomla-with-curl.jpg"/>
+	<meta name="twitter:image:src" content="/articles/img/authenticating-users-in-joomla-with-curl.jpg"/>
 	
 	<meta name="twitter:title" content="Authenticating users with cURL"/>
 	<meta name="twitter:description" content="In this post I&rsquo;ll explain how to log in a user with cURL. This can be useful if you want to integrate joomla login with an external app. For example, you could have a dual installation of wordpress and joomla and use wordpress joomla to log in joomla users as well.
@@ -193,8 +193,8 @@ $cookie<span style="color:#f92672">=</span><span style="color:#a6e22e">explode</
 <span style="color:#a6e22e">setcookie</span>($cookie[<span style="color:#ae81ff">0</span>], $cookie[<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">time</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">86400</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">30</span> , <span style="color:#e6db74">&#34;/&#34;</span>);
 
 <span style="color:#75715e">// Get data from the form
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">preg_match_all</span>(<span style="color:#e6db74">&#34;(&lt;input type=</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">hidden</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74"> name=</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">return</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74"> value=</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">(.*)</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74"> /&gt;)siU&#34;</span>, $page, $matches1);
-<span style="color:#a6e22e">preg_match_all</span>(<span style="color:#e6db74">&#34;(&lt;input type=</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">hidden</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74"> name=</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">(.*)</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74"> value=</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">1</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74"> /&gt;)iU&#34;</span>, $page, $matches2);
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">preg_match_all</span>(<span style="color:#e6db74">&#34;(&amp;lt;input type=</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">hidden</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74"> name=</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">return</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74"> value=</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">(.*)</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74"> /&amp;gt;)siU&#34;</span>, $page, $matches1);
+<span style="color:#a6e22e">preg_match_all</span>(<span style="color:#e6db74">&#34;(&amp;lt;input type=</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">hidden</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74"> name=</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">(.*)</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74"> value=</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">1</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74"> /&amp;gt;)iU&#34;</span>, $page, $matches2);
 $return <span style="color:#f92672">=</span> <span style="color:#a6e22e">trim</span>($matches1[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]);
 $key <span style="color:#f92672">=</span> <span style="color:#a6e22e">trim</span>($matches2[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]);
 
@@ -217,7 +217,8 @@ $ret <span style="color:#f92672">=</span> <span style="color:#a6e22e">curl_exec<
 $cookie<span style="color:#f92672">=</span><span style="color:#a6e22e">explode</span>(<span style="color:#e6db74">&#39;=&#39;</span>,$m[<span style="color:#ae81ff">1</span>]);
 <span style="color:#a6e22e">setcookie</span>($cookie[<span style="color:#ae81ff">0</span>], $cookie[<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">time</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">86400</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">30</span> , <span style="color:#e6db74">&#34;/&#34;</span>);
 <span style="color:#a6e22e">curl_close</span>($ch);
-<span style="color:#75715e">?&gt;</span></code></pre></div></p></p>
+<span style="color:#75715e">?&gt;</span>
+</code></pre></div></p></p>
       
     </div>
     <div class="clearfix"></div>
@@ -256,7 +257,7 @@ $cookie<span style="color:#f92672">=</span><span style="color:#a6e22e">explode</
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/&amp;media=https://www.jarboleda.meauthenticating-users-in-joomla-with-curl.jpg&amp;description=%3cp%3eIn%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20log%20in%20a%20user%20with%20cURL.%20This%20can%20be%20useful%20if%20you%20want%20to%20integrate%20joomla%20login%20with%20an%20external%20app.%20For%20example,%20you%20could%20have%20a%20dual%20installation%20of%20wordpress%20and%20joomla%20and%20use%20wordpress%20joomla%20to%20log%20in%20joomla%20users%20as%20well.%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/&amp;media=%3cnil%3eauthenticating-users-in-joomla-with-curl.jpg&amp;description=%3cp%3eIn%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20log%20in%20a%20user%20with%20cURL.%20This%20can%20be%20useful%20if%20you%20want%20to%20integrate%20joomla%20login%20with%20an%20external%20app.%20For%20example,%20you%20could%20have%20a%20dual%20installation%20of%20wordpress%20and%20joomla%20and%20use%20wordpress%20joomla%20to%20log%20in%20joomla%20users%20as%20well.%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -344,42 +345,42 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
+                  <a href='/articles/web-development-environment/' target='_blank'>
+                    <img alt='Web development environment' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/articles/transferring-files-with-ftp-through-bash-expect-script/' target='_blank'>
+                    <img alt='Transferring files with FTP through bash expect script' width='72' height='72' src="/articles/img/thumbs/transferring-files-with-ftp-through-bash-expect-script.png" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/transferring-files-with-ftp-through-bash-expect-script/' class="mostVisitedLink">Transferring files with FTP through bash expect script</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
                   <a href='/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
                     <img alt='installing unreal engine on fedora 25' width='72' height='72' src="/articles/img/thumbs/unreal_engine.min.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
                   <a href='/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/articles/centos-web-panel-on-vps/' target='_blank'>
-                    <img alt='Centos web panel with php7 and mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel with php7 and mysql5.6</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/articles/zipping-and-unzipping-websites-with-php/' target='_blank'>
-                    <img alt='Zipping and unzipping websites with php' width='72' height='72' src="/articles/img/thumbs/zipping-and-unzipping-websites-with-php.png" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/articles/zipping-and-unzipping-websites-with-php/' class="mostVisitedLink">Zipping and unzipping websites with php</a>
                 </div>
               </div>
             </li>
@@ -440,8 +441,8 @@ s.setAttribute('data-timestamp', +new Date());
       </ul>
     </div>
     <div class='clr'></div>
-    <p>Copyright &#169; 2017
-      <a href='https://www.jarboleda.me'>https://www.jarboleda.me</a>
+    <p>Copyright &#169; 2018
+      <a href=''></a>
     </p>
     <p class='attribution'>Powered by</p>
     <a href='https://gohugo.io/' target="_blank" >

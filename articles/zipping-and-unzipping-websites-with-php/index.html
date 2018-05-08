@@ -20,7 +20,7 @@
 " />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/articles/zipping-and-unzipping-websites-with-php/" />
-	<meta property="og:image" content="https://www.jarboleda.me/articles/img/zipping-and-unzipping-websites-with-php.png" />
+	<meta property="og:image" content="/articles/img/zipping-and-unzipping-websites-with-php.png" />
 	<meta property="og:updated_time" content="2015-08-24 11:00:53 &#43;0200 CEST"/>
 	<meta property="og:locale" content="en-US" />
 	<meta property="og:site_name" content="J. Arboleda" />
@@ -42,11 +42,11 @@
     
     <meta itemprop="image" content="zipping-and-unzipping-websites-with-php.png">
     
-    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,arduino,backup,backups,bash,case,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,github,httpd,hugo,iptables,ipv6,lego,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,pages,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,static,ubuntu,unrealengine,vagrant,vm,vps,zip," />
+    <meta itemprop="keywords" content="notpinned,pinned,,false,true,serie1,arduino,backup,backups,bash,case,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,github,httpd,hugo,iptables,ipv6,job,lego,linkedin,magento,magento2,mate,move,mysql,mysqldump,nodejs,odroid,pages,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,static,ubuntu,unrealengine,vagrant,vm,vps,zip," />
     <meta itemprop="wordCount" content="474">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
-	<meta name="twitter:image:src" content="https://www.jarboleda.me/articles/img/zipping-and-unzipping-websites-with-php.png"/>
+	<meta name="twitter:image:src" content="/articles/img/zipping-and-unzipping-websites-with-php.png"/>
 	
 	<meta name="twitter:title" content="Zipping and unzipping websites with php"/>
 	<meta name="twitter:description" content="Sometimes you need to work with only FTP access, and it takes a lot of time to backup a website through FTP because usually there are a lot of files and listing them is a long process. I made these php scripts to avoid wasting time when I only have FTP access. For example, when a mate wants to work on a website but he/she want to backup it up first just in case they break something. They use these scripts below:
@@ -166,25 +166,26 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 $zip <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ZipArchive</span>();
 
-<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>$zip<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#34;data1.zip&#34;</span>, <span style="color:#a6e22e">ZIPARCHIVE</span><span style="color:#f92672">::</span><span style="color:#a6e22e">CREATE</span>)) {
-	<span style="color:#66d9ef">die</span> (<span style="color:#e6db74">&#34;&lt;p class=&#39;error&#39;&gt;Couldn&#39;t create the file&lt;/p&gt;&#34;</span>);
+<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>$zip<span style="color:#f92672">-&amp;</span><span style="color:#a6e22e">gt</span>;<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#34;data1.zip&#34;</span>, <span style="color:#a6e22e">ZIPARCHIVE</span><span style="color:#f92672">::</span><span style="color:#a6e22e">CREATE</span>)) {
+	<span style="color:#66d9ef">die</span> (<span style="color:#e6db74">&#34;&amp;lt;p class=&#39;error&#39;&amp;gt;Couldn&#39;t create the file&amp;lt;/p&amp;gt;&#34;</span>);
 }
 
 $iterator <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">RecursiveIteratorIterator</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">RecursiveDirectoryIterator</span>(<span style="color:#e6db74">&#34;.&#34;</span>));
 
 $path_parts <span style="color:#f92672">=</span> <span style="color:#a6e22e">pathinfo</span>(<span style="color:#66d9ef">__FILE__</span>);
 $script_path <span style="color:#f92672">=</span> $path_parts[<span style="color:#e6db74">&#39;dirname&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/&#39;</span><span style="color:#f92672">.</span> $path_parts[<span style="color:#e6db74">&#39;basename&#39;</span>];
-<span style="color:#66d9ef">foreach</span> ($iterator <span style="color:#66d9ef">as</span> $key<span style="color:#f92672">=&gt;</span>$value) {
-	<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">is_file</span>($key) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">realpath</span>($key) <span style="color:#f92672">!=</span> $script_path){ <span style="color:#75715e">// don&#39;t include this file
-</span><span style="color:#75715e"></span>		$zip<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addFile</span>($key, $key) <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">die</span> (<span style="color:#e6db74">&#34;&lt;p class=&#39;error&#39;&gt;ERROR: Couldn&#39;t add file: </span><span style="color:#e6db74">$key</span><span style="color:#e6db74">&lt;/p&gt;&#34;</span>);
-		<span style="color:#66d9ef">echo</span> $key <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>;
+<span style="color:#66d9ef">foreach</span> ($iterator <span style="color:#66d9ef">as</span> $key<span style="color:#f92672">=&amp;</span><span style="color:#a6e22e">gt</span>;$value) {
+	<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">is_file</span>($key) <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>; <span style="color:#a6e22e">realpath</span>($key) <span style="color:#f92672">!=</span> $script_path){ <span style="color:#75715e">// don&#39;t include this file
+</span><span style="color:#75715e"></span>		$zip<span style="color:#f92672">-&amp;</span><span style="color:#a6e22e">gt</span>;<span style="color:#a6e22e">addFile</span>($key, $key) <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">die</span> (<span style="color:#e6db74">&#34;&amp;lt;p class=&#39;error&#39;&amp;gt;ERROR: Couldn&#39;t add file: </span><span style="color:#e6db74">$key</span><span style="color:#e6db74">&amp;lt;/p&amp;gt;&#34;</span>);
+		<span style="color:#66d9ef">echo</span> $key <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;&amp;lt;br&amp;gt;&#39;</span>;
 	}
 }
 
-$zip<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">close</span>() <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">die</span> (<span style="color:#e6db74">&#34;&lt;p class=&#39;error&#39;&gt;ERROR: Couldn&#39;t save the file&lt;/p&gt;&#34;</span>);
+$zip<span style="color:#f92672">-&amp;</span><span style="color:#a6e22e">gt</span>;<span style="color:#a6e22e">close</span>() <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">die</span> (<span style="color:#e6db74">&#34;&amp;lt;p class=&#39;error&#39;&amp;gt;ERROR: Couldn&#39;t save the file&amp;lt;/p&amp;gt;&#34;</span>);
 
-<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&lt;h1&gt;OK.&lt;/h1&gt;&#34;</span>;
-<span style="color:#75715e">?&gt;</span></code></pre></div>
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&amp;lt;h1&amp;gt;OK.&amp;lt;/h1&amp;gt;&#34;</span>;
+<span style="color:#75715e">?&gt;</span>
+</code></pre></div>
 
 <p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span>&gt;
 	<span style="color:#f92672">h1</span>{
@@ -228,16 +229,17 @@ $path <span style="color:#f92672">=</span> <span style="color:#a6e22e">pathinfo<
 }
 
 $zip <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ZipArchive</span>;
-$res <span style="color:#f92672">=</span> $zip<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">open</span>($file);
+$res <span style="color:#f92672">=</span> $zip<span style="color:#f92672">-&amp;</span><span style="color:#a6e22e">gt</span>;<span style="color:#a6e22e">open</span>($file);
 <span style="color:#66d9ef">if</span> ($res <span style="color:#f92672">===</span> <span style="color:#66d9ef">TRUE</span>) {
   <span style="color:#75715e">// extract it to the path we determined above
-</span><span style="color:#75715e"></span>  $zip<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">extractTo</span>($path);
-  $zip<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">close</span>();
+</span><span style="color:#75715e"></span>  $zip<span style="color:#f92672">-&amp;</span><span style="color:#a6e22e">gt</span>;<span style="color:#a6e22e">extractTo</span>($path);
+  $zip<span style="color:#f92672">-&amp;</span><span style="color:#a6e22e">gt</span>;<span style="color:#a6e22e">close</span>();
   <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">$file</span><span style="color:#e6db74"> extracted to </span><span style="color:#e6db74">$path</span><span style="color:#e6db74">&#34;</span>;
 } <span style="color:#66d9ef">else</span> {
   <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Couldn&#39;t open </span><span style="color:#e6db74">$file</span><span style="color:#e6db74">&#34;</span>;
 }
-<span style="color:#75715e">?&gt;</span></code></pre></div></p>
+<span style="color:#75715e">?&gt;</span>
+</code></pre></div></p>
 
 <p>The script takes the file &ldquo;data.zip&rdquo; in the current dir and extract its contents to the current dir. You can specify a subdir uncommenting the line $path .= &lsquo;/subdir&rsquo;;
 You should delete these scripts as soon as you use them, they could break your website if someone discovers them.</p>
@@ -288,7 +290,7 @@ You should delete these scripts as soon as you use them, they could break your w
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/zipping-and-unzipping-websites-with-php/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/zipping-and-unzipping-websites-with-php/&amp;media=https://www.jarboleda.mezipping-and-unzipping-websites-with-php.png&amp;description=%3cp%3eSometimes%20you%20need%20to%20work%20with%20only%20FTP%20access,%20and%20it%20takes%20a%20lot%20of%20time%20to%20backup%20a%20website%20through%20FTP%20because%20usually%20there%20are%20a%20lot%20of%20files%20and%20listing%20them%20is%20a%20long%20process.%20I%20made%20these%20php%20scripts%20to%20avoid%20wasting%20time%20when%20I%20only%20have%20FTP%20access.%20For%20example,%20when%20a%20mate%20wants%20to%20work%20on%20a%20website%20but%20he/she%20want%20to%20backup%20it%20up%20first%20just%20in%20case%20they%20break%20something.%20They%20use%20these%20scripts%20below:%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/zipping-and-unzipping-websites-with-php/&amp;media=%3cnil%3ezipping-and-unzipping-websites-with-php.png&amp;description=%3cp%3eSometimes%20you%20need%20to%20work%20with%20only%20FTP%20access,%20and%20it%20takes%20a%20lot%20of%20time%20to%20backup%20a%20website%20through%20FTP%20because%20usually%20there%20are%20a%20lot%20of%20files%20and%20listing%20them%20is%20a%20long%20process.%20I%20made%20these%20php%20scripts%20to%20avoid%20wasting%20time%20when%20I%20only%20have%20FTP%20access.%20For%20example,%20when%20a%20mate%20wants%20to%20work%20on%20a%20website%20but%20he/she%20want%20to%20backup%20it%20up%20first%20just%20in%20case%20they%20break%20something.%20They%20use%20these%20scripts%20below:%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -386,12 +388,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/centos-web-panel-on-vps/' target='_blank'>
-                    <img alt='Centos web panel with php7 and mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
+                  <a href='/articles/deploy-hugo-site-to-github-pages/' target='_blank'>
+                    <img alt='Deploying a hugo site to github pages' width='72' height='72' src="/articles/img/thumbs/deploy-hugo-site-to-github-pages.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel with php7 and mysql5.6</a>
+                  <a href='/articles/deploy-hugo-site-to-github-pages/' class="mostVisitedLink">Deploying a hugo site to github pages</a>
                 </div>
               </div>
             </li>
@@ -401,12 +403,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/getting-an-objects-methods/' target='_blank'>
-                    <img alt='Getting an object&#39;s (reflected) methods' width='72' height='72' src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
+                  <a href='/articles/zipping-and-unzipping-websites-with-php/' target='_blank'>
+                    <img alt='Zipping and unzipping websites with php' width='72' height='72' src="/articles/img/thumbs/zipping-and-unzipping-websites-with-php.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/getting-an-objects-methods/' class="mostVisitedLink">Getting an object&#39;s (reflected) methods</a>
+                  <a href='/articles/zipping-and-unzipping-websites-with-php/' class="mostVisitedLink">Zipping and unzipping websites with php</a>
                 </div>
               </div>
             </li>
@@ -416,12 +418,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
-                    <img alt='How to handle remote resources with curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
+                  <a href='/articles/configuring-iptables-and-fail2ban-on-centos-6/' target='_blank'>
+                    <img alt='Configuring IPTABLES and fail2ban on centOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-iptables-and-fail2ban-on-centos-6.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">How to handle remote resources with curl</a>
+                  <a href='/articles/configuring-iptables-and-fail2ban-on-centos-6/' class="mostVisitedLink">Configuring IPTABLES and fail2ban on centOS 6</a>
                 </div>
               </div>
             </li>
@@ -482,8 +484,8 @@ s.setAttribute('data-timestamp', +new Date());
       </ul>
     </div>
     <div class='clr'></div>
-    <p>Copyright &#169; 2017
-      <a href='https://www.jarboleda.me'>https://www.jarboleda.me</a>
+    <p>Copyright &#169; 2018
+      <a href=''></a>
     </p>
     <p class='attribution'>Powered by</p>
     <a href='https://gohugo.io/' target="_blank" >

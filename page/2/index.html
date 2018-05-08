@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.30.2" />
+	<meta name="generator" content="Hugo 0.40.2" />
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     <meta name=viewport content="width=device-width, initial-scale=1">
     <title>J. Arboleda - J. Arboleda</title>
@@ -22,7 +22,7 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/" />
 	
-	<meta property="og:updated_time" content="2016-07-18 13:37:52 &#43;0200 CEST"/>
+	<meta property="og:updated_time" content="2016-07-27 13:50:40 &#43;0200 CEST"/>
 	<meta property="og:locale" content="en-US" />
 	<meta property="og:site_name" content="J. Arboleda" />
 	
@@ -39,7 +39,7 @@
     
     
     
-    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,arduino,backup,backups,bash,case,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,github,httpd,hugo,iptables,ipv6,lego,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,pages,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,static,ubuntu,unrealengine,vagrant,vm,vps,zip," />
+    <meta itemprop="keywords" content="notpinned,pinned,,false,true,serie1,arduino,backup,backups,bash,case,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,github,httpd,hugo,iptables,ipv6,job,lego,linkedin,magento,magento2,mate,move,mysql,mysqldump,nodejs,odroid,pages,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,static,ubuntu,unrealengine,vagrant,vm,vps,zip," />
     
 	
 	<meta name="twitter:card" content="summary"/>
@@ -140,6 +140,80 @@
   
   <div class="article_summary">
     <div class="article-date">
+      <p class="day"><i class="fa fa-calendar"></i>27 Jul 2016</p>
+      <p><i class="fa fa-clock-o"></i>7 min read  ~ 1300 words</p>
+    </div>
+    
+    <div class="article-tags">
+      
+      <a href="#" rel="tag">sass</a> 
+      <a href="#" rel="tag">vagrant</a> 
+      <a href="#" rel="tag">nodejs</a> 
+    </div>
+    
+    <div class="clearfix"></div>
+    
+    <a href="/articles/web-development-environment/" title="">
+      <h1 class="article_title title">Web development environment</h1>
+    </a>
+    
+    <div class="article_excerpt">
+      
+      <p><p>In this post we&rsquo;ll configure an advanced web development environment. For that, we&rsquo;ll have our web hosted on a server (we will NOT use that server for development), and in our station we&rsquo;ll have a virtual machine. For this vm we&rsquo;ll use vagrant with the  scotch box, which allows us to host a web without extra work</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>We&rsquo;ll use the following tecnologies for our environment. You should review them before going on.</p>
+
+<p></p>
+</p>
+      
+    </div>
+    <div class="clearfix"></div>
+    
+    <div class="article-footer">
+      
+      <a class="read-more-button pure-button" href="/articles/web-development-environment/">Read the full article</a> 
+      
+
+
+
+
+<div class="soc-sharing">
+  <ul class="article_share_items">
+    <li>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/web-development-environment/&amp;title=Web%20development%20environment&amp;summary=%3cp%3eIn%20this%20post%20we&amp;rsquo;ll%20configure%20an%20advanced%20web%20development%20environment.%20For%20that,%20we&amp;rsquo;ll%20have%20our%20web%20hosted%20on%20a%20server%20%28we%20will%20NOT%20use%20that%20server%20for%20development%29,%20and%20in%20our%20station%20we&amp;rsquo;ll%20have%20a%20virtual%20machine.%20For%20this%20vm%20we&amp;rsquo;ll%20use%20vagrant%20with%20the%20%20scotch%20box,%20which%20allows%20us%20to%20host%20a%20web%20without%20extra%20work%3c/p%3e%0a%0a%3ch2%20id=%22prerequisites%22%3ePrerequisites%3c/h2%3e%0a%0a%3cp%3eWe&amp;rsquo;ll%20use%20the%20following%20tecnologies%20for%20our%20environment.%20You%20should%20review%20them%20before%20going%20on.%3c/p%3e%0a%0a%3cp%3e%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-twitter" href="http://twitter.com/share?text=Web%20development%20environment&amp;url=https://www.jarboleda.me/articles/web-development-environment/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/web-development-environment/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/web-development-environment/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/web-development-environment/&amp;media=%3cnil%3eweb-development-environment.jpg&amp;description=%3cp%3eIn%20this%20post%20we&amp;rsquo;ll%20configure%20an%20advanced%20web%20development%20environment.%20For%20that,%20we&amp;rsquo;ll%20have%20our%20web%20hosted%20on%20a%20server%20%28we%20will%20NOT%20use%20that%20server%20for%20development%29,%20and%20in%20our%20station%20we&amp;rsquo;ll%20have%20a%20virtual%20machine.%20For%20this%20vm%20we&amp;rsquo;ll%20use%20vagrant%20with%20the%20%20scotch%20box,%20which%20allows%20us%20to%20host%20a%20web%20without%20extra%20work%3c/p%3e%0a%0a%3ch2%20id=%22prerequisites%22%3ePrerequisites%3c/h2%3e%0a%0a%3cp%3eWe&amp;rsquo;ll%20use%20the%20following%20tecnologies%20for%20our%20environment.%20You%20should%20review%20them%20before%20going%20on.%3c/p%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+
+    <div class='post-footer'>
+      
+    </div>
+  </div>
+</div>
+
+      </article>
+      
+      <article>
+        <div class="post-container">
+  
+  <div class="article_summary">
+    <div class="article-date">
       <p class="day"><i class="fa fa-calendar"></i>18 Jul 2016</p>
       <p><i class="fa fa-clock-o"></i>4 min read  ~ 600 words</p>
     </div>
@@ -199,7 +273,7 @@ From the list above I took the image I was looking for, which is the complete ve
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/&amp;media=https://www.jarboleda.meinstalling-ubuntu-16.04-on-odroid-xu3-lite.jpg&amp;description=%3ch2%20id=%22choosing-an-image%22%3eChoosing%20an%20image%3c/h2%3e%0a%0a%3cp%3eUbuntu%2016.04%20mate%20has%20just%20been%20released%20by%20odroid%20team,%20including%20support%20for%20xu3/xu4%20boards%20and%20their%20lite%20versions.%20In%20this%20case%20we&amp;rsquo;re%20going%20to%20test%20Ubuntu%2016.04%20on%20odroid%20xu3%20lite,%20which%20is%20the%20board%20I%20own.%20We&amp;rsquo;ll%20install%20it%20on%20an%20eMMC%20module,%20which%20is%20something%20like%20an%20small%20ssd%20%28not%20really%20the%20same,%20eMMC%20isn&amp;rsquo;t%20as%20fast%20as%20ssd%20is%29.%20This%20module%20will%20give%20us%20a%20boost%20on%20performance,%20although%20we%20can%20also%20install%20Ubuntu%20on%20a%20SD%20card%20%28class%2010%29.%0aFirslty,%20we%20need%20to%20download%20the%20image%20we%20want%20to%20install:%0a%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/%22%3ehttp://de.eu.odroid.in/ubuntu_16.04lts/%3c/a%3e%0aFrom%20the%20list%20above%20I%20took%20the%20image%20I%20was%20looking%20for,%20which%20is%20the%20complete%20version%20for%20odroid%20xu3:%3c/p%3e%0a%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz%22%3eubuntu-16.04-mate-odroid-xu3-20160708.img.xz%3c/a%3e%3c/li%3e%0a%3c/ul%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/&amp;media=%3cnil%3einstalling-ubuntu-16.04-on-odroid-xu3-lite.jpg&amp;description=%3ch2%20id=%22choosing-an-image%22%3eChoosing%20an%20image%3c/h2%3e%0a%0a%3cp%3eUbuntu%2016.04%20mate%20has%20just%20been%20released%20by%20odroid%20team,%20including%20support%20for%20xu3/xu4%20boards%20and%20their%20lite%20versions.%20In%20this%20case%20we&amp;rsquo;re%20going%20to%20test%20Ubuntu%2016.04%20on%20odroid%20xu3%20lite,%20which%20is%20the%20board%20I%20own.%20We&amp;rsquo;ll%20install%20it%20on%20an%20eMMC%20module,%20which%20is%20something%20like%20an%20small%20ssd%20%28not%20really%20the%20same,%20eMMC%20isn&amp;rsquo;t%20as%20fast%20as%20ssd%20is%29.%20This%20module%20will%20give%20us%20a%20boost%20on%20performance,%20although%20we%20can%20also%20install%20Ubuntu%20on%20a%20SD%20card%20%28class%2010%29.%0aFirslty,%20we%20need%20to%20download%20the%20image%20we%20want%20to%20install:%0a%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/%22%3ehttp://de.eu.odroid.in/ubuntu_16.04lts/%3c/a%3e%0aFrom%20the%20list%20above%20I%20took%20the%20image%20I%20was%20looking%20for,%20which%20is%20the%20complete%20version%20for%20odroid%20xu3:%3c/p%3e%0a%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz%22%3eubuntu-16.04-mate-odroid-xu3-20160708.img.xz%3c/a%3e%3c/li%3e%0a%3c/ul%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -242,7 +316,8 @@ From the list above I took the image I was looking for, which is the complete ve
 
 <p>When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&rsquo;t as easy as using fopen:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-$handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>($filename, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">die</span>(<span style="color:#e6db74">&#39;could not open .&#39;</span> $filename);</code></pre></div></p>
+$handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>($filename, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">die</span>(<span style="color:#e6db74">&#39;could not open .&#39;</span> $filename);
+</code></pre></div></p>
 
 <p></p>
 </p>
@@ -261,7 +336,7 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;title=How%20to%20handle%20remote%20resources%20with%20curl&amp;summary=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%0a%3cp%3eWhen%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#75715e%22%3e&amp;lt;?php%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%0a%3cp%3e%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;title=How%20to%20handle%20remote%20resources%20with%20curl&amp;summary=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%0a%3cp%3eWhen%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#75715e%22%3e&amp;lt;?php%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%0a%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%0a%3cp%3e%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fa fa-twitter" href="http://twitter.com/share?text=How%20to%20handle%20remote%20resources%20with%20curl&amp;url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -273,7 +348,7 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;media=https://www.jarboleda.mehow-to-handle-remote-resources-with-curl.png&amp;description=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%0a%3cp%3eWhen%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#75715e%22%3e&amp;lt;?php%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;media=%3cnil%3ehow-to-handle-remote-resources-with-curl.png&amp;description=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%0a%3cp%3eWhen%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#75715e%22%3e&amp;lt;?php%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%0a%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -344,7 +419,7 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/getting-an-objects-methods/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/getting-an-objects-methods/&amp;media=https://www.jarboleda.megetting-an-objects-methods.jpg&amp;description=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%0a%3cp%3eSometimes%20we%20don&amp;rsquo;t%20have%20access%20to%20the%20platform%20docs%20on%20which%20we%20are%20working,%20it&amp;rsquo;s%20incomplete%20or%20we%20just%20don&amp;rsquo;t%20feel%20like%20looking%20for%20it.%20In%20those%20situations,%20we%20usually%20need%20more%20than%20the%20typical%20object&amp;rsquo;s%20%3ccode%3evar_dump%3c/code%3e,%20which%20only%20shows%20us%20the%20object%20properties%20but%20not%20its%20methods,%20which%20usually%20gives%20us%20that%20function%20we%20are%20working%20on%20without%20having%20to%20dive%20into%20the%20object&amp;rsquo;s%20properties.%20Here%20you&amp;rsquo;ll%20see%20the%20function%20I%20use%20for%20this%20task.%20This%20function%20uses%20the%20ReflectionMethod%20class,%20which%20gives%20us%20info%20about%20a%20method.%20It%20needs%20the%20classname%20and%20method&amp;rsquo;s%20name%20as%20params%20for%20its%20constructor.%3c/p%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/getting-an-objects-methods/&amp;media=%3cnil%3egetting-an-objects-methods.jpg&amp;description=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%0a%3cp%3eSometimes%20we%20don&amp;rsquo;t%20have%20access%20to%20the%20platform%20docs%20on%20which%20we%20are%20working,%20it&amp;rsquo;s%20incomplete%20or%20we%20just%20don&amp;rsquo;t%20feel%20like%20looking%20for%20it.%20In%20those%20situations,%20we%20usually%20need%20more%20than%20the%20typical%20object&amp;rsquo;s%20%3ccode%3evar_dump%3c/code%3e,%20which%20only%20shows%20us%20the%20object%20properties%20but%20not%20its%20methods,%20which%20usually%20gives%20us%20that%20function%20we%20are%20working%20on%20without%20having%20to%20dive%20into%20the%20object&amp;rsquo;s%20properties.%20Here%20you&amp;rsquo;ll%20see%20the%20function%20I%20use%20for%20this%20task.%20This%20function%20uses%20the%20ReflectionMethod%20class,%20which%20gives%20us%20info%20about%20a%20method.%20It%20needs%20the%20classname%20and%20method&amp;rsquo;s%20name%20as%20params%20for%20its%20constructor.%3c/p%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -415,77 +490,7 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/&amp;media=https://www.jarboleda.meusing-piwik-api-locally-with-pw.jpg&amp;description=%3cp%3eTo%20track%20jglab.me%20visits%20I%20use%20Piwik.%20Why?%20The%20main%20reason%20is%20because%20it%20allows%20to%20keep%20info%20private,%20moreover,%20Piwik%20offers%20a%20powerful%20API%20which%20can%20be%20queried%20locally,%20and%20that%20is%20important%20for%20performance%20as%20we%20can%20obtain%20stats%20about%20the%20website%20without%20having%20to%20query%20external%20server.%20To%20make%20local%20queries%20I%20use%20the%20following%20class:%3c/p%3e%0a%0a%3ch2%20id=%22show-me-the-code%22%3eShow%20me%20the%20code%3c/h2%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
-    </li>
-  </ul>
-</div>
-
-    </div>
-
-    <div class='post-footer'>
-      
-    </div>
-  </div>
-</div>
-
-      </article>
-      
-      <article>
-        <div class="post-container">
-  
-  <div class="article_summary">
-    <div class="article-date">
-      <p class="day"><i class="fa fa-calendar"></i>24 Mar 2016</p>
-      <p><i class="fa fa-clock-o"></i>3 min read  ~ 300 words</p>
-    </div>
-    
-    <div class="article-tags">
-      
-      <a href="#" rel="tag">magento2</a> 
-      <a href="#" rel="tag">cwp</a> 
-      <a href="#" rel="tag">php7</a> 
-    </div>
-    
-    <div class="clearfix"></div>
-    
-    <a href="/articles/installing-magento2-on-cwp/" title="">
-      <h1 class="article_title title">Installing magento2 on cwp</h1>
-    </a>
-    
-    <div class="article_excerpt">
-      
-      <p><h2 id="getting-started">Getting started</h2>
-
-<p>In this post I&rsquo;ll explain how to install magento2 in CWP, using php7 and mysql 5.6. Firstly, we need to compile php with the correct extensions magento2 needs. If you use this configure command with php7, magento2 will work like a charm.
-</p>
-      
-    </div>
-    <div class="clearfix"></div>
-    
-    <div class="article-footer">
-      
-      <a class="read-more-button pure-button" href="/articles/installing-magento2-on-cwp/">Read the full article</a> 
-      
-
-
-
-
-<div class="soc-sharing">
-  <ul class="article_share_items">
-    <li>
-      <a class="fa fa-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/installing-magento2-on-cwp/&amp;title=Installing%20magento2%20on%20cwp&amp;summary=%3ch2%20id=%22getting-started%22%3eGetting%20started%3c/h2%3e%0a%0a%3cp%3eIn%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20install%20magento2%20in%20CWP,%20using%20php7%20and%20mysql%205.6.%20Firstly,%20we%20need%20to%20compile%20php%20with%20the%20correct%20extensions%20magento2%20needs.%20If%20you%20use%20this%20configure%20command%20with%20php7,%20magento2%20will%20work%20like%20a%20charm.%0a%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
-    </li>
-    <li>
-      <a class="fa fa-twitter" href="http://twitter.com/share?text=Installing%20magento2%20on%20cwp&amp;url=https://www.jarboleda.me/articles/installing-magento2-on-cwp/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
-    </li>
-    <li>
-      <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/installing-magento2-on-cwp/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
-    </li>
-    <li>
-      <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/installing-magento2-on-cwp/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
-    </li>
-    <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/installing-magento2-on-cwp/&amp;media=https://www.jarboleda.meinstalling-magento2-on-cwp.jpg&amp;description=%3ch2%20id=%22getting-started%22%3eGetting%20started%3c/h2%3e%0a%0a%3cp%3eIn%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20install%20magento2%20in%20CWP,%20using%20php7%20and%20mysql%205.6.%20Firstly,%20we%20need%20to%20compile%20php%20with%20the%20correct%20extensions%20magento2%20needs.%20If%20you%20use%20this%20configure%20command%20with%20php7,%20magento2%20will%20work%20like%20a%20charm.%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/&amp;media=%3cnil%3eusing-piwik-api-locally-with-pw.jpg&amp;description=%3cp%3eTo%20track%20jglab.me%20visits%20I%20use%20Piwik.%20Why?%20The%20main%20reason%20is%20because%20it%20allows%20to%20keep%20info%20private,%20moreover,%20Piwik%20offers%20a%20powerful%20API%20which%20can%20be%20queried%20locally,%20and%20that%20is%20important%20for%20performance%20as%20we%20can%20obtain%20stats%20about%20the%20website%20without%20having%20to%20query%20external%20server.%20To%20make%20local%20queries%20I%20use%20the%20following%20class:%3c/p%3e%0a%0a%3ch2%20id=%22show-me-the-code%22%3eShow%20me%20the%20code%3c/h2%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -632,6 +637,22 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
         <li>
           <div class='item-content'>
             <div class='item-thumbnail'>
+              <a href='/articles/moving-to-france-for-work/'>
+                <img alt='Moving to France for work' width='72' height='72' src="/articles/img/thumbs/moving-to-france-for-work.jpg" />
+              </a>
+            </div>
+            <div class='item-title'>
+              <a href='/articles/moving-to-france-for-work/' class="mostVisitedLink">Moving to France for work
+                <span class="detail-span">[0]</span>
+              </a>
+            </div>
+          </div>
+          <div style='clear: both;'></div>
+        </li>
+      
+        <li>
+          <div class='item-content'>
+            <div class='item-thumbnail'>
               <a href='/articles/arduino-uno-lego-case/'>
                 <img alt='Arduino UNO R3 lego case' width='72' height='72' src="/articles/img/thumbs/arduino-uno-lego-case.jpg" />
               </a>
@@ -684,12 +705,12 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/installing-magento2-on-cwp/' target='_blank'>
-                    <img alt='Installing magento2 on cwp' width='72' height='72' src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
+                  <a href='/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
+                    <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Installing magento2 on cwp</a>
+                  <a href='/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
                 </div>
               </div>
             </li>
@@ -699,12 +720,12 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
-                    <img alt='Backing up all databases using mysqldump' width='72' height='72' src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
+                  <a href='/articles/using-piwik-api-locally-with-pw/' target='_blank'>
+                    <img alt='Using piwik&#39;s API locally with ProcessWire' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Backing up all databases using mysqldump</a>
+                  <a href='/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Using piwik&#39;s API locally with ProcessWire</a>
                 </div>
               </div>
             </li>
@@ -714,12 +735,12 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/deploy-hugo-site-to-github-pages/' target='_blank'>
-                    <img alt='Deploying a hugo site to github pages' width='72' height='72' src="/articles/img/thumbs/deploy-hugo-site-to-github-pages.jpg" />
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' target='_blank'>
+                    <img alt='Getting 1.5s page load time on a basic vps' width='72' height='72' src="/articles/img/thumbs/getting-1.5s-page-load-time-on-a-basic-vps.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/deploy-hugo-site-to-github-pages/' class="mostVisitedLink">Deploying a hugo site to github pages</a>
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' class="mostVisitedLink">Getting 1.5s page load time on a basic vps</a>
                 </div>
               </div>
             </li>
@@ -780,8 +801,8 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
       </ul>
     </div>
     <div class='clr'></div>
-    <p>Copyright &#169; 2017
-      <a href='https://www.jarboleda.me'>https://www.jarboleda.me</a>
+    <p>Copyright &#169; 2018
+      <a href=''></a>
     </p>
     <p class='attribution'>Powered by</p>
     <a href='https://gohugo.io/' target="_blank" >

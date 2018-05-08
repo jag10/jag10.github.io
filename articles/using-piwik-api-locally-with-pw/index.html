@@ -23,7 +23,7 @@ Show me the code
 " />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/" />
-	<meta property="og:image" content="https://www.jarboleda.me/articles/img/using-piwik-api-locally-with-pw.jpg" />
+	<meta property="og:image" content="/articles/img/using-piwik-api-locally-with-pw.jpg" />
 	<meta property="og:updated_time" content="2016-05-01 12:37:41 &#43;0200 CEST"/>
 	<meta property="og:locale" content="en-US" />
 	<meta property="og:site_name" content="J. Arboleda" />
@@ -47,11 +47,11 @@ Show me the code
     
     <meta itemprop="image" content="using-piwik-api-locally-with-pw.jpg">
     
-    <meta itemprop="keywords" content="notpinned,pinned,,true,serie1,arduino,backup,backups,bash,case,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,github,httpd,hugo,iptables,ipv6,lego,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,pages,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,static,ubuntu,unrealengine,vagrant,vm,vps,zip," />
+    <meta itemprop="keywords" content="notpinned,pinned,,false,true,serie1,arduino,backup,backups,bash,case,centos6,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,github,httpd,hugo,iptables,ipv6,job,lego,linkedin,magento,magento2,mate,move,mysql,mysqldump,nodejs,odroid,pages,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,static,ubuntu,unrealengine,vagrant,vm,vps,zip," />
     <meta itemprop="wordCount" content="256">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
-	<meta name="twitter:image:src" content="https://www.jarboleda.me/articles/img/using-piwik-api-locally-with-pw.jpg"/>
+	<meta name="twitter:image:src" content="/articles/img/using-piwik-api-locally-with-pw.jpg"/>
 	
 	<meta name="twitter:title" content="Using piwik&#39;s API locally with ProcessWire"/>
 	<meta name="twitter:description" content="To track jglab.me visits I use Piwik. Why? The main reason is because it allows to keep info private, moreover, Piwik offers a powerful API which can be queried locally, and that is important for performance as we can obtain stats about the website without having to query external server. To make local queries I use the following class:
@@ -193,7 +193,7 @@ $environment <span style="color:#f92672">=</span> <span style="color:#66d9ef">ne
 $environment<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">init</span>();
 <span style="color:#a6e22e">FrontController</span><span style="color:#f92672">::</span><span style="color:#a6e22e">getInstance</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">init</span>();
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">localPiwik</span>{
-   <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">function</span> <span style="color:#f92672"></span><span style="color:#a6e22e">getPageUrl</span>($url){
+   <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getPageUrl</span>($url){
      <span style="color:#75715e">// This inits the API Request with the specified parameters
 </span><span style="color:#75715e"></span>    $request <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Request</span>(<span style="color:#e6db74">&#34;
 </span><span style="color:#e6db74">                module=API
@@ -210,26 +210,28 @@ $environment<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">
     <span style="color:#66d9ef">return</span> $result;
   }
 
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#f92672"></span><span style="color:#a6e22e">getUniqueVisits</span>($url){
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getUniqueVisits</span>($url){
     $result <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getPageUrl</span>($url);
     <span style="color:#66d9ef">if</span>($result<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getRowFromLabel</span>(<span style="color:#e6db74">&#39;/index&#39;</span>))
      <span style="color:#66d9ef">return</span> $result<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getRowFromLabel</span>(<span style="color:#e6db74">&#39;/index&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getColumn</span>(<span style="color:#e6db74">&#39;sum_daily_nb_uniq_visitors&#39;</span>);
     <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
   }
 }
-<span style="color:#75715e">?&gt;</span></code></pre></div>
+<span style="color:#75715e">?&gt;</span>
+</code></pre></div>
 
 <p>We can use that class in the following way:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 <span style="color:#66d9ef">include_once</span>(<span style="color:#e6db74">&#39;localPiwik.php&#39;</span>);
 $piwik <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">localPiwik</span>();
-$visits <span style="color:#f92672">=</span> $piwik<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getUniqueVisits</span>(<span style="color:#e6db74">&#39;http://example.org&#39;</span>);</code></pre></div></p>
+$visits <span style="color:#f92672">=</span> $piwik<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getUniqueVisits</span>(<span style="color:#e6db74">&#39;http://example.org&#39;</span>);
+</code></pre></div></p>
 
 <h2 id="the-example">The example</h2>
 
 <p>To sum up, I&rsquo;ll show you an example of how to get an ordered list of the most visited posts on a ProcessWire website.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-<span style="color:#66d9ef">function</span> <span style="color:#f92672"></span><span style="color:#a6e22e">top_posts</span>($posts_PW){
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">top_posts</span>($posts_PW){
     <span style="color:#66d9ef">include_once</span>(<span style="color:#e6db74">&#39;localPiwik.php&#39;</span>);
     $piwik <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">localPiwik</span>();
     $posts <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>();
@@ -246,7 +248,8 @@ $visits <span style="color:#f92672">=</span> $piwik<span style="color:#f92672">-
     $posts <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_reverse</span>($posts);
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">array_slice</span>($posts, <span style="color:#ae81ff">0</span> , <span style="color:#ae81ff">5</span>);
   }
-<span style="color:#75715e">?&gt;</span></code></pre></div></p></p>
+<span style="color:#75715e">?&gt;</span>
+</code></pre></div></p></p>
       
     </div>
     <div class="clearfix"></div>
@@ -290,7 +293,7 @@ $visits <span style="color:#f92672">=</span> $piwik<span style="color:#f92672">-
       <a class="fa fa-google-plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/&amp;media=https://www.jarboleda.meusing-piwik-api-locally-with-pw.jpg&amp;description=%3cp%3eTo%20track%20jglab.me%20visits%20I%20use%20Piwik.%20Why?%20The%20main%20reason%20is%20because%20it%20allows%20to%20keep%20info%20private,%20moreover,%20Piwik%20offers%20a%20powerful%20API%20which%20can%20be%20queried%20locally,%20and%20that%20is%20important%20for%20performance%20as%20we%20can%20obtain%20stats%20about%20the%20website%20without%20having%20to%20query%20external%20server.%20To%20make%20local%20queries%20I%20use%20the%20following%20class:%3c/p%3e%0a%0a%3ch2%20id=%22show-me-the-code%22%3eShow%20me%20the%20code%3c/h2%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fa fa-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/&amp;media=%3cnil%3eusing-piwik-api-locally-with-pw.jpg&amp;description=%3cp%3eTo%20track%20jglab.me%20visits%20I%20use%20Piwik.%20Why?%20The%20main%20reason%20is%20because%20it%20allows%20to%20keep%20info%20private,%20moreover,%20Piwik%20offers%20a%20powerful%20API%20which%20can%20be%20queried%20locally,%20and%20that%20is%20important%20for%20performance%20as%20we%20can%20obtain%20stats%20about%20the%20website%20without%20having%20to%20query%20external%20server.%20To%20make%20local%20queries%20I%20use%20the%20following%20class:%3c/p%3e%0a%0a%3ch2%20id=%22show-me-the-code%22%3eShow%20me%20the%20code%3c/h2%3e%0a%0a%3cp%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -386,12 +389,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
-                    <img alt='Installing ubuntu 16.04 on odroid xu3 lite' width='72' height='72' src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
+                  <a href='/articles/web-development-environment/' target='_blank'>
+                    <img alt='Web development environment' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Installing ubuntu 16.04 on odroid xu3 lite</a>
+                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
                 </div>
               </div>
             </li>
@@ -401,17 +404,30 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/zipping-and-unzipping-websites-with-php/' target='_blank'>
-                    <img alt='Zipping and unzipping websites with php' width='72' height='72' src="/articles/img/thumbs/zipping-and-unzipping-websites-with-php.png" />
+                  <a href='/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
+                    <img alt='How to handle remote resources with curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/zipping-and-unzipping-websites-with-php/' class="mostVisitedLink">Zipping and unzipping websites with php</a>
+                  <a href='/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">How to handle remote resources with curl</a>
                 </div>
               </div>
             </li>
             
             
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/articles/arduino-uno-lego-case/' target='_blank'>
+                    <img alt='Arduino UNO R3 lego case' width='72' height='72' src="/articles/img/thumbs/arduino-uno-lego-case.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/arduino-uno-lego-case/' class="mostVisitedLink">Arduino UNO R3 lego case</a>
+                </div>
+              </div>
+            </li>
             
             
           </ul>
@@ -469,8 +485,8 @@ s.setAttribute('data-timestamp', +new Date());
       </ul>
     </div>
     <div class='clr'></div>
-    <p>Copyright &#169; 2017
-      <a href='https://www.jarboleda.me'>https://www.jarboleda.me</a>
+    <p>Copyright &#169; 2018
+      <a href=''></a>
     </p>
     <p class='attribution'>Powered by</p>
     <a href='https://gohugo.io/' target="_blank" >
