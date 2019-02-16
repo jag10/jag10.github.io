@@ -20,8 +20,7 @@
 
 Estructura de directorios
 
-En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co como dominio para este ejemplo. Puedes utilizar la estructura de directoriosque quieras, esta es la mía:
-" />
+En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co como dominio para este ejemplo. Puedes utilizar la estructura de directoriosque quieras, esta es la mía:" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/" />
 	<meta property="og:image" content="/articles/img/configuring-a-lamp-server-on-centos-6.jpg" />
@@ -45,8 +44,7 @@ En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co c
 
 Estructura de directorios
 
-En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co como dominio para este ejemplo. Puedes utilizar la estructura de directoriosque quieras, esta es la mía:
-">
+En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co como dominio para este ejemplo. Puedes utilizar la estructura de directoriosque quieras, esta es la mía:">
     <meta name="author" content="Jeferson Arboleda">
     
     <meta itemprop="image" content="configuring-a-lamp-server-on-centos-6.jpg">
@@ -62,8 +60,7 @@ En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co c
 
 Estructura de directorios
 
-En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co como dominio para este ejemplo. Puedes utilizar la estructura de directoriosque quieras, esta es la mía:
-"/>
+En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co como dominio para este ejemplo. Puedes utilizar la estructura de directoriosque quieras, esta es la mía:"/>
 	<meta name="twitter:site" content="@j_a_g_x"/>
 	
 	<meta name="twitter:creator" content="@j_a_g_x"/>
@@ -180,8 +177,7 @@ En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co c
 
 <h2 id="estructura-de-directorios">Estructura de directorios</h2>
 
-<p>En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co como dominio para este ejemplo. Puedes utilizar la estructura de directoriosque quieras, esta es la mía:
-</p>
+<p>En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co como dominio para este ejemplo. Puedes utilizar la estructura de directoriosque quieras, esta es la mía:</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cirru" data-lang="cirru">/
 /var/www/vhosts/jag.co
@@ -249,10 +245,10 @@ touch <span style="color:#e6db74">/var/www/vhosts/jag.co/logs/access.log</span><
 
 <p>En el siguiente paso vamos a crear el script mencionado anteriormente, estableciendo algunas variables de entorno y ejecutando php. Crea y edita el siguiente fichero: <code>/var/www/vhosts/jag.co/.cgi-bin/php.fcgi</code>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span><span style="color:#75715e">#
-</span><span style="color:#75715e"># php5.fcgi
-</span><span style="color:#75715e"># Shell Script to run PHP5 using mod_fastcgi under Apache 2.x
-</span><span style="color:#75715e"></span>USER<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jag&#34;</span>
+</span><span style="color:#75715e"></span>#
+<span style="color:#75715e"># php5.fcgi</span>
+<span style="color:#75715e"># Shell Script to run PHP5 using mod_fastcgi under Apache 2.x</span>
+USER<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jag&#34;</span>
 PHPRC<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/var/www/vhosts/jag.co/.cgi-bin/php.ini&#34;</span>
 PHP_FCGI_CHILDREN<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>
 export PHP_FCGI_CHILDREN
@@ -286,8 +282,8 @@ make install</code></pre></div>
 <p>Copia tu nuevo php.ini
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cp php.ini-production /etc/php56/php.ini
 vim /etc/php56/php.ini
-<span style="color:#75715e">#add this
-</span><span style="color:#75715e"></span>cgi.fix_pathinfo <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span></code></pre></div></p>
+<span style="color:#75715e">#add this</span>
+cgi.fix_pathinfo <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span></code></pre></div></p>
 
 <p>Recuerdas el script que escribimos antes? Ahora podemos usar ese script para ejecutar la versión de php que queramos
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">exec /usr/bin/php56/bin/php-cgi</code></pre></div></p>
@@ -415,7 +411,7 @@ chkconfig mysqld on</code></pre></div></p></p>
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/&amp;title=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;summary=%3cp%3eEn%20este%20post%20voy%20a%20explicar%20c%c3%b3mo%20configurar%20un%20servidor%20VPS%20para%20tener%20un%20servidor%20LAMP%20b%c3%a1sico%20con%20m%c3%baltiples%20versiones%20PHP,%20compiladas%20previamente.%20De%20esta%20manera,%20podemos%20tener%20un%20servidor%20VPS%20muy%20barato%20%28~3%e2%82%ac%29%20en%20el%20que%20hacer%20probaturas.%3c/p%3e%0a%0a%3ch2%20id=%22estructura-de-directorios%22%3eEstructura%20de%20directorios%3c/h2%3e%0a%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20crear%20la%20estructura%20de%20directorios.%20Utilizar%c3%a9%20jag.co%20como%20dominio%20para%20este%20ejemplo.%20Puedes%20utilizar%20la%20estructura%20de%20directoriosque%20quieras,%20esta%20es%20la%20m%c3%ada:%0a%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/&amp;title=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;summary=%3cp%3eEn%20este%20post%20voy%20a%20explicar%20c%c3%b3mo%20configurar%20un%20servidor%20VPS%20para%20tener%20un%20servidor%20LAMP%20b%c3%a1sico%20con%20m%c3%baltiples%20versiones%20PHP,%20compiladas%20previamente.%20De%20esta%20manera,%20podemos%20tener%20un%20servidor%20VPS%20muy%20barato%20%28~3%e2%82%ac%29%20en%20el%20que%20hacer%20probaturas.%3c/p%3e%0a%0a%3ch2%20id=%22estructura-de-directorios%22%3eEstructura%20de%20directorios%3c/h2%3e%0a%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20crear%20la%20estructura%20de%20directorios.%20Utilizar%c3%a9%20jag.co%20como%20dominio%20para%20este%20ejemplo.%20Puedes%20utilizar%20la%20estructura%20de%20directoriosque%20quieras,%20esta%20es%20la%20m%c3%ada:%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fab fa-twitter" href="http://twitter.com/share?text=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -427,7 +423,7 @@ chkconfig mysqld on</code></pre></div></p></p>
       <a class="fab fa-google-plus-g" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fab fa-pinterest-p" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/&amp;media=%3cnil%3econfiguring-a-lamp-server-on-centos-6.jpg&amp;description=%3cp%3eEn%20este%20post%20voy%20a%20explicar%20c%c3%b3mo%20configurar%20un%20servidor%20VPS%20para%20tener%20un%20servidor%20LAMP%20b%c3%a1sico%20con%20m%c3%baltiples%20versiones%20PHP,%20compiladas%20previamente.%20De%20esta%20manera,%20podemos%20tener%20un%20servidor%20VPS%20muy%20barato%20%28~3%e2%82%ac%29%20en%20el%20que%20hacer%20probaturas.%3c/p%3e%0a%0a%3ch2%20id=%22estructura-de-directorios%22%3eEstructura%20de%20directorios%3c/h2%3e%0a%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20crear%20la%20estructura%20de%20directorios.%20Utilizar%c3%a9%20jag.co%20como%20dominio%20para%20este%20ejemplo.%20Puedes%20utilizar%20la%20estructura%20de%20directoriosque%20quieras,%20esta%20es%20la%20m%c3%ada:%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fab fa-pinterest-p" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/&amp;media=%3cnil%3econfiguring-a-lamp-server-on-centos-6.jpg&amp;description=%3cp%3eEn%20este%20post%20voy%20a%20explicar%20c%c3%b3mo%20configurar%20un%20servidor%20VPS%20para%20tener%20un%20servidor%20LAMP%20b%c3%a1sico%20con%20m%c3%baltiples%20versiones%20PHP,%20compiladas%20previamente.%20De%20esta%20manera,%20podemos%20tener%20un%20servidor%20VPS%20muy%20barato%20%28~3%e2%82%ac%29%20en%20el%20que%20hacer%20probaturas.%3c/p%3e%0a%0a%3ch2%20id=%22estructura-de-directorios%22%3eEstructura%20de%20directorios%3c/h2%3e%0a%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20crear%20la%20estructura%20de%20directorios.%20Utilizar%c3%a9%20jag.co%20como%20dominio%20para%20este%20ejemplo.%20Puedes%20utilizar%20la%20estructura%20de%20directoriosque%20quieras,%20esta%20es%20la%20m%c3%ada:%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -522,18 +518,16 @@ s.setAttribute('data-timestamp', +new Date());
         <div class='widget-content popular-posts'>
           <ul>
             
-            
-            
              
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/centos-web-panel-on-vps/' target='_blank'>
-                    <img alt='Centos web panel con php7 y mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
+                  <a href='/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
+                    <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel con php7 y mysql5.6</a>
+                  <a href='/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
                 </div>
               </div>
             </li>
@@ -543,12 +537,27 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
-                    <img alt='Haciendo un backup de todas las BD usando mysqldump' width='72' height='72' src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
+                  <a href='/es/articles/getting-an-objects-methods/' target='_blank'>
+                    <img alt='Obteniendo los métodos (reflejados) de un objeto' width='72' height='72' src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Haciendo un backup de todas las BD usando mysqldump</a>
+                  <a href='/es/articles/getting-an-objects-methods/' class="mostVisitedLink">Obteniendo los métodos (reflejados) de un objeto</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/es/articles/using-piwik-api-locally-with-pw/' target='_blank'>
+                    <img alt='Utilizando la API de piwik en local con PW' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/es/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Utilizando la API de piwik en local con PW</a>
                 </div>
               </div>
             </li>
@@ -609,7 +618,7 @@ s.setAttribute('data-timestamp', +new Date());
       </ul>
     </div>
     <div class='clr'></div>
-    <p>Copyright &#169; 2018
+    <p>Copyright &#169; 2019
       <a href=''></a>
     </p>
     <p class='attribution'>Powered by</p>
@@ -623,8 +632,8 @@ s.setAttribute('data-timestamp', +new Date());
 
 <script type="text/javascript">
   window.cookieconsent_options = {
-    "message": "This website uses cookies to ensure you get the best experience on our website",
-    "dismiss": "Got it!",
+    "message": "This website uses cookies to ensure you get the best experience",
+    "dismiss": "Ok",
     "learnMore": "More info",
     "link": null,
     "theme": "light-bottom"

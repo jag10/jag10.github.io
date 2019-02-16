@@ -18,8 +18,7 @@
       <guid>https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/</guid>
       <description>&lt;p&gt;In this post I&amp;rsquo;ll explain how to configure iptables along with fail2ban and how to start/stop these services without messing up your chains or configuration.&lt;/p&gt;
 
-&lt;p&gt;Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on &lt;code&gt;/etc/fail2ban/jail.local&lt;/code&gt;. Copy the file from &lt;code&gt;/etc/fail2ban/jail.conf&lt;/code&gt; if it doesn&amp;rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file:
-&lt;/p&gt;</description>
+&lt;p&gt;Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on &lt;code&gt;/etc/fail2ban/jail.local&lt;/code&gt;. Copy the file from &lt;code&gt;/etc/fail2ban/jail.conf&lt;/code&gt; if it doesn&amp;rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file:&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -32,8 +31,7 @@
 
 &lt;h2 id=&#34;dir-structure&#34;&gt;Dir structure&lt;/h2&gt;
 
-&lt;p&gt;Firstly, we&amp;rsquo;ll create our dir structure. I&amp;rsquo;ll use jag.co as a domain for this example, you can choose the dir structure you want, but I recommend following this one:
-&lt;/p&gt;</description>
+&lt;p&gt;Firstly, we&amp;rsquo;ll create our dir structure. I&amp;rsquo;ll use jag.co as a domain for this example, you can choose the dir structure you want, but I recommend following this one:&lt;/p&gt;</description>
     </item>
     
   </channel>

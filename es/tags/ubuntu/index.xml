@@ -25,9 +25,7 @@
 
 &lt;p&gt;Descargar ISO de ubuntu&lt;/p&gt;
 
-&lt;p&gt;Arrancar la máquina virtual con la ISO: Settings -&amp;gt; Storage -&amp;gt; Add CD/DVD Device -&amp;gt; Choose disk&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Arrancar la máquina virtual con la ISO: Settings -&amp;gt; Storage -&amp;gt; Add CD/DVD Device -&amp;gt; Choose disk&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -44,9 +42,7 @@ De aquí he tomado el fichero que me interesa, correspondiente a la versión com
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz&#34;&gt;ubuntu-16.04-mate-odroid-xu3-20160708.img.xz&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

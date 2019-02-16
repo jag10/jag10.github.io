@@ -18,9 +18,7 @@
       <guid>https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/</guid>
       <description>&lt;p&gt;To track jglab.me visits I use Piwik. Why? The main reason is because it allows to keep info private, moreover, Piwik offers a powerful API which can be queried locally, and that is important for performance as we can obtain stats about the website without having to query external server. To make local queries I use the following class:&lt;/p&gt;
 
-&lt;h2 id=&#34;show-me-the-code&#34;&gt;Show me the code&lt;/h2&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;h2 id=&#34;show-me-the-code&#34;&gt;Show me the code&lt;/h2&gt;</description>
     </item>
     
     <item>
@@ -35,8 +33,7 @@
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Those 11s peaks you see there were produced while I was doing load tests on my server.&lt;/p&gt;
 
-&lt;p&gt;My environment&amp;rsquo;s specs are:
-&lt;/p&gt;</description>
+&lt;p&gt;My environment&amp;rsquo;s specs are:&lt;/p&gt;</description>
     </item>
     
   </channel>

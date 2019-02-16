@@ -18,8 +18,7 @@
       <guid>https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/</guid>
       <description>&lt;h2 id=&#34;empezando&#34;&gt;Empezando&lt;/h2&gt;
 
-&lt;p&gt;En este post explicaré cómo instalar magento2 sobre Centos Web Panel, utilizando php7 y mysql 5.6. Para empezar, tenemos que compilar php con las extensiones que magento2 necesita. Con el siguiente comando podremos configurar php7 para luego compilarlo y conseguir que funcione con magento2.
-&lt;/p&gt;</description>
+&lt;p&gt;En este post explicaré cómo instalar magento2 sobre Centos Web Panel, utilizando php7 y mysql 5.6. Para empezar, tenemos que compilar php con las extensiones que magento2 necesita. Con el siguiente comando podremos configurar php7 para luego compilarlo y conseguir que funcione con magento2.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -37,8 +36,7 @@
 &lt;p&gt;Después de una instalación limpia, vamos a detener CWP para actualizar mysql.
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;service cwpsrv stop&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
 
-&lt;p&gt;Ahora vamos a instalar el repositorio de mysql
-&lt;/p&gt;</description>
+&lt;p&gt;Ahora vamos a instalar el repositorio de mysql&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -25,8 +25,7 @@ Instalando mysql 5.6
 Después de una instalación limpia, vamos a detener CWP para actualizar mysql.
 service cwpsrv stop
 
-Ahora vamos a instalar el repositorio de mysql
-" />
+Ahora vamos a instalar el repositorio de mysql" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/" />
 	<meta property="og:image" content="/articles/img/installing-centos-web-panel-on-vps.jpg" />
@@ -54,8 +53,7 @@ Instalando mysql 5.6
 Después de una instalación limpia, vamos a detener CWP para actualizar mysql.
 service cwpsrv stop
 
-Ahora vamos a instalar el repositorio de mysql
-">
+Ahora vamos a instalar el repositorio de mysql">
     <meta name="author" content="Jeferson Arboleda">
     
     <meta itemprop="image" content="installing-centos-web-panel-on-vps.jpg">
@@ -76,8 +74,7 @@ Instalando mysql 5.6
 Después de una instalación limpia, vamos a detener CWP para actualizar mysql.
 service cwpsrv stop
 
-Ahora vamos a instalar el repositorio de mysql
-"/>
+Ahora vamos a instalar el repositorio de mysql"/>
 	<meta name="twitter:site" content="@j_a_g_x"/>
 	
 	<meta name="twitter:creator" content="@j_a_g_x"/>
@@ -198,8 +195,7 @@ Ahora vamos a instalar el repositorio de mysql
 <p>Después de una instalación limpia, vamos a detener CWP para actualizar mysql.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">service cwpsrv stop</code></pre></div></p>
 
-<p>Ahora vamos a instalar el repositorio de mysql
-</p>
+<p>Ahora vamos a instalar el repositorio de mysql</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum install -y wget
 wget http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm
@@ -220,23 +216,23 @@ baseurl<span style="color:#f92672">=</span>http://repo.mysql.com/yum/mysql-tools
 enabled<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
 gpgcheck<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
 gpgkey<span style="color:#f92672">=</span>file:/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
-<span style="color:#75715e"># Enable to use MySQL 5.5
-</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>mysql55-community<span style="color:#f92672">]</span>
+<span style="color:#75715e"># Enable to use MySQL 5.5</span>
+<span style="color:#f92672">[</span>mysql55-community<span style="color:#f92672">]</span>
 name<span style="color:#f92672">=</span>MySQL <span style="color:#ae81ff">5</span>.5 Community Server
 baseurl<span style="color:#f92672">=</span>http://repo.mysql.com/yum/mysql-5.5-community/el/6/$basearch/
 enabled<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
 gpgcheck<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
 gpgkey<span style="color:#f92672">=</span>file:/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
-<span style="color:#75715e"># Enable to use MySQL 5.6
-</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>mysql56-community<span style="color:#f92672">]</span>
+<span style="color:#75715e"># Enable to use MySQL 5.6</span>
+<span style="color:#f92672">[</span>mysql56-community<span style="color:#f92672">]</span>
 name<span style="color:#f92672">=</span>MySQL <span style="color:#ae81ff">5</span>.6 Community Server
 baseurl<span style="color:#f92672">=</span>http://repo.mysql.com/yum/mysql-5.6-community/el/6/$basearch/
 enabled<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
 gpgcheck<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
 gpgkey<span style="color:#f92672">=</span>file:/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
-<span style="color:#75715e"># Note: MySQL 5.7 is currently in development. For use at your own risk.
-</span><span style="color:#75715e"># Please read with sub pages: https://dev.mysql.com/doc/relnotes/mysql/5.7/en/
-</span><span style="color:#75715e"></span><span style="color:#f92672">[</span>mysql57-community-dmr<span style="color:#f92672">]</span>
+<span style="color:#75715e"># Note: MySQL 5.7 is currently in development. For use at your own risk.</span>
+<span style="color:#75715e"># Please read with sub pages: https://dev.mysql.com/doc/relnotes/mysql/5.7/en/</span>
+<span style="color:#f92672">[</span>mysql57-community-dmr<span style="color:#f92672">]</span>
 name<span style="color:#f92672">=</span>MySQL <span style="color:#ae81ff">5</span>.7 Community Server Development Milestone Release
 baseurl<span style="color:#f92672">=</span>http://repo.mysql.com/yum/mysql-5.7-community/el/6/$basearch/
 enabled<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
@@ -352,7 +348,7 @@ Identifícate en el panel con tus credenciales y ve a PHP Settings -&gt; PHP sel
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/&amp;title=Centos%20web%20panel%20con%20php7%20y%20mysql5.6&amp;summary=%3ch2%20id=%22instalando-cwp%22%3eInstalando%20CWP%3c/h2%3e%0a%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20instalar%20CWP,%20simplemente%20hay%20que%20seguir%20las%20instrucciones%20del%20sitio%20web%20de%20CWP:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%0a%3ch2%20id=%22instalando-mysql-5-6%22%3eInstalando%20mysql%205.6%3c/h2%3e%0a%0a%3cp%3eDespu%c3%a9s%20de%20una%20instalaci%c3%b3n%20limpia,%20vamos%20a%20detener%20CWP%20para%20actualizar%20mysql.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3eservice%20cwpsrv%20stop%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%0a%3cp%3eAhora%20vamos%20a%20instalar%20el%20repositorio%20de%20mysql%0a%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/&amp;title=Centos%20web%20panel%20con%20php7%20y%20mysql5.6&amp;summary=%3ch2%20id=%22instalando-cwp%22%3eInstalando%20CWP%3c/h2%3e%0a%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20instalar%20CWP,%20simplemente%20hay%20que%20seguir%20las%20instrucciones%20del%20sitio%20web%20de%20CWP:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%0a%3ch2%20id=%22instalando-mysql-5-6%22%3eInstalando%20mysql%205.6%3c/h2%3e%0a%0a%3cp%3eDespu%c3%a9s%20de%20una%20instalaci%c3%b3n%20limpia,%20vamos%20a%20detener%20CWP%20para%20actualizar%20mysql.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3eservice%20cwpsrv%20stop%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%0a%3cp%3eAhora%20vamos%20a%20instalar%20el%20repositorio%20de%20mysql%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fab fa-twitter" href="http://twitter.com/share?text=Centos%20web%20panel%20con%20php7%20y%20mysql5.6&amp;url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -364,7 +360,7 @@ Identifícate en el panel con tus credenciales y ve a PHP Settings -&gt; PHP sel
       <a class="fab fa-google-plus-g" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fab fa-pinterest-p" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/&amp;media=%3cnil%3einstalling-centos-web-panel-on-vps.jpg&amp;description=%3ch2%20id=%22instalando-cwp%22%3eInstalando%20CWP%3c/h2%3e%0a%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20instalar%20CWP,%20simplemente%20hay%20que%20seguir%20las%20instrucciones%20del%20sitio%20web%20de%20CWP:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%0a%3ch2%20id=%22instalando-mysql-5-6%22%3eInstalando%20mysql%205.6%3c/h2%3e%0a%0a%3cp%3eDespu%c3%a9s%20de%20una%20instalaci%c3%b3n%20limpia,%20vamos%20a%20detener%20CWP%20para%20actualizar%20mysql.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3eservice%20cwpsrv%20stop%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%0a%3cp%3eAhora%20vamos%20a%20instalar%20el%20repositorio%20de%20mysql%0a%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fab fa-pinterest-p" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/&amp;media=%3cnil%3einstalling-centos-web-panel-on-vps.jpg&amp;description=%3ch2%20id=%22instalando-cwp%22%3eInstalando%20CWP%3c/h2%3e%0a%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20instalar%20CWP,%20simplemente%20hay%20que%20seguir%20las%20instrucciones%20del%20sitio%20web%20de%20CWP:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%0a%3ch2%20id=%22instalando-mysql-5-6%22%3eInstalando%20mysql%205.6%3c/h2%3e%0a%0a%3cp%3eDespu%c3%a9s%20de%20una%20instalaci%c3%b3n%20limpia,%20vamos%20a%20detener%20CWP%20para%20actualizar%20mysql.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3eservice%20cwpsrv%20stop%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%0a%3cp%3eAhora%20vamos%20a%20instalar%20el%20repositorio%20de%20mysql%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
@@ -462,21 +458,6 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/web-development-environment/' target='_blank'>
-                    <img alt='Entorno para desarrollo web' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/es/articles/web-development-environment/' class="mostVisitedLink">Entorno para desarrollo web</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
                   <a href='/es/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
                     <img alt='Cómo manejar recursos remotos con curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
                   </a>
@@ -492,15 +473,17 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
-                    <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
+                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img alt='Arreglando una partición corrupta de una máquina virtual' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
+                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Arreglando una partición corrupta de una máquina virtual</a>
                 </div>
               </div>
             </li>
+            
+            
             
             
           </ul>
@@ -558,7 +541,7 @@ s.setAttribute('data-timestamp', +new Date());
       </ul>
     </div>
     <div class='clr'></div>
-    <p>Copyright &#169; 2018
+    <p>Copyright &#169; 2019
       <a href=''></a>
     </p>
     <p class='attribution'>Powered by</p>
@@ -572,8 +555,8 @@ s.setAttribute('data-timestamp', +new Date());
 
 <script type="text/javascript">
   window.cookieconsent_options = {
-    "message": "This website uses cookies to ensure you get the best experience on our website",
-    "dismiss": "Got it!",
+    "message": "This website uses cookies to ensure you get the best experience",
+    "dismiss": "Ok",
     "learnMore": "More info",
     "link": null,
     "theme": "light-bottom"

@@ -25,8 +25,7 @@
 &lt;p&gt;Después de una instalación limpia, vamos a detener CWP para actualizar mysql.
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;service cwpsrv stop&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
 
-&lt;p&gt;Ahora vamos a instalar el repositorio de mysql
-&lt;/p&gt;</description>
+&lt;p&gt;Ahora vamos a instalar el repositorio de mysql&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -19,9 +19,7 @@
       <description>&lt;p&gt;If you ever find the following error while using vagrant or simply when booting a virtual machine, we&amp;rsquo;ll later see how to solve it.
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;Couldn&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;t remount RDWR because of unprocessed orphan inode list.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 Download an Ubuntu ISO
-Boot the virtualmachine from the ISO file: Settings -&amp;gt; Storage -&amp;gt; Add CD/DVD Device -&amp;gt; Choose disk&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+Boot the virtualmachine from the ISO file: Settings -&amp;gt; Storage -&amp;gt; Add CD/DVD Device -&amp;gt; Choose disk&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -39,9 +37,7 @@ From the list above I took the image I was looking for, which is the complete ve
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz&#34;&gt;ubuntu-16.04-mate-odroid-xu3-20160708.img.xz&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

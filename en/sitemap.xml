@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-your-blog/</loc>
+    <lastmod>2019-02-16T12:21:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.jarboleda.me/articles/moving-to-france-for-work/</loc>
     <lastmod>2018-02-10T13:39:56+02:00</lastmod>
   </url>
@@ -224,7 +229,7 @@
   
   <url>
     <loc>https://www.jarboleda.me/project/</loc>
-    <lastmod>2017-08-13T11:07:16+02:00</lastmod>
+    <lastmod>2019-02-16T12:21:32+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -258,7 +263,7 @@
   
   <url>
     <loc>https://www.jarboleda.me/articles/</loc>
-    <lastmod>2018-02-10T13:39:56+02:00</lastmod>
+    <lastmod>2019-02-16T12:21:32+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -320,6 +325,12 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/centos6/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://www.jarboleda.me/tags/cloudflare/</loc>
+    <lastmod>2019-02-16T12:21:32+02:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -422,6 +433,12 @@
   </url>
   
   <url>
+    <loc>https://www.jarboleda.me/tags/github-pages/</loc>
+    <lastmod>2019-02-16T12:21:32+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.jarboleda.me/tags/httpd/</loc>
     <lastmod>2015-08-09T10:48:45+02:00</lastmod>
     <priority>0</priority>
@@ -439,7 +456,7 @@
   
   <url>
     <loc>https://www.jarboleda.me/tags/hugo/</loc>
-    <lastmod>2017-08-13T11:07:16+02:00</lastmod>
+    <lastmod>2019-02-16T12:21:32+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -457,7 +474,7 @@
   
   <url>
     <loc>https://www.jarboleda.me/</loc>
-    <lastmod>2018-02-10T13:39:56+02:00</lastmod>
+    <lastmod>2019-02-16T12:21:32+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -593,7 +610,7 @@
   
   <url>
     <loc>https://www.jarboleda.me/pinned/notpinned/</loc>
-    <lastmod>2017-08-13T11:07:16+02:00</lastmod>
+    <lastmod>2019-02-16T12:21:32+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -631,7 +648,7 @@
   
   <url>
     <loc>https://www.jarboleda.me/tags/performance/</loc>
-    <lastmod>2016-02-27T12:21:32+02:00</lastmod>
+    <lastmod>2019-02-16T12:21:32+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -669,7 +686,7 @@
   
   <url>
     <loc>https://www.jarboleda.me/pinned/</loc>
-    <lastmod>2017-08-13T11:07:16+02:00</lastmod>
+    <lastmod>2019-02-16T12:21:32+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -739,7 +756,7 @@
   
   <url>
     <loc>https://www.jarboleda.me/project/</loc>
-    <lastmod>2017-08-13T11:07:16+02:00</lastmod>
+    <lastmod>2019-02-16T12:21:32+02:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"

@@ -18,21 +18,13 @@
       <guid>https://www.jarboleda.me/articles/moving-to-france-for-work/</guid>
       <description>&lt;p&gt;Few months ago I moved to france for work reasons and I&amp;rsquo;d like to share how&amp;rsquo;s been the experience so far in this post.
 &lt;br/&gt;&lt;br/&gt;
-
 &lt;figure&gt;
-    
-        &lt;img src=&#34;https://www.jarboleda.me/articles/img/moving-to-france-for-work.jpg&#34; alt=&#34;Côte d&amp;#39;Azur&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Côte d&amp;#39;Azur&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
+    &lt;img src=&#34;https://www.jarboleda.me/articles/img/moving-to-france-for-work.jpg&#34;
+         alt=&#34;Côte d&amp;#39;Azur&#34;/&gt; &lt;figcaption&gt;
+            &lt;h4&gt;Côte d&amp;#39;Azur&lt;/h4&gt;
+        &lt;/figcaption&gt;
 &lt;/figure&gt;
-&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -43,21 +35,13 @@
       <guid>https://www.jarboleda.me/articles/arduino-uno-lego-case/</guid>
       <description>&lt;p&gt;In the following photo you can see the result of the case I built for this project.
 &lt;br/&gt;&lt;br/&gt;
-
 &lt;figure&gt;
-    
-        &lt;img src=&#34;https://www.jarboleda.me/articles/img/arduino-uno-lego-case.jpg&#34; alt=&#34;arduino uno lego case&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;arduino uno lego case&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
+    &lt;img src=&#34;https://www.jarboleda.me/articles/img/arduino-uno-lego-case.jpg&#34;
+         alt=&#34;arduino uno lego case&#34;/&gt; &lt;figcaption&gt;
+            &lt;h4&gt;arduino uno lego case&lt;/h4&gt;
+        &lt;/figcaption&gt;
 &lt;/figure&gt;
-&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -70,9 +54,7 @@
 
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
 
-&lt;p&gt;We&amp;rsquo;ll use the following tecnologies for our environment. You should review them before going on.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;We&amp;rsquo;ll use the following tecnologies for our environment. You should review them before going on.&lt;/p&gt;</description>
     </item>
     
   </channel>
