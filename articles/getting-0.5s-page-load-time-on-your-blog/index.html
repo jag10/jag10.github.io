@@ -24,9 +24,7 @@
         
 
 
-
 For that purpose, I´ll be using the following technologies:
-
 
 Hugo
 Github Pages
@@ -59,9 +57,7 @@ Cloudflare
         
 
 
-
 For that purpose, I´ll be using the following technologies:
-
 
 Hugo
 Github Pages
@@ -86,9 +82,7 @@ Cloudflare
         
 
 
-
 For that purpose, I´ll be using the following technologies:
-
 
 Hugo
 Github Pages
@@ -203,7 +197,7 @@ Cloudflare
     <div class="article_excerpt">
       
       <p><p>In my previous <a href="articles/getting-1.5s-page-load-time-on-a-basic-vps/">post</a> back in 2016 I got page load time down from 5s to 1.5, and here my objective is to get around 0.5s.
-<br /><br />
+<!-- raw HTML omitted --><!-- raw HTML omitted -->
 <figure>
     <img src="/articles/img/getting-0.5s-page-load-time-on-your-blog.png"
          alt="jarboleda.me performance graphic"/> <figcaption>
@@ -211,22 +205,16 @@ Cloudflare
         </figcaption>
 </figure>
 </p>
-
 <p>For that purpose, I´ll be using the following technologies:</p>
-
 <ul>
 <li><a href="https://gohugo.io/">Hugo</a></li>
 <li><a href="https://pages.github.com/">Github Pages</a></li>
 <li><a href="https://www.cloudflare.com/">Cloudflare</a></li>
 </ul>
-
 <h2 id="stats-before-tuning-up">Stats before tuning up</h2>
-
-<p><img src="/articles/img/getting-1.5s-page-load-time-on-a-basic-vps-2.png" alt="performance after tuning up" />
+<p><img src="/articles/img/getting-1.5s-page-load-time-on-a-basic-vps-2.png" alt="performance after tuning up">
 On top of previous optimizations, I decided to go for a static website, after all, most of my content is static. The only exception is the sidebar, but we&rsquo;ll get to that later</p>
-
 <h2 id="actions-taken">Actions taken</h2>
-
 <ul>
 <li>Optimizing images is important to save bandwidth. To do this, I crafted a script to resize all the images used in the blog to minimize their size and maximize their quality.</li>
 <li>Cloudflare&rsquo;s Brotli compression for HTLM. JS and CSS are minized with the framework I&rsquo;m using, so I just need HTML from Cloudflare.</li>
@@ -234,9 +222,7 @@ On top of previous optimizations, I decided to go for a static website, after al
 <li>Defer parsing of JS allows the browser to load the visible content faster. This was easy, I only use a couple of JS and I moved them into the footer.</li>
 <li>Load dynamic content asynchronously once the page is loaded. I achieves that using JS on my sidebar, including a preloader for cool-looking purposes</li>
 </ul>
-
 <h2 id="stats-after-tuning-up">Stats after tuning up</h2>
-
 <p>Well, you can see them on the top image of this post, load time can go down even to 0.4s in the best cases. Also, the complexity of the website is much lower with a static content management system like Hugo.</p></p>
       
     </div>
@@ -279,7 +265,7 @@ On top of previous optimizations, I decided to go for a static website, after al
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/getting-0.5s-page-load-time-on-your-blog/&amp;title=Getting%200.5%20seconds%20load%20time%20on%20your%20blog&amp;summary=%3cp%3eIn%20my%20previous%20%3ca%20href=%22articles/getting-1.5s-page-load-time-on-a-basic-vps/%22%3epost%3c/a%3e%20back%20in%202016%20I%20got%20page%20load%20time%20down%20from%205s%20to%201.5,%20and%20here%20my%20objective%20is%20to%20get%20around%200.5s.%0a%3cbr%20/%3e%3cbr%20/%3e%0a%3cfigure%3e%0a%20%20%20%20%3cimg%20src=%22/articles/img/getting-0.5s-page-load-time-on-your-blog.png%22%0a%20%20%20%20%20%20%20%20%20alt=%22jarboleda.me%20performance%20graphic%22/%3e%20%3cfigcaption%3e%0a%20%20%20%20%20%20%20%20%20%20%20%20%3ch4%3ejarboleda.me%20performance%20graphic%3c/h4%3e%0a%20%20%20%20%20%20%20%20%3c/figcaption%3e%0a%3c/figure%3e%0a%3c/p%3e%0a%0a%3cp%3eFor%20that%20purpose,%20I%c2%b4ll%20be%20using%20the%20following%20technologies:%3c/p%3e%0a%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22https://gohugo.io/%22%3eHugo%3c/a%3e%3c/li%3e%0a%3cli%3e%3ca%20href=%22https://pages.github.com/%22%3eGithub%20Pages%3c/a%3e%3c/li%3e%0a%3cli%3e%3ca%20href=%22https://www.cloudflare.com/%22%3eCloudflare%3c/a%3e%3c/li%3e%0a%3c/ul%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/getting-0.5s-page-load-time-on-your-blog/&amp;title=Getting%200.5%20seconds%20load%20time%20on%20your%20blog&amp;summary=%3cp%3eIn%20my%20previous%20%3ca%20href=%22articles/getting-1.5s-page-load-time-on-a-basic-vps/%22%3epost%3c/a%3e%20back%20in%202016%20I%20got%20page%20load%20time%20down%20from%205s%20to%201.5,%20and%20here%20my%20objective%20is%20to%20get%20around%200.5s.%0a%3c!--%20raw%20HTML%20omitted%20--%3e%3c!--%20raw%20HTML%20omitted%20--%3e%0a%3cfigure%3e%0a%20%20%20%20%3cimg%20src=%22/articles/img/getting-0.5s-page-load-time-on-your-blog.png%22%0a%20%20%20%20%20%20%20%20%20alt=%22jarboleda.me%20performance%20graphic%22/%3e%20%3cfigcaption%3e%0a%20%20%20%20%20%20%20%20%20%20%20%20%3ch4%3ejarboleda.me%20performance%20graphic%3c/h4%3e%0a%20%20%20%20%20%20%20%20%3c/figcaption%3e%0a%3c/figure%3e%0a%3c/p%3e%0a%3cp%3eFor%20that%20purpose,%20I%c2%b4ll%20be%20using%20the%20following%20technologies:%3c/p%3e%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22https://gohugo.io/%22%3eHugo%3c/a%3e%3c/li%3e%0a%3cli%3e%3ca%20href=%22https://pages.github.com/%22%3eGithub%20Pages%3c/a%3e%3c/li%3e%0a%3cli%3e%3ca%20href=%22https://www.cloudflare.com/%22%3eCloudflare%3c/a%3e%3c/li%3e%0a%3c/ul%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fab fa-twitter" href="http://twitter.com/share?text=Getting%200.5%20seconds%20load%20time%20on%20your%20blog&amp;url=https://www.jarboleda.me/articles/getting-0.5s-page-load-time-on-your-blog/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -291,13 +277,12 @@ On top of previous optimizations, I decided to go for a static website, after al
       <a class="fab fa-google-plus-g" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/getting-0.5s-page-load-time-on-your-blog/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fab fa-pinterest-p" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/getting-0.5s-page-load-time-on-your-blog/&amp;media=%3cnil%3egetting-0.5s-page-load-time-on-your-blog.png&amp;description=%3cp%3eIn%20my%20previous%20%3ca%20href=%22articles/getting-1.5s-page-load-time-on-a-basic-vps/%22%3epost%3c/a%3e%20back%20in%202016%20I%20got%20page%20load%20time%20down%20from%205s%20to%201.5,%20and%20here%20my%20objective%20is%20to%20get%20around%200.5s.%0a%3cbr%20/%3e%3cbr%20/%3e%0a%3cfigure%3e%0a%20%20%20%20%3cimg%20src=%22/articles/img/getting-0.5s-page-load-time-on-your-blog.png%22%0a%20%20%20%20%20%20%20%20%20alt=%22jarboleda.me%20performance%20graphic%22/%3e%20%3cfigcaption%3e%0a%20%20%20%20%20%20%20%20%20%20%20%20%3ch4%3ejarboleda.me%20performance%20graphic%3c/h4%3e%0a%20%20%20%20%20%20%20%20%3c/figcaption%3e%0a%3c/figure%3e%0a%3c/p%3e%0a%0a%3cp%3eFor%20that%20purpose,%20I%c2%b4ll%20be%20using%20the%20following%20technologies:%3c/p%3e%0a%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22https://gohugo.io/%22%3eHugo%3c/a%3e%3c/li%3e%0a%3cli%3e%3ca%20href=%22https://pages.github.com/%22%3eGithub%20Pages%3c/a%3e%3c/li%3e%0a%3cli%3e%3ca%20href=%22https://www.cloudflare.com/%22%3eCloudflare%3c/a%3e%3c/li%3e%0a%3c/ul%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fab fa-pinterest-p" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/getting-0.5s-page-load-time-on-your-blog/&amp;media=%3cnil%3egetting-0.5s-page-load-time-on-your-blog.png&amp;description=%3cp%3eIn%20my%20previous%20%3ca%20href=%22articles/getting-1.5s-page-load-time-on-a-basic-vps/%22%3epost%3c/a%3e%20back%20in%202016%20I%20got%20page%20load%20time%20down%20from%205s%20to%201.5,%20and%20here%20my%20objective%20is%20to%20get%20around%200.5s.%0a%3c!--%20raw%20HTML%20omitted%20--%3e%3c!--%20raw%20HTML%20omitted%20--%3e%0a%3cfigure%3e%0a%20%20%20%20%3cimg%20src=%22/articles/img/getting-0.5s-page-load-time-on-your-blog.png%22%0a%20%20%20%20%20%20%20%20%20alt=%22jarboleda.me%20performance%20graphic%22/%3e%20%3cfigcaption%3e%0a%20%20%20%20%20%20%20%20%20%20%20%20%3ch4%3ejarboleda.me%20performance%20graphic%3c/h4%3e%0a%20%20%20%20%20%20%20%20%3c/figcaption%3e%0a%3c/figure%3e%0a%3c/p%3e%0a%3cp%3eFor%20that%20purpose,%20I%c2%b4ll%20be%20using%20the%20following%20technologies:%3c/p%3e%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22https://gohugo.io/%22%3eHugo%3c/a%3e%3c/li%3e%0a%3cli%3e%3ca%20href=%22https://pages.github.com/%22%3eGithub%20Pages%3c/a%3e%3c/li%3e%0a%3cli%3e%3ca%20href=%22https://www.cloudflare.com/%22%3eCloudflare%3c/a%3e%3c/li%3e%0a%3c/ul%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
 
     </div>
-
     <div class='post-footer'>
       
        <div id="disqus_thread"></div>
@@ -359,14 +344,11 @@ s.setAttribute('data-timestamp', +new Date());
   <h4>On This Page</h4>
   <div class='table_of_contents'>
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#stats-before-tuning-up">Stats before tuning up</a></li>
-<li><a href="#actions-taken">Actions taken</a></li>
-<li><a href="#stats-after-tuning-up">Stats after tuning up</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#stats-before-tuning-up">Stats before tuning up</a></li>
+    <li><a href="#actions-taken">Actions taken</a></li>
+    <li><a href="#stats-after-tuning-up">Stats after tuning up</a></li>
+  </ul>
 </nav>
   </div>
   
@@ -406,12 +388,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
-                    <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
+                  <a href='/articles/getting-0.5s-page-load-time-on-your-blog/' target='_blank'>
+                    <img alt='Getting 0.5 seconds load time on your blog' width='72' height='72' src="/articles/img/thumbs/getting-0.5s-page-load-time-on-your-blog.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
+                  <a href='/articles/getting-0.5s-page-load-time-on-your-blog/' class="mostVisitedLink">Getting 0.5 seconds load time on your blog</a>
                 </div>
               </div>
             </li>
@@ -472,7 +454,7 @@ s.setAttribute('data-timestamp', +new Date());
       </ul>
     </div>
     <div class='clr'></div>
-    <p>Copyright &#169; 2019
+    <p>Copyright &#169; 2020
       <a href=''></a>
     </p>
     <p class='attribution'>Powered by</p>

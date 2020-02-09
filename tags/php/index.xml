@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Php on J. Arboleda</title>
+    <title>php on J. Arboleda</title>
     <link>https://www.jarboleda.me/tags/php/</link>
-    <description>Recent content in Php on J. Arboleda</description>
+    <description>Recent content in php on J. Arboleda</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 17 Jul 2016 13:34:28 +0200</lastBuildDate>
     
@@ -17,7 +17,6 @@
       
       <guid>https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/</guid>
       <description>&lt;h2 id=&#34;the-problem&#34;&gt;The problem&lt;/h2&gt;
-
 &lt;p&gt;When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&amp;rsquo;t as easy as using fopen:
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
 $handle &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fopen&lt;/span&gt;($filename, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;die&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;could not open .&amp;#39;&lt;/span&gt; $filename);
@@ -31,7 +30,6 @@ $handle &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=
       
       <guid>https://www.jarboleda.me/articles/getting-an-objects-methods/</guid>
       <description>&lt;h2 id=&#34;the-problem&#34;&gt;The problem&lt;/h2&gt;
-
 &lt;p&gt;Sometimes we don&amp;rsquo;t have access to the platform docs on which we are working, it&amp;rsquo;s incomplete or we just don&amp;rsquo;t feel like looking for it. In those situations, we usually need more than the typical object&amp;rsquo;s &lt;code&gt;var_dump&lt;/code&gt;, which only shows us the object properties but not its methods, which usually gives us that function we are working on without having to dive into the object&amp;rsquo;s properties. Here you&amp;rsquo;ll see the function I use for this task. This function uses the ReflectionMethod class, which gives us info about a method. It needs the classname and method&amp;rsquo;s name as params for its constructor.&lt;/p&gt;</description>
     </item>
     
@@ -51,9 +49,7 @@ $handle &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=
       
       <guid>https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/</guid>
       <description>&lt;p&gt;In this first post I&amp;rsquo;ll explain how I configurated my VPS to run a basic LAMP server with multiple php versions, compiled by myself. You can get your own cheap VPS (~3€) and test a lot of things.&lt;/p&gt;
-
 &lt;h2 id=&#34;dir-structure&#34;&gt;Dir structure&lt;/h2&gt;
-
 &lt;p&gt;Firstly, we&amp;rsquo;ll create our dir structure. I&amp;rsquo;ll use jag.co as a domain for this example, you can choose the dir structure you want, but I recommend following this one:&lt;/p&gt;</description>
     </item>
     

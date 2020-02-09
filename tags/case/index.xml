@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Case on J. Arboleda</title>
+    <title>case on J. Arboleda</title>
     <link>https://www.jarboleda.me/tags/case/</link>
-    <description>Recent content in Case on J. Arboleda</description>
+    <description>Recent content in case on J. Arboleda</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 25 Jun 2017 19:31:56 +0200</lastBuildDate>
     
@@ -17,7 +17,7 @@
       
       <guid>https://www.jarboleda.me/articles/arduino-uno-lego-case/</guid>
       <description>&lt;p&gt;In the following photo you can see the result of the case I built for this project.
-&lt;br/&gt;&lt;br/&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
 &lt;figure&gt;
     &lt;img src=&#34;https://www.jarboleda.me/articles/img/arduino-uno-lego-case.jpg&#34;
          alt=&#34;arduino uno lego case&#34;/&gt; &lt;figcaption&gt;

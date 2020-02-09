@@ -156,9 +156,7 @@
     <div class="article_excerpt">
       
       <p><p>Sometimes you need to work with only FTP access, and it takes a lot of time to backup a website through FTP because usually there are a lot of files and listing them is a long process. I made these php scripts to avoid wasting time when I only have FTP access. For example, when a mate wants to work on a website but he/she want to backup it up first just in case they break something. They use these scripts below:</p>
-
 <h2 id="zipping-files">Zipping files</h2>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 $zip <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ZipArchive</span>();
 
@@ -182,7 +180,6 @@ $zip<span style="color:#f92672">-&amp;</span><span style="color:#a6e22e">gt</spa
 <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&amp;lt;h1&amp;gt;OK.&amp;lt;/h1&amp;gt;&#34;</span>;
 <span style="color:#75715e">?&gt;</span>
 </code></pre></div>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span>&gt;
 	<span style="color:#f92672">h1</span>{
 		<span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
@@ -196,22 +193,16 @@ $zip<span style="color:#f92672">-&amp;</span><span style="color:#a6e22e">gt</spa
 		<span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">red</span>;
 	}
 &lt;/<span style="color:#f92672">style</span>&gt;</code></pre></div>
-
 <p>This script will take all the content in the current directory, iterate directories recursively and create a file named &ldquo;data1.zip&rdquo;. There you have it.</p>
-
 <h2 id="checking-the-result">Checking the result</h2>
-
 <p>It&rsquo;s is important to make sure all files are included, you don&rsquo;t want to trust in your backups just to find later that they aren&rsquo;t 100% correct. Let&rsquo;s check it. How could we do that? We&rsquo;re going to use our beloved terminal for this task. We&rsquo;ll compare the number of files in both zip.file and the directory we zipped.
 Look at this:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$zipinfo /var/www/vhosts/jglab.me/httpdocs/data1.zip | grep files
-<span style="color:#ae81ff">10132</span> files, <span style="color:#ae81ff">129117030</span> bytes uncompressed, <span style="color:#ae81ff">50698507</span> bytes compressed:  <span style="color:#ae81ff">60</span>.7%
+<span style="color:#ae81ff">10132</span> files, <span style="color:#ae81ff">129117030</span> bytes uncompressed, <span style="color:#ae81ff">50698507</span> bytes compressed:  60.7%
 $find /var/www/vhosts/jglab.me/httpdocs/ -type f | wc -l
 <span style="color:#ae81ff">10134</span></code></pre></div></p>
-
 <p>Our zip contains 10132 files, and find command says there are 10124 in our directory, which makes sense: there were 10132 files before we started, then we added the script zip.php (which doesn&rsquo;t zip itself) and it output data1.zip file, adding up to 10134 files.</p>
-
 <h2 id="unzipping-files">Unzipping files</h2>
-
 <p>Sometimes we also need to unzip files with FTP access. The next script will take care of that:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 $file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;data.zip&#39;</span>;
@@ -236,12 +227,9 @@ $res <span style="color:#f92672">=</span> $zip<span style="color:#f92672">-&amp;
 }
 <span style="color:#75715e">?&gt;</span>
 </code></pre></div></p>
-
 <p>The script takes the file &ldquo;data.zip&rdquo; in the current dir and extract its contents to the current dir. You can specify a subdir uncommenting the line $path .= &lsquo;/subdir&rsquo;;
 You should delete these scripts as soon as you use them, they could break your website if someone discovers them.</p>
-
 <h2 id="bonus">Bonus</h2>
-
 <p>If you surf the internet you&rsquo;ll find php scripts to backup databases as well. You can find some links in Resources.</p></p>
       
     </div>
@@ -292,7 +280,6 @@ You should delete these scripts as soon as you use them, they could break your w
 </div>
 
     </div>
-
     <div class='post-footer'>
       
        <div id="disqus_thread"></div>
@@ -354,15 +341,12 @@ s.setAttribute('data-timestamp', +new Date());
   <h4>On This Page</h4>
   <div class='table_of_contents'>
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#zipping-files">Zipping files</a></li>
-<li><a href="#checking-the-result">Checking the result</a></li>
-<li><a href="#unzipping-files">Unzipping files</a></li>
-<li><a href="#bonus">Bonus</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#zipping-files">Zipping files</a></li>
+    <li><a href="#checking-the-result">Checking the result</a></li>
+    <li><a href="#unzipping-files">Unzipping files</a></li>
+    <li><a href="#bonus">Bonus</a></li>
+  </ul>
 </nav>
   </div>
   
@@ -385,42 +369,29 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
-                    <img alt='Authenticating users with cURL' width='72' height='72' src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
+                  <a href='/articles/zipping-and-unzipping-websites-with-php/' target='_blank'>
+                    <img alt='Zipping and unzipping websites with php' width='72' height='72' src="/articles/img/thumbs/zipping-and-unzipping-websites-with-php.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Authenticating users with cURL</a>
+                  <a href='/articles/zipping-and-unzipping-websites-with-php/' class="mostVisitedLink">Zipping and unzipping websites with php</a>
                 </div>
               </div>
             </li>
+            
+            
             
             
              
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/centos-web-panel-on-vps/' target='_blank'>
-                    <img alt='Centos web panel with php7 and mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
+                  <a href='/articles/facebook-sharer-and-ipv6-issue/' target='_blank'>
+                    <img alt='Facebook sharer and IPv6 issue' width='72' height='72' src="/articles/img/thumbs/facebook-sharer-and-ipv6-issue.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel with php7 and mysql5.6</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/articles/transferring-files-with-ftp-through-bash-expect-script/' target='_blank'>
-                    <img alt='Transferring files with FTP through bash expect script' width='72' height='72' src="/articles/img/thumbs/transferring-files-with-ftp-through-bash-expect-script.png" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/articles/transferring-files-with-ftp-through-bash-expect-script/' class="mostVisitedLink">Transferring files with FTP through bash expect script</a>
+                  <a href='/articles/facebook-sharer-and-ipv6-issue/' class="mostVisitedLink">Facebook sharer and IPv6 issue</a>
                 </div>
               </div>
             </li>
@@ -481,7 +452,7 @@ s.setAttribute('data-timestamp', +new Date());
       </ul>
     </div>
     <div class='clr'></div>
-    <p>Copyright &#169; 2019
+    <p>Copyright &#169; 2020
       <a href=''></a>
     </p>
     <p class='attribution'>Powered by</p>

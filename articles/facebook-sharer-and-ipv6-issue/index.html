@@ -156,21 +156,17 @@
     <div class="article_excerpt">
       
       <p><p>Last week all facebook buttons on domains on ALL of our servers stopped working. I always got a 404 response when facebook crawler tried to visit our domains. This happened in our 2 dedicated servers from 1and1. At first, my mates were trying to figure out if it was a joomla issue, but they finally couldn&rsquo;t solve it, so they asked me to investigate it. My first thought was: you got a 404? let&rsquo;s check logs for those domains and we&rsquo;ll see what happens for sure. I checked those files and I couldn&rsquo;t see any 404 error, the visit wasn&rsquo;t even logged. Shit happens.</p>
-
 <p>So, I started surfing the internet, just to find that 404 error from facebook crawler is really common and has multiple causes. After some hours investigating, I remembered I had work to do, so I let this issue apart. The next day I just saw it. The visit wasn&rsquo;t logged in the domain log BUT it should be logged somewhere else, it just had to be. I headed for server general log, (under /var/log) and I spotted it right there. Ok, that was a start. Then I tried to visit the link myself with curl and surprisingly, I got a 200 answer, everything ok.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#ae81ff">2001</span>:8d8:90b:c900::2a:19d1 - - <span style="color:#f92672">[</span><span style="color:#ae81ff">29</span>/Jul/2015:17:44:55 +0200<span style="color:#f92672">]</span> <span style="color:#e6db74">&#34;GET /hello.html HTTP/1.0&#34;</span> <span style="color:#ae81ff">404</span> <span style="color:#ae81ff">1208</span> <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#e6db74">&#34;facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)&#34;</span>
-<span style="color:#ae81ff">2001</span>:8d8:90b:c900::2a:19d1 - - <span style="color:#f92672">[</span><span style="color:#ae81ff">29</span>/Jul/2015:17:49:39 +0200<span style="color:#f92672">]</span> <span style="color:#e6db74">&#34;GET /hello.html HTTP/1.0&#34;</span> <span style="color:#ae81ff">200</span> <span style="color:#ae81ff">384</span> <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#e6db74">&#34;curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.16.1 Basic ECC zlib/1.2.3 libidn/1.18 libssh2/1.4.2&#34;</span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">2001:8d8:90b:c900::2a:19d1 - - <span style="color:#f92672">[</span>29/Jul/2015:17:44:55 +0200<span style="color:#f92672">]</span> <span style="color:#e6db74">&#34;GET /hello.html HTTP/1.0&#34;</span> <span style="color:#ae81ff">404</span> <span style="color:#ae81ff">1208</span> <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#e6db74">&#34;facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)&#34;</span>
+2001:8d8:90b:c900::2a:19d1 - - <span style="color:#f92672">[</span>29/Jul/2015:17:49:39 +0200<span style="color:#f92672">]</span> <span style="color:#e6db74">&#34;GET /hello.html HTTP/1.0&#34;</span> <span style="color:#ae81ff">200</span> <span style="color:#ae81ff">384</span> <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#e6db74">&#34;curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.16.1 Basic ECC zlib/1.2.3 libidn/1.18 libssh2/1.4.2&#34;</span></code></pre></div>
 Ok, that was weird. First thing I noticed, no matter if I used curl or facebook crawler, the same ipv6 was logged, and actually was the IP given for the server. Then I remembered nginx, it acts as a reverse proxy, so that explained the ips issue. Next step was disabling nginx, just to see real IPs. I got this:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">2a03:2880:2110:dff3:face:b00c:0:1 - - <span style="color:#f92672">[</span><span style="color:#ae81ff">29</span>/Jul/2015:17:55:11 +0200<span style="color:#f92672">]</span> <span style="color:#e6db74">&#34;GET /hello.html HTTP/1.1&#34;</span> <span style="color:#ae81ff">404</span> <span style="color:#ae81ff">1208</span> <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#e6db74">&#34;facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)&#34;</span>
-<span style="color:#ae81ff">84</span>.x.x.x- - <span style="color:#f92672">[</span><span style="color:#ae81ff">29</span>/Jul/2015:17:54:52 +0200<span style="color:#f92672">]</span> <span style="color:#e6db74">&#34;GET /hello.html HTTP/1.1&#34;</span> <span style="color:#ae81ff">200</span> <span style="color:#ae81ff">361</span> <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#e6db74">&#34;curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.16.1 Basic ECC zlib/1.2.3 libidn/1.18 libssh2/1.4.2&#34;</span></code></pre></div></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">2a03:2880:2110:dff3:face:b00c:0:1 - - <span style="color:#f92672">[</span>29/Jul/2015:17:55:11 +0200<span style="color:#f92672">]</span> <span style="color:#e6db74">&#34;GET /hello.html HTTP/1.1&#34;</span> <span style="color:#ae81ff">404</span> <span style="color:#ae81ff">1208</span> <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#e6db74">&#34;facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)&#34;</span>
+84.x.x.x- - <span style="color:#f92672">[</span>29/Jul/2015:17:54:52 +0200<span style="color:#f92672">]</span> <span style="color:#e6db74">&#34;GET /hello.html HTTP/1.1&#34;</span> <span style="color:#ae81ff">200</span> <span style="color:#ae81ff">361</span> <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#e6db74">&#34;curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.16.1 Basic ECC zlib/1.2.3 libidn/1.18 libssh2/1.4.2&#34;</span></code></pre></div></p>
 <p>&ldquo;GET /hello.html &hellip;&rdquo; in each request, yet one of them gave 404 and the other one gave 200. Only thing which changed was the ip, so I thought it had to be an ipv6 issue.
 NOTE: all 200 answers were logged correctly in the domain&rsquo;s log, but the 404 were logged in the general server log.
 Next step: check apache configuration for the domain. And I found the problem there, our virtual hosts weren&rsquo;t listening in the ipv6 address, that&rsquo;s why it never found anything, the ipv6 didn&rsquo;t match any virtualhost, so it went directly to default site, and obviously, it couldn&rsquo;t find anything there.
 Now, the solution is pretty simple in plesk. You go to domain -&gt; hosting configuration and you can enable ipv6 support. After that, everything was working like a charm. Easy solution, but the problem was hard to spot.</p>
-
-<h2 id="tl-dr">TL;DR</h2>
-
+<h2 id="tldr">TL;DR</h2>
 <p>Enable ipv6 for your domains, you can do it through Plesk or through apache conf files. It is very simple, just add the ipv6 like the ipv4 is configurated for each virtualhost.</p></p>
       
     </div>
@@ -216,7 +212,6 @@ Now, the solution is pretty simple in plesk. You go to domain -&gt; hosting conf
 </div>
 
     </div>
-
     <div class='post-footer'>
       
        <div id="disqus_thread"></div>
@@ -278,12 +273,9 @@ s.setAttribute('data-timestamp', +new Date());
   <h4>On This Page</h4>
   <div class='table_of_contents'>
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#tl-dr">TL;DR</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#tldr">TL;DR</a></li>
+  </ul>
 </nav>
   </div>
   
@@ -306,12 +298,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
-                    <img alt='Backing up all databases using mysqldump' width='72' height='72' src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
+                  <a href='/articles/web-development-environment/' target='_blank'>
+                    <img alt='Web development environment' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Backing up all databases using mysqldump</a>
+                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
                 </div>
               </div>
             </li>
@@ -321,12 +313,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/zipping-and-unzipping-websites-with-php/' target='_blank'>
-                    <img alt='Zipping and unzipping websites with php' width='72' height='72' src="/articles/img/thumbs/zipping-and-unzipping-websites-with-php.png" />
+                  <a href='/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
+                    <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/zipping-and-unzipping-websites-with-php/' class="mostVisitedLink">Zipping and unzipping websites with php</a>
+                  <a href='/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
                 </div>
               </div>
             </li>
@@ -336,12 +328,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/configuring-iptables-and-fail2ban-on-centos-6/' target='_blank'>
-                    <img alt='Configuring IPTABLES and fail2ban on centOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-iptables-and-fail2ban-on-centos-6.jpg" />
+                  <a href='/articles/transferring-files-with-ftp-through-bash-expect-script/' target='_blank'>
+                    <img alt='Transferring files with FTP through bash expect script' width='72' height='72' src="/articles/img/thumbs/transferring-files-with-ftp-through-bash-expect-script.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/configuring-iptables-and-fail2ban-on-centos-6/' class="mostVisitedLink">Configuring IPTABLES and fail2ban on centOS 6</a>
+                  <a href='/articles/transferring-files-with-ftp-through-bash-expect-script/' class="mostVisitedLink">Transferring files with FTP through bash expect script</a>
                 </div>
               </div>
             </li>
@@ -402,7 +394,7 @@ s.setAttribute('data-timestamp', +new Date());
       </ul>
     </div>
     <div class='clr'></div>
-    <p>Copyright &#169; 2019
+    <p>Copyright &#169; 2020
       <a href=''></a>
     </p>
     <p class='attribution'>Powered by</p>

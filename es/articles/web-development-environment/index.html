@@ -17,9 +17,7 @@
     	
 	<meta property="og:title" content="Entorno para desarrollo web" />
 	<meta property="og:description" content="En este post vamos a ver un entorno avanzado de desarrollo web. Tendremos nuestra web alojada en un servidor (que NO utilizaremos para nada durante el desarrollo), y en nuestra máquina local tendremos una máquina virtual para el sitio web en el que estemos trabajando. Para la máquina virtual utilizaremos vagrant con el stack de scotch, que nos viene preparado para montar directamente el sitio web sin trabajo extra.
-
 Requisitos previos
-
 Usaremos las siguientes tecnologías. Deberías revisarlas antes de seguir con el artículo." />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/es/articles/web-development-environment/" />
@@ -40,25 +38,21 @@ Usaremos las siguientes tecnologías. Deberías revisarlas antes de seguir con e
     
     <meta itemprop="name" content="Entorno para desarrollo web">
     <meta itemprop="description" content="En este post vamos a ver un entorno avanzado de desarrollo web. Tendremos nuestra web alojada en un servidor (que NO utilizaremos para nada durante el desarrollo), y en nuestra máquina local tendremos una máquina virtual para el sitio web en el que estemos trabajando. Para la máquina virtual utilizaremos vagrant con el stack de scotch, que nos viene preparado para montar directamente el sitio web sin trabajo extra.
-
 Requisitos previos
-
 Usaremos las siguientes tecnologías. Deberías revisarlas antes de seguir con el artículo.">
     <meta name="author" content="Jeferson Arboleda">
     
     <meta itemprop="image" content="web-development-environment.jpg">
     
     <meta itemprop="keywords" content="notpinned,pinned,,serie1,bash,centos6,curl,cwp,fedora25,fopen,httpd,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,php,php7,piwik,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm," />
-    <meta itemprop="wordCount" content="1408">
+    <meta itemprop="wordCount" content="1277">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
 	<meta name="twitter:image:src" content="/articles/img/web-development-environment.jpg"/>
 	
 	<meta name="twitter:title" content="Entorno para desarrollo web"/>
 	<meta name="twitter:description" content="En este post vamos a ver un entorno avanzado de desarrollo web. Tendremos nuestra web alojada en un servidor (que NO utilizaremos para nada durante el desarrollo), y en nuestra máquina local tendremos una máquina virtual para el sitio web en el que estemos trabajando. Para la máquina virtual utilizaremos vagrant con el stack de scotch, que nos viene preparado para montar directamente el sitio web sin trabajo extra.
-
 Requisitos previos
-
 Usaremos las siguientes tecnologías. Deberías revisarlas antes de seguir con el artículo."/>
 	<meta name="twitter:site" content="@j_a_g_x"/>
 	
@@ -155,7 +149,7 @@ Usaremos las siguientes tecnologías. Deberías revisarlas antes de seguir con e
   <div class="article_summary">
     <div class="article-date">
       <p class="day"><i class="far fa-calendar-alt"></i>27 Jul 2016</p>
-      <p><i class="far fa-clock"></i>8 min read  ~ 1500 words</p>
+      <p><i class="far fa-clock"></i>7 min read  ~ 1300 words</p>
     </div>
     
     <div class="article-tags">
@@ -172,11 +166,8 @@ Usaremos las siguientes tecnologías. Deberías revisarlas antes de seguir con e
     <div class="article_excerpt">
       
       <p><p>En este post vamos a ver un entorno avanzado de desarrollo web. Tendremos nuestra web alojada en un servidor (que NO utilizaremos para nada durante el desarrollo), y en nuestra máquina local tendremos una máquina virtual para el sitio web en el que estemos trabajando. Para la máquina virtual utilizaremos vagrant con el stack de <a href="https://box.scotch.io/">scotch</a>, que nos viene preparado para montar directamente el sitio web sin trabajo extra.</p>
-
 <h2 id="requisitos-previos">Requisitos previos</h2>
-
 <p>Usaremos las siguientes tecnologías. Deberías revisarlas antes de seguir con el artículo.</p>
-
 <ul>
 <li>Vagrant. Vagrant permite crear entornos de desarrollo de manera rápida y sencilla</li>
 <li>virtualbox. Vagrant utiliza máquinas virtuales y para ello hace uso de virtualbox</li>
@@ -189,9 +180,7 @@ Usaremos las siguientes tecnologías. Deberías revisarlas antes de seguir con e
 <li>livereload. Con livereload podremos desarrollar en sass, compilarlo automáticamente con gulp cuando guardemos y actualizar el navegador de manera automática</li>
 <li>git. Git lo utilizaremos para el control de versiones</li>
 </ul>
-
 <h2 id="instalando-vagrant">Instalando vagrant</h2>
-
 <p>Bien, el primer paso es instalar vagrant con virtualbox. Vamos a ver los pasos necesarios en <strong>Fedora</strong>, pero para el resto de distribuciones es muy parecido. En primer lugar, hay que instalar el repositorio de virtualbox. Para ello:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd /etc/yum.repos.d/
 wget http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
@@ -206,42 +195,39 @@ El siguiente paso consiste en ir a la <a href="https://box.scotch.io/">web de sc
 cd ~/vagrant/dev/
 git clone https://github.com/scotch-io/scotch-box.git my-project
 vagrant up --provider<span style="color:#f92672">=</span>virtualbox</code></pre></div>
-La primera vez vagrant tendrá que descargarse la imagen y tardará un tiempo. Una vez la máquina esté instalada, podremos verla en <a href="http://192.168.33.10/">http://192.168.33.10/</a>
+La primera vez vagrant tendrá que descargarse la imagen y tardará un tiempo. Una vez la máquina esté instalada, podremos verla en http://192.168.33.10/
 Bien, ya tenemos el entorno virtual montado, el siguiente paso es montar la web sobre la que queremos desarrollar en nuestro entorno de pruebas. Para ello migraremos los ficheros (comprimiéndolos en zip) y la base de datos la exportaremos como un fichero .sql ya sea con phpmyadmin o por terminal:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mysqldump -u db_username -p db_name &gt; db_name.sql</code></pre></div>
 Por defecto, la máquina de scotch hace que el directorio donde instalamos la máquina (~/vagrant/dev) sea compartido con la máquina virtual en /var/www/, por lo que podremos descomprimir ahí la web. Tendremos que importar también la base de datos. Lo más sencillo es utilizar <a href="https://www.adminer.org/">adminer</a>, basta con descargarlo y dejarlo en la raíz de la web:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd ~/vagrant/dev/public/
 wget https://www.adminer.org/static/download/4.2.5/adminer-4.2.5.php</code></pre></div>
-Si nuestro backup ocupa más de 2M, editaremos el fichero /etc/php5/apache2/php.ini y modificaremos la directiva upload_max_filesize y pondremos un tamaño acorde a nuestras necesidades (256M, por ejemplo). Una vez la web esté importada, es recomendable verificar el fichero .htaccess de nuestra web por si tenemos que hacer modificaciones para adaptarlo al nuevo entorno, como por ejemplo desactivar ssl. Además, deberemos modificar la conexión a la base de datos de nuestra web con los siguientes datos:
-* Key             Value
-* Database Name scotchbox
-* Database User root
-* Database Password root
-* Database Host localhost</p>
-
+Si nuestro backup ocupa más de 2M, editaremos el fichero /etc/php5/apache2/php.ini y modificaremos la directiva upload_max_filesize y pondremos un tamaño acorde a nuestras necesidades (256M, por ejemplo). Una vez la web esté importada, es recomendable verificar el fichero .htaccess de nuestra web por si tenemos que hacer modificaciones para adaptarlo al nuevo entorno, como por ejemplo desactivar ssl. Además, deberemos modificar la conexión a la base de datos de nuestra web con los siguientes datos:</p>
+<ul>
+<li>Key	          Value</li>
+<li>Database Name	scotchbox</li>
+<li>Database User	root</li>
+<li>Database Password	root</li>
+<li>Database Host	localhost</li>
+</ul>
 <p>También podemos entrar en adminer y crear una nueva base de datos.</p>
-
 <h2 id="estructura-de-directorios">Estructura de directorios</h2>
-
 <p>La estructura de ficheros para el desarrollo que utilizo es la siguiente:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cirru" data-lang="cirru">/templates/
-|-- css &lt; Aquí se incluye el fichero global.min.css utilizado en producción (y cualquier otro, si hubiera más)
-|-- fonts &lt; fuentes
-|-- img &lt; imágenes utilizadas en el tema
-|-- js &lt; ficheros .min.js de producción
-|-- lib &lt; librerías necesarias en el tema
-|-- node_modules &lt; módulos utilizados en desarrollo
-|-- partials &lt; ficheros que contienen partes del tema (widgets, comentarios, etc)
-|-- src &lt; código fuente de desarrollo
-|----sass &lt; ficheros sass de desarrollo
-|------modules &lt; utilidades sass, no producen código .css (ej: definir variables, placeholders, mixins)
-|------partials &lt; ficheros sass para dar estilo a ciertas partes de la web (ej: menu.sass, article.sass, etc.)
-|------vendor &lt; librerías de terceros (bootstrap, purecss, foundation, etc.)
-|----js &lt; ficheros js de desarrollo
-.php &lt; templates (header.php, footer.php. etc.)</code></pre></div></p>
-
+<pre><code class="language-cirru" data-lang="cirru">/templates/
+|-- css < Aquí se incluye el fichero global.min.css utilizado en producción (y cualquier otro, si hubiera más)
+|-- fonts < fuentes
+|-- img < imágenes utilizadas en el tema
+|-- js < ficheros .min.js de producción
+|-- lib < librerías necesarias en el tema
+|-- node_modules < módulos utilizados en desarrollo
+|-- partials < ficheros que contienen partes del tema (widgets, comentarios, etc)
+|-- src < código fuente de desarrollo
+|----sass < ficheros sass de desarrollo
+|------modules < utilidades sass, no producen código .css (ej: definir variables, placeholders, mixins)
+|------partials < ficheros sass para dar estilo a ciertas partes de la web (ej: menu.sass, article.sass, etc.)
+|------vendor < librerías de terceros (bootstrap, purecss, foundation, etc.)
+|----js < ficheros js de desarrollo
+.php < templates (header.php, footer.php. etc.)</code></pre></p>
 <h2 id="automatizando-tareas">Automatizando tareas</h2>
-
 <p>Ya tenemos el entorno montado, el siguiente paso será utilizar gulp y compass para automatizar algunas tareas como compilar sass o comprimir los ficheros js. Para ello, empezaremos por instalar ruby en la <strong>máquina virtual</strong>:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vagrant ssh
 su root
@@ -257,7 +243,6 @@ npm install --global gulp-cli
 npm install --save-dev gulp
 compass create &lt;project_name&gt;</code></pre></div>
 Ya tenemos gulp y compass disponible, ahora tendremos que indicarle qué tareas queremos automatizar. Aquí voy a poner el gulpfile.js que utilizo yo, puedes modificarlo para ajustarlo a tus necesidades. Este fichero hace:</p>
-
 <ul>
 <li>Inicializa todas las dependencias necesarias</li>
 <li>Establece los directorios en que van a estar nuestros ficheros scss y js</li>
@@ -265,9 +250,7 @@ Ya tenemos gulp y compass disponible, ahora tendremos que indicarle qué tareas 
 <li>Crea la tarea &lsquo;js&rsquo; que se encarga de concatenar todos los ficheros js en uno solo y de generar su versión normal y de producción (.min.js)</li>
 <li>Crea la tarea &lsquo;live&rsquo;, que se encarga de inicializar livereload, vigilar los ficheros scss y js para compilar cuando sea necesario y finalmente, vigilar ficheros .php, .css y .js para autorecargar el navegador cuando sea necesario.</li>
 </ul>
-
 <p>Aquí os dejo el fichero gulpfile.js. Antes de utilizarlo hay que instalar las dependencias necesarias:</p>
-
 <p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm install --save-dev gulp gulp-compass gulp-autoprefixer gulp-rename gulp-clean-css gulp-uglify gulp-concat gulp-livereload gulp-plumber gulp-path</code></pre></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">gulp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp&#39;</span>),
     <span style="color:#a6e22e">compass</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-compass&#39;</span>),
@@ -331,26 +314,21 @@ Ya tenemos gulp y compass disponible, ahora tendremos que indicarle qué tareas 
   	.<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">dest</span>(<span style="color:#e6db74">&#39;js/&#39;</span>));
 });
 </code></pre></div></p>
-
 <p>Como estamos trabajando en una máquina virtual, la extensión livereload no verá el servidor livereload porque lo va a buscar en localhost:35729. Para solucionarlo, tendremos que redigir el puerto 35729 de nuestra máquina local al puerto 35729 de la máquina virtual. Para ello:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">ssh</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">L</span> <span style="color:#ae81ff">35729</span><span style="color:#f92672">:</span><span style="color:#ae81ff">192.168.33.10</span><span style="color:#f92672">:</span><span style="color:#ae81ff">35729</span> <span style="color:#a6e22e">vagrant</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#ae81ff">192.168.33.10</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">ssh</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">L</span> <span style="color:#ae81ff">35729</span><span style="color:#f92672">:</span><span style="color:#ae81ff">192.168</span><span style="color:#ae81ff">.33</span><span style="color:#ae81ff">.10</span><span style="color:#f92672">:</span><span style="color:#ae81ff">35729</span> <span style="color:#a6e22e">vagrant</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#ae81ff">192.168</span><span style="color:#ae81ff">.33</span><span style="color:#ae81ff">.10</span>
 </code></pre></div>
 Ya está todo listo, ahora podremos utilizar gulp para automatizar tareas. Desde el directorio del proyecto:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">gulp</span> <span style="color:#a6e22e">live</span>
 </code></pre></div>
 Ya tenemos todo listo, si hemos seguido los pasos podremos modificar código en ~/vagrant/dev y ver los cambios de manera instantánea en Chrome, lo que nos da un entorno de trabajo muy ágil y en el que podremos hacer las pruebas que queramos sin afectar al entorno real.
 En cuanto a la metodología a utilizar en git, queda a elección del desarrollador. Personalmente, siempre tengo 3 branches &ldquo;infinitos&rdquo;, que son:</p>
-
 <ul>
 <li>master. Contiene el código que se utiliza en el servidor web</li>
 <li>staging. Aquí se incluye el código fuente antes de pasarlo al master. Es un entorno preparado para ser lo más parecido posible al entorno final, por ello no se incluyen los ficheros utilizados en desarrollo (sass y js). Sólo se incluyen sus versiones minificadas para producción</li>
 <li>dev. Aquí se incluye todo el código del template, incluyendo ficheros sass, js, gulpfile, package.json, etc.</li>
 </ul>
-
 <p>Este repositorio no contiene toda la web, sólo el directorio que contiene el tema/plugin que se esté desarrollando.</p>
-
 <h2 id="aclaraciones">Aclaraciones</h2>
-
 <p>nodejs, npm, gulp, livereload&hellip; todos estos paquetes deben instalarse en la máquina virtual, aunque por comodidad también pueden instalarse en la máquina real, excepto livereload, que tiene que estar en el servidor (máquina virtual)</p></p>
       
     </div>
@@ -388,7 +366,7 @@ En cuanto a la metodología a utilizar en git, queda a elección del desarrollad
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/web-development-environment/&amp;title=Entorno%20para%20desarrollo%20web&amp;summary=%3cp%3eEn%20este%20post%20vamos%20a%20ver%20un%20entorno%20avanzado%20de%20desarrollo%20web.%20Tendremos%20nuestra%20web%20alojada%20en%20un%20servidor%20%28que%20NO%20utilizaremos%20para%20nada%20durante%20el%20desarrollo%29,%20y%20en%20nuestra%20m%c3%a1quina%20local%20tendremos%20una%20m%c3%a1quina%20virtual%20para%20el%20sitio%20web%20en%20el%20que%20estemos%20trabajando.%20Para%20la%20m%c3%a1quina%20virtual%20utilizaremos%20vagrant%20con%20el%20stack%20de%20%3ca%20href=%22https://box.scotch.io/%22%3escotch%3c/a%3e,%20que%20nos%20viene%20preparado%20para%20montar%20directamente%20el%20sitio%20web%20sin%20trabajo%20extra.%3c/p%3e%0a%0a%3ch2%20id=%22requisitos-previos%22%3eRequisitos%20previos%3c/h2%3e%0a%0a%3cp%3eUsaremos%20las%20siguientes%20tecnolog%c3%adas.%20Deber%c3%adas%20revisarlas%20antes%20de%20seguir%20con%20el%20art%c3%adculo.%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/web-development-environment/&amp;title=Entorno%20para%20desarrollo%20web&amp;summary=%3cp%3eEn%20este%20post%20vamos%20a%20ver%20un%20entorno%20avanzado%20de%20desarrollo%20web.%20Tendremos%20nuestra%20web%20alojada%20en%20un%20servidor%20%28que%20NO%20utilizaremos%20para%20nada%20durante%20el%20desarrollo%29,%20y%20en%20nuestra%20m%c3%a1quina%20local%20tendremos%20una%20m%c3%a1quina%20virtual%20para%20el%20sitio%20web%20en%20el%20que%20estemos%20trabajando.%20Para%20la%20m%c3%a1quina%20virtual%20utilizaremos%20vagrant%20con%20el%20stack%20de%20%3ca%20href=%22https://box.scotch.io/%22%3escotch%3c/a%3e,%20que%20nos%20viene%20preparado%20para%20montar%20directamente%20el%20sitio%20web%20sin%20trabajo%20extra.%3c/p%3e%0a%3ch2%20id=%22requisitos-previos%22%3eRequisitos%20previos%3c/h2%3e%0a%3cp%3eUsaremos%20las%20siguientes%20tecnolog%c3%adas.%20Deber%c3%adas%20revisarlas%20antes%20de%20seguir%20con%20el%20art%c3%adculo.%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fab fa-twitter" href="http://twitter.com/share?text=Entorno%20para%20desarrollo%20web&amp;url=https://www.jarboleda.me/es/articles/web-development-environment/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -400,13 +378,12 @@ En cuanto a la metodología a utilizar en git, queda a elección del desarrollad
       <a class="fab fa-google-plus-g" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/web-development-environment/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fab fa-pinterest-p" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/web-development-environment/&amp;media=%3cnil%3eweb-development-environment.jpg&amp;description=%3cp%3eEn%20este%20post%20vamos%20a%20ver%20un%20entorno%20avanzado%20de%20desarrollo%20web.%20Tendremos%20nuestra%20web%20alojada%20en%20un%20servidor%20%28que%20NO%20utilizaremos%20para%20nada%20durante%20el%20desarrollo%29,%20y%20en%20nuestra%20m%c3%a1quina%20local%20tendremos%20una%20m%c3%a1quina%20virtual%20para%20el%20sitio%20web%20en%20el%20que%20estemos%20trabajando.%20Para%20la%20m%c3%a1quina%20virtual%20utilizaremos%20vagrant%20con%20el%20stack%20de%20%3ca%20href=%22https://box.scotch.io/%22%3escotch%3c/a%3e,%20que%20nos%20viene%20preparado%20para%20montar%20directamente%20el%20sitio%20web%20sin%20trabajo%20extra.%3c/p%3e%0a%0a%3ch2%20id=%22requisitos-previos%22%3eRequisitos%20previos%3c/h2%3e%0a%0a%3cp%3eUsaremos%20las%20siguientes%20tecnolog%c3%adas.%20Deber%c3%adas%20revisarlas%20antes%20de%20seguir%20con%20el%20art%c3%adculo.%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fab fa-pinterest-p" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/web-development-environment/&amp;media=%3cnil%3eweb-development-environment.jpg&amp;description=%3cp%3eEn%20este%20post%20vamos%20a%20ver%20un%20entorno%20avanzado%20de%20desarrollo%20web.%20Tendremos%20nuestra%20web%20alojada%20en%20un%20servidor%20%28que%20NO%20utilizaremos%20para%20nada%20durante%20el%20desarrollo%29,%20y%20en%20nuestra%20m%c3%a1quina%20local%20tendremos%20una%20m%c3%a1quina%20virtual%20para%20el%20sitio%20web%20en%20el%20que%20estemos%20trabajando.%20Para%20la%20m%c3%a1quina%20virtual%20utilizaremos%20vagrant%20con%20el%20stack%20de%20%3ca%20href=%22https://box.scotch.io/%22%3escotch%3c/a%3e,%20que%20nos%20viene%20preparado%20para%20montar%20directamente%20el%20sitio%20web%20sin%20trabajo%20extra.%3c/p%3e%0a%3ch2%20id=%22requisitos-previos%22%3eRequisitos%20previos%3c/h2%3e%0a%3cp%3eUsaremos%20las%20siguientes%20tecnolog%c3%adas.%20Deber%c3%adas%20revisarlas%20antes%20de%20seguir%20con%20el%20art%c3%adculo.%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
 
     </div>
-
     <div class='post-footer'>
       
        <div id="disqus_thread"></div>
@@ -468,16 +445,13 @@ s.setAttribute('data-timestamp', +new Date());
   <h4>On This Page</h4>
   <div class='table_of_contents'>
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#requisitos-previos">Requisitos previos</a></li>
-<li><a href="#instalando-vagrant">Instalando vagrant</a></li>
-<li><a href="#estructura-de-directorios">Estructura de directorios</a></li>
-<li><a href="#automatizando-tareas">Automatizando tareas</a></li>
-<li><a href="#aclaraciones">Aclaraciones</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#requisitos-previos">Requisitos previos</a></li>
+    <li><a href="#instalando-vagrant">Instalando vagrant</a></li>
+    <li><a href="#estructura-de-directorios">Estructura de directorios</a></li>
+    <li><a href="#automatizando-tareas">Automatizando tareas</a></li>
+    <li><a href="#aclaraciones">Aclaraciones</a></li>
+  </ul>
 </nav>
   </div>
   
@@ -500,17 +474,30 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/getting-an-objects-methods/' target='_blank'>
-                    <img alt='Obteniendo los métodos (reflejados) de un objeto' width='72' height='72' src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
+                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img alt='Arreglando una partición corrupta de una máquina virtual' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/getting-an-objects-methods/' class="mostVisitedLink">Obteniendo los métodos (reflejados) de un objeto</a>
+                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Arreglando una partición corrupta de una máquina virtual</a>
                 </div>
               </div>
             </li>
             
             
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/es/articles/installing-magento2-on-cwp/' target='_blank'>
+                    <img alt='Instalando magento2 en cwp' width='72' height='72' src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/es/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Instalando magento2 en cwp</a>
+                </div>
+              </div>
+            </li>
             
             
              
@@ -583,7 +570,7 @@ s.setAttribute('data-timestamp', +new Date());
       </ul>
     </div>
     <div class='clr'></div>
-    <p>Copyright &#169; 2019
+    <p>Copyright &#169; 2020
       <a href=''></a>
     </p>
     <p class='attribution'>Powered by</p>

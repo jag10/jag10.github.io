@@ -156,9 +156,7 @@
     <div class="article_excerpt">
       
       <p><p>In this post I&rsquo;ll explain how to log in a user with cURL. This can be useful if you want to integrate joomla login with an external app. For example, you could have a dual installation of wordpress and joomla and use wordpress joomla to log in joomla users as well.</p>
-
 <p>Joomla outputs two values for each login form and those values have to be valid. So, in first place we need to get those values with cURL. Also, joomla stores a cookie when we visit the website. We need to save it and pass it to the user&rsquo;s browser. Then, with this data we send a POST request with cURL to log the user in. Then, joomla returns another cookie. We have to send this cookie as well to the user&rsquo;s navigation. After this, the user is logged into the joomla app.</p>
-
 <p>What we did here is logging the user in the way he&rsquo;d do if he was doing a manual login. This idea is valid for another apps (wordpress, prestashop, etc&hellip;) You just need to know how the authentication process work. Then, you&rsquo;ll be able to replicate it with some php code.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 <span style="color:#75715e">/*
@@ -259,7 +257,6 @@ $cookie<span style="color:#f92672">=</span><span style="color:#a6e22e">explode</
 </div>
 
     </div>
-
     <div class='post-footer'>
       
        <div id="disqus_thread"></div>
@@ -320,7 +317,7 @@ s.setAttribute('data-timestamp', +new Date());
   
   <h4>On This Page</h4>
   <div class='table_of_contents'>
-    
+    <nav id="TableOfContents"></nav>
   </div>
   
 </div>
@@ -342,12 +339,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img alt='installing unreal engine on fedora 25' width='72' height='72' src="/articles/img/thumbs/unreal_engine.min.jpg" />
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' target='_blank'>
+                    <img alt='Getting 1.5s page load time on a basic vps' width='72' height='72' src="/articles/img/thumbs/getting-1.5s-page-load-time-on-a-basic-vps.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' class="mostVisitedLink">Getting 1.5s page load time on a basic vps</a>
                 </div>
               </div>
             </li>
@@ -357,17 +354,30 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
-                    <img alt='How to handle remote resources with curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
+                  <a href='/articles/facebook-sharer-and-ipv6-issue/' target='_blank'>
+                    <img alt='Facebook sharer and IPv6 issue' width='72' height='72' src="/articles/img/thumbs/facebook-sharer-and-ipv6-issue.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">How to handle remote resources with curl</a>
+                  <a href='/articles/facebook-sharer-and-ipv6-issue/' class="mostVisitedLink">Facebook sharer and IPv6 issue</a>
                 </div>
               </div>
             </li>
             
             
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/articles/web-development-environment/' target='_blank'>
+                    <img alt='Web development environment' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
+                </div>
+              </div>
+            </li>
             
             
           </ul>
@@ -425,7 +435,7 @@ s.setAttribute('data-timestamp', +new Date());
       </ul>
     </div>
     <div class='clr'></div>
-    <p>Copyright &#169; 2019
+    <p>Copyright &#169; 2020
       <a href=''></a>
     </p>
     <p class='attribution'>Powered by</p>

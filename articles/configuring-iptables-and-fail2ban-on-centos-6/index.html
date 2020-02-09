@@ -17,7 +17,6 @@
     	
 	<meta property="og:title" content="Configuring IPTABLES and fail2ban on centOS 6" />
 	<meta property="og:description" content="In this post I&rsquo;ll explain how to configure iptables along with fail2ban and how to start/stop these services without messing up your chains or configuration.
-
 Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on /etc/fail2ban/jail.local. Copy the file from /etc/fail2ban/jail.conf if it doesn&rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file:" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/" />
@@ -38,7 +37,6 @@ Iptables should be included in your default Linux OS, and you can easily get fai
     
     <meta itemprop="name" content="Configuring IPTABLES and fail2ban on centOS 6">
     <meta itemprop="description" content="In this post I&rsquo;ll explain how to configure iptables along with fail2ban and how to start/stop these services without messing up your chains or configuration.
-
 Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on /etc/fail2ban/jail.local. Copy the file from /etc/fail2ban/jail.conf if it doesn&rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file:">
     <meta name="author" content="Jeferson Arboleda">
     
@@ -52,7 +50,6 @@ Iptables should be included in your default Linux OS, and you can easily get fai
 	
 	<meta name="twitter:title" content="Configuring IPTABLES and fail2ban on centOS 6"/>
 	<meta name="twitter:description" content="In this post I&rsquo;ll explain how to configure iptables along with fail2ban and how to start/stop these services without messing up your chains or configuration.
-
 Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on /etc/fail2ban/jail.local. Copy the file from /etc/fail2ban/jail.conf if it doesn&rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file:"/>
 	<meta name="twitter:site" content="@j_a_g_x"/>
 	
@@ -162,17 +159,12 @@ Iptables should be included in your default Linux OS, and you can easily get fai
     <div class="article_excerpt">
       
       <p><p>In this post I&rsquo;ll explain how to configure iptables along with fail2ban and how to start/stop these services without messing up your chains or configuration.</p>
-
 <p>Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on <code>/etc/fail2ban/jail.local</code>. Copy the file from <code>/etc/fail2ban/jail.conf</code> if it doesn&rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>ssh-iptables<span style="color:#f92672">]</span>
 enabled <span style="color:#f92672">=</span> true</code></pre></div>
-
 <p>Don&rsquo;t forget to add yourself to the ignored ips, you do not want to lock out yourself from the server. If this happens to you, go to your vps/server control panel and look for an emergency access, most providers will have one (ovh and 1and1 do). Or you could just simply sit and wait until fail2ban unbans you, just don&rsquo;t keep trying to log in or you&rsquo;ll make the situation worse.
 Ok, now you have iptables installed and fail2ban configured. You may wonder what will happen if you reboot your server or if you just restart iptables. Yep, you&rsquo;ll lose all your fail2ban chains. So let&rsquo;s use a script to start and stop iptables, to ensure we don&rsquo;t lose chains and also to make it easier and safer to modify rules.</p>
-
 <h2 id="starting-iptables-and-fail2ban">Starting iptables and fail2ban</h2>
-
 <p>Let&rsquo;s start with the script which will start iptables and fail2ban. We&rsquo;ll define a blacklist, so we can just add ips to a text file and get them locked out from our server. This will be handy in future. After that, we&rsquo;ll block all traffic by default, except output traffic, that won&rsquo;t harm us. Then, we&rsquo;ll block bad packets to prevent attacks and finally, we&rsquo;ll allow some legit traffic (icmp, dns, etc.). You should carefully look at the script below and modify it to fit your needs. This is a standard configuration and should be ok for most basic web servers, allowing mail, passive ftp, ssh, git, mail, etc.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
 </span><span style="color:#75715e"></span>
@@ -188,7 +180,7 @@ $IPT -t nat -X
 $IPT -t mangle -F
 $IPT -t mangle -X
 
-<span style="color:#f92672">[</span> -f /script/blocked.ips.txt <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> BADIPS<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>egrep -v -E <span style="color:#e6db74">&#34;^#|^</span>$<span style="color:#e6db74">&#34;</span> /script/blocked.ips.txt<span style="color:#66d9ef">)</span>
+<span style="color:#f92672">[</span> -f /script/blocked.ips.txt <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> BADIPS<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>egrep -v -E <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">^#|^</span>$<span style="color:#e6db74">&#34;</span> /script/blocked.ips.txt<span style="color:#66d9ef">)</span>
 PUB_IF<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;eth0&#34;</span>
 
 <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f /script/blocked.ips.txt <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
@@ -251,10 +243,10 @@ $IPT -t filter -A INPUT -p tcp --dport <span style="color:#ae81ff">443</span> -j
 
 <span style="color:#75715e"># FTP</span>
 <span style="color:#75715e">#$IPT -t filter -A OUTPUT -p tcp --dport 20:21 -j ACCEPT</span>
-$IPT -t filter -A INPUT -p tcp --dport <span style="color:#ae81ff">20</span>:21 -j ACCEPT
+$IPT -t filter -A INPUT -p tcp --dport 20:21 -j ACCEPT
 
 <span style="color:#75715e"># Passive FTP</span>
-$IPT -t filter -A INPUT -p tcp -m tcp --dport <span style="color:#ae81ff">30000</span>:30100 -j ACCEPT
+$IPT -t filter -A INPUT -p tcp -m tcp --dport 30000:30100 -j ACCEPT
 
 <span style="color:#75715e"># Git</span>
 <span style="color:#75715e">#$IPT -t filter -A OUTPUT -p tcp --dport 9418 -j ACCEPT</span>
@@ -281,11 +273,8 @@ sleep <span style="color:#ae81ff">2</span>
 
 echo <span style="color:#e6db74">&#34;new rules:&#34;</span>
 iptables -L -n -v</code></pre></div></p>
-
 <p>After we enable iptables, we&rsquo;ll start fail2ban, give it 2 seconds to load, and then list all the rules, so we can see everything is ok. There are some lines commented, use them if you prefer to deny all output traffic by default and then allow only certain traffic.</p>
-
 <h2 id="stopping-iptables-and-fail2ban">Stopping iptables and fail2ban</h2>
-
 <p>Now, when we need to stop both iptables and fail2ban, we&rsquo;ll use the following script. It will flush all rules and echo the new rules to make sure there are no active rules.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
 </span><span style="color:#75715e"></span>/etc/init.d/fail2ban stop
@@ -304,12 +293,10 @@ iptables -P FORWARD ACCEPT
 
 echo <span style="color:#e6db74">&#34;new rules:&#34;</span>
 iptables -L -n -v</code></pre></div></p>
-
 <p>If you are going to use these scriptes frequently, I recommend to set an alias for them. For example, if you save these scripts to /home/start.fw, /home/stop.fw, you could add an alias like this:
 Edit ~/.bashrc and add the following lines:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">alias startfw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/script/start.fw&#39;</span>
 alias stopfw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/script/stop.fw&#39;</span></code></pre></div></p>
-
 <p>Now, when you want to reboot your firewall, just use the command below. Beware, it will delete all of your rules and put the ones you set in the startup script. If you want to add/delete rules, just modify start.fw and restart the firewall.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">stopfw <span style="color:#f92672">&amp;&amp;</span> startfw</code></pre></div></p></p>
       
@@ -338,7 +325,7 @@ alias stopfw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/&amp;title=Configuring%20IPTABLES%20and%20fail2ban%20on%20centOS%206&amp;summary=%3cp%3eIn%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20configure%20iptables%20along%20with%20fail2ban%20and%20how%20to%20start/stop%20these%20services%20without%20messing%20up%20your%20chains%20or%20configuration.%3c/p%3e%0a%0a%3cp%3eIptables%20should%20be%20included%20in%20your%20default%20Linux%20OS,%20and%20you%20can%20easily%20get%20fail2ban%20from%20standard%20repos.%20So,%20just%20enable%20the%20chains%20you%20need%20on%20%3ccode%3e/etc/fail2ban/jail.local%3c/code%3e.%20Copy%20the%20file%20from%20%3ccode%3e/etc/fail2ban/jail.conf%3c/code%3e%20if%20it%20doesn&amp;rsquo;t%20exist.%20For%20example,%20if%20you%20want%20%28you%20should%29%20activate%20ssh%20jail,%20just%20add/uncomment%20this%20lines%20to%20the%20file:%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/&amp;title=Configuring%20IPTABLES%20and%20fail2ban%20on%20centOS%206&amp;summary=%3cp%3eIn%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20configure%20iptables%20along%20with%20fail2ban%20and%20how%20to%20start/stop%20these%20services%20without%20messing%20up%20your%20chains%20or%20configuration.%3c/p%3e%0a%3cp%3eIptables%20should%20be%20included%20in%20your%20default%20Linux%20OS,%20and%20you%20can%20easily%20get%20fail2ban%20from%20standard%20repos.%20So,%20just%20enable%20the%20chains%20you%20need%20on%20%3ccode%3e/etc/fail2ban/jail.local%3c/code%3e.%20Copy%20the%20file%20from%20%3ccode%3e/etc/fail2ban/jail.conf%3c/code%3e%20if%20it%20doesn&amp;rsquo;t%20exist.%20For%20example,%20if%20you%20want%20%28you%20should%29%20activate%20ssh%20jail,%20just%20add/uncomment%20this%20lines%20to%20the%20file:%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fab fa-twitter" href="http://twitter.com/share?text=Configuring%20IPTABLES%20and%20fail2ban%20on%20centOS%206&amp;url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -350,13 +337,12 @@ alias stopfw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39
       <a class="fab fa-google-plus-g" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fab fa-pinterest-p" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/&amp;media=%3cnil%3econfiguring-iptables-and-fail2ban-on-centos-6.jpg&amp;description=%3cp%3eIn%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20configure%20iptables%20along%20with%20fail2ban%20and%20how%20to%20start/stop%20these%20services%20without%20messing%20up%20your%20chains%20or%20configuration.%3c/p%3e%0a%0a%3cp%3eIptables%20should%20be%20included%20in%20your%20default%20Linux%20OS,%20and%20you%20can%20easily%20get%20fail2ban%20from%20standard%20repos.%20So,%20just%20enable%20the%20chains%20you%20need%20on%20%3ccode%3e/etc/fail2ban/jail.local%3c/code%3e.%20Copy%20the%20file%20from%20%3ccode%3e/etc/fail2ban/jail.conf%3c/code%3e%20if%20it%20doesn&amp;rsquo;t%20exist.%20For%20example,%20if%20you%20want%20%28you%20should%29%20activate%20ssh%20jail,%20just%20add/uncomment%20this%20lines%20to%20the%20file:%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fab fa-pinterest-p" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/&amp;media=%3cnil%3econfiguring-iptables-and-fail2ban-on-centos-6.jpg&amp;description=%3cp%3eIn%20this%20post%20I&amp;rsquo;ll%20explain%20how%20to%20configure%20iptables%20along%20with%20fail2ban%20and%20how%20to%20start/stop%20these%20services%20without%20messing%20up%20your%20chains%20or%20configuration.%3c/p%3e%0a%3cp%3eIptables%20should%20be%20included%20in%20your%20default%20Linux%20OS,%20and%20you%20can%20easily%20get%20fail2ban%20from%20standard%20repos.%20So,%20just%20enable%20the%20chains%20you%20need%20on%20%3ccode%3e/etc/fail2ban/jail.local%3c/code%3e.%20Copy%20the%20file%20from%20%3ccode%3e/etc/fail2ban/jail.conf%3c/code%3e%20if%20it%20doesn&amp;rsquo;t%20exist.%20For%20example,%20if%20you%20want%20%28you%20should%29%20activate%20ssh%20jail,%20just%20add/uncomment%20this%20lines%20to%20the%20file:%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
 
     </div>
-
     <div class='post-footer'>
       
        <div id="disqus_thread"></div>
@@ -418,13 +404,10 @@ s.setAttribute('data-timestamp', +new Date());
   <h4>On This Page</h4>
   <div class='table_of_contents'>
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#starting-iptables-and-fail2ban">Starting iptables and fail2ban</a></li>
-<li><a href="#stopping-iptables-and-fail2ban">Stopping iptables and fail2ban</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#starting-iptables-and-fail2ban">Starting iptables and fail2ban</a></li>
+    <li><a href="#stopping-iptables-and-fail2ban">Stopping iptables and fail2ban</a></li>
+  </ul>
 </nav>
   </div>
   
@@ -447,12 +430,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/transferring-files-with-ftp-through-bash-expect-script/' target='_blank'>
-                    <img alt='Transferring files with FTP through bash expect script' width='72' height='72' src="/articles/img/thumbs/transferring-files-with-ftp-through-bash-expect-script.png" />
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' target='_blank'>
+                    <img alt='Getting 1.5s page load time on a basic vps' width='72' height='72' src="/articles/img/thumbs/getting-1.5s-page-load-time-on-a-basic-vps.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/transferring-files-with-ftp-through-bash-expect-script/' class="mostVisitedLink">Transferring files with FTP through bash expect script</a>
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' class="mostVisitedLink">Getting 1.5s page load time on a basic vps</a>
                 </div>
               </div>
             </li>
@@ -462,12 +445,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/moving-to-france-for-work/' target='_blank'>
-                    <img alt='Moving to France for work' width='72' height='72' src="/articles/img/thumbs/moving-to-france-for-work.jpg" />
+                  <a href='/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
+                    <img alt='Installing ubuntu 16.04 on odroid xu3 lite' width='72' height='72' src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/moving-to-france-for-work/' class="mostVisitedLink">Moving to France for work</a>
+                  <a href='/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Installing ubuntu 16.04 on odroid xu3 lite</a>
                 </div>
               </div>
             </li>
@@ -477,12 +460,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/configuring-iptables-and-fail2ban-on-centos-6/' target='_blank'>
-                    <img alt='Configuring IPTABLES and fail2ban on centOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-iptables-and-fail2ban-on-centos-6.jpg" />
+                  <a href='/articles/getting-0.5s-page-load-time-on-your-blog/' target='_blank'>
+                    <img alt='Getting 0.5 seconds load time on your blog' width='72' height='72' src="/articles/img/thumbs/getting-0.5s-page-load-time-on-your-blog.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/configuring-iptables-and-fail2ban-on-centos-6/' class="mostVisitedLink">Configuring IPTABLES and fail2ban on centOS 6</a>
+                  <a href='/articles/getting-0.5s-page-load-time-on-your-blog/' class="mostVisitedLink">Getting 0.5 seconds load time on your blog</a>
                 </div>
               </div>
             </li>
@@ -543,7 +526,7 @@ s.setAttribute('data-timestamp', +new Date());
       </ul>
     </div>
     <div class='clr'></div>
-    <p>Copyright &#169; 2019
+    <p>Copyright &#169; 2020
       <a href=''></a>
     </p>
     <p class='attribution'>Powered by</p>

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>False on J. Arboleda</title>
+    <title>false on J. Arboleda</title>
     <link>https://www.jarboleda.me/project/false/</link>
-    <description>Recent content in False on J. Arboleda</description>
+    <description>Recent content in false on J. Arboleda</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 10 Feb 2018 13:39:56 +0200</lastBuildDate>
     
@@ -17,7 +17,7 @@
       
       <guid>https://www.jarboleda.me/articles/moving-to-france-for-work/</guid>
       <description>&lt;p&gt;Few months ago I moved to france for work reasons and I&amp;rsquo;d like to share how&amp;rsquo;s been the experience so far in this post.
-&lt;br/&gt;&lt;br/&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
 &lt;figure&gt;
     &lt;img src=&#34;https://www.jarboleda.me/articles/img/moving-to-france-for-work.jpg&#34;
          alt=&#34;Côte d&amp;#39;Azur&#34;/&gt; &lt;figcaption&gt;

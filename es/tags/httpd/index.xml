@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Httpd on J. Arboleda</title>
+    <title>httpd on J. Arboleda</title>
     <link>https://www.jarboleda.me/es/tags/httpd/</link>
-    <description>Recent content in Httpd on J. Arboleda</description>
+    <description>Recent content in httpd on J. Arboleda</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 09 Aug 2015 10:48:45 +0200</lastBuildDate>
     
@@ -17,9 +17,7 @@
       
       <guid>https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/</guid>
       <description>&lt;p&gt;En este post voy a explicar cómo configurar un servidor VPS para tener un servidor LAMP básico con múltiples versiones PHP, compiladas previamente. De esta manera, podemos tener un servidor VPS muy barato (~3€) en el que hacer probaturas.&lt;/p&gt;
-
 &lt;h2 id=&#34;estructura-de-directorios&#34;&gt;Estructura de directorios&lt;/h2&gt;
-
 &lt;p&gt;En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co como dominio para este ejemplo. Puedes utilizar la estructura de directoriosque quieras, esta es la mía:&lt;/p&gt;</description>
     </item>
     

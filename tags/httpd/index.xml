@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Httpd on J. Arboleda</title>
+    <title>httpd on J. Arboleda</title>
     <link>https://www.jarboleda.me/tags/httpd/</link>
-    <description>Recent content in Httpd on J. Arboleda</description>
+    <description>Recent content in httpd on J. Arboleda</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 09 Aug 2015 10:48:45 +0200</lastBuildDate>
     
@@ -17,9 +17,7 @@
       
       <guid>https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/</guid>
       <description>&lt;p&gt;In this first post I&amp;rsquo;ll explain how I configurated my VPS to run a basic LAMP server with multiple php versions, compiled by myself. You can get your own cheap VPS (~3€) and test a lot of things.&lt;/p&gt;
-
 &lt;h2 id=&#34;dir-structure&#34;&gt;Dir structure&lt;/h2&gt;
-
 &lt;p&gt;Firstly, we&amp;rsquo;ll create our dir structure. I&amp;rsquo;ll use jag.co as a domain for this example, you can choose the dir structure you want, but I recommend following this one:&lt;/p&gt;</description>
     </item>
     

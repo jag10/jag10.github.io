@@ -17,12 +17,10 @@
     	
 	<meta property="og:title" content="Installing ubuntu 16.04 on odroid xu3 lite" />
 	<meta property="og:description" content="Choosing an image
-
 Ubuntu 16.04 mate has just been released by odroid team, including support for xu3/xu4 boards and their lite versions. In this case we&rsquo;re going to test Ubuntu 16.04 on odroid xu3 lite, which is the board I own. We&rsquo;ll install it on an eMMC module, which is something like an small ssd (not really the same, eMMC isn&rsquo;t as fast as ssd is). This module will give us a boost on performance, although we can also install Ubuntu on a SD card (class 10).
 Firslty, we need to download the image we want to install:
 http://de.eu.odroid.in/ubuntu_16.04lts/
 From the list above I took the image I was looking for, which is the complete version for odroid xu3:
-
 
 ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
 " />
@@ -45,12 +43,10 @@ ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
     
     <meta itemprop="name" content="Installing ubuntu 16.04 on odroid xu3 lite">
     <meta itemprop="description" content="Choosing an image
-
 Ubuntu 16.04 mate has just been released by odroid team, including support for xu3/xu4 boards and their lite versions. In this case we&rsquo;re going to test Ubuntu 16.04 on odroid xu3 lite, which is the board I own. We&rsquo;ll install it on an eMMC module, which is something like an small ssd (not really the same, eMMC isn&rsquo;t as fast as ssd is). This module will give us a boost on performance, although we can also install Ubuntu on a SD card (class 10).
 Firslty, we need to download the image we want to install:
 http://de.eu.odroid.in/ubuntu_16.04lts/
 From the list above I took the image I was looking for, which is the complete version for odroid xu3:
-
 
 ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
 ">
@@ -66,12 +62,10 @@ ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
 	
 	<meta name="twitter:title" content="Installing ubuntu 16.04 on odroid xu3 lite"/>
 	<meta name="twitter:description" content="Choosing an image
-
 Ubuntu 16.04 mate has just been released by odroid team, including support for xu3/xu4 boards and their lite versions. In this case we&rsquo;re going to test Ubuntu 16.04 on odroid xu3 lite, which is the board I own. We&rsquo;ll install it on an eMMC module, which is something like an small ssd (not really the same, eMMC isn&rsquo;t as fast as ssd is). This module will give us a boost on performance, although we can also install Ubuntu on a SD card (class 10).
 Firslty, we need to download the image we want to install:
 http://de.eu.odroid.in/ubuntu_16.04lts/
 From the list above I took the image I was looking for, which is the complete version for odroid xu3:
-
 
 ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
 "/>
@@ -187,18 +181,14 @@ ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
     <div class="article_excerpt">
       
       <p><h2 id="choosing-an-image">Choosing an image</h2>
-
 <p>Ubuntu 16.04 mate has just been released by odroid team, including support for xu3/xu4 boards and their lite versions. In this case we&rsquo;re going to test Ubuntu 16.04 on odroid xu3 lite, which is the board I own. We&rsquo;ll install it on an eMMC module, which is something like an small ssd (not really the same, eMMC isn&rsquo;t as fast as ssd is). This module will give us a boost on performance, although we can also install Ubuntu on a SD card (class 10).
 Firslty, we need to download the image we want to install:
 <a href="http://de.eu.odroid.in/ubuntu_16.04lts/">http://de.eu.odroid.in/ubuntu_16.04lts/</a>
 From the list above I took the image I was looking for, which is the complete version for odroid xu3:</p>
-
 <ul>
 <li><a href="http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz">ubuntu-16.04-mate-odroid-xu3-20160708.img.xz</a></li>
 </ul>
-
 <h2 id="writing-the-image-on-odroid-board">Writing the image on odroid board</h2>
-
 <p>The next step will be to uncompress the image. This is very important because if we try to write a compressed image into the eMMC module, it won&rsquo;t work at all. So, to uncompress it, use the following command:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ unxz ubuntu-16.04-mate-odroid-xu3-20160708.img.xz</code></pre></div>
 Ok, now we are ready to install the linux image. The easiest way to do it is using the dd command:
@@ -207,33 +197,27 @@ Ok, now we are ready to install the linux image. The easiest way to do it is usi
 <span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sync
 <span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sync
 <span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sync</code></pre></div></p>
-
 <h2 id="checking-the-result">Checking the result</h2>
-
 <p>It is very important to use the sync command multiple times after dd so we make sure we flush all the cache content and write the complete image into the eMMC module.
 Now we need to verify the image was correctly written into the eMMC module, we&rsquo;ll use the dd command again:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/sdc bs<span style="color:#f92672">=</span><span style="color:#ae81ff">512</span> count<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span><span style="color:#e6db74">`</span>stat -c%s ubuntu-16.04-mate-odroid-xu3-20160708.img<span style="color:#e6db74">`</span><span style="color:#f92672">/</span><span style="color:#ae81ff">512</span><span style="color:#66d9ef">))</span> | md5sum
 <span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> jag:
-<span style="color:#ae81ff">8968192</span>+0 registros leídos
-<span style="color:#ae81ff">8968192</span>+0 registros escritos
-<span style="color:#ae81ff">4591714304</span> bytes <span style="color:#f92672">(</span><span style="color:#ae81ff">4</span>,6 GB<span style="color:#f92672">)</span> copiados, <span style="color:#ae81ff">106</span>,332 s, <span style="color:#ae81ff">43</span>,2 MB/s
+8968192+0 registros leídos
+8968192+0 registros escritos
+<span style="color:#ae81ff">4591714304</span> bytes <span style="color:#f92672">(</span>4,6 GB<span style="color:#f92672">)</span> copiados, 106,332 s, 43,2 MB/s
 ff988a4039d9bcd6978910447930f5d5 -
 <span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>ubuntu-16.04-mate-odroid-xu3-20160708.img bs<span style="color:#f92672">=</span><span style="color:#ae81ff">512</span> count<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span><span style="color:#e6db74">`</span>stat -c%s ubuntu-16.04-mate-odroid-xu3-20160708.img<span style="color:#e6db74">`</span><span style="color:#f92672">/</span><span style="color:#ae81ff">512</span><span style="color:#66d9ef">))</span> | md5sum
-<span style="color:#ae81ff">8968192</span>+0 registros leídos
-<span style="color:#ae81ff">8968192</span>+0 registros escritos
-<span style="color:#ae81ff">4591714304</span> bytes <span style="color:#f92672">(</span><span style="color:#ae81ff">4</span>,6 GB<span style="color:#f92672">)</span> copiadosff988a4039d9bcd6978910447930f5d5 -
-, <span style="color:#ae81ff">26</span>,0306 s, <span style="color:#ae81ff">176</span> MB/s
+8968192+0 registros leídos
+8968192+0 registros escritos
+<span style="color:#ae81ff">4591714304</span> bytes <span style="color:#f92672">(</span>4,6 GB<span style="color:#f92672">)</span> copiadosff988a4039d9bcd6978910447930f5d5 -
+, 26,0306 s, <span style="color:#ae81ff">176</span> MB/s
 <span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$</code></pre></div></p>
-
 <p>We we did with the first command is writing the content of the eMMC module (/dev/sdc) into stdout, piping that output into md5sum command, which gives us the md5 for the content of the eMMC module. With the second command, we read the image from local disk and write it into stdout to pipe it into md5sum, this gives us the md5 for the image we downloaded. Now we can compare both md5 values to check if they are the same,
 As you can see, md5 hashes are the same, so everything is ok.
 If everything worked out, we&rsquo;ll be able to connect to the board with an ssh connection. In my case I have a static IP assigned for my board, but if you don&rsquo;t know which IP has your odroid, you&rsquo;ll have to log in the router and check it out. You can also use utilities like nmap to discover new devices on the local network. Once we know the IP for the board, we can log in with the following credentials:
 root:odroid</p>
-
 <p>I&rsquo;ve been testing Ubuntu on the board and the first impression was really good. They&rsquo;ve solved some issues with the hdmi output. In previous versions I had a lot of trouble to make it work, but now it was Plug &amp; Play. On the other hand, I&rsquo;ve detected an issue with Ethernet connection, which doesn&rsquo;t work always as expected.</p>
-
 <h2 id="update">UPDATE</h2>
-
 <ul>
 <li>After some updates and checking the wires, the Ethernet connection works just fine.</li>
 </ul></p>
@@ -273,7 +257,7 @@ root:odroid</p>
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/&amp;title=Installing%20ubuntu%2016.04%20on%20odroid%20xu3%20lite&amp;summary=%3ch2%20id=%22choosing-an-image%22%3eChoosing%20an%20image%3c/h2%3e%0a%0a%3cp%3eUbuntu%2016.04%20mate%20has%20just%20been%20released%20by%20odroid%20team,%20including%20support%20for%20xu3/xu4%20boards%20and%20their%20lite%20versions.%20In%20this%20case%20we&amp;rsquo;re%20going%20to%20test%20Ubuntu%2016.04%20on%20odroid%20xu3%20lite,%20which%20is%20the%20board%20I%20own.%20We&amp;rsquo;ll%20install%20it%20on%20an%20eMMC%20module,%20which%20is%20something%20like%20an%20small%20ssd%20%28not%20really%20the%20same,%20eMMC%20isn&amp;rsquo;t%20as%20fast%20as%20ssd%20is%29.%20This%20module%20will%20give%20us%20a%20boost%20on%20performance,%20although%20we%20can%20also%20install%20Ubuntu%20on%20a%20SD%20card%20%28class%2010%29.%0aFirslty,%20we%20need%20to%20download%20the%20image%20we%20want%20to%20install:%0a%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/%22%3ehttp://de.eu.odroid.in/ubuntu_16.04lts/%3c/a%3e%0aFrom%20the%20list%20above%20I%20took%20the%20image%20I%20was%20looking%20for,%20which%20is%20the%20complete%20version%20for%20odroid%20xu3:%3c/p%3e%0a%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz%22%3eubuntu-16.04-mate-odroid-xu3-20160708.img.xz%3c/a%3e%3c/li%3e%0a%3c/ul%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/&amp;title=Installing%20ubuntu%2016.04%20on%20odroid%20xu3%20lite&amp;summary=%3ch2%20id=%22choosing-an-image%22%3eChoosing%20an%20image%3c/h2%3e%0a%3cp%3eUbuntu%2016.04%20mate%20has%20just%20been%20released%20by%20odroid%20team,%20including%20support%20for%20xu3/xu4%20boards%20and%20their%20lite%20versions.%20In%20this%20case%20we&amp;rsquo;re%20going%20to%20test%20Ubuntu%2016.04%20on%20odroid%20xu3%20lite,%20which%20is%20the%20board%20I%20own.%20We&amp;rsquo;ll%20install%20it%20on%20an%20eMMC%20module,%20which%20is%20something%20like%20an%20small%20ssd%20%28not%20really%20the%20same,%20eMMC%20isn&amp;rsquo;t%20as%20fast%20as%20ssd%20is%29.%20This%20module%20will%20give%20us%20a%20boost%20on%20performance,%20although%20we%20can%20also%20install%20Ubuntu%20on%20a%20SD%20card%20%28class%2010%29.%0aFirslty,%20we%20need%20to%20download%20the%20image%20we%20want%20to%20install:%0a%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/%22%3ehttp://de.eu.odroid.in/ubuntu_16.04lts/%3c/a%3e%0aFrom%20the%20list%20above%20I%20took%20the%20image%20I%20was%20looking%20for,%20which%20is%20the%20complete%20version%20for%20odroid%20xu3:%3c/p%3e%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz%22%3eubuntu-16.04-mate-odroid-xu3-20160708.img.xz%3c/a%3e%3c/li%3e%0a%3c/ul%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fab fa-twitter" href="http://twitter.com/share?text=Installing%20ubuntu%2016.04%20on%20odroid%20xu3%20lite&amp;url=https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -285,13 +269,12 @@ root:odroid</p>
       <a class="fab fa-google-plus-g" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fab fa-pinterest-p" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/&amp;media=%3cnil%3einstalling-ubuntu-16.04-on-odroid-xu3-lite.jpg&amp;description=%3ch2%20id=%22choosing-an-image%22%3eChoosing%20an%20image%3c/h2%3e%0a%0a%3cp%3eUbuntu%2016.04%20mate%20has%20just%20been%20released%20by%20odroid%20team,%20including%20support%20for%20xu3/xu4%20boards%20and%20their%20lite%20versions.%20In%20this%20case%20we&amp;rsquo;re%20going%20to%20test%20Ubuntu%2016.04%20on%20odroid%20xu3%20lite,%20which%20is%20the%20board%20I%20own.%20We&amp;rsquo;ll%20install%20it%20on%20an%20eMMC%20module,%20which%20is%20something%20like%20an%20small%20ssd%20%28not%20really%20the%20same,%20eMMC%20isn&amp;rsquo;t%20as%20fast%20as%20ssd%20is%29.%20This%20module%20will%20give%20us%20a%20boost%20on%20performance,%20although%20we%20can%20also%20install%20Ubuntu%20on%20a%20SD%20card%20%28class%2010%29.%0aFirslty,%20we%20need%20to%20download%20the%20image%20we%20want%20to%20install:%0a%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/%22%3ehttp://de.eu.odroid.in/ubuntu_16.04lts/%3c/a%3e%0aFrom%20the%20list%20above%20I%20took%20the%20image%20I%20was%20looking%20for,%20which%20is%20the%20complete%20version%20for%20odroid%20xu3:%3c/p%3e%0a%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz%22%3eubuntu-16.04-mate-odroid-xu3-20160708.img.xz%3c/a%3e%3c/li%3e%0a%3c/ul%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fab fa-pinterest-p" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/&amp;media=%3cnil%3einstalling-ubuntu-16.04-on-odroid-xu3-lite.jpg&amp;description=%3ch2%20id=%22choosing-an-image%22%3eChoosing%20an%20image%3c/h2%3e%0a%3cp%3eUbuntu%2016.04%20mate%20has%20just%20been%20released%20by%20odroid%20team,%20including%20support%20for%20xu3/xu4%20boards%20and%20their%20lite%20versions.%20In%20this%20case%20we&amp;rsquo;re%20going%20to%20test%20Ubuntu%2016.04%20on%20odroid%20xu3%20lite,%20which%20is%20the%20board%20I%20own.%20We&amp;rsquo;ll%20install%20it%20on%20an%20eMMC%20module,%20which%20is%20something%20like%20an%20small%20ssd%20%28not%20really%20the%20same,%20eMMC%20isn&amp;rsquo;t%20as%20fast%20as%20ssd%20is%29.%20This%20module%20will%20give%20us%20a%20boost%20on%20performance,%20although%20we%20can%20also%20install%20Ubuntu%20on%20a%20SD%20card%20%28class%2010%29.%0aFirslty,%20we%20need%20to%20download%20the%20image%20we%20want%20to%20install:%0a%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/%22%3ehttp://de.eu.odroid.in/ubuntu_16.04lts/%3c/a%3e%0aFrom%20the%20list%20above%20I%20took%20the%20image%20I%20was%20looking%20for,%20which%20is%20the%20complete%20version%20for%20odroid%20xu3:%3c/p%3e%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz%22%3eubuntu-16.04-mate-odroid-xu3-20160708.img.xz%3c/a%3e%3c/li%3e%0a%3c/ul%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
 
     </div>
-
     <div class='post-footer'>
       
        <div id="disqus_thread"></div>
@@ -353,15 +336,12 @@ s.setAttribute('data-timestamp', +new Date());
   <h4>On This Page</h4>
   <div class='table_of_contents'>
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#choosing-an-image">Choosing an image</a></li>
-<li><a href="#writing-the-image-on-odroid-board">Writing the image on odroid board</a></li>
-<li><a href="#checking-the-result">Checking the result</a></li>
-<li><a href="#update">UPDATE</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#choosing-an-image">Choosing an image</a></li>
+    <li><a href="#writing-the-image-on-odroid-board">Writing the image on odroid board</a></li>
+    <li><a href="#checking-the-result">Checking the result</a></li>
+    <li><a href="#update">UPDATE</a></li>
+  </ul>
 </nav>
   </div>
   
@@ -384,12 +364,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img alt='installing unreal engine on fedora 25' width='72' height='72' src="/articles/img/thumbs/unreal_engine.min.jpg" />
+                  <a href='/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
+                    <img alt='Backing up all databases using mysqldump' width='72' height='72' src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
+                  <a href='/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Backing up all databases using mysqldump</a>
                 </div>
               </div>
             </li>
@@ -399,12 +379,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/web-development-environment/' target='_blank'>
-                    <img alt='Web development environment' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
+                  <a href='/articles/getting-an-objects-methods/' target='_blank'>
+                    <img alt='Getting an object&#39;s (reflected) methods' width='72' height='72' src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
+                  <a href='/articles/getting-an-objects-methods/' class="mostVisitedLink">Getting an object&#39;s (reflected) methods</a>
                 </div>
               </div>
             </li>
@@ -414,12 +394,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/zipping-and-unzipping-websites-with-php/' target='_blank'>
-                    <img alt='Zipping and unzipping websites with php' width='72' height='72' src="/articles/img/thumbs/zipping-and-unzipping-websites-with-php.png" />
+                  <a href='/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
+                    <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/zipping-and-unzipping-websites-with-php/' class="mostVisitedLink">Zipping and unzipping websites with php</a>
+                  <a href='/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
                 </div>
               </div>
             </li>
@@ -480,7 +460,7 @@ s.setAttribute('data-timestamp', +new Date());
       </ul>
     </div>
     <div class='clr'></div>
-    <p>Copyright &#169; 2019
+    <p>Copyright &#169; 2020
       <a href=''></a>
     </p>
     <p class='attribution'>Powered by</p>

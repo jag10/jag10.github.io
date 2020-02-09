@@ -17,11 +17,8 @@
     	
 	<meta property="og:title" content="Getting 1.5s page load time on a basic vps" />
 	<meta property="og:description" content="The problem
-
 As you can see on the graphics, I had 5s load time for my home page, which is kind of basic. It wasn&rsquo;t that bad if you look at the packages my server runs: gitlab, Roundcube&rsquo;s webmail, sentora (open source control panel) and piwik (stats management).
-
 Note: Those 11s peaks you see there were produced while I was doing load tests on my server.
-
 My environment&rsquo;s specs are:" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/" />
@@ -42,11 +39,8 @@ My environment&rsquo;s specs are:" />
     
     <meta itemprop="name" content="Getting 1.5s page load time on a basic vps">
     <meta itemprop="description" content="The problem
-
 As you can see on the graphics, I had 5s load time for my home page, which is kind of basic. It wasn&rsquo;t that bad if you look at the packages my server runs: gitlab, Roundcube&rsquo;s webmail, sentora (open source control panel) and piwik (stats management).
-
 Note: Those 11s peaks you see there were produced while I was doing load tests on my server.
-
 My environment&rsquo;s specs are:">
     <meta name="author" content="Jeferson Arboleda">
     
@@ -60,11 +54,8 @@ My environment&rsquo;s specs are:">
 	
 	<meta name="twitter:title" content="Getting 1.5s page load time on a basic vps"/>
 	<meta name="twitter:description" content="The problem
-
 As you can see on the graphics, I had 5s load time for my home page, which is kind of basic. It wasn&rsquo;t that bad if you look at the packages my server runs: gitlab, Roundcube&rsquo;s webmail, sentora (open source control panel) and piwik (stats management).
-
 Note: Those 11s peaks you see there were produced while I was doing load tests on my server.
-
 My environment&rsquo;s specs are:"/>
 	<meta name="twitter:site" content="@j_a_g_x"/>
 	
@@ -174,13 +165,9 @@ My environment&rsquo;s specs are:"/>
     <div class="article_excerpt">
       
       <p><h2 id="the-problem">The problem</h2>
-
 <p>As you can see on the graphics, I had 5s load time for my home page, which is kind of basic. It wasn&rsquo;t that bad if you look at the packages my server runs: gitlab, Roundcube&rsquo;s webmail, sentora (open source control panel) and piwik (stats management).</p>
-
 <p><strong>Note:</strong> Those 11s peaks you see there were produced while I was doing load tests on my server.</p>
-
 <p>My environment&rsquo;s specs are:</p>
-
 <ul>
 <li>1 GB RAM VPS</li>
 <li>CentOS Linux release 7.2.1511 (Core)</li>
@@ -189,14 +176,11 @@ My environment&rsquo;s specs are:"/>
 <li>10 GB ssd</li>
 <li>1000 Mbps bandwith</li>
 </ul>
-
 <h2 id="stats-before-tuning-up">Stats before tuning up</h2>
-
 <p>This were my stats before tuning up ProcessWire:
 performance before tuning up
-<img src="/articles/img/getting-1.5s-page-load-time-on-a-basic-vps-1.png" alt="performance before tuning up" />
+<img src="/articles/img/getting-1.5s-page-load-time-on-a-basic-vps-1.png" alt="performance before tuning up">
 First thing I did was go to gtmetrix.com to find out why my site was slow. These were the firsts conclusions:</p>
-
 <ul>
 <li>Optimizing images is important to save bandwidth. ProcessWire is great for this as it allows to resize images in an easy way. For example, for the images on each blog post, I used the &lsquo;size&rsquo; method on image files to resize the image: echo $post-&gt;post_image-&gt;size(573, 0, array(&lsquo;quality&rsquo; :&gt; 70))-&gt;url; That simple line outputs the post image, resized and with a quality of 70% (yup, PW is awesome).</li>
 <li>Gzip compression is an easy way to get huge improvements on performance. I enabled this through .htaccess with the following line:
@@ -205,18 +189,14 @@ AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application
 <li>Avoiding redirections on landing page is also very good for performance (I was redirecting jglab.me to jglab.me/home, wasting about 600ms)</li>
 <li>Defer parsing of JS allows the browser to load the visible content faster. This was easy, I only use a couple of JS and I moved them into the footer.</li>
 </ul>
-
 <h2 id="stats-after-tuning-up">Stats after tuning up</h2>
-
 <p>These modifications allowed my server to load the page in 3s, which was good but it could be better. So I thought those awesome sidebars I use must consume a lot of resources. This is how they work:</p>
-
 <ul>
 <li>Popular posts looks for every blog post on the site and then uses piwik&rsquo;s API to sort them out based on their visits. This is obviously a heavy task that should not be done everytime users visit homepage. So I enabled ProcessWire&rsquo;s cache on this template. Now the sidebar template is cached and is only rendered once a day.</li>
 <li>The label cloud works in a similiar way, it looks for every label on posts and then finds out which ones are the most popular. I setted this template&rsquo;s cache to 1 day.</li>
 </ul>
-
 <p>These last improvements resulted into a huge performance boost, making my homepage load in just 1.5s. This is pretty impressive for a 3€/month VPS. This is why I love ProcessWire. It&rsquo;s simple, easy to use, yet very powerful and very fast.
-<img src="/articles/img/getting-1.5s-page-load-time-on-a-basic-vps-2.png" alt="performance after tuning up" /></p></p>
+<img src="/articles/img/getting-1.5s-page-load-time-on-a-basic-vps-2.png" alt="performance after tuning up"></p></p>
       
     </div>
     <div class="clearfix"></div>
@@ -253,7 +233,7 @@ AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/&amp;title=Getting%201.5s%20page%20load%20time%20on%20a%20basic%20vps&amp;summary=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%0a%3cp%3eAs%20you%20can%20see%20on%20the%20graphics,%20I%20had%205s%20load%20time%20for%20my%20home%20page,%20which%20is%20kind%20of%20basic.%20It%20wasn&amp;rsquo;t%20that%20bad%20if%20you%20look%20at%20the%20packages%20my%20server%20runs:%20gitlab,%20Roundcube&amp;rsquo;s%20webmail,%20sentora%20%28open%20source%20control%20panel%29%20and%20piwik%20%28stats%20management%29.%3c/p%3e%0a%0a%3cp%3e%3cstrong%3eNote:%3c/strong%3e%20Those%2011s%20peaks%20you%20see%20there%20were%20produced%20while%20I%20was%20doing%20load%20tests%20on%20my%20server.%3c/p%3e%0a%0a%3cp%3eMy%20environment&amp;rsquo;s%20specs%20are:%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/&amp;title=Getting%201.5s%20page%20load%20time%20on%20a%20basic%20vps&amp;summary=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%3cp%3eAs%20you%20can%20see%20on%20the%20graphics,%20I%20had%205s%20load%20time%20for%20my%20home%20page,%20which%20is%20kind%20of%20basic.%20It%20wasn&amp;rsquo;t%20that%20bad%20if%20you%20look%20at%20the%20packages%20my%20server%20runs:%20gitlab,%20Roundcube&amp;rsquo;s%20webmail,%20sentora%20%28open%20source%20control%20panel%29%20and%20piwik%20%28stats%20management%29.%3c/p%3e%0a%3cp%3e%3cstrong%3eNote:%3c/strong%3e%20Those%2011s%20peaks%20you%20see%20there%20were%20produced%20while%20I%20was%20doing%20load%20tests%20on%20my%20server.%3c/p%3e%0a%3cp%3eMy%20environment&amp;rsquo;s%20specs%20are:%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fab fa-twitter" href="http://twitter.com/share?text=Getting%201.5s%20page%20load%20time%20on%20a%20basic%20vps&amp;url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -265,13 +245,12 @@ AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application
       <a class="fab fa-google-plus-g" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fab fa-pinterest-p" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/&amp;media=%3cnil%3egetting-1.5s-page-load-time-on-a-basic-vps.png&amp;description=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%0a%3cp%3eAs%20you%20can%20see%20on%20the%20graphics,%20I%20had%205s%20load%20time%20for%20my%20home%20page,%20which%20is%20kind%20of%20basic.%20It%20wasn&amp;rsquo;t%20that%20bad%20if%20you%20look%20at%20the%20packages%20my%20server%20runs:%20gitlab,%20Roundcube&amp;rsquo;s%20webmail,%20sentora%20%28open%20source%20control%20panel%29%20and%20piwik%20%28stats%20management%29.%3c/p%3e%0a%0a%3cp%3e%3cstrong%3eNote:%3c/strong%3e%20Those%2011s%20peaks%20you%20see%20there%20were%20produced%20while%20I%20was%20doing%20load%20tests%20on%20my%20server.%3c/p%3e%0a%0a%3cp%3eMy%20environment&amp;rsquo;s%20specs%20are:%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fab fa-pinterest-p" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/&amp;media=%3cnil%3egetting-1.5s-page-load-time-on-a-basic-vps.png&amp;description=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%3cp%3eAs%20you%20can%20see%20on%20the%20graphics,%20I%20had%205s%20load%20time%20for%20my%20home%20page,%20which%20is%20kind%20of%20basic.%20It%20wasn&amp;rsquo;t%20that%20bad%20if%20you%20look%20at%20the%20packages%20my%20server%20runs:%20gitlab,%20Roundcube&amp;rsquo;s%20webmail,%20sentora%20%28open%20source%20control%20panel%29%20and%20piwik%20%28stats%20management%29.%3c/p%3e%0a%3cp%3e%3cstrong%3eNote:%3c/strong%3e%20Those%2011s%20peaks%20you%20see%20there%20were%20produced%20while%20I%20was%20doing%20load%20tests%20on%20my%20server.%3c/p%3e%0a%3cp%3eMy%20environment&amp;rsquo;s%20specs%20are:%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
 
     </div>
-
     <div class='post-footer'>
       
        <div id="disqus_thread"></div>
@@ -333,14 +312,11 @@ s.setAttribute('data-timestamp', +new Date());
   <h4>On This Page</h4>
   <div class='table_of_contents'>
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#the-problem">The problem</a></li>
-<li><a href="#stats-before-tuning-up">Stats before tuning up</a></li>
-<li><a href="#stats-after-tuning-up">Stats after tuning up</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#the-problem">The problem</a></li>
+    <li><a href="#stats-before-tuning-up">Stats before tuning up</a></li>
+    <li><a href="#stats-after-tuning-up">Stats after tuning up</a></li>
+  </ul>
 </nav>
   </div>
   
@@ -363,12 +339,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
-                    <img alt='Authenticating users with cURL' width='72' height='72' src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
+                  <a href='/articles/facebook-sharer-and-ipv6-issue/' target='_blank'>
+                    <img alt='Facebook sharer and IPv6 issue' width='72' height='72' src="/articles/img/thumbs/facebook-sharer-and-ipv6-issue.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Authenticating users with cURL</a>
+                  <a href='/articles/facebook-sharer-and-ipv6-issue/' class="mostVisitedLink">Facebook sharer and IPv6 issue</a>
                 </div>
               </div>
             </li>
@@ -378,12 +354,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
-                    <img alt='How to handle remote resources with curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
+                  <a href='/articles/deploy-hugo-site-to-github-pages/' target='_blank'>
+                    <img alt='Deploying a hugo site to github pages' width='72' height='72' src="/articles/img/thumbs/deploy-hugo-site-to-github-pages.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">How to handle remote resources with curl</a>
+                  <a href='/articles/deploy-hugo-site-to-github-pages/' class="mostVisitedLink">Deploying a hugo site to github pages</a>
                 </div>
               </div>
             </li>
@@ -393,12 +369,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
-                    <img alt='Installing ubuntu 16.04 on odroid xu3 lite' width='72' height='72' src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
+                  <a href='/articles/moving-to-france-for-work/' target='_blank'>
+                    <img alt='Moving to France for work' width='72' height='72' src="/articles/img/thumbs/moving-to-france-for-work.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Installing ubuntu 16.04 on odroid xu3 lite</a>
+                  <a href='/articles/moving-to-france-for-work/' class="mostVisitedLink">Moving to France for work</a>
                 </div>
               </div>
             </li>
@@ -459,7 +435,7 @@ s.setAttribute('data-timestamp', +new Date());
       </ul>
     </div>
     <div class='clr'></div>
-    <p>Copyright &#169; 2019
+    <p>Copyright &#169; 2020
       <a href=''></a>
     </p>
     <p class='attribution'>Powered by</p>

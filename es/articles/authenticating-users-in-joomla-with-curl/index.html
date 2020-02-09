@@ -156,9 +156,7 @@
     <div class="article_excerpt">
       
       <p><p>En est post vamos a ver como autenticar un usuario utilizando cURL. Esto puede ser útil si se quiere integrar un login con una aplicación externa y no se dispone de una API. Por ejemplo, se podrían tener dos plataformas que gestionen los usuarios de manera diferente pero en las que el login sea único.</p>
-
 <p>En el caso concreto de Joomla, se utilizan dos valores generados, y éstos tienen que ser válidos. Así que, en primer lugar hay que obtener esos valores con cURL. Además, Joomla almacena una cookie cuando se visita el sitio. Hay que guardar esa cookie y pasársela al navegador del usuario. Luego, se enviarán estos datos mediante una petición POST. Entonces Joomla devolverá otra cookie, que también tendremos que enviar al navegador del usuario. Después de ese último paso, el usuario queda logueado en la aplicación.</p>
-
 <p>Lo que hemos hecho es autenticar al usuario de la manera que lo haría él manualmente. Esta idea es válida para cualquier otra aplicación. Lo único que hay que hacer es conocer el proceso de autenticación para replicarlo luego.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 <span style="color:#75715e">/*
@@ -259,7 +257,6 @@ $cookie<span style="color:#f92672">=</span><span style="color:#a6e22e">explode</
 </div>
 
     </div>
-
     <div class='post-footer'>
       
        <div id="disqus_thread"></div>
@@ -320,7 +317,7 @@ s.setAttribute('data-timestamp', +new Date());
   
   <h4>On This Page</h4>
   <div class='table_of_contents'>
-    
+    <nav id="TableOfContents"></nav>
   </div>
   
 </div>
@@ -342,29 +339,42 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/installing-magento2-on-cwp/' target='_blank'>
-                    <img alt='Instalando magento2 en cwp' width='72' height='72' src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
+                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img alt='Arreglando una partición corrupta de una máquina virtual' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Instalando magento2 en cwp</a>
+                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Arreglando una partición corrupta de una máquina virtual</a>
                 </div>
               </div>
             </li>
-            
-            
             
             
              
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img alt='Instalando unreal engine en fedora 25' width='72' height='72' src="/articles/img/thumbs/unreal_engine.min.jpg" />
+                  <a href='/es/articles/centos-web-panel-on-vps/' target='_blank'>
+                    <img alt='Centos web panel con php7 y mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">Instalando unreal engine en fedora 25</a>
+                  <a href='/es/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel con php7 y mysql5.6</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='/es/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
+                    <img alt='Cómo manejar recursos remotos con curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='/es/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">Cómo manejar recursos remotos con curl</a>
                 </div>
               </div>
             </li>
@@ -425,7 +435,7 @@ s.setAttribute('data-timestamp', +new Date());
       </ul>
     </div>
     <div class='clr'></div>
-    <p>Copyright &#169; 2019
+    <p>Copyright &#169; 2020
       <a href=''></a>
     </p>
     <p class='attribution'>Powered by</p>

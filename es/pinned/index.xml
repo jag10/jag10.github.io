@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pinned on J. Arboleda</title>
@@ -11,7 +11,7 @@
     
     
     <item>
-      <title>Notpinned</title>
+      <title>notpinned</title>
       <link>https://www.jarboleda.me/es/pinned/notpinned/</link>
       <pubDate>Fri, 17 Mar 2017 21:33:19 +0200</pubDate>
       
@@ -20,7 +20,7 @@
     </item>
     
     <item>
-      <title>Pinned</title>
+      <title>pinned</title>
       <link>https://www.jarboleda.me/es/pinned/pinned/</link>
       <pubDate>Wed, 27 Jul 2016 13:50:40 +0200</pubDate>
       

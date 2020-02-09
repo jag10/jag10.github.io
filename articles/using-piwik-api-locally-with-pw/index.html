@@ -17,7 +17,6 @@
     	
 	<meta property="og:title" content="Using piwik&#39;s API locally with ProcessWire" />
 	<meta property="og:description" content="To track jglab.me visits I use Piwik. Why? The main reason is because it allows to keep info private, moreover, Piwik offers a powerful API which can be queried locally, and that is important for performance as we can obtain stats about the website without having to query external server. To make local queries I use the following class:
-
 Show me the code" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/" />
@@ -37,7 +36,6 @@ Show me the code" />
     
     <meta itemprop="name" content="Using piwik&#39;s API locally with ProcessWire">
     <meta itemprop="description" content="To track jglab.me visits I use Piwik. Why? The main reason is because it allows to keep info private, moreover, Piwik offers a powerful API which can be queried locally, and that is important for performance as we can obtain stats about the website without having to query external server. To make local queries I use the following class:
-
 Show me the code">
     <meta name="author" content="Jeferson Arboleda">
     
@@ -51,7 +49,6 @@ Show me the code">
 	
 	<meta name="twitter:title" content="Using piwik&#39;s API locally with ProcessWire"/>
 	<meta name="twitter:description" content="To track jglab.me visits I use Piwik. Why? The main reason is because it allows to keep info private, moreover, Piwik offers a powerful API which can be queried locally, and that is important for performance as we can obtain stats about the website without having to query external server. To make local queries I use the following class:
-
 Show me the code"/>
 	<meta name="twitter:site" content="@j_a_g_x"/>
 	
@@ -164,9 +161,7 @@ Show me the code"/>
     <div class="article_excerpt">
       
       <p><p>To track jglab.me visits I use Piwik. Why? The main reason is because it allows to keep info private, moreover, Piwik offers a powerful API which can be queried locally, and that is important for performance as we can obtain stats about the website without having to query external server. To make local queries I use the following class:</p>
-
 <h2 id="show-me-the-code">Show me the code</h2>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 <span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Piwik\API\Request</span>;
 <span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Piwik\FrontController</span>;
@@ -211,16 +206,13 @@ $environment<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">
 }
 <span style="color:#75715e">?&gt;</span>
 </code></pre></div>
-
 <p>We can use that class in the following way:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 <span style="color:#66d9ef">include_once</span>(<span style="color:#e6db74">&#39;localPiwik.php&#39;</span>);
 $piwik <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">localPiwik</span>();
 $visits <span style="color:#f92672">=</span> $piwik<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getUniqueVisits</span>(<span style="color:#e6db74">&#39;http://example.org&#39;</span>);
 </code></pre></div></p>
-
 <h2 id="the-example">The example</h2>
-
 <p>To sum up, I&rsquo;ll show you an example of how to get an ordered list of the most visited posts on a ProcessWire website.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">top_posts</span>($posts_PW){
@@ -273,7 +265,7 @@ $visits <span style="color:#f92672">=</span> $piwik<span style="color:#f92672">-
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/&amp;title=Using%20piwik%27s%20API%20locally%20with%20ProcessWire&amp;summary=%3cp%3eTo%20track%20jglab.me%20visits%20I%20use%20Piwik.%20Why?%20The%20main%20reason%20is%20because%20it%20allows%20to%20keep%20info%20private,%20moreover,%20Piwik%20offers%20a%20powerful%20API%20which%20can%20be%20queried%20locally,%20and%20that%20is%20important%20for%20performance%20as%20we%20can%20obtain%20stats%20about%20the%20website%20without%20having%20to%20query%20external%20server.%20To%20make%20local%20queries%20I%20use%20the%20following%20class:%3c/p%3e%0a%0a%3ch2%20id=%22show-me-the-code%22%3eShow%20me%20the%20code%3c/h2%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/&amp;title=Using%20piwik%27s%20API%20locally%20with%20ProcessWire&amp;summary=%3cp%3eTo%20track%20jglab.me%20visits%20I%20use%20Piwik.%20Why?%20The%20main%20reason%20is%20because%20it%20allows%20to%20keep%20info%20private,%20moreover,%20Piwik%20offers%20a%20powerful%20API%20which%20can%20be%20queried%20locally,%20and%20that%20is%20important%20for%20performance%20as%20we%20can%20obtain%20stats%20about%20the%20website%20without%20having%20to%20query%20external%20server.%20To%20make%20local%20queries%20I%20use%20the%20following%20class:%3c/p%3e%0a%3ch2%20id=%22show-me-the-code%22%3eShow%20me%20the%20code%3c/h2%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
       <a class="fab fa-twitter" href="http://twitter.com/share?text=Using%20piwik%27s%20API%20locally%20with%20ProcessWire&amp;url=https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
@@ -285,13 +277,12 @@ $visits <span style="color:#f92672">=</span> $piwik<span style="color:#f92672">-
       <a class="fab fa-google-plus-g" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
     <li>
-      <a class="fab fa-pinterest-p" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/&amp;media=%3cnil%3eusing-piwik-api-locally-with-pw.jpg&amp;description=%3cp%3eTo%20track%20jglab.me%20visits%20I%20use%20Piwik.%20Why?%20The%20main%20reason%20is%20because%20it%20allows%20to%20keep%20info%20private,%20moreover,%20Piwik%20offers%20a%20powerful%20API%20which%20can%20be%20queried%20locally,%20and%20that%20is%20important%20for%20performance%20as%20we%20can%20obtain%20stats%20about%20the%20website%20without%20having%20to%20query%20external%20server.%20To%20make%20local%20queries%20I%20use%20the%20following%20class:%3c/p%3e%0a%0a%3ch2%20id=%22show-me-the-code%22%3eShow%20me%20the%20code%3c/h2%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a class="fab fa-pinterest-p" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/&amp;media=%3cnil%3eusing-piwik-api-locally-with-pw.jpg&amp;description=%3cp%3eTo%20track%20jglab.me%20visits%20I%20use%20Piwik.%20Why?%20The%20main%20reason%20is%20because%20it%20allows%20to%20keep%20info%20private,%20moreover,%20Piwik%20offers%20a%20powerful%20API%20which%20can%20be%20queried%20locally,%20and%20that%20is%20important%20for%20performance%20as%20we%20can%20obtain%20stats%20about%20the%20website%20without%20having%20to%20query%20external%20server.%20To%20make%20local%20queries%20I%20use%20the%20following%20class:%3c/p%3e%0a%3ch2%20id=%22show-me-the-code%22%3eShow%20me%20the%20code%3c/h2%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
     </li>
   </ul>
 </div>
 
     </div>
-
     <div class='post-footer'>
       
        <div id="disqus_thread"></div>
@@ -353,13 +344,10 @@ s.setAttribute('data-timestamp', +new Date());
   <h4>On This Page</h4>
   <div class='table_of_contents'>
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#show-me-the-code">Show me the code</a></li>
-<li><a href="#the-example">The example</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#show-me-the-code">Show me the code</a></li>
+    <li><a href="#the-example">The example</a></li>
+  </ul>
 </nav>
   </div>
   
@@ -378,16 +366,18 @@ s.setAttribute('data-timestamp', +new Date());
         <div class='widget-content popular-posts'>
           <ul>
             
+            
+            
              
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img alt='installing unreal engine on fedora 25' width='72' height='72' src="/articles/img/thumbs/unreal_engine.min.jpg" />
+                  <a href='/articles/getting-an-objects-methods/' target='_blank'>
+                    <img alt='Getting an object&#39;s (reflected) methods' width='72' height='72' src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
+                  <a href='/articles/getting-an-objects-methods/' class="mostVisitedLink">Getting an object&#39;s (reflected) methods</a>
                 </div>
               </div>
             </li>
@@ -397,27 +387,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/transferring-files-with-ftp-through-bash-expect-script/' target='_blank'>
-                    <img alt='Transferring files with FTP through bash expect script' width='72' height='72' src="/articles/img/thumbs/transferring-files-with-ftp-through-bash-expect-script.png" />
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' target='_blank'>
+                    <img alt='Getting 1.5s page load time on a basic vps' width='72' height='72' src="/articles/img/thumbs/getting-1.5s-page-load-time-on-a-basic-vps.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/transferring-files-with-ftp-through-bash-expect-script/' class="mostVisitedLink">Transferring files with FTP through bash expect script</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/articles/getting-0.5s-page-load-time-on-your-blog/' target='_blank'>
-                    <img alt='Getting 0.5 seconds load time on your blog' width='72' height='72' src="/articles/img/thumbs/getting-0.5s-page-load-time-on-your-blog.png" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/articles/getting-0.5s-page-load-time-on-your-blog/' class="mostVisitedLink">Getting 0.5 seconds load time on your blog</a>
+                  <a href='/articles/getting-1.5s-page-load-time-on-a-basic-vps/' class="mostVisitedLink">Getting 1.5s page load time on a basic vps</a>
                 </div>
               </div>
             </li>
@@ -478,7 +453,7 @@ s.setAttribute('data-timestamp', +new Date());
       </ul>
     </div>
     <div class='clr'></div>
-    <p>Copyright &#169; 2019
+    <p>Copyright &#169; 2020
       <a href=''></a>
     </p>
     <p class='attribution'>Powered by</p>

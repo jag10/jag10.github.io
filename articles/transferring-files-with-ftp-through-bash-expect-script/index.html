@@ -160,7 +160,6 @@
       
       <p><p>If you use to transfer backups through ftp, it can be very handy to write a bash script to put a file in a remote server in an easy way. With this script, transferring a file will be as easy as this:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./ftpConnect localFile remoteFile</code></pre></div></p>
-
 <p>In the script you&rsquo;ll need to define some data: your FTP server&rsquo;s IP and a valid user and password combination.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
 </span><span style="color:#75715e"></span><span style="color:#75715e">#use absolute paths (i.e. /var/www/vhosts/) for params:</span>
@@ -189,7 +188,7 @@ expect <span style="color:#e6db74">&#34;ftp&amp;gt; &#34;</span>
 send <span style="color:#e6db74">&#34;binary\r&#34;</span>
 
 expect <span style="color:#e6db74">&#34;ftp&amp;gt; &#34;</span>
-send <span style="color:#e6db74">&#34;put </span>$localFile<span style="color:#e6db74"> </span>$remoteFile<span style="color:#e6db74">\r&#34;</span>
+send <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">put </span>$localFile<span style="color:#e6db74"> </span>$remoteFile<span style="color:#e6db74">\r</span><span style="color:#e6db74">&#34;</span>
 
 expect <span style="color:#e6db74">&#34;ftp&amp;gt; &#34;</span>
 send <span style="color:#e6db74">&#34;bye\r&#34;</span>
@@ -198,12 +197,9 @@ interact
 EOF
 
 echo <span style="color:#e6db74">&#34;Bash script call to ftp through expect complete. Continuing with additional processing&#34;</span></code></pre></div></p>
-
 <p>You have to set timeout -1 so expect doesn&rsquo;t close while you transfer files. Also, I had trouble when transferring files to a FTP Windows server until I used binary mode. You should check the integrity of your files once you have successfully transferred them, you may find out they are corrupt. As I said, I solved this issue using binary mode.</p>
-
 <p>There you go, now you can easily transfer files to your FTP server. Remember to set permissions correctly, you and only you should be able to read this file, since it contains a valid user and password for your FTP server.
 I use this to backup database dumps, but you can transfer whatever you want.</p>
-
 <p>*This script works with FileZilla server. You may have to tweak it to work with your FTP server.</p></p>
       
     </div>
@@ -249,7 +245,6 @@ I use this to backup database dumps, but you can transfer whatever you want.</p>
 </div>
 
     </div>
-
     <div class='post-footer'>
       
        <div id="disqus_thread"></div>
@@ -310,7 +305,7 @@ s.setAttribute('data-timestamp', +new Date());
   
   <h4>On This Page</h4>
   <div class='table_of_contents'>
-    
+    <nav id="TableOfContents"></nav>
   </div>
   
 </div>
@@ -328,16 +323,18 @@ s.setAttribute('data-timestamp', +new Date());
         <div class='widget-content popular-posts'>
           <ul>
             
+            
+            
              
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/arduino-uno-lego-case/' target='_blank'>
-                    <img alt='Arduino UNO R3 lego case' width='72' height='72' src="/articles/img/thumbs/arduino-uno-lego-case.jpg" />
+                  <a href='/articles/getting-0.5s-page-load-time-on-your-blog/' target='_blank'>
+                    <img alt='Getting 0.5 seconds load time on your blog' width='72' height='72' src="/articles/img/thumbs/getting-0.5s-page-load-time-on-your-blog.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/arduino-uno-lego-case/' class="mostVisitedLink">Arduino UNO R3 lego case</a>
+                  <a href='/articles/getting-0.5s-page-load-time-on-your-blog/' class="mostVisitedLink">Getting 0.5 seconds load time on your blog</a>
                 </div>
               </div>
             </li>
@@ -347,27 +344,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/configuring-iptables-and-fail2ban-on-centos-6/' target='_blank'>
-                    <img alt='Configuring IPTABLES and fail2ban on centOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-iptables-and-fail2ban-on-centos-6.jpg" />
+                  <a href='/articles/moving-to-france-for-work/' target='_blank'>
+                    <img alt='Moving to France for work' width='72' height='72' src="/articles/img/thumbs/moving-to-france-for-work.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/configuring-iptables-and-fail2ban-on-centos-6/' class="mostVisitedLink">Configuring IPTABLES and fail2ban on centOS 6</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='/articles/deploy-hugo-site-to-github-pages/' target='_blank'>
-                    <img alt='Deploying a hugo site to github pages' width='72' height='72' src="/articles/img/thumbs/deploy-hugo-site-to-github-pages.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='/articles/deploy-hugo-site-to-github-pages/' class="mostVisitedLink">Deploying a hugo site to github pages</a>
+                  <a href='/articles/moving-to-france-for-work/' class="mostVisitedLink">Moving to France for work</a>
                 </div>
               </div>
             </li>
@@ -428,7 +410,7 @@ s.setAttribute('data-timestamp', +new Date());
       </ul>
     </div>
     <div class='clr'></div>
-    <p>Copyright &#169; 2019
+    <p>Copyright &#169; 2020
       <a href=''></a>
     </p>
     <p class='attribution'>Powered by</p>
