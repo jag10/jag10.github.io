@@ -5,7 +5,7 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     <meta name=viewport content="width=device-width, initial-scale=1">
     <title>J. Arboleda - configuring a LAMP server on CentOS 6</title>
-    <meta name="description" content="The blog of Jeferson Arboleda, software engineer. It&#39;s focused on self improvement and overcoming challenges I find everyday">
+    <meta name="description" content="The blog of Jefferson Arboleda, software engineer. It&#39;s focused on self improvement and overcoming challenges I find everyday">
     
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -41,11 +41,11 @@ Firstly, we&rsquo;ll create our dir structure. I&rsquo;ll use jag.co as a domain
     <meta itemprop="description" content="In this first post I&rsquo;ll explain how I configurated my VPS to run a basic LAMP server with multiple php versions, compiled by myself. You can get your own cheap VPS (~3€) and test a lot of things.
 Dir structure
 Firstly, we&rsquo;ll create our dir structure. I&rsquo;ll use jag.co as a domain for this example, you can choose the dir structure you want, but I recommend following this one:">
-    <meta name="author" content="Jeferson Arboleda">
+    <meta name="author" content="Jefferson Arboleda">
     
     <meta itemprop="image" content="configuring-a-lamp-server-on-centos-6.jpg">
     
-    <meta itemprop="keywords" content="notpinned,pinned,,false,true,serie1,arduino,backup,backups,bash,case,centos6,cloudflare,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,github,github-pages,httpd,hugo,iptables,ipv6,job,lego,linkedin,magento,magento2,mate,move,mysql,mysqldump,nodejs,odroid,pages,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,static,ubuntu,unrealengine,vagrant,vm,vps,zip," />
+    <meta itemprop="keywords" content="notpinned,pinned,false,true,serie1,arduino,backup,backups,bash,case,centos6,cloudflare,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,github,github-pages,httpd,hugo,iptables,ipv6,job,lego,linkedin,magento,magento2,mate,move,mysql,mysqldump,nodejs,odroid,pages,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,static,ubuntu,unrealengine,vagrant,vm,vps,zip," />
     <meta itemprop="wordCount" content="1291">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
@@ -105,7 +105,7 @@ Firstly, we&rsquo;ll create our dir structure. I&rsquo;ll use jag.co as a domain
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
                 </li>
                 
                 
@@ -188,7 +188,7 @@ yum install php</code></pre></div></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">NameVirtualHost *:80</code></pre></div></p>
 <p>Secondly, we&rsquo;re going to create and edit the file /etc/httpd/conf.d/jag.co.conf and include the following content:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache">LoadModule suexec_module    lib/apache/mod_suexec.so
-<span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>VirtualHost *:80&amp;gt;
+<span style="color:#960050;background-color:#1e0010">&amp;lt;</span>VirtualHost *:80&amp;gt;
     ServerName jag.co
     DocumentRoot <span style="color:#e6db74">/var/www/vhosts/jag.co/httpdocs</span>
     ServerAdmin hostmaster@jag.co
@@ -199,27 +199,27 @@ yum install php</code></pre></div></p>
     SuexecUserGroup jag jag
     ScriptAlias <span style="color:#e6db74">/cgi-bin/</span> <span style="color:#e6db74">&#34;/var/www/vhosts/jag.co/.cgi-bin/&#34;</span>
 
-    <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>Directory <span style="color:#e6db74">&#34;/var/www/vhosts/jag.co/.cgi-bin/&#34;</span>&amp;gt;
+    <span style="color:#960050;background-color:#1e0010">&amp;lt;</span>Directory <span style="color:#e6db74">&#34;/var/www/vhosts/jag.co/.cgi-bin/&#34;</span>&amp;gt;
         AllowOverride <span style="color:#66d9ef">None</span>
         Order allow,deny
         Allow from <span style="color:#66d9ef">all</span>
-    <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">D</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">y</span><span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>
+    <span style="color:#960050;background-color:#1e0010">&amp;lt;/Directory&amp;gt;</span>
 
-    <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>Directory <span style="color:#e6db74">&#34;/var/www/vhosts/jag.co/httpdocs&#34;</span>&amp;gt;
+    <span style="color:#960050;background-color:#1e0010">&amp;lt;</span>Directory <span style="color:#e6db74">&#34;/var/www/vhosts/jag.co/httpdocs&#34;</span>&amp;gt;
         Options Indexes Includes FollowSymLinks
         AllowOverride <span style="color:#66d9ef">All</span>
         <span style="color:#75715e">#mod_php executes all php by default, so we need to use the Filesmatch directive to tell apache we want to execute php with our own cgi-bin.</span>
-        <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>FilesMatch <span style="color:#e6db74">&#34;.+\.ph(p[345]?|t|tml)$&#34;</span>&amp;gt;
+        <span style="color:#960050;background-color:#1e0010">&amp;lt;</span>FilesMatch <span style="color:#e6db74">&#34;.+\.ph(p[345]?|t|tml)$&#34;</span>&amp;gt;
             SetHandler php5-fastcgi
             Action php5-fastcgi <span style="color:#e6db74">/cgi-bin/php.fcgi</span>
-        <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">F</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">M</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>
+        <span style="color:#960050;background-color:#1e0010">&amp;lt;/FilesMatch&amp;gt;</span>
         Order allow,deny
         Allow from <span style="color:#66d9ef">all</span>
-    <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">D</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">y</span><span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>
+    <span style="color:#960050;background-color:#1e0010">&amp;lt;/Directory&amp;gt;</span>
 	<span style="color:#75715e">#allow 20M request, just to manage files</span>
     FcgidMaxRequestLen <span style="color:#ae81ff">20000000</span>
 
-<span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">V</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">H</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span></code></pre></div>
+<span style="color:#960050;background-color:#1e0010">&amp;lt;/VirtualHost&amp;gt;</span></code></pre></div>
 <p>Here we&rsquo;re telling apache some basic directives to use with our virtualhost, like error logs (remember to create these files and set their permissions correctly) or how to execute php files. To execute php we&rsquo;ll be using suexec_mod, which allow us to execute php under different users, thus improving security between virtual hosts. By default, mod_php will take all our php files and execute them under apache user. So if we don&rsquo;t want that to happen under our virtualhost, we&rsquo;ll use the directive SetHandler to change that. This way, we&rsquo;re telling apache to execute .php files with an script we&rsquo;ll create later.
 Now, we need to create log files:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache">mkdir -p <span style="color:#e6db74">/var/www/vhosts/jag.co/logs/</span>
@@ -283,66 +283,66 @@ mysql_secure_installation</code></pre></div></p>
 Alias <span style="color:#e6db74">/phpMyAdmin</span> <span style="color:#e6db74">/usr/share/phpMyAdmin</span>
 Alias <span style="color:#e6db74">/phpmyadmin</span> <span style="color:#e6db74">/usr/share/phpMyAdmin</span>
 
-<span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>Directory <span style="color:#e6db74">/usr/share/phpMyAdmin/</span>&amp;gt;
+<span style="color:#960050;background-color:#1e0010">&amp;lt;</span>Directory <span style="color:#e6db74">/usr/share/phpMyAdmin/</span>&amp;gt;
    AddDefaultCharset UTF-8
 
-   <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>IfModule mod_authz_core.c&amp;gt;
+   <span style="color:#960050;background-color:#1e0010">&amp;lt;</span>IfModule mod_authz_core.c&amp;gt;
      <span style="color:#75715e"># Apache 2.4</span>
-     <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#960050;background-color:#1e0010">R</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">q</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">A</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">y</span><span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>
+     <span style="color:#960050;background-color:#1e0010">&amp;lt;RequireAny&amp;gt;</span>
        Require ip <span style="color:#ae81ff">127.0.0.1</span>
        Require ip ::1
        Require x.x.x.x
-     <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">R</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">q</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">A</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">y</span><span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>
-   <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">I</span><span style="color:#960050;background-color:#1e0010">f</span><span style="color:#960050;background-color:#1e0010">M</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>
-   <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>IfModule !mod_authz_core.c&amp;gt;
+     <span style="color:#960050;background-color:#1e0010">&amp;lt;/RequireAny&amp;gt;</span>
+   <span style="color:#960050;background-color:#1e0010">&amp;lt;/IfModule&amp;gt;</span>
+   <span style="color:#960050;background-color:#1e0010">&amp;lt;</span>IfModule !mod_authz_core.c&amp;gt;
      <span style="color:#75715e"># Apache 2.2</span>
      Order Deny,Allow
      Deny from <span style="color:#66d9ef">All</span>
      Allow from <span style="color:#ae81ff">127.0.0.1</span>
      Allow from ::1
      Allow from x.x.x.x
-   <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">I</span><span style="color:#960050;background-color:#1e0010">f</span><span style="color:#960050;background-color:#1e0010">M</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>
-<span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">D</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">y</span><span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>
+   <span style="color:#960050;background-color:#1e0010">&amp;lt;/IfModule&amp;gt;</span>
+<span style="color:#960050;background-color:#1e0010">&amp;lt;/Directory&amp;gt;</span>
 
-<span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>Directory <span style="color:#e6db74">/usr/share/phpMyAdmin/setup/</span>&amp;gt;
-   <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>IfModule mod_authz_core.c&amp;gt;
+<span style="color:#960050;background-color:#1e0010">&amp;lt;</span>Directory <span style="color:#e6db74">/usr/share/phpMyAdmin/setup/</span>&amp;gt;
+   <span style="color:#960050;background-color:#1e0010">&amp;lt;</span>IfModule mod_authz_core.c&amp;gt;
      <span style="color:#75715e"># Apache 2.4</span>
-     <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#960050;background-color:#1e0010">R</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">q</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">A</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">y</span><span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>
+     <span style="color:#960050;background-color:#1e0010">&amp;lt;RequireAny&amp;gt;</span>
        Require ip <span style="color:#ae81ff">127.0.0.1</span>
        Require ip ::1
        Require x.x.x.x
-     <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">R</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">q</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">A</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">y</span><span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>
-   <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">I</span><span style="color:#960050;background-color:#1e0010">f</span><span style="color:#960050;background-color:#1e0010">M</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>
-   <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>IfModule !mod_authz_core.c&amp;gt;
+     <span style="color:#960050;background-color:#1e0010">&amp;lt;/RequireAny&amp;gt;</span>
+   <span style="color:#960050;background-color:#1e0010">&amp;lt;/IfModule&amp;gt;</span>
+   <span style="color:#960050;background-color:#1e0010">&amp;lt;</span>IfModule !mod_authz_core.c&amp;gt;
      <span style="color:#75715e"># Apache 2.2</span>
      Order Deny,Allow
      Deny from <span style="color:#66d9ef">All</span>
      Allow from <span style="color:#ae81ff">127.0.0.1</span>
      Allow from ::1
      Allow from x.x.x.x
-   <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">I</span><span style="color:#960050;background-color:#1e0010">f</span><span style="color:#960050;background-color:#1e0010">M</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>
-<span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">D</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">y</span><span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>
+   <span style="color:#960050;background-color:#1e0010">&amp;lt;/IfModule&amp;gt;</span>
+<span style="color:#960050;background-color:#1e0010">&amp;lt;/Directory&amp;gt;</span>
 
 <span style="color:#75715e"># These directories do not require access over HTTP - taken from the original</span>
 <span style="color:#75715e"># phpMyAdmin upstream tarball</span>
 <span style="color:#75715e">#</span>
-<span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>Directory <span style="color:#e6db74">/usr/share/phpMyAdmin/libraries/</span>&amp;gt;
+<span style="color:#960050;background-color:#1e0010">&amp;lt;</span>Directory <span style="color:#e6db74">/usr/share/phpMyAdmin/libraries/</span>&amp;gt;
     Order Deny,Allow
     Deny from <span style="color:#66d9ef">All</span>
     Allow from <span style="color:#66d9ef">None</span>
-<span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">D</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">y</span><span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>
+<span style="color:#960050;background-color:#1e0010">&amp;lt;/Directory&amp;gt;</span>
 
-<span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>Directory <span style="color:#e6db74">/usr/share/phpMyAdmin/setup/lib/</span>&amp;gt;
+<span style="color:#960050;background-color:#1e0010">&amp;lt;</span>Directory <span style="color:#e6db74">/usr/share/phpMyAdmin/setup/lib/</span>&amp;gt;
     Order Deny,Allow
     Deny from <span style="color:#66d9ef">All</span>
     Allow from <span style="color:#66d9ef">None</span>
-<span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">D</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">y</span><span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>
+<span style="color:#960050;background-color:#1e0010">&amp;lt;/Directory&amp;gt;</span>
 
-<span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>Directory <span style="color:#e6db74">/usr/share/phpMyAdmin/setup/frames/</span>&amp;gt;
+<span style="color:#960050;background-color:#1e0010">&amp;lt;</span>Directory <span style="color:#e6db74">/usr/share/phpMyAdmin/setup/frames/</span>&amp;gt;
     Order Deny,Allow
     Deny from <span style="color:#66d9ef">All</span>
     Allow from <span style="color:#66d9ef">None</span>
-<span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">D</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">y</span><span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">;</span>
+<span style="color:#960050;background-color:#1e0010">&amp;lt;/Directory&amp;gt;</span>
 
 <span style="color:#75715e"># This configuration prevents mod_security at phpMyAdmin directories from</span>
 <span style="color:#75715e"># filtering SQL etc.  This may break your mod_security implementation.</span>
@@ -434,14 +434,14 @@ s.setAttribute('data-timestamp', +new Date());
 <h4>Author</h4>
     <div class='avatar-container'>
       <img alt="author's photo" class='author_avatar' width='160' height='136' src="/img/me.min.png"  />
-      <h4 rel='author'>Jeferson Arboleda</h4>
+      <h4 rel='author'>Jefferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
       <p class= 'm-text-centered m-bold'>Business Analyst</p>
       <p>Currently working for <a href="https://amadeus.com/en">Amadeus</a> in Nice, Côte D&rsquo;Azur.</p>
       <div class='authorsocial'>
         
-          <a href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+          <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
         
         
           <a href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
@@ -488,12 +488,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/moving-to-france-for-work/' target='_blank'>
-                    <img alt='Moving to France for work' width='72' height='72' src="/articles/img/thumbs/moving-to-france-for-work.jpg" />
+                  <a href='/articles/zipping-and-unzipping-websites-with-php/' target='_blank'>
+                    <img alt='Zipping and unzipping websites with php' width='72' height='72' src="/articles/img/thumbs/zipping-and-unzipping-websites-with-php.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/moving-to-france-for-work/' class="mostVisitedLink">Moving to France for work</a>
+                  <a href='/articles/zipping-and-unzipping-websites-with-php/' class="mostVisitedLink">Zipping and unzipping websites with php</a>
                 </div>
               </div>
             </li>
@@ -503,12 +503,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/centos-web-panel-on-vps/' target='_blank'>
-                    <img alt='Centos web panel with php7 and mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
+                  <a href='/articles/facebook-sharer-and-ipv6-issue/' target='_blank'>
+                    <img alt='Facebook sharer and IPv6 issue' width='72' height='72' src="/articles/img/thumbs/facebook-sharer-and-ipv6-issue.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel with php7 and mysql5.6</a>
+                  <a href='/articles/facebook-sharer-and-ipv6-issue/' class="mostVisitedLink">Facebook sharer and IPv6 issue</a>
                 </div>
               </div>
             </li>
@@ -518,12 +518,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/web-development-environment/' target='_blank'>
-                    <img alt='Web development environment' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
+                  <a href='/articles/installing-magento2-on-cwp/' target='_blank'>
+                    <img alt='Installing magento2 on cwp' width='72' height='72' src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
+                  <a href='/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Installing magento2 on cwp</a>
                 </div>
               </div>
             </li>
@@ -563,7 +563,7 @@ s.setAttribute('data-timestamp', +new Date());
       <ul>
         
         <li>
-          <a class="btn-linkedin" href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+          <a class="btn-linkedin" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
         </li>
         
         

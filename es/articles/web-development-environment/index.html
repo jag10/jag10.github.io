@@ -5,7 +5,7 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     <meta name=viewport content="width=device-width, initial-scale=1">
     <title>J. Arboleda - Entorno para desarrollo web</title>
-    <meta name="description" content="El blog de Jeferson Arboleda, ingeniero informático. El blog está enfocado en la mejora de mis habilidades y en la superación de los retos que encuentro en mi día a día">
+    <meta name="description" content="El blog de Jefferson Arboleda, ingeniero informático. El blog está enfocado en la mejora de mis habilidades y en la superación de los retos que encuentro en mi día a día">
     
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -40,12 +40,12 @@ Usaremos las siguientes tecnologías. Deberías revisarlas antes de seguir con e
     <meta itemprop="description" content="En este post vamos a ver un entorno avanzado de desarrollo web. Tendremos nuestra web alojada en un servidor (que NO utilizaremos para nada durante el desarrollo), y en nuestra máquina local tendremos una máquina virtual para el sitio web en el que estemos trabajando. Para la máquina virtual utilizaremos vagrant con el stack de scotch, que nos viene preparado para montar directamente el sitio web sin trabajo extra.
 Requisitos previos
 Usaremos las siguientes tecnologías. Deberías revisarlas antes de seguir con el artículo.">
-    <meta name="author" content="Jeferson Arboleda">
+    <meta name="author" content="Jefferson Arboleda">
     
     <meta itemprop="image" content="web-development-environment.jpg">
     
-    <meta itemprop="keywords" content="notpinned,pinned,,serie1,bash,centos6,curl,cwp,fedora25,fopen,httpd,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,php,php7,piwik,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm," />
-    <meta itemprop="wordCount" content="1277">
+    <meta itemprop="keywords" content="notpinned,pinned,serie1,bash,centos6,curl,cwp,fedora25,fopen,httpd,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,php,php7,piwik,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm," />
+    <meta itemprop="wordCount" content="1403">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
 	<meta name="twitter:image:src" content="/articles/img/web-development-environment.jpg"/>
@@ -104,7 +104,7 @@ Usaremos las siguientes tecnologías. Deberías revisarlas antes de seguir con e
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
                 </li>
                 
                 
@@ -149,7 +149,7 @@ Usaremos las siguientes tecnologías. Deberías revisarlas antes de seguir con e
   <div class="article_summary">
     <div class="article-date">
       <p class="day"><i class="far fa-calendar-alt"></i>27 Jul 2016</p>
-      <p><i class="far fa-clock"></i>7 min read  ~ 1300 words</p>
+      <p><i class="far fa-clock"></i>8 min read  ~ 1500 words</p>
     </div>
     
     <div class="article-tags">
@@ -213,20 +213,20 @@ Si nuestro backup ocupa más de 2M, editaremos el fichero /etc/php5/apache2/php.
 <h2 id="estructura-de-directorios">Estructura de directorios</h2>
 <p>La estructura de ficheros para el desarrollo que utilizo es la siguiente:
 <pre><code class="language-cirru" data-lang="cirru">/templates/
-|-- css < Aquí se incluye el fichero global.min.css utilizado en producción (y cualquier otro, si hubiera más)
-|-- fonts < fuentes
-|-- img < imágenes utilizadas en el tema
-|-- js < ficheros .min.js de producción
-|-- lib < librerías necesarias en el tema
-|-- node_modules < módulos utilizados en desarrollo
-|-- partials < ficheros que contienen partes del tema (widgets, comentarios, etc)
-|-- src < código fuente de desarrollo
-|----sass < ficheros sass de desarrollo
-|------modules < utilidades sass, no producen código .css (ej: definir variables, placeholders, mixins)
-|------partials < ficheros sass para dar estilo a ciertas partes de la web (ej: menu.sass, article.sass, etc.)
-|------vendor < librerías de terceros (bootstrap, purecss, foundation, etc.)
-|----js < ficheros js de desarrollo
-.php < templates (header.php, footer.php. etc.)</code></pre></p>
+|-- css &lt; Aquí se incluye el fichero global.min.css utilizado en producción (y cualquier otro, si hubiera más)
+|-- fonts &lt; fuentes
+|-- img &lt; imágenes utilizadas en el tema
+|-- js &lt; ficheros .min.js de producción
+|-- lib &lt; librerías necesarias en el tema
+|-- node_modules &lt; módulos utilizados en desarrollo
+|-- partials &lt; ficheros que contienen partes del tema (widgets, comentarios, etc)
+|-- src &lt; código fuente de desarrollo
+|----sass &lt; ficheros sass de desarrollo
+|------modules &lt; utilidades sass, no producen código .css (ej: definir variables, placeholders, mixins)
+|------partials &lt; ficheros sass para dar estilo a ciertas partes de la web (ej: menu.sass, article.sass, etc.)
+|------vendor &lt; librerías de terceros (bootstrap, purecss, foundation, etc.)
+|----js &lt; ficheros js de desarrollo
+.php &lt; templates (header.php, footer.php. etc.)</code></pre></p>
 <h2 id="automatizando-tareas">Automatizando tareas</h2>
 <p>Ya tenemos el entorno montado, el siguiente paso será utilizar gulp y compass para automatizar algunas tareas como compilar sass o comprimir los ficheros js. Para ello, empezaremos por instalar ruby en la <strong>máquina virtual</strong>:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vagrant ssh
@@ -315,7 +315,7 @@ Ya tenemos gulp y compass disponible, ahora tendremos que indicarle qué tareas 
 });
 </code></pre></div></p>
 <p>Como estamos trabajando en una máquina virtual, la extensión livereload no verá el servidor livereload porque lo va a buscar en localhost:35729. Para solucionarlo, tendremos que redigir el puerto 35729 de nuestra máquina local al puerto 35729 de la máquina virtual. Para ello:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">ssh</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">L</span> <span style="color:#ae81ff">35729</span><span style="color:#f92672">:</span><span style="color:#ae81ff">192.168</span><span style="color:#ae81ff">.33</span><span style="color:#ae81ff">.10</span><span style="color:#f92672">:</span><span style="color:#ae81ff">35729</span> <span style="color:#a6e22e">vagrant</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#ae81ff">192.168</span><span style="color:#ae81ff">.33</span><span style="color:#ae81ff">.10</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">ssh</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">L</span> <span style="color:#ae81ff">35729</span><span style="color:#f92672">:</span><span style="color:#ae81ff">192.168.33.10</span><span style="color:#f92672">:</span><span style="color:#ae81ff">35729</span> <span style="color:#a6e22e">vagrant</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#ae81ff">192.168.33.10</span>
 </code></pre></div>
 Ya está todo listo, ahora podremos utilizar gulp para automatizar tareas. Desde el directorio del proyecto:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">gulp</span> <span style="color:#a6e22e">live</span>
@@ -419,14 +419,14 @@ s.setAttribute('data-timestamp', +new Date());
 <h4>Author</h4>
     <div class='avatar-container'>
       <img alt="author's photo" class='author_avatar' width='160' height='136' src="/img/me.min.png"  />
-      <h4 rel='author'>Jeferson Arboleda</h4>
+      <h4 rel='author'>Jefferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
       <p class= 'm-text-centered m-bold'>Business Analyst</p>
       <p>Actualmente trabajo para <a href="https://amadeus.com/en">Amadeus</a> en Niza, Côte D&rsquo;Azur.</p>
       <div class='authorsocial'>
         
-          <a href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+          <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
         
         
           <a href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
@@ -474,12 +474,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
-                    <img alt='Autenticando usuarios con cURL' width='72' height='72' src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
+                  <a href='/es/articles/getting-an-objects-methods/' target='_blank'>
+                    <img alt='Obteniendo los métodos (reflejados) de un objeto' width='72' height='72' src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Autenticando usuarios con cURL</a>
+                  <a href='/es/articles/getting-an-objects-methods/' class="mostVisitedLink">Obteniendo los métodos (reflejados) de un objeto</a>
                 </div>
               </div>
             </li>
@@ -489,12 +489,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/using-piwik-api-locally-with-pw/' target='_blank'>
-                    <img alt='Utilizando la API de piwik en local con PW' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
+                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
+                    <img alt='Instalando unreal engine en fedora 25' width='72' height='72' src="/articles/img/thumbs/unreal_engine.min.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Utilizando la API de piwik en local con PW</a>
+                  <a href='/es/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">Instalando unreal engine en fedora 25</a>
                 </div>
               </div>
             </li>
@@ -549,7 +549,7 @@ s.setAttribute('data-timestamp', +new Date());
       <ul>
         
         <li>
-          <a class="btn-linkedin" href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+          <a class="btn-linkedin" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
         </li>
         
         

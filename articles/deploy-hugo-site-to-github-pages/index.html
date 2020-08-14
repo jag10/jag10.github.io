@@ -5,7 +5,7 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     <meta name=viewport content="width=device-width, initial-scale=1">
     <title>J. Arboleda - Deploying a hugo site to github pages</title>
-    <meta name="description" content="The blog of Jeferson Arboleda, software engineer. It&#39;s focused on self improvement and overcoming challenges I find everyday">
+    <meta name="description" content="The blog of Jefferson Arboleda, software engineer. It&#39;s focused on self improvement and overcoming challenges I find everyday">
     
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -47,11 +47,11 @@ For this task, we&rsquo;ll use a couple of bash scripts that will:
 Commit changes and push them to github.
 Generate thumbnails and low quality versions of the images used in the blog so it loads faster.
 ">
-    <meta name="author" content="Jeferson Arboleda">
+    <meta name="author" content="Jefferson Arboleda">
     
     <meta itemprop="image" content="deploy-hugo-site-to-github-pages.jpg">
     
-    <meta itemprop="keywords" content="notpinned,pinned,,false,true,serie1,arduino,backup,backups,bash,case,centos6,cloudflare,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,github,github-pages,httpd,hugo,iptables,ipv6,job,lego,linkedin,magento,magento2,mate,move,mysql,mysqldump,nodejs,odroid,pages,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,static,ubuntu,unrealengine,vagrant,vm,vps,zip," />
+    <meta itemprop="keywords" content="notpinned,pinned,false,true,serie1,arduino,backup,backups,bash,case,centos6,cloudflare,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,github,github-pages,httpd,hugo,iptables,ipv6,job,lego,linkedin,magento,magento2,mate,move,mysql,mysqldump,nodejs,odroid,pages,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,static,ubuntu,unrealengine,vagrant,vm,vps,zip," />
     <meta itemprop="wordCount" content="317">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
@@ -110,7 +110,7 @@ Generate thumbnails and low quality versions of the images used in the blog so i
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
                 </li>
                 
                 
@@ -193,7 +193,7 @@ echo <span style="color:#e6db74">&#34;generating thumbnails&#34;</span>;
 <span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>find $article_images_dir -maxdepth <span style="color:#ae81ff">1</span> -type f <span style="color:#ae81ff">\(</span> -name <span style="color:#e6db74">&#34;*.jpg&#34;</span> -or -name <span style="color:#e6db74">&#34;*.png&#34;</span> <span style="color:#ae81ff">\)</span> <span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span>
   filename<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>basename $i<span style="color:#66d9ef">)</span>
   <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> -nt <span style="color:#e6db74">&#34;</span>$thumbnails_dir$filename<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">[</span> ! -f <span style="color:#e6db74">&#34;</span>$thumbnails_dir$filename<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$force<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> true <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-    echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">converting </span>$i<span style="color:#e6db74">&#34;</span>;
+    echo <span style="color:#e6db74">&#34;converting </span>$i<span style="color:#e6db74">&#34;</span>;
     convert <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> -thumbnail $thumbnail_size -quality <span style="color:#ae81ff">100</span> <span style="color:#e6db74">&#34;</span>$thumbnails_dir<span style="color:#66d9ef">$(</span>basename $i<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>;
   <span style="color:#66d9ef">fi</span>
 <span style="color:#66d9ef">done</span>;
@@ -207,7 +207,7 @@ echo <span style="color:#e6db74">&#34;generating low quality images&#34;</span>
   <span style="color:#66d9ef">fi</span>
   thumbs_dir<span style="color:#f92672">=</span>$dirname<span style="color:#e6db74">&#34;/min/&#34;</span>
   <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> -nt <span style="color:#e6db74">&#34;</span>$thumbs_dir$filename<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">[</span> ! -f <span style="color:#e6db74">&#34;</span>$thumbs_dir$filename<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$force<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> true <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-    echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">converting </span>$i<span style="color:#e6db74">&#34;</span>;
+    echo <span style="color:#e6db74">&#34;converting </span>$i<span style="color:#e6db74">&#34;</span>;
     convert <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> -scale <span style="color:#ae81ff">800</span> -quality <span style="color:#ae81ff">100</span> <span style="color:#e6db74">&#34;</span>$thumbs_dir$filename<span style="color:#e6db74">&#34;</span>;
   <span style="color:#66d9ef">fi</span>
 <span style="color:#66d9ef">done</span>;</code></pre></div>
@@ -297,14 +297,14 @@ s.setAttribute('data-timestamp', +new Date());
 <h4>Author</h4>
     <div class='avatar-container'>
       <img alt="author's photo" class='author_avatar' width='160' height='136' src="/img/me.min.png"  />
-      <h4 rel='author'>Jeferson Arboleda</h4>
+      <h4 rel='author'>Jefferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
       <p class= 'm-text-centered m-bold'>Business Analyst</p>
       <p>Currently working for <a href="https://amadeus.com/en">Amadeus</a> in Nice, Côte D&rsquo;Azur.</p>
       <div class='authorsocial'>
         
-          <a href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+          <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
         
         
           <a href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
@@ -349,12 +349,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/getting-0.5s-page-load-time-on-your-blog/' target='_blank'>
-                    <img alt='Getting 0.5 seconds load time on your blog' width='72' height='72' src="/articles/img/thumbs/getting-0.5s-page-load-time-on-your-blog.png" />
+                  <a href='/articles/transferring-files-with-ftp-through-bash-expect-script/' target='_blank'>
+                    <img alt='Transferring files with FTP through bash expect script' width='72' height='72' src="/articles/img/thumbs/transferring-files-with-ftp-through-bash-expect-script.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/getting-0.5s-page-load-time-on-your-blog/' class="mostVisitedLink">Getting 0.5 seconds load time on your blog</a>
+                  <a href='/articles/transferring-files-with-ftp-through-bash-expect-script/' class="mostVisitedLink">Transferring files with FTP through bash expect script</a>
                 </div>
               </div>
             </li>
@@ -364,12 +364,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/zipping-and-unzipping-websites-with-php/' target='_blank'>
-                    <img alt='Zipping and unzipping websites with php' width='72' height='72' src="/articles/img/thumbs/zipping-and-unzipping-websites-with-php.png" />
+                  <a href='/articles/getting-an-objects-methods/' target='_blank'>
+                    <img alt='Getting an object&#39;s (reflected) methods' width='72' height='72' src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/zipping-and-unzipping-websites-with-php/' class="mostVisitedLink">Zipping and unzipping websites with php</a>
+                  <a href='/articles/getting-an-objects-methods/' class="mostVisitedLink">Getting an object&#39;s (reflected) methods</a>
                 </div>
               </div>
             </li>
@@ -379,12 +379,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img alt='installing unreal engine on fedora 25' width='72' height='72' src="/articles/img/thumbs/unreal_engine.min.jpg" />
+                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img alt='Fixing a corrupted partition on a virtual machine' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
+                  <a href='/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
                 </div>
               </div>
             </li>
@@ -424,7 +424,7 @@ s.setAttribute('data-timestamp', +new Date());
       <ul>
         
         <li>
-          <a class="btn-linkedin" href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+          <a class="btn-linkedin" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
         </li>
         
         

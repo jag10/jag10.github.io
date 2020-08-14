@@ -5,7 +5,7 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     <meta name=viewport content="width=device-width, initial-scale=1">
     <title>J. Arboleda - Instalando magento2 en cwp</title>
-    <meta name="description" content="El blog de Jeferson Arboleda, ingeniero informático. El blog está enfocado en la mejora de mis habilidades y en la superación de los retos que encuentro en mi día a día">
+    <meta name="description" content="El blog de Jefferson Arboleda, ingeniero informático. El blog está enfocado en la mejora de mis habilidades y en la superación de los retos que encuentro en mi día a día">
     
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -38,11 +38,11 @@ En este post explicaré cómo instalar magento2 sobre Centos Web Panel, utilizan
     <meta itemprop="name" content="Instalando magento2 en cwp">
     <meta itemprop="description" content="Empezando
 En este post explicaré cómo instalar magento2 sobre Centos Web Panel, utilizando php7 y mysql 5.6. Para empezar, tenemos que compilar php con las extensiones que magento2 necesita. Con el siguiente comando podremos configurar php7 para luego compilarlo y conseguir que funcione con magento2.">
-    <meta name="author" content="Jeferson Arboleda">
+    <meta name="author" content="Jefferson Arboleda">
     
     <meta itemprop="image" content="installing-magento2-on-cwp.jpg">
     
-    <meta itemprop="keywords" content="notpinned,pinned,,serie1,bash,centos6,curl,cwp,fedora25,fopen,httpd,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,php,php7,piwik,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm," />
+    <meta itemprop="keywords" content="notpinned,pinned,serie1,bash,centos6,curl,cwp,fedora25,fopen,httpd,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,php,php7,piwik,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm," />
     <meta itemprop="wordCount" content="302">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
@@ -101,7 +101,7 @@ En este post explicaré cómo instalar magento2 sobre Centos Web Panel, utilizan
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
                 </li>
                 
                 
@@ -208,8 +208,8 @@ Es posible cambiar las rutas, pero es aconsejable que instales al menos estas ex
 <p>El siguiente paso es descargar e instalar magento2, será muy fácil si el servidor cumple los requisitos (principalmente las extensiones de php y mysql 5.6+).
 <a href="https://www.magentocommerce.com/download">https://www.magentocommerce.com/download</a></p>
 <p>Cuando instalamos magento2, éste empezará a quejarse de los permisos. Magento2, por defecto, necesita que los directorios tengan permisos 0700, el problema es que esto no funcionará en la mayoría de hostings (si usan plesk, cPanel, etc.) Así que tenemos que cambiar todos los permisos de las carpetas y ficheros con el siguiente comando:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">find /path/to/magento -type f -exec chmod <span style="color:#ae81ff">644</span> <span style="color:#f92672">{</span><span style="color:#f92672">}</span> <span style="color:#ae81ff">\;</span>
-find path/to/magento -type d -exec chmod <span style="color:#ae81ff">755</span> <span style="color:#f92672">{</span><span style="color:#f92672">}</span> <span style="color:#ae81ff">\;</span></code></pre></div></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">find /path/to/magento -type f -exec chmod <span style="color:#ae81ff">644</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+find path/to/magento -type d -exec chmod <span style="color:#ae81ff">755</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></code></pre></div></p>
 <p>Luego, hay que indicarle a magento2 que cree los nuevos ficheros y directorios con estos permisos. Podemos hacerlo en el siguiente fichero:
 <code>/vendor/magento/framework/Filesystem/DriverInterface.php</code>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">/vendor/magento/framework/Filesystem/DriverInterface.php
@@ -307,14 +307,14 @@ s.setAttribute('data-timestamp', +new Date());
 <h4>Author</h4>
     <div class='avatar-container'>
       <img alt="author's photo" class='author_avatar' width='160' height='136' src="/img/me.min.png"  />
-      <h4 rel='author'>Jeferson Arboleda</h4>
+      <h4 rel='author'>Jefferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
       <p class= 'm-text-centered m-bold'>Business Analyst</p>
       <p>Actualmente trabajo para <a href="https://amadeus.com/en">Amadeus</a> en Niza, Côte D&rsquo;Azur.</p>
       <div class='authorsocial'>
         
-          <a href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+          <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
         
         
           <a href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
@@ -374,12 +374,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/getting-an-objects-methods/' target='_blank'>
-                    <img alt='Obteniendo los métodos (reflejados) de un objeto' width='72' height='72' src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
+                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img alt='Arreglando una partición corrupta de una máquina virtual' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/getting-an-objects-methods/' class="mostVisitedLink">Obteniendo los métodos (reflejados) de un objeto</a>
+                  <a href='/es/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Arreglando una partición corrupta de una máquina virtual</a>
                 </div>
               </div>
             </li>
@@ -389,12 +389,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/es/articles/web-development-environment/' target='_blank'>
-                    <img alt='Entorno para desarrollo web' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
+                  <a href='/es/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
+                    <img alt='Haciendo un backup de todas las BD usando mysqldump' width='72' height='72' src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/es/articles/web-development-environment/' class="mostVisitedLink">Entorno para desarrollo web</a>
+                  <a href='/es/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Haciendo un backup de todas las BD usando mysqldump</a>
                 </div>
               </div>
             </li>
@@ -434,7 +434,7 @@ s.setAttribute('data-timestamp', +new Date());
       <ul>
         
         <li>
-          <a class="btn-linkedin" href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+          <a class="btn-linkedin" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
         </li>
         
         

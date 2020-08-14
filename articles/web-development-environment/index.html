@@ -5,7 +5,7 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     <meta name=viewport content="width=device-width, initial-scale=1">
     <title>J. Arboleda - Web development environment</title>
-    <meta name="description" content="The blog of Jeferson Arboleda, software engineer. It&#39;s focused on self improvement and overcoming challenges I find everyday">
+    <meta name="description" content="The blog of Jefferson Arboleda, software engineer. It&#39;s focused on self improvement and overcoming challenges I find everyday">
     
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -40,12 +40,12 @@ We&rsquo;ll use the following tecnologies for our environment. You should review
     <meta itemprop="description" content="In this post we&rsquo;ll configure an advanced web development environment. For that, we&rsquo;ll have our web hosted on a server (we will NOT use that server for development), and in our station we&rsquo;ll have a virtual machine. For this vm we&rsquo;ll use vagrant with the  scotch box, which allows us to host a web without extra work
 Prerequisites
 We&rsquo;ll use the following tecnologies for our environment. You should review them before going on.">
-    <meta name="author" content="Jeferson Arboleda">
+    <meta name="author" content="Jefferson Arboleda">
     
     <meta itemprop="image" content="web-development-environment.jpg">
     
-    <meta itemprop="keywords" content="notpinned,pinned,,false,true,serie1,arduino,backup,backups,bash,case,centos6,cloudflare,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,github,github-pages,httpd,hugo,iptables,ipv6,job,lego,linkedin,magento,magento2,mate,move,mysql,mysqldump,nodejs,odroid,pages,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,static,ubuntu,unrealengine,vagrant,vm,vps,zip," />
-    <meta itemprop="wordCount" content="1136">
+    <meta itemprop="keywords" content="notpinned,pinned,false,true,serie1,arduino,backup,backups,bash,case,centos6,cloudflare,curl,cwp,facebook,fail2ban,fedora25,fopen,ftp,github,github-pages,httpd,hugo,iptables,ipv6,job,lego,linkedin,magento,magento2,mate,move,mysql,mysqldump,nodejs,odroid,pages,performance,php,php7,piwik,plesk,processwire,reflectionmethod,sass,static,ubuntu,unrealengine,vagrant,vm,vps,zip," />
+    <meta itemprop="wordCount" content="1246">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
 	<meta name="twitter:image:src" content="/articles/img/web-development-environment.jpg"/>
@@ -104,7 +104,7 @@ We&rsquo;ll use the following tecnologies for our environment. You should review
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
                 </li>
                 
                 
@@ -149,7 +149,7 @@ We&rsquo;ll use the following tecnologies for our environment. You should review
   <div class="article_summary">
     <div class="article-date">
       <p class="day"><i class="far fa-calendar-alt"></i>27 Jul 2016</p>
-      <p><i class="far fa-clock"></i>7 min read  ~ 1200 words</p>
+      <p><i class="far fa-clock"></i>7 min read  ~ 1300 words</p>
     </div>
     
     <div class="article-tags">
@@ -213,20 +213,20 @@ wget https://www.adminer.org/static/download/4.2.5/adminer-4.2.5.php</code></pre
 <h2 id="dir-structure">Dir structure</h2>
 <p>The dir structure I use for development is the following:
 <pre><code class="language-cirru" data-lang="cirru">/templates/
-|-- css < Here we'll save the global.min.css used in production (and any other, if needed)
-|-- fonts < well, fonts
-|-- img < images used in the template
-|-- js < .min.js files used in production
-|-- lib < libraries needed in the template
-|-- node_modules < nodejs modules used
-|-- partials < These files contain some parts of the template itself (widgets, comments...)
-|-- src < source code
-|----sass < sass files
-|------modules < sass utilites, they don't output any css code (variables, placeholders...)
-|------partials < partial sass files (menu.sass, article.sass,...)
-|------vendor < 3rd party libraries (bootstrap, purecss, foundation...)
-|----js < source js files
-.php < templates (header.php, footer.php. etc.)</code></pre></p>
+|-- css &lt; Here we&#39;ll save the global.min.css used in production (and any other, if needed)
+|-- fonts &lt; well, fonts
+|-- img &lt; images used in the template
+|-- js &lt; .min.js files used in production
+|-- lib &lt; libraries needed in the template
+|-- node_modules &lt; nodejs modules used
+|-- partials &lt; These files contain some parts of the template itself (widgets, comments...)
+|-- src &lt; source code
+|----sass &lt; sass files
+|------modules &lt; sass utilites, they don&#39;t output any css code (variables, placeholders...)
+|------partials &lt; partial sass files (menu.sass, article.sass,...)
+|------vendor &lt; 3rd party libraries (bootstrap, purecss, foundation...)
+|----js &lt; source js files
+.php &lt; templates (header.php, footer.php. etc.)</code></pre></p>
 <h2 id="automating-tasks">Automating tasks</h2>
 <p>Now we have the dev environment prepared, the next step is to use gulp and compass in order to automatize some tasks like compile sass or minify js files. For that, we need to install ruby in the virtual machine:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vagrant ssh
@@ -315,7 +315,7 @@ compass create &lt;project_name&gt;</code></pre></div></p>
 });
 </code></pre></div></p>
 <p>Since we are working on a vm, livereload extension won&rsquo;t detect the livereload server because it&rsquo;ll look for it on localhost:35729. To solve this, we need to redirect theport to our vm. For that:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">ssh</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">L</span> <span style="color:#ae81ff">35729</span><span style="color:#f92672">:</span><span style="color:#ae81ff">192.168</span><span style="color:#ae81ff">.33</span><span style="color:#ae81ff">.10</span><span style="color:#f92672">:</span><span style="color:#ae81ff">35729</span> <span style="color:#a6e22e">vagrant</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#ae81ff">192.168</span><span style="color:#ae81ff">.33</span><span style="color:#ae81ff">.10</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">ssh</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">L</span> <span style="color:#ae81ff">35729</span><span style="color:#f92672">:</span><span style="color:#ae81ff">192.168.33.10</span><span style="color:#f92672">:</span><span style="color:#ae81ff">35729</span> <span style="color:#a6e22e">vagrant</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#ae81ff">192.168.33.10</span>
 </code></pre></div>
 Now we are set, we can use gulp to automatize tasks. From our project directory:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">gulp</span> <span style="color:#a6e22e">live</span>
@@ -421,14 +421,14 @@ s.setAttribute('data-timestamp', +new Date());
 <h4>Author</h4>
     <div class='avatar-container'>
       <img alt="author's photo" class='author_avatar' width='160' height='136' src="/img/me.min.png"  />
-      <h4 rel='author'>Jeferson Arboleda</h4>
+      <h4 rel='author'>Jefferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
       <p class= 'm-text-centered m-bold'>Business Analyst</p>
       <p>Currently working for <a href="https://amadeus.com/en">Amadeus</a> in Nice, Côte D&rsquo;Azur.</p>
       <div class='authorsocial'>
         
-          <a href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+          <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
         
         
           <a href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
@@ -476,12 +476,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/transferring-files-with-ftp-through-bash-expect-script/' target='_blank'>
-                    <img alt='Transferring files with FTP through bash expect script' width='72' height='72' src="/articles/img/thumbs/transferring-files-with-ftp-through-bash-expect-script.png" />
+                  <a href='/articles/getting-0.5s-page-load-time-on-your-blog/' target='_blank'>
+                    <img alt='Getting 0.5 seconds load time on your blog' width='72' height='72' src="/articles/img/thumbs/getting-0.5s-page-load-time-on-your-blog.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/transferring-files-with-ftp-through-bash-expect-script/' class="mostVisitedLink">Transferring files with FTP through bash expect script</a>
+                  <a href='/articles/getting-0.5s-page-load-time-on-your-blog/' class="mostVisitedLink">Getting 0.5 seconds load time on your blog</a>
                 </div>
               </div>
             </li>
@@ -491,12 +491,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img alt='installing unreal engine on fedora 25' width='72' height='72' src="/articles/img/thumbs/unreal_engine.min.jpg" />
+                  <a href='/articles/arduino-uno-lego-case/' target='_blank'>
+                    <img alt='Arduino UNO R3 lego case' width='72' height='72' src="/articles/img/thumbs/arduino-uno-lego-case.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
+                  <a href='/articles/arduino-uno-lego-case/' class="mostVisitedLink">Arduino UNO R3 lego case</a>
                 </div>
               </div>
             </li>
@@ -506,12 +506,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='/articles/installing-magento2-on-cwp/' target='_blank'>
-                    <img alt='Installing magento2 on cwp' width='72' height='72' src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
+                  <a href='/articles/getting-an-objects-methods/' target='_blank'>
+                    <img alt='Getting an object&#39;s (reflected) methods' width='72' height='72' src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Installing magento2 on cwp</a>
+                  <a href='/articles/getting-an-objects-methods/' class="mostVisitedLink">Getting an object&#39;s (reflected) methods</a>
                 </div>
               </div>
             </li>
@@ -551,7 +551,7 @@ s.setAttribute('data-timestamp', +new Date());
       <ul>
         
         <li>
-          <a class="btn-linkedin" href='https://www.linkedin.com/in/jeferson-arboleda-167429134' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+          <a class="btn-linkedin" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
         </li>
         
         
