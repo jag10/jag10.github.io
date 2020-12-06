@@ -38,6 +38,8 @@ En este post explicaré cómo instalar magento2 sobre Centos Web Panel, utilizan
     <meta itemprop="name" content="Instalando magento2 en cwp">
     <meta itemprop="description" content="Empezando
 En este post explicaré cómo instalar magento2 sobre Centos Web Panel, utilizando php7 y mysql 5.6. Para empezar, tenemos que compilar php con las extensiones que magento2 necesita. Con el siguiente comando podremos configurar php7 para luego compilarlo y conseguir que funcione con magento2.">
+    <meta name="description" content="Empezando
+En este post explicaré cómo instalar magento2 sobre Centos Web Panel, utilizando php7 y mysql 5.6. Para empezar, tenemos que compilar php con las extensiones que magento2 necesita. Con el siguiente comando podremos configurar php7 para luego compilarlo y conseguir que funcione con magento2.">
     <meta name="author" content="Jefferson Arboleda">
     
     <meta itemprop="image" content="installing-magento2-on-cwp.jpg">
@@ -60,7 +62,6 @@ En este post explicaré cómo instalar magento2 sobre Centos Web Panel, utilizan
 
     <link rel="preconnect" href="https://www.goodreads.com">
     <link rel="preconnect" href="https://goodreads.com">
-    <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font">
     <link rel="preload" href="/fonts/Lato-Black.ttf" as="font">
     
@@ -106,24 +107,24 @@ En este post explicaré cómo instalar magento2 sobre Centos Web Panel, utilizan
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+                  <a rel="noopener" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
                     <i aria-hidden="true" class='fab fa-linkedin-in'></i>
                   </a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
+                  <a rel="noopener" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
+                  <a rel="noopener" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
+                  <a rel="noopener" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
                 </li>
                 
                 <li class='pure-menu-item nt-search' id='nt-search'>
@@ -261,27 +262,27 @@ find path/to/magento -type d -exec chmod <span style="color:#ae81ff">755</span> 
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a  href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/&amp;title=Instalando%20magento2%20en%20cwp&amp;summary=%3ch2%20id=%22empezando%22%3eEmpezando%3c/h2%3e%0a%3cp%3eEn%20este%20post%20explicar%c3%a9%20c%c3%b3mo%20instalar%20magento2%20sobre%20Centos%20Web%20Panel,%20utilizando%20php7%20y%20mysql%205.6.%20Para%20empezar,%20tenemos%20que%20compilar%20php%20con%20las%20extensiones%20que%20magento2%20necesita.%20Con%20el%20siguiente%20comando%20podremos%20configurar%20php7%20para%20luego%20compilarlo%20y%20conseguir%20que%20funcione%20con%20magento2.%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/&amp;title=Instalando%20magento2%20en%20cwp&amp;summary=%3ch2%20id=%22empezando%22%3eEmpezando%3c/h2%3e%0a%3cp%3eEn%20este%20post%20explicar%c3%a9%20c%c3%b3mo%20instalar%20magento2%20sobre%20Centos%20Web%20Panel,%20utilizando%20php7%20y%20mysql%205.6.%20Para%20empezar,%20tenemos%20que%20compilar%20php%20con%20las%20extensiones%20que%20magento2%20necesita.%20Con%20el%20siguiente%20comando%20podremos%20configurar%20php7%20para%20luego%20compilarlo%20y%20conseguir%20que%20funcione%20con%20magento2.%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
-      <a  href="http://twitter.com/share?text=Instalando%20magento2%20en%20cwp&amp;url=https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="http://twitter.com/share?text=Instalando%20magento2%20en%20cwp&amp;url=https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
-      <a  href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-google-plus-g"></i>
       </a>
     </li>
     <li>
-      <a href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/&amp;media=%3cnil%3einstalling-magento2-on-cwp.jpg&amp;description=%3ch2%20id=%22empezando%22%3eEmpezando%3c/h2%3e%0a%3cp%3eEn%20este%20post%20explicar%c3%a9%20c%c3%b3mo%20instalar%20magento2%20sobre%20Centos%20Web%20Panel,%20utilizando%20php7%20y%20mysql%205.6.%20Para%20empezar,%20tenemos%20que%20compilar%20php%20con%20las%20extensiones%20que%20magento2%20necesita.%20Con%20el%20siguiente%20comando%20podremos%20configurar%20php7%20para%20luego%20compilarlo%20y%20conseguir%20que%20funcione%20con%20magento2.%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/&amp;media=%3cnil%3einstalling-magento2-on-cwp.jpg&amp;description=%3ch2%20id=%22empezando%22%3eEmpezando%3c/h2%3e%0a%3cp%3eEn%20este%20post%20explicar%c3%a9%20c%c3%b3mo%20instalar%20magento2%20sobre%20Centos%20Web%20Panel,%20utilizando%20php7%20y%20mysql%205.6.%20Para%20empezar,%20tenemos%20que%20compilar%20php%20con%20las%20extensiones%20que%20magento2%20necesita.%20Con%20el%20siguiente%20comando%20podremos%20configurar%20php7%20para%20luego%20compilarlo%20y%20conseguir%20que%20funcione%20con%20magento2.%3c/p%3e" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-pinterest-p"></i>
       </a>
     </li>
@@ -376,12 +377,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
-                    <img class="lazyload" alt='Autenticando usuarios con cURL' width='72' height='72' data-src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
+                  <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
+                    <img class="lazyload" alt='configuring a LAMP server on CentOS 6' width='72' height='72' data-src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Autenticando usuarios con cURL</a>
+                  <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
                 </div>
               </div>
             </li>
@@ -391,12 +392,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/' target='_blank'>
-                    <img class="lazyload" alt='Utilizando la API de piwik en local con PW' width='72' height='72' data-src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
+                  <a href='https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
+                    <img class="lazyload" alt='Instalando ubuntu 16.04 en odroid xu3 lite' width='72' height='72' data-src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Utilizando la API de piwik en local con PW</a>
+                  <a href='https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Instalando ubuntu 16.04 en odroid xu3 lite</a>
                 </div>
               </div>
             </li>
@@ -406,12 +407,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/getting-an-objects-methods/' target='_blank'>
-                    <img class="lazyload" alt='Obteniendo los métodos (reflejados) de un objeto' width='72' height='72' data-src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
+                  <a href='https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/' target='_blank'>
+                    <img class="lazyload" alt='Instalando magento2 en cwp' width='72' height='72' data-src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/getting-an-objects-methods/' class="mostVisitedLink">Obteniendo los métodos (reflejados) de un objeto</a>
+                  <a href='https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Instalando magento2 en cwp</a>
                 </div>
               </div>
             </li>

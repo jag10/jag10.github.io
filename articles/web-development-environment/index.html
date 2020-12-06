@@ -40,6 +40,9 @@ We&rsquo;ll use the following tecnologies for our environment. You should review
     <meta itemprop="description" content="In this post we&rsquo;ll configure an advanced web development environment. For that, we&rsquo;ll have our web hosted on a server (we will NOT use that server for development), and in our station we&rsquo;ll have a virtual machine. For this vm we&rsquo;ll use vagrant with the  scotch box, which allows us to host a web without extra work
 Prerequisites
 We&rsquo;ll use the following tecnologies for our environment. You should review them before going on.">
+    <meta name="description" content="In this post we&rsquo;ll configure an advanced web development environment. For that, we&rsquo;ll have our web hosted on a server (we will NOT use that server for development), and in our station we&rsquo;ll have a virtual machine. For this vm we&rsquo;ll use vagrant with the  scotch box, which allows us to host a web without extra work
+Prerequisites
+We&rsquo;ll use the following tecnologies for our environment. You should review them before going on.">
     <meta name="author" content="Jefferson Arboleda">
     
     <meta itemprop="image" content="web-development-environment.jpg">
@@ -63,7 +66,6 @@ We&rsquo;ll use the following tecnologies for our environment. You should review
 
     <link rel="preconnect" href="https://www.goodreads.com">
     <link rel="preconnect" href="https://goodreads.com">
-    <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font">
     <link rel="preload" href="/fonts/Lato-Black.ttf" as="font">
     
@@ -109,24 +111,24 @@ We&rsquo;ll use the following tecnologies for our environment. You should review
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+                  <a rel="noopener" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
                     <i aria-hidden="true" class='fab fa-linkedin-in'></i>
                   </a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
+                  <a rel="noopener" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
+                  <a rel="noopener" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
+                  <a rel="noopener" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
                 </li>
                 
                 <li class='pure-menu-item nt-search' id='nt-search'>
@@ -375,27 +377,27 @@ This repo doesn&rsquo;t contain the whole website, only the directory I use for 
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a  href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/web-development-environment/&amp;title=Web%20development%20environment&amp;summary=%3cp%3eIn%20this%20post%20we&amp;rsquo;ll%20configure%20an%20advanced%20web%20development%20environment.%20For%20that,%20we&amp;rsquo;ll%20have%20our%20web%20hosted%20on%20a%20server%20%28we%20will%20NOT%20use%20that%20server%20for%20development%29,%20and%20in%20our%20station%20we&amp;rsquo;ll%20have%20a%20virtual%20machine.%20For%20this%20vm%20we&amp;rsquo;ll%20use%20vagrant%20with%20the%20%20scotch%20box,%20which%20allows%20us%20to%20host%20a%20web%20without%20extra%20work%3c/p%3e%0a%3ch2%20id=%22prerequisites%22%3ePrerequisites%3c/h2%3e%0a%3cp%3eWe&amp;rsquo;ll%20use%20the%20following%20tecnologies%20for%20our%20environment.%20You%20should%20review%20them%20before%20going%20on.%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/web-development-environment/&amp;title=Web%20development%20environment&amp;summary=%3cp%3eIn%20this%20post%20we&amp;rsquo;ll%20configure%20an%20advanced%20web%20development%20environment.%20For%20that,%20we&amp;rsquo;ll%20have%20our%20web%20hosted%20on%20a%20server%20%28we%20will%20NOT%20use%20that%20server%20for%20development%29,%20and%20in%20our%20station%20we&amp;rsquo;ll%20have%20a%20virtual%20machine.%20For%20this%20vm%20we&amp;rsquo;ll%20use%20vagrant%20with%20the%20%20scotch%20box,%20which%20allows%20us%20to%20host%20a%20web%20without%20extra%20work%3c/p%3e%0a%3ch2%20id=%22prerequisites%22%3ePrerequisites%3c/h2%3e%0a%3cp%3eWe&amp;rsquo;ll%20use%20the%20following%20tecnologies%20for%20our%20environment.%20You%20should%20review%20them%20before%20going%20on.%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
-      <a  href="http://twitter.com/share?text=Web%20development%20environment&amp;url=https://www.jarboleda.me/articles/web-development-environment/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="http://twitter.com/share?text=Web%20development%20environment&amp;url=https://www.jarboleda.me/articles/web-development-environment/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/web-development-environment/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/web-development-environment/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
-      <a  href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/web-development-environment/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/web-development-environment/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-google-plus-g"></i>
       </a>
     </li>
     <li>
-      <a href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/web-development-environment/&amp;media=%3cnil%3eweb-development-environment.jpg&amp;description=%3cp%3eIn%20this%20post%20we&amp;rsquo;ll%20configure%20an%20advanced%20web%20development%20environment.%20For%20that,%20we&amp;rsquo;ll%20have%20our%20web%20hosted%20on%20a%20server%20%28we%20will%20NOT%20use%20that%20server%20for%20development%29,%20and%20in%20our%20station%20we&amp;rsquo;ll%20have%20a%20virtual%20machine.%20For%20this%20vm%20we&amp;rsquo;ll%20use%20vagrant%20with%20the%20%20scotch%20box,%20which%20allows%20us%20to%20host%20a%20web%20without%20extra%20work%3c/p%3e%0a%3ch2%20id=%22prerequisites%22%3ePrerequisites%3c/h2%3e%0a%3cp%3eWe&amp;rsquo;ll%20use%20the%20following%20tecnologies%20for%20our%20environment.%20You%20should%20review%20them%20before%20going%20on.%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/web-development-environment/&amp;media=%3cnil%3eweb-development-environment.jpg&amp;description=%3cp%3eIn%20this%20post%20we&amp;rsquo;ll%20configure%20an%20advanced%20web%20development%20environment.%20For%20that,%20we&amp;rsquo;ll%20have%20our%20web%20hosted%20on%20a%20server%20%28we%20will%20NOT%20use%20that%20server%20for%20development%29,%20and%20in%20our%20station%20we&amp;rsquo;ll%20have%20a%20virtual%20machine.%20For%20this%20vm%20we&amp;rsquo;ll%20use%20vagrant%20with%20the%20%20scotch%20box,%20which%20allows%20us%20to%20host%20a%20web%20without%20extra%20work%3c/p%3e%0a%3ch2%20id=%22prerequisites%22%3ePrerequisites%3c/h2%3e%0a%3cp%3eWe&amp;rsquo;ll%20use%20the%20following%20tecnologies%20for%20our%20environment.%20You%20should%20review%20them%20before%20going%20on.%3c/p%3e" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-pinterest-p"></i>
       </a>
     </li>
@@ -493,12 +495,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/' target='_blank'>
-                    <img class="lazyload" alt='Getting 1.5s page load time on a basic vps' width='72' height='72' data-src="/articles/img/thumbs/getting-1.5s-page-load-time-on-a-basic-vps.png" />
+                  <a href='https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
+                    <img class="lazyload" alt='configuring a LAMP server on CentOS 6' width='72' height='72' data-src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/' class="mostVisitedLink">Getting 1.5s page load time on a basic vps</a>
+                  <a href='https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
                 </div>
               </div>
             </li>
@@ -508,12 +510,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/moving-to-france-for-work/' target='_blank'>
-                    <img class="lazyload" alt='Moving to France for work' width='72' height='72' data-src="/articles/img/thumbs/moving-to-france-for-work.jpg" />
+                  <a href='https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/' target='_blank'>
+                    <img class="lazyload" alt='Using piwik&#39;s API locally with ProcessWire' width='72' height='72' data-src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/moving-to-france-for-work/' class="mostVisitedLink">Moving to France for work</a>
+                  <a href='https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Using piwik&#39;s API locally with ProcessWire</a>
                 </div>
               </div>
             </li>
@@ -523,12 +525,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/' target='_blank'>
-                    <img class="lazyload" alt='Transferring files with FTP through bash expect script' width='72' height='72' data-src="/articles/img/thumbs/transferring-files-with-ftp-through-bash-expect-script.png" />
+                  <a href='https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img class="lazyload" alt='Fixing a corrupted partition on a virtual machine' width='72' height='72' data-src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/' class="mostVisitedLink">Transferring files with FTP through bash expect script</a>
+                  <a href='https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
                 </div>
               </div>
             </li>

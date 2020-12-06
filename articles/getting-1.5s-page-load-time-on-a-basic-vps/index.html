@@ -42,6 +42,10 @@ My environment&rsquo;s specs are:" />
 As you can see on the graphics, I had 5s load time for my home page, which is kind of basic. It wasn&rsquo;t that bad if you look at the packages my server runs: gitlab, Roundcube&rsquo;s webmail, sentora (open source control panel) and piwik (stats management).
 Note: Those 11s peaks you see there were produced while I was doing load tests on my server.
 My environment&rsquo;s specs are:">
+    <meta name="description" content="The problem
+As you can see on the graphics, I had 5s load time for my home page, which is kind of basic. It wasn&rsquo;t that bad if you look at the packages my server runs: gitlab, Roundcube&rsquo;s webmail, sentora (open source control panel) and piwik (stats management).
+Note: Those 11s peaks you see there were produced while I was doing load tests on my server.
+My environment&rsquo;s specs are:">
     <meta name="author" content="Jefferson Arboleda">
     
     <meta itemprop="image" content="getting-1.5s-page-load-time-on-a-basic-vps.png">
@@ -66,7 +70,6 @@ My environment&rsquo;s specs are:"/>
 
     <link rel="preconnect" href="https://www.goodreads.com">
     <link rel="preconnect" href="https://goodreads.com">
-    <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font">
     <link rel="preload" href="/fonts/Lato-Black.ttf" as="font">
     
@@ -108,24 +111,24 @@ My environment&rsquo;s specs are:"/>
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+                  <a rel="noopener" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
                     <i aria-hidden="true" class='fab fa-linkedin-in'></i>
                   </a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
+                  <a rel="noopener" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
+                  <a rel="noopener" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
+                  <a rel="noopener" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
                 </li>
                 
                 <li class='pure-menu-item nt-search' id='nt-search'>
@@ -240,27 +243,27 @@ AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a  href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/&amp;title=Getting%201.5s%20page%20load%20time%20on%20a%20basic%20vps&amp;summary=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%3cp%3eAs%20you%20can%20see%20on%20the%20graphics,%20I%20had%205s%20load%20time%20for%20my%20home%20page,%20which%20is%20kind%20of%20basic.%20It%20wasn&amp;rsquo;t%20that%20bad%20if%20you%20look%20at%20the%20packages%20my%20server%20runs:%20gitlab,%20Roundcube&amp;rsquo;s%20webmail,%20sentora%20%28open%20source%20control%20panel%29%20and%20piwik%20%28stats%20management%29.%3c/p%3e%0a%3cp%3e%3cstrong%3eNote:%3c/strong%3e%20Those%2011s%20peaks%20you%20see%20there%20were%20produced%20while%20I%20was%20doing%20load%20tests%20on%20my%20server.%3c/p%3e%0a%3cp%3eMy%20environment&amp;rsquo;s%20specs%20are:%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/&amp;title=Getting%201.5s%20page%20load%20time%20on%20a%20basic%20vps&amp;summary=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%3cp%3eAs%20you%20can%20see%20on%20the%20graphics,%20I%20had%205s%20load%20time%20for%20my%20home%20page,%20which%20is%20kind%20of%20basic.%20It%20wasn&amp;rsquo;t%20that%20bad%20if%20you%20look%20at%20the%20packages%20my%20server%20runs:%20gitlab,%20Roundcube&amp;rsquo;s%20webmail,%20sentora%20%28open%20source%20control%20panel%29%20and%20piwik%20%28stats%20management%29.%3c/p%3e%0a%3cp%3e%3cstrong%3eNote:%3c/strong%3e%20Those%2011s%20peaks%20you%20see%20there%20were%20produced%20while%20I%20was%20doing%20load%20tests%20on%20my%20server.%3c/p%3e%0a%3cp%3eMy%20environment&amp;rsquo;s%20specs%20are:%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
-      <a  href="http://twitter.com/share?text=Getting%201.5s%20page%20load%20time%20on%20a%20basic%20vps&amp;url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="http://twitter.com/share?text=Getting%201.5s%20page%20load%20time%20on%20a%20basic%20vps&amp;url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
-      <a  href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-google-plus-g"></i>
       </a>
     </li>
     <li>
-      <a href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/&amp;media=%3cnil%3egetting-1.5s-page-load-time-on-a-basic-vps.png&amp;description=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%3cp%3eAs%20you%20can%20see%20on%20the%20graphics,%20I%20had%205s%20load%20time%20for%20my%20home%20page,%20which%20is%20kind%20of%20basic.%20It%20wasn&amp;rsquo;t%20that%20bad%20if%20you%20look%20at%20the%20packages%20my%20server%20runs:%20gitlab,%20Roundcube&amp;rsquo;s%20webmail,%20sentora%20%28open%20source%20control%20panel%29%20and%20piwik%20%28stats%20management%29.%3c/p%3e%0a%3cp%3e%3cstrong%3eNote:%3c/strong%3e%20Those%2011s%20peaks%20you%20see%20there%20were%20produced%20while%20I%20was%20doing%20load%20tests%20on%20my%20server.%3c/p%3e%0a%3cp%3eMy%20environment&amp;rsquo;s%20specs%20are:%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/&amp;media=%3cnil%3egetting-1.5s-page-load-time-on-a-basic-vps.png&amp;description=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%3cp%3eAs%20you%20can%20see%20on%20the%20graphics,%20I%20had%205s%20load%20time%20for%20my%20home%20page,%20which%20is%20kind%20of%20basic.%20It%20wasn&amp;rsquo;t%20that%20bad%20if%20you%20look%20at%20the%20packages%20my%20server%20runs:%20gitlab,%20Roundcube&amp;rsquo;s%20webmail,%20sentora%20%28open%20source%20control%20panel%29%20and%20piwik%20%28stats%20management%29.%3c/p%3e%0a%3cp%3e%3cstrong%3eNote:%3c/strong%3e%20Those%2011s%20peaks%20you%20see%20there%20were%20produced%20while%20I%20was%20doing%20load%20tests%20on%20my%20server.%3c/p%3e%0a%3cp%3eMy%20environment&amp;rsquo;s%20specs%20are:%3c/p%3e" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-pinterest-p"></i>
       </a>
     </li>
@@ -356,27 +359,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/zipping-and-unzipping-websites-with-php/' target='_blank'>
-                    <img class="lazyload" alt='Zipping and unzipping websites with php' width='72' height='72' data-src="/articles/img/thumbs/zipping-and-unzipping-websites-with-php.png" />
+                  <a href='https://www.jarboleda.me/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
+                    <img class="lazyload" alt='installing unreal engine on fedora 25' width='72' height='72' data-src="/articles/img/thumbs/unreal_engine.min.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/zipping-and-unzipping-websites-with-php/' class="mostVisitedLink">Zipping and unzipping websites with php</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/facebook-sharer-and-ipv6-issue/' target='_blank'>
-                    <img class="lazyload" alt='Facebook sharer and IPv6 issue' width='72' height='72' data-src="/articles/img/thumbs/facebook-sharer-and-ipv6-issue.png" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/facebook-sharer-and-ipv6-issue/' class="mostVisitedLink">Facebook sharer and IPv6 issue</a>
+                  <a href='https://www.jarboleda.me/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">installing unreal engine on fedora 25</a>
                 </div>
               </div>
             </li>
@@ -392,6 +380,21 @@ s.setAttribute('data-timestamp', +new Date());
                 </div>
                 <div class='item-title'>
                   <a href='https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">How to handle remote resources with curl</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='https://www.jarboleda.me/articles/moving-to-france-for-work/' target='_blank'>
+                    <img class="lazyload" alt='Moving to France for work' width='72' height='72' data-src="/articles/img/thumbs/moving-to-france-for-work.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='https://www.jarboleda.me/articles/moving-to-france-for-work/' class="mostVisitedLink">Moving to France for work</a>
                 </div>
               </div>
             </li>

@@ -44,6 +44,11 @@ When you need to get remote files to handle its content (i.e. csv files) you may
 &lt;?php
 $handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);
 ">
+    <meta name="description" content="The problem
+When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&rsquo;t as easy as using fopen:
+&lt;?php
+$handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);
+">
     <meta name="author" content="Jefferson Arboleda">
     
     <meta itemprop="image" content="how-to-handle-remote-resources-with-curl.png">
@@ -69,7 +74,6 @@ $handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filen
 
     <link rel="preconnect" href="https://www.goodreads.com">
     <link rel="preconnect" href="https://goodreads.com">
-    <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font">
     <link rel="preload" href="/fonts/Lato-Black.ttf" as="font">
     
@@ -115,24 +119,24 @@ $handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filen
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+                  <a rel="noopener" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
                     <i aria-hidden="true" class='fab fa-linkedin-in'></i>
                   </a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
+                  <a rel="noopener" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
+                  <a rel="noopener" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
+                  <a rel="noopener" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
                 </li>
                 
                 <li class='pure-menu-item nt-search' id='nt-search'>
@@ -244,27 +248,27 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a  href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;title=How%20to%20handle%20remote%20resources%20with%20curl&amp;summary=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%3cp%3eWhen%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#f92672%22%3e&amp;lt;?%3c/span%3e%3cspan%20style=%22color:#a6e22e%22%3ephp%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%0a%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;title=How%20to%20handle%20remote%20resources%20with%20curl&amp;summary=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%3cp%3eWhen%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#f92672%22%3e&amp;lt;?%3c/span%3e%3cspan%20style=%22color:#a6e22e%22%3ephp%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%0a%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
-      <a  href="http://twitter.com/share?text=How%20to%20handle%20remote%20resources%20with%20curl&amp;url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="http://twitter.com/share?text=How%20to%20handle%20remote%20resources%20with%20curl&amp;url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
-      <a  href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-google-plus-g"></i>
       </a>
     </li>
     <li>
-      <a href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;media=%3cnil%3ehow-to-handle-remote-resources-with-curl.png&amp;description=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%3cp%3eWhen%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#f92672%22%3e&amp;lt;?%3c/span%3e%3cspan%20style=%22color:#a6e22e%22%3ephp%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%0a%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;media=%3cnil%3ehow-to-handle-remote-resources-with-curl.png&amp;description=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%3cp%3eWhen%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#f92672%22%3e&amp;lt;?%3c/span%3e%3cspan%20style=%22color:#a6e22e%22%3ephp%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%0a%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-pinterest-p"></i>
       </a>
     </li>
@@ -359,12 +363,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/centos-web-panel-on-vps/' target='_blank'>
-                    <img class="lazyload" alt='Centos web panel with php7 and mysql5.6' width='72' height='72' data-src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
+                  <a href='https://www.jarboleda.me/articles/installing-magento2-on-cwp/' target='_blank'>
+                    <img class="lazyload" alt='Installing magento2 on cwp' width='72' height='72' data-src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel with php7 and mysql5.6</a>
+                  <a href='https://www.jarboleda.me/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Installing magento2 on cwp</a>
                 </div>
               </div>
             </li>
@@ -374,12 +378,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/' target='_blank'>
-                    <img class="lazyload" alt='Using piwik&#39;s API locally with ProcessWire' width='72' height='72' data-src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
+                  <a href='https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img class="lazyload" alt='Fixing a corrupted partition on a virtual machine' width='72' height='72' data-src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Using piwik&#39;s API locally with ProcessWire</a>
+                  <a href='https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
                 </div>
               </div>
             </li>
@@ -389,12 +393,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/arduino-uno-lego-case/' target='_blank'>
-                    <img class="lazyload" alt='Arduino UNO R3 lego case' width='72' height='72' data-src="/articles/img/thumbs/arduino-uno-lego-case.jpg" />
+                  <a href='https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
+                    <img class="lazyload" alt='Authenticating users with cURL' width='72' height='72' data-src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/arduino-uno-lego-case/' class="mostVisitedLink">Arduino UNO R3 lego case</a>
+                  <a href='https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Authenticating users with cURL</a>
                 </div>
               </div>
             </li>

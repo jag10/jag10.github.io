@@ -34,6 +34,7 @@
     
     <meta itemprop="name" content="Autenticando usuarios con cURL">
     <meta itemprop="description" content="En est post vamos a ver como autenticar un usuario utilizando cURL. Esto puede ser útil si se quiere integrar un login con una aplicación externa y no se dispone de una API. Por ejemplo, se podrían tener dos plataformas que gestionen los usuarios de manera diferente pero en las que el login sea único.">
+    <meta name="description" content="En est post vamos a ver como autenticar un usuario utilizando cURL. Esto puede ser útil si se quiere integrar un login con una aplicación externa y no se dispone de una API. Por ejemplo, se podrían tener dos plataformas que gestionen los usuarios de manera diferente pero en las que el login sea único.">
     <meta name="author" content="Jefferson Arboleda">
     
     <meta itemprop="image" content="authenticating-users-in-joomla-with-curl.jpg">
@@ -55,7 +56,6 @@
 
     <link rel="preconnect" href="https://www.goodreads.com">
     <link rel="preconnect" href="https://goodreads.com">
-    <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font">
     <link rel="preload" href="/fonts/Lato-Black.ttf" as="font">
     
@@ -101,24 +101,24 @@
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+                  <a rel="noopener" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
                     <i aria-hidden="true" class='fab fa-linkedin-in'></i>
                   </a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
+                  <a rel="noopener" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
+                  <a rel="noopener" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
+                  <a rel="noopener" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
                 </li>
                 
                 <li class='pure-menu-item nt-search' id='nt-search'>
@@ -246,27 +246,27 @@ $cookie<span style="color:#f92672">=</span><span style="color:#a6e22e">explode</
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a  href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/&amp;title=Autenticando%20usuarios%20con%20cURL&amp;summary=%3cp%3eEn%20est%20post%20vamos%20a%20ver%20como%20autenticar%20un%20usuario%20utilizando%20cURL.%20Esto%20puede%20ser%20%c3%batil%20si%20se%20quiere%20integrar%20un%20login%20con%20una%20aplicaci%c3%b3n%20externa%20y%20no%20se%20dispone%20de%20una%20API.%20Por%20ejemplo,%20se%20podr%c3%adan%20tener%20dos%20plataformas%20que%20gestionen%20los%20usuarios%20de%20manera%20diferente%20pero%20en%20las%20que%20el%20login%20sea%20%c3%banico.%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/&amp;title=Autenticando%20usuarios%20con%20cURL&amp;summary=%3cp%3eEn%20est%20post%20vamos%20a%20ver%20como%20autenticar%20un%20usuario%20utilizando%20cURL.%20Esto%20puede%20ser%20%c3%batil%20si%20se%20quiere%20integrar%20un%20login%20con%20una%20aplicaci%c3%b3n%20externa%20y%20no%20se%20dispone%20de%20una%20API.%20Por%20ejemplo,%20se%20podr%c3%adan%20tener%20dos%20plataformas%20que%20gestionen%20los%20usuarios%20de%20manera%20diferente%20pero%20en%20las%20que%20el%20login%20sea%20%c3%banico.%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
-      <a  href="http://twitter.com/share?text=Autenticando%20usuarios%20con%20cURL&amp;url=https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="http://twitter.com/share?text=Autenticando%20usuarios%20con%20cURL&amp;url=https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
-      <a  href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-google-plus-g"></i>
       </a>
     </li>
     <li>
-      <a href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/&amp;media=%3cnil%3eauthenticating-users-in-joomla-with-curl.jpg&amp;description=%3cp%3eEn%20est%20post%20vamos%20a%20ver%20como%20autenticar%20un%20usuario%20utilizando%20cURL.%20Esto%20puede%20ser%20%c3%batil%20si%20se%20quiere%20integrar%20un%20login%20con%20una%20aplicaci%c3%b3n%20externa%20y%20no%20se%20dispone%20de%20una%20API.%20Por%20ejemplo,%20se%20podr%c3%adan%20tener%20dos%20plataformas%20que%20gestionen%20los%20usuarios%20de%20manera%20diferente%20pero%20en%20las%20que%20el%20login%20sea%20%c3%banico.%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/&amp;media=%3cnil%3eauthenticating-users-in-joomla-with-curl.jpg&amp;description=%3cp%3eEn%20est%20post%20vamos%20a%20ver%20como%20autenticar%20un%20usuario%20utilizando%20cURL.%20Esto%20puede%20ser%20%c3%batil%20si%20se%20quiere%20integrar%20un%20login%20con%20una%20aplicaci%c3%b3n%20externa%20y%20no%20se%20dispone%20de%20una%20API.%20Por%20ejemplo,%20se%20podr%c3%adan%20tener%20dos%20plataformas%20que%20gestionen%20los%20usuarios%20de%20manera%20diferente%20pero%20en%20las%20que%20el%20login%20sea%20%c3%banico.%3c/p%3e" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-pinterest-p"></i>
       </a>
     </li>
@@ -356,27 +356,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
-                    <img class="lazyload" alt='Haciendo un backup de todas las BD usando mysqldump' width='72' height='72' data-src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
+                  <a href='https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img class="lazyload" alt='Arreglando una partición corrupta de una máquina virtual' width='72' height='72' data-src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Haciendo un backup de todas las BD usando mysqldump</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
-                    <img class="lazyload" alt='Autenticando usuarios con cURL' width='72' height='72' data-src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Autenticando usuarios con cURL</a>
+                  <a href='https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Arreglando una partición corrupta de una máquina virtual</a>
                 </div>
               </div>
             </li>
@@ -392,6 +377,21 @@ s.setAttribute('data-timestamp', +new Date());
                 </div>
                 <div class='item-title'>
                   <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
+                    <img class="lazyload" alt='Cómo manejar recursos remotos con curl' width='72' height='72' data-src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">Cómo manejar recursos remotos con curl</a>
                 </div>
               </div>
             </li>

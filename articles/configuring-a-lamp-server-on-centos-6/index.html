@@ -41,6 +41,9 @@ Firstly, we&rsquo;ll create our dir structure. I&rsquo;ll use jag.co as a domain
     <meta itemprop="description" content="In this first post I&rsquo;ll explain how I configurated my VPS to run a basic LAMP server with multiple php versions, compiled by myself. You can get your own cheap VPS (~3€) and test a lot of things.
 Dir structure
 Firstly, we&rsquo;ll create our dir structure. I&rsquo;ll use jag.co as a domain for this example, you can choose the dir structure you want, but I recommend following this one:">
+    <meta name="description" content="In this first post I&rsquo;ll explain how I configurated my VPS to run a basic LAMP server with multiple php versions, compiled by myself. You can get your own cheap VPS (~3€) and test a lot of things.
+Dir structure
+Firstly, we&rsquo;ll create our dir structure. I&rsquo;ll use jag.co as a domain for this example, you can choose the dir structure you want, but I recommend following this one:">
     <meta name="author" content="Jefferson Arboleda">
     
     <meta itemprop="image" content="configuring-a-lamp-server-on-centos-6.jpg">
@@ -64,7 +67,6 @@ Firstly, we&rsquo;ll create our dir structure. I&rsquo;ll use jag.co as a domain
 
     <link rel="preconnect" href="https://www.goodreads.com">
     <link rel="preconnect" href="https://goodreads.com">
-    <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font">
     <link rel="preload" href="/fonts/Lato-Black.ttf" as="font">
     
@@ -110,24 +112,24 @@ Firstly, we&rsquo;ll create our dir structure. I&rsquo;ll use jag.co as a domain
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+                  <a rel="noopener" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
                     <i aria-hidden="true" class='fab fa-linkedin-in'></i>
                   </a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
+                  <a rel="noopener" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
+                  <a rel="noopener" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
+                  <a rel="noopener" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
                 </li>
                 
                 <li class='pure-menu-item nt-search' id='nt-search'>
@@ -388,27 +390,27 @@ chkconfig mysqld on</code></pre></div></p></p>
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a  href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/&amp;title=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;summary=%3cp%3eIn%20this%20first%20post%20I&amp;rsquo;ll%20explain%20how%20I%20configurated%20my%20VPS%20to%20run%20a%20basic%20LAMP%20server%20with%20multiple%20php%20versions,%20compiled%20by%20myself.%20You%20can%20get%20your%20own%20cheap%20VPS%20%28~3%e2%82%ac%29%20and%20test%20a%20lot%20of%20things.%3c/p%3e%0a%3ch2%20id=%22dir-structure%22%3eDir%20structure%3c/h2%3e%0a%3cp%3eFirstly,%20we&amp;rsquo;ll%20create%20our%20dir%20structure.%20I&amp;rsquo;ll%20use%20jag.co%20as%20a%20domain%20for%20this%20example,%20you%20can%20choose%20the%20dir%20structure%20you%20want,%20but%20I%20recommend%20following%20this%20one:%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/&amp;title=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;summary=%3cp%3eIn%20this%20first%20post%20I&amp;rsquo;ll%20explain%20how%20I%20configurated%20my%20VPS%20to%20run%20a%20basic%20LAMP%20server%20with%20multiple%20php%20versions,%20compiled%20by%20myself.%20You%20can%20get%20your%20own%20cheap%20VPS%20%28~3%e2%82%ac%29%20and%20test%20a%20lot%20of%20things.%3c/p%3e%0a%3ch2%20id=%22dir-structure%22%3eDir%20structure%3c/h2%3e%0a%3cp%3eFirstly,%20we&amp;rsquo;ll%20create%20our%20dir%20structure.%20I&amp;rsquo;ll%20use%20jag.co%20as%20a%20domain%20for%20this%20example,%20you%20can%20choose%20the%20dir%20structure%20you%20want,%20but%20I%20recommend%20following%20this%20one:%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
-      <a  href="http://twitter.com/share?text=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="http://twitter.com/share?text=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
-      <a  href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-google-plus-g"></i>
       </a>
     </li>
     <li>
-      <a href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/&amp;media=%3cnil%3econfiguring-a-lamp-server-on-centos-6.jpg&amp;description=%3cp%3eIn%20this%20first%20post%20I&amp;rsquo;ll%20explain%20how%20I%20configurated%20my%20VPS%20to%20run%20a%20basic%20LAMP%20server%20with%20multiple%20php%20versions,%20compiled%20by%20myself.%20You%20can%20get%20your%20own%20cheap%20VPS%20%28~3%e2%82%ac%29%20and%20test%20a%20lot%20of%20things.%3c/p%3e%0a%3ch2%20id=%22dir-structure%22%3eDir%20structure%3c/h2%3e%0a%3cp%3eFirstly,%20we&amp;rsquo;ll%20create%20our%20dir%20structure.%20I&amp;rsquo;ll%20use%20jag.co%20as%20a%20domain%20for%20this%20example,%20you%20can%20choose%20the%20dir%20structure%20you%20want,%20but%20I%20recommend%20following%20this%20one:%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/&amp;media=%3cnil%3econfiguring-a-lamp-server-on-centos-6.jpg&amp;description=%3cp%3eIn%20this%20first%20post%20I&amp;rsquo;ll%20explain%20how%20I%20configurated%20my%20VPS%20to%20run%20a%20basic%20LAMP%20server%20with%20multiple%20php%20versions,%20compiled%20by%20myself.%20You%20can%20get%20your%20own%20cheap%20VPS%20%28~3%e2%82%ac%29%20and%20test%20a%20lot%20of%20things.%3c/p%3e%0a%3ch2%20id=%22dir-structure%22%3eDir%20structure%3c/h2%3e%0a%3cp%3eFirstly,%20we&amp;rsquo;ll%20create%20our%20dir%20structure.%20I&amp;rsquo;ll%20use%20jag.co%20as%20a%20domain%20for%20this%20example,%20you%20can%20choose%20the%20dir%20structure%20you%20want,%20but%20I%20recommend%20following%20this%20one:%3c/p%3e" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-pinterest-p"></i>
       </a>
     </li>
@@ -505,12 +507,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/' target='_blank'>
-                    <img class="lazyload" alt='Getting 1.5s page load time on a basic vps' width='72' height='72' data-src="/articles/img/thumbs/getting-1.5s-page-load-time-on-a-basic-vps.png" />
+                  <a href='https://www.jarboleda.me/articles/okr/' target='_blank'>
+                    <img class="lazyload" alt='temp: KPIs and how they can change your business' width='72' height='72' data-src="/articles/img/thumbs/" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/' class="mostVisitedLink">Getting 1.5s page load time on a basic vps</a>
+                  <a href='https://www.jarboleda.me/articles/okr/' class="mostVisitedLink">temp: KPIs and how they can change your business</a>
                 </div>
               </div>
             </li>
@@ -520,12 +522,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
-                    <img class="lazyload" alt='Authenticating users with cURL' width='72' height='72' data-src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
+                  <a href='https://www.jarboleda.me/articles/zipping-and-unzipping-websites-with-php/' target='_blank'>
+                    <img class="lazyload" alt='Zipping and unzipping websites with php' width='72' height='72' data-src="/articles/img/thumbs/zipping-and-unzipping-websites-with-php.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Authenticating users with cURL</a>
+                  <a href='https://www.jarboleda.me/articles/zipping-and-unzipping-websites-with-php/' class="mostVisitedLink">Zipping and unzipping websites with php</a>
                 </div>
               </div>
             </li>
@@ -535,12 +537,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/' target='_blank'>
-                    <img class="lazyload" alt='Configuring IPTABLES and fail2ban on centOS 6' width='72' height='72' data-src="/articles/img/thumbs/configuring-iptables-and-fail2ban-on-centos-6.jpg" />
+                  <a href='https://www.jarboleda.me/articles/getting-an-objects-methods/' target='_blank'>
+                    <img class="lazyload" alt='Getting an object&#39;s (reflected) methods' width='72' height='72' data-src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/' class="mostVisitedLink">Configuring IPTABLES and fail2ban on centOS 6</a>
+                  <a href='https://www.jarboleda.me/articles/getting-an-objects-methods/' class="mostVisitedLink">Getting an object&#39;s (reflected) methods</a>
                 </div>
               </div>
             </li>

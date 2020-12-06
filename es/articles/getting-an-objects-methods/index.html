@@ -37,6 +37,8 @@ Algunas veces no tenemos acceso a la documentación de una plataforma, es incomp
     <meta itemprop="name" content="Obteniendo los métodos (reflejados) de un objeto">
     <meta itemprop="description" content="El problema
 Algunas veces no tenemos acceso a la documentación de una plataforma, es incompleta o simplemente no nos apetece buscarla. En esos casos, es conveniente tener algo más que el típico var_dump de un objeto, que sólo nos muestra las propiedades del objeto pero no sus métodos, que en muchos casos nos dan la funcionalidad que buscamos sin tener que navegar entre miles de propiedades. A continuación expongo la función que uso, utiliza la clase ReflectionMethod, la cual nos muestra información acerca de un método, y necesita como parámetros del constructor el nombre de la clase y el método.">
+    <meta name="description" content="El problema
+Algunas veces no tenemos acceso a la documentación de una plataforma, es incompleta o simplemente no nos apetece buscarla. En esos casos, es conveniente tener algo más que el típico var_dump de un objeto, que sólo nos muestra las propiedades del objeto pero no sus métodos, que en muchos casos nos dan la funcionalidad que buscamos sin tener que navegar entre miles de propiedades. A continuación expongo la función que uso, utiliza la clase ReflectionMethod, la cual nos muestra información acerca de un método, y necesita como parámetros del constructor el nombre de la clase y el método.">
     <meta name="author" content="Jefferson Arboleda">
     
     <meta itemprop="image" content="getting-an-objects-methods.jpg">
@@ -59,7 +61,6 @@ Algunas veces no tenemos acceso a la documentación de una plataforma, es incomp
 
     <link rel="preconnect" href="https://www.goodreads.com">
     <link rel="preconnect" href="https://goodreads.com">
-    <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font">
     <link rel="preload" href="/fonts/Lato-Black.ttf" as="font">
     
@@ -105,24 +106,24 @@ Algunas veces no tenemos acceso a la documentación de una plataforma, es incomp
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+                  <a rel="noopener" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
                     <i aria-hidden="true" class='fab fa-linkedin-in'></i>
                   </a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
+                  <a rel="noopener" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
+                  <a rel="noopener" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
+                  <a rel="noopener" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
                 </li>
                 
                 <li class='pure-menu-item nt-search' id='nt-search'>
@@ -253,27 +254,27 @@ $params <span style="color:#f92672">=</span> $method<span style="color:#f92672">
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a  href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/getting-an-objects-methods/&amp;title=Obteniendo%20los%20m%c3%a9todos%20%28reflejados%29%20de%20un%20objeto&amp;summary=%3ch2%20id=%22el-problema%22%3eEl%20problema%3c/h2%3e%0a%3cp%3eAlgunas%20veces%20no%20tenemos%20acceso%20a%20la%20documentaci%c3%b3n%20de%20una%20plataforma,%20es%20incompleta%20o%20simplemente%20no%20nos%20apetece%20buscarla.%20En%20esos%20casos,%20es%20conveniente%20tener%20algo%20m%c3%a1s%20que%20el%20t%c3%adpico%20%3ccode%3evar_dump%3c/code%3e%20de%20un%20objeto,%20que%20s%c3%b3lo%20nos%20muestra%20las%20propiedades%20del%20objeto%20pero%20no%20sus%20m%c3%a9todos,%20que%20en%20muchos%20casos%20nos%20dan%20la%20funcionalidad%20que%20buscamos%20sin%20tener%20que%20navegar%20entre%20miles%20de%20propiedades.%20A%20continuaci%c3%b3n%20expongo%20la%20funci%c3%b3n%20que%20uso,%20utiliza%20la%20clase%20ReflectionMethod,%20la%20cual%20nos%20muestra%20informaci%c3%b3n%20acerca%20de%20un%20m%c3%a9todo,%20y%20necesita%20como%20par%c3%a1metros%20del%20constructor%20el%20nombre%20de%20la%20clase%20y%20el%20m%c3%a9todo.%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/getting-an-objects-methods/&amp;title=Obteniendo%20los%20m%c3%a9todos%20%28reflejados%29%20de%20un%20objeto&amp;summary=%3ch2%20id=%22el-problema%22%3eEl%20problema%3c/h2%3e%0a%3cp%3eAlgunas%20veces%20no%20tenemos%20acceso%20a%20la%20documentaci%c3%b3n%20de%20una%20plataforma,%20es%20incompleta%20o%20simplemente%20no%20nos%20apetece%20buscarla.%20En%20esos%20casos,%20es%20conveniente%20tener%20algo%20m%c3%a1s%20que%20el%20t%c3%adpico%20%3ccode%3evar_dump%3c/code%3e%20de%20un%20objeto,%20que%20s%c3%b3lo%20nos%20muestra%20las%20propiedades%20del%20objeto%20pero%20no%20sus%20m%c3%a9todos,%20que%20en%20muchos%20casos%20nos%20dan%20la%20funcionalidad%20que%20buscamos%20sin%20tener%20que%20navegar%20entre%20miles%20de%20propiedades.%20A%20continuaci%c3%b3n%20expongo%20la%20funci%c3%b3n%20que%20uso,%20utiliza%20la%20clase%20ReflectionMethod,%20la%20cual%20nos%20muestra%20informaci%c3%b3n%20acerca%20de%20un%20m%c3%a9todo,%20y%20necesita%20como%20par%c3%a1metros%20del%20constructor%20el%20nombre%20de%20la%20clase%20y%20el%20m%c3%a9todo.%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
-      <a  href="http://twitter.com/share?text=Obteniendo%20los%20m%c3%a9todos%20%28reflejados%29%20de%20un%20objeto&amp;url=https://www.jarboleda.me/es/articles/getting-an-objects-methods/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="http://twitter.com/share?text=Obteniendo%20los%20m%c3%a9todos%20%28reflejados%29%20de%20un%20objeto&amp;url=https://www.jarboleda.me/es/articles/getting-an-objects-methods/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/getting-an-objects-methods/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/getting-an-objects-methods/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
-      <a  href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/getting-an-objects-methods/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/getting-an-objects-methods/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-google-plus-g"></i>
       </a>
     </li>
     <li>
-      <a href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/getting-an-objects-methods/&amp;media=%3cnil%3egetting-an-objects-methods.jpg&amp;description=%3ch2%20id=%22el-problema%22%3eEl%20problema%3c/h2%3e%0a%3cp%3eAlgunas%20veces%20no%20tenemos%20acceso%20a%20la%20documentaci%c3%b3n%20de%20una%20plataforma,%20es%20incompleta%20o%20simplemente%20no%20nos%20apetece%20buscarla.%20En%20esos%20casos,%20es%20conveniente%20tener%20algo%20m%c3%a1s%20que%20el%20t%c3%adpico%20%3ccode%3evar_dump%3c/code%3e%20de%20un%20objeto,%20que%20s%c3%b3lo%20nos%20muestra%20las%20propiedades%20del%20objeto%20pero%20no%20sus%20m%c3%a9todos,%20que%20en%20muchos%20casos%20nos%20dan%20la%20funcionalidad%20que%20buscamos%20sin%20tener%20que%20navegar%20entre%20miles%20de%20propiedades.%20A%20continuaci%c3%b3n%20expongo%20la%20funci%c3%b3n%20que%20uso,%20utiliza%20la%20clase%20ReflectionMethod,%20la%20cual%20nos%20muestra%20informaci%c3%b3n%20acerca%20de%20un%20m%c3%a9todo,%20y%20necesita%20como%20par%c3%a1metros%20del%20constructor%20el%20nombre%20de%20la%20clase%20y%20el%20m%c3%a9todo.%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/getting-an-objects-methods/&amp;media=%3cnil%3egetting-an-objects-methods.jpg&amp;description=%3ch2%20id=%22el-problema%22%3eEl%20problema%3c/h2%3e%0a%3cp%3eAlgunas%20veces%20no%20tenemos%20acceso%20a%20la%20documentaci%c3%b3n%20de%20una%20plataforma,%20es%20incompleta%20o%20simplemente%20no%20nos%20apetece%20buscarla.%20En%20esos%20casos,%20es%20conveniente%20tener%20algo%20m%c3%a1s%20que%20el%20t%c3%adpico%20%3ccode%3evar_dump%3c/code%3e%20de%20un%20objeto,%20que%20s%c3%b3lo%20nos%20muestra%20las%20propiedades%20del%20objeto%20pero%20no%20sus%20m%c3%a9todos,%20que%20en%20muchos%20casos%20nos%20dan%20la%20funcionalidad%20que%20buscamos%20sin%20tener%20que%20navegar%20entre%20miles%20de%20propiedades.%20A%20continuaci%c3%b3n%20expongo%20la%20funci%c3%b3n%20que%20uso,%20utiliza%20la%20clase%20ReflectionMethod,%20la%20cual%20nos%20muestra%20informaci%c3%b3n%20acerca%20de%20un%20m%c3%a9todo,%20y%20necesita%20como%20par%c3%a1metros%20del%20constructor%20el%20nombre%20de%20la%20clase%20y%20el%20m%c3%a9todo.%3c/p%3e" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-pinterest-p"></i>
       </a>
     </li>
@@ -383,12 +384,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/' target='_blank'>
-                    <img class="lazyload" alt='Utilizando la API de piwik en local con PW' width='72' height='72' data-src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
+                  <a href='https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
+                    <img class="lazyload" alt='Cómo manejar recursos remotos con curl' width='72' height='72' data-src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Utilizando la API de piwik en local con PW</a>
+                  <a href='https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">Cómo manejar recursos remotos con curl</a>
                 </div>
               </div>
             </li>
@@ -398,12 +399,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img class="lazyload" alt='Instalando unreal engine en fedora 25' width='72' height='72' data-src="/articles/img/thumbs/unreal_engine.min.jpg" />
+                  <a href='https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/' target='_blank'>
+                    <img class="lazyload" alt='Utilizando la API de piwik en local con PW' width='72' height='72' data-src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">Instalando unreal engine en fedora 25</a>
+                  <a href='https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Utilizando la API de piwik en local con PW</a>
                 </div>
               </div>
             </li>

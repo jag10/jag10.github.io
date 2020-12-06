@@ -37,6 +37,8 @@ Para ello, utilizo la utilidad mysqldump y un script para transferir los fichero
     <meta itemprop="name" content="Haciendo un backup de todas las BD usando mysqldump">
     <meta itemprop="description" content="En este post vamos a ver como hacer un backup de todas las bases de datos, tomando como ejemplo uno de los servidores con los que actualmente trabajo. Así, si surge algún problema con el servidor podremos disponer de un backup reciente.
 Para ello, utilizo la utilidad mysqldump y un script para transferir los ficheros a un servidor ftp.">
+    <meta name="description" content="En este post vamos a ver como hacer un backup de todas las bases de datos, tomando como ejemplo uno de los servidores con los que actualmente trabajo. Así, si surge algún problema con el servidor podremos disponer de un backup reciente.
+Para ello, utilizo la utilidad mysqldump y un script para transferir los ficheros a un servidor ftp.">
     <meta name="author" content="Jefferson Arboleda">
     
     <meta itemprop="image" content="backing-up-all-databases-using-mysqldump.png">
@@ -59,7 +61,6 @@ Para ello, utilizo la utilidad mysqldump y un script para transferir los fichero
 
     <link rel="preconnect" href="https://www.goodreads.com">
     <link rel="preconnect" href="https://goodreads.com">
-    <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font">
     <link rel="preload" href="/fonts/Lato-Black.ttf" as="font">
     
@@ -105,24 +106,24 @@ Para ello, utilizo la utilidad mysqldump y un script para transferir los fichero
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+                  <a rel="noopener" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
                     <i aria-hidden="true" class='fab fa-linkedin-in'></i>
                   </a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
+                  <a rel="noopener" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
+                  <a rel="noopener" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
+                  <a rel="noopener" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
                 </li>
                 
                 <li class='pure-menu-item nt-search' id='nt-search'>
@@ -232,27 +233,27 @@ regex<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Curren
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a  href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/&amp;title=Haciendo%20un%20backup%20de%20todas%20las%20BD%20usando%20mysqldump&amp;summary=%3cp%3eEn%20este%20post%20vamos%20a%20ver%20como%20hacer%20un%20backup%20de%20todas%20las%20bases%20de%20datos,%20tomando%20como%20ejemplo%20uno%20de%20los%20servidores%20con%20los%20que%20actualmente%20trabajo.%20As%c3%ad,%20si%20surge%20alg%c3%ban%20problema%20con%20el%20servidor%20podremos%20disponer%20de%20un%20backup%20reciente.%3c/p%3e%0a%3cp%3ePara%20ello,%20utilizo%20la%20utilidad%20mysqldump%20y%20un%20script%20para%20transferir%20los%20ficheros%20a%20un%20servidor%20ftp.%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/&amp;title=Haciendo%20un%20backup%20de%20todas%20las%20BD%20usando%20mysqldump&amp;summary=%3cp%3eEn%20este%20post%20vamos%20a%20ver%20como%20hacer%20un%20backup%20de%20todas%20las%20bases%20de%20datos,%20tomando%20como%20ejemplo%20uno%20de%20los%20servidores%20con%20los%20que%20actualmente%20trabajo.%20As%c3%ad,%20si%20surge%20alg%c3%ban%20problema%20con%20el%20servidor%20podremos%20disponer%20de%20un%20backup%20reciente.%3c/p%3e%0a%3cp%3ePara%20ello,%20utilizo%20la%20utilidad%20mysqldump%20y%20un%20script%20para%20transferir%20los%20ficheros%20a%20un%20servidor%20ftp.%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
-      <a  href="http://twitter.com/share?text=Haciendo%20un%20backup%20de%20todas%20las%20BD%20usando%20mysqldump&amp;url=https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="http://twitter.com/share?text=Haciendo%20un%20backup%20de%20todas%20las%20BD%20usando%20mysqldump&amp;url=https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
-      <a  href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-google-plus-g"></i>
       </a>
     </li>
     <li>
-      <a href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/&amp;media=%3cnil%3ebacking-up-all-databases-using-mysqldump.png&amp;description=%3cp%3eEn%20este%20post%20vamos%20a%20ver%20como%20hacer%20un%20backup%20de%20todas%20las%20bases%20de%20datos,%20tomando%20como%20ejemplo%20uno%20de%20los%20servidores%20con%20los%20que%20actualmente%20trabajo.%20As%c3%ad,%20si%20surge%20alg%c3%ban%20problema%20con%20el%20servidor%20podremos%20disponer%20de%20un%20backup%20reciente.%3c/p%3e%0a%3cp%3ePara%20ello,%20utilizo%20la%20utilidad%20mysqldump%20y%20un%20script%20para%20transferir%20los%20ficheros%20a%20un%20servidor%20ftp.%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/&amp;media=%3cnil%3ebacking-up-all-databases-using-mysqldump.png&amp;description=%3cp%3eEn%20este%20post%20vamos%20a%20ver%20como%20hacer%20un%20backup%20de%20todas%20las%20bases%20de%20datos,%20tomando%20como%20ejemplo%20uno%20de%20los%20servidores%20con%20los%20que%20actualmente%20trabajo.%20As%c3%ad,%20si%20surge%20alg%c3%ban%20problema%20con%20el%20servidor%20podremos%20disponer%20de%20un%20backup%20reciente.%3c/p%3e%0a%3cp%3ePara%20ello,%20utilizo%20la%20utilidad%20mysqldump%20y%20un%20script%20para%20transferir%20los%20ficheros%20a%20un%20servidor%20ftp.%3c/p%3e" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-pinterest-p"></i>
       </a>
     </li>
@@ -342,12 +343,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
-                    <img class="lazyload" alt='configuring a LAMP server on CentOS 6' width='72' height='72' data-src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
+                  <a href='https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/' target='_blank'>
+                    <img class="lazyload" alt='Instalando magento2 en cwp' width='72' height='72' data-src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
+                  <a href='https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Instalando magento2 en cwp</a>
                 </div>
               </div>
             </li>
@@ -357,12 +358,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/web-development-environment/' target='_blank'>
-                    <img class="lazyload" alt='Entorno para desarrollo web' width='72' height='72' data-src="/articles/img/thumbs/web-development-environment.jpg" />
+                  <a href='https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
+                    <img class="lazyload" alt='Autenticando usuarios con cURL' width='72' height='72' data-src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/web-development-environment/' class="mostVisitedLink">Entorno para desarrollo web</a>
+                  <a href='https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Autenticando usuarios con cURL</a>
                 </div>
               </div>
             </li>
@@ -372,12 +373,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
-                    <img class="lazyload" alt='Instalando ubuntu 16.04 en odroid xu3 lite' width='72' height='72' data-src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
+                  <a href='https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/' target='_blank'>
+                    <img class="lazyload" alt='Centos web panel con php7 y mysql5.6' width='72' height='72' data-src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Instalando ubuntu 16.04 en odroid xu3 lite</a>
+                  <a href='https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel con php7 y mysql5.6</a>
                 </div>
               </div>
             </li>

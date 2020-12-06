@@ -48,6 +48,13 @@ De aquí he tomado el fichero que me interesa, correspondiente a la versión com
 
 ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
 ">
+    <meta name="description" content="Eligiendo una imagen
+La versión 16.04 de ubuntu acaba de ser liberada por parte del equipo de odroid para las placas xu3 y xu4 y sus variantes lite. En este caso vamos a probar ubuntu 16.04 en la placa odroid xu3 lite que es la que poseo con un módulo eMMC, que para entendernos viene a ser un disco ssd pequeñito (en realidad no es lo mismo, eMMC es más lento), lo cual nos da mayor rendimiento, aunque también se puede instalar en una memoria sd (recomendable clase 10). Lo primero será descargarnos la imagen que necesitemos:
+http://de.eu.odroid.in/ubuntu_16.04lts/
+De aquí he tomado el fichero que me interesa, correspondiente a la versión completa de ubuntu y a la placa xu3:
+
+ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
+">
     <meta name="author" content="Jefferson Arboleda">
     
     <meta itemprop="image" content="installing-ubuntu-16.04-on-odroid-xu3-lite.jpg">
@@ -75,7 +82,6 @@ ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
 
     <link rel="preconnect" href="https://www.goodreads.com">
     <link rel="preconnect" href="https://goodreads.com">
-    <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font">
     <link rel="preload" href="/fonts/Lato-Black.ttf" as="font">
     
@@ -121,24 +127,24 @@ ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+                  <a rel="noopener" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
                     <i aria-hidden="true" class='fab fa-linkedin-in'></i>
                   </a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
+                  <a rel="noopener" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
+                  <a rel="noopener" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
+                  <a rel="noopener" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
                 </li>
                 
                 <li class='pure-menu-item nt-search' id='nt-search'>
@@ -258,27 +264,27 @@ Si todo ha ido bien, podremos conectarnos a nuestra placa por ssh. En mi caso te
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a  href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/&amp;title=Instalando%20ubuntu%2016.04%20en%20odroid%20xu3%20lite&amp;summary=%3ch2%20id=%22eligiendo-una-imagen%22%3eEligiendo%20una%20imagen%3c/h2%3e%0a%3cp%3eLa%20versi%c3%b3n%2016.04%20de%20ubuntu%20acaba%20de%20ser%20liberada%20por%20parte%20del%20equipo%20de%20odroid%20para%20las%20placas%20xu3%20y%20xu4%20y%20sus%20variantes%20lite.%20En%20este%20caso%20vamos%20a%20probar%20ubuntu%2016.04%20en%20la%20placa%20odroid%20xu3%20lite%20que%20es%20la%20que%20poseo%20con%20un%20m%c3%b3dulo%20eMMC,%20que%20para%20entendernos%20viene%20a%20ser%20un%20disco%20ssd%20peque%c3%b1ito%20%28en%20realidad%20no%20es%20lo%20mismo,%20eMMC%20es%20m%c3%a1s%20lento%29,%20lo%20cual%20nos%20da%20mayor%20rendimiento,%20aunque%20tambi%c3%a9n%20se%20puede%20instalar%20en%20una%20memoria%20sd%20%28recomendable%20clase%2010%29.%20Lo%20primero%20ser%c3%a1%20descargarnos%20la%20imagen%20que%20necesitemos:%0a%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/%22%3ehttp://de.eu.odroid.in/ubuntu_16.04lts/%3c/a%3e%0aDe%20aqu%c3%ad%20he%20tomado%20el%20fichero%20que%20me%20interesa,%20correspondiente%20a%20la%20versi%c3%b3n%20completa%20de%20ubuntu%20y%20a%20la%20placa%20xu3:%3c/p%3e%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz%22%3eubuntu-16.04-mate-odroid-xu3-20160708.img.xz%3c/a%3e%3c/li%3e%0a%3c/ul%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/&amp;title=Instalando%20ubuntu%2016.04%20en%20odroid%20xu3%20lite&amp;summary=%3ch2%20id=%22eligiendo-una-imagen%22%3eEligiendo%20una%20imagen%3c/h2%3e%0a%3cp%3eLa%20versi%c3%b3n%2016.04%20de%20ubuntu%20acaba%20de%20ser%20liberada%20por%20parte%20del%20equipo%20de%20odroid%20para%20las%20placas%20xu3%20y%20xu4%20y%20sus%20variantes%20lite.%20En%20este%20caso%20vamos%20a%20probar%20ubuntu%2016.04%20en%20la%20placa%20odroid%20xu3%20lite%20que%20es%20la%20que%20poseo%20con%20un%20m%c3%b3dulo%20eMMC,%20que%20para%20entendernos%20viene%20a%20ser%20un%20disco%20ssd%20peque%c3%b1ito%20%28en%20realidad%20no%20es%20lo%20mismo,%20eMMC%20es%20m%c3%a1s%20lento%29,%20lo%20cual%20nos%20da%20mayor%20rendimiento,%20aunque%20tambi%c3%a9n%20se%20puede%20instalar%20en%20una%20memoria%20sd%20%28recomendable%20clase%2010%29.%20Lo%20primero%20ser%c3%a1%20descargarnos%20la%20imagen%20que%20necesitemos:%0a%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/%22%3ehttp://de.eu.odroid.in/ubuntu_16.04lts/%3c/a%3e%0aDe%20aqu%c3%ad%20he%20tomado%20el%20fichero%20que%20me%20interesa,%20correspondiente%20a%20la%20versi%c3%b3n%20completa%20de%20ubuntu%20y%20a%20la%20placa%20xu3:%3c/p%3e%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz%22%3eubuntu-16.04-mate-odroid-xu3-20160708.img.xz%3c/a%3e%3c/li%3e%0a%3c/ul%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
-      <a  href="http://twitter.com/share?text=Instalando%20ubuntu%2016.04%20en%20odroid%20xu3%20lite&amp;url=https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="http://twitter.com/share?text=Instalando%20ubuntu%2016.04%20en%20odroid%20xu3%20lite&amp;url=https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
-      <a  href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-google-plus-g"></i>
       </a>
     </li>
     <li>
-      <a href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/&amp;media=%3cnil%3einstalling-ubuntu-16.04-on-odroid-xu3-lite.jpg&amp;description=%3ch2%20id=%22eligiendo-una-imagen%22%3eEligiendo%20una%20imagen%3c/h2%3e%0a%3cp%3eLa%20versi%c3%b3n%2016.04%20de%20ubuntu%20acaba%20de%20ser%20liberada%20por%20parte%20del%20equipo%20de%20odroid%20para%20las%20placas%20xu3%20y%20xu4%20y%20sus%20variantes%20lite.%20En%20este%20caso%20vamos%20a%20probar%20ubuntu%2016.04%20en%20la%20placa%20odroid%20xu3%20lite%20que%20es%20la%20que%20poseo%20con%20un%20m%c3%b3dulo%20eMMC,%20que%20para%20entendernos%20viene%20a%20ser%20un%20disco%20ssd%20peque%c3%b1ito%20%28en%20realidad%20no%20es%20lo%20mismo,%20eMMC%20es%20m%c3%a1s%20lento%29,%20lo%20cual%20nos%20da%20mayor%20rendimiento,%20aunque%20tambi%c3%a9n%20se%20puede%20instalar%20en%20una%20memoria%20sd%20%28recomendable%20clase%2010%29.%20Lo%20primero%20ser%c3%a1%20descargarnos%20la%20imagen%20que%20necesitemos:%0a%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/%22%3ehttp://de.eu.odroid.in/ubuntu_16.04lts/%3c/a%3e%0aDe%20aqu%c3%ad%20he%20tomado%20el%20fichero%20que%20me%20interesa,%20correspondiente%20a%20la%20versi%c3%b3n%20completa%20de%20ubuntu%20y%20a%20la%20placa%20xu3:%3c/p%3e%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz%22%3eubuntu-16.04-mate-odroid-xu3-20160708.img.xz%3c/a%3e%3c/li%3e%0a%3c/ul%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+      <a rel="noopener" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/&amp;media=%3cnil%3einstalling-ubuntu-16.04-on-odroid-xu3-lite.jpg&amp;description=%3ch2%20id=%22eligiendo-una-imagen%22%3eEligiendo%20una%20imagen%3c/h2%3e%0a%3cp%3eLa%20versi%c3%b3n%2016.04%20de%20ubuntu%20acaba%20de%20ser%20liberada%20por%20parte%20del%20equipo%20de%20odroid%20para%20las%20placas%20xu3%20y%20xu4%20y%20sus%20variantes%20lite.%20En%20este%20caso%20vamos%20a%20probar%20ubuntu%2016.04%20en%20la%20placa%20odroid%20xu3%20lite%20que%20es%20la%20que%20poseo%20con%20un%20m%c3%b3dulo%20eMMC,%20que%20para%20entendernos%20viene%20a%20ser%20un%20disco%20ssd%20peque%c3%b1ito%20%28en%20realidad%20no%20es%20lo%20mismo,%20eMMC%20es%20m%c3%a1s%20lento%29,%20lo%20cual%20nos%20da%20mayor%20rendimiento,%20aunque%20tambi%c3%a9n%20se%20puede%20instalar%20en%20una%20memoria%20sd%20%28recomendable%20clase%2010%29.%20Lo%20primero%20ser%c3%a1%20descargarnos%20la%20imagen%20que%20necesitemos:%0a%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/%22%3ehttp://de.eu.odroid.in/ubuntu_16.04lts/%3c/a%3e%0aDe%20aqu%c3%ad%20he%20tomado%20el%20fichero%20que%20me%20interesa,%20correspondiente%20a%20la%20versi%c3%b3n%20completa%20de%20ubuntu%20y%20a%20la%20placa%20xu3:%3c/p%3e%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz%22%3eubuntu-16.04-mate-odroid-xu3-20160708.img.xz%3c/a%3e%3c/li%3e%0a%3c/ul%3e" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-pinterest-p"></i>
       </a>
     </li>
@@ -375,42 +381,29 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/' target='_blank'>
-                    <img class="lazyload" alt='Centos web panel con php7 y mysql5.6' width='72' height='72' data-src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel con php7 y mysql5.6</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/web-development-environment/' target='_blank'>
-                    <img class="lazyload" alt='Entorno para desarrollo web' width='72' height='72' data-src="/articles/img/thumbs/web-development-environment.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/web-development-environment/' class="mostVisitedLink">Entorno para desarrollo web</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
                   <a href='https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
                     <img class="lazyload" alt='Instalando ubuntu 16.04 en odroid xu3 lite' width='72' height='72' data-src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
                   <a href='https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Instalando ubuntu 16.04 en odroid xu3 lite</a>
+                </div>
+              </div>
+            </li>
+            
+            
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
+                    <img class="lazyload" alt='configuring a LAMP server on CentOS 6' width='72' height='72' data-src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
                 </div>
               </div>
             </li>
