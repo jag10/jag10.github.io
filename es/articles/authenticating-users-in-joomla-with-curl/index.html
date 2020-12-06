@@ -38,7 +38,7 @@
     
     <meta itemprop="image" content="authenticating-users-in-joomla-with-curl.jpg">
     
-    <meta itemprop="keywords" content="" />
+    <meta itemprop="keywords" content="notpinned,pinned,serie1,bash,centos6,curl,cwp,fedora25,fopen,httpd,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,php,php7,piwik,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm," />
     <meta itemprop="wordCount" content="401">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
@@ -53,7 +53,12 @@
 
 	<meta name="news_keywords" content="curl" />
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="preconnect" href="https://www.goodreads.com">
+    <link rel="preconnect" href="https://goodreads.com">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font">
+    <link rel="preload" href="/fonts/Lato-Black.ttf" as="font">
+    
     <link href="/css/global.min.css" media="screen" rel="stylesheet" type="text/css" />
   </head>
  <body>
@@ -80,12 +85,12 @@
               
               <li class="pure-menu-item"><a target='' class='pure-menu-link' href=https://gitlab.com/jag7>gitlab</a></li>
               
+              <li class='pure-menu-item flag'><i class='fa fa-language' aria-hidden='true'></i></li>
               <li class='pure-menu-item lang_selector selected'>
                 
                 <a class='pure-menu-link' href="#">Spanish</a>
                 
               </li>
-              <li class='pure-menu-item flag'><i class='fa fa-language' aria-hidden='true'></i></li>
                
               <li class='pure-menu-item lang_selector'>
                 <a class='pure-menu-link' href="/articles/authenticating-users-in-joomla-with-curl/">english </a>
@@ -96,7 +101,9 @@
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+                    <i aria-hidden="true" class='fab fa-linkedin-in'></i>
+                  </a>
                 </li>
                 
                 
@@ -120,7 +127,7 @@
                       <input class='nt-search-input' id='s' name='q' placeholder='Search is disabled :(' type='text' value='' disabled />
                     </div>
                     <input class='nt-search-submit' id='go' type='submit' value='Search' />
-                    <span class='nt fas fa-search'></span>
+                    <label for='q'> <span class='nt fas fa-search'></span></label>
                   </form>
                 </li>
               </ul>
@@ -158,7 +165,7 @@
       <p><p>En est post vamos a ver como autenticar un usuario utilizando cURL. Esto puede ser útil si se quiere integrar un login con una aplicación externa y no se dispone de una API. Por ejemplo, se podrían tener dos plataformas que gestionen los usuarios de manera diferente pero en las que el login sea único.</p>
 <p>En el caso concreto de Joomla, se utilizan dos valores generados, y éstos tienen que ser válidos. Así que, en primer lugar hay que obtener esos valores con cURL. Además, Joomla almacena una cookie cuando se visita el sitio. Hay que guardar esa cookie y pasársela al navegador del usuario. Luego, se enviarán estos datos mediante una petición POST. Entonces Joomla devolverá otra cookie, que también tendremos que enviar al navegador del usuario. Después de ese último paso, el usuario queda logueado en la aplicación.</p>
 <p>Lo que hemos hecho es autenticar al usuario de la manera que lo haría él manualmente. Esta idea es válida para cualquier otra aplicación. Lo único que hay que hacer es conocer el proceso de autenticación para replicarlo luego.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 <span style="color:#75715e">/*
 </span><span style="color:#75715e">  Válido para Joomla 2.5
 </span><span style="color:#75715e">	En primer lugar, se necesita un token válido para el formulario. Además, también hay que guardar las cookies que obtendrá la petición cURL y reenviarlas al navegador.
@@ -211,8 +218,8 @@ $ret <span style="color:#f92672">=</span> <span style="color:#a6e22e">curl_exec<
 $cookie<span style="color:#f92672">=</span><span style="color:#a6e22e">explode</span>(<span style="color:#e6db74">&#39;=&#39;</span>,$m[<span style="color:#ae81ff">1</span>]);
 <span style="color:#a6e22e">setcookie</span>($cookie[<span style="color:#ae81ff">0</span>], $cookie[<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">time</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">86400</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">30</span> , <span style="color:#e6db74">&#34;/&#34;</span>);
 <span style="color:#a6e22e">curl_close</span>($ch);
-<span style="color:#75715e">?&gt;</span>
-</code></pre></div></p></p>
+<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div></p></p>
       
     </div>
     <div class="clearfix"></div>
@@ -239,19 +246,29 @@ $cookie<span style="color:#f92672">=</span><span style="color:#a6e22e">explode</
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/&amp;title=Autenticando%20usuarios%20con%20cURL&amp;summary=%3cp%3eEn%20est%20post%20vamos%20a%20ver%20como%20autenticar%20un%20usuario%20utilizando%20cURL.%20Esto%20puede%20ser%20%c3%batil%20si%20se%20quiere%20integrar%20un%20login%20con%20una%20aplicaci%c3%b3n%20externa%20y%20no%20se%20dispone%20de%20una%20API.%20Por%20ejemplo,%20se%20podr%c3%adan%20tener%20dos%20plataformas%20que%20gestionen%20los%20usuarios%20de%20manera%20diferente%20pero%20en%20las%20que%20el%20login%20sea%20%c3%banico.%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a  href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/&amp;title=Autenticando%20usuarios%20con%20cURL&amp;summary=%3cp%3eEn%20est%20post%20vamos%20a%20ver%20como%20autenticar%20un%20usuario%20utilizando%20cURL.%20Esto%20puede%20ser%20%c3%batil%20si%20se%20quiere%20integrar%20un%20login%20con%20una%20aplicaci%c3%b3n%20externa%20y%20no%20se%20dispone%20de%20una%20API.%20Por%20ejemplo,%20se%20podr%c3%adan%20tener%20dos%20plataformas%20que%20gestionen%20los%20usuarios%20de%20manera%20diferente%20pero%20en%20las%20que%20el%20login%20sea%20%c3%banico.%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+        <i aria-hidden="true" class="fab fa-linkedin-in"></i>
+      </a>
     </li>
     <li>
-      <a class="fab fa-twitter" href="http://twitter.com/share?text=Autenticando%20usuarios%20con%20cURL&amp;url=https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a  href="http://twitter.com/share?text=Autenticando%20usuarios%20con%20cURL&amp;url=https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+        <i aria-hidden="true" class="fab fa-twitter"></i>
+      </a>
     </li>
     <li>
-      <a class="fab fa-facebook-f" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+        <i aria-hidden="true" class="fab fa-facebook-f"></i>
+      </a>
     </li>
     <li>
-      <a class="fab fa-google-plus-g" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a  href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+        <i aria-hidden="true" class="fab fa-google-plus-g"></i>
+      </a>
     </li>
     <li>
-      <a class="fab fa-pinterest-p" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/&amp;media=%3cnil%3eauthenticating-users-in-joomla-with-curl.jpg&amp;description=%3cp%3eEn%20est%20post%20vamos%20a%20ver%20como%20autenticar%20un%20usuario%20utilizando%20cURL.%20Esto%20puede%20ser%20%c3%batil%20si%20se%20quiere%20integrar%20un%20login%20con%20una%20aplicaci%c3%b3n%20externa%20y%20no%20se%20dispone%20de%20una%20API.%20Por%20ejemplo,%20se%20podr%c3%adan%20tener%20dos%20plataformas%20que%20gestionen%20los%20usuarios%20de%20manera%20diferente%20pero%20en%20las%20que%20el%20login%20sea%20%c3%banico.%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/&amp;media=%3cnil%3eauthenticating-users-in-joomla-with-curl.jpg&amp;description=%3cp%3eEn%20est%20post%20vamos%20a%20ver%20como%20autenticar%20un%20usuario%20utilizando%20cURL.%20Esto%20puede%20ser%20%c3%batil%20si%20se%20quiere%20integrar%20un%20login%20con%20una%20aplicaci%c3%b3n%20externa%20y%20no%20se%20dispone%20de%20una%20API.%20Por%20ejemplo,%20se%20podr%c3%adan%20tener%20dos%20plataformas%20que%20gestionen%20los%20usuarios%20de%20manera%20diferente%20pero%20en%20las%20que%20el%20login%20sea%20%c3%banico.%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+        <i aria-hidden="true" class="fab fa-pinterest-p"></i>
+      </a>
     </li>
   </ul>
 </div>
@@ -289,14 +306,14 @@ s.setAttribute('data-timestamp', +new Date());
   
 
 <div class='authorboxwrap'>
-<h4>Author</h4>
+
     <div class='avatar-container'>
       <img alt="author's photo" class='author_avatar' width='160' height='136' src="/img/me.min.png"  />
       <h4 rel='author'>Jefferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p class= 'm-text-centered m-bold'>Business Analyst</p>
-      <p>Actualmente trabajo para <a href="https://amadeus.com/en">Amadeus</a> en Niza, Côte D&rsquo;Azur.</p>
+      <p class= 'm-text-centered bio_title'>Business Development Manager</p>
+      <p class= 'm-text-centered'>Recluto y gestiono consultores para desarrollar los negocios de <a href="https://alten.com/">Alten</a> en Madrid.</p>
       <div class='authorsocial'>
         
           <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
@@ -339,42 +356,42 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
+                  <a href='https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
+                    <img class="lazyload" alt='Haciendo un backup de todas las BD usando mysqldump' width='72' height='72' data-src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Haciendo un backup de todas las BD usando mysqldump</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
+                    <img class="lazyload" alt='Autenticando usuarios con cURL' width='72' height='72' data-src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Autenticando usuarios con cURL</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
                   <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
-                    <img alt='configuring a LAMP server on CentOS 6' width='72' height='72' src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
+                    <img class="lazyload" alt='configuring a LAMP server on CentOS 6' width='72' height='72' data-src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
                   <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/getting-an-objects-methods/' target='_blank'>
-                    <img alt='Obteniendo los métodos (reflejados) de un objeto' width='72' height='72' src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/getting-an-objects-methods/' class="mostVisitedLink">Obteniendo los métodos (reflejados) de un objeto</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/' target='_blank'>
-                    <img alt='Utilizando la API de piwik en local con PW' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Utilizando la API de piwik en local con PW</a>
                 </div>
               </div>
             </li>
@@ -386,17 +403,16 @@ s.setAttribute('data-timestamp', +new Date());
     </div>
     <div class='pure-u-1 pure-u-md-1-3'>
       <div class='widget ContactForm'>
-        <h2 class='title'>Contact me</h2>
-        <a class="email" href="mailto:me@jarboleda.me">me@jarboleda.me</a>
+        <h2 class='title'>Contact me: <a class="email" href="mailto:me@jarboleda.me">me@jarboleda.me</a></h2>
         <div class='contact-form-widget'>
           <div class='form'>
             <form name='contact-form' action="https://formspree.io/me@jarboleda.me" method="POST">
-              <p>Name</p>
-              <input class='contact-form-name' name='name' size='30' type='text' value='' />
-              <p>Email<span>*</span></p>
-              <input class='contact-form-email' name='name="_replyto"' size='30' type='text' value='' />
-              <p>Message<span>*</span></p>
-              <p><textarea class='contact-form-email-message' cols='29' name='email-message' rows='5'></textarea></p>
+              <label for='name'>Name</label>
+              <p><input class='contact-form-name' id='name' name='name' size='30' type='text' value='' /></p>
+              <label for='email'>Email<span>*</span></label>
+              <p><input class='contact-form-email' id='email' name='name="_replyto"' size='30' type='text' value='' /></p>
+              <label for='message'>Message<span>*</span></label>
+              <p><textarea class='contact-form-email-message' id='message' cols='29' name='email-message' rows='5'></textarea></p>
               <input class='contact-form-button contact-form-button-submit' type='submit' value='Send' />
               <div style='text-align: center; max-width: 222px; width: 100%'>
                 <p class='contact-form-error-message'></p>
@@ -440,16 +456,16 @@ s.setAttribute('data-timestamp', +new Date());
     </p>
     <p class='attribution'>Powered by</p>
     <a href='https://gohugo.io/' target="_blank" >
-      <img with="80" height="21" alt="hugo logo" class='attribution_logo' src="/img/hugo-logo.png" />
+      <img class="lazyload" with="80" height="21" alt="hugo logo" class='attribution_logo' data-src="/img/hugo-logo.png" />
     </a>
   </div>
 </footer>
-
+<script defer src="https://kit.fontawesome.com/f17c0ef8e6.js" crossorigin="anonymous"></script>
 <script defer src='/js/main.min.js' type='text/javascript'></script>
 
 <script type="text/javascript">
   window.cookieconsent_options = {
-    "message": "jarboleda.me uses cookies to ensure you get the best experience.",
+    "message": "This website uses cookies to ensure you get the best experience.",
     "dismiss": "Ok",
     "learnMore": "More info",
     "link": null,

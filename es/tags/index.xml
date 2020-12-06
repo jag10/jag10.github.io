@@ -5,11 +5,7 @@
     <link>https://www.jarboleda.me/es/tags/</link>
     <description>Recent content in Tags on J. Arboleda</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 17 Mar 2017 21:33:19 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.jarboleda.me/es/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 17 Mar 2017 21:33:19 +0200</lastBuildDate><atom:link href="https://www.jarboleda.me/es/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>fedora25</title>
       <link>https://www.jarboleda.me/es/tags/fedora25/</link>
@@ -155,15 +151,6 @@
     </item>
     
     <item>
-      <title>magento</title>
-      <link>https://www.jarboleda.me/es/tags/magento/</link>
-      <pubDate>Thu, 24 Mar 2016 12:34:39 +0200</pubDate>
-      
-      <guid>https://www.jarboleda.me/es/tags/magento/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>magento2</title>
       <link>https://www.jarboleda.me/es/tags/magento2/</link>
       <pubDate>Thu, 24 Mar 2016 12:34:39 +0200</pubDate>
@@ -182,20 +169,20 @@
     </item>
     
     <item>
+      <title>magento</title>
+      <link>https://www.jarboleda.me/es/tags/magento/</link>
+      <pubDate>Thu, 24 Mar 2016 12:28:50 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/es/tags/magento/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>bash</title>
       <link>https://www.jarboleda.me/es/tags/bash/</link>
       <pubDate>Sun, 30 Aug 2015 11:05:36 +0200</pubDate>
       
       <guid>https://www.jarboleda.me/es/tags/bash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mysql</title>
-      <link>https://www.jarboleda.me/es/tags/mysql/</link>
-      <pubDate>Sun, 30 Aug 2015 11:05:36 +0200</pubDate>
-      
-      <guid>https://www.jarboleda.me/es/tags/mysql/</guid>
       <description></description>
     </item>
     
@@ -223,6 +210,15 @@
       <pubDate>Sun, 09 Aug 2015 10:48:45 +0200</pubDate>
       
       <guid>https://www.jarboleda.me/es/tags/httpd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>https://www.jarboleda.me/es/tags/mysql/</link>
+      <pubDate>Sun, 09 Aug 2015 10:48:45 +0200</pubDate>
+      
+      <guid>https://www.jarboleda.me/es/tags/mysql/</guid>
       <description></description>
     </item>
     

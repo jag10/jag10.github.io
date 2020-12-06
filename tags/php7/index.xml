@@ -5,11 +5,7 @@
     <link>https://www.jarboleda.me/tags/php7/</link>
     <description>Recent content in php7 on J. Arboleda</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 24 Mar 2016 12:34:39 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.jarboleda.me/tags/php7/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 24 Mar 2016 12:34:39 +0200</lastBuildDate><atom:link href="https://www.jarboleda.me/tags/php7/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Installing magento2 on cwp</title>
       <link>https://www.jarboleda.me/articles/installing-magento2-on-cwp/</link>

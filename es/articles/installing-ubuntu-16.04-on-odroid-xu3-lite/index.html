@@ -52,7 +52,7 @@ ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
     
     <meta itemprop="image" content="installing-ubuntu-16.04-on-odroid-xu3-lite.jpg">
     
-    <meta itemprop="keywords" content="" />
+    <meta itemprop="keywords" content="notpinned,pinned,serie1,bash,centos6,curl,cwp,fedora25,fopen,httpd,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,php,php7,piwik,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm," />
     <meta itemprop="wordCount" content="521">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
@@ -73,7 +73,12 @@ ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
 
 	<meta name="news_keywords" content="ubuntu,odroid,mate" />
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="preconnect" href="https://www.goodreads.com">
+    <link rel="preconnect" href="https://goodreads.com">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font">
+    <link rel="preload" href="/fonts/Lato-Black.ttf" as="font">
+    
     <link href="/css/global.min.css" media="screen" rel="stylesheet" type="text/css" />
   </head>
  <body>
@@ -100,12 +105,12 @@ ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
               
               <li class="pure-menu-item"><a target='' class='pure-menu-link' href=https://gitlab.com/jag7>gitlab</a></li>
               
+              <li class='pure-menu-item flag'><i class='fa fa-language' aria-hidden='true'></i></li>
               <li class='pure-menu-item lang_selector selected'>
                 
                 <a class='pure-menu-link' href="#">Spanish</a>
                 
               </li>
-              <li class='pure-menu-item flag'><i class='fa fa-language' aria-hidden='true'></i></li>
                
               <li class='pure-menu-item lang_selector'>
                 <a class='pure-menu-link' href="/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/">english </a>
@@ -116,7 +121,9 @@ ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+                    <i aria-hidden="true" class='fab fa-linkedin-in'></i>
+                  </a>
                 </li>
                 
                 
@@ -140,7 +147,7 @@ ubuntu-16.04-mate-odroid-xu3-20160708.img.xz
                       <input class='nt-search-input' id='s' name='q' placeholder='Search is disabled :(' type='text' value='' disabled />
                     </div>
                     <input class='nt-search-submit' id='go' type='submit' value='Search' />
-                    <span class='nt fas fa-search'></span>
+                    <label for='q'> <span class='nt fas fa-search'></span></label>
                   </form>
                 </li>
               </ul>
@@ -251,19 +258,29 @@ Si todo ha ido bien, podremos conectarnos a nuestra placa por ssh. En mi caso te
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/&amp;title=Instalando%20ubuntu%2016.04%20en%20odroid%20xu3%20lite&amp;summary=%3ch2%20id=%22eligiendo-una-imagen%22%3eEligiendo%20una%20imagen%3c/h2%3e%0a%3cp%3eLa%20versi%c3%b3n%2016.04%20de%20ubuntu%20acaba%20de%20ser%20liberada%20por%20parte%20del%20equipo%20de%20odroid%20para%20las%20placas%20xu3%20y%20xu4%20y%20sus%20variantes%20lite.%20En%20este%20caso%20vamos%20a%20probar%20ubuntu%2016.04%20en%20la%20placa%20odroid%20xu3%20lite%20que%20es%20la%20que%20poseo%20con%20un%20m%c3%b3dulo%20eMMC,%20que%20para%20entendernos%20viene%20a%20ser%20un%20disco%20ssd%20peque%c3%b1ito%20%28en%20realidad%20no%20es%20lo%20mismo,%20eMMC%20es%20m%c3%a1s%20lento%29,%20lo%20cual%20nos%20da%20mayor%20rendimiento,%20aunque%20tambi%c3%a9n%20se%20puede%20instalar%20en%20una%20memoria%20sd%20%28recomendable%20clase%2010%29.%20Lo%20primero%20ser%c3%a1%20descargarnos%20la%20imagen%20que%20necesitemos:%0a%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/%22%3ehttp://de.eu.odroid.in/ubuntu_16.04lts/%3c/a%3e%0aDe%20aqu%c3%ad%20he%20tomado%20el%20fichero%20que%20me%20interesa,%20correspondiente%20a%20la%20versi%c3%b3n%20completa%20de%20ubuntu%20y%20a%20la%20placa%20xu3:%3c/p%3e%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz%22%3eubuntu-16.04-mate-odroid-xu3-20160708.img.xz%3c/a%3e%3c/li%3e%0a%3c/ul%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a  href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/&amp;title=Instalando%20ubuntu%2016.04%20en%20odroid%20xu3%20lite&amp;summary=%3ch2%20id=%22eligiendo-una-imagen%22%3eEligiendo%20una%20imagen%3c/h2%3e%0a%3cp%3eLa%20versi%c3%b3n%2016.04%20de%20ubuntu%20acaba%20de%20ser%20liberada%20por%20parte%20del%20equipo%20de%20odroid%20para%20las%20placas%20xu3%20y%20xu4%20y%20sus%20variantes%20lite.%20En%20este%20caso%20vamos%20a%20probar%20ubuntu%2016.04%20en%20la%20placa%20odroid%20xu3%20lite%20que%20es%20la%20que%20poseo%20con%20un%20m%c3%b3dulo%20eMMC,%20que%20para%20entendernos%20viene%20a%20ser%20un%20disco%20ssd%20peque%c3%b1ito%20%28en%20realidad%20no%20es%20lo%20mismo,%20eMMC%20es%20m%c3%a1s%20lento%29,%20lo%20cual%20nos%20da%20mayor%20rendimiento,%20aunque%20tambi%c3%a9n%20se%20puede%20instalar%20en%20una%20memoria%20sd%20%28recomendable%20clase%2010%29.%20Lo%20primero%20ser%c3%a1%20descargarnos%20la%20imagen%20que%20necesitemos:%0a%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/%22%3ehttp://de.eu.odroid.in/ubuntu_16.04lts/%3c/a%3e%0aDe%20aqu%c3%ad%20he%20tomado%20el%20fichero%20que%20me%20interesa,%20correspondiente%20a%20la%20versi%c3%b3n%20completa%20de%20ubuntu%20y%20a%20la%20placa%20xu3:%3c/p%3e%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz%22%3eubuntu-16.04-mate-odroid-xu3-20160708.img.xz%3c/a%3e%3c/li%3e%0a%3c/ul%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+        <i aria-hidden="true" class="fab fa-linkedin-in"></i>
+      </a>
     </li>
     <li>
-      <a class="fab fa-twitter" href="http://twitter.com/share?text=Instalando%20ubuntu%2016.04%20en%20odroid%20xu3%20lite&amp;url=https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a  href="http://twitter.com/share?text=Instalando%20ubuntu%2016.04%20en%20odroid%20xu3%20lite&amp;url=https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+        <i aria-hidden="true" class="fab fa-twitter"></i>
+      </a>
     </li>
     <li>
-      <a class="fab fa-facebook-f" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+        <i aria-hidden="true" class="fab fa-facebook-f"></i>
+      </a>
     </li>
     <li>
-      <a class="fab fa-google-plus-g" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a  href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+        <i aria-hidden="true" class="fab fa-google-plus-g"></i>
+      </a>
     </li>
     <li>
-      <a class="fab fa-pinterest-p" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/&amp;media=%3cnil%3einstalling-ubuntu-16.04-on-odroid-xu3-lite.jpg&amp;description=%3ch2%20id=%22eligiendo-una-imagen%22%3eEligiendo%20una%20imagen%3c/h2%3e%0a%3cp%3eLa%20versi%c3%b3n%2016.04%20de%20ubuntu%20acaba%20de%20ser%20liberada%20por%20parte%20del%20equipo%20de%20odroid%20para%20las%20placas%20xu3%20y%20xu4%20y%20sus%20variantes%20lite.%20En%20este%20caso%20vamos%20a%20probar%20ubuntu%2016.04%20en%20la%20placa%20odroid%20xu3%20lite%20que%20es%20la%20que%20poseo%20con%20un%20m%c3%b3dulo%20eMMC,%20que%20para%20entendernos%20viene%20a%20ser%20un%20disco%20ssd%20peque%c3%b1ito%20%28en%20realidad%20no%20es%20lo%20mismo,%20eMMC%20es%20m%c3%a1s%20lento%29,%20lo%20cual%20nos%20da%20mayor%20rendimiento,%20aunque%20tambi%c3%a9n%20se%20puede%20instalar%20en%20una%20memoria%20sd%20%28recomendable%20clase%2010%29.%20Lo%20primero%20ser%c3%a1%20descargarnos%20la%20imagen%20que%20necesitemos:%0a%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/%22%3ehttp://de.eu.odroid.in/ubuntu_16.04lts/%3c/a%3e%0aDe%20aqu%c3%ad%20he%20tomado%20el%20fichero%20que%20me%20interesa,%20correspondiente%20a%20la%20versi%c3%b3n%20completa%20de%20ubuntu%20y%20a%20la%20placa%20xu3:%3c/p%3e%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz%22%3eubuntu-16.04-mate-odroid-xu3-20160708.img.xz%3c/a%3e%3c/li%3e%0a%3c/ul%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/&amp;media=%3cnil%3einstalling-ubuntu-16.04-on-odroid-xu3-lite.jpg&amp;description=%3ch2%20id=%22eligiendo-una-imagen%22%3eEligiendo%20una%20imagen%3c/h2%3e%0a%3cp%3eLa%20versi%c3%b3n%2016.04%20de%20ubuntu%20acaba%20de%20ser%20liberada%20por%20parte%20del%20equipo%20de%20odroid%20para%20las%20placas%20xu3%20y%20xu4%20y%20sus%20variantes%20lite.%20En%20este%20caso%20vamos%20a%20probar%20ubuntu%2016.04%20en%20la%20placa%20odroid%20xu3%20lite%20que%20es%20la%20que%20poseo%20con%20un%20m%c3%b3dulo%20eMMC,%20que%20para%20entendernos%20viene%20a%20ser%20un%20disco%20ssd%20peque%c3%b1ito%20%28en%20realidad%20no%20es%20lo%20mismo,%20eMMC%20es%20m%c3%a1s%20lento%29,%20lo%20cual%20nos%20da%20mayor%20rendimiento,%20aunque%20tambi%c3%a9n%20se%20puede%20instalar%20en%20una%20memoria%20sd%20%28recomendable%20clase%2010%29.%20Lo%20primero%20ser%c3%a1%20descargarnos%20la%20imagen%20que%20necesitemos:%0a%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/%22%3ehttp://de.eu.odroid.in/ubuntu_16.04lts/%3c/a%3e%0aDe%20aqu%c3%ad%20he%20tomado%20el%20fichero%20que%20me%20interesa,%20correspondiente%20a%20la%20versi%c3%b3n%20completa%20de%20ubuntu%20y%20a%20la%20placa%20xu3:%3c/p%3e%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22http://de.eu.odroid.in/ubuntu_16.04lts/ubuntu-16.04-mate-odroid-xu3-20160708.img.xz%22%3eubuntu-16.04-mate-odroid-xu3-20160708.img.xz%3c/a%3e%3c/li%3e%0a%3c/ul%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+        <i aria-hidden="true" class="fab fa-pinterest-p"></i>
+      </a>
     </li>
   </ul>
 </div>
@@ -301,14 +318,14 @@ s.setAttribute('data-timestamp', +new Date());
   
 
 <div class='authorboxwrap'>
-<h4>Author</h4>
+
     <div class='avatar-container'>
       <img alt="author's photo" class='author_avatar' width='160' height='136' src="/img/me.min.png"  />
       <h4 rel='author'>Jefferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p class= 'm-text-centered m-bold'>Business Analyst</p>
-      <p>Actualmente trabajo para <a href="https://amadeus.com/en">Amadeus</a> en Niza, Côte D&rsquo;Azur.</p>
+      <p class= 'm-text-centered bio_title'>Business Development Manager</p>
+      <p class= 'm-text-centered'>Recluto y gestiono consultores para desarrollar los negocios de <a href="https://alten.com/">Alten</a> en Madrid.</p>
       <div class='authorsocial'>
         
           <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
@@ -359,7 +376,7 @@ s.setAttribute('data-timestamp', +new Date());
               <div class='item-content'>
                 <div class='item-thumbnail'>
                   <a href='https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/' target='_blank'>
-                    <img alt='Centos web panel con php7 y mysql5.6' width='72' height='72' src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
+                    <img class="lazyload" alt='Centos web panel con php7 y mysql5.6' width='72' height='72' data-src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
@@ -374,7 +391,7 @@ s.setAttribute('data-timestamp', +new Date());
               <div class='item-content'>
                 <div class='item-thumbnail'>
                   <a href='https://www.jarboleda.me/es/articles/web-development-environment/' target='_blank'>
-                    <img alt='Entorno para desarrollo web' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
+                    <img class="lazyload" alt='Entorno para desarrollo web' width='72' height='72' data-src="/articles/img/thumbs/web-development-environment.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
@@ -388,12 +405,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
-                    <img alt='Arreglando una partición corrupta de una máquina virtual' width='72' height='72' src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
+                  <a href='https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
+                    <img class="lazyload" alt='Instalando ubuntu 16.04 en odroid xu3 lite' width='72' height='72' data-src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Arreglando una partición corrupta de una máquina virtual</a>
+                  <a href='https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Instalando ubuntu 16.04 en odroid xu3 lite</a>
                 </div>
               </div>
             </li>
@@ -405,17 +422,16 @@ s.setAttribute('data-timestamp', +new Date());
     </div>
     <div class='pure-u-1 pure-u-md-1-3'>
       <div class='widget ContactForm'>
-        <h2 class='title'>Contact me</h2>
-        <a class="email" href="mailto:me@jarboleda.me">me@jarboleda.me</a>
+        <h2 class='title'>Contact me: <a class="email" href="mailto:me@jarboleda.me">me@jarboleda.me</a></h2>
         <div class='contact-form-widget'>
           <div class='form'>
             <form name='contact-form' action="https://formspree.io/me@jarboleda.me" method="POST">
-              <p>Name</p>
-              <input class='contact-form-name' name='name' size='30' type='text' value='' />
-              <p>Email<span>*</span></p>
-              <input class='contact-form-email' name='name="_replyto"' size='30' type='text' value='' />
-              <p>Message<span>*</span></p>
-              <p><textarea class='contact-form-email-message' cols='29' name='email-message' rows='5'></textarea></p>
+              <label for='name'>Name</label>
+              <p><input class='contact-form-name' id='name' name='name' size='30' type='text' value='' /></p>
+              <label for='email'>Email<span>*</span></label>
+              <p><input class='contact-form-email' id='email' name='name="_replyto"' size='30' type='text' value='' /></p>
+              <label for='message'>Message<span>*</span></label>
+              <p><textarea class='contact-form-email-message' id='message' cols='29' name='email-message' rows='5'></textarea></p>
               <input class='contact-form-button contact-form-button-submit' type='submit' value='Send' />
               <div style='text-align: center; max-width: 222px; width: 100%'>
                 <p class='contact-form-error-message'></p>
@@ -459,16 +475,16 @@ s.setAttribute('data-timestamp', +new Date());
     </p>
     <p class='attribution'>Powered by</p>
     <a href='https://gohugo.io/' target="_blank" >
-      <img with="80" height="21" alt="hugo logo" class='attribution_logo' src="/img/hugo-logo.png" />
+      <img class="lazyload" with="80" height="21" alt="hugo logo" class='attribution_logo' data-src="/img/hugo-logo.png" />
     </a>
   </div>
 </footer>
-
+<script defer src="https://kit.fontawesome.com/f17c0ef8e6.js" crossorigin="anonymous"></script>
 <script defer src='/js/main.min.js' type='text/javascript'></script>
 
 <script type="text/javascript">
   window.cookieconsent_options = {
-    "message": "jarboleda.me uses cookies to ensure you get the best experience.",
+    "message": "This website uses cookies to ensure you get the best experience.",
     "dismiss": "Ok",
     "learnMore": "More info",
     "link": null,

@@ -41,7 +41,7 @@ Show me the code">
     
     <meta itemprop="image" content="using-piwik-api-locally-with-pw.jpg">
     
-    <meta itemprop="keywords" content="" />
+    <meta itemprop="keywords" content="notpinned,pinned,serie1,bash,centos6,curl,cwp,fedora25,fopen,httpd,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,php,php7,piwik,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm," />
     <meta itemprop="wordCount" content="268">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
@@ -57,7 +57,12 @@ Show me the code"/>
 
 	<meta name="news_keywords" content="processwire,piwik" />
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="preconnect" href="https://www.goodreads.com">
+    <link rel="preconnect" href="https://goodreads.com">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font">
+    <link rel="preload" href="/fonts/Lato-Black.ttf" as="font">
+    
     <link href="/css/global.min.css" media="screen" rel="stylesheet" type="text/css" />
   </head>
  <body>
@@ -84,12 +89,12 @@ Show me the code"/>
               
               <li class="pure-menu-item"><a target='' class='pure-menu-link' href=https://gitlab.com/jag7>gitlab</a></li>
               
+              <li class='pure-menu-item flag'><i class='fa fa-language' aria-hidden='true'></i></li>
               <li class='pure-menu-item lang_selector selected'>
                 
                 <a class='pure-menu-link' href="#">Spanish</a>
                 
               </li>
-              <li class='pure-menu-item flag'><i class='fa fa-language' aria-hidden='true'></i></li>
                
               <li class='pure-menu-item lang_selector'>
                 <a class='pure-menu-link' href="/articles/using-piwik-api-locally-with-pw/">english </a>
@@ -100,7 +105,9 @@ Show me the code"/>
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+                    <i aria-hidden="true" class='fab fa-linkedin-in'></i>
+                  </a>
                 </li>
                 
                 
@@ -124,7 +131,7 @@ Show me the code"/>
                       <input class='nt-search-input' id='s' name='q' placeholder='Search is disabled :(' type='text' value='' disabled />
                     </div>
                     <input class='nt-search-submit' id='go' type='submit' value='Search' />
-                    <span class='nt fas fa-search'></span>
+                    <label for='q'> <span class='nt fas fa-search'></span></label>
                   </form>
                 </li>
               </ul>
@@ -162,7 +169,7 @@ Show me the code"/>
       
       <p><p>Para hacer el tracking de visitas de jglab.me utilizo Piwik. ¿Por qué? El principal motivo es que permite mantener la información de manera privada, sin que terceros lleguen a saberla, pero además, piwik ofrece una API muy potente que puede ser utilizada de manera <strong>local</strong>, lo que es muy importante para el rendimiento, pues me permite obtener estadísticas de la web sin realizar ninguna petición. Para las peticiones locales utilizo la siguiente clase:</p>
 <h2 id="show-me-the-code">Show me the code</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 <span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Piwik\API\Request</span>;
 <span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Piwik\FrontController</span>;
 
@@ -204,17 +211,17 @@ $environment<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">
     <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
   }
 }
-<span style="color:#75715e">?&gt;</span>
-</code></pre></div>
+<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div>
 <p>Con esa clase definida, podemos utilizarla de la siguiente manera:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 <span style="color:#66d9ef">include_once</span>(<span style="color:#e6db74">&#39;localPiwik.php&#39;</span>);
 $piwik <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">localPiwik</span>();
 $visits <span style="color:#f92672">=</span> $piwik<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getUniqueVisits</span>(<span style="color:#e6db74">&#39;http://example.org&#39;</span>);
 </code></pre></div></p>
 <h2 id="el-ejemplo">El ejemplo</h2>
 <p>Para acabar, dejo un ejemplo algo más completo de cómo conseguir una lista ordenada de los posts más visitados en ProcessWire
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">top_posts</span>($posts_PW){
     <span style="color:#66d9ef">include_once</span>(<span style="color:#e6db74">&#39;localPiwik.php&#39;</span>);
     $piwik <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">localPiwik</span>();
@@ -232,8 +239,8 @@ $visits <span style="color:#f92672">=</span> $piwik<span style="color:#f92672">-
     $posts <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_reverse</span>($posts);
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">array_slice</span>($posts, <span style="color:#ae81ff">0</span> , <span style="color:#ae81ff">5</span>);
   }
-<span style="color:#75715e">?&gt;</span>
-</code></pre></div></p></p>
+<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div></p></p>
       
     </div>
     <div class="clearfix"></div>
@@ -265,19 +272,29 @@ $visits <span style="color:#f92672">=</span> $piwik<span style="color:#f92672">-
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/&amp;title=Utilizando%20la%20API%20de%20piwik%20en%20local%20con%20PW&amp;summary=%3cp%3ePara%20hacer%20el%20tracking%20de%20visitas%20de%20jglab.me%20utilizo%20Piwik.%20%c2%bfPor%20qu%c3%a9?%20El%20principal%20motivo%20es%20que%20permite%20mantener%20la%20informaci%c3%b3n%20de%20manera%20privada,%20sin%20que%20terceros%20lleguen%20a%20saberla,%20pero%20adem%c3%a1s,%20piwik%20ofrece%20una%20API%20muy%20potente%20que%20puede%20ser%20utilizada%20de%20manera%20%3cstrong%3elocal%3c/strong%3e,%20lo%20que%20es%20muy%20importante%20para%20el%20rendimiento,%20pues%20me%20permite%20obtener%20estad%c3%adsticas%20de%20la%20web%20sin%20realizar%20ninguna%20petici%c3%b3n.%20Para%20las%20peticiones%20locales%20utilizo%20la%20siguiente%20clase:%3c/p%3e%0a%3ch2%20id=%22show-me-the-code%22%3eShow%20me%20the%20code%3c/h2%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a  href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/&amp;title=Utilizando%20la%20API%20de%20piwik%20en%20local%20con%20PW&amp;summary=%3cp%3ePara%20hacer%20el%20tracking%20de%20visitas%20de%20jglab.me%20utilizo%20Piwik.%20%c2%bfPor%20qu%c3%a9?%20El%20principal%20motivo%20es%20que%20permite%20mantener%20la%20informaci%c3%b3n%20de%20manera%20privada,%20sin%20que%20terceros%20lleguen%20a%20saberla,%20pero%20adem%c3%a1s,%20piwik%20ofrece%20una%20API%20muy%20potente%20que%20puede%20ser%20utilizada%20de%20manera%20%3cstrong%3elocal%3c/strong%3e,%20lo%20que%20es%20muy%20importante%20para%20el%20rendimiento,%20pues%20me%20permite%20obtener%20estad%c3%adsticas%20de%20la%20web%20sin%20realizar%20ninguna%20petici%c3%b3n.%20Para%20las%20peticiones%20locales%20utilizo%20la%20siguiente%20clase:%3c/p%3e%0a%3ch2%20id=%22show-me-the-code%22%3eShow%20me%20the%20code%3c/h2%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+        <i aria-hidden="true" class="fab fa-linkedin-in"></i>
+      </a>
     </li>
     <li>
-      <a class="fab fa-twitter" href="http://twitter.com/share?text=Utilizando%20la%20API%20de%20piwik%20en%20local%20con%20PW&amp;url=https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a  href="http://twitter.com/share?text=Utilizando%20la%20API%20de%20piwik%20en%20local%20con%20PW&amp;url=https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+        <i aria-hidden="true" class="fab fa-twitter"></i>
+      </a>
     </li>
     <li>
-      <a class="fab fa-facebook-f" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+        <i aria-hidden="true" class="fab fa-facebook-f"></i>
+      </a>
     </li>
     <li>
-      <a class="fab fa-google-plus-g" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a  href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+        <i aria-hidden="true" class="fab fa-google-plus-g"></i>
+      </a>
     </li>
     <li>
-      <a class="fab fa-pinterest-p" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/&amp;media=%3cnil%3eusing-piwik-api-locally-with-pw.jpg&amp;description=%3cp%3ePara%20hacer%20el%20tracking%20de%20visitas%20de%20jglab.me%20utilizo%20Piwik.%20%c2%bfPor%20qu%c3%a9?%20El%20principal%20motivo%20es%20que%20permite%20mantener%20la%20informaci%c3%b3n%20de%20manera%20privada,%20sin%20que%20terceros%20lleguen%20a%20saberla,%20pero%20adem%c3%a1s,%20piwik%20ofrece%20una%20API%20muy%20potente%20que%20puede%20ser%20utilizada%20de%20manera%20%3cstrong%3elocal%3c/strong%3e,%20lo%20que%20es%20muy%20importante%20para%20el%20rendimiento,%20pues%20me%20permite%20obtener%20estad%c3%adsticas%20de%20la%20web%20sin%20realizar%20ninguna%20petici%c3%b3n.%20Para%20las%20peticiones%20locales%20utilizo%20la%20siguiente%20clase:%3c/p%3e%0a%3ch2%20id=%22show-me-the-code%22%3eShow%20me%20the%20code%3c/h2%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/&amp;media=%3cnil%3eusing-piwik-api-locally-with-pw.jpg&amp;description=%3cp%3ePara%20hacer%20el%20tracking%20de%20visitas%20de%20jglab.me%20utilizo%20Piwik.%20%c2%bfPor%20qu%c3%a9?%20El%20principal%20motivo%20es%20que%20permite%20mantener%20la%20informaci%c3%b3n%20de%20manera%20privada,%20sin%20que%20terceros%20lleguen%20a%20saberla,%20pero%20adem%c3%a1s,%20piwik%20ofrece%20una%20API%20muy%20potente%20que%20puede%20ser%20utilizada%20de%20manera%20%3cstrong%3elocal%3c/strong%3e,%20lo%20que%20es%20muy%20importante%20para%20el%20rendimiento,%20pues%20me%20permite%20obtener%20estad%c3%adsticas%20de%20la%20web%20sin%20realizar%20ninguna%20petici%c3%b3n.%20Para%20las%20peticiones%20locales%20utilizo%20la%20siguiente%20clase:%3c/p%3e%0a%3ch2%20id=%22show-me-the-code%22%3eShow%20me%20the%20code%3c/h2%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+        <i aria-hidden="true" class="fab fa-pinterest-p"></i>
+      </a>
     </li>
   </ul>
 </div>
@@ -315,14 +332,14 @@ s.setAttribute('data-timestamp', +new Date());
   
 
 <div class='authorboxwrap'>
-<h4>Author</h4>
+
     <div class='avatar-container'>
       <img alt="author's photo" class='author_avatar' width='160' height='136' src="/img/me.min.png"  />
       <h4 rel='author'>Jefferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p class= 'm-text-centered m-bold'>Business Analyst</p>
-      <p>Actualmente trabajo para <a href="https://amadeus.com/en">Amadeus</a> en Niza, Côte D&rsquo;Azur.</p>
+      <p class= 'm-text-centered bio_title'>Business Development Manager</p>
+      <p class= 'm-text-centered'>Recluto y gestiono consultores para desarrollar los negocios de <a href="https://alten.com/">Alten</a> en Madrid.</p>
       <div class='authorsocial'>
         
           <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
@@ -370,12 +387,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
-                    <img alt='Haciendo un backup de todas las BD usando mysqldump' width='72' height='72' src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
+                  <a href='https://www.jarboleda.me/es/articles/web-development-environment/' target='_blank'>
+                    <img class="lazyload" alt='Entorno para desarrollo web' width='72' height='72' data-src="/articles/img/thumbs/web-development-environment.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Haciendo un backup de todas las BD usando mysqldump</a>
+                  <a href='https://www.jarboleda.me/es/articles/web-development-environment/' class="mostVisitedLink">Entorno para desarrollo web</a>
                 </div>
               </div>
             </li>
@@ -385,12 +402,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
-                    <img alt='Cómo manejar recursos remotos con curl' width='72' height='72' src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
+                  <a href='https://www.jarboleda.me/es/articles/getting-an-objects-methods/' target='_blank'>
+                    <img class="lazyload" alt='Obteniendo los métodos (reflejados) de un objeto' width='72' height='72' data-src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">Cómo manejar recursos remotos con curl</a>
+                  <a href='https://www.jarboleda.me/es/articles/getting-an-objects-methods/' class="mostVisitedLink">Obteniendo los métodos (reflejados) de un objeto</a>
                 </div>
               </div>
             </li>
@@ -401,7 +418,7 @@ s.setAttribute('data-timestamp', +new Date());
               <div class='item-content'>
                 <div class='item-thumbnail'>
                   <a href='https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/' target='_blank'>
-                    <img alt='Utilizando la API de piwik en local con PW' width='72' height='72' src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
+                    <img class="lazyload" alt='Utilizando la API de piwik en local con PW' width='72' height='72' data-src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
@@ -417,17 +434,16 @@ s.setAttribute('data-timestamp', +new Date());
     </div>
     <div class='pure-u-1 pure-u-md-1-3'>
       <div class='widget ContactForm'>
-        <h2 class='title'>Contact me</h2>
-        <a class="email" href="mailto:me@jarboleda.me">me@jarboleda.me</a>
+        <h2 class='title'>Contact me: <a class="email" href="mailto:me@jarboleda.me">me@jarboleda.me</a></h2>
         <div class='contact-form-widget'>
           <div class='form'>
             <form name='contact-form' action="https://formspree.io/me@jarboleda.me" method="POST">
-              <p>Name</p>
-              <input class='contact-form-name' name='name' size='30' type='text' value='' />
-              <p>Email<span>*</span></p>
-              <input class='contact-form-email' name='name="_replyto"' size='30' type='text' value='' />
-              <p>Message<span>*</span></p>
-              <p><textarea class='contact-form-email-message' cols='29' name='email-message' rows='5'></textarea></p>
+              <label for='name'>Name</label>
+              <p><input class='contact-form-name' id='name' name='name' size='30' type='text' value='' /></p>
+              <label for='email'>Email<span>*</span></label>
+              <p><input class='contact-form-email' id='email' name='name="_replyto"' size='30' type='text' value='' /></p>
+              <label for='message'>Message<span>*</span></label>
+              <p><textarea class='contact-form-email-message' id='message' cols='29' name='email-message' rows='5'></textarea></p>
               <input class='contact-form-button contact-form-button-submit' type='submit' value='Send' />
               <div style='text-align: center; max-width: 222px; width: 100%'>
                 <p class='contact-form-error-message'></p>
@@ -471,16 +487,16 @@ s.setAttribute('data-timestamp', +new Date());
     </p>
     <p class='attribution'>Powered by</p>
     <a href='https://gohugo.io/' target="_blank" >
-      <img with="80" height="21" alt="hugo logo" class='attribution_logo' src="/img/hugo-logo.png" />
+      <img class="lazyload" with="80" height="21" alt="hugo logo" class='attribution_logo' data-src="/img/hugo-logo.png" />
     </a>
   </div>
 </footer>
-
+<script defer src="https://kit.fontawesome.com/f17c0ef8e6.js" crossorigin="anonymous"></script>
 <script defer src='/js/main.min.js' type='text/javascript'></script>
 
 <script type="text/javascript">
   window.cookieconsent_options = {
-    "message": "jarboleda.me uses cookies to ensure you get the best experience.",
+    "message": "This website uses cookies to ensure you get the best experience.",
     "dismiss": "Ok",
     "learnMore": "More info",
     "link": null,

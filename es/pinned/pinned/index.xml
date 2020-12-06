@@ -5,11 +5,7 @@
     <link>https://www.jarboleda.me/es/pinned/pinned/</link>
     <description>Recent content in pinned on J. Arboleda</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 27 Jul 2016 13:50:40 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.jarboleda.me/es/pinned/pinned/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 27 Jul 2016 13:50:40 +0200</lastBuildDate><atom:link href="https://www.jarboleda.me/es/pinned/pinned/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Entorno para desarrollo web</title>
       <link>https://www.jarboleda.me/es/articles/web-development-environment/</link>

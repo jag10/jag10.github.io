@@ -5,11 +5,7 @@
     <link>https://www.jarboleda.me/tags/reflectionmethod/</link>
     <description>Recent content in ReflectionMethod on J. Arboleda</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 01 May 2016 13:28:37 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.jarboleda.me/tags/reflectionmethod/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 01 May 2016 13:28:37 +0200</lastBuildDate><atom:link href="https://www.jarboleda.me/tags/reflectionmethod/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting an object&#39;s (reflected) methods</title>
       <link>https://www.jarboleda.me/articles/getting-an-objects-methods/</link>

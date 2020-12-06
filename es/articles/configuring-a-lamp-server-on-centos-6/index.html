@@ -45,7 +45,7 @@ En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co c
     
     <meta itemprop="image" content="configuring-a-lamp-server-on-centos-6.jpg">
     
-    <meta itemprop="keywords" content="" />
+    <meta itemprop="keywords" content="notpinned,pinned,serie1,bash,centos6,curl,cwp,fedora25,fopen,httpd,magento,magento2,mate,mysql,mysqldump,nodejs,odroid,php,php7,piwik,processwire,reflectionmethod,sass,ubuntu,unrealengine,vagrant,vm," />
     <meta itemprop="wordCount" content="980">
 	
 	<meta name="twitter:card" content="summary_large_image"/>
@@ -62,7 +62,12 @@ En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co c
 
 	<meta name="news_keywords" content="httpd,mysql,php,centos6" />
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="preconnect" href="https://www.goodreads.com">
+    <link rel="preconnect" href="https://goodreads.com">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font">
+    <link rel="preload" href="/fonts/Lato-Black.ttf" as="font">
+    
     <link href="/css/global.min.css" media="screen" rel="stylesheet" type="text/css" />
   </head>
  <body>
@@ -89,12 +94,12 @@ En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co c
               
               <li class="pure-menu-item"><a target='' class='pure-menu-link' href=https://gitlab.com/jag7>gitlab</a></li>
               
+              <li class='pure-menu-item flag'><i class='fa fa-language' aria-hidden='true'></i></li>
               <li class='pure-menu-item lang_selector selected'>
                 
                 <a class='pure-menu-link' href="#">Spanish</a>
                 
               </li>
-              <li class='pure-menu-item flag'><i class='fa fa-language' aria-hidden='true'></i></li>
                
               <li class='pure-menu-item lang_selector'>
                 <a class='pure-menu-link' href="/articles/configuring-a-lamp-server-on-centos-6/">english </a>
@@ -105,7 +110,9 @@ En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co c
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+                  <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+                    <i aria-hidden="true" class='fab fa-linkedin-in'></i>
+                  </a>
                 </li>
                 
                 
@@ -129,7 +136,7 @@ En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co c
                       <input class='nt-search-input' id='s' name='q' placeholder='Search is disabled :(' type='text' value='' disabled />
                     </div>
                     <input class='nt-search-submit' id='go' type='submit' value='Search' />
-                    <span class='nt fas fa-search'></span>
+                    <label for='q'> <span class='nt fas fa-search'></span></label>
                   </form>
                 </li>
               </ul>
@@ -228,7 +235,7 @@ touch <span style="color:#e6db74">/var/www/vhosts/jag.co/logs/error.log</span>
 touch <span style="color:#e6db74">/var/www/vhosts/jag.co/logs/access.log</span></code></pre></div></p>
 <p>En el siguiente paso vamos a crear el script mencionado anteriormente, estableciendo algunas variables de entorno y ejecutando php. Crea y edita el siguiente fichero: <code>/var/www/vhosts/jag.co/.cgi-bin/php.fcgi</code>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>#
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span>
 <span style="color:#75715e"># php5.fcgi</span>
 <span style="color:#75715e"># Shell Script to run PHP5 using mod_fastcgi under Apache 2.x</span>
 USER<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jag&#34;</span>
@@ -379,19 +386,29 @@ chkconfig mysqld on</code></pre></div></p></p>
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a class="fab fa-linkedin-in" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/&amp;title=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;summary=%3cp%3eEn%20este%20post%20voy%20a%20explicar%20c%c3%b3mo%20configurar%20un%20servidor%20VPS%20para%20tener%20un%20servidor%20LAMP%20b%c3%a1sico%20con%20m%c3%baltiples%20versiones%20PHP,%20compiladas%20previamente.%20De%20esta%20manera,%20podemos%20tener%20un%20servidor%20VPS%20muy%20barato%20%28~3%e2%82%ac%29%20en%20el%20que%20hacer%20probaturas.%3c/p%3e%0a%3ch2%20id=%22estructura-de-directorios%22%3eEstructura%20de%20directorios%3c/h2%3e%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20crear%20la%20estructura%20de%20directorios.%20Utilizar%c3%a9%20jag.co%20como%20dominio%20para%20este%20ejemplo.%20Puedes%20utilizar%20la%20estructura%20de%20directoriosque%20quieras,%20esta%20es%20la%20m%c3%ada:%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a  href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/&amp;title=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;summary=%3cp%3eEn%20este%20post%20voy%20a%20explicar%20c%c3%b3mo%20configurar%20un%20servidor%20VPS%20para%20tener%20un%20servidor%20LAMP%20b%c3%a1sico%20con%20m%c3%baltiples%20versiones%20PHP,%20compiladas%20previamente.%20De%20esta%20manera,%20podemos%20tener%20un%20servidor%20VPS%20muy%20barato%20%28~3%e2%82%ac%29%20en%20el%20que%20hacer%20probaturas.%3c/p%3e%0a%3ch2%20id=%22estructura-de-directorios%22%3eEstructura%20de%20directorios%3c/h2%3e%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20crear%20la%20estructura%20de%20directorios.%20Utilizar%c3%a9%20jag.co%20como%20dominio%20para%20este%20ejemplo.%20Puedes%20utilizar%20la%20estructura%20de%20directoriosque%20quieras,%20esta%20es%20la%20m%c3%ada:%3c/p%3e&amp;source=J.%20Arboleda" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+        <i aria-hidden="true" class="fab fa-linkedin-in"></i>
+      </a>
     </li>
     <li>
-      <a class="fab fa-twitter" href="http://twitter.com/share?text=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a  href="http://twitter.com/share?text=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+        <i aria-hidden="true" class="fab fa-twitter"></i>
+      </a>
     </li>
     <li>
-      <a class="fab fa-facebook-f" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+        <i aria-hidden="true" class="fab fa-facebook-f"></i>
+      </a>
     </li>
     <li>
-      <a class="fab fa-google-plus-g" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a  href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+        <i aria-hidden="true" class="fab fa-google-plus-g"></i>
+      </a>
     </li>
     <li>
-      <a class="fab fa-pinterest-p" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/&amp;media=%3cnil%3econfiguring-a-lamp-server-on-centos-6.jpg&amp;description=%3cp%3eEn%20este%20post%20voy%20a%20explicar%20c%c3%b3mo%20configurar%20un%20servidor%20VPS%20para%20tener%20un%20servidor%20LAMP%20b%c3%a1sico%20con%20m%c3%baltiples%20versiones%20PHP,%20compiladas%20previamente.%20De%20esta%20manera,%20podemos%20tener%20un%20servidor%20VPS%20muy%20barato%20%28~3%e2%82%ac%29%20en%20el%20que%20hacer%20probaturas.%3c/p%3e%0a%3ch2%20id=%22estructura-de-directorios%22%3eEstructura%20de%20directorios%3c/h2%3e%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20crear%20la%20estructura%20de%20directorios.%20Utilizar%c3%a9%20jag.co%20como%20dominio%20para%20este%20ejemplo.%20Puedes%20utilizar%20la%20estructura%20de%20directoriosque%20quieras,%20esta%20es%20la%20m%c3%ada:%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank"></a>
+      <a href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/&amp;media=%3cnil%3econfiguring-a-lamp-server-on-centos-6.jpg&amp;description=%3cp%3eEn%20este%20post%20voy%20a%20explicar%20c%c3%b3mo%20configurar%20un%20servidor%20VPS%20para%20tener%20un%20servidor%20LAMP%20b%c3%a1sico%20con%20m%c3%baltiples%20versiones%20PHP,%20compiladas%20previamente.%20De%20esta%20manera,%20podemos%20tener%20un%20servidor%20VPS%20muy%20barato%20%28~3%e2%82%ac%29%20en%20el%20que%20hacer%20probaturas.%3c/p%3e%0a%3ch2%20id=%22estructura-de-directorios%22%3eEstructura%20de%20directorios%3c/h2%3e%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20crear%20la%20estructura%20de%20directorios.%20Utilizar%c3%a9%20jag.co%20como%20dominio%20para%20este%20ejemplo.%20Puedes%20utilizar%20la%20estructura%20de%20directoriosque%20quieras,%20esta%20es%20la%20m%c3%ada:%3c/p%3e" onclick="window.open(this.href, 'windowName', 'width=550, height=600, left=24, top=24, scrollbars, resizable'); return false" rel="nofollow" target="_blank">
+        <i aria-hidden="true" class="fab fa-pinterest-p"></i>
+      </a>
     </li>
   </ul>
 </div>
@@ -429,14 +446,14 @@ s.setAttribute('data-timestamp', +new Date());
   
 
 <div class='authorboxwrap'>
-<h4>Author</h4>
+
     <div class='avatar-container'>
       <img alt="author's photo" class='author_avatar' width='160' height='136' src="/img/me.min.png"  />
       <h4 rel='author'>Jefferson Arboleda</h4>
     </div>
     <div class='author_description_container'>
-      <p class= 'm-text-centered m-bold'>Business Analyst</p>
-      <p>Actualmente trabajo para <a href="https://amadeus.com/en">Amadeus</a> en Niza, Côte D&rsquo;Azur.</p>
+      <p class= 'm-text-centered bio_title'>Business Development Manager</p>
+      <p class= 'm-text-centered'>Recluto y gestiono consultores para desarrollar los negocios de <a href="https://alten.com/">Alten</a> en Madrid.</p>
       <div class='authorsocial'>
         
           <a href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
@@ -486,8 +503,23 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
+                  <a href='https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
+                    <img class="lazyload" alt='Instalando unreal engine en fedora 25' width='72' height='72' data-src="/articles/img/thumbs/unreal_engine.min.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">Instalando unreal engine en fedora 25</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
                   <a href='https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
-                    <img alt='Autenticando usuarios con cURL' width='72' height='72' src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
+                    <img class="lazyload" alt='Autenticando usuarios con cURL' width='72' height='72' data-src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
@@ -501,27 +533,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
-                    <img alt='Instalando ubuntu 16.04 en odroid xu3 lite' width='72' height='72' src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
+                  <a href='https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
+                    <img class="lazyload" alt='Haciendo un backup de todas las BD usando mysqldump' width='72' height='72' data-src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Instalando ubuntu 16.04 en odroid xu3 lite</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/web-development-environment/' target='_blank'>
-                    <img alt='Entorno para desarrollo web' width='72' height='72' src="/articles/img/thumbs/web-development-environment.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/web-development-environment/' class="mostVisitedLink">Entorno para desarrollo web</a>
+                  <a href='https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Haciendo un backup de todas las BD usando mysqldump</a>
                 </div>
               </div>
             </li>
@@ -533,17 +550,16 @@ s.setAttribute('data-timestamp', +new Date());
     </div>
     <div class='pure-u-1 pure-u-md-1-3'>
       <div class='widget ContactForm'>
-        <h2 class='title'>Contact me</h2>
-        <a class="email" href="mailto:me@jarboleda.me">me@jarboleda.me</a>
+        <h2 class='title'>Contact me: <a class="email" href="mailto:me@jarboleda.me">me@jarboleda.me</a></h2>
         <div class='contact-form-widget'>
           <div class='form'>
             <form name='contact-form' action="https://formspree.io/me@jarboleda.me" method="POST">
-              <p>Name</p>
-              <input class='contact-form-name' name='name' size='30' type='text' value='' />
-              <p>Email<span>*</span></p>
-              <input class='contact-form-email' name='name="_replyto"' size='30' type='text' value='' />
-              <p>Message<span>*</span></p>
-              <p><textarea class='contact-form-email-message' cols='29' name='email-message' rows='5'></textarea></p>
+              <label for='name'>Name</label>
+              <p><input class='contact-form-name' id='name' name='name' size='30' type='text' value='' /></p>
+              <label for='email'>Email<span>*</span></label>
+              <p><input class='contact-form-email' id='email' name='name="_replyto"' size='30' type='text' value='' /></p>
+              <label for='message'>Message<span>*</span></label>
+              <p><textarea class='contact-form-email-message' id='message' cols='29' name='email-message' rows='5'></textarea></p>
               <input class='contact-form-button contact-form-button-submit' type='submit' value='Send' />
               <div style='text-align: center; max-width: 222px; width: 100%'>
                 <p class='contact-form-error-message'></p>
@@ -587,16 +603,16 @@ s.setAttribute('data-timestamp', +new Date());
     </p>
     <p class='attribution'>Powered by</p>
     <a href='https://gohugo.io/' target="_blank" >
-      <img with="80" height="21" alt="hugo logo" class='attribution_logo' src="/img/hugo-logo.png" />
+      <img class="lazyload" with="80" height="21" alt="hugo logo" class='attribution_logo' data-src="/img/hugo-logo.png" />
     </a>
   </div>
 </footer>
-
+<script defer src="https://kit.fontawesome.com/f17c0ef8e6.js" crossorigin="anonymous"></script>
 <script defer src='/js/main.min.js' type='text/javascript'></script>
 
 <script type="text/javascript">
   window.cookieconsent_options = {
-    "message": "jarboleda.me uses cookies to ensure you get the best experience.",
+    "message": "This website uses cookies to ensure you get the best experience.",
     "dismiss": "Ok",
     "learnMore": "More info",
     "link": null,

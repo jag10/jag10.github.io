@@ -5,11 +5,7 @@
     <link>https://www.jarboleda.me/tags/piwik/</link>
     <description>Recent content in piwik on J. Arboleda</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 01 May 2016 12:37:41 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.jarboleda.me/tags/piwik/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 01 May 2016 12:37:41 +0200</lastBuildDate><atom:link href="https://www.jarboleda.me/tags/piwik/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using piwik&#39;s API locally with ProcessWire</title>
       <link>https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/</link>

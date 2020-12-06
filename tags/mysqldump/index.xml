@@ -5,11 +5,7 @@
     <link>https://www.jarboleda.me/tags/mysqldump/</link>
     <description>Recent content in mysqldump on J. Arboleda</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 30 Aug 2015 11:05:36 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.jarboleda.me/tags/mysqldump/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 30 Aug 2015 11:05:36 +0200</lastBuildDate><atom:link href="https://www.jarboleda.me/tags/mysqldump/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Backing up all databases using mysqldump</title>
       <link>https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/</link>
