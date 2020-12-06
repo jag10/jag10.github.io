@@ -70,8 +70,8 @@ Boot the virtualmachine from the ISO file: Settings -&gt; Storage -&gt; Add CD/D
 
     <link rel="preconnect" href="https://www.goodreads.com">
     <link rel="preconnect" href="https://goodreads.com">
-    <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font">
-    <link rel="preload" href="/fonts/Lato-Black.ttf" as="font">
+    <link rel="preload" href="/fonts/lato-v17-latin-regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/lato-v17-latin-900.woff2" type="font/woff2" as="font" crossorigin="anonymous">
     
     <link href="/css/global.min.css" media="screen" rel="stylesheet" type="text/css" />
   </head>
@@ -115,24 +115,24 @@ Boot the virtualmachine from the ISO file: Settings -&gt; Storage -&gt; Add CD/D
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a rel="noopener" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+                  <a rel="noopener" aria-label="LinkedIn" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
                     <i aria-hidden="true" class='fab fa-linkedin-in'></i>
                   </a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a rel="noopener" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
+                  <a rel="noopener" aria-label="Github" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a rel="noopener" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
+                  <a rel="noopener" aria-label="Gitlab" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a rel="noopener" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
+                  <a rel="noopener" aria-label="Twitter" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
                 </li>
                 
                 <li class='pure-menu-item nt-search' id='nt-search'>
@@ -141,7 +141,7 @@ Boot the virtualmachine from the ISO file: Settings -&gt; Storage -&gt; Add CD/D
                       <input class='nt-search-input' id='s' name='q' placeholder='Search is disabled :(' type='text' value='' disabled />
                     </div>
                     <input class='nt-search-submit' id='go' type='submit' value='Search' />
-                    <label for='q'> <span class='nt fas fa-search'></span></label>
+                    <label for='s'><span class='nt fas fa-search'></span></label>
                   </form>
                 </li>
               </ul>
@@ -218,27 +218,27 @@ You&rsquo;ll see some questions, you should answer yes to everything. When if fi
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a rel="noopener" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/&amp;title=Fixing%20a%20corrupted%20partition%20on%20a%20virtual%20machine&amp;summary=%3cp%3eIf%20you%20ever%20find%20the%20following%20error%20while%20using%20vagrant%20or%20simply%20when%20booting%20a%20virtual%20machine,%20we&amp;rsquo;ll%20later%20see%20how%20to%20solve%20it.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3eCouldn%3cspan%20style=%22color:#960050;background-color:#1e0010%22%3e&amp;#39;%3c/span%3et%20remount%20RDWR%20because%20of%20unprocessed%20orphan%20inode%20list.%3c/code%3e%3c/pre%3e%3c/div%3e%0aDownload%20an%20Ubuntu%20ISO%0aBoot%20the%20virtualmachine%20from%20the%20ISO%20file:%20Settings%20-&amp;gt;%20Storage%20-&amp;gt;%20Add%20CD/DVD%20Device%20-&amp;gt;%20Choose%20disk%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/&amp;title=Fixing%20a%20corrupted%20partition%20on%20a%20virtual%20machine&amp;summary=%3cp%3eIf%20you%20ever%20find%20the%20following%20error%20while%20using%20vagrant%20or%20simply%20when%20booting%20a%20virtual%20machine,%20we&amp;rsquo;ll%20later%20see%20how%20to%20solve%20it.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3eCouldn%3cspan%20style=%22color:#960050;background-color:#1e0010%22%3e&amp;#39;%3c/span%3et%20remount%20RDWR%20because%20of%20unprocessed%20orphan%20inode%20list.%3c/code%3e%3c/pre%3e%3c/div%3e%0aDownload%20an%20Ubuntu%20ISO%0aBoot%20the%20virtualmachine%20from%20the%20ISO%20file:%20Settings%20-&amp;gt;%20Storage%20-&amp;gt;%20Add%20CD/DVD%20Device%20-&amp;gt;%20Choose%20disk%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
-      <a rel="noopener" href="http://twitter.com/share?text=Fixing%20a%20corrupted%20partition%20on%20a%20virtual%20machine&amp;url=https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Twitter" href="http://twitter.com/share?text=Fixing%20a%20corrupted%20partition%20on%20a%20virtual%20machine&amp;url=https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
-      <a rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
-      <a rel="noopener" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Google Plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-google-plus-g"></i>
       </a>
     </li>
     <li>
-      <a rel="noopener" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/&amp;media=%3cnil%3efixing-corrupted-partition-on-virtual-machine.jpg&amp;description=%3cp%3eIf%20you%20ever%20find%20the%20following%20error%20while%20using%20vagrant%20or%20simply%20when%20booting%20a%20virtual%20machine,%20we&amp;rsquo;ll%20later%20see%20how%20to%20solve%20it.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3eCouldn%3cspan%20style=%22color:#960050;background-color:#1e0010%22%3e&amp;#39;%3c/span%3et%20remount%20RDWR%20because%20of%20unprocessed%20orphan%20inode%20list.%3c/code%3e%3c/pre%3e%3c/div%3e%0aDownload%20an%20Ubuntu%20ISO%0aBoot%20the%20virtualmachine%20from%20the%20ISO%20file:%20Settings%20-&amp;gt;%20Storage%20-&amp;gt;%20Add%20CD/DVD%20Device%20-&amp;gt;%20Choose%20disk%3c/p%3e" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/&amp;media=%3cnil%3efixing-corrupted-partition-on-virtual-machine.jpg&amp;description=%3cp%3eIf%20you%20ever%20find%20the%20following%20error%20while%20using%20vagrant%20or%20simply%20when%20booting%20a%20virtual%20machine,%20we&amp;rsquo;ll%20later%20see%20how%20to%20solve%20it.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3eCouldn%3cspan%20style=%22color:#960050;background-color:#1e0010%22%3e&amp;#39;%3c/span%3et%20remount%20RDWR%20because%20of%20unprocessed%20orphan%20inode%20list.%3c/code%3e%3c/pre%3e%3c/div%3e%0aDownload%20an%20Ubuntu%20ISO%0aBoot%20the%20virtualmachine%20from%20the%20ISO%20file:%20Settings%20-&amp;gt;%20Storage%20-&amp;gt;%20Add%20CD/DVD%20Device%20-&amp;gt;%20Choose%20disk%3c/p%3e" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-pinterest-p"></i>
       </a>
     </li>
@@ -288,23 +288,23 @@ s.setAttribute('data-timestamp', +new Date());
       <p class= 'm-text-centered'>I help Alten develop its IT business in Madrid.</p>
       <div class='authorsocial'>
         
-          <a rel="noopener" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+          <a rel="noopener" aria-label="LinkedIn" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
             <i class='fab fa-linkedin-in'></i>
           </a>
         
         
-          <a rel="noopener" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'>
-            </i>
+          <a rel="noopener" aria-label="Github" href='https://github.com/jag10' target='_blank'>
+            <i class='fab fa-github'></i>
           </a>
         
         
-          <a rel="noopener" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'>
-            </i>
+          <a rel="noopener" aria-label="Gitlab" href='https://gitlab.com/jag7' target='_blank'>
+            <i class='fab fa-gitlab'></i>
           </a>
         
         
-          <a rel="noopener" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'>
-            </i>
+          <a rel="noopener" aria-label="Twitter" href='https://twitter.com/j_a_g_x' target='_blank'>
+            <i class='fab fa-twitter'></i>
           </a>
         
       </div>
@@ -337,12 +337,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/moving-to-france-for-work/' target='_blank'>
-                    <img class="lazyload" alt='Moving to France for work' width='72' height='72' data-src="/articles/img/thumbs/moving-to-france-for-work.jpg" />
+                  <a href='https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/' target='_blank'>
+                    <img class="lazyload" alt='Using piwik&#39;s API locally with ProcessWire' width='72' height='72' data-src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/moving-to-france-for-work/' class="mostVisitedLink">Moving to France for work</a>
+                  <a href='https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Using piwik&#39;s API locally with ProcessWire</a>
                 </div>
               </div>
             </li>
@@ -352,12 +352,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/facebook-sharer-and-ipv6-issue/' target='_blank'>
-                    <img class="lazyload" alt='Facebook sharer and IPv6 issue' width='72' height='72' data-src="/articles/img/thumbs/facebook-sharer-and-ipv6-issue.png" />
+                  <a href='https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
+                    <img class="lazyload" alt='How to handle remote resources with curl' width='72' height='72' data-src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/facebook-sharer-and-ipv6-issue/' class="mostVisitedLink">Facebook sharer and IPv6 issue</a>
+                  <a href='https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">How to handle remote resources with curl</a>
                 </div>
               </div>
             </li>
@@ -367,12 +367,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/getting-an-objects-methods/' target='_blank'>
-                    <img class="lazyload" alt='Getting an object&#39;s (reflected) methods' width='72' height='72' data-src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
+                  <a href='https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/' target='_blank'>
+                    <img class="lazyload" alt='Transferring files with FTP through bash expect script' width='72' height='72' data-src="/articles/img/thumbs/transferring-files-with-ftp-through-bash-expect-script.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/getting-an-objects-methods/' class="mostVisitedLink">Getting an object&#39;s (reflected) methods</a>
+                  <a href='https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/' class="mostVisitedLink">Transferring files with FTP through bash expect script</a>
                 </div>
               </div>
             </li>
@@ -411,22 +411,22 @@ s.setAttribute('data-timestamp', +new Date());
       <ul>
         
         <li>
-          <a rel="noopener" class="btn-linkedin" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+          <a rel="noopener" aria-label="LinkedIn" class="btn-linkedin" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
         </li>
         
         
         <li>
-          <a rel="noopener" class="btn-github" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
+          <a rel="noopener" aria-label="Github" class="btn-github" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
         </li>
         
         
         <li>
-          <a rel="noopener" class="btn-gitlab" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
+          <a rel="noopener" aria-label="Gitlab" class="btn-gitlab" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
         </li>
         
         
         <li>
-          <a rel="noopener" class="btn-twitter" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
+          <a rel="noopener" aria-label="Twitter" class="btn-twitter" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
         </li>
         
       </ul>

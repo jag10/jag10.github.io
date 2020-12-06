@@ -61,8 +61,8 @@ Sometimes we don&rsquo;t have access to the platform docs on which we are workin
 
     <link rel="preconnect" href="https://www.goodreads.com">
     <link rel="preconnect" href="https://goodreads.com">
-    <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font">
-    <link rel="preload" href="/fonts/Lato-Black.ttf" as="font">
+    <link rel="preload" href="/fonts/lato-v17-latin-regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/lato-v17-latin-900.woff2" type="font/woff2" as="font" crossorigin="anonymous">
     
     <link href="/css/global.min.css" media="screen" rel="stylesheet" type="text/css" />
   </head>
@@ -106,24 +106,24 @@ Sometimes we don&rsquo;t have access to the platform docs on which we are workin
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a rel="noopener" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+                  <a rel="noopener" aria-label="LinkedIn" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
                     <i aria-hidden="true" class='fab fa-linkedin-in'></i>
                   </a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a rel="noopener" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
+                  <a rel="noopener" aria-label="Github" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a rel="noopener" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
+                  <a rel="noopener" aria-label="Gitlab" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a rel="noopener" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
+                  <a rel="noopener" aria-label="Twitter" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
                 </li>
                 
                 <li class='pure-menu-item nt-search' id='nt-search'>
@@ -132,7 +132,7 @@ Sometimes we don&rsquo;t have access to the platform docs on which we are workin
                       <input class='nt-search-input' id='s' name='q' placeholder='Search is disabled :(' type='text' value='' disabled />
                     </div>
                     <input class='nt-search-submit' id='go' type='submit' value='Search' />
-                    <label for='q'> <span class='nt fas fa-search'></span></label>
+                    <label for='s'><span class='nt fas fa-search'></span></label>
                   </form>
                 </li>
               </ul>
@@ -254,27 +254,27 @@ $params <span style="color:#f92672">=</span> $method<span style="color:#f92672">
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a rel="noopener" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/getting-an-objects-methods/&amp;title=Getting%20an%20object%27s%20%28reflected%29%20methods&amp;summary=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%3cp%3eSometimes%20we%20don&amp;rsquo;t%20have%20access%20to%20the%20platform%20docs%20on%20which%20we%20are%20working,%20it&amp;rsquo;s%20incomplete%20or%20we%20just%20don&amp;rsquo;t%20feel%20like%20looking%20for%20it.%20In%20those%20situations,%20we%20usually%20need%20more%20than%20the%20typical%20object&amp;rsquo;s%20%3ccode%3evar_dump%3c/code%3e,%20which%20only%20shows%20us%20the%20object%20properties%20but%20not%20its%20methods,%20which%20usually%20gives%20us%20that%20function%20we%20are%20working%20on%20without%20having%20to%20dive%20into%20the%20object&amp;rsquo;s%20properties.%20Here%20you&amp;rsquo;ll%20see%20the%20function%20I%20use%20for%20this%20task.%20This%20function%20uses%20the%20ReflectionMethod%20class,%20which%20gives%20us%20info%20about%20a%20method.%20It%20needs%20the%20classname%20and%20method&amp;rsquo;s%20name%20as%20params%20for%20its%20constructor.%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/getting-an-objects-methods/&amp;title=Getting%20an%20object%27s%20%28reflected%29%20methods&amp;summary=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%3cp%3eSometimes%20we%20don&amp;rsquo;t%20have%20access%20to%20the%20platform%20docs%20on%20which%20we%20are%20working,%20it&amp;rsquo;s%20incomplete%20or%20we%20just%20don&amp;rsquo;t%20feel%20like%20looking%20for%20it.%20In%20those%20situations,%20we%20usually%20need%20more%20than%20the%20typical%20object&amp;rsquo;s%20%3ccode%3evar_dump%3c/code%3e,%20which%20only%20shows%20us%20the%20object%20properties%20but%20not%20its%20methods,%20which%20usually%20gives%20us%20that%20function%20we%20are%20working%20on%20without%20having%20to%20dive%20into%20the%20object&amp;rsquo;s%20properties.%20Here%20you&amp;rsquo;ll%20see%20the%20function%20I%20use%20for%20this%20task.%20This%20function%20uses%20the%20ReflectionMethod%20class,%20which%20gives%20us%20info%20about%20a%20method.%20It%20needs%20the%20classname%20and%20method&amp;rsquo;s%20name%20as%20params%20for%20its%20constructor.%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
-      <a rel="noopener" href="http://twitter.com/share?text=Getting%20an%20object%27s%20%28reflected%29%20methods&amp;url=https://www.jarboleda.me/articles/getting-an-objects-methods/" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Twitter" href="http://twitter.com/share?text=Getting%20an%20object%27s%20%28reflected%29%20methods&amp;url=https://www.jarboleda.me/articles/getting-an-objects-methods/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
-      <a rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/getting-an-objects-methods/" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/articles/getting-an-objects-methods/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
-      <a rel="noopener" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/getting-an-objects-methods/" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Google Plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/articles/getting-an-objects-methods/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-google-plus-g"></i>
       </a>
     </li>
     <li>
-      <a rel="noopener" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/getting-an-objects-methods/&amp;media=%3cnil%3egetting-an-objects-methods.jpg&amp;description=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%3cp%3eSometimes%20we%20don&amp;rsquo;t%20have%20access%20to%20the%20platform%20docs%20on%20which%20we%20are%20working,%20it&amp;rsquo;s%20incomplete%20or%20we%20just%20don&amp;rsquo;t%20feel%20like%20looking%20for%20it.%20In%20those%20situations,%20we%20usually%20need%20more%20than%20the%20typical%20object&amp;rsquo;s%20%3ccode%3evar_dump%3c/code%3e,%20which%20only%20shows%20us%20the%20object%20properties%20but%20not%20its%20methods,%20which%20usually%20gives%20us%20that%20function%20we%20are%20working%20on%20without%20having%20to%20dive%20into%20the%20object&amp;rsquo;s%20properties.%20Here%20you&amp;rsquo;ll%20see%20the%20function%20I%20use%20for%20this%20task.%20This%20function%20uses%20the%20ReflectionMethod%20class,%20which%20gives%20us%20info%20about%20a%20method.%20It%20needs%20the%20classname%20and%20method&amp;rsquo;s%20name%20as%20params%20for%20its%20constructor.%3c/p%3e" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/getting-an-objects-methods/&amp;media=%3cnil%3egetting-an-objects-methods.jpg&amp;description=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%3cp%3eSometimes%20we%20don&amp;rsquo;t%20have%20access%20to%20the%20platform%20docs%20on%20which%20we%20are%20working,%20it&amp;rsquo;s%20incomplete%20or%20we%20just%20don&amp;rsquo;t%20feel%20like%20looking%20for%20it.%20In%20those%20situations,%20we%20usually%20need%20more%20than%20the%20typical%20object&amp;rsquo;s%20%3ccode%3evar_dump%3c/code%3e,%20which%20only%20shows%20us%20the%20object%20properties%20but%20not%20its%20methods,%20which%20usually%20gives%20us%20that%20function%20we%20are%20working%20on%20without%20having%20to%20dive%20into%20the%20object&amp;rsquo;s%20properties.%20Here%20you&amp;rsquo;ll%20see%20the%20function%20I%20use%20for%20this%20task.%20This%20function%20uses%20the%20ReflectionMethod%20class,%20which%20gives%20us%20info%20about%20a%20method.%20It%20needs%20the%20classname%20and%20method&amp;rsquo;s%20name%20as%20params%20for%20its%20constructor.%3c/p%3e" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-pinterest-p"></i>
       </a>
     </li>
@@ -324,23 +324,23 @@ s.setAttribute('data-timestamp', +new Date());
       <p class= 'm-text-centered'>I help Alten develop its IT business in Madrid.</p>
       <div class='authorsocial'>
         
-          <a rel="noopener" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+          <a rel="noopener" aria-label="LinkedIn" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
             <i class='fab fa-linkedin-in'></i>
           </a>
         
         
-          <a rel="noopener" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'>
-            </i>
+          <a rel="noopener" aria-label="Github" href='https://github.com/jag10' target='_blank'>
+            <i class='fab fa-github'></i>
           </a>
         
         
-          <a rel="noopener" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'>
-            </i>
+          <a rel="noopener" aria-label="Gitlab" href='https://gitlab.com/jag7' target='_blank'>
+            <i class='fab fa-gitlab'></i>
           </a>
         
         
-          <a rel="noopener" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'>
-            </i>
+          <a rel="noopener" aria-label="Twitter" href='https://twitter.com/j_a_g_x' target='_blank'>
+            <i class='fab fa-twitter'></i>
           </a>
         
       </div>
@@ -378,6 +378,21 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
+                  <a href='https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
+                    <img class="lazyload" alt='Backing up all databases using mysqldump' width='72' height='72' data-src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Backing up all databases using mysqldump</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
                   <a href='https://www.jarboleda.me/articles/getting-an-objects-methods/' target='_blank'>
                     <img class="lazyload" alt='Getting an object&#39;s (reflected) methods' width='72' height='72' data-src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
                   </a>
@@ -399,21 +414,6 @@ s.setAttribute('data-timestamp', +new Date());
                 </div>
                 <div class='item-title'>
                   <a href='https://www.jarboleda.me/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/' target='_blank'>
-                    <img class="lazyload" alt='Configuring IPTABLES and fail2ban on centOS 6' width='72' height='72' data-src="/articles/img/thumbs/configuring-iptables-and-fail2ban-on-centos-6.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/' class="mostVisitedLink">Configuring IPTABLES and fail2ban on centOS 6</a>
                 </div>
               </div>
             </li>
@@ -452,22 +452,22 @@ s.setAttribute('data-timestamp', +new Date());
       <ul>
         
         <li>
-          <a rel="noopener" class="btn-linkedin" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+          <a rel="noopener" aria-label="LinkedIn" class="btn-linkedin" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
         </li>
         
         
         <li>
-          <a rel="noopener" class="btn-github" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
+          <a rel="noopener" aria-label="Github" class="btn-github" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
         </li>
         
         
         <li>
-          <a rel="noopener" class="btn-gitlab" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
+          <a rel="noopener" aria-label="Gitlab" class="btn-gitlab" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
         </li>
         
         
         <li>
-          <a rel="noopener" class="btn-twitter" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
+          <a rel="noopener" aria-label="Twitter" class="btn-twitter" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
         </li>
         
       </ul>

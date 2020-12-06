@@ -67,8 +67,8 @@ En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co c
 
     <link rel="preconnect" href="https://www.goodreads.com">
     <link rel="preconnect" href="https://goodreads.com">
-    <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font">
-    <link rel="preload" href="/fonts/Lato-Black.ttf" as="font">
+    <link rel="preload" href="/fonts/lato-v17-latin-regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/lato-v17-latin-900.woff2" type="font/woff2" as="font" crossorigin="anonymous">
     
     <link href="/css/global.min.css" media="screen" rel="stylesheet" type="text/css" />
   </head>
@@ -112,24 +112,24 @@ En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co c
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a rel="noopener" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+                  <a rel="noopener" aria-label="LinkedIn" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
                     <i aria-hidden="true" class='fab fa-linkedin-in'></i>
                   </a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a rel="noopener" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
+                  <a rel="noopener" aria-label="Github" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a rel="noopener" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
+                  <a rel="noopener" aria-label="Gitlab" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a rel="noopener" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
+                  <a rel="noopener" aria-label="Twitter" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
                 </li>
                 
                 <li class='pure-menu-item nt-search' id='nt-search'>
@@ -138,7 +138,7 @@ En primer lugar, vamos a crear la estructura de directorios. Utilizaré jag.co c
                       <input class='nt-search-input' id='s' name='q' placeholder='Search is disabled :(' type='text' value='' disabled />
                     </div>
                     <input class='nt-search-submit' id='go' type='submit' value='Search' />
-                    <label for='q'> <span class='nt fas fa-search'></span></label>
+                    <label for='s'><span class='nt fas fa-search'></span></label>
                   </form>
                 </li>
               </ul>
@@ -388,27 +388,27 @@ chkconfig mysqld on</code></pre></div></p></p>
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a rel="noopener" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/&amp;title=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;summary=%3cp%3eEn%20este%20post%20voy%20a%20explicar%20c%c3%b3mo%20configurar%20un%20servidor%20VPS%20para%20tener%20un%20servidor%20LAMP%20b%c3%a1sico%20con%20m%c3%baltiples%20versiones%20PHP,%20compiladas%20previamente.%20De%20esta%20manera,%20podemos%20tener%20un%20servidor%20VPS%20muy%20barato%20%28~3%e2%82%ac%29%20en%20el%20que%20hacer%20probaturas.%3c/p%3e%0a%3ch2%20id=%22estructura-de-directorios%22%3eEstructura%20de%20directorios%3c/h2%3e%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20crear%20la%20estructura%20de%20directorios.%20Utilizar%c3%a9%20jag.co%20como%20dominio%20para%20este%20ejemplo.%20Puedes%20utilizar%20la%20estructura%20de%20directoriosque%20quieras,%20esta%20es%20la%20m%c3%ada:%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/&amp;title=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;summary=%3cp%3eEn%20este%20post%20voy%20a%20explicar%20c%c3%b3mo%20configurar%20un%20servidor%20VPS%20para%20tener%20un%20servidor%20LAMP%20b%c3%a1sico%20con%20m%c3%baltiples%20versiones%20PHP,%20compiladas%20previamente.%20De%20esta%20manera,%20podemos%20tener%20un%20servidor%20VPS%20muy%20barato%20%28~3%e2%82%ac%29%20en%20el%20que%20hacer%20probaturas.%3c/p%3e%0a%3ch2%20id=%22estructura-de-directorios%22%3eEstructura%20de%20directorios%3c/h2%3e%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20crear%20la%20estructura%20de%20directorios.%20Utilizar%c3%a9%20jag.co%20como%20dominio%20para%20este%20ejemplo.%20Puedes%20utilizar%20la%20estructura%20de%20directoriosque%20quieras,%20esta%20es%20la%20m%c3%ada:%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
-      <a rel="noopener" href="http://twitter.com/share?text=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Twitter" href="http://twitter.com/share?text=configuring%20a%20LAMP%20server%20on%20CentOS%206&amp;url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
-      <a rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
-      <a rel="noopener" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Google Plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-google-plus-g"></i>
       </a>
     </li>
     <li>
-      <a rel="noopener" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/&amp;media=%3cnil%3econfiguring-a-lamp-server-on-centos-6.jpg&amp;description=%3cp%3eEn%20este%20post%20voy%20a%20explicar%20c%c3%b3mo%20configurar%20un%20servidor%20VPS%20para%20tener%20un%20servidor%20LAMP%20b%c3%a1sico%20con%20m%c3%baltiples%20versiones%20PHP,%20compiladas%20previamente.%20De%20esta%20manera,%20podemos%20tener%20un%20servidor%20VPS%20muy%20barato%20%28~3%e2%82%ac%29%20en%20el%20que%20hacer%20probaturas.%3c/p%3e%0a%3ch2%20id=%22estructura-de-directorios%22%3eEstructura%20de%20directorios%3c/h2%3e%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20crear%20la%20estructura%20de%20directorios.%20Utilizar%c3%a9%20jag.co%20como%20dominio%20para%20este%20ejemplo.%20Puedes%20utilizar%20la%20estructura%20de%20directoriosque%20quieras,%20esta%20es%20la%20m%c3%ada:%3c/p%3e" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/&amp;media=%3cnil%3econfiguring-a-lamp-server-on-centos-6.jpg&amp;description=%3cp%3eEn%20este%20post%20voy%20a%20explicar%20c%c3%b3mo%20configurar%20un%20servidor%20VPS%20para%20tener%20un%20servidor%20LAMP%20b%c3%a1sico%20con%20m%c3%baltiples%20versiones%20PHP,%20compiladas%20previamente.%20De%20esta%20manera,%20podemos%20tener%20un%20servidor%20VPS%20muy%20barato%20%28~3%e2%82%ac%29%20en%20el%20que%20hacer%20probaturas.%3c/p%3e%0a%3ch2%20id=%22estructura-de-directorios%22%3eEstructura%20de%20directorios%3c/h2%3e%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20crear%20la%20estructura%20de%20directorios.%20Utilizar%c3%a9%20jag.co%20como%20dominio%20para%20este%20ejemplo.%20Puedes%20utilizar%20la%20estructura%20de%20directoriosque%20quieras,%20esta%20es%20la%20m%c3%ada:%3c/p%3e" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-pinterest-p"></i>
       </a>
     </li>
@@ -458,23 +458,23 @@ s.setAttribute('data-timestamp', +new Date());
       <p class= 'm-text-centered'>Recluto y gestiono consultores para desarrollar los negocios de <a href="https://alten.com/">Alten</a> en Madrid.</p>
       <div class='authorsocial'>
         
-          <a rel="noopener" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+          <a rel="noopener" aria-label="LinkedIn" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
             <i class='fab fa-linkedin-in'></i>
           </a>
         
         
-          <a rel="noopener" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'>
-            </i>
+          <a rel="noopener" aria-label="Github" href='https://github.com/jag10' target='_blank'>
+            <i class='fab fa-github'></i>
           </a>
         
         
-          <a rel="noopener" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'>
-            </i>
+          <a rel="noopener" aria-label="Gitlab" href='https://gitlab.com/jag7' target='_blank'>
+            <i class='fab fa-gitlab'></i>
           </a>
         
         
-          <a rel="noopener" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'>
-            </i>
+          <a rel="noopener" aria-label="Twitter" href='https://twitter.com/j_a_g_x' target='_blank'>
+            <i class='fab fa-twitter'></i>
           </a>
         
       </div>
@@ -514,21 +514,6 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
-                    <img class="lazyload" alt='Autenticando usuarios con cURL' width='72' height='72' data-src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Autenticando usuarios con cURL</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
                   <a href='https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
                     <img class="lazyload" alt='Instalando unreal engine en fedora 25' width='72' height='72' data-src="/articles/img/thumbs/unreal_engine.min.jpg" />
                   </a>
@@ -544,12 +529,27 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/' target='_blank'>
-                    <img class="lazyload" alt='Instalando magento2 en cwp' width='72' height='72' data-src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
+                  <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
+                    <img class="lazyload" alt='configuring a LAMP server on CentOS 6' width='72' height='72' data-src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Instalando magento2 en cwp</a>
+                  <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
+                    <img class="lazyload" alt='Instalando ubuntu 16.04 en odroid xu3 lite' width='72' height='72' data-src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Instalando ubuntu 16.04 en odroid xu3 lite</a>
                 </div>
               </div>
             </li>
@@ -588,22 +588,22 @@ s.setAttribute('data-timestamp', +new Date());
       <ul>
         
         <li>
-          <a rel="noopener" class="btn-linkedin" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+          <a rel="noopener" aria-label="LinkedIn" class="btn-linkedin" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
         </li>
         
         
         <li>
-          <a rel="noopener" class="btn-github" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
+          <a rel="noopener" aria-label="Github" class="btn-github" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
         </li>
         
         
         <li>
-          <a rel="noopener" class="btn-gitlab" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
+          <a rel="noopener" aria-label="Gitlab" class="btn-gitlab" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
         </li>
         
         
         <li>
-          <a rel="noopener" class="btn-twitter" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
+          <a rel="noopener" aria-label="Twitter" class="btn-twitter" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
         </li>
         
       </ul>

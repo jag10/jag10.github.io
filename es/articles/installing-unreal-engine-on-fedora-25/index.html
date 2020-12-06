@@ -85,8 +85,8 @@ cd UnrealEngine/
 
     <link rel="preconnect" href="https://www.goodreads.com">
     <link rel="preconnect" href="https://goodreads.com">
-    <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font">
-    <link rel="preload" href="/fonts/Lato-Black.ttf" as="font">
+    <link rel="preload" href="/fonts/lato-v17-latin-regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/lato-v17-latin-900.woff2" type="font/woff2" as="font" crossorigin="anonymous">
     
     <link href="/css/global.min.css" media="screen" rel="stylesheet" type="text/css" />
   </head>
@@ -130,24 +130,24 @@ cd UnrealEngine/
               <ul class="pure-menu-list">
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a rel="noopener" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+                  <a rel="noopener" aria-label="LinkedIn" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
                     <i aria-hidden="true" class='fab fa-linkedin-in'></i>
                   </a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a rel="noopener" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
+                  <a rel="noopener" aria-label="Github" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a rel="noopener" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
+                  <a rel="noopener" aria-label="Gitlab" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
                 </li>
                 
                 
                 <li class="pure-menu-item social_menu_entry">
-                  <a rel="noopener" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
+                  <a rel="noopener" aria-label="Twitter" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
                 </li>
                 
                 <li class='pure-menu-item nt-search' id='nt-search'>
@@ -156,7 +156,7 @@ cd UnrealEngine/
                       <input class='nt-search-input' id='s' name='q' placeholder='Search is disabled :(' type='text' value='' disabled />
                     </div>
                     <input class='nt-search-submit' id='go' type='submit' value='Search' />
-                    <label for='q'> <span class='nt fas fa-search'></span></label>
+                    <label for='s'><span class='nt fas fa-search'></span></label>
                   </form>
                 </li>
               </ul>
@@ -243,27 +243,27 @@ Después de esto, deberías poder ejecutar el editor de Unreal Engine:
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a rel="noopener" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/&amp;title=Instalando%20unreal%20engine%20en%20fedora%2025&amp;summary=%3ch2%20id=%22enlazando-github-con-epicgames%22%3eEnlazando%20GitHub%20con%20EpicGames%3c/h2%3e%0a%3cp%3ePrimero,%20hay%20que%20registrarse%20en%20gihhub%20y%20luego%20asociar%20la%20cuenta%20de%20github%20con%20la%20de%20epic%20games:%0a%3ca%20href=%22https://www.unrealengine.com/ue4-on-github%22%3ehttps://www.unrealengine.com/ue4-on-github%3c/a%3e%0aEntonces%20deber%c3%adas%20recibir%20un%20email%20confirmando%20que%20te%20has%20unido%20a%20la%20organizaci%c3%b3n%20Epic%20Games.%20Una%20vez%20lo%20recibas,%20podr%c3%a1s%20clonar%20el%20c%c3%b3digo%20fuente%20del%20Unreal%20Engine.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3egit%20clone%20https://github.com/EpicGames/UnrealEngine.git%0acd%20UnrealEngine/%0a./Setup.sh%0a./GenerateProjectFiles.sh%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/&amp;title=Instalando%20unreal%20engine%20en%20fedora%2025&amp;summary=%3ch2%20id=%22enlazando-github-con-epicgames%22%3eEnlazando%20GitHub%20con%20EpicGames%3c/h2%3e%0a%3cp%3ePrimero,%20hay%20que%20registrarse%20en%20gihhub%20y%20luego%20asociar%20la%20cuenta%20de%20github%20con%20la%20de%20epic%20games:%0a%3ca%20href=%22https://www.unrealengine.com/ue4-on-github%22%3ehttps://www.unrealengine.com/ue4-on-github%3c/a%3e%0aEntonces%20deber%c3%adas%20recibir%20un%20email%20confirmando%20que%20te%20has%20unido%20a%20la%20organizaci%c3%b3n%20Epic%20Games.%20Una%20vez%20lo%20recibas,%20podr%c3%a1s%20clonar%20el%20c%c3%b3digo%20fuente%20del%20Unreal%20Engine.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3egit%20clone%20https://github.com/EpicGames/UnrealEngine.git%0acd%20UnrealEngine/%0a./Setup.sh%0a./GenerateProjectFiles.sh%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
-      <a rel="noopener" href="http://twitter.com/share?text=Instalando%20unreal%20engine%20en%20fedora%2025&amp;url=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Twitter" href="http://twitter.com/share?text=Instalando%20unreal%20engine%20en%20fedora%2025&amp;url=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
-      <a rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
-      <a rel="noopener" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Google Plus" href="https://plus.google.com/share?url=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-google-plus-g"></i>
       </a>
     </li>
     <li>
-      <a rel="noopener" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/&amp;media=%3cnil%3eunreal_engine.min.jpg&amp;description=%3ch2%20id=%22enlazando-github-con-epicgames%22%3eEnlazando%20GitHub%20con%20EpicGames%3c/h2%3e%0a%3cp%3ePrimero,%20hay%20que%20registrarse%20en%20gihhub%20y%20luego%20asociar%20la%20cuenta%20de%20github%20con%20la%20de%20epic%20games:%0a%3ca%20href=%22https://www.unrealengine.com/ue4-on-github%22%3ehttps://www.unrealengine.com/ue4-on-github%3c/a%3e%0aEntonces%20deber%c3%adas%20recibir%20un%20email%20confirmando%20que%20te%20has%20unido%20a%20la%20organizaci%c3%b3n%20Epic%20Games.%20Una%20vez%20lo%20recibas,%20podr%c3%a1s%20clonar%20el%20c%c3%b3digo%20fuente%20del%20Unreal%20Engine.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3egit%20clone%20https://github.com/EpicGames/UnrealEngine.git%0acd%20UnrealEngine/%0a./Setup.sh%0a./GenerateProjectFiles.sh%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/&amp;media=%3cnil%3eunreal_engine.min.jpg&amp;description=%3ch2%20id=%22enlazando-github-con-epicgames%22%3eEnlazando%20GitHub%20con%20EpicGames%3c/h2%3e%0a%3cp%3ePrimero,%20hay%20que%20registrarse%20en%20gihhub%20y%20luego%20asociar%20la%20cuenta%20de%20github%20con%20la%20de%20epic%20games:%0a%3ca%20href=%22https://www.unrealengine.com/ue4-on-github%22%3ehttps://www.unrealengine.com/ue4-on-github%3c/a%3e%0aEntonces%20deber%c3%adas%20recibir%20un%20email%20confirmando%20que%20te%20has%20unido%20a%20la%20organizaci%c3%b3n%20Epic%20Games.%20Una%20vez%20lo%20recibas,%20podr%c3%a1s%20clonar%20el%20c%c3%b3digo%20fuente%20del%20Unreal%20Engine.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3egit%20clone%20https://github.com/EpicGames/UnrealEngine.git%0acd%20UnrealEngine/%0a./Setup.sh%0a./GenerateProjectFiles.sh%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-pinterest-p"></i>
       </a>
     </li>
@@ -313,23 +313,23 @@ s.setAttribute('data-timestamp', +new Date());
       <p class= 'm-text-centered'>Recluto y gestiono consultores para desarrollar los negocios de <a href="https://alten.com/">Alten</a> en Madrid.</p>
       <div class='authorsocial'>
         
-          <a rel="noopener" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
+          <a rel="noopener" aria-label="LinkedIn" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'>
             <i class='fab fa-linkedin-in'></i>
           </a>
         
         
-          <a rel="noopener" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'>
-            </i>
+          <a rel="noopener" aria-label="Github" href='https://github.com/jag10' target='_blank'>
+            <i class='fab fa-github'></i>
           </a>
         
         
-          <a rel="noopener" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'>
-            </i>
+          <a rel="noopener" aria-label="Gitlab" href='https://gitlab.com/jag7' target='_blank'>
+            <i class='fab fa-gitlab'></i>
           </a>
         
         
-          <a rel="noopener" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'>
-            </i>
+          <a rel="noopener" aria-label="Twitter" href='https://twitter.com/j_a_g_x' target='_blank'>
+            <i class='fab fa-twitter'></i>
           </a>
         
       </div>
@@ -363,16 +363,18 @@ s.setAttribute('data-timestamp', +new Date());
         <div class='widget-content popular-posts'>
           <ul>
             
+            
+            
              
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/' target='_blank'>
-                    <img class="lazyload" alt='Utilizando la API de piwik en local con PW' width='72' height='72' data-src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
+                  <a href='https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img class="lazyload" alt='Arreglando una partición corrupta de una máquina virtual' width='72' height='72' data-src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Utilizando la API de piwik en local con PW</a>
+                  <a href='https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Arreglando una partición corrupta de una máquina virtual</a>
                 </div>
               </div>
             </li>
@@ -382,27 +384,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
-                    <img class="lazyload" alt='configuring a LAMP server on CentOS 6' width='72' height='72' data-src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
+                  <a href='https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
+                    <img class="lazyload" alt='Instalando unreal engine en fedora 25' width='72' height='72' data-src="/articles/img/thumbs/unreal_engine.min.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
-                    <img class="lazyload" alt='Autenticando usuarios con cURL' width='72' height='72' data-src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Autenticando usuarios con cURL</a>
+                  <a href='https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">Instalando unreal engine en fedora 25</a>
                 </div>
               </div>
             </li>
@@ -441,22 +428,22 @@ s.setAttribute('data-timestamp', +new Date());
       <ul>
         
         <li>
-          <a rel="noopener" class="btn-linkedin" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
+          <a rel="noopener" aria-label="LinkedIn" class="btn-linkedin" href='https://www.linkedin.com/in/jefferson-arboleda/' target='_blank'><i class='fab fa-linkedin-in'></i></a>
         </li>
         
         
         <li>
-          <a rel="noopener" class="btn-github" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
+          <a rel="noopener" aria-label="Github" class="btn-github" href='https://github.com/jag10' target='_blank'><i class='fab fa-github'></i></a>
         </li>
         
         
         <li>
-          <a rel="noopener" class="btn-gitlab" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
+          <a rel="noopener" aria-label="Gitlab" class="btn-gitlab" href='https://gitlab.com/jag7' target='_blank'><i class='fab fa-gitlab'></i></a>
         </li>
         
         
         <li>
-          <a rel="noopener" class="btn-twitter" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
+          <a rel="noopener" aria-label="Twitter" class="btn-twitter" href='https://twitter.com/j_a_g_x' target='_blank'><i class='fab fa-twitter'></i></a>
         </li>
         
       </ul>

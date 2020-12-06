@@ -16,7 +16,7 @@
 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
 &lt;figure&gt;
     &lt;img src=&#34;https://www.jarboleda.me/articles/img/getting-0.5s-page-load-time-on-your-blog.png&#34;
-         alt=&#34;jarboleda.me performance graphic&#34;/&gt; &lt;figcaption&gt;
+         alt=&#34;jarboleda.me performance graphic&#34; width=&#34;780&#34; height=&#34;310&#34;/&gt; &lt;figcaption&gt;
             &lt;h4&gt;jarboleda.me performance graphic&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
