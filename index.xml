@@ -15,7 +15,7 @@
       <description>&lt;p&gt;In my previous &lt;a href=&#34;articles/getting-1.5s-page-load-time-on-a-basic-vps/&#34;&gt;post&lt;/a&gt; back in 2016 I got page load time down from 5s to 1.5, and here my objective is to get around 0.5s.
 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
 &lt;figure&gt;
-    &lt;img src=&#34;https://www.jarboleda.me/articles/img/getting-0.5s-page-load-time-on-your-blog.png&#34;
+    &lt;img src=&#34;https://www.jarboleda.me/articles/img/min/getting-0.5s-page-load-time-on-your-blog.png&#34;
          alt=&#34;jarboleda.me performance graphic&#34; width=&#34;780&#34; height=&#34;310&#34;/&gt; &lt;figcaption&gt;
             &lt;h4&gt;jarboleda.me performance graphic&lt;/h4&gt;
         &lt;/figcaption&gt;
@@ -38,7 +38,7 @@
       <description>&lt;p&gt;Few months ago I moved to france for work reasons and I&amp;rsquo;d like to share how&amp;rsquo;s been the experience so far in this post.
 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
 &lt;figure&gt;
-    &lt;img src=&#34;https://www.jarboleda.me/articles/img/moving-to-france-for-work.jpg&#34;
+    &lt;img src=&#34;https://www.jarboleda.me/articles/img/min/moving-to-france-for-work.jpg&#34;
          alt=&#34;Côte d&amp;#39;Azur&#34; width=&#34;780&#34; height=&#34;439&#34;/&gt; &lt;figcaption&gt;
             &lt;h4&gt;Côte d&amp;#39;Azur&lt;/h4&gt;
         &lt;/figcaption&gt;
@@ -67,8 +67,8 @@ you are using.&lt;/p&gt;</description>
       <description>&lt;p&gt;In the following photo you can see the result of the case I built for this project.
 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
 &lt;figure&gt;
-    &lt;img src=&#34;https://www.jarboleda.me/articles/img/arduino-uno-lego-case.jpg&#34;
-         alt=&#34;arduino uno lego case&#34; width=&#34;780&#34; height=&#34;450&#34;/&gt; &lt;figcaption&gt;
+    &lt;img src=&#34;https://www.jarboleda.me/articles/img/min/arduino-uno-lego-case.jpg&#34;
+         alt=&#34;arduino uno lego case&#34; width=&#34;780&#34; height=&#34;439&#34;/&gt; &lt;figcaption&gt;
             &lt;h4&gt;arduino uno lego case&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;

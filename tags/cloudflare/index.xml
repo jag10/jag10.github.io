@@ -15,7 +15,7 @@
       <description>&lt;p&gt;In my previous &lt;a href=&#34;articles/getting-1.5s-page-load-time-on-a-basic-vps/&#34;&gt;post&lt;/a&gt; back in 2016 I got page load time down from 5s to 1.5, and here my objective is to get around 0.5s.
 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
 &lt;figure&gt;
-    &lt;img src=&#34;https://www.jarboleda.me/articles/img/getting-0.5s-page-load-time-on-your-blog.png&#34;
+    &lt;img src=&#34;https://www.jarboleda.me/articles/img/min/getting-0.5s-page-load-time-on-your-blog.png&#34;
          alt=&#34;jarboleda.me performance graphic&#34; width=&#34;780&#34; height=&#34;310&#34;/&gt; &lt;figcaption&gt;
             &lt;h4&gt;jarboleda.me performance graphic&lt;/h4&gt;
         &lt;/figcaption&gt;

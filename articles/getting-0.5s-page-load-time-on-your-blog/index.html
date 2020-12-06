@@ -219,7 +219,7 @@ Cloudflare
       <p><p>In my previous <a href="articles/getting-1.5s-page-load-time-on-a-basic-vps/">post</a> back in 2016 I got page load time down from 5s to 1.5, and here my objective is to get around 0.5s.
 <!-- raw HTML omitted --><!-- raw HTML omitted -->
 <figure>
-    <img src="/articles/img/getting-0.5s-page-load-time-on-your-blog.png"
+    <img src="/articles/img/min/getting-0.5s-page-load-time-on-your-blog.png"
          alt="jarboleda.me performance graphic" width="780" height="310"/> <figcaption>
             <h4>jarboleda.me performance graphic</h4>
         </figcaption>
@@ -232,7 +232,7 @@ Cloudflare
 <li><a href="https://www.cloudflare.com/">Cloudflare</a></li>
 </ul>
 <h2 id="stats-before-tuning-up">Stats before tuning up</h2>
-<p><img src="/articles/img/getting-1.5s-page-load-time-on-a-basic-vps-2.png" alt="performance after tuning up">
+<p><img src="/articles/img/min/getting-1.5s-page-load-time-on-a-basic-vps-2.png" alt="performance after tuning up">
 On top of previous optimizations, I decided to go for a static website, after all, most of my content is static. The only exception is the sidebar, but we&rsquo;ll get to that later</p>
 <h2 id="actions-taken">Actions taken</h2>
 <ul>
@@ -285,7 +285,7 @@ On top of previous optimizations, I decided to go for a static website, after al
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a rel="noopener" aria-label="LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/getting-0.5s-page-load-time-on-your-blog/&amp;title=Getting%200.5%20seconds%20load%20time%20on%20your%20blog&amp;summary=%3cp%3eIn%20my%20previous%20%3ca%20href=%22articles/getting-1.5s-page-load-time-on-a-basic-vps/%22%3epost%3c/a%3e%20back%20in%202016%20I%20got%20page%20load%20time%20down%20from%205s%20to%201.5,%20and%20here%20my%20objective%20is%20to%20get%20around%200.5s.%0a%3c!--%20raw%20HTML%20omitted%20--%3e%3c!--%20raw%20HTML%20omitted%20--%3e%0a%3cfigure%3e%0a%20%20%20%20%3cimg%20src=%22/articles/img/getting-0.5s-page-load-time-on-your-blog.png%22%0a%20%20%20%20%20%20%20%20%20alt=%22jarboleda.me%20performance%20graphic%22%20width=%22780%22%20height=%22310%22/%3e%20%3cfigcaption%3e%0a%20%20%20%20%20%20%20%20%20%20%20%20%3ch4%3ejarboleda.me%20performance%20graphic%3c/h4%3e%0a%20%20%20%20%20%20%20%20%3c/figcaption%3e%0a%3c/figure%3e%0a%3c/p%3e%0a%3cp%3eFor%20that%20purpose,%20I%c2%b4ll%20be%20using%20the%20following%20technologies:%3c/p%3e%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22https://gohugo.io/%22%3eHugo%3c/a%3e%3c/li%3e%0a%3cli%3e%3ca%20href=%22https://pages.github.com/%22%3eGithub%20Pages%3c/a%3e%3c/li%3e%0a%3cli%3e%3ca%20href=%22https://www.cloudflare.com/%22%3eCloudflare%3c/a%3e%3c/li%3e%0a%3c/ul%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/getting-0.5s-page-load-time-on-your-blog/&amp;title=Getting%200.5%20seconds%20load%20time%20on%20your%20blog&amp;summary=%3cp%3eIn%20my%20previous%20%3ca%20href=%22articles/getting-1.5s-page-load-time-on-a-basic-vps/%22%3epost%3c/a%3e%20back%20in%202016%20I%20got%20page%20load%20time%20down%20from%205s%20to%201.5,%20and%20here%20my%20objective%20is%20to%20get%20around%200.5s.%0a%3c!--%20raw%20HTML%20omitted%20--%3e%3c!--%20raw%20HTML%20omitted%20--%3e%0a%3cfigure%3e%0a%20%20%20%20%3cimg%20src=%22/articles/img/min/getting-0.5s-page-load-time-on-your-blog.png%22%0a%20%20%20%20%20%20%20%20%20alt=%22jarboleda.me%20performance%20graphic%22%20width=%22780%22%20height=%22310%22/%3e%20%3cfigcaption%3e%0a%20%20%20%20%20%20%20%20%20%20%20%20%3ch4%3ejarboleda.me%20performance%20graphic%3c/h4%3e%0a%20%20%20%20%20%20%20%20%3c/figcaption%3e%0a%3c/figure%3e%0a%3c/p%3e%0a%3cp%3eFor%20that%20purpose,%20I%c2%b4ll%20be%20using%20the%20following%20technologies:%3c/p%3e%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22https://gohugo.io/%22%3eHugo%3c/a%3e%3c/li%3e%0a%3cli%3e%3ca%20href=%22https://pages.github.com/%22%3eGithub%20Pages%3c/a%3e%3c/li%3e%0a%3cli%3e%3ca%20href=%22https://www.cloudflare.com/%22%3eCloudflare%3c/a%3e%3c/li%3e%0a%3c/ul%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       </a>
     </li>
@@ -305,7 +305,7 @@ On top of previous optimizations, I decided to go for a static website, after al
       </a>
     </li>
     <li>
-      <a rel="noopener" aria-label="Pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/getting-0.5s-page-load-time-on-your-blog/&amp;media=%3cnil%3egetting-0.5s-page-load-time-on-your-blog.png&amp;description=%3cp%3eIn%20my%20previous%20%3ca%20href=%22articles/getting-1.5s-page-load-time-on-a-basic-vps/%22%3epost%3c/a%3e%20back%20in%202016%20I%20got%20page%20load%20time%20down%20from%205s%20to%201.5,%20and%20here%20my%20objective%20is%20to%20get%20around%200.5s.%0a%3c!--%20raw%20HTML%20omitted%20--%3e%3c!--%20raw%20HTML%20omitted%20--%3e%0a%3cfigure%3e%0a%20%20%20%20%3cimg%20src=%22/articles/img/getting-0.5s-page-load-time-on-your-blog.png%22%0a%20%20%20%20%20%20%20%20%20alt=%22jarboleda.me%20performance%20graphic%22%20width=%22780%22%20height=%22310%22/%3e%20%3cfigcaption%3e%0a%20%20%20%20%20%20%20%20%20%20%20%20%3ch4%3ejarboleda.me%20performance%20graphic%3c/h4%3e%0a%20%20%20%20%20%20%20%20%3c/figcaption%3e%0a%3c/figure%3e%0a%3c/p%3e%0a%3cp%3eFor%20that%20purpose,%20I%c2%b4ll%20be%20using%20the%20following%20technologies:%3c/p%3e%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22https://gohugo.io/%22%3eHugo%3c/a%3e%3c/li%3e%0a%3cli%3e%3ca%20href=%22https://pages.github.com/%22%3eGithub%20Pages%3c/a%3e%3c/li%3e%0a%3cli%3e%3ca%20href=%22https://www.cloudflare.com/%22%3eCloudflare%3c/a%3e%3c/li%3e%0a%3c/ul%3e" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/getting-0.5s-page-load-time-on-your-blog/&amp;media=%3cnil%3egetting-0.5s-page-load-time-on-your-blog.png&amp;description=%3cp%3eIn%20my%20previous%20%3ca%20href=%22articles/getting-1.5s-page-load-time-on-a-basic-vps/%22%3epost%3c/a%3e%20back%20in%202016%20I%20got%20page%20load%20time%20down%20from%205s%20to%201.5,%20and%20here%20my%20objective%20is%20to%20get%20around%200.5s.%0a%3c!--%20raw%20HTML%20omitted%20--%3e%3c!--%20raw%20HTML%20omitted%20--%3e%0a%3cfigure%3e%0a%20%20%20%20%3cimg%20src=%22/articles/img/min/getting-0.5s-page-load-time-on-your-blog.png%22%0a%20%20%20%20%20%20%20%20%20alt=%22jarboleda.me%20performance%20graphic%22%20width=%22780%22%20height=%22310%22/%3e%20%3cfigcaption%3e%0a%20%20%20%20%20%20%20%20%20%20%20%20%3ch4%3ejarboleda.me%20performance%20graphic%3c/h4%3e%0a%20%20%20%20%20%20%20%20%3c/figcaption%3e%0a%3c/figure%3e%0a%3c/p%3e%0a%3cp%3eFor%20that%20purpose,%20I%c2%b4ll%20be%20using%20the%20following%20technologies:%3c/p%3e%0a%3cul%3e%0a%3cli%3e%3ca%20href=%22https://gohugo.io/%22%3eHugo%3c/a%3e%3c/li%3e%0a%3cli%3e%3ca%20href=%22https://pages.github.com/%22%3eGithub%20Pages%3c/a%3e%3c/li%3e%0a%3cli%3e%3ca%20href=%22https://www.cloudflare.com/%22%3eCloudflare%3c/a%3e%3c/li%3e%0a%3c/ul%3e" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-pinterest-p"></i>
       </a>
     </li>
@@ -410,42 +410,29 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/zipping-and-unzipping-websites-with-php/' target='_blank'>
-                    <img class="lazyload" alt='Zipping and unzipping websites with php' width='72' height='72' data-src="/articles/img/thumbs/zipping-and-unzipping-websites-with-php.png" />
+                  <a href='https://www.jarboleda.me/articles/installing-magento2-on-cwp/' target='_blank'>
+                    <img class="lazyload" alt='Installing magento2 on cwp' width='72' height='72' data-src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/zipping-and-unzipping-websites-with-php/' class="mostVisitedLink">Zipping and unzipping websites with php</a>
+                  <a href='https://www.jarboleda.me/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Installing magento2 on cwp</a>
                 </div>
               </div>
             </li>
+            
+            
             
             
              
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
-                    <img class="lazyload" alt='Backing up all databases using mysqldump' width='72' height='72' data-src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
+                  <a href='https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
+                    <img class="lazyload" alt='How to handle remote resources with curl' width='72' height='72' data-src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Backing up all databases using mysqldump</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/' target='_blank'>
-                    <img class="lazyload" alt='Transferring files with FTP through bash expect script' width='72' height='72' data-src="/articles/img/thumbs/transferring-files-with-ftp-through-bash-expect-script.png" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/' class="mostVisitedLink">Transferring files with FTP through bash expect script</a>
+                  <a href='https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">How to handle remote resources with curl</a>
                 </div>
               </div>
             </li>
