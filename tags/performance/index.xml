@@ -28,9 +28,6 @@ For that purpose, I used the following technologies:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo - Static website generator.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://pages.github.com/&#34;&gt;Github Pages - Static website hosting.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cloudflare.com/&#34;&gt;Cloudflare - CDN &amp;amp; Network protection.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://imagemagick.org/script/download.php#macosx&#34;&gt;Imagemagick - Image compresion service.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/aFarkas/lazysizes&#34;&gt;Lazysizes - To lazy load non-critical images.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     
