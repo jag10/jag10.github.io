@@ -165,7 +165,7 @@
       <p><p>En est post vamos a ver como autenticar un usuario utilizando cURL. Esto puede ser útil si se quiere integrar un login con una aplicación externa y no se dispone de una API. Por ejemplo, se podrían tener dos plataformas que gestionen los usuarios de manera diferente pero en las que el login sea único.</p>
 <p>En el caso concreto de Joomla, se utilizan dos valores generados, y éstos tienen que ser válidos. Así que, en primer lugar hay que obtener esos valores con cURL. Además, Joomla almacena una cookie cuando se visita el sitio. Hay que guardar esa cookie y pasársela al navegador del usuario. Luego, se enviarán estos datos mediante una petición POST. Entonces Joomla devolverá otra cookie, que también tendremos que enviar al navegador del usuario. Después de ese último paso, el usuario queda logueado en la aplicación.</p>
 <p>Lo que hemos hecho es autenticar al usuario de la manera que lo haría él manualmente. Esta idea es válida para cualquier otra aplicación. Lo único que hay que hacer es conocer el proceso de autenticación para replicarlo luego.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 <span style="color:#75715e">/*
 </span><span style="color:#75715e">  Válido para Joomla 2.5
 </span><span style="color:#75715e">	En primer lugar, se necesita un token válido para el formulario. Además, también hay que guardar las cookies que obtendrá la petición cURL y reenviarlas al navegador.
@@ -361,18 +361,16 @@ s.setAttribute('data-timestamp', +new Date());
         <div class='widget-content popular-posts'>
           <ul>
             
-            
-            
              
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
-                    <img class="lazyload" alt='configuring a LAMP server on CentOS 6' width='72' height='72' data-src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
+                  <a href='https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
+                    <img class="lazyload" alt='Instalando unreal engine en fedora 25' width='72' height='72' data-src="/articles/img/thumbs/unreal_engine.min.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
+                  <a href='https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">Instalando unreal engine en fedora 25</a>
                 </div>
               </div>
             </li>
@@ -382,15 +380,17 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/web-development-environment/' target='_blank'>
-                    <img class="lazyload" alt='Entorno para desarrollo web' width='72' height='72' data-src="/articles/img/thumbs/web-development-environment.jpg" />
+                  <a href='https://www.jarboleda.me/es/articles/getting-an-objects-methods/' target='_blank'>
+                    <img class="lazyload" alt='Obteniendo los métodos (reflejados) de un objeto' width='72' height='72' data-src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/web-development-environment/' class="mostVisitedLink">Entorno para desarrollo web</a>
+                  <a href='https://www.jarboleda.me/es/articles/getting-an-objects-methods/' class="mostVisitedLink">Obteniendo los métodos (reflejados) de un objeto</a>
                 </div>
               </div>
             </li>
+            
+            
             
             
           </ul>

@@ -179,24 +179,24 @@ Firstly, we&rsquo;ll create our dir structure. I&rsquo;ll use jag.co as a domain
       <p><p>In this first post I&rsquo;ll explain how I configurated my VPS to run a basic LAMP server with multiple php versions, compiled by myself. You can get your own cheap VPS (~3€) and test a lot of things.</p>
 <h2 id="dir-structure">Dir structure</h2>
 <p>Firstly, we&rsquo;ll create our dir structure. I&rsquo;ll use jag.co as a domain for this example, you can choose the dir structure you want, but I recommend following this one:</p>
-<pre><code class="language-cirru" data-lang="cirru">/
+<pre tabindex="0"><code class="language-cirru" data-lang="cirru">/
 /var/www/vhosts/jag.co
 /var/www/vhosts/jag.co/logs
 /var/www/vhosts/jag.co/httpdocs</code></pre>
 <p>We&rsquo;ll also create a system user who will be running php, although at first we&rsquo;ll run php under apache, just to test our configuration. You can create this dir structure and the system user with the following commands:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mkdir -p /var/www/vhosts/jag.co
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mkdir -p /var/www/vhosts/jag.co
 useradd -d /var/www/vhosts/jag.co/ jag
 usermod -g apache jag
 chmod <span style="color:#ae81ff">710</span> /var/www/vhosts/jag.co</code></pre></div></p>
 <p>Now we&rsquo;ll add an important repository to our system. We&rsquo;ll need it here and you&rsquo;ll need it later, for sure. After that, we are good to perform a basic httpd install, along with php.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum install epel-release
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum install epel-release
 yum install httpd
 yum install mod_fcgid
 yum install php</code></pre></div></p>
 <p>You should be able to test the default page of apache, visiting your vps ip through your preferred browser. But that&rsquo;s too uncomfortable, so we&rsquo;ll improve it. We are going to configure a virtual host, named jag.co. First, we need to activate virtual hosts. To do that, we&rsquo;re going to edit the main httpd configuration file (/etc/httpd/conf/httpd.conf) and add/uncomment the following line:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">NameVirtualHost *:80</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">NameVirtualHost *:80</code></pre></div></p>
 <p>Secondly, we&rsquo;re going to create and edit the file /etc/httpd/conf.d/jag.co.conf and include the following content:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache">LoadModule suexec_module    lib/apache/mod_suexec.so
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache">LoadModule suexec_module    lib/apache/mod_suexec.so
 <span style="color:#960050;background-color:#1e0010">&amp;lt;</span>VirtualHost *:80&amp;gt;
     ServerName jag.co
     DocumentRoot <span style="color:#e6db74">/var/www/vhosts/jag.co/httpdocs</span>
@@ -231,11 +231,11 @@ yum install php</code></pre></div></p>
 <span style="color:#960050;background-color:#1e0010">&amp;lt;/VirtualHost&amp;gt;</span></code></pre></div>
 <p>Here we&rsquo;re telling apache some basic directives to use with our virtualhost, like error logs (remember to create these files and set their permissions correctly) or how to execute php files. To execute php we&rsquo;ll be using suexec_mod, which allow us to execute php under different users, thus improving security between virtual hosts. By default, mod_php will take all our php files and execute them under apache user. So if we don&rsquo;t want that to happen under our virtualhost, we&rsquo;ll use the directive SetHandler to change that. This way, we&rsquo;re telling apache to execute .php files with an script we&rsquo;ll create later.
 Now, we need to create log files:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache">mkdir -p <span style="color:#e6db74">/var/www/vhosts/jag.co/logs/</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache">mkdir -p <span style="color:#e6db74">/var/www/vhosts/jag.co/logs/</span>
 touch <span style="color:#e6db74">/var/www/vhosts/jag.co/logs/error.log</span>
 touch <span style="color:#e6db74">/var/www/vhosts/jag.co/logs/access.log</span></code></pre></div></p>
 <p>In next step we&rsquo;ll create an script which will take care of php files, setting some environment variables and executing php. Create and edit the following file: /var/www/vhosts/jag.co/.cgi-bin/php.fcgi
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
 </span><span style="color:#75715e"></span><span style="color:#75715e">#</span>
 <span style="color:#75715e"># php5.fcgi</span>
 <span style="color:#75715e"># Shell Script to run PHP5 using mod_fastcgi under Apache 2.x</span>
@@ -245,44 +245,44 @@ PHP_FCGI_CHILDREN<span style="color:#f92672">=</span><span style="color:#ae81ff"
 export PHP_FCGI_CHILDREN
 exec /usr/bin/php-cgi</code></pre></div></p>
 <p>In this script we&rsquo;re executing exactly the same php version mod_php would use, but later we&rsquo;ll change that. Now you can set a customized php.ini for this virtual host. Also, remember to set permissions and ownership.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cp -fv /etc/php/cgi/php.ini /var/www/vhosts/jag.co/.cgi-bin/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cp -fv /etc/php/cgi/php.ini /var/www/vhosts/jag.co/.cgi-bin/
 chown -R jag:apache /var/www/vhosts/jag.co/
 chown -R jag:jag .cgi-bin</code></pre></div>
 <p>You should add the open_basedir directive to your php.ini, so users can&rsquo;t touch others users' files. Also, add the /tmp dir to this directive, you&rsquo;ll need it if you want to upload files to your website ith your browser.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">open_basedir <span style="color:#f92672">=</span> /var/www/vhosts/jag.co/httpdocs/:/tmp</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">open_basedir <span style="color:#f92672">=</span> /var/www/vhosts/jag.co/httpdocs/:/tmp</code></pre></div>
 Ok, you should be good to go. You can upload some php file and try to get it through your browser and see what happens. I recommend putting some phpinfo() function inside to get details about your php installation. You&rsquo;ll notice it&rsquo;s running under your user and not under apache.</p>
 <h2 id="installing-additional-php-versions">Installing additional PHP versions</h2>
 <p>Ok, sooner or later you&rsquo;ll find a client of yours or maybe yourself need an older/newer php version, so let&rsquo;s take care of that before it happens. Firstly, we need to choose an additional php version and download it. I&rsquo;ll choose 5.6.10 and will work from /script directory. You can choose any directory, this won&rsquo;t affect at all.
 After downloading it, we&rsquo;ll install some tools we&rsquo;ll need to compile php.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mkdir /script
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mkdir /script
 cd /script
 wget http://us1.php.net/get/php-5.6.10.tar.gz/from/this/mirror
 tar -zxvf mirror
 yum install libxml2-devel libXpm-devel gmp-devel libicu-devel t1lib-devel aspell-devel openssl-devel bzip2-devel libcurl-devel libjpeg-devel libvpx-devel libpng-devel freetype-devel readline-devel libtidy-devel libxslt-devel libmcrypt-devel pcre-devel curl-devel mysql-devel ncurses-devel gettext-devel net-snmp-devel libevent-devel libtool-ltdl-devel libc-client-devel postgresql-devel
 yum groupinstall <span style="color:#e6db74">&#39;Development Tools&#39;</span></code></pre></div></p>
 <p>Ok, time to configure our php install. You should think about what needs you have and find out which libraries you&rsquo;ll need in your php instalation. I&rsquo;ve used this one, you should be able to go with it. Also, it&rsquo;s pretty straight forward to change this in future, so don&rsquo;t worry a lot about it. After configuring it, we&rsquo;ll install it. This will be an slow process, so sit and wait patiently.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./configure --prefix<span style="color:#f92672">=</span>/usr/bin/php56 --with-config-file-path<span style="color:#f92672">=</span>/etc/php56 --with-config-file-scan-dir<span style="color:#f92672">=</span>/etc/php56/php.d --with-libdir<span style="color:#f92672">=</span>lib64 --with-mysql --with-mysqli --enable-mbstring --disable-debug --disable-rpath --with-bz2 --with-curl --with-gettext --with-iconv --with-openssl --with-gd --with-mcrypt --with-pcre-regex --with-zlib --enable-cgi --enable-pdo<span style="color:#f92672">=</span>shared --with-pdo-mysql<span style="color:#f92672">=</span>shared --with-pdo-sqlite<span style="color:#f92672">=</span>shared --enable-zip --with-jpeg-dir<span style="color:#f92672">=</span>/usr/lib64 --with-freetype-dir<span style="color:#f92672">=</span>/usr/ --enable-gd-native-ttf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./configure --prefix<span style="color:#f92672">=</span>/usr/bin/php56 --with-config-file-path<span style="color:#f92672">=</span>/etc/php56 --with-config-file-scan-dir<span style="color:#f92672">=</span>/etc/php56/php.d --with-libdir<span style="color:#f92672">=</span>lib64 --with-mysql --with-mysqli --enable-mbstring --disable-debug --disable-rpath --with-bz2 --with-curl --with-gettext --with-iconv --with-openssl --with-gd --with-mcrypt --with-pcre-regex --with-zlib --enable-cgi --enable-pdo<span style="color:#f92672">=</span>shared --with-pdo-mysql<span style="color:#f92672">=</span>shared --with-pdo-sqlite<span style="color:#f92672">=</span>shared --enable-zip --with-jpeg-dir<span style="color:#f92672">=</span>/usr/lib64 --with-freetype-dir<span style="color:#f92672">=</span>/usr/ --enable-gd-native-ttf
 
 make
 make test
 make install</code></pre></div></p>
 <p>Ok, now you can copy your new php.ini
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cp php.ini-production /etc/php56/php.ini
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cp php.ini-production /etc/php56/php.ini
 vim /etc/php56/php.ini
 <span style="color:#75715e">#add this</span>
 cgi.fix_pathinfo <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span></code></pre></div></p>
 <p>Remember the script we wrote to execute php files? Ok, now it&rsquo;s the time to tell that script to execute php files with our new php install. We&rsquo;ll need to change the exec line, like this:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">exec /usr/bin/php56/bin/php-cgi</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">exec /usr/bin/php56/bin/php-cgi</code></pre></div></p>
 <p>Now you can repeat this operation as many times as you want, and you&rsquo;ll have different php versions, choosing which one you want to use with each virtual host. Also, you can configure and install php again with other params, overwriting the old configuration with no problems.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>If you have trouble, I recommend to check log files, specially apache and suexec log. This last file will tell you if there are some wrong set permissions.</p>
 <h2 id="installing-mysql-and-phpmyadmin">Installing mysql and phpmyadmin</h2>
 <p>Installing mysql and phpmyadmin is easy, just type in the following commands and follow the instructions on screen:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum install mysql-server
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum install mysql-server
 service mysqld start
 mysql_secure_installation</code></pre></div></p>
 <p>You should limit the access to phpmyadmin, so I recommend adding this to /etc/httpd/conf.d/phpMyAdmin.conf. Just change x.x.x.x for your ip. This way, only you can connect to phpmyadmin
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache"><span style="color:#75715e"># phpMyAdmin - Web based MySQL browser written in php</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache"><span style="color:#75715e"># phpMyAdmin - Web based MySQL browser written in php</span>
 <span style="color:#75715e">#</span>
 <span style="color:#75715e"># Allows only localhost by default</span>
 <span style="color:#75715e">#</span>
@@ -362,7 +362,7 @@ Alias <span style="color:#e6db74">/phpmyadmin</span> <span style="color:#e6db74"
 <span style="color:#75715e">#    &amp;lt;/Directory&amp;gt;</span>
 <span style="color:#75715e">#&amp;lt;/IfModule&amp;gt;</span></code></pre></div></p>
 <p>Finally, you should auto start apache and mysql, just in case you need to reboot your server. Use the following commands to achieve this
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chkconfig httpd on
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chkconfig httpd on
 chkconfig mysqld on</code></pre></div></p></p>
       
     </div>
@@ -516,12 +516,27 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
-                    <img class="lazyload" alt='Fixing a corrupted partition on a virtual machine' width='72' height='72' data-src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
+                  <a href='https://www.jarboleda.me/articles/web-development-environment/' target='_blank'>
+                    <img class="lazyload" alt='Web development environment' width='72' height='72' data-src="/articles/img/thumbs/web-development-environment.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
+                  <a href='https://www.jarboleda.me/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
+                    <img class="lazyload" alt='Installing ubuntu 16.04 on odroid xu3 lite' width='72' height='72' data-src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Installing ubuntu 16.04 on odroid xu3 lite</a>
                 </div>
               </div>
             </li>
@@ -537,21 +552,6 @@ s.setAttribute('data-timestamp', +new Date());
                 </div>
                 <div class='item-title'>
                   <a href='https://www.jarboleda.me/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Installing magento2 on cwp</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/facebook-sharer-and-ipv6-issue/' target='_blank'>
-                    <img class="lazyload" alt='Facebook sharer and IPv6 issue' width='72' height='72' data-src="/articles/img/thumbs/facebook-sharer-and-ipv6-issue.png" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/facebook-sharer-and-ipv6-issue/' class="mostVisitedLink">Facebook sharer and IPv6 issue</a>
                 </div>
               </div>
             </li>

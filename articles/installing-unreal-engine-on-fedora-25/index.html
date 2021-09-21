@@ -196,13 +196,13 @@ cd UnrealEngine/
 <p>In this article you&rsquo;ll find a way to get unreal engine and make it work on fedora 25. Firstly, you need to signup in github and then link your github account with your epic games account:
 <a href="https://www.unrealengine.com/ue4-on-github">https://www.unrealengine.com/ue4-on-github</a>
 Then you should receive an email confirming you joined up to the epic games organization. Once you receive it, you can clone the source code of unreal engine:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://github.com/EpicGames/UnrealEngine.git
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://github.com/EpicGames/UnrealEngine.git
 cd UnrealEngine/
 ./Setup.sh
 ./GenerateProjectFiles.sh</code></pre></div></p>
 <h2 id="installing-clang">Installing clang</h2>
 <p>In my case (Fedora 25), this last command failed, had to install clang:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo dnf install clang
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo dnf install clang
 clang --version
 clang version 3.9.1 <span style="color:#f92672">(</span>tags/RELEASE_391/final<span style="color:#f92672">)</span>
 Target: x86_64-unknown-linux-gnu
@@ -211,7 +211,7 @@ InstalledDir: /usr/bin
 ./GenerateProjectFiles.sh
 make</code></pre></div>
 After that, you should be able to run UnrealEngine Editor:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ ./UE4Editor <span style="color:#e6db74">&#34;/home/user/Documents/Unreal\ Projects/MyProject/MyProject.uproject&#34;</span></code></pre></div></p></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ ./UE4Editor <span style="color:#e6db74">&#34;/home/user/Documents/Unreal\ Projects/MyProject/MyProject.uproject&#34;</span></code></pre></div></p></p>
       
     </div>
     <div class="clearfix"></div>
@@ -243,7 +243,7 @@ After that, you should be able to run UnrealEngine Editor:
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a rel="noopener" aria-label="LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/installing-unreal-engine-on-fedora-25/&amp;title=installing%20unreal%20engine%20on%20fedora%2025&amp;summary=%3ch2%20id=%22linking-github-with-epicgames%22%3eLinking%20GitHub%20with%20EpicGames%3c/h2%3e%0a%3cp%3eIn%20this%20article%20you&amp;rsquo;ll%20find%20a%20way%20to%20get%20unreal%20engine%20and%20make%20it%20work%20on%20fedora%2025.%20Firstly,%20you%20need%20to%20signup%20in%20github%20and%20then%20link%20your%20github%20account%20with%20your%20epic%20games%20account:%0a%3ca%20href=%22https://www.unrealengine.com/ue4-on-github%22%3ehttps://www.unrealengine.com/ue4-on-github%3c/a%3e%0aThen%20you%20should%20receive%20an%20email%20confirming%20you%20joined%20up%20to%20the%20epic%20games%20organization.%20Once%20you%20receive%20it,%20you%20can%20clone%20the%20source%20code%20of%20unreal%20engine:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3egit%20clone%20https://github.com/EpicGames/UnrealEngine.git%0acd%20UnrealEngine/%0a./Setup.sh%0a./GenerateProjectFiles.sh%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/installing-unreal-engine-on-fedora-25/&amp;title=installing%20unreal%20engine%20on%20fedora%2025&amp;summary=%3ch2%20id=%22linking-github-with-epicgames%22%3eLinking%20GitHub%20with%20EpicGames%3c/h2%3e%0a%3cp%3eIn%20this%20article%20you&amp;rsquo;ll%20find%20a%20way%20to%20get%20unreal%20engine%20and%20make%20it%20work%20on%20fedora%2025.%20Firstly,%20you%20need%20to%20signup%20in%20github%20and%20then%20link%20your%20github%20account%20with%20your%20epic%20games%20account:%0a%3ca%20href=%22https://www.unrealengine.com/ue4-on-github%22%3ehttps://www.unrealengine.com/ue4-on-github%3c/a%3e%0aThen%20you%20should%20receive%20an%20email%20confirming%20you%20joined%20up%20to%20the%20epic%20games%20organization.%20Once%20you%20receive%20it,%20you%20can%20clone%20the%20source%20code%20of%20unreal%20engine:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20tabindex=%220%22%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3egit%20clone%20https://github.com/EpicGames/UnrealEngine.git%0acd%20UnrealEngine/%0a./Setup.sh%0a./GenerateProjectFiles.sh%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       </a>
     </li>
@@ -263,7 +263,7 @@ After that, you should be able to run UnrealEngine Editor:
       </a>
     </li>
     <li>
-      <a rel="noopener" aria-label="Pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/installing-unreal-engine-on-fedora-25/&amp;media=%3cnil%3eunreal_engine.min.jpg&amp;description=%3ch2%20id=%22linking-github-with-epicgames%22%3eLinking%20GitHub%20with%20EpicGames%3c/h2%3e%0a%3cp%3eIn%20this%20article%20you&amp;rsquo;ll%20find%20a%20way%20to%20get%20unreal%20engine%20and%20make%20it%20work%20on%20fedora%2025.%20Firstly,%20you%20need%20to%20signup%20in%20github%20and%20then%20link%20your%20github%20account%20with%20your%20epic%20games%20account:%0a%3ca%20href=%22https://www.unrealengine.com/ue4-on-github%22%3ehttps://www.unrealengine.com/ue4-on-github%3c/a%3e%0aThen%20you%20should%20receive%20an%20email%20confirming%20you%20joined%20up%20to%20the%20epic%20games%20organization.%20Once%20you%20receive%20it,%20you%20can%20clone%20the%20source%20code%20of%20unreal%20engine:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3egit%20clone%20https://github.com/EpicGames/UnrealEngine.git%0acd%20UnrealEngine/%0a./Setup.sh%0a./GenerateProjectFiles.sh%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/installing-unreal-engine-on-fedora-25/&amp;media=%3cnil%3eunreal_engine.min.jpg&amp;description=%3ch2%20id=%22linking-github-with-epicgames%22%3eLinking%20GitHub%20with%20EpicGames%3c/h2%3e%0a%3cp%3eIn%20this%20article%20you&amp;rsquo;ll%20find%20a%20way%20to%20get%20unreal%20engine%20and%20make%20it%20work%20on%20fedora%2025.%20Firstly,%20you%20need%20to%20signup%20in%20github%20and%20then%20link%20your%20github%20account%20with%20your%20epic%20games%20account:%0a%3ca%20href=%22https://www.unrealengine.com/ue4-on-github%22%3ehttps://www.unrealengine.com/ue4-on-github%3c/a%3e%0aThen%20you%20should%20receive%20an%20email%20confirming%20you%20joined%20up%20to%20the%20epic%20games%20organization.%20Once%20you%20receive%20it,%20you%20can%20clone%20the%20source%20code%20of%20unreal%20engine:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20tabindex=%220%22%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3egit%20clone%20https://github.com/EpicGames/UnrealEngine.git%0acd%20UnrealEngine/%0a./Setup.sh%0a./GenerateProjectFiles.sh%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-pinterest-p"></i>
       </a>
     </li>
@@ -367,12 +367,27 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
-                    <img class="lazyload" alt='Fixing a corrupted partition on a virtual machine' width='72' height='72' data-src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
+                  <a href='https://www.jarboleda.me/articles/centos-web-panel-on-vps/' target='_blank'>
+                    <img class="lazyload" alt='Centos web panel with php7 and mysql5.6' width='72' height='72' data-src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
+                  <a href='https://www.jarboleda.me/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel with php7 and mysql5.6</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/' target='_blank'>
+                    <img class="lazyload" alt='Transferring files with FTP through bash expect script' width='72' height='72' data-src="/articles/img/thumbs/transferring-files-with-ftp-through-bash-expect-script.png" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/' class="mostVisitedLink">Transferring files with FTP through bash expect script</a>
                 </div>
               </div>
             </li>
@@ -388,21 +403,6 @@ s.setAttribute('data-timestamp', +new Date());
                 </div>
                 <div class='item-title'>
                   <a href='https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/centos-web-panel-on-vps/' target='_blank'>
-                    <img class="lazyload" alt='Centos web panel with php7 and mysql5.6' width='72' height='72' data-src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel with php7 and mysql5.6</a>
                 </div>
               </div>
             </li>

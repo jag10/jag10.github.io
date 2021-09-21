@@ -18,8 +18,7 @@
 	<meta property="og:description" content="El problema
 Cuando necesitas obtener ficheros remotos para manejar su contenido (ejemplo: ficheros csv) es posible que su acceso no sea tan sencillo como utilizar fopen:
 &lt;?php
-$handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);
-" />
+$handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/" />
 	<meta property="og:image" content="/articles/img/how-to-handle-remote-resources-with-curl.png" />
@@ -42,13 +41,11 @@ $handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filen
     <meta itemprop="description" content="El problema
 Cuando necesitas obtener ficheros remotos para manejar su contenido (ejemplo: ficheros csv) es posible que su acceso no sea tan sencillo como utilizar fopen:
 &lt;?php
-$handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);
-" />
+$handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);" />
     <meta name="description" content="El problema
 Cuando necesitas obtener ficheros remotos para manejar su contenido (ejemplo: ficheros csv) es posible que su acceso no sea tan sencillo como utilizar fopen:
 &lt;?php
-$handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);
-" />
+$handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);" />
     <meta name="author" content="Jefferson Arboleda">
     
     <meta itemprop="image" content="how-to-handle-remote-resources-with-curl.png">
@@ -63,8 +60,7 @@ $handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filen
 	<meta name="twitter:description" content="El problema
 Cuando necesitas obtener ficheros remotos para manejar su contenido (ejemplo: ficheros csv) es posible que su acceso no sea tan sencillo como utilizar fopen:
 &lt;?php
-$handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);
-"/>
+$handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);"/>
 	<meta name="twitter:site" content="@j_a_g_x"/>
 	
 	<meta name="twitter:creator" content="@j_a_g_x"/>
@@ -184,9 +180,8 @@ $handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filen
       
       <p><h2 id="el-problema">El problema</h2>
 <p>Cuando necesitas obtener ficheros remotos para manejar su contenido (ejemplo: ficheros csv) es posible que su acceso no sea tan sencillo como utilizar fopen:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
-$handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>($filename, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">die</span>(<span style="color:#e6db74">&#39;could not open .&#39;</span> $filename);
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+$handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>($filename, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">die</span>(<span style="color:#e6db74">&#39;could not open .&#39;</span> $filename);</code></pre></div></p>
 <p>Si esta sentencia funciona de forma correcta, luego podremos utilizar el handle para procesar el fichero con distintas utilidades, como fgetcsv(). Es importante poder abrir ficheros con fopen porque muchas funciones utilizan un parámetro del tipo Resource en php, que es lo que nos devuelve fopen.
 Sin embargo, fopen puede fallar:</p>
 <ul>
@@ -195,7 +190,7 @@ Sin embargo, fopen puede fallar:</p>
 </ul>
 <h2 id="la-solución">La solución</h2>
 <p>En este caso, lo recomendable es utilizar cURL, donde se puede indicar a la petición que siga redirecciones y además será posible saltarse las restricciones de allow_url_fopen. Para convertir el fichero remoto en un resource local vamos a utilizar flujos de E/S de php mediante php://temp. Este flujo permite crear un fichero temporal en memoria sin tener que escribirlo en disco y lidiar con los posible problemas en cuanto a la ruta al fichero. Así, con la siguiente función podremos obtener un fichero remoto y manejarlo como si fuera un fichero local:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">_curl</span>($url){
  <span style="color:#66d9ef">try</span> {
   $file_handler <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>(<span style="color:#e6db74">&#39;php://temp&#39;</span>, <span style="color:#e6db74">&#39;w+&#39;</span>);
@@ -220,8 +215,7 @@ Sin embargo, fopen puede fallar:</p>
   $e<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getCode</span>(), $e<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getMessage</span>()),
    <span style="color:#a6e22e">E_USER_ERROR</span>);
  }
-}
-</code></pre></div></p>
+}</code></pre></div></p>
 <p>Esta función toma como parámetro una url y nos devuelve un handle de un recurso local que podemos utilizar para manejar el fichero como queramos.</p></p>
       
     </div>
@@ -249,7 +243,7 @@ Sin embargo, fopen puede fallar:</p>
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a rel="noopener" aria-label="LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/&amp;title=C%c3%b3mo%20manejar%20recursos%20remotos%20con%20curl&amp;summary=%3ch2%20id=%22el-problema%22%3eEl%20problema%3c/h2%3e%0a%3cp%3eCuando%20necesitas%20obtener%20ficheros%20remotos%20para%20manejar%20su%20contenido%20%28ejemplo:%20ficheros%20csv%29%20es%20posible%20que%20su%20acceso%20no%20sea%20tan%20sencillo%20como%20utilizar%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#f92672%22%3e&amp;lt;?%3c/span%3e%3cspan%20style=%22color:#a6e22e%22%3ephp%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%0a%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/&amp;title=C%c3%b3mo%20manejar%20recursos%20remotos%20con%20curl&amp;summary=%3ch2%20id=%22el-problema%22%3eEl%20problema%3c/h2%3e%0a%3cp%3eCuando%20necesitas%20obtener%20ficheros%20remotos%20para%20manejar%20su%20contenido%20%28ejemplo:%20ficheros%20csv%29%20es%20posible%20que%20su%20acceso%20no%20sea%20tan%20sencillo%20como%20utilizar%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20tabindex=%220%22%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#f92672%22%3e&amp;lt;?%3c/span%3e%3cspan%20style=%22color:#a6e22e%22%3ephp%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       </a>
     </li>
@@ -269,7 +263,7 @@ Sin embargo, fopen puede fallar:</p>
       </a>
     </li>
     <li>
-      <a rel="noopener" aria-label="Pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/&amp;media=%3cnil%3ehow-to-handle-remote-resources-with-curl.png&amp;description=%3ch2%20id=%22el-problema%22%3eEl%20problema%3c/h2%3e%0a%3cp%3eCuando%20necesitas%20obtener%20ficheros%20remotos%20para%20manejar%20su%20contenido%20%28ejemplo:%20ficheros%20csv%29%20es%20posible%20que%20su%20acceso%20no%20sea%20tan%20sencillo%20como%20utilizar%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#f92672%22%3e&amp;lt;?%3c/span%3e%3cspan%20style=%22color:#a6e22e%22%3ephp%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%0a%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/&amp;media=%3cnil%3ehow-to-handle-remote-resources-with-curl.png&amp;description=%3ch2%20id=%22el-problema%22%3eEl%20problema%3c/h2%3e%0a%3cp%3eCuando%20necesitas%20obtener%20ficheros%20remotos%20para%20manejar%20su%20contenido%20%28ejemplo:%20ficheros%20csv%29%20es%20posible%20que%20su%20acceso%20no%20sea%20tan%20sencillo%20como%20utilizar%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20tabindex=%220%22%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#f92672%22%3e&amp;lt;?%3c/span%3e%3cspan%20style=%22color:#a6e22e%22%3ephp%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-pinterest-p"></i>
       </a>
     </li>

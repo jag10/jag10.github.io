@@ -191,24 +191,24 @@ Usaremos las siguientes tecnologías. Deberías revisarlas antes de seguir con e
 </ul>
 <h2 id="instalando-vagrant">Instalando vagrant</h2>
 <p>Bien, el primer paso es instalar vagrant con virtualbox. Vamos a ver los pasos necesarios en <strong>Fedora</strong>, pero para el resto de distribuciones es muy parecido. En primer lugar, hay que instalar el repositorio de virtualbox. Para ello:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd /etc/yum.repos.d/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd /etc/yum.repos.d/
 wget http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
 <span style="color:#75715e">#Instalamos las dependencias</span>
 dnf install binutils gcc make patch libgomp glibc-headers glibc-devel kernel-headers kernel-devel dkms</code></pre></div>
 Finalmente, instalaremos virtualbox. Yo he tenido que instalar la versión 5.0 porque actualmente vagrant no es compatible con la versión 5.1:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">dnf install VirtualBox-5.0</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">dnf install VirtualBox-5.0</code></pre></div>
 Ahora instalaremos vagrant, tan fácil como:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">dnf install vagrant</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">dnf install vagrant</code></pre></div>
 El siguiente paso consiste en ir a la <a href="https://box.scotch.io/">web de scotch</a> e instalar su máquina virtual:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mdir -p ~/vagrant/dev
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mdir -p ~/vagrant/dev
 cd ~/vagrant/dev/
 git clone https://github.com/scotch-io/scotch-box.git my-project
 vagrant up --provider<span style="color:#f92672">=</span>virtualbox</code></pre></div>
 La primera vez vagrant tendrá que descargarse la imagen y tardará un tiempo. Una vez la máquina esté instalada, podremos verla en http://192.168.33.10/
 Bien, ya tenemos el entorno virtual montado, el siguiente paso es montar la web sobre la que queremos desarrollar en nuestro entorno de pruebas. Para ello migraremos los ficheros (comprimiéndolos en zip) y la base de datos la exportaremos como un fichero .sql ya sea con phpmyadmin o por terminal:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mysqldump -u db_username -p db_name &gt; db_name.sql</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mysqldump -u db_username -p db_name &gt; db_name.sql</code></pre></div>
 Por defecto, la máquina de scotch hace que el directorio donde instalamos la máquina (~/vagrant/dev) sea compartido con la máquina virtual en /var/www/, por lo que podremos descomprimir ahí la web. Tendremos que importar también la base de datos. Lo más sencillo es utilizar <a href="https://www.adminer.org/">adminer</a>, basta con descargarlo y dejarlo en la raíz de la web:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd ~/vagrant/dev/public/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd ~/vagrant/dev/public/
 wget https://www.adminer.org/static/download/4.2.5/adminer-4.2.5.php</code></pre></div>
 Si nuestro backup ocupa más de 2M, editaremos el fichero /etc/php5/apache2/php.ini y modificaremos la directiva upload_max_filesize y pondremos un tamaño acorde a nuestras necesidades (256M, por ejemplo). Una vez la web esté importada, es recomendable verificar el fichero .htaccess de nuestra web por si tenemos que hacer modificaciones para adaptarlo al nuevo entorno, como por ejemplo desactivar ssl. Además, deberemos modificar la conexión a la base de datos de nuestra web con los siguientes datos:</p>
 <ul>
@@ -221,7 +221,7 @@ Si nuestro backup ocupa más de 2M, editaremos el fichero /etc/php5/apache2/php.
 <p>También podemos entrar en adminer y crear una nueva base de datos.</p>
 <h2 id="estructura-de-directorios">Estructura de directorios</h2>
 <p>La estructura de ficheros para el desarrollo que utilizo es la siguiente:
-<pre><code class="language-cirru" data-lang="cirru">/templates/
+<pre tabindex="0"><code class="language-cirru" data-lang="cirru">/templates/
 |-- css &lt; Aquí se incluye el fichero global.min.css utilizado en producción (y cualquier otro, si hubiera más)
 |-- fonts &lt; fuentes
 |-- img &lt; imágenes utilizadas en el tema
@@ -238,15 +238,15 @@ Si nuestro backup ocupa más de 2M, editaremos el fichero /etc/php5/apache2/php.
 .php &lt; templates (header.php, footer.php. etc.)</code></pre></p>
 <h2 id="automatizando-tareas">Automatizando tareas</h2>
 <p>Ya tenemos el entorno montado, el siguiente paso será utilizar gulp y compass para automatizar algunas tareas como compilar sass o comprimir los ficheros js. Para ello, empezaremos por instalar ruby en la <strong>máquina virtual</strong>:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vagrant ssh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vagrant ssh
 su root
 apt-get install ruby
 gem update --system
 gem install compass</code></pre></div>
 Luego procederemos a instalar nodejs y npm (disponibles en los repositorios oficiales, sin líos):
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">apt-get install nodejs npm</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">apt-get install nodejs npm</code></pre></div>
 Ahora podremos instalar y configurar gulp para automatizar tareas:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd ~/vagrant/dev/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd ~/vagrant/dev/
 npm init
 npm install --global gulp-cli
 npm install --save-dev gulp
@@ -260,8 +260,8 @@ Ya tenemos gulp y compass disponible, ahora tendremos que indicarle qué tareas 
 <li>Crea la tarea &lsquo;live&rsquo;, que se encarga de inicializar livereload, vigilar los ficheros scss y js para compilar cuando sea necesario y finalmente, vigilar ficheros .php, .css y .js para autorecargar el navegador cuando sea necesario.</li>
 </ul>
 <p>Aquí os dejo el fichero gulpfile.js. Antes de utilizarlo hay que instalar las dependencias necesarias:</p>
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm install --save-dev gulp gulp-compass gulp-autoprefixer gulp-rename gulp-clean-css gulp-uglify gulp-concat gulp-livereload gulp-plumber gulp-path</code></pre></div>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">gulp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp&#39;</span>),
+<p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm install --save-dev gulp gulp-compass gulp-autoprefixer gulp-rename gulp-clean-css gulp-uglify gulp-concat gulp-livereload gulp-plumber gulp-path</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">gulp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp&#39;</span>),
     <span style="color:#a6e22e">compass</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-compass&#39;</span>),
     <span style="color:#a6e22e">autoprefixer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-autoprefixer&#39;</span>),
     <span style="color:#a6e22e">rename</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-rename&#39;</span>),
@@ -321,14 +321,11 @@ Ya tenemos gulp y compass disponible, ahora tendremos que indicarle qué tareas 
   	.<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">rename</span>({ <span style="color:#a6e22e">suffix</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;.min&#39;</span> }))
   	.<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">uglify</span>())
   	.<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">dest</span>(<span style="color:#e6db74">&#39;js/&#39;</span>));
-});
-</code></pre></div></p>
+});</code></pre></div></p>
 <p>Como estamos trabajando en una máquina virtual, la extensión livereload no verá el servidor livereload porque lo va a buscar en localhost:35729. Para solucionarlo, tendremos que redigir el puerto 35729 de nuestra máquina local al puerto 35729 de la máquina virtual. Para ello:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">ssh</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">L</span> <span style="color:#ae81ff">35729</span><span style="color:#f92672">:</span><span style="color:#ae81ff">192.168.33.10</span><span style="color:#f92672">:</span><span style="color:#ae81ff">35729</span> <span style="color:#a6e22e">vagrant</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#ae81ff">192.168.33.10</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">ssh</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">L</span> <span style="color:#ae81ff">35729</span><span style="color:#f92672">:</span><span style="color:#ae81ff">192.168</span>.<span style="color:#ae81ff">33.10</span><span style="color:#f92672">:</span><span style="color:#ae81ff">35729</span> <span style="color:#a6e22e">vagrant</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#ae81ff">192.168</span>.<span style="color:#ae81ff">33.10</span></code></pre></div>
 Ya está todo listo, ahora podremos utilizar gulp para automatizar tareas. Desde el directorio del proyecto:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">gulp</span> <span style="color:#a6e22e">live</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">gulp</span> <span style="color:#a6e22e">live</span></code></pre></div>
 Ya tenemos todo listo, si hemos seguido los pasos podremos modificar código en ~/vagrant/dev y ver los cambios de manera instantánea en Chrome, lo que nos da un entorno de trabajo muy ágil y en el que podremos hacer las pruebas que queramos sin afectar al entorno real.
 En cuanto a la metodología a utilizar en git, queda a elección del desarrollador. Personalmente, siempre tengo 3 branches &ldquo;infinitos&rdquo;, que son:</p>
 <ul>
@@ -517,12 +514,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/' target='_blank'>
-                    <img class="lazyload" alt='Centos web panel con php7 y mysql5.6' width='72' height='72' data-src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
+                  <a href='https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
+                    <img class="lazyload" alt='Arreglando una partición corrupta de una máquina virtual' width='72' height='72' data-src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel con php7 y mysql5.6</a>
+                  <a href='https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Arreglando una partición corrupta de una máquina virtual</a>
                 </div>
               </div>
             </li>
@@ -532,12 +529,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/web-development-environment/' target='_blank'>
-                    <img class="lazyload" alt='Entorno para desarrollo web' width='72' height='72' data-src="/articles/img/thumbs/web-development-environment.jpg" />
+                  <a href='https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
+                    <img class="lazyload" alt='Instalando ubuntu 16.04 en odroid xu3 lite' width='72' height='72' data-src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/web-development-environment/' class="mostVisitedLink">Entorno para desarrollo web</a>
+                  <a href='https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Instalando ubuntu 16.04 en odroid xu3 lite</a>
                 </div>
               </div>
             </li>

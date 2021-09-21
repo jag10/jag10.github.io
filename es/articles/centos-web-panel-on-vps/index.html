@@ -190,14 +190,14 @@ Ahora vamos a instalar el repositorio de mysql"/>
 <p>En primer lugar, vamos a instalar CWP, simplemente hay que seguir las instrucciones del sitio web de CWP: <a href="http://centos-webpanel.com/installation-instructions">http://centos-webpanel.com/installation-instructions</a></p>
 <h2 id="instalando-mysql-56">Instalando mysql 5.6</h2>
 <p>Después de una instalación limpia, vamos a detener CWP para actualizar mysql.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">service cwpsrv stop</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">service cwpsrv stop</code></pre></div></p>
 <p>Ahora vamos a instalar el repositorio de mysql</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum install -y wget
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum install -y wget
 wget http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm
 yum localinstall mysql57-community-release-el6-7.noarch.rpm
 vim /etc/yum.repos.d/mysql-community.repo</code></pre></div>
 <p>Ahora que tenemos el repositorio, vamos a elegir qué versión queremos instalar. En este caso, vamos a instalar mysql 5.6, por lo que el fichero debe quedar así:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum
 <span style="color:#f92672">[</span>mysql-connectors-community<span style="color:#f92672">]</span>
 name<span style="color:#f92672">=</span>MySQL Connectors Community
 baseurl<span style="color:#f92672">=</span>http://repo.mysql.com/yum/mysql-connectors-community/el/6/$basearch/
@@ -233,27 +233,27 @@ enabled<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
 gpgcheck<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
 gpgkey<span style="color:#f92672">=</span>file:/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql</code></pre></div>
 Ahora, para comprobar que hemos activado el repositorio correcto, utilizaremos el siguiente comando:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum repolist enabled | grep mysql
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum repolist enabled | grep mysql
 
 mysql-connectors-community MySQL Connectors Community
 mysql-tools-community MySQL Tools Community
 mysql56-community MySQL 5.6 Community Server</code></pre></div></p>
 <p>Ahora podemos proceder con la actualización.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum install mysql-community-server</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum install mysql-community-server</code></pre></div>
 En my caso, mysqld dejó de funcionar después de hacer esto. Analizando el log encontré este error:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ERROR<span style="color:#f92672">]</span> InnoDB: auto-extending data file ./ibdata1 is of a different size <span style="color:#ae81ff">640</span> pages <span style="color:#f92672">(</span>rounded down to MB<span style="color:#f92672">)</span> than specified in the .cnf file: initial <span style="color:#ae81ff">768</span> pages, max <span style="color:#ae81ff">0</span> <span style="color:#f92672">(</span>relevant <span style="color:#66d9ef">if</span> non-zero<span style="color:#f92672">)</span> pages!</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ERROR<span style="color:#f92672">]</span> InnoDB: auto-extending data file ./ibdata1 is of a different size <span style="color:#ae81ff">640</span> pages <span style="color:#f92672">(</span>rounded down to MB<span style="color:#f92672">)</span> than specified in the .cnf file: initial <span style="color:#ae81ff">768</span> pages, max <span style="color:#ae81ff">0</span> <span style="color:#f92672">(</span>relevant <span style="color:#66d9ef">if</span> non-zero<span style="color:#f92672">)</span> pages!</code></pre></div>
 El quickfix para esto es añadir la siguiente línea en el fichero <code>/etc/my.cnf</code>, en el bloque [mysqld]:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">innodb_data_file_path <span style="color:#f92672">=</span> ibdata1:10M:autoextend</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">innodb_data_file_path <span style="color:#f92672">=</span> ibdata1:10M:autoextend</code></pre></div></p>
 <p>Ahora se puede iniciar mysqld.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">service mysqld start</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">service mysqld start</code></pre></div></p>
 <p>Para terminar con la actualización:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mysql_upgrade</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mysql_upgrade</code></pre></div></p>
 <p>Ya hemos acabado con mysql, ahora podemos volver a iniciar CWP:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">service cwpsrv start</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">service cwpsrv start</code></pre></div></p>
 <h2 id="configurando-php7">Configurando php7</h2>
-<p>Ahora tu servidor debería ser accesible en <a href="http://your.ip">http://your.ip</a>:2030
+<p>Ahora tu servidor debería ser accesible en <a href="http://your.ip:2030">http://your.ip:2030</a>
 Identifícate en el panel con tus credenciales y ve a PHP Settings -&gt; PHP selector. En primer lugar, hay que definir las flags para la versión php que vamos a compilar.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./configure
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./configure
 --prefix<span style="color:#f92672">=</span>/opt/alt/php7/usr
 --with-config-file-path<span style="color:#f92672">=</span>/opt/alt/php7/usr/php
 --with-config-file-scan-dir<span style="color:#f92672">=</span>/opt/alt/php7/usr/php/php.d
@@ -293,9 +293,9 @@ Identifícate en el panel con tus credenciales y ve a PHP Settings -&gt; PHP sel
 --enable-intl
 --with-xsl</code></pre></div></p>
 <p>En caso de que quieras usar php 5.6, hay que añadir la siguiente flag:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">--enable-intl</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">--enable-intl</code></pre></div></p>
 <p>Ahora puedes hacer click en &lsquo;Install dependencies&rsquo; para instalar las dependencias necesarias. Después de esto, se puede seleccionar php7 y compilarlo. Cuando el proceso termine, puedes usar php7 en tu sitio web añadiendo la siguiente línea en el .htaccess
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">AddHandler application/x-httpd-php7 .php</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">AddHandler application/x-httpd-php7 .php</code></pre></div></p>
 <p>Y ya hemos terminado, ahora dispones de un servidor con php7 y msql5.6, lo que te dará un buen empujón en cuanto a rendimiento.</p></p>
       
     </div>
@@ -333,7 +333,7 @@ Identifícate en el panel con tus credenciales y ve a PHP Settings -&gt; PHP sel
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a rel="noopener" aria-label="LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/&amp;title=Centos%20web%20panel%20con%20php7%20y%20mysql5.6&amp;summary=%3ch2%20id=%22instalando-cwp%22%3eInstalando%20CWP%3c/h2%3e%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20instalar%20CWP,%20simplemente%20hay%20que%20seguir%20las%20instrucciones%20del%20sitio%20web%20de%20CWP:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%3ch2%20id=%22instalando-mysql-56%22%3eInstalando%20mysql%205.6%3c/h2%3e%0a%3cp%3eDespu%c3%a9s%20de%20una%20instalaci%c3%b3n%20limpia,%20vamos%20a%20detener%20CWP%20para%20actualizar%20mysql.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3eservice%20cwpsrv%20stop%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%3cp%3eAhora%20vamos%20a%20instalar%20el%20repositorio%20de%20mysql%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/&amp;title=Centos%20web%20panel%20con%20php7%20y%20mysql5.6&amp;summary=%3ch2%20id=%22instalando-cwp%22%3eInstalando%20CWP%3c/h2%3e%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20instalar%20CWP,%20simplemente%20hay%20que%20seguir%20las%20instrucciones%20del%20sitio%20web%20de%20CWP:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%3ch2%20id=%22instalando-mysql-56%22%3eInstalando%20mysql%205.6%3c/h2%3e%0a%3cp%3eDespu%c3%a9s%20de%20una%20instalaci%c3%b3n%20limpia,%20vamos%20a%20detener%20CWP%20para%20actualizar%20mysql.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20tabindex=%220%22%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3eservice%20cwpsrv%20stop%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%3cp%3eAhora%20vamos%20a%20instalar%20el%20repositorio%20de%20mysql%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       </a>
     </li>
@@ -353,7 +353,7 @@ Identifícate en el panel con tus credenciales y ve a PHP Settings -&gt; PHP sel
       </a>
     </li>
     <li>
-      <a rel="noopener" aria-label="Pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/&amp;media=%3cnil%3einstalling-centos-web-panel-on-vps.jpg&amp;description=%3ch2%20id=%22instalando-cwp%22%3eInstalando%20CWP%3c/h2%3e%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20instalar%20CWP,%20simplemente%20hay%20que%20seguir%20las%20instrucciones%20del%20sitio%20web%20de%20CWP:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%3ch2%20id=%22instalando-mysql-56%22%3eInstalando%20mysql%205.6%3c/h2%3e%0a%3cp%3eDespu%c3%a9s%20de%20una%20instalaci%c3%b3n%20limpia,%20vamos%20a%20detener%20CWP%20para%20actualizar%20mysql.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3eservice%20cwpsrv%20stop%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%3cp%3eAhora%20vamos%20a%20instalar%20el%20repositorio%20de%20mysql%3c/p%3e" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/&amp;media=%3cnil%3einstalling-centos-web-panel-on-vps.jpg&amp;description=%3ch2%20id=%22instalando-cwp%22%3eInstalando%20CWP%3c/h2%3e%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20instalar%20CWP,%20simplemente%20hay%20que%20seguir%20las%20instrucciones%20del%20sitio%20web%20de%20CWP:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%3ch2%20id=%22instalando-mysql-56%22%3eInstalando%20mysql%205.6%3c/h2%3e%0a%3cp%3eDespu%c3%a9s%20de%20una%20instalaci%c3%b3n%20limpia,%20vamos%20a%20detener%20CWP%20para%20actualizar%20mysql.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20tabindex=%220%22%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3eservice%20cwpsrv%20stop%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%3cp%3eAhora%20vamos%20a%20instalar%20el%20repositorio%20de%20mysql%3c/p%3e" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-pinterest-p"></i>
       </a>
     </li>
@@ -458,42 +458,42 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
+                  <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
+                    <img class="lazyload" alt='configuring a LAMP server on CentOS 6' width='72' height='72' data-src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='https://www.jarboleda.me/es/articles/web-development-environment/' target='_blank'>
+                    <img class="lazyload" alt='Entorno para desarrollo web' width='72' height='72' data-src="/articles/img/thumbs/web-development-environment.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='https://www.jarboleda.me/es/articles/web-development-environment/' class="mostVisitedLink">Entorno para desarrollo web</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
                   <a href='https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/' target='_blank'>
                     <img class="lazyload" alt='Instalando magento2 en cwp' width='72' height='72' data-src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
                   <a href='https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Instalando magento2 en cwp</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
-                    <img class="lazyload" alt='Cómo manejar recursos remotos con curl' width='72' height='72' data-src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">Cómo manejar recursos remotos con curl</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/' target='_blank'>
-                    <img class="lazyload" alt='Utilizando la API de piwik en local con PW' width='72' height='72' data-src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Utilizando la API de piwik en local con PW</a>
                 </div>
               </div>
             </li>

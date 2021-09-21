@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-	<meta name="generator" content="Hugo 0.80.0" />
+	<meta name="generator" content="Hugo 0.88.1" />
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     <meta name=viewport content="width=device-width, initial-scale=1">
     <title>J. Arboleda - J. Arboleda</title>
@@ -170,9 +170,8 @@
       
       <p><h2 id="el-problema">El problema</h2>
 <p>Cuando necesitas obtener ficheros remotos para manejar su contenido (ejemplo: ficheros csv) es posible que su acceso no sea tan sencillo como utilizar fopen:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
-$handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>($filename, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">die</span>(<span style="color:#e6db74">&#39;could not open .&#39;</span> $filename);
-</code></pre></div></p></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+$handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>($filename, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">die</span>(<span style="color:#e6db74">&#39;could not open .&#39;</span> $filename);</code></pre></div></p></p>
       
     </div>
     <div class="clearfix"></div>
@@ -188,7 +187,7 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a rel="noopener" aria-label="LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/&amp;title=C%c3%b3mo%20manejar%20recursos%20remotos%20con%20curl&amp;summary=%3ch2%20id=%22el-problema%22%3eEl%20problema%3c/h2%3e%0a%3cp%3eCuando%20necesitas%20obtener%20ficheros%20remotos%20para%20manejar%20su%20contenido%20%28ejemplo:%20ficheros%20csv%29%20es%20posible%20que%20su%20acceso%20no%20sea%20tan%20sencillo%20como%20utilizar%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#f92672%22%3e&amp;lt;?%3c/span%3e%3cspan%20style=%22color:#a6e22e%22%3ephp%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%0a%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/&amp;title=C%c3%b3mo%20manejar%20recursos%20remotos%20con%20curl&amp;summary=%3ch2%20id=%22el-problema%22%3eEl%20problema%3c/h2%3e%0a%3cp%3eCuando%20necesitas%20obtener%20ficheros%20remotos%20para%20manejar%20su%20contenido%20%28ejemplo:%20ficheros%20csv%29%20es%20posible%20que%20su%20acceso%20no%20sea%20tan%20sencillo%20como%20utilizar%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20tabindex=%220%22%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#f92672%22%3e&amp;lt;?%3c/span%3e%3cspan%20style=%22color:#a6e22e%22%3ephp%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       </a>
     </li>
@@ -208,7 +207,7 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
       </a>
     </li>
     <li>
-      <a rel="noopener" aria-label="Pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/&amp;media=%3cnil%3ehow-to-handle-remote-resources-with-curl.png&amp;description=%3ch2%20id=%22el-problema%22%3eEl%20problema%3c/h2%3e%0a%3cp%3eCuando%20necesitas%20obtener%20ficheros%20remotos%20para%20manejar%20su%20contenido%20%28ejemplo:%20ficheros%20csv%29%20es%20posible%20que%20su%20acceso%20no%20sea%20tan%20sencillo%20como%20utilizar%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#f92672%22%3e&amp;lt;?%3c/span%3e%3cspan%20style=%22color:#a6e22e%22%3ephp%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%0a%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/how-to-handle-remote-resources-with-curl/&amp;media=%3cnil%3ehow-to-handle-remote-resources-with-curl.png&amp;description=%3ch2%20id=%22el-problema%22%3eEl%20problema%3c/h2%3e%0a%3cp%3eCuando%20necesitas%20obtener%20ficheros%20remotos%20para%20manejar%20su%20contenido%20%28ejemplo:%20ficheros%20csv%29%20es%20posible%20que%20su%20acceso%20no%20sea%20tan%20sencillo%20como%20utilizar%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20tabindex=%220%22%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#f92672%22%3e&amp;lt;?%3c/span%3e%3cspan%20style=%22color:#a6e22e%22%3ephp%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-pinterest-p"></i>
       </a>
     </li>
@@ -489,7 +488,7 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
 <p>En primer lugar, vamos a instalar CWP, simplemente hay que seguir las instrucciones del sitio web de CWP: <a href="http://centos-webpanel.com/installation-instructions">http://centos-webpanel.com/installation-instructions</a></p>
 <h2 id="instalando-mysql-56">Instalando mysql 5.6</h2>
 <p>Después de una instalación limpia, vamos a detener CWP para actualizar mysql.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">service cwpsrv stop</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">service cwpsrv stop</code></pre></div></p>
 <p>Ahora vamos a instalar el repositorio de mysql</p></p>
       
     </div>
@@ -506,7 +505,7 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a rel="noopener" aria-label="LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/&amp;title=Centos%20web%20panel%20con%20php7%20y%20mysql5.6&amp;summary=%3ch2%20id=%22instalando-cwp%22%3eInstalando%20CWP%3c/h2%3e%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20instalar%20CWP,%20simplemente%20hay%20que%20seguir%20las%20instrucciones%20del%20sitio%20web%20de%20CWP:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%3ch2%20id=%22instalando-mysql-56%22%3eInstalando%20mysql%205.6%3c/h2%3e%0a%3cp%3eDespu%c3%a9s%20de%20una%20instalaci%c3%b3n%20limpia,%20vamos%20a%20detener%20CWP%20para%20actualizar%20mysql.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3eservice%20cwpsrv%20stop%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%3cp%3eAhora%20vamos%20a%20instalar%20el%20repositorio%20de%20mysql%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/&amp;title=Centos%20web%20panel%20con%20php7%20y%20mysql5.6&amp;summary=%3ch2%20id=%22instalando-cwp%22%3eInstalando%20CWP%3c/h2%3e%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20instalar%20CWP,%20simplemente%20hay%20que%20seguir%20las%20instrucciones%20del%20sitio%20web%20de%20CWP:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%3ch2%20id=%22instalando-mysql-56%22%3eInstalando%20mysql%205.6%3c/h2%3e%0a%3cp%3eDespu%c3%a9s%20de%20una%20instalaci%c3%b3n%20limpia,%20vamos%20a%20detener%20CWP%20para%20actualizar%20mysql.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20tabindex=%220%22%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3eservice%20cwpsrv%20stop%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%3cp%3eAhora%20vamos%20a%20instalar%20el%20repositorio%20de%20mysql%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       </a>
     </li>
@@ -526,7 +525,7 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
       </a>
     </li>
     <li>
-      <a rel="noopener" aria-label="Pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/&amp;media=%3cnil%3einstalling-centos-web-panel-on-vps.jpg&amp;description=%3ch2%20id=%22instalando-cwp%22%3eInstalando%20CWP%3c/h2%3e%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20instalar%20CWP,%20simplemente%20hay%20que%20seguir%20las%20instrucciones%20del%20sitio%20web%20de%20CWP:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%3ch2%20id=%22instalando-mysql-56%22%3eInstalando%20mysql%205.6%3c/h2%3e%0a%3cp%3eDespu%c3%a9s%20de%20una%20instalaci%c3%b3n%20limpia,%20vamos%20a%20detener%20CWP%20para%20actualizar%20mysql.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3eservice%20cwpsrv%20stop%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%3cp%3eAhora%20vamos%20a%20instalar%20el%20repositorio%20de%20mysql%3c/p%3e" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/&amp;media=%3cnil%3einstalling-centos-web-panel-on-vps.jpg&amp;description=%3ch2%20id=%22instalando-cwp%22%3eInstalando%20CWP%3c/h2%3e%0a%3cp%3eEn%20primer%20lugar,%20vamos%20a%20instalar%20CWP,%20simplemente%20hay%20que%20seguir%20las%20instrucciones%20del%20sitio%20web%20de%20CWP:%20%3ca%20href=%22http://centos-webpanel.com/installation-instructions%22%3ehttp://centos-webpanel.com/installation-instructions%3c/a%3e%3c/p%3e%0a%3ch2%20id=%22instalando-mysql-56%22%3eInstalando%20mysql%205.6%3c/h2%3e%0a%3cp%3eDespu%c3%a9s%20de%20una%20instalaci%c3%b3n%20limpia,%20vamos%20a%20detener%20CWP%20para%20actualizar%20mysql.%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20tabindex=%220%22%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-sh%22%20data-lang=%22sh%22%3eservice%20cwpsrv%20stop%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e%0a%3cp%3eAhora%20vamos%20a%20instalar%20el%20repositorio%20de%20mysql%3c/p%3e" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-pinterest-p"></i>
       </a>
     </li>
@@ -544,31 +543,29 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
         
       
       
-<ul class="pagination">
-  <li class="page-item">
-    <a href="/es/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-  </li>
-  <li class="page-item">
-    <a href="/es/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="/es/">1</a>
-  </li>
-  <li class="page-item active">
-    <a class="page-link" href="/es/page/2/">2</a>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="/es/page/3/">3</a>
-  </li>
-  <li class="page-item">
-    <a href="/es/page/3/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-  </li>
-  <li class="page-item">
-    <a href="/es/page/3/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-  </li>
-</ul>
-
-
+    <ul class="pagination pagination-default">
+      <li class="page-item">
+        <a href="/es/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/es/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/es/" aria-label="Page 1" class="page-link" role="button">1</a>
+      </li>
+      <li class="page-item active">
+        <a href="#" aria-current="page" aria-label="Page 2" class="page-link" role="button">2</a>
+      </li>
+      <li class="page-item">
+        <a href="/es/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
+      </li>
+      <li class="page-item">
+        <a href="/es/page/3/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/es/page/3/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul>
     </section><aside class='sidebar-wrapper pure-u-1 pure-u-md-1-4 sticky'>
       
 <div class='sidebar'>
@@ -650,12 +647,12 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
-                    <img class="lazyload" alt='Instalando ubuntu 16.04 en odroid xu3 lite' width='72' height='72' data-src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
+                  <a href='https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
+                    <img class="lazyload" alt='Haciendo un backup de todas las BD usando mysqldump' width='72' height='72' data-src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Instalando ubuntu 16.04 en odroid xu3 lite</a>
+                  <a href='https://www.jarboleda.me/es/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Haciendo un backup de todas las BD usando mysqldump</a>
                 </div>
               </div>
             </li>
@@ -665,12 +662,12 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
-                    <img class="lazyload" alt='Instalando unreal engine en fedora 25' width='72' height='72' data-src="/articles/img/thumbs/unreal_engine.min.jpg" />
+                  <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
+                    <img class="lazyload" alt='configuring a LAMP server on CentOS 6' width='72' height='72' data-src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">Instalando unreal engine en fedora 25</a>
+                  <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
                 </div>
               </div>
             </li>
@@ -680,12 +677,12 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
-                    <img class="lazyload" alt='Autenticando usuarios con cURL' width='72' height='72' data-src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
+                  <a href='https://www.jarboleda.me/es/articles/getting-an-objects-methods/' target='_blank'>
+                    <img class="lazyload" alt='Obteniendo los métodos (reflejados) de un objeto' width='72' height='72' data-src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Autenticando usuarios con cURL</a>
+                  <a href='https://www.jarboleda.me/es/articles/getting-an-objects-methods/' class="mostVisitedLink">Obteniendo los métodos (reflejados) de un objeto</a>
                 </div>
               </div>
             </li>

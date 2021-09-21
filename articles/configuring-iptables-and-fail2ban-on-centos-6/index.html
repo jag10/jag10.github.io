@@ -168,13 +168,13 @@ Iptables should be included in your default Linux OS, and you can easily get fai
       
       <p><p>In this post I&rsquo;ll explain how to configure iptables along with fail2ban and how to start/stop these services without messing up your chains or configuration.</p>
 <p>Iptables should be included in your default Linux OS, and you can easily get fail2ban from standard repos. So, just enable the chains you need on <code>/etc/fail2ban/jail.local</code>. Copy the file from <code>/etc/fail2ban/jail.conf</code> if it doesn&rsquo;t exist. For example, if you want (you should) activate ssh jail, just add/uncomment this lines to the file:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>ssh-iptables<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>ssh-iptables<span style="color:#f92672">]</span>
 enabled <span style="color:#f92672">=</span> true</code></pre></div>
 <p>Don&rsquo;t forget to add yourself to the ignored ips, you do not want to lock out yourself from the server. If this happens to you, go to your vps/server control panel and look for an emergency access, most providers will have one (ovh and 1and1 do). Or you could just simply sit and wait until fail2ban unbans you, just don&rsquo;t keep trying to log in or you&rsquo;ll make the situation worse.
 Ok, now you have iptables installed and fail2ban configured. You may wonder what will happen if you reboot your server or if you just restart iptables. Yep, you&rsquo;ll lose all your fail2ban chains. So let&rsquo;s use a script to start and stop iptables, to ensure we don&rsquo;t lose chains and also to make it easier and safer to modify rules.</p>
 <h2 id="starting-iptables-and-fail2ban">Starting iptables and fail2ban</h2>
 <p>Let&rsquo;s start with the script which will start iptables and fail2ban. We&rsquo;ll define a blacklist, so we can just add ips to a text file and get them locked out from our server. This will be handy in future. After that, we&rsquo;ll block all traffic by default, except output traffic, that won&rsquo;t harm us. Then, we&rsquo;ll block bad packets to prevent attacks and finally, we&rsquo;ll allow some legit traffic (icmp, dns, etc.). You should carefully look at the script below and modify it to fit your needs. This is a standard configuration and should be ok for most basic web servers, allowing mail, passive ftp, ssh, git, mail, etc.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
 </span><span style="color:#75715e"></span>
 IPT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sbin/iptables&#34;</span>
 SPAMLIST<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;blockedip&#34;</span>
@@ -284,7 +284,7 @@ iptables -L -n -v</code></pre></div></p>
 <p>After we enable iptables, we&rsquo;ll start fail2ban, give it 2 seconds to load, and then list all the rules, so we can see everything is ok. There are some lines commented, use them if you prefer to deny all output traffic by default and then allow only certain traffic.</p>
 <h2 id="stopping-iptables-and-fail2ban">Stopping iptables and fail2ban</h2>
 <p>Now, when we need to stop both iptables and fail2ban, we&rsquo;ll use the following script. It will flush all rules and echo the new rules to make sure there are no active rules.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
 </span><span style="color:#75715e"></span>/etc/init.d/fail2ban stop
 
 echo <span style="color:#e6db74">&#34;deleting rules...&#34;</span>
@@ -303,10 +303,10 @@ echo <span style="color:#e6db74">&#34;new rules:&#34;</span>
 iptables -L -n -v</code></pre></div></p>
 <p>If you are going to use these scriptes frequently, I recommend to set an alias for them. For example, if you save these scripts to /home/start.fw, /home/stop.fw, you could add an alias like this:
 Edit ~/.bashrc and add the following lines:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">alias startfw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/script/start.fw&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">alias startfw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/script/start.fw&#39;</span>
 alias stopfw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/script/stop.fw&#39;</span></code></pre></div></p>
 <p>Now, when you want to reboot your firewall, just use the command below. Beware, it will delete all of your rules and put the ones you set in the startup script. If you want to add/delete rules, just modify start.fw and restart the firewall.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">stopfw <span style="color:#f92672">&amp;&amp;</span> startfw</code></pre></div></p></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">stopfw <span style="color:#f92672">&amp;&amp;</span> startfw</code></pre></div></p></p>
       
     </div>
     <div class="clearfix"></div>
@@ -457,12 +457,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
-                    <img class="lazyload" alt='Authenticating users with cURL' width='72' height='72' data-src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
+                  <a href='https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/' target='_blank'>
+                    <img class="lazyload" alt='Configuring IPTABLES and fail2ban on centOS 6' width='72' height='72' data-src="/articles/img/thumbs/configuring-iptables-and-fail2ban-on-centos-6.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/' class="mostVisitedLink">Authenticating users with cURL</a>
+                  <a href='https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/' class="mostVisitedLink">Configuring IPTABLES and fail2ban on centOS 6</a>
                 </div>
               </div>
             </li>
@@ -472,12 +472,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/' target='_blank'>
-                    <img class="lazyload" alt='How to handle remote resources with curl' width='72' height='72' data-src="/articles/img/thumbs/how-to-handle-remote-resources-with-curl.png" />
+                  <a href='https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
+                    <img class="lazyload" alt='Installing ubuntu 16.04 on odroid xu3 lite' width='72' height='72' data-src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/' class="mostVisitedLink">How to handle remote resources with curl</a>
+                  <a href='https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Installing ubuntu 16.04 on odroid xu3 lite</a>
                 </div>
               </div>
             </li>
@@ -487,12 +487,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/' target='_blank'>
-                    <img class="lazyload" alt='Using piwik&#39;s API locally with ProcessWire' width='72' height='72' data-src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
+                  <a href='https://www.jarboleda.me/articles/centos-web-panel-on-vps/' target='_blank'>
+                    <img class="lazyload" alt='Centos web panel with php7 and mysql5.6' width='72' height='72' data-src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Using piwik&#39;s API locally with ProcessWire</a>
+                  <a href='https://www.jarboleda.me/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel with php7 and mysql5.6</a>
                 </div>
               </div>
             </li>

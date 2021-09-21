@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://www.jarboleda.me/articles/</loc>
     <lastmod>2021-01-15T12:21:32+02:00</lastmod>
@@ -15,29 +14,19 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/articles/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/cloudflare/</loc>
     <lastmod>2021-01-15T12:21:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/getting-0.5s-page-load-time-on-your-blog/</loc>
     <lastmod>2021-01-15T12:21:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/github-pages/</loc>
     <lastmod>2021-01-15T12:21:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/hugo/</loc>
     <lastmod>2021-01-15T12:21:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/</loc>
     <lastmod>2021-01-15T12:21:32+02:00</lastmod>
     <xhtml:link
@@ -50,9 +39,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/pinned/notpinned/</loc>
     <lastmod>2021-01-15T12:21:32+02:00</lastmod>
     <xhtml:link
@@ -65,14 +52,10 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/pinned/notpinned/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/performance/</loc>
     <lastmod>2021-01-15T12:21:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/pinned/</loc>
     <lastmod>2021-01-15T12:21:32+02:00</lastmod>
     <xhtml:link
@@ -85,9 +68,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/pinned/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/</loc>
     <lastmod>2021-01-15T12:21:32+02:00</lastmod>
     <xhtml:link
@@ -100,34 +81,22 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/project/false/</loc>
     <lastmod>2018-02-10T13:39:56+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/job/</loc>
     <lastmod>2018-02-10T13:39:56+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/linkedin/</loc>
     <lastmod>2018-02-10T13:39:56+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/move/</loc>
     <lastmod>2018-02-10T13:39:56+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/moving-to-france-for-work/</loc>
     <lastmod>2018-02-10T13:39:56+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/pinned/pinned/</loc>
     <lastmod>2018-02-10T13:39:56+02:00</lastmod>
     <xhtml:link
@@ -140,9 +109,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/pinned/pinned/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/project/</loc>
     <lastmod>2018-02-10T13:39:56+02:00</lastmod>
     <xhtml:link
@@ -155,54 +122,34 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/project/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/deploy-hugo-site-to-github-pages/</loc>
     <lastmod>2017-08-13T11:07:16+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/github/</loc>
     <lastmod>2017-08-13T11:07:16+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/pages/</loc>
     <lastmod>2017-08-13T11:07:16+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/static/</loc>
     <lastmod>2017-08-13T11:07:16+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/arduino/</loc>
     <lastmod>2017-06-25T19:31:56+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/arduino-uno-lego-case/</loc>
     <lastmod>2017-06-25T19:31:56+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/case/</loc>
     <lastmod>2017-06-25T19:31:56+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/lego/</loc>
     <lastmod>2017-06-25T19:31:56+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/project/true/</loc>
     <lastmod>2017-06-25T19:31:56+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/fedora25/</loc>
     <lastmod>2017-03-17T21:33:19+02:00</lastmod>
     <xhtml:link
@@ -215,9 +162,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/fedora25/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/installing-unreal-engine-on-fedora-25/</loc>
     <lastmod>2017-03-17T21:33:19+02:00</lastmod>
     <xhtml:link
@@ -230,9 +175,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/articles/installing-unreal-engine-on-fedora-25/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/series/serie1/</loc>
     <lastmod>2017-03-17T21:33:19+02:00</lastmod>
     <xhtml:link
@@ -245,9 +188,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/series/serie1/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/series/</loc>
     <lastmod>2017-03-17T21:33:19+02:00</lastmod>
     <xhtml:link
@@ -260,9 +201,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/series/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/unrealengine/</loc>
     <lastmod>2017-03-17T21:33:19+02:00</lastmod>
     <xhtml:link
@@ -275,9 +214,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/unrealengine/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/</loc>
     <lastmod>2016-07-28T14:07:04+02:00</lastmod>
     <xhtml:link
@@ -290,9 +227,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/ubuntu/</loc>
     <lastmod>2016-07-28T14:07:04+02:00</lastmod>
     <xhtml:link
@@ -305,9 +240,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/ubuntu/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/vagrant/</loc>
     <lastmod>2016-07-28T14:07:04+02:00</lastmod>
     <xhtml:link
@@ -320,9 +253,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/vagrant/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/vm/</loc>
     <lastmod>2016-07-28T14:07:04+02:00</lastmod>
     <xhtml:link
@@ -335,9 +266,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/vm/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/nodejs/</loc>
     <lastmod>2016-07-27T13:50:40+02:00</lastmod>
     <xhtml:link
@@ -350,9 +279,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/nodejs/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/sass/</loc>
     <lastmod>2016-07-27T13:50:40+02:00</lastmod>
     <xhtml:link
@@ -365,9 +292,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/sass/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/web-development-environment/</loc>
     <lastmod>2016-07-27T13:50:40+02:00</lastmod>
     <xhtml:link
@@ -380,9 +305,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/articles/web-development-environment/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/</loc>
     <lastmod>2016-07-18T13:37:52+02:00</lastmod>
     <xhtml:link
@@ -395,9 +318,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/mate/</loc>
     <lastmod>2016-07-18T13:37:52+02:00</lastmod>
     <xhtml:link
@@ -410,9 +331,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/mate/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/odroid/</loc>
     <lastmod>2016-07-18T13:37:52+02:00</lastmod>
     <xhtml:link
@@ -425,9 +344,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/odroid/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/curl/</loc>
     <lastmod>2016-07-17T13:34:28+02:00</lastmod>
     <xhtml:link
@@ -440,9 +357,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/curl/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/fopen/</loc>
     <lastmod>2016-07-17T13:34:28+02:00</lastmod>
     <xhtml:link
@@ -455,9 +370,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/fopen/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/</loc>
     <lastmod>2016-07-17T13:34:28+02:00</lastmod>
     <xhtml:link
@@ -470,9 +383,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/php/</loc>
     <lastmod>2016-07-17T13:34:28+02:00</lastmod>
     <xhtml:link
@@ -485,9 +396,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/php/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/getting-an-objects-methods/</loc>
     <lastmod>2016-05-01T13:28:37+02:00</lastmod>
     <xhtml:link
@@ -500,9 +409,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/articles/getting-an-objects-methods/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/reflectionmethod/</loc>
     <lastmod>2016-05-01T13:28:37+02:00</lastmod>
     <xhtml:link
@@ -515,9 +422,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/reflectionmethod/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/piwik/</loc>
     <lastmod>2016-05-01T12:37:41+02:00</lastmod>
     <xhtml:link
@@ -530,9 +435,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/piwik/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/processwire/</loc>
     <lastmod>2016-05-01T12:37:41+02:00</lastmod>
     <xhtml:link
@@ -545,9 +448,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/processwire/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/</loc>
     <lastmod>2016-05-01T12:37:41+02:00</lastmod>
     <xhtml:link
@@ -560,9 +461,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/cwp/</loc>
     <lastmod>2016-03-24T12:34:39+02:00</lastmod>
     <xhtml:link
@@ -575,9 +474,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/cwp/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/installing-magento2-on-cwp/</loc>
     <lastmod>2016-03-24T12:34:39+02:00</lastmod>
     <xhtml:link
@@ -590,9 +487,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/articles/installing-magento2-on-cwp/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/magento2/</loc>
     <lastmod>2016-03-24T12:34:39+02:00</lastmod>
     <xhtml:link
@@ -605,9 +500,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/magento2/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/php7/</loc>
     <lastmod>2016-03-24T12:34:39+02:00</lastmod>
     <xhtml:link
@@ -620,9 +513,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/php7/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/centos-web-panel-on-vps/</loc>
     <lastmod>2016-03-24T12:28:50+02:00</lastmod>
     <xhtml:link
@@ -635,9 +526,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/articles/centos-web-panel-on-vps/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/magento/</loc>
     <lastmod>2016-03-24T12:28:50+02:00</lastmod>
     <xhtml:link
@@ -650,19 +539,13 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/magento/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/</loc>
     <lastmod>2016-02-27T12:21:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/vps/</loc>
     <lastmod>2016-02-27T12:21:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/</loc>
     <lastmod>2016-01-16T11:07:16+02:00</lastmod>
     <xhtml:link
@@ -675,9 +558,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/articles/authenticating-users-in-joomla-with-curl/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/</loc>
     <lastmod>2015-08-30T11:05:36+02:00</lastmod>
     <xhtml:link
@@ -690,9 +571,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/bash/</loc>
     <lastmod>2015-08-30T11:05:36+02:00</lastmod>
     <xhtml:link
@@ -705,9 +584,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/bash/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/mysqldump/</loc>
     <lastmod>2015-08-30T11:05:36+02:00</lastmod>
     <xhtml:link
@@ -720,59 +597,37 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/mysqldump/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/backups/</loc>
     <lastmod>2015-08-30T11:03:31+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/ftp/</loc>
     <lastmod>2015-08-30T11:03:31+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/</loc>
     <lastmod>2015-08-30T11:03:31+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/backup/</loc>
     <lastmod>2015-08-24T11:00:53+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/zip/</loc>
     <lastmod>2015-08-24T11:00:53+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/zipping-and-unzipping-websites-with-php/</loc>
     <lastmod>2015-08-24T11:00:53+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/facebook/</loc>
     <lastmod>2015-08-11T10:58:34+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/facebook-sharer-and-ipv6-issue/</loc>
     <lastmod>2015-08-11T10:58:34+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/ipv6/</loc>
     <lastmod>2015-08-11T10:58:34+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/plesk/</loc>
     <lastmod>2015-08-11T10:58:34+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/centos6/</loc>
     <lastmod>2015-08-10T10:56:10+02:00</lastmod>
     <xhtml:link
@@ -785,24 +640,16 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/centos6/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/configuring-iptables-and-fail2ban-on-centos-6/</loc>
     <lastmod>2015-08-10T10:56:10+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/fail2ban/</loc>
     <lastmod>2015-08-10T10:56:10+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/iptables/</loc>
     <lastmod>2015-08-10T10:56:10+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/</loc>
     <lastmod>2015-08-09T10:48:45+02:00</lastmod>
     <xhtml:link
@@ -815,9 +662,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/articles/configuring-a-lamp-server-on-centos-6/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/httpd/</loc>
     <lastmod>2015-08-09T10:48:45+02:00</lastmod>
     <xhtml:link
@@ -830,9 +675,7 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/httpd/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/tags/mysql/</loc>
     <lastmod>2015-08-09T10:48:45+02:00</lastmod>
     <xhtml:link
@@ -845,26 +688,15 @@
                 hreflang="en"
                 href="https://www.jarboleda.me/tags/mysql/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/about/cv_dummy/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/about/me/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/projects/dummy/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/about/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.jarboleda.me/projects/</loc>
   </url>
-  
 </urlset>

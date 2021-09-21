@@ -204,9 +204,9 @@ From the list above I took the image I was looking for, which is the complete ve
 </ul>
 <h2 id="writing-the-image-on-odroid-board">Writing the image on odroid board</h2>
 <p>The next step will be to uncompress the image. This is very important because if we try to write a compressed image into the eMMC module, it won&rsquo;t work at all. So, to uncompress it, use the following command:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ unxz ubuntu-16.04-mate-odroid-xu3-20160708.img.xz</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ unxz ubuntu-16.04-mate-odroid-xu3-20160708.img.xz</code></pre></div>
 Ok, now we are ready to install the linux image. The easiest way to do it is using the dd command:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>ubuntu-16.04-mate-odroid-xu3-20160708.img of<span style="color:#f92672">=</span>/dev/sdc bs<span style="color:#f92672">=</span>1M conv<span style="color:#f92672">=</span>fsync
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>ubuntu-16.04-mate-odroid-xu3-20160708.img of<span style="color:#f92672">=</span>/dev/sdc bs<span style="color:#f92672">=</span>1M conv<span style="color:#f92672">=</span>fsync
 <span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sync
 <span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sync
 <span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sync
@@ -214,7 +214,7 @@ Ok, now we are ready to install the linux image. The easiest way to do it is usi
 <h2 id="checking-the-result">Checking the result</h2>
 <p>It is very important to use the sync command multiple times after dd so we make sure we flush all the cache content and write the complete image into the eMMC module.
 Now we need to verify the image was correctly written into the eMMC module, we&rsquo;ll use the dd command again:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/sdc bs<span style="color:#f92672">=</span><span style="color:#ae81ff">512</span> count<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span><span style="color:#e6db74">`</span>stat -c%s ubuntu-16.04-mate-odroid-xu3-20160708.img<span style="color:#e6db74">`</span><span style="color:#f92672">/</span><span style="color:#ae81ff">512</span><span style="color:#66d9ef">))</span> | md5sum
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>jag@2ndChance distros<span style="color:#f92672">]</span>$ sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/sdc bs<span style="color:#f92672">=</span><span style="color:#ae81ff">512</span> count<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span><span style="color:#e6db74">`</span>stat -c%s ubuntu-16.04-mate-odroid-xu3-20160708.img<span style="color:#e6db74">`</span><span style="color:#f92672">/</span><span style="color:#ae81ff">512</span><span style="color:#66d9ef">))</span> | md5sum
 <span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> password <span style="color:#66d9ef">for</span> jag:
 8968192+0 registros leídos
 8968192+0 registros escritos
@@ -397,12 +397,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
-                    <img class="lazyload" alt='Fixing a corrupted partition on a virtual machine' width='72' height='72' data-src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
+                  <a href='https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/' target='_blank'>
+                    <img class="lazyload" alt='Getting 1.5s page load time on a basic vps' width='72' height='72' data-src="/articles/img/thumbs/getting-1.5s-page-load-time-on-a-basic-vps.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
+                  <a href='https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/' class="mostVisitedLink">Getting 1.5s page load time on a basic vps</a>
                 </div>
               </div>
             </li>
@@ -412,12 +412,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/centos-web-panel-on-vps/' target='_blank'>
-                    <img class="lazyload" alt='Centos web panel with php7 and mysql5.6' width='72' height='72' data-src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
+                  <a href='https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
+                    <img class="lazyload" alt='Backing up all databases using mysqldump' width='72' height='72' data-src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel with php7 and mysql5.6</a>
+                  <a href='https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Backing up all databases using mysqldump</a>
                 </div>
               </div>
             </li>
@@ -427,12 +427,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/' target='_blank'>
-                    <img class="lazyload" alt='Transferring files with FTP through bash expect script' width='72' height='72' data-src="/articles/img/thumbs/transferring-files-with-ftp-through-bash-expect-script.png" />
+                  <a href='https://www.jarboleda.me/articles/facebook-sharer-and-ipv6-issue/' target='_blank'>
+                    <img class="lazyload" alt='Facebook sharer and IPv6 issue' width='72' height='72' data-src="/articles/img/thumbs/facebook-sharer-and-ipv6-issue.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/' class="mostVisitedLink">Transferring files with FTP through bash expect script</a>
+                  <a href='https://www.jarboleda.me/articles/facebook-sharer-and-ipv6-issue/' class="mostVisitedLink">Facebook sharer and IPv6 issue</a>
                 </div>
               </div>
             </li>

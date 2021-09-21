@@ -172,7 +172,7 @@ En este post explicaré cómo instalar magento2 sobre Centos Web Panel, utilizan
       
       <p><h2 id="empezando">Empezando</h2>
 <p>En este post explicaré cómo instalar magento2 sobre Centos Web Panel, utilizando php7 y mysql 5.6. Para empezar, tenemos que compilar php con las extensiones que magento2 necesita. Con el siguiente comando podremos configurar php7 para luego compilarlo y conseguir que funcione con magento2.</p>
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./configure
+<p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./configure
 --prefix<span style="color:#f92672">=</span>/opt/alt/php7/usr
 --with-config-file-path<span style="color:#f92672">=</span>/opt/alt/php7/usr/php
 --with-config-file-scan-dir<span style="color:#f92672">=</span>/opt/alt/php7/usr/php/php.d
@@ -216,11 +216,11 @@ Es posible cambiar las rutas, pero es aconsejable que instales al menos estas ex
 <p>El siguiente paso es descargar e instalar magento2, será muy fácil si el servidor cumple los requisitos (principalmente las extensiones de php y mysql 5.6+).
 <a href="https://www.magentocommerce.com/download">https://www.magentocommerce.com/download</a></p>
 <p>Cuando instalamos magento2, éste empezará a quejarse de los permisos. Magento2, por defecto, necesita que los directorios tengan permisos 0700, el problema es que esto no funcionará en la mayoría de hostings (si usan plesk, cPanel, etc.) Así que tenemos que cambiar todos los permisos de las carpetas y ficheros con el siguiente comando:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">find /path/to/magento -type f -exec chmod <span style="color:#ae81ff">644</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">find /path/to/magento -type f -exec chmod <span style="color:#ae81ff">644</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
 find path/to/magento -type d -exec chmod <span style="color:#ae81ff">755</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></code></pre></div></p>
 <p>Luego, hay que indicarle a magento2 que cree los nuevos ficheros y directorios con estos permisos. Podemos hacerlo en el siguiente fichero:
 <code>/vendor/magento/framework/Filesystem/DriverInterface.php</code>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">/vendor/magento/framework/Filesystem/DriverInterface.php
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">/vendor/magento/framework/Filesystem/DriverInterface.php
 <span style="color:#f92672">(</span>WRITEABLE_DIRECTORY_MODE and WRITEABLE_FILE_MODE<span style="color:#f92672">)</span>
 
 /lib/internal/Cm/Cache/Backend/File.php
@@ -386,42 +386,42 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
-                    <img class="lazyload" alt='configuring a LAMP server on CentOS 6' width='72' height='72' data-src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
-                    <img class="lazyload" alt='Instalando ubuntu 16.04 en odroid xu3 lite' width='72' height='72' data-src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Instalando ubuntu 16.04 en odroid xu3 lite</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
                   <a href='https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
                     <img class="lazyload" alt='Arreglando una partición corrupta de una máquina virtual' width='72' height='72' data-src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
                   <a href='https://www.jarboleda.me/es/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Arreglando una partición corrupta de una máquina virtual</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/' target='_blank'>
+                    <img class="lazyload" alt='Centos web panel con php7 y mysql5.6' width='72' height='72' data-src="/articles/img/thumbs/installing-centos-web-panel-on-vps.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='https://www.jarboleda.me/es/articles/centos-web-panel-on-vps/' class="mostVisitedLink">Centos web panel con php7 y mysql5.6</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/' target='_blank'>
+                    <img class="lazyload" alt='Instalando unreal engine en fedora 25' width='72' height='72' data-src="/articles/img/thumbs/unreal_engine.min.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='https://www.jarboleda.me/es/articles/installing-unreal-engine-on-fedora-25/' class="mostVisitedLink">Instalando unreal engine en fedora 25</a>
                 </div>
               </div>
             </li>

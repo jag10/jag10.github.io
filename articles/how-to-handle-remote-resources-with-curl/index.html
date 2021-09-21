@@ -18,8 +18,7 @@
 	<meta property="og:description" content="The problem
 When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&rsquo;t as easy as using fopen:
 &lt;?php
-$handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);
-" />
+$handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/" />
 	<meta property="og:image" content="/articles/img/how-to-handle-remote-resources-with-curl.png" />
@@ -42,13 +41,11 @@ $handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filen
     <meta itemprop="description" content="The problem
 When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&rsquo;t as easy as using fopen:
 &lt;?php
-$handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);
-" />
+$handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);" />
     <meta name="description" content="The problem
 When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&rsquo;t as easy as using fopen:
 &lt;?php
-$handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);
-" />
+$handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);" />
     <meta name="author" content="Jefferson Arboleda">
     
     <meta itemprop="image" content="how-to-handle-remote-resources-with-curl.png">
@@ -63,8 +60,7 @@ $handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filen
 	<meta name="twitter:description" content="The problem
 When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&rsquo;t as easy as using fopen:
 &lt;?php
-$handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);
-"/>
+$handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filename);"/>
 	<meta name="twitter:site" content="@j_a_g_x"/>
 	
 	<meta name="twitter:creator" content="@j_a_g_x"/>
@@ -184,9 +180,8 @@ $handle = fopen($filename, &#34;r&#34;) or die(&#39;could not open .&#39; $filen
       
       <p><h2 id="the-problem">The problem</h2>
 <p>When you need to get remote files to handle its content (i.e. csv files) you may find out that accesing them isn&rsquo;t as easy as using fopen:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
-$handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>($filename, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">die</span>(<span style="color:#e6db74">&#39;could not open .&#39;</span> $filename);
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+$handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>($filename, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">die</span>(<span style="color:#e6db74">&#39;could not open .&#39;</span> $filename);</code></pre></div></p>
 <p>If this sentence works, we could then use the handle to parse the file with different php functions like fgetcsv(). Usually, a lot of functions use a Resource param to handle files, so it&rsquo;s important to know how to get a handle from a file. Fopen gives us this functionality, but it can fail in some scenarios:</p>
 <ul>
 <li>If the &ldquo;allow_url_fopen&rdquo; is disabled in php settings, we won&rsquo;t be able to open remote files</li>
@@ -194,7 +189,7 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
 </ul>
 <h2 id="the-solution">The solution</h2>
 <p>In this case, we should use cURL, so we can follow redirections and get over the &ldquo;allow_url_fopen&rdquo; directive. In order to get a resource from a remote url we&rsquo;re going to use php streams. php://temp stream allows us to create a temporal file in memory so we don&rsquo;t need to write in disk, which is slow and forces us to handle the path to the file. So, with the following function we&rsquo;ll be able to get a handle from a remote url and use it as if it was a local file on our disk:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">_curl</span>($url){
  <span style="color:#66d9ef">try</span> {
   $file_handler <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>(<span style="color:#e6db74">&#39;php://temp&#39;</span>, <span style="color:#e6db74">&#39;w+&#39;</span>);
@@ -219,8 +214,7 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
   $e<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getCode</span>(), $e<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getMessage</span>()),
    <span style="color:#a6e22e">E_USER_ERROR</span>);
  }
-}
-</code></pre></div>
+}</code></pre></div>
 <p>This function takes a url as a parameter and it returns a handle to a local resource, which we can use to treat the file as we want</p></p>
       
     </div>
@@ -248,7 +242,7 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
 <div class="soc-sharing">
   <ul class="article_share_items">
     <li>
-      <a rel="noopener" aria-label="LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;title=How%20to%20handle%20remote%20resources%20with%20curl&amp;summary=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%3cp%3eWhen%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#f92672%22%3e&amp;lt;?%3c/span%3e%3cspan%20style=%22color:#a6e22e%22%3ephp%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%0a%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="LinkedIn" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;title=How%20to%20handle%20remote%20resources%20with%20curl&amp;summary=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%3cp%3eWhen%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20tabindex=%220%22%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#f92672%22%3e&amp;lt;?%3c/span%3e%3cspan%20style=%22color:#a6e22e%22%3ephp%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e&amp;source=J.%20Arboleda" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       </a>
     </li>
@@ -268,7 +262,7 @@ $handle <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</
       </a>
     </li>
     <li>
-      <a rel="noopener" aria-label="Pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;media=%3cnil%3ehow-to-handle-remote-resources-with-curl.png&amp;description=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%3cp%3eWhen%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#f92672%22%3e&amp;lt;?%3c/span%3e%3cspan%20style=%22color:#a6e22e%22%3ephp%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%0a%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e" rel="nofollow" target="_blank">
+      <a rel="noopener" aria-label="Pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.jarboleda.me/articles/how-to-handle-remote-resources-with-curl/&amp;media=%3cnil%3ehow-to-handle-remote-resources-with-curl.png&amp;description=%3ch2%20id=%22the-problem%22%3eThe%20problem%3c/h2%3e%0a%3cp%3eWhen%20you%20need%20to%20get%20remote%20files%20to%20handle%20its%20content%20%28i.e.%20csv%20files%29%20you%20may%20find%20out%20that%20accesing%20them%20isn&amp;rsquo;t%20as%20easy%20as%20using%20fopen:%0a%3cdiv%20class=%22highlight%22%3e%3cpre%20tabindex=%220%22%20style=%22color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4%22%3e%3ccode%20class=%22language-php%22%20data-lang=%22php%22%3e%3cspan%20style=%22color:#f92672%22%3e&amp;lt;?%3c/span%3e%3cspan%20style=%22color:#a6e22e%22%3ephp%3c/span%3e%0a$handle%20%3cspan%20style=%22color:#f92672%22%3e=%3c/span%3e%20%3cspan%20style=%22color:#a6e22e%22%3efopen%3c/span%3e%28$filename,%20%3cspan%20style=%22color:#e6db74%22%3e&amp;#34;r&amp;#34;%3c/span%3e%29%20%3cspan%20style=%22color:#66d9ef%22%3eor%3c/span%3e%20%3cspan%20style=%22color:#66d9ef%22%3edie%3c/span%3e%28%3cspan%20style=%22color:#e6db74%22%3e&amp;#39;could%20not%20open%20.&amp;#39;%3c/span%3e%20$filename%29;%3c/code%3e%3c/pre%3e%3c/div%3e%3c/p%3e" rel="nofollow" target="_blank">
         <i aria-hidden="true" class="fab fa-pinterest-p"></i>
       </a>
     </li>
@@ -372,12 +366,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/' target='_blank'>
-                    <img class="lazyload" alt='Transferring files with FTP through bash expect script' width='72' height='72' data-src="/articles/img/thumbs/transferring-files-with-ftp-through-bash-expect-script.png" />
+                  <a href='https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
+                    <img class="lazyload" alt='Installing ubuntu 16.04 on odroid xu3 lite' width='72' height='72' data-src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/transferring-files-with-ftp-through-bash-expect-script/' class="mostVisitedLink">Transferring files with FTP through bash expect script</a>
+                  <a href='https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Installing ubuntu 16.04 on odroid xu3 lite</a>
                 </div>
               </div>
             </li>
@@ -387,12 +381,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/web-development-environment/' target='_blank'>
-                    <img class="lazyload" alt='Web development environment' width='72' height='72' data-src="/articles/img/thumbs/web-development-environment.jpg" />
+                  <a href='https://www.jarboleda.me/articles/getting-an-objects-methods/' target='_blank'>
+                    <img class="lazyload" alt='Getting an object&#39;s (reflected) methods' width='72' height='72' data-src="/articles/img/thumbs/getting-an-objects-methods.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/web-development-environment/' class="mostVisitedLink">Web development environment</a>
+                  <a href='https://www.jarboleda.me/articles/getting-an-objects-methods/' class="mostVisitedLink">Getting an object&#39;s (reflected) methods</a>
                 </div>
               </div>
             </li>
@@ -402,12 +396,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/' target='_blank'>
-                    <img class="lazyload" alt='Fixing a corrupted partition on a virtual machine' width='72' height='72' data-src="/articles/img/thumbs/fixing-corrupted-partition-on-virtual-machine.jpg" />
+                  <a href='https://www.jarboleda.me/articles/facebook-sharer-and-ipv6-issue/' target='_blank'>
+                    <img class="lazyload" alt='Facebook sharer and IPv6 issue' width='72' height='72' data-src="/articles/img/thumbs/facebook-sharer-and-ipv6-issue.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/fixing-corrupted-partition-on-virtual-machine/' class="mostVisitedLink">Fixing a corrupted partition on a virtual machine</a>
+                  <a href='https://www.jarboleda.me/articles/facebook-sharer-and-ipv6-issue/' class="mostVisitedLink">Facebook sharer and IPv6 issue</a>
                 </div>
               </div>
             </li>

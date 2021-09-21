@@ -16,9 +16,8 @@
 I got the page load of my blog time down from 5s to 1.5s.
 On this post, we&amp;rsquo;ll go a step further and we&amp;rsquo;ll bring it down to 0.5s or less.
 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;https://www.jarboleda.me/articles/img/min/getting-0.5s-page-load-time-on-your-blog.png&#34;
-         alt=&#34;jarboleda.me performance graphic&#34; width=&#34;780&#34; height=&#34;241&#34;/&gt; &lt;figcaption&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img src=&#34;https://www.jarboleda.me/articles/img/min/getting-0.5s-page-load-time-on-your-blog.png&#34;
+         alt=&#34;jarboleda.me performance graphic&#34; width=&#34;780&#34; height=&#34;241&#34;/&gt;&lt;figcaption&gt;
             &lt;h4&gt;jarboleda.me performance graphic [gtmetrix.com]&lt;/h4&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;

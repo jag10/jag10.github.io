@@ -172,7 +172,7 @@ In this post I&rsquo;ll explain how to install magento2 in CWP, using php7 and m
       
       <p><h2 id="getting-started">Getting started</h2>
 <p>In this post I&rsquo;ll explain how to install magento2 in CWP, using php7 and mysql 5.6. Firstly, we need to compile php with the correct extensions magento2 needs. If you use this configure command with php7, magento2 will work like a charm.</p>
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./configure
+<p><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./configure
 --prefix<span style="color:#f92672">=</span>/opt/alt/php7/usr
 --with-config-file-path<span style="color:#f92672">=</span>/opt/alt/php7/usr/php
 --with-config-file-scan-dir<span style="color:#f92672">=</span>/opt/alt/php7/usr/php/php.d
@@ -216,10 +216,10 @@ Of course you can change paths, but you need at least these extensions.</p>
 <p>Then, you can proceed to download and install magento2, it&rsquo;s pretty straight forward if your server meets the requirements:</p>
 <p><a href="https://www.magentocommerce.com/download">https://www.magentocommerce.com/download</a></p>
 <p>After you install magento2, it will complain about permissions. Magento2 ask permissions on directories to be set as 0700, but this won&rsquo;t work with many hosting plans (those using plesk, cPanel, etc). So we have to change all folder and files permissions with this command:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">find /path/to/magento -type f -exec chmod <span style="color:#ae81ff">644</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">find /path/to/magento -type f -exec chmod <span style="color:#ae81ff">644</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
 find path/to/magento -type d -exec chmod <span style="color:#ae81ff">755</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></code></pre></div></p>
 <p>Then, we&rsquo;ll tell magento2 to create files with these permissions. We can do that in the following file:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">/vendor/magento/framework/Filesystem/DriverInterface.php
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">/vendor/magento/framework/Filesystem/DriverInterface.php
 <span style="color:#f92672">(</span>WRITEABLE_DIRECTORY_MODE and WRITEABLE_FILE_MODE<span style="color:#f92672">)</span>
 
 /lib/internal/Cm/Cache/Backend/File.php
@@ -385,42 +385,42 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/installing-magento2-on-cwp/' target='_blank'>
-                    <img class="lazyload" alt='Installing magento2 on cwp' width='72' height='72' data-src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Installing magento2 on cwp</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/facebook-sharer-and-ipv6-issue/' target='_blank'>
-                    <img class="lazyload" alt='Facebook sharer and IPv6 issue' width='72' height='72' data-src="/articles/img/thumbs/facebook-sharer-and-ipv6-issue.png" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/facebook-sharer-and-ipv6-issue/' class="mostVisitedLink">Facebook sharer and IPv6 issue</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
                   <a href='https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/' target='_blank'>
                     <img class="lazyload" alt='Getting 1.5s page load time on a basic vps' width='72' height='72' data-src="/articles/img/thumbs/getting-1.5s-page-load-time-on-a-basic-vps.png" />
                   </a>
                 </div>
                 <div class='item-title'>
                   <a href='https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/' class="mostVisitedLink">Getting 1.5s page load time on a basic vps</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='https://www.jarboleda.me/articles/getting-0.5s-page-load-time-on-your-blog/' target='_blank'>
+                    <img class="lazyload" alt='Getting 0.5 seconds load time on your blog' width='72' height='72' data-src="/articles/img/thumbs/getting-0.5s-page-load-time-on-your-blog.png" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='https://www.jarboleda.me/articles/getting-0.5s-page-load-time-on-your-blog/' class="mostVisitedLink">Getting 0.5 seconds load time on your blog</a>
+                </div>
+              </div>
+            </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/' target='_blank'>
+                    <img class="lazyload" alt='Using piwik&#39;s API locally with ProcessWire' width='72' height='72' data-src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Using piwik&#39;s API locally with ProcessWire</a>
                 </div>
               </div>
             </li>

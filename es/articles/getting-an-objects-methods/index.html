@@ -170,7 +170,7 @@ Algunas veces no tenemos acceso a la documentación de una plataforma, es incomp
       
       <p><h2 id="el-problema">El problema</h2>
 <p>Algunas veces no tenemos acceso a la documentación de una plataforma, es incompleta o simplemente no nos apetece buscarla. En esos casos, es conveniente tener algo más que el típico <code>var_dump</code> de un objeto, que sólo nos muestra las propiedades del objeto pero no sus métodos, que en muchos casos nos dan la funcionalidad que buscamos sin tener que navegar entre miles de propiedades. A continuación expongo la función que uso, utiliza la clase ReflectionMethod, la cual nos muestra información acerca de un método, y necesita como parámetros del constructor el nombre de la clase y el método.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">get_object_info</span>($object){
    <span style="color:#66d9ef">foreach</span>(<span style="color:#a6e22e">get_class_methods</span>(<span style="color:#a6e22e">get_class</span>($object)) <span style="color:#66d9ef">as</span> $method){
       <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;&lt;p&gt;&#39;</span> <span style="color:#f92672">.</span> $method <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;(&#39;</span>;
@@ -179,26 +179,22 @@ Algunas veces no tenemos acceso a la documentación de una plataforma, es incomp
       }
       <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;)&lt;/p&gt;&#39;</span>;
     }
-}
-</code></pre></div>
+}</code></pre></div>
 <p>Para mantener esta función corta, es necesario utilizar php 5.4+, pues estamos accediendo a un miembro de la clase (getParameters) en la instanciación, para lo cual necesitamos un paréntesis extra:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
-(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ReflectionMethod</span>($class, $method))<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getParameters</span>())
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ReflectionMethod</span>($class, $method))<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getParameters</span>())</code></pre></div></p>
 <p>Es correcto en php 5.4+
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
-<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ReflectionMethod</span>($class, $method))<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getParameters</span>()
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ReflectionMethod</span>($class, $method))<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getParameters</span>()</code></pre></div></p>
 <p>No es correcto en ninguna versión de PHP, por lo que si utilizamos php &lt;5.4, esta línea debería separarse en dos:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 $method  <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ReflectionMethod</span>($class, $method);
-$params <span style="color:#f92672">=</span> $method<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getParameters</span>();
-</code></pre></div></p>
+$params <span style="color:#f92672">=</span> $method<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getParameters</span>();</code></pre></div></p>
 <h2 id="ejemplo-práctico">Ejemplo práctico</h2>
 <p>Vamos a ver un ejemplo práctico en la plataforma ProcessWire. Queremos obtener datos acerca del usuario actual, sin embargo las propiedades que indica la documentación no son suficientes:</p>
 <p><img src="/articles/img/min/getting-an-objects-methods-1.png" alt="pw cheatsheet"></p>
 <p>Si listamos los métodos del objeto $user, veremos algo así:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 <span style="color:#a6e22e">hasRole</span>(<span style="color:#a6e22e">Parameter</span> <span style="color:#75715e">#0 [ $role ], )
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">addRole</span>(<span style="color:#a6e22e">Parameter</span> <span style="color:#75715e">#0 [ $role ], )
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">removeRole</span>(<span style="color:#a6e22e">Parameter</span> <span style="color:#75715e">#0 [ $role ], )
@@ -378,36 +374,6 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/' target='_blank'>
-                    <img class="lazyload" alt='Instalando magento2 en cwp' width='72' height='72' data-src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Instalando magento2 en cwp</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' target='_blank'>
-                    <img class="lazyload" alt='configuring a LAMP server on CentOS 6' width='72' height='72' data-src="/articles/img/thumbs/configuring-a-lamp-server-on-centos-6.jpg" />
-                  </a>
-                </div>
-                <div class='item-title'>
-                  <a href='https://www.jarboleda.me/es/articles/configuring-a-lamp-server-on-centos-6/' class="mostVisitedLink">configuring a LAMP server on CentOS 6</a>
-                </div>
-              </div>
-            </li>
-            
-            
-             
-            <li>
-              <div class='item-content'>
-                <div class='item-thumbnail'>
                   <a href='https://www.jarboleda.me/es/articles/authenticating-users-in-joomla-with-curl/' target='_blank'>
                     <img class="lazyload" alt='Autenticando usuarios con cURL' width='72' height='72' data-src="/articles/img/thumbs/authenticating-users-in-joomla-with-curl.jpg" />
                   </a>
@@ -417,6 +383,23 @@ s.setAttribute('data-timestamp', +new Date());
                 </div>
               </div>
             </li>
+            
+            
+             
+            <li>
+              <div class='item-content'>
+                <div class='item-thumbnail'>
+                  <a href='https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/' target='_blank'>
+                    <img class="lazyload" alt='Utilizando la API de piwik en local con PW' width='72' height='72' data-src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
+                  </a>
+                </div>
+                <div class='item-title'>
+                  <a href='https://www.jarboleda.me/es/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Utilizando la API de piwik en local con PW</a>
+                </div>
+              </div>
+            </li>
+            
+            
             
             
           </ul>

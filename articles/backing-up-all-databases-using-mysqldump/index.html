@@ -171,10 +171,10 @@ So, I use mysqldump utiliy to backup database and an script I wrote myself to tr
       <p><p>In this post I&rsquo;ll explain how I backup all databases in servers I work with. When you face trouble with those servers it&rsquo;ll be pretty useful to have daily database dumps.</p>
 <p>So, I use mysqldump utiliy to backup database and an script I wrote myself to transfer files, which you can find here.</p>
 <p>Backing up all databases with mysqldumpo is pretty easy, just use it in this way in bash:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mysqldump -uadmin -p<span style="color:#e6db74">`</span>cat /etc/psa/.psa.shadow<span style="color:#e6db74">`</span> --all-databases | zip &gt; $1/all.sql.zip</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mysqldump -uadmin -p<span style="color:#e6db74">`</span>cat /etc/psa/.psa.shadow<span style="color:#e6db74">`</span> --all-databases | zip &gt; $1/all.sql.zip</code></pre></div></p>
 <p>You can change the -p parameter to use another password. I use that file as plesk stores its password there, but you can change it. The last part is also very important, you should always zip the .sql file as you can save up to 90% disk space. For example, some databases backups are 250Mb when zipped, but when you extract the .sql file you will face a ~2.5 Gb text file.
 With the following script you can backup your database and transfer it to your FTP server, storing it into /aaa.bbb.ccc.ddd/ directory, or wherever you want.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
 </span><span style="color:#75715e"></span>
 tempDir<span style="color:#f92672">=</span>$1
 
@@ -183,7 +183,7 @@ mysqldump -uadmin -p<span style="color:#e6db74">`</span>cat /etc/psa/.psa.shadow
 
 /script/ftpConnect.sh $tempDir/all.sql.zip /aaa.bbb.ccc.ddd/_bbdd/$date.sql.zip</code></pre></div>
 As I said, your .sql files will be huge, so you&rsquo;ll need a way to split it into different .sql, each one containing an individual database. We&rsquo;ll use a bash script for this task too:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
 </span><span style="color:#75715e"></span>file<span style="color:#f92672">=</span>$1
 
 unzip -p $file | cat &gt; ALL_DATABASES.sql
@@ -353,12 +353,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/' target='_blank'>
-                    <img class="lazyload" alt='Getting 1.5s page load time on a basic vps' width='72' height='72' data-src="/articles/img/thumbs/getting-1.5s-page-load-time-on-a-basic-vps.png" />
+                  <a href='https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/' target='_blank'>
+                    <img class="lazyload" alt='Backing up all databases using mysqldump' width='72' height='72' data-src="/articles/img/thumbs/backing-up-all-databases-using-mysqldump.png" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/getting-1.5s-page-load-time-on-a-basic-vps/' class="mostVisitedLink">Getting 1.5s page load time on a basic vps</a>
+                  <a href='https://www.jarboleda.me/articles/backing-up-all-databases-using-mysqldump/' class="mostVisitedLink">Backing up all databases using mysqldump</a>
                 </div>
               </div>
             </li>
@@ -368,12 +368,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/installing-magento2-on-cwp/' target='_blank'>
-                    <img class="lazyload" alt='Installing magento2 on cwp' width='72' height='72' data-src="/articles/img/thumbs/installing-magento2-on-cwp.jpg" />
+                  <a href='https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/' target='_blank'>
+                    <img class="lazyload" alt='Using piwik&#39;s API locally with ProcessWire' width='72' height='72' data-src="/articles/img/thumbs/using-piwik-api-locally-with-pw.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/installing-magento2-on-cwp/' class="mostVisitedLink">Installing magento2 on cwp</a>
+                  <a href='https://www.jarboleda.me/articles/using-piwik-api-locally-with-pw/' class="mostVisitedLink">Using piwik&#39;s API locally with ProcessWire</a>
                 </div>
               </div>
             </li>
@@ -383,12 +383,12 @@ s.setAttribute('data-timestamp', +new Date());
             <li>
               <div class='item-content'>
                 <div class='item-thumbnail'>
-                  <a href='https://www.jarboleda.me/articles/facebook-sharer-and-ipv6-issue/' target='_blank'>
-                    <img class="lazyload" alt='Facebook sharer and IPv6 issue' width='72' height='72' data-src="/articles/img/thumbs/facebook-sharer-and-ipv6-issue.png" />
+                  <a href='https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' target='_blank'>
+                    <img class="lazyload" alt='Installing ubuntu 16.04 on odroid xu3 lite' width='72' height='72' data-src="/articles/img/thumbs/installing-ubuntu-16.04-on-odroid-xu3-lite.jpg" />
                   </a>
                 </div>
                 <div class='item-title'>
-                  <a href='https://www.jarboleda.me/articles/facebook-sharer-and-ipv6-issue/' class="mostVisitedLink">Facebook sharer and IPv6 issue</a>
+                  <a href='https://www.jarboleda.me/articles/installing-ubuntu-16.04-on-odroid-xu3-lite/' class="mostVisitedLink">Installing ubuntu 16.04 on odroid xu3 lite</a>
                 </div>
               </div>
             </li>

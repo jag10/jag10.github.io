@@ -26,7 +26,7 @@
 &lt;p&gt;Firstly, we&amp;rsquo;ll install centOS Web Panel, just follow the instructions in the CWP website: &lt;a href=&#34;http://centos-webpanel.com/installation-instructions&#34;&gt;http://centos-webpanel.com/installation-instructions&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;instaling-mysql-56&#34;&gt;Instaling mysql 5.6&lt;/h2&gt;
 &lt;p&gt;After a fresh install, we&amp;rsquo;ll stop CWP to perform the mysqld update.
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;service cwpsrv stop&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;service cwpsrv stop&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;Then, we&amp;rsquo;ll install mysql server repo.&lt;/p&gt;</description>
     </item>
     
